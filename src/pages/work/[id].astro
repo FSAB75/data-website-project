@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { works, entities, getEntity, typeLabels } from '../../lib/data.js';
+import { buildEntityIndex, linkify } from '../../lib/linkify.js';
+
+export function getStaticPaths() {
+  return works.map((w) => ({ params: { id: w.id }, props: { work: w } }));
+}
+
+const { work } = Astro.props;
+const index = buildEntityIndex(entities);
+
+const chapters = work.chapters || [];
+const sideChapters = work.sideChapters || [];
+const documents = work.documents || [];
+const characters = (work.characters || []).map(getEntity).filter(Boolean);
+
+const sections = [
+  chapters.length && { id: 'story', label: '主线剧情' },
+  sideChapters.length && { id: 'side', label: '支线剧情' },
+  characters.length && { id: 'characters', label: '人物图鉴' },
+  documents.length && { id: 'documents', label: '收集资料' },
+  (work.connections || []).length && { id: 'connections', label: '剧情连接' },
+].filter(Boolean);
+---
+
+<BaseLayout title={`${work.title} · 作品`}>
+  <p class="eyebrow">{work.type} · {work.year}</p>
+  <h1>{work.title} <span class="title-en">{work.titleEn}</span></h1>
+  <p class="lead">{work.synopsis}</p>
+  <div class="meta-row">
+    <span class="tag">{work.developer}</span>
+    {work.genre && <span class="tag">{work.genre}</span>}
+    {work.platforms.map((p: string) => <span class="tag">{p}</span>)}
+  </div>
+
+  {
+    sections.length > 0 && (
+      <nav class="quick-nav">
+        {sections.map((s: any) => <a href={`#${s.id}`}>{s.label}</a>)}
+      </nav>
+    )
+  }
+
+  {
+    !work.full && (
+      <div class="panel soon-note">
+        <strong>该作品内容整理中。</strong>
+        样板阶段仅完整录入《逃生1》。本部作品的剧情、人物与档案将在后续内容整理完成后填入——结构与《逃生1》完全一致。
+      </div>
+    )
+  }
+
+  {
+    chapters.length > 0 && (
+      <section id="story">
+        <h2>主线剧情</h2>
+        <div class="chapters">
+          {chapters.map((c: any) => (
+            <article class="chapter" id={`chapter-${c.id}`}>
+              <header class="chapter__head">
+                <h3 class="chapter__title">{c.title}</h3>
+                {c.region && <span class="tag">{c.region}</span>}
+              </header>
+              <div class="prose">
+                {c.paragraphs.map((p: string) => <p set:html={linkify(p, index, new Set())} />)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    sideChapters.length > 0 && (
+      <section id="side">
+        <h2>支线剧情</h2>
+        <div class="chapters">
+          {sideChapters.map((c: any) => (
+            <article class="chapter">
+              <header class="chapter__head">
+                <h3 class="chapter__title">{c.title}</h3>
+              </header>
+              <div class="prose">
+                {c.paragraphs.map((p: string) => <p set:html={linkify(p, index, new Set())} />)}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    characters.length > 0 && (
+      <section id="characters">
+        <h2>人物图鉴</h2>
+        <div class="grid grid--3">
+          {characters.map((e: any) => (
+            <a class="card char-card" href={`/entity/${e.id}/`}>
+              <div class="card__index">{typeLabels[e.type] || '词条'}</div>
+              <h3 class="card__title">{e.nameZh}</h3>
+              <div class="card__en">{e.nameEn}</div>
+              <p class="card__desc">{e.summary}</p>
+              <div class="card__foot">查看词条 →</div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    documents.length > 0 && (
+      <section id="documents">
+        <h2>收集资料</h2>
+        <p class="lead">
+          游戏中可收集的文档（Document）与录像笔记（Note）。点击条目右侧的人物 / 机构标签可跳转到对应词条。
+        </p>
+        <div class="doc-list">
+          {documents.map((d: any) => (
+            <article class="doc" id={`doc-${d.id}`}>
+              <div class="doc__head">
+                <span class="doc__no">{d.type === 'Note' ? '录像' : '文档'} {String(d.no).padStart(2, '0')}</span>
+                <h3 class="doc__title">{d.nameZh}</h3>
+                <span class="doc__en">{d.nameEn}</span>
+              </div>
+              <div class="doc__meta">
+                <span class="tag">{d.chapter}</span>
+                {d.relatedEntity && getEntity(d.relatedEntity) && (
+                  <a class="chip" href={`/entity/${d.relatedEntity}/`}>{getEntity(d.relatedEntity)!.nameZh}</a>
+                )}
+              </div>
+              <p class="doc__summary">{d.summary}</p>
+              {d.location && <p class="doc__loc">获取位置：{d.location}</p>}
+            </article>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    (work.connections || []).length > 0 && (
+      <section id="connections">
+        <h2>剧情连接</h2>
+        <div class="panel prose">
+          <ul class="conn-list">
+            {work.connections.map((c: string) => <li set:html={linkify(c, index, new Set())} />)}
+          </ul>
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .title-en {
+    font-size: 16px;
+    color: var(--dim);
+    font-family: var(--sans);
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    margin-left: 6px;
+  }
+
+  .quick-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 22px 0 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+  }
+  .quick-nav a {
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 4px 12px;
+    background: var(--panel);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .quick-nav a:hover { color: var(--blood-bright); border-color: rgba(224, 72, 60, 0.45); }
+
+  .soon-note {
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 14px;
+    border-left: 3px solid var(--blood);
+    line-height: 1.8;
+  }
+  .soon-note strong { color: var(--blood-bright); }
+
+  .chapters { display: flex; flex-direction: column; gap: 14px; }
+  .chapter {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+  }
+  .chapter__head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .chapter__title { margin: 0; font-size: 17px; color: var(--text); }
+  .chapter .prose { color: #c9c6c0; font-size: 14.5px; }
+
+  .doc-list { display: flex; flex-direction: column; gap: 12px; }
+  .doc {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid rgba(224, 72, 60, 0.55);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+  }
+  .doc__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+  .doc__no {
+    font-family: Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--blood-bright);
+    border: 1px solid rgba(224, 72, 60, 0.4);
+    border-radius: 999px;
+    padding: 0 8px;
+  }
+  .doc__title { margin: 0; font-size: 15.5px; }
+  .doc__en { font-size: 12px; color: var(--dim); }
+  .doc__meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+  .doc__summary { font-size: 14px; color: var(--muted); margin: 0 0 4px; }
+  .doc__loc { font-size: 12px; color: var(--dim); margin: 0; }
+
+  .conn-list { margin: 0; padding-left: 20px; }
+  .conn-list li { margin-bottom: 12px; color: #c9c6c0; font-size: 14.5px; }
+  .conn-list li:last-child { margin-bottom: 0; }
+</style>

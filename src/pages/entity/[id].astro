@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { entities, works, getEntity, getWork, typeLabels } from '../../lib/data.js';
+import { buildEntityIndex, linkify } from '../../lib/linkify.js';
+
+export function getStaticPaths() {
+  return entities.map((e) => ({ params: { id: e.id }, props: { entity: e } }));
+}
+
+const { entity } = Astro.props;
+const index = buildEntityIndex(entities);
+
+const docToWork = new Map();
+for (const w of works) {
+  for (const d of w.documents || []) docToWork.set(d.id, w.id);
+}
+
+const factKeys = Object.keys(entity.facts || {});
+const relations = (entity.relations || []).map((r: any) => ({ ...r, entity: getEntity(r.target) })).filter((r: any) => r.entity);
+const relatedDocs = (entity.relatedDocs || []).map((docId: string) => {
+  const workId = docToWork.get(docId);
+  if (!workId) return null;
+  const w = getWork(workId);
+  const doc = (w?.documents || []).find((d: any) => d.id === docId);
+  return doc ? { doc, work: w } : null;
+}).filter(Boolean);
+const appearedWorks = (entity.works || []).map(getWork).filter(Boolean);
+
+const backWork = relations.length === 0 && relatedDocs.length === 0 ? null : null;
+---
+
+<BaseLayout title={`${entity.nameZh} · 词条`}>
+  <p class="eyebrow">{typeLabels[entity.type] || '词条'} · ENTITY</p>
+  <h1>{entity.nameZh} <span class="title-en">{entity.nameEn}</span></h1>
+  <p class="lead">{entity.summary}</p>
+  <div class="meta-row">
+    {appearedWorks.map((w: any) => <a class="tag tag--link" href={`/work/${w.id}/`}>登场：{w.title}</a>)}
+  </div>
+
+  <h2>档案</h2>
+  <table class="facts">
+    <tbody>
+      {factKeys.map((k) => (
+        <tr>
+          <th>{k}</th>
+          <td>{entity.facts[k]}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h2>简介</h2>
+  <div class="panel prose">
+    <p set:html={linkify(entity.bio, index, new Set())} />
+  </div>
+
+  {
+    entity.deeds && entity.deeds.length > 0 && (
+      <section>
+        <h2>事迹经历</h2>
+        <div class="panel prose">
+          <ol class="deeds">
+            {entity.deeds.map((d: string) => <li set:html={linkify(d, index, new Set())} />)}
+          </ol>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    relations.length > 0 && (
+      <section>
+        <h2>关联词条</h2>
+        <div class="rel-list">
+          {relations.map((r: any) => (
+            <a class="rel" href={`/entity/${r.entity.id}/`}>
+              <span class="rel__name">{r.entity.nameZh}</span>
+              <span class="rel__label">{r.label}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    relatedDocs.length > 0 && (
+      <section>
+        <h2>相关档案</h2>
+        <div class="doc-list">
+          {relatedDocs.map(({ doc, work }: any) => (
+            <a class="doc" href={`/work/${work.id}/#doc-${doc.id}`}>
+              <div class="doc__head">
+                <span class="doc__no">{doc.type === 'Note' ? '录像' : '文档'} {String(doc.no).padStart(2, '0')}</span>
+                <h3 class="doc__title">{doc.nameZh}</h3>
+                <span class="doc__en">{doc.nameEn}</span>
+              </div>
+              <p class="doc__summary">{doc.summary}</p>
+              <span class="doc__from">出自《{work.title}》· {doc.chapter} →</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .title-en {
+    font-size: 15px;
+    color: var(--dim);
+    font-family: var(--sans);
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    margin-left: 6px;
+  }
+  .tag--link { text-decoration: none; transition: color 0.15s, border-color 0.15s; }
+  .tag--link:hover { color: var(--blood-bright); border-color: rgba(224, 72, 60, 0.45); }
+
+  .facts {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+  }
+  .facts th {
+    width: 130px;
+    text-align: left;
+    vertical-align: top;
+    padding: 10px 16px;
+    color: var(--muted);
+    font-weight: 400;
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    background: rgba(25, 25, 32, 0.7);
+    white-space: nowrap;
+  }
+  .facts td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--line);
+    color: #c9c6c0;
+  }
+  .facts tr:last-child th, .facts tr:last-child td { border-bottom: none; }
+
+  .deeds { margin: 0; padding-left: 22px; }
+  .deeds li { margin-bottom: 10px; color: #c9c6c0; font-size: 14.5px; }
+  .deeds li:last-child { margin-bottom: 0; }
+
+  .rel-list { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .rel {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-decoration: none;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .rel:hover { border-color: rgba(224, 72, 60, 0.5); background: var(--panel-2); }
+  .rel__name { font-family: var(--serif); font-size: 15px; color: var(--text); }
+  .rel__label { font-size: 12.5px; color: var(--muted); }
+
+  .doc-list { display: flex; flex-direction: column; gap: 12px; }
+  .doc {
+    display: block;
+    text-decoration: none;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid rgba(224, 72, 60, 0.55);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .doc:hover { background: var(--panel-2); border-color: rgba(224, 72, 60, 0.5); }
+  .doc__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
+  .doc__no {
+    font-family: Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--blood-bright);
+    border: 1px solid rgba(224, 72, 60, 0.4);
+    border-radius: 999px;
+    padding: 0 8px;
+  }
+  .doc__title { margin: 0; font-size: 15.5px; color: var(--text); }
+  .doc__en { font-size: 12px; color: var(--dim); }
+  .doc__summary { font-size: 14px; color: var(--muted); margin: 8px 0 6px; }
+  .doc__from { font-size: 12px; color: var(--blood-bright); }
+</style>

@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { series, works } from '../lib/data.js';
+
+const outlastWorks = works
+  .filter((w) => series.works.includes(w.id))
+  .sort((a, b) => a.order - b.order);
+---
+
+<BaseLayout title="游戏科普百科 · 首页">
+  <p class="eyebrow">Game Lore Wiki</p>
+  <h1>以「游戏系列」为单位，读懂剧情与世界观</h1>
+  <p class="lead">
+    每个系列逐部作品展开：主线与支线剧情、人物图鉴、游戏内可收集档案，最后在系列层汇聚成一条完整的世界观时间线。
+    正文里的人名与专有名词均可交互——悬停即出词条卡片，点击跳转详情。
+  </p>
+
+  <h2>系列库</h2>
+  <div class="grid grid--2">
+    <a class="card" href="/series/outlast/">
+      <div class="card__index">SURVIVAL HORROR · 2013 起</div>
+      <h3 class="card__title">逃生</h3>
+      <div class="card__en">Outlast</div>
+      <p class="card__desc">{series.intro}</p>
+      <div class="meta-row">
+        <span class="tag">{series.developer}</span>
+        <span class="tag">{outlastWorks.length} 部作品</span>
+        <span class="tag">{series.entityCount} 个词条</span>
+      </div>
+      <div class="card__foot">进入系列 →</div>
+    </a>
+
+    <div class="card card--soon">
+      <div class="card__index">筹备中</div>
+      <h3 class="card__title">尸体派对</h3>
+      <div class="card__en">Corpse Party</div>
+      <p class="card__desc">
+        计划收录系列各代作品，并增加该系列专属的「死法收集图鉴」——每个误入天神小学的人，其不同的结局单独成条。
+      </p>
+      <div class="meta-row">
+        <span class="tag tag--blood">待开工建设</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>本站的阅读结构</h2>
+  <div class="panel prose">
+    <p><strong>系列 → 作品 → 模块</strong>。系列是外壳，作品是内容单元，模块是内容类型。</p>
+    <p>每个作品页固定包含：主线剧情、支线剧情、人物图鉴、收集资料、剧情连接。</p>
+    <p>
+      正文中出现的<strong>人名、实验 / 项目名称、组织名、地点名</strong>，以及与游戏内文档可对应的关键词，
+      都会被自动识别为可交互词条：悬停弹出简介卡片，点击进入词条页，从而把「剧情」「人物」「档案」三个板块串成一张网。
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .card--soon {
+    border-style: dashed;
+    opacity: 0.72;
+    cursor: default;
+  }
+  .card--soon:hover { transform: none; background: var(--panel); }
+</style>

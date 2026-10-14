@@ -1,0 +1,160 @@
+---
+import { linkify } from '../lib/linkify.js';
+import { getEntity } from '../lib/data.js';
+
+interface Props {
+  timeline: any;
+  index: any;
+}
+const { timeline, index } = Astro.props;
+
+function confClass(confidence: string) {
+  if (!confidence) return 'tag';
+  if (confidence.includes('已核实') && !confidence.includes('推测')) return 'tag tag--verified';
+  if (confidence.includes('推测')) return 'tag tag--inferred';
+  return 'tag';
+}
+function confLabel(confidence: string) {
+  if (!confidence) return '未明确';
+  if (confidence.includes('已核实') && confidence.includes('推测')) return '已核实 / 推测';
+  if (confidence.includes('已核实')) return '已核实';
+  if (confidence.includes('推测')) return '推测';
+  return '未明确';
+}
+---
+
+<div class="tl-legend">
+  <span class="tag tag--verified">已核实</span>
+  <span class="tl-legend__text">有官方资料直接支持</span>
+  <span class="tag tag--inferred">推测</span>
+  <span class="tl-legend__text">依游戏内顺序合理推断</span>
+  <span class="tag">未明确</span>
+  <span class="tl-legend__text">官方未给出具体时间</span>
+</div>
+
+<div class="tl">
+  <div class="tl-track">
+    {
+      timeline.groups.map((group: any) => (
+        <section class="tl-era">
+          <h4 class="tl-era__title">{group.era}</h4>
+          <div class="tl-events">
+            {group.events.map((ev: any) => (
+              <article class="tl-event" id={`event-${ev.id}`}>
+                <div class="tl-event__head">
+                  <span class="tl-event__time">{ev.time}</span>
+                  <span class={confClass(ev.confidence)}>{confLabel(ev.confidence)}</span>
+                </div>
+                <h5 class="tl-event__title">{ev.title}</h5>
+                <p class="tl-event__desc" set:html={linkify(ev.desc, index, new Set())} />
+                {ev.region && <div class="tl-event__region">区域：{ev.region}</div>}
+                {ev.characters && ev.characters.length > 0 && (
+                  <div class="tl-event__chars">
+                    {ev.characters.map((cid: string) => {
+                      const e = getEntity(cid);
+                      return e ? <a class="chip" href={`/entity/${e.id}/`}>{e.nameZh}</a> : null;
+                    })}
+                  </div>
+                )}
+                {ev.works && ev.works.length > 0 && (
+                  <div class="tl-event__works">
+                    {ev.works.map((wid: string) => (
+                      <a class="chip chip--work" href={`/work/${wid}/`}>{wid}</a>
+                    ))}
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+      ))
+    }
+  </div>
+</div>
+
+<p class="tl-hint">← 横向滚动查看完整世界线 →</p>
+
+<style>
+  .tl-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 12px;
+    color: var(--dim);
+  }
+  .tl-legend__text { margin-right: 10px; }
+
+  .tl {
+    overflow-x: auto;
+    padding-bottom: 14px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(17, 17, 22, 0.5), transparent);
+  }
+  .tl-track { display: flex; min-width: max-content; }
+
+  .tl-era {
+    width: 330px;
+    padding: 22px 20px 26px 26px;
+    border-right: 1px dashed var(--line);
+    position: relative;
+  }
+  .tl-era:last-child { border-right: none; }
+  .tl-era__title {
+    font-family: var(--serif);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--blood-bright);
+    margin: 0 0 16px;
+    text-transform: none;
+  }
+
+  .tl-events { position: relative; padding-left: 18px; }
+  .tl-events::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(224, 72, 60, 0.6), rgba(43, 43, 53, 0.2));
+  }
+
+  .tl-event { position: relative; margin-bottom: 20px; }
+  .tl-event:last-child { margin-bottom: 0; }
+  .tl-event::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 9px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--blood);
+    box-shadow: 0 0 0 3px rgba(179, 37, 31, 0.16);
+  }
+  .tl-event__head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .tl-event__time { font-size: 12px; color: var(--muted); letter-spacing: 0.03em; }
+  .tl-event__title { font-size: 15px; margin: 0 0 6px; color: var(--text); }
+  .tl-event__desc { font-size: 13px; color: var(--muted); margin: 0 0 8px; line-height: 1.75; }
+  .tl-event__region { font-size: 12px; color: var(--dim); margin-bottom: 6px; }
+  .tl-event__chars, .tl-event__works { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+
+  .chip {
+    display: inline-block;
+    font-size: 11px;
+    padding: 1px 8px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--muted);
+    background: var(--panel-2);
+    text-decoration: none;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .chip:hover { color: var(--blood-bright); border-color: rgba(224, 72, 60, 0.45); }
+  .chip--work { color: var(--dim); font-family: Georgia, serif; }
+
+  .tl-hint { font-size: 12px; color: var(--dim); margin: 10px 0 0; }
+</style>

@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WorkCard from '../../components/WorkCard.astro';
+import Timeline from '../../components/Timeline.astro';
+import { seriesList, works, timeline } from '../../lib/data.js';
+import { buildEntityIndex } from '../../lib/linkify.js';
+import { entities } from '../../lib/data.js';
+
+export function getStaticPaths() {
+  return seriesList.map((s) => ({ params: { id: s.id }, props: { item: s } }));
+}
+
+const { item } = Astro.props;
+const index = buildEntityIndex(entities);
+
+const seriesWorks = works
+  .filter((w) => item.works.includes(w.id))
+  .sort((a, b) => a.order - b.order);
+---
+
+<BaseLayout title={`${item.nameZh} · 系列`}>
+  <p class="eyebrow">系列 SERIES</p>
+  <h1>{item.nameZh} <span class="title-en">{item.nameEn}</span></h1>
+  <p class="lead">{item.intro}</p>
+  <div class="meta-row">
+    <span class="tag">{item.developer}</span>
+    <span class="tag">首作 {item.firstRelease}</span>
+    <span class="tag">{seriesWorks.length} 部作品</span>
+    <span class="tag">{item.entityCount} 个词条</span>
+  </div>
+
+  <h2>作品</h2>
+  <div class="grid grid--2">
+    {seriesWorks.map((w) => <WorkCard work={w} />)}
+  </div>
+
+  <h2>世界观时间线</h2>
+  <p class="lead">
+    什么时间发生了什么大事件，哪一部作品的哪个角色在经历什么——按时间顺序排列如下。
+    <span class="dim">（标绿色为已核实、黄色为推测、灰色为官方未明确。）</span>
+  </p>
+  <Timeline timeline={timeline} index={index} />
+</BaseLayout>
+
+<style>
+  .title-en {
+    font-size: 16px;
+    color: var(--dim);
+    font-family: var(--sans);
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    margin-left: 6px;
+  }
+  .dim { color: var(--dim); font-size: 13px; }
+</style>

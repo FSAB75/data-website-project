@@ -1,0 +1,18 @@
+---
+interface Props {
+  work: any;
+}
+const { work } = Astro.props;
+---
+
+<a class="card work-card" href={`/work/${work.id}/`}>
+  <div class="card__index">{work.type} · {work.year}</div>
+  <h3 class="card__title">{work.title}</h3>
+  <div class="card__en">{work.titleEn}</div>
+  <p class="card__desc">{work.synopsis}</p>
+  <div class="meta-row">
+    {work.platforms.map((p: string) => <span class="tag">{p}</span>)}
+    {!work.full && <span class="tag tag--blood">内容整理中</span>}
+  </div>
+  <div class="card__foot">查看作品 →</div>
+</a>
