@@ -290,6 +290,163 @@
           "characters": ["murkoff"]
         }
       ]
+    },
+    {
+      "era": "神殿之门事件（巨山事件之后 · 精确年份未明确）",
+      "hint": "《逃生2》的故事发生在巨山事件之后，官方未给出精确年份。以下前史事件按性质并入本组，主线事件按游戏内空间推进顺序排列。",
+      "events": [
+        {
+          "id": "knoth-cult-founded",
+          "time": "远早于主线（未明确）",
+          "confidence": "已核实（事件）/ 未明确（时间）",
+          "title": "克诺斯创立“新以西结之约”",
+          "desc": "原为鞋类销售人员的克诺斯因财政困难收听福音电台，逐渐自封为“先知”，把自己的思想写成教义文本，吸引大批厌恶现实世界的追随者迁往神殿之门定居。",
+          "works": ["outlast2"],
+          "characters": ["sullivan-knoth", "testament-of-the-new-ezekiel"]
+        },
+        {
+          "id": "microwave-station-online",
+          "time": "教派定居前后（未明确）",
+          "confidence": "推测（机制为已核实）",
+          "major": true,
+          "title": "穆克夫设立精神控制实验站",
+          "desc": "穆克夫公司在神殿之门一带秘密设立精神控制实验站，以山中的无线电微波塔持续发射干扰心智的信号——神殿之门只是穆克夫多地同类实验场之一。",
+          "works": ["outlast2"],
+          "characters": ["murkoff", "murkoff-microwave-station", "temple-gate"]
+        },
+        {
+          "id": "cult-atrocities",
+          "time": "主线之前（未明确）",
+          "confidence": "已核实（事件）/ 未明确（时间）",
+          "title": "教派弑童与性暴力",
+          "desc": "在信号作用下，克诺斯宣扬“所有婴儿都是敌基督”，教派系统性杀害村中儿童作为“献祭”，并向水井投放水银使孕妇滑胎。伊桑·李是暗中背弃信仰、保持清醒的代表。",
+          "works": ["outlast2"],
+          "characters": ["sullivan-knoth", "testament-of-the-new-ezekiel", "ethan-lee", "marta"]
+        },
+        {
+          "id": "heretics-split",
+          "time": "教派暴行期间（未明确）",
+          "confidence": "已核实（事件）/ 未明确（时间）",
+          "title": "瓦尔与异教徒分裂",
+          "desc": "克诺斯的首席执事瓦尔因收容所中多名孩子被当作血祭杀害而彻底决裂，挖出地下隧道作为据点，形成主张“让反基督降生以招来末日”的异教徒团体。",
+          "works": ["outlast2"],
+          "characters": ["val", "the-heretics", "sullivan-knoth"]
+        },
+        {
+          "id": "anna-lee-death",
+          "time": "主线前不久（未明确）",
+          "confidence": "已核实（事件）/ 未明确（时间）",
+          "major": true,
+          "title": "安娜·李（“无名女尸”）之死",
+          "desc": "伊桑之女安娜 15 岁时遭克诺斯迫害并怀孕；伊桑设法帮她逃出神殿之门，但她逃出后仍被杀害（官方漫画补充：被穆克夫人员勒毙）。她的尸体被警方发现、仅记作“无名女尸”。",
+          "works": ["outlast2"],
+          "characters": ["anna-lee", "ethan-lee", "sullivan-knoth", "murkoff"]
+        },
+        {
+          "id": "jessica-death",
+          "time": "布雷克童年（未明确）",
+          "confidence": "已核实（事件）/ 未明确（时间）",
+          "title": "杰西卡之死与布雷克的童年创伤",
+          "desc": "音乐老师兼神父劳特米尔奇以“问话”为由单独留下杰西卡·格雷，随后猥亵并将其殴打致死，再把现场伪装成“上吊自杀”，并操纵幼年布雷克保持沉默。",
+          "works": ["outlast2"],
+          "characters": ["jessica-gray", "father-loutermilch", "blake-langermann", "st-sybil-school"]
+        },
+        {
+          "id": "crash",
+          "time": "事件日",
+          "confidence": "已核实",
+          "major": true,
+          "title": "直升机被强光击落",
+          "desc": "布雷克与琳恩调查无名女尸案时飞越 Supai 一带，直升机被一道神秘的白光击落；布雷克醒来发现飞行员被剥皮吊起、琳恩失踪。那道白光正是山中实验站的信号。",
+          "region": "Supai 地区上空 / 坠机残骸",
+          "works": ["outlast2"],
+          "characters": ["blake-langermann", "lynn-langermann", "murkoff-microwave-station"]
+        },
+        {
+          "id": "temple-gate-search",
+          "time": "事件日",
+          "confidence": "已核实",
+          "major": true,
+          "title": "布雷克穿越神殿之门寻找琳恩",
+          "desc": "布雷克进入村落，在礼拜堂找到被囚禁的琳恩——克诺斯宣称她怀有“反基督”必须杀死。两人逃出后琳恩被异教徒掳走；被伊桑·李收留的布雷克得知“无名女尸”就是伊桑之女安娜，随后伊桑被玛尔塔杀害。",
+          "region": "神殿之门 / 礼拜堂 / 伊桑家",
+          "works": ["outlast2"],
+          "characters": ["blake-langermann", "lynn-langermann", "sullivan-knoth", "ethan-lee", "marta", "val", "anna-lee"]
+        },
+        {
+          "id": "scalled-ordeal",
+          "time": "事件日",
+          "confidence": "已核实",
+          "title": "芥藓之地：莱尔德与尼克的“弥赛亚”折磨",
+          "desc": "布雷克误入芥藓人领地，被首领莱尔德·拜伦与其随从尼克当作“弥赛亚”反复折磨；最终不满莱尔德残暴统治的族人将两人推落坠亡，布雷克脱身。",
+          "region": "沼泽与森林（芥藓之地）",
+          "works": ["outlast2"],
+          "characters": ["blake-langermann", "laird-byron", "nick-tremblay", "the-scalled"]
+        },
+        {
+          "id": "mine-ritual",
+          "time": "事件日",
+          "confidence": "已核实",
+          "major": true,
+          "title": "矿场仪式与教派混战",
+          "desc": "布雷克抵达矿场，发现琳恩在异教徒的仪式中明显挺着孕肚，并遭到瓦尔的暴力对待；随后克诺斯教派攻入矿场屠杀异教徒，两人趁乱脱身。",
+          "region": "矿场",
+          "works": ["outlast2"],
+          "characters": ["blake-langermann", "lynn-langermann", "val", "the-heretics", "sullivan-knoth"]
+        },
+        {
+          "id": "marta-death",
+          "time": "事件日黎明",
+          "confidence": "已核实",
+          "title": "玛尔塔被天降十字架贯穿而死",
+          "desc": "雷电风暴开始摧毁整座神殿之门；玛尔塔扑向布雷克与琳恩，被一道闪电击倒的教堂十字架贯穿腰部而死。",
+          "region": "神殿之门",
+          "works": ["outlast2"],
+          "characters": ["marta"]
+        },
+        {
+          "id": "lynn-dies",
+          "time": "事件日黎明",
+          "confidence": "已核实（呈现）/ 未明确（含义）",
+          "major": true,
+          "title": "琳恩分娩后死亡",
+          "desc": "琳恩在礼拜堂分娩后死去，临终遗言“那里什么都没有”；布雷克怀抱新生儿昏厥——新生儿没有投下影子，孩子是否真实存在是本作刻意留白的最大悬念。",
+          "region": "礼拜堂",
+          "works": ["outlast2"],
+          "characters": ["lynn-langermann", "blake-langermann"]
+        },
+        {
+          "id": "knoth-suicide",
+          "time": "事件日黎明",
+          "confidence": "已核实",
+          "title": "克诺斯割喉自尽",
+          "desc": "克诺斯意识到自己许诺的“天堂”是谎言、所信仰的神沉默不语，于是要求布雷克杀死那个孩子，随后割喉自尽。",
+          "region": "礼拜堂",
+          "works": ["outlast2"],
+          "characters": ["sullivan-knoth"]
+        },
+        {
+          "id": "mass-suicide",
+          "time": "事件日黎明",
+          "confidence": "已核实",
+          "major": true,
+          "title": "信众集体服毒自杀",
+          "desc": "布雷克走出礼拜堂，发现克诺斯的信众已经集体服毒自杀——末日并未降临，教派的信仰彻底崩塌。",
+          "region": "神殿之门",
+          "works": ["outlast2"],
+          "characters": ["testament-of-the-new-ezekiel"]
+        },
+        {
+          "id": "blake-final",
+          "time": "事件日之后",
+          "confidence": "已核实（呈现）/ 未明确（含义）",
+          "title": "布雷克陷入终局幻境",
+          "desc": "太阳越来越亮，布雷克产生被光吞噬的幻觉，最终回到 St. Sybil 学校追逐杰西卡的身影。他的生理生死与去向在游戏内未交代，官方刻意留白。",
+          "region": "幻觉 / St. Sybil 学校",
+          "works": ["outlast2"],
+          "characters": ["blake-langermann", "jessica-gray", "st-sybil-school"]
+        }
+      ]
     }
   ]
 }

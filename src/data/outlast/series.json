@@ -8,5 +8,5 @@
   "intro": "由 Red Barrels 开发的生存恐怖系列。故事围绕跨国企业穆克夫公司与它主导的非法人体实验展开：从巨山精神病院的瓦尔里德计划，到冷战时期更早的实验源头，再到事件之后的坦普尔山门。",
   "imagePrompt": "dark abandoned asylum corridor receding into pure blackness, blood smeared on tiled walls, one flickering emergency lamp, faint green night-vision glow at the edges of the frame, oppressive horror atmosphere, cinematic, no text, no people",
   "works": ["trials", "outlast1", "whistleblower", "outlast2"],
-  "entityCount": 18
+  "entityCount": 35
 }
