@@ -1,6 +1,5 @@
 ---
-import { linkify } from '../lib/linkify.js';
-import { getEntity } from '../lib/data.js';
+import TimelineEvent from './TimelineEvent.astro';
 
 interface Props {
   timeline: any;
@@ -8,19 +7,7 @@ interface Props {
 }
 const { timeline, index } = Astro.props;
 
-function confClass(confidence: string) {
-  if (!confidence) return 'tag';
-  if (confidence.includes('已核实') && !confidence.includes('推测')) return 'tag tag--verified';
-  if (confidence.includes('推测')) return 'tag tag--inferred';
-  return 'tag';
-}
-function confLabel(confidence: string) {
-  if (!confidence) return '未明确';
-  if (confidence.includes('已核实') && confidence.includes('推测')) return '已核实 / 推测';
-  if (confidence.includes('已核实')) return '已核实';
-  if (confidence.includes('推测')) return '推测';
-  return '未明确';
-}
+const groups = timeline.groups || [];
 ---
 
 <div class="tl-legend">
@@ -30,117 +17,268 @@ function confLabel(confidence: string) {
   <span class="tl-legend__text">依游戏内顺序合理推断</span>
   <span class="tag">未明确</span>
   <span class="tl-legend__text">官方未给出具体时间</span>
+  <span class="tag tag--blood">大事件</span>
+  <span class="tl-legend__text">世界线关键节点</span>
 </div>
+
+<nav class="tl-index" aria-label="时间线章节导航">
+  {groups.map((g: any, i: number) => <a href={`#era-${i}`}>{g.era}</a>)}
+</nav>
 
 <div class="tl">
-  <div class="tl-track">
-    {
-      timeline.groups.map((group: any) => (
-        <section class="tl-era">
-          <h4 class="tl-era__title">{group.era}</h4>
-          <div class="tl-events">
-            {group.events.map((ev: any) => (
-              <article class="tl-event" id={`event-${ev.id}`}>
-                <div class="tl-event__head">
-                  <span class="tl-event__time">{ev.time}</span>
-                  <span class={confClass(ev.confidence)}>{confLabel(ev.confidence)}</span>
-                </div>
-                <h5 class="tl-event__title">{ev.title}</h5>
-                <p class="tl-event__desc" set:html={linkify(ev.desc, index, new Set())} />
-                {ev.region && <div class="tl-event__region">区域：{ev.region}</div>}
-                {ev.characters && ev.characters.length > 0 && (
-                  <div class="tl-event__chars">
-                    {ev.characters.map((cid: string) => {
-                      const e = getEntity(cid);
-                      return e ? <a class="chip" href={`/entity/${e.id}/`}>{e.nameZh}</a> : null;
-                    })}
+  {
+    groups.map((group: any, gi: number) => (
+      <section class="tl-group" id={`era-${gi}`}>
+        <header class="tl-group__head">
+          <h3 class="tl-group__title">{group.era}</h3>
+          {group.hint && <p class="tl-group__hint">{group.hint}</p>}
+        </header>
+
+        {group.dual ? (
+          <>
+            <div class="tl-dual">
+              {group.tracks.map((track: any) => (
+                <div class="tl-col" data-track={track.key}>
+                  <div class="tl-col__head">
+                    <span class="tl-col__name">{track.name}</span>
                   </div>
-                )}
-                {ev.works && ev.works.length > 0 && (
-                  <div class="tl-event__works">
-                    {ev.works.map((wid: string) => (
-                      <a class="chip chip--work" href={`/work/${wid}/`}>{wid}</a>
+                  <div class="tl-col__rail">
+                    {track.events.map((ev: any) => (
+                      <TimelineEvent ev={ev} index={index} variant="col" />
                     ))}
                   </div>
-                )}
-              </article>
+                </div>
+              ))}
+            </div>
+            {group.crossings && group.crossings.length > 0 && (
+              <div class="tl-crossings">
+                {group.crossings.map((ev: any) => (
+                  <TimelineEvent ev={ev} index={index} variant="cross" crossing={true} />
+                ))}
+              </div>
+            )}
+          </>
+        ) : (
+          <div class="tl-rail">
+            <div class="tl-rail__line" aria-hidden="true" />
+            {group.events.map((ev: any, ei: number) => (
+              <div class={`tl-item ${ei % 2 === 0 ? 'tl-item--left' : 'tl-item--right'}`}>
+                <span class={`tl-node${ev.major ? ' tl-node--major' : ''}`} aria-hidden="true" />
+                <TimelineEvent ev={ev} index={index} variant="rail" />
+              </div>
             ))}
           </div>
-        </section>
-      ))
-    }
-  </div>
+        )}
+      </section>
+    ))
+  }
 </div>
 
-<p class="tl-hint">← 横向滚动查看完整世界线 →</p>
-
-<style>
+<style is:global>
   .tl-legend {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     font-size: 12px;
     color: var(--dim);
   }
-  .tl-legend__text { margin-right: 10px; }
+  .tl-legend__text { margin-right: 12px; }
 
-  .tl {
-    overflow-x: auto;
-    padding-bottom: 14px;
-    border-top: 1px solid var(--line);
+  /* 章节导航 */
+  .tl-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+    padding-bottom: 18px;
     border-bottom: 1px solid var(--line);
-    background: linear-gradient(180deg, rgba(17, 17, 22, 0.5), transparent);
   }
-  .tl-track { display: flex; min-width: max-content; }
+  .tl-index a {
+    font-size: 12.5px;
+    text-decoration: none;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 3px 12px;
+    background: var(--panel);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tl-index a:hover { color: var(--blood-bright); border-color: rgba(224, 72, 60, 0.45); }
 
-  .tl-era {
-    width: 330px;
-    padding: 22px 20px 26px 26px;
-    border-right: 1px dashed var(--line);
-    position: relative;
-  }
-  .tl-era:last-child { border-right: none; }
-  .tl-era__title {
+  /* 时代分组 */
+  .tl-group { margin-bottom: 44px; scroll-margin-top: 84px; }
+  .tl-group:last-child { margin-bottom: 0; }
+  .tl-group__head { margin-bottom: 20px; }
+  .tl-group__title {
     font-family: var(--serif);
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    color: var(--blood-bright);
-    margin: 0 0 16px;
-    text-transform: none;
+    font-size: 18px;
+    margin: 0;
+    padding-left: 12px;
+    border-left: 3px solid var(--blood);
+    letter-spacing: 0.03em;
+  }
+  .tl-group__hint { font-size: 13px; color: var(--dim); margin: 8px 0 0 15px; }
+
+  /* ---------- 单轨：中轴交替 ---------- */
+  .tl-rail { position: relative; }
+  .tl-rail__line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    margin-left: -0.5px;
+    background: linear-gradient(180deg, rgba(224, 72, 60, 0.55), rgba(43, 43, 53, 0.15));
+  }
+  .tl-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 46px 1fr;
+    align-items: start;
+    margin-bottom: 18px;
+  }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-item--left .tl-card { grid-column: 1; }
+  .tl-item--right .tl-card { grid-column: 3; }
+
+  .tl-node {
+    grid-column: 2;
+    justify-self: center;
+    width: 11px;
+    height: 11px;
+    margin-top: 22px;
+    border-radius: 50%;
+    background: var(--panel-3);
+    border: 2px solid var(--blood);
+    z-index: 1;
+  }
+  .tl-node--major {
+    width: 17px;
+    height: 17px;
+    margin-top: 19px;
+    background: var(--blood);
+    border-color: var(--blood-bright);
+    box-shadow: 0 0 0 5px rgba(179, 37, 31, 0.16), 0 0 16px rgba(224, 72, 60, 0.5);
   }
 
-  .tl-events { position: relative; padding-left: 18px; }
-  .tl-events::before {
-    content: "";
+  /* ---------- 双轨：并行 ---------- */
+  .tl-dual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 26px;
+  }
+  .tl-col { position: relative; }
+  .tl-col__head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .tl-col__name {
+    font-family: var(--serif);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--blood-bright);
+    border-bottom: 1px solid rgba(224, 72, 60, 0.4);
+    padding-bottom: 3px;
+  }
+  .tl-col[data-track='waylon'] .tl-col__name { color: #c9a227; border-bottom-color: rgba(201, 162, 39, 0.4); }
+  .tl-col[data-track='waylon'] .tl-card { border-left-color: rgba(201, 162, 39, 0.5); }
+  .tl-col[data-track='waylon'] .tl-card--major { border-left-color: rgba(201, 162, 39, 0.85); }
+
+  .tl-col__rail {
+    position: relative;
+    padding-left: 20px;
+  }
+  .tl-col__rail::before {
+    content: '';
     position: absolute;
     left: 4px;
-    top: 6px;
-    bottom: 6px;
+    top: 4px;
+    bottom: 4px;
     width: 1px;
-    background: linear-gradient(180deg, rgba(224, 72, 60, 0.6), rgba(43, 43, 53, 0.2));
+    background: linear-gradient(180deg, rgba(224, 72, 60, 0.45), rgba(43, 43, 53, 0.15));
+  }
+  .tl-col[data-track='waylon'] .tl-col__rail::before {
+    background: linear-gradient(180deg, rgba(201, 162, 39, 0.45), rgba(43, 43, 53, 0.15));
   }
 
-  .tl-event { position: relative; margin-bottom: 20px; }
-  .tl-event:last-child { margin-bottom: 0; }
-  .tl-event::before {
-    content: "";
+  .tl-col__rail .tl-card { margin-bottom: 14px; }
+  .tl-col__rail .tl-card:last-child { margin-bottom: 0; }
+  .tl-col__rail .tl-card::after {
+    content: '';
     position: absolute;
-    left: -18px;
-    top: 9px;
+    left: -20px;
+    top: 20px;
     width: 9px;
     height: 9px;
     border-radius: 50%;
-    background: var(--blood);
-    box-shadow: 0 0 0 3px rgba(179, 37, 31, 0.16);
+    background: var(--panel-3);
+    border: 2px solid var(--blood);
   }
-  .tl-event__head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 4px; }
-  .tl-event__time { font-size: 12px; color: var(--muted); letter-spacing: 0.03em; }
-  .tl-event__title { font-size: 15px; margin: 0 0 6px; color: var(--text); }
-  .tl-event__desc { font-size: 13px; color: var(--muted); margin: 0 0 8px; line-height: 1.75; }
-  .tl-event__region { font-size: 12px; color: var(--dim); margin-bottom: 6px; }
-  .tl-event__chars, .tl-event__works { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .tl-col[data-track='waylon'] .tl-card::after { border-color: #c9a227; }
+  .tl-col__rail .tl-card--major::after {
+    width: 13px;
+    height: 13px;
+    left: -22px;
+    top: 18px;
+    background: var(--blood);
+    border-color: var(--blood-bright);
+    box-shadow: 0 0 0 4px rgba(179, 37, 31, 0.16);
+  }
+  .tl-col[data-track='waylon'] .tl-card--major::after {
+    background: #c9a227;
+    border-color: #e3c453;
+    box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.16);
+  }
+
+  /* ---------- 交汇带 ---------- */
+  .tl-crossings {
+    margin-top: 26px;
+    padding: 18px 20px;
+    background: linear-gradient(90deg, rgba(179, 37, 31, 0.12), rgba(179, 37, 31, 0.02));
+    border: 1px dashed rgba(224, 72, 60, 0.5);
+    border-radius: var(--radius);
+  }
+  .tl-crossings .tl-card { margin: 0; }
+
+  /* ---------- 事件卡片 ---------- */
+  .tl-card {
+    position: relative;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 2px solid rgba(224, 72, 60, 0.35);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .tl-card:hover { background: var(--panel-2); border-left-color: var(--blood-bright); }
+  .tl-card--major {
+    border-left-color: var(--blood);
+    background: linear-gradient(180deg, rgba(179, 37, 31, 0.09), var(--panel) 60%);
+  }
+  .tl-card--crossing {
+    border: 1px solid rgba(224, 72, 60, 0.55);
+    border-left: 3px solid var(--blood-bright);
+    background: linear-gradient(180deg, rgba(179, 37, 31, 0.16), var(--panel) 70%);
+  }
+
+  .tl-card__head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .tl-card__badge {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: #fff;
+    background: var(--blood);
+    border-radius: 2px;
+    padding: 0 7px;
+  }
+  .tl-card__time { font-size: 12px; color: var(--muted); letter-spacing: 0.03em; }
+  .tl-card__title { font-size: 15.5px; margin: 0 0 7px; color: var(--text); font-family: var(--serif); }
+  .tl-card__desc { font-size: 13.5px; color: var(--muted); margin: 0 0 8px; line-height: 1.75; }
+  .tl-card__region { font-size: 12px; color: var(--dim); margin-bottom: 6px; }
+  .tl-card__chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 
   .chip {
     display: inline-block;
@@ -154,7 +292,16 @@ function confLabel(confidence: string) {
     transition: color 0.15s, border-color 0.15s;
   }
   .chip:hover { color: var(--blood-bright); border-color: rgba(224, 72, 60, 0.45); }
-  .chip--work { color: var(--dim); font-family: Georgia, serif; }
+  .chip--work { color: var(--dim); }
 
-  .tl-hint { font-size: 12px; color: var(--dim); margin: 10px 0 0; }
+  /* ---------- 窄屏：折叠为中轴左侧单列 ---------- */
+  @media (max-width: 760px) {
+    .tl-rail__line { left: 15px; margin-left: 0; }
+    .tl-item { grid-template-columns: 30px 1fr; }
+    .tl-item--left .tl-card, .tl-item--right .tl-card { grid-column: 2; }
+    .tl-node { grid-column: 1; margin-top: 22px; }
+    .tl-node--major { margin-top: 19px; }
+
+    .tl-dual { grid-template-columns: 1fr; gap: 30px; }
+  }
 </style>

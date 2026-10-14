@@ -1,6 +1,6 @@
 {
   "seriesId": "outlast",
-  "note": "世界观时间线：按时间顺序排列的大事件。confidence 三档：已核实 / 推测 / 未明确。",
+  "note": "世界观时间线：按时间顺序排列的大事件。confidence 三档：已核实 / 推测 / 未明确；major 标记关键大事件。",
   "groups": [
     {
       "era": "病院史",
@@ -27,6 +27,7 @@
           "id": "asylum-reopened",
           "time": "2009 年",
           "confidence": "已核实",
+          "major": true,
           "title": "穆克夫以慈善名义重开病院",
           "desc": "穆克夫公司以慈善机构与人道主义项目的表面名义重新开放巨山精神病院，实际将其变为秘密人体实验场所。",
           "works": [],
@@ -41,6 +42,7 @@
           "id": "walrider-project-start",
           "time": "约 2009–2013 年",
           "confidence": "已核实（年份）/ 未明确（具体月份）",
+          "major": true,
           "title": "瓦尔里德计划启动",
           "desc": "韦尼克博士主导的瓦尔里德计划启动，目标是通过纳米机器虫群与宿主意识结合，制造具有超强战斗力的“超级士兵”。",
           "works": [],
@@ -53,12 +55,13 @@
           "title": "变形引擎疗法与宿主筛选",
           "desc": "穆克夫对大量患者实施变形引擎疗法。大部分受试者精神崩溃或身体变异，仅有极少数人具备成为宿主的条件，病院秩序被暴力与疯狂逐渐侵蚀。",
           "works": [],
-          "characters": ["morphogenic-engine", "chris-walker"]
+          "characters": ["morphogenic-engine", "chris-walker", "richard-trager"]
         },
         {
           "id": "billy-hope-success",
           "time": "未明确",
           "confidence": "未明确",
+          "major": true,
           "title": "比利·霍普成为唯一成功宿主",
           "desc": "比利·霍普成功与纳米机器虫群融合，成为瓦尔里德的物理与精神核心，长期躺在生命维持系统中。",
           "works": [],
@@ -82,85 +85,140 @@
           "id": "leak-day",
           "time": "2013 年 9 月 17 日",
           "confidence": "已核实（日期）/ 未明确（时刻）",
+          "major": true,
           "title": "韦伦·帕克泄露内部证据",
           "desc": "韦伦·帕克将穆克夫内部的非法实验证据泄露给外界，收件人包括独立记者迈尔斯·阿普舍。泄密后他被穆克夫保安抓获关押，成为《告密者》DLC 的开端。",
           "works": ["whistleblower"],
-          "characters": ["waylon-park", "miles-upshur"]
+          "characters": ["waylon-park", "miles-upshur", "murkoff"]
         }
       ]
     },
     {
       "era": "2013-09-18 事件日",
-      "events": [
+      "dual": true,
+      "hint": "正传《逃生1》与 DLC《告密者》发生在同一夜晚，互为平行视角。左侧为正传迈尔斯线，右侧为 DLC 韦伦线。",
+      "tracks": [
         {
-          "id": "miles-arrives",
-          "time": "事件日夜晚",
-          "confidence": "未明确",
-          "title": "迈尔斯抵达病院，暴乱已爆发",
-          "desc": "迈尔斯驾车抵达巨山精神病院外围，冒雨进入病院，目击暴乱现场后遭克里斯·沃克袭击昏迷。正传《逃生1》就此展开。",
-          "works": ["outlast1"],
-          "characters": ["miles-upshur", "chris-walker"],
-          "region": "病院外围 / 行政楼"
+          "key": "miles",
+          "name": "正传 · 迈尔斯线",
+          "work": "outlast1",
+          "events": [
+            {
+              "id": "miles-arrives",
+              "time": "事件日夜晚",
+              "confidence": "未明确",
+              "major": true,
+              "title": "迈尔斯抵达病院，暴乱已爆发",
+              "desc": "迈尔斯驾车抵达巨山精神病院外围，冒雨进入病院，目击暴乱现场后遭克里斯·沃克袭击昏迷。",
+              "region": "病院外围 / 行政楼",
+              "characters": ["miles-upshur", "chris-walker"]
+            },
+            {
+              "id": "trager-killed",
+              "time": "事件日夜晚",
+              "confidence": "未明确",
+              "title": "特雷格切掉迈尔斯手指后死于电梯井",
+              "desc": "理查德·特雷格在男病房抓住迈尔斯并切掉其两根手指，随后在电梯井区域被升降的电梯夹死。",
+              "region": "男病房",
+              "characters": ["richard-trager", "miles-upshur"]
+            },
+            {
+              "id": "martin-sacrifice",
+              "time": "2013 年 9 月 18 日晚",
+              "confidence": "已核实（日期）",
+              "title": "马丁神父被钉十字架焚身殉道",
+              "desc": "迈尔斯在女病房目睹马丁神父被狂热患者钉上十字架并纵火焚烧。马丁至死坚信自己的牺牲是“神的安排”。",
+              "region": "女病房",
+              "characters": ["father-martin", "miles-upshur"]
+            },
+            {
+              "id": "billy-dies",
+              "time": "事件日夜晚",
+              "confidence": "未明确",
+              "major": true,
+              "title": "比利·霍普维生系统被关闭，瓦尔里德易主",
+              "desc": "迈尔斯在地下实验室见到韦尼克博士，得知真相后关闭比利·霍普的生命维持系统。失去宿主的瓦尔里德附身于重伤的迈尔斯。",
+              "region": "地下实验室",
+              "characters": ["miles-upshur", "rudolph-wernicke", "billy-hope", "the-walrider"]
+            },
+            {
+              "id": "miles-leaves",
+              "time": "事件日夜晚",
+              "confidence": "未明确",
+              "major": true,
+              "title": "瓦尔里德以迈尔斯形态离开病院",
+              "desc": "穆克夫特种部队赶到地下实验室试图回收瓦尔里德，却被纳米虫群横扫屠杀。瓦尔里德以迈尔斯的形态离开巨山精神病院。",
+              "region": "地下实验室 / 出口",
+              "characters": ["the-walrider", "miles-upshur"]
+            }
+          ]
         },
         {
-          "id": "waylon-escapes",
-          "time": "事件日夜晚",
-          "confidence": "未明确",
-          "title": "韦伦趁乱挣脱束缚开始逃亡",
-          "desc": "病院暴乱全面爆发，韦伦趁乱挣脱束缚，沿途遭遇食人者弗兰克·马内拉、双胞胎与“新郎”埃迪·格鲁斯金。",
-          "works": ["whistleblower"],
-          "characters": ["waylon-park", "eddie-gluskin"],
-          "region": "厨房 / 病院走廊"
-        },
-        {
-          "id": "trager-killed",
-          "time": "事件日夜晚",
-          "confidence": "未明确",
-          "title": "特雷格切掉迈尔斯手指后死于电梯井",
-          "desc": "理查德·特雷格在男病房抓住迈尔斯并切掉其两根手指，随后在电梯井区域被升降的电梯夹死。",
-          "works": ["outlast1"],
-          "characters": ["richard-trager", "miles-upshur"],
-          "region": "男病房"
-        },
-        {
-          "id": "martin-sacrifice",
-          "time": "2013 年 9 月 18 日晚",
-          "confidence": "已核实（日期）",
-          "title": "马丁神父被钉十字架焚身殉道",
-          "desc": "迈尔斯在女病房目睹马丁神父被狂热患者钉上十字架并纵火焚烧。马丁至死坚信自己的牺牲是“神的安排”。",
-          "works": ["outlast1"],
-          "characters": ["father-martin", "miles-upshur"],
-          "region": "女病房"
-        },
-        {
-          "id": "billy-dies",
-          "time": "事件日夜晚",
-          "confidence": "未明确",
-          "title": "比利·霍普维生系统被关闭，瓦尔里德易主",
-          "desc": "迈尔斯在地下实验室见到韦尼克博士，得知真相后关闭比利·霍普的生命维持系统。失去宿主的瓦尔里德附身于重伤的迈尔斯，迈尔斯成为新宿主。",
-          "works": ["outlast1"],
-          "characters": ["miles-upshur", "rudolph-wernicke", "billy-hope", "the-walrider"],
-          "region": "地下实验室"
-        },
+          "key": "waylon",
+          "name": "DLC · 韦伦线",
+          "work": "whistleblower",
+          "events": [
+            {
+              "id": "waylon-riots",
+              "time": "事件日夜晚",
+              "confidence": "未明确",
+              "major": true,
+              "title": "韦伦趁乱挣脱束缚开始逃亡",
+              "desc": "病院暴乱全面爆发，韦伦趁乱从关押区域挣脱束缚，开始向出口方向逃亡。",
+              "region": "关押区域",
+              "characters": ["waylon-park"]
+            },
+            {
+              "id": "waylon-manera",
+              "time": "事件日夜晚",
+              "confidence": "未明确",
+              "title": "在厨房区域遭食人者追杀",
+              "desc": "韦伦在厨房与餐饮区域遭遇体格壮硕、手持刀具的食人者弗兰克·马内拉，被迫躲避其追杀。",
+              "region": "厨房 / 餐饮区",
+              "characters": ["waylon-park"]
+            },
+            {
+              "id": "waylon-gluskin",
+              "time": "事件日夜晚",
+              "confidence": "未明确",
+              "major": true,
+              "title": "被“新郎”抓住，险遭“成婚”",
+              "desc": "韦伦被绰号“新郎”的埃迪·格鲁斯金抓住，险遭阉割与“成婚”仪式，最终设法逃脱。",
+              "region": "男病房 / 格鲁斯金活动区",
+              "characters": ["waylon-park", "eddie-gluskin"]
+            },
+            {
+              "id": "waylon-blaire",
+              "time": "事件日夜晚",
+              "confidence": "未明确",
+              "title": "被布莱尔追捕",
+              "desc": "穆克夫高管杰里米·布莱尔在行政楼区域亲自追捕韦伦·帕克，企图灭口。",
+              "region": "行政楼",
+              "characters": ["waylon-park", "jeremy-blaire"]
+            },
+            {
+              "id": "waylon-out",
+              "time": "事件日夜晚",
+              "confidence": "未明确",
+              "major": true,
+              "title": "韦伦成功逃出巨山精神病院",
+              "desc": "韦伦最终逃出病院，并将大量证据公之于众。",
+              "region": "病院出口",
+              "characters": ["waylon-park"]
+            }
+          ]
+        }
+      ],
+      "crossings": [
         {
           "id": "blaire-dies",
           "time": "事件日夜晚",
           "confidence": "未明确",
-          "title": "瓦尔里德击杀穆克夫高管布莱尔，救下韦伦",
-          "desc": "杰里米·布莱尔在行政楼区域追捕韦伦·帕克，最终被迈尔斯形态的瓦尔里德杀死，韦伦因此获救。这是正传与 DLC 的关键交汇点。",
+          "major": true,
+          "title": "交汇点：瓦尔里德击杀布莱尔，救下韦伦",
+          "desc": "正传与 DLC 在此闭合——布莱尔被迈尔斯形态的瓦尔里德杀死，韦伦因此获救。这是两部作品的关键交汇点。",
           "works": ["outlast1", "whistleblower"],
-          "characters": ["jeremy-blaire", "waylon-park", "the-walrider"],
-          "region": "行政楼"
-        },
-        {
-          "id": "miles-leaves",
-          "time": "事件日夜晚",
-          "confidence": "未明确",
-          "title": "瓦尔里德以迈尔斯形态离开病院",
-          "desc": "穆克夫特种部队赶到地下实验室试图回收瓦尔里德，却被纳米虫群横扫屠杀。瓦尔里德以迈尔斯的形态离开巨山精神病院，走向外界。",
-          "works": ["outlast1"],
-          "characters": ["the-walrider", "miles-upshur"],
-          "region": "地下实验室 / 出口"
+          "characters": ["jeremy-blaire", "waylon-park", "the-walrider"]
         }
       ]
     },
@@ -189,6 +247,7 @@
           "id": "outlast2-temple-gate",
           "time": "巨山事件之后",
           "confidence": "未明确",
+          "major": true,
           "title": "坦普尔山门事件",
           "desc": "《逃生2》的故事发生地，位于亚利桑那州坦普尔山门，与巨山事件同属穆克夫公司更大阴谋的一部分。",
           "works": ["outlast2"],

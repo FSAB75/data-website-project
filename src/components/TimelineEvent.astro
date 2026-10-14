@@ -1,0 +1,49 @@
+---
+import { linkify } from '../lib/linkify.js';
+import { getEntity, getWork, confidenceClass, confidenceLabel } from '../lib/data.js';
+
+interface Props {
+  ev: any;
+  index: any;
+  variant?: string;
+  crossing?: boolean;
+}
+const { ev, index, variant = 'rail', crossing = false } = Astro.props;
+
+const chars = (ev.characters || []).map((id: string) => getEntity(id)).filter(Boolean);
+const worksList = (ev.works || []).map((id: string) => getWork(id)).filter(Boolean);
+---
+
+<article class={`tl-card tl-card--${variant}${crossing ? ' tl-card--crossing' : ''}${ev.major ? ' tl-card--major' : ''}`}>
+  <header class="tl-card__head">
+    {crossing && <span class="tl-card__badge">交汇</span>}
+    <span class="tl-card__time">{ev.time}</span>
+    <span class={confidenceClass(ev.confidence)}>{confidenceLabel(ev.confidence)}</span>
+    {ev.major && !crossing && <span class="tag tag--blood">大事件</span>}
+  </header>
+
+  <h4 class="tl-card__title">{ev.title}</h4>
+  <p class="tl-card__desc" set:html={linkify(ev.desc, index, new Set())} />
+
+  {ev.region && <div class="tl-card__region">区域：{ev.region}</div>}
+
+  {
+    chars.length > 0 && (
+      <div class="tl-card__chips">
+        {chars.map((e: any) => (
+          <a class="chip" href={`/entity/${e.id}/`}>{e.nameZh}</a>
+        ))}
+      </div>
+    )
+  }
+
+  {
+    worksList.length > 0 && (
+      <div class="tl-card__chips">
+        {worksList.map((w: any) => (
+          <a class="chip chip--work" href={`/work/${w.id}/`}>《{w.title}》</a>
+        ))}
+      </div>
+    )
+  }
+</article>

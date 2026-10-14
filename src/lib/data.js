@@ -23,6 +23,27 @@ export const confidenceLabels = {
   '推测': 'inferred',
 };
 
+/** 时间线可信度 → CSS 类名 */
+export function confidenceClass(confidence) {
+  if (!confidence) return 'tag';
+  const verified = confidence.includes('已核实');
+  const inferred = confidence.includes('推测');
+  if (verified && !inferred) return 'tag tag--verified';
+  if (inferred && !verified) return 'tag tag--inferred';
+  return 'tag';
+}
+
+/** 时间线可信度 → 展示文案 */
+export function confidenceLabel(confidence) {
+  if (!confidence) return '未明确';
+  const verified = confidence.includes('已核实');
+  const inferred = confidence.includes('推测');
+  if (verified && inferred) return '已核实 / 推测';
+  if (verified) return '已核实';
+  if (inferred) return '推测';
+  return '未明确';
+}
+
 /** 按 id 取作品 */
 export function getWork(id) {
   return works.find((w) => w.id === id) || null;

@@ -16,6 +16,10 @@ const index = buildEntityIndex(entities);
 const seriesWorks = works
   .filter((w) => item.works.includes(w.id))
   .sort((a, b) => a.order - b.order);
+
+const hero = item.imagePrompt
+  ? `https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=${encodeURIComponent(item.imagePrompt)}&image_size=landscape_16_9`
+  : null;
 ---
 
 <BaseLayout title={`${item.nameZh} · 系列`}>
@@ -28,6 +32,13 @@ const seriesWorks = works
     <span class="tag">{seriesWorks.length} 部作品</span>
     <span class="tag">{item.entityCount} 个词条</span>
   </div>
+
+  {hero && (
+    <div class="series-hero">
+      <img src={hero} alt={`${item.nameZh}系列氛围插画`} />
+      <span class="series-hero__caption">{item.tagline}</span>
+    </div>
+  )}
 
   <h2>作品</h2>
   <div class="grid grid--2">
@@ -52,4 +63,39 @@ const seriesWorks = works
     margin-left: 6px;
   }
   .dim { color: var(--dim); font-size: 13px; }
+
+  .series-hero {
+    position: relative;
+    margin: 26px 0 8px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 21 / 8;
+    background: var(--panel-3);
+  }
+  .series-hero img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.85) contrast(1.05);
+  }
+  .series-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8, 8, 11, 0.15) 30%, rgba(8, 8, 11, 0.95) 100%);
+    pointer-events: none;
+  }
+  .series-hero__caption {
+    position: absolute;
+    left: 22px;
+    bottom: 18px;
+    z-index: 1;
+    font-family: var(--serif);
+    font-size: 19px;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+  }
 </style>

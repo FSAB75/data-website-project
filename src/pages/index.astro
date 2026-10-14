@@ -5,6 +5,10 @@ import { series, works } from '../lib/data.js';
 const outlastWorks = works
   .filter((w) => series.works.includes(w.id))
   .sort((a, b) => a.order - b.order);
+
+const outlastCover = series.imagePrompt
+  ? `https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=${encodeURIComponent(series.imagePrompt)}&image_size=landscape_16_9`
+  : null;
 ---
 
 <BaseLayout title="游戏科普百科 · 首页">
@@ -17,15 +21,21 @@ const outlastWorks = works
 
   <h2>系列库</h2>
   <div class="grid grid--2">
-    <a class="card" href="/series/outlast/">
-      <div class="card__index">SURVIVAL HORROR · 2013 起</div>
+    <a class="card series-card" href="/series/outlast/">
+      {outlastCover && (
+        <div class="series-card__cover">
+          <img src={outlastCover} alt="逃生系列氛围插画" loading="lazy" />
+          <span class="series-card__cover-tag">SURVIVAL HORROR</span>
+        </div>
+      )}
+      <div class="card__index">2013 起 · {series.developer}</div>
       <h3 class="card__title">逃生</h3>
       <div class="card__en">Outlast</div>
       <p class="card__desc">{series.intro}</p>
       <div class="meta-row">
-        <span class="tag">{series.developer}</span>
         <span class="tag">{outlastWorks.length} 部作品</span>
         <span class="tag">{series.entityCount} 个词条</span>
+        <span class="tag">世界观时间线</span>
       </div>
       <div class="card__foot">进入系列 →</div>
     </a>
@@ -61,4 +71,41 @@ const outlastWorks = works
     cursor: default;
   }
   .card--soon:hover { transform: none; background: var(--panel); }
+
+  .series-card { padding-top: 0; overflow: hidden; }
+  .series-card__cover {
+    position: relative;
+    margin: 0 -20px 16px;
+    aspect-ratio: 16 / 9;
+    background: var(--panel-3);
+    overflow: hidden;
+  }
+  .series-card__cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.85) contrast(1.05);
+    transition: transform 0.4s ease, filter 0.3s ease;
+  }
+  .series-card:hover .series-card__cover img { transform: scale(1.04); filter: saturate(1) contrast(1.1); }
+  .series-card__cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8, 8, 11, 0) 35%, rgba(8, 8, 11, 0.9) 100%);
+    pointer-events: none;
+  }
+  .series-card__cover-tag {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: #fff;
+    background: rgba(179, 37, 31, 0.85);
+    border-radius: 2px;
+    padding: 1px 8px;
+  }
 </style>
