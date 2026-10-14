@@ -161,50 +161,77 @@
             {
               "id": "waylon-riots",
               "time": "事件日夜晚",
-              "confidence": "未明确",
+              "confidence": "已核实",
               "major": true,
               "title": "韦伦趁乱挣脱束缚开始逃亡",
-              "desc": "病院暴乱全面爆发，韦伦趁乱从关押区域挣脱束缚，开始向出口方向逃亡。",
-              "region": "关押区域",
+              "desc": "病院暴乱全面爆发，长期受实验摧残的变种人集体失控，杀死大量守卫与科研人员。韦伦趁乱从牢房挣脱束缚，夺走被杀害守卫身上的摄像机，开始向出口方向逃亡。",
+              "region": "拘留区 / 关押区域",
               "characters": ["waylon-park"]
             },
             {
               "id": "waylon-manera",
               "time": "事件日夜晚",
+              "confidence": "已核实",
+              "title": "医院区遭食人者弗兰克追杀",
+              "desc": "韦伦在医院区与厨房区域遭遇前病院厨师、绰号“食人者”的弗兰克·马内拉，被迫利用病床、隔间与通风管道躲避追杀。",
+              "region": "医院区 / 厨房",
+              "characters": ["waylon-park", "frank-manera"]
+            },
+            {
+              "id": "waylon-twins",
+              "time": "事件日夜晚",
               "confidence": "未明确",
-              "title": "在厨房区域遭食人者追杀",
-              "desc": "韦伦在厨房与餐饮区域遭遇体格壮硕、手持刀具的食人者弗兰克·马内拉，被迫躲避其追杀。",
-              "region": "厨房 / 餐饮区",
-              "characters": ["waylon-park"]
+              "title": "医院区遭遇双胞胎协同追杀",
+              "desc": "韦伦在医院区多次遭遇结伴行动的双胞胎变种人，与正传中同款的敌人形象一致，进一步强化了该区域的压迫氛围。",
+              "region": "医院区",
+              "characters": ["waylon-park", "the-twins"]
+            },
+            {
+              "id": "waylon-martin-photo",
+              "time": "事件日夜晚",
+              "confidence": "已核实",
+              "title": "监狱区拍摄马丁神父（与正传首次交汇）",
+              "desc": "韦伦穿过监狱区，拍摄到被囚禁的宗教狂信者马丁·阿奇姆鲍神父——正是此刻在另一条线上引导迈尔斯深入病院的同一人。这是 DLC 与正传的第一次实质性交汇。",
+              "region": "监狱区",
+              "characters": ["waylon-park", "father-martin"]
             },
             {
               "id": "waylon-gluskin",
               "time": "事件日夜晚",
-              "confidence": "未明确",
+              "confidence": "已核实（毒气时长约 12 小时为推断）",
               "major": true,
-              "title": "被“新郎”抓住，险遭“成婚”",
-              "desc": "韦伦被绰号“新郎”的埃迪·格鲁斯金抓住，险遭阉割与“成婚”仪式，最终设法逃脱。",
-              "region": "男病房 / 格鲁斯金活动区",
+              "title": "被“新郎”格鲁斯金囚禁，险遭“婚礼”",
+              "desc": "韦伦在职业培训区被绰号“新郎”的埃迪·格鲁斯金用毒气熏晕并囚禁，约 12 小时后在储物柜中醒来，目睹其肢解其他被囚者的场景；随后险遭“婚礼 / 阉割”仪式，最终借现场环境反击逃脱。",
+              "region": "职业培训区",
               "characters": ["waylon-park", "eddie-gluskin"]
+            },
+            {
+              "id": "waylon-lab",
+              "time": "事件日夜晚",
+              "confidence": "未明确",
+              "title": "地下实验室：格鲁斯金的结局",
+              "desc": "韦伦的逃亡路线与正传结局的核心场景地下实验室交汇；追赶至此的格鲁斯金被现身此地的瓦尔里德撕碎，与正传中球形容器已破损的场景前后呼应。",
+              "region": "地下实验室",
+              "characters": ["waylon-park", "eddie-gluskin", "the-walrider"]
             },
             {
               "id": "waylon-blaire",
               "time": "事件日夜晚",
-              "confidence": "未明确",
-              "title": "被布莱尔追捕",
-              "desc": "穆克夫高管杰里米·布莱尔在行政楼区域亲自追捕韦伦·帕克，企图灭口。",
-              "region": "行政楼",
+              "confidence": "已核实",
+              "title": "出口处遭布莱尔暗算",
+              "desc": "韦伦抵达出口时遇到奄奄一息的杰里米·布莱尔；布莱尔伪装受伤诱其靠近后突然发动袭击，企图灭口。",
+              "region": "出口",
               "characters": ["waylon-park", "jeremy-blaire"]
             },
             {
               "id": "waylon-out",
               "time": "事件日夜晚",
-              "confidence": "未明确",
+              "confidence": "已核实",
               "major": true,
-              "title": "韦伦成功逃出巨山精神病院",
-              "desc": "韦伦最终逃出病院，并将大量证据公之于众。",
-              "region": "病院出口",
-              "characters": ["waylon-park"]
+              "title": "被瓦尔里德救下并逃出病院",
+              "desc": "危机关头，已被瓦尔里德附身的迈尔斯赶到击杀布莱尔，救下韦伦。韦伦随后驾车逃出巨山精神病院，并把大量证据公之于众。",
+              "region": "出口 / 院外",
+              "characters": ["waylon-park", "jeremy-blaire", "the-walrider", "miles-upshur"]
             }
           ]
         }

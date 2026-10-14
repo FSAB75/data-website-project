@@ -42,7 +42,10 @@
         "richard-trager",
         "rudolph-wernicke",
         "billy-hope",
-        "the-walrider"
+        "the-walrider",
+        "the-twins",
+        "dennis",
+        "the-pyro"
       ],
       "documents": [
         { "id": "the-whistleblower", "no": 1, "type": "Document", "nameEn": "The Whistleblower", "nameZh": "告密者", "chapter": "行政楼", "location": "抵达病院时自动获得", "summary": "匿名举报巨山精神病院与穆克夫公司罪行的信件，开启整个事件。", "content": "这封匿名信件是整个《逃生1》的起点：它由穆克夫外包软件工程师韦伦·帕克发出，收信人是独立调查记者迈尔斯·阿普舍，内容涉及病院内以慈善为名进行的非法人体实验与公司的掩盖行为。玩家在抵达病院时自动获得它，相当于游戏递到手中的“任务简报”——此行目的不是逃生，而是取证。这条线索同时与 DLC《告密者》直接呼应。", "relatedEntity": "miles-upshur" },
@@ -189,14 +192,174 @@
       "genre": "第一人称生存恐怖",
       "synopsis": "以穆克夫软件工程师韦伦·帕克为主角，讲述与正传同一夜晚、他在巨山精神病院内的逃亡与揭发，并交代正传结局的前后衔接。",
       "imagePrompt": "institutional office interior trashed, overturned desks, scattered papers stamped confidential, blood stains on linoleum floor, cold fluorescent light, a camcorder left on a tripod, dread atmosphere, cinematic, desaturated palette, no text, no people",
-      "full": false,
-      "characters": ["waylon-park", "eddie-gluskin", "jeremy-blaire", "miles-upshur"],
-      "documents": [],
-      "chapters": [],
-      "sideChapters": [],
+      "full": true,
+      "characters": ["waylon-park", "eddie-gluskin", "frank-manera", "dennis", "the-twins", "jeremy-blaire", "miles-upshur", "the-walrider"],
+      "documents": [
+        { "id": "resignation-of-waylon-park", "no": 1, "type": "Document", "nameEn": "Resignation of Waylon Park", "nameZh": "韦伦·帕克的辞职信", "chapter": "医院区", "location": "越过医生奔向出口的走廊后，右转进入的侧室", "summary": "韦伦的辞职文书，交代其离职与家庭处境。", "content": "玩家第一次以文书形式认识主角：一份辞职信，意味着韦伦原本打算体面地离开穆克夫，而不是成为告密者。信中侧面交代了他与妻子 Lisa 的家庭处境，也说明他早已对院内的实验产生怀疑。放在医院区早期拾取，为后续的泄密行为做了动机铺垫。", "relatedEntity": "waylon-park" },
+        { "id": "gender-selection-in-mount-massive-contractors", "no": 2, "type": "Document", "nameEn": "Gender Selection in Mount Massive Contractors", "nameZh": "巨山承包商中的性别选择", "chapter": "医院区", "location": "覆盖塑料薄膜的房间内", "summary": "涉及穆克夫在巨山对孕妇 / 胎儿的性别选择实验。", "content": "语气平淡的一份承包商相关文书，内容却指向穆克夫最见不得光的实验分支之一：针对孕妇与胎儿的性别选择。它说明院内的“医疗项目”早已越过伦理底线，也解释了为什么许多档案读起来更像生意记录而非医学文件。", "relatedEntity": "murkoff" },
+        { "id": "god-and-family", "no": 3, "type": "Document", "nameEn": "God and Family", "nameZh": "上帝与家庭", "chapter": "医院区", "location": "祭坛后面", "summary": "涉及宗教与家庭宣传的实验内容。", "content": "一份带有强烈宗教宣传色彩的院方材料，把“上帝”与“家庭”并列为规训受试者的工具。它与马丁神父后来在正传里发展出的邪教式信仰遥相呼应——病院里出现宗教狂热并非偶然，而是被刻意培育的土壤。", "relatedEntity": "father-martin" },
+        { "id": "the-walrider-delusion", "no": 4, "type": "Document", "nameEn": "The Walrider Delusion", "nameZh": "瓦尔里德妄想", "chapter": "医院区", "location": "医院区章节（沿流程推进即可拾取）", "summary": "与瓦尔里德相关的精神 / 妄想类实验记录。", "content": "院方把受试者对瓦尔里德的感知定性为“妄想”，用临床口吻否认其真实性。但玩家已经知道瓦尔里德确实存在——这份档案因此成了反讽：写下它的人，恰恰是最不了解真相的人。", "relatedEntity": "the-walrider" },
+        { "id": "project-walrider-patient-status-report-for-frank-manera", "no": 5, "type": "Document", "nameEn": "Project Walrider Patient Status Report for Frank Manera", "nameZh": "瓦尔里德计划患者状态报告：弗兰克·马内拉", "chapter": "医院区", "location": "医院 / 厨房附近", "summary": "食人者弗兰克·马内拉的患者状态报告。", "content": "为追猎者弗兰克·马内拉正式建档。与沃克、霍普的报告同一格式，记录他接受实验后的状态变化——把那个在医院区啃食尸体的“食人者”，还原成一份病历上的编号。", "relatedEntity": "frank-manera" },
+        { "id": "lesser-known-ecological-aspects-of-humanity", "no": 6, "type": "Document", "nameEn": "Lesser Known Ecological Aspects of Humanity", "nameZh": "人类鲜为人知的生态学方面", "chapter": "医院区", "location": "医院区章节（沿流程推进即可拾取）", "summary": "涉及穆克夫对人类生态 / 生理特性的研究记录。", "content": "标题就透着不对：把人类当作一种可研究的“生态现象”。这类文本是穆克夫研究逻辑的缩影——受试者不是病人，而是样本。", "relatedEntity": "project-walrider" },
+        { "id": "miscarried-profits", "no": 7, "type": "Document", "nameEn": "Miscarried Profits", "nameZh": "流产的利润", "chapter": "监狱区", "location": "韦伦坠洞之后、马丁神父所在房间的右侧", "summary": "与穆克夫流产 / 畸形妊娠实验利润相关的文档。", "content": "又一份把悲剧换算成收益的文本。它与《逃生1》里的《瓦尔里德计划盈利报告》构成同一条线索：在穆克夫的文件体系里，生命的损耗永远以财务口径结算。位置就在马丁神父所在房间旁边，也算与正传的一次擦身而过。", "relatedEntity": "murkoff" },
+        { "id": "the-groom", "no": 8, "type": "Document", "nameEn": "The Groom", "nameZh": "新郎", "chapter": "烘干场", "location": "穿过的窗户之后", "summary": "埃迪·格鲁斯金“新郎”设定的早期文档 / 受害者清单。", "content": "全 DLC 最重要的伏笔文档之一：它首次把“新郎”作为一个可辨认的存在记录下来，并暗示此前的受害者不止一人。玩家在烘干场拾得它时，格鲁斯金本人尚未正式登场——恐怖的预告先于人物到达。", "relatedEntity": "eddie-gluskin" },
+        { "id": "kill-us", "no": 9, "type": "Document", "nameEn": "Kill Us", "nameZh": "杀死我们", "chapter": "烘干场", "location": "窗户内侧", "summary": "变种人 / 受试者的求救或绝望记录。", "content": "标题就是全部内容：一份来自受试者的绝望呼救。它没有信息量上的推进，却是整座病院气质最凝练的表达之一——在这里，求死往往比求生更合理。", "relatedEntity": "murkoff" },
+        { "id": "patient-dennis", "no": 10, "type": "Document", "nameEn": "Patient Dennis", "nameZh": "患者丹尼斯", "chapter": "职业培训区", "location": "职业培训区，沿流程推进即可拾取", "summary": "丹尼斯的病历（多重人格患者）。", "content": "丹尼斯的病历。文件交代了他患有多重人格障碍，以及院方如何记录他反复切换的人格——也解释了玩家在职业培训区遇到他时，为什么会看到一个既像敌人、又像受害者的角色。", "relatedEntity": "dennis" },
+        { "id": "project-walrider-patient-status-report-for-eddie-gluskin", "no": 11, "type": "Document", "nameEn": "Project Walrider Patient Status Report for Eddie Gluskin", "nameZh": "瓦尔里德计划患者状态报告：埃迪·格鲁斯金", "chapter": "职业培训区", "location": "跳窗之后、喷泉旁", "summary": "埃迪·格鲁斯金的患者状态报告，含“新郎”行为记录。", "content": "为格鲁斯金正式建档，把他四十六年的人生压缩成一份状态报告。文件记录了他童年创伤的背景与接受变形引擎疗法之后的异化过程，也说明那个把病人视为“新娘”的猎场，并非单纯的疯狂，而是被实验放大的结果。", "relatedEntity": "eddie-gluskin" },
+        { "id": "beyond-hope", "no": 12, "type": "Document", "nameEn": "Beyond Hope", "nameZh": "超越希望", "chapter": "出口", "location": "出口区域，沿流程推进即可拾取", "summary": "关于穆克夫撤离 / 最终计划的文档。", "content": "出现在出口区域，谈的是穆克夫的撤离与后续安排。它让玩家意识到：病院暴乱对穆克夫而言不是灾难，而是一次需要善后的项目事故——真相从这里开始被清理。", "relatedEntity": "murkoff" },
+        { "id": "three-blind-dreamers", "no": 13, "type": "Document", "nameEn": "Three Blind Dreamers", "nameZh": "三个盲目的梦想家", "chapter": "出口", "location": "出口区域，沿流程推进即可拾取", "summary": "与瓦尔里德 / 梦境实验相关的收尾文档。", "content": "DLC 的最后一份文档，收束了与瓦尔里德、梦境实验相关的线索。它与《逃生1》的《瓦尔里德与噩梦》同属一条脉络，为系列的“梦境 / 幻觉”主题留下一个开放的结尾。", "relatedEntity": "the-walrider" },
+        { "id": "if-i-die", "no": 1, "type": "Note", "nameEn": "If I Die", "nameZh": "如果我死了", "chapter": "序章", "location": "开场拿起摄像机时自动获得", "summary": "韦伦开场自白：若自己死去，希望世人知晓真相。", "content": "韦伦录制的开场自白，交代了他最坏的打算：一旦自己死在这里，这段影像就是唯一能证明真相的东西。它确立了整部 DLC 的基调——这不是一个逃亡故事，而是一份留给后世的证词。", "relatedEntity": "waylon-park" },
+        { "id": "in-the-cannibals-kitchen", "no": 4, "type": "Note", "nameEn": "In the Cannibal's Kitchen", "nameZh": "在食人者的厨房里", "chapter": "医院区", "location": "医院 / 厨房区域，透过窗户拍摄", "summary": "拍摄弗兰克厨房内的恐怖景象。", "content": "韦伦镜头下的厨房景象，是《告密者》最直白的恐怖段落之一：弗兰克把医院区当成自己的猎场与厨房。这段影像不需要任何文字说明，画面本身就是对穆克夫“项目”后果的控诉。", "relatedEntity": "frank-manera" },
+        { "id": "down-down-down", "no": 8, "type": "Note", "nameEn": "Down, Down, Down", "nameZh": "向下，向下，向下", "chapter": "监狱区", "location": "监狱章节，拍摄父亲马丁", "summary": "记录马丁神父引路场景。", "content": "韦伦在监狱区拍到的马丁神父。这一刻意义特殊：它把 DLC 与正传正式接在一起——韦伦镜头里的那个宗教狂信者，正是此刻在另一条线上引导迈尔斯深入病院的同一人。", "relatedEntity": "father-martin" },
+        { "id": "an-unwilling-bride", "no": 13, "type": "Note", "nameEn": "An Unwilling Bride", "nameZh": "不情愿的新娘", "chapter": "职业培训区", "location": "职业培训区，拍摄受害者影像", "summary": "格鲁斯金“新娘”计划的受害者影像。", "content": "记录格鲁斯金“新娘”受害者的影像。与《新郎》《蓝胡子的妻子们》等文档连读，可以看出他的“猎场”已经运转了相当一段时间——韦伦只是最新的一个候选。", "relatedEntity": "eddie-gluskin" },
+        { "id": "jeremy-blaire", "no": 18, "type": "Note", "nameEn": "Jeremy Blaire", "nameZh": "杰里米·布莱尔", "chapter": "出口", "location": "出口章节，拍摄布莱尔的收尾影像", "summary": "拍摄布莱尔的收尾影像。", "content": "DLC 的最后一段影像，镜头对准韦伦的直接上司布莱尔。从他逮捕韦伦、逼问邮件，到出口处伪装受伤的暗算，这条线在影像记录里完成收束。它也是玩家确认“告密者”最终活了下来、并把证据带出去的凭据。", "relatedEntity": "jeremy-blaire" }
+      ],
+      "chapters": [
+        {
+          "id": "prologue",
+          "title": "序章：泄密之夜",
+          "region": "服务器机房 / 审讯室",
+          "paragraphs": [
+            "2013 年 9 月 17 日夜，韦伦·帕克趁夜潜入穆克夫公司位于巨山精神病院的服务器机房，向外界群发了一批举报邮件，把院内非法人体实验公之于众。其中一封恰好落到独立记者迈尔斯·阿普舍手上——这一举动点燃了正传《逃生1》的整个故事，也直接导致他自己落入绝境。",
+            "他的行为很快被上司、穆克夫高管杰里米·布莱尔察觉。布莱尔立即组织人手抓捕韦伦，将其以“病人”的虚假身份收治，关押进拘留区的审讯室牢房。韦伦在这一阶段录下了开场自白——他清楚，一旦自己遇害，这段录像将是唯一能证明真相的东西；这台摄像机此后成为玩家的视角载体。"
+          ]
+        },
+        {
+          "id": "chapter-1",
+          "title": "第一章：拘留区",
+          "region": "Detention / 关押区",
+          "paragraphs": [
+            "2013 年 9 月 18 日晚，巨山精神病院爆发全面暴乱。长期遭受实验摧残的变种人与病人集体失控，突破监禁区域，大批穆克夫守卫与科研人员被屠杀。韦伦在混乱中于牢房醒来，发现门外已是一片血海。",
+            "他目睹食人者弗兰克·马内拉正在啃食守卫的尸体，随后从被杀的守卫身上夺走摄像机，挣脱束缚，开始在院内逃亡。"
+          ]
+        },
+        {
+          "id": "chapter-2",
+          "title": "第二章：医院区",
+          "region": "Hospital",
+          "paragraphs": [
+            "韦伦逃入医院区，这里是弗兰克·马内拉的主要活动范围。作为前病院厨师，弗兰克对厨房、餐厅、储藏室等区域极为熟悉，他把残留的守卫与变种人当作猎物，手持肉钩、刀具追杀韦伦；玩家需要利用病床、隔间与通风管道躲藏周旋。",
+            "这一区域也是档案最密集的段落：韦伦沿途拾取到辞职信、患者状态报告、宗教宣传材料等关键记录，第一次系统性地看清——这不是一所疯人院，而是一座以病人为耗材的实验场。"
+          ]
+        },
+        {
+          "id": "chapter-3",
+          "title": "第三章：娱乐区",
+          "region": "Recreation Area",
+          "paragraphs": [
+            "韦伦继续向病院深处推进，途经娱乐区，环境由相对规整的病房过渡到更具工业与废墟气息的区域。他在这里记录下对整座病院本质的冷峻评断：在这里，猎杀就是“游戏”。"
+          ]
+        },
+        {
+          "id": "chapter-4",
+          "title": "第四章：监狱区",
+          "region": "Prison Block",
+          "paragraphs": [
+            "韦伦穿过监狱区，与正传的世界产生了第一次实质性交汇——他拍摄到了被囚禁的宗教狂信者马丁·阿奇姆鲍神父，正是正传中引导迈尔斯深入病院的那个角色。随后，他目睹监狱区燃起大火、结构崩塌的景象。"
+          ]
+        },
+        {
+          "id": "chapter-5",
+          "title": "第五章：烘干场",
+          "region": "Drying Ground",
+          "paragraphs": [
+            "穿过烘干场时，韦伦获取到全 DLC 最具分量的伏笔文档之一《新郎》，首次明确“新郎”格鲁斯金的存在与危险性；同时拾得一份充满绝望的受试者呼救记录。烘干场是从中段威胁（弗兰克）转向高潮反派（格鲁斯金）的过渡节点。"
+          ]
+        },
+        {
+          "id": "chapter-6",
+          "title": "第六章：职业培训区",
+          "region": "Vocational Block",
+          "paragraphs": [
+            "职业培训区是《告密者》剧情与恐怖设计的高峰。变种人埃迪·格鲁斯金，绰号“新郎”，时年 46 岁，因童年性暴力创伤与变形引擎疗法的双重作用，形成对“婚姻”“女性”与“家庭”极度扭曲的执念。他盘踞于此，布置陷阱、悬挂尸体，把院内的病人与闯入者视为自己的“新娘”候选人。",
+            "韦伦在此被格鲁斯金用毒气熏晕并囚禁。约 12 小时后，他在储物柜中醒来，亲眼目睹格鲁斯金肢解其他被囚禁者的场景。随后格鲁斯金将韦伦锁定为新的“新娘”，试图在教堂式大厅中完成婚礼 / 阉割仪式；韦伦在千钧一发之际借助现场环境与反击手段挣脱、逃脱。"
+          ]
+        },
+        {
+          "id": "chapter-7",
+          "title": "第七章：地下实验室",
+          "region": "Underground Lab",
+          "paragraphs": [
+            "韦伦的逃亡路线最终与正传结局的核心场景——地下实验室交汇。玩家在此可以看到与正传直接呼应的实验设备、破损痕迹与球形实验舱，尤其是与格鲁斯金相关的球形容器已告破损。",
+            "格鲁斯金一路追击韦伦至此，其结局也在此处分晓：他被现身此地的瓦尔里德撕碎——这也解释了正传中玩家所见到的破损实验舱意味着什么。"
+          ]
+        },
+        {
+          "id": "chapter-8",
+          "title": "第八章：出口",
+          "region": "Exit",
+          "paragraphs": [
+            "韦伦终于逼近出口区域。在此，他与奄奄一息的杰里米·布莱尔狭路相逢。布莱尔伪装成受伤无助的模样诱骗韦伦靠近，随后突然发动袭击，企图灭口——他至死仍在执行“清理所有知情者”的逻辑。",
+            "就在韦伦命悬一线之际，已被瓦尔里德附身的迈尔斯·阿普舍赶到，击杀布莱尔，救下韦伦。"
+          ]
+        },
+        {
+          "id": "ending",
+          "title": "终章：结局",
+          "region": "院外 / 停车场",
+          "paragraphs": [
+            "韦伦·帕克在瓦尔里德（迈尔斯形态）的协助下驾车逃出巨山精神病院，成为巨山事件中极少数从内部生还、并把真相带出去的人。DLC 结尾以他的录像证词收束——他既是这场灾难的目击者，也是最初那个“告密者”。",
+            "这一结局同时完成了与正传的因果闭环：韦伦发送举报邮件 → 迈尔斯收到邮件潜入病院 → 迈尔斯在正传结局成为瓦尔里德的新宿主 → 成为新宿主的迈尔斯在 DLC 结尾返回，击杀布莱尔、救出韦伦。告密者救了外人，外人以怪物之身回来救了他。"
+          ]
+        }
+      ],
+      "sideChapters": [
+        {
+          "id": "side-1",
+          "title": "支线一 · 穆克夫与瓦尔里德计划的背景线",
+          "paragraphs": [
+            "韦伦以签约软件工程师身份进入巨山精神病院，被编入代号“研究与慈善分部”的项目。由于保密协议极其严格，他在院内数周无法与身在博尔德的妻儿取得联系，这种高度封闭的环境使他对穆克夫的实验逐渐产生警惕。",
+            "工作期间他接触到变形引擎疗法与瓦尔里德计划的核心文件——通过让受试者长期暴露于特制纳米虫群，试图在人体内部孕育出可被人为操控的超自然实体。出于对实验伦理的质疑，他最终选择趁夜潜入服务器机房群发举报邮件。"
+          ]
+        },
+        {
+          "id": "side-2",
+          "title": "支线二 · 暴乱起因与事件夜序幕线",
+          "paragraphs": [
+            "韦伦的泄密邮件触发了穆克夫高层的恐慌，安保层级被提升、项目人员开始清理敏感资料。就在同一时间段，长期被关押在病院深处的变种人因安保漏洞而集体失控。",
+            "2013 年 9 月 18 日，大规模暴乱爆发：变种人突破监禁区域，杀死大量保安与研究员工，部分守卫被分尸或吊起示众。这场暴乱既是《告密者》主线的开端，也是《逃生1》正传同夜发生的核心事件。"
+          ]
+        },
+        {
+          "id": "side-3",
+          "title": "支线三 · 变种人反派前史线",
+          "paragraphs": [
+            "弗兰克·马内拉（食人者）：入院前为病院厨师，暴乱后把医院区当作猎场；部分病人报告暗示他在事件前已有食人倾向（前史信息多为环境叙事与文档暗示）。",
+            "丹尼斯：患严重多重人格障碍，在废弃区域游荡，其不同人格在与韦伦相遇时交替出现，兼具敌人与受害者色彩——戏份较少，是危险却更可悲的角色。",
+            "埃迪·格鲁斯金（新郎）：时年 46 岁，自幼遭受叔父辈的性暴力虐待，变形引擎疗法进一步放大了他的暴力倾向，使他成为《告密者》最具代表性的反派。"
+          ]
+        },
+        {
+          "id": "side-4",
+          "title": "支线四 · 高管灭口线",
+          "paragraphs": [
+            "杰里米·布莱尔是穆克夫在巨山的高级管理人员之一，负责监督变形引擎疗法与瓦尔里德计划的日常运作。他亲自主持了对韦伦的逮捕，并准备把韦伦“送入项目”。",
+            "在韦伦逃脱过程中，布莱尔多次通过电话、广播与现场指挥阻止他离开，并下令清理所有可能暴露项目真相的证据；出口处的伪装暗算，正是这条灭口线的终点。"
+          ]
+        },
+        {
+          "id": "side-5",
+          "title": "支线五 · 与正传《逃生1》的同夜并行线",
+          "paragraphs": [
+            "《告密者》与《逃生1》发生在同一夜晚，即 2013 年 9 月 18 日晚延续至 9 月 19 日凌晨。韦伦发送邮件、迈尔斯收到邮件后驱车前往病院、布莱尔追捕韦伦、迈尔斯在院内调查，这些事件在时间上高度重叠。",
+            "韦伦途经的地下实验室正是正传结尾的核心场景，玩家可以看到与正传相关的实验设备、文件与破坏痕迹（如格鲁斯金相关的球形舱损毁、比利·霍普实验舱的遗留痕迹）。"
+          ]
+        },
+        {
+          "id": "side-6",
+          "title": "支线六 · 官方漫画衔接线",
+          "paragraphs": [
+            "官方漫画《穆克夫档案》第 3 期补充了 DLC 之后的情节：韦伦成功逃离后携带家人远走他乡，躲避穆克夫的追杀；迈尔斯则已成为瓦尔里德宿主，以非人类形态存在，无法被常规手段追踪。",
+            "漫画同时涉及穆克夫内部围绕比利·霍普残骸与坦普尔山门坐标的权力斗争，为《逃生2》的事件埋下伏笔；相关角色的具体译名可能因版本而异。"
+          ]
+        }
+      ],
       "connections": [
-        "与正传《逃生1》严格并行：同一夜晚、同一病院，互为平行视角。",
-        "结尾处迈尔斯形态的瓦尔里德杀死了杰里米·布莱尔，救下韦伦，形成两部作品的关键交汇点。"
+        "与正传《逃生1》严格并行：同一夜晚、同一病院，互为镜像视角——正传是“由外向内”（记者闯入调查），DLC 是“由内向外”（内部员工逃出求生）。",
+        "因果闭环：韦伦的举报邮件点燃了正传故事；迈尔斯在正传结局成为瓦尔里德的新宿主；成为新宿主的迈尔斯在 DLC 结尾返回，击杀布莱尔、救下韦伦。",
+        "与漫画《The Murkoff Account》第 3 期衔接：交代韦伦携家人远走他乡、迈尔斯以非人类形态继续存在。",
+        "与《逃生2》：漫画中的坦普尔山门坐标与穆克夫内部权力斗争，直接为《逃生2》的坦普尔山门事件铺垫。",
+        "与《逃生：试炼》：同属穆克夫的人体实验体系，但故事时间线发生在《逃生1》之后，本作则是与正传同夜的并行篇章。"
       ]
     },
     {
