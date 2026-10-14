@@ -1,0 +1,38 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+build/
+.output/
+.astro/
+.next/
+out/
+
+# 环境变量
+.env
+.env.*
+!.env.example
+
+# 日志
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 缓存
+.cache/
+.tmp/
+.temp/
+
+# 编辑器 / IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.swp
+
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
