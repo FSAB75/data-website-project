@@ -2,9 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import WorkCard from '../../components/WorkCard.astro';
 import Timeline from '../../components/Timeline.astro';
-import { seriesList, works, timeline } from '../../lib/data.js';
+import { seriesList, works, timeline, entities, coverPath } from '../../lib/data.js';
 import { buildEntityIndex } from '../../lib/linkify.js';
-import { entities } from '../../lib/data.js';
 
 export function getStaticPaths() {
   return seriesList.map((s) => ({ params: { id: s.id }, props: { item: s } }));
@@ -17,9 +16,7 @@ const seriesWorks = works
   .filter((w) => item.works.includes(w.id))
   .sort((a, b) => a.order - b.order);
 
-const hero = item.imagePrompt
-  ? `https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=${encodeURIComponent(item.imagePrompt)}&image_size=landscape_16_9`
-  : null;
+const hero = coverPath('series', item.id);
 ---
 
 <BaseLayout title={`${item.nameZh} · 系列`}>

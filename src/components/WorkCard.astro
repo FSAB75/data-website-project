@@ -1,12 +1,12 @@
 ---
+import { coverPath } from '../lib/data.js';
+
 interface Props {
   work: any;
 }
 const { work } = Astro.props;
 
-const cover = work.imagePrompt
-  ? `https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=${encodeURIComponent(work.imagePrompt)}&image_size=landscape_16_9`
-  : null;
+const cover = coverPath('works', work.id);
 ---
 
 <a class="card work-card" href={`/work/${work.id}/`}>

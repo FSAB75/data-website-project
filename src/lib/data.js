@@ -3,6 +3,25 @@ import worksJson from '../data/outlast/works.json';
 import entitiesJson from '../data/outlast/entities.json';
 import timelineJson from '../data/outlast/timeline.json';
 
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const here = path.dirname(fileURLToPath(import.meta.url));
+const PUBLIC_IMAGES = path.resolve(here, '../../public/images');
+
+/**
+ * 取本地封面图路径。封面为构建期资产（存放在 public/images/），
+ * 不使用运行时外部图片地址——这样朋友 clone 后在 IDEA 里能直接看到，
+ * 将来部署到线上也不依赖任何外部服务。
+ * 文件不存在时返回 null，页面自动不渲染封面。
+ */
+export function coverPath(kind, id) {
+  const rel = `/images/${kind}/${id}.jpg`;
+  const abs = path.join(PUBLIC_IMAGES, kind, `${id}.jpg`);
+  return fs.existsSync(abs) ? rel : null;
+}
+
 /** 全部系列（样板阶段仅逃生一个） */
 export const seriesList = [seriesJson];
 export const series = seriesJson;

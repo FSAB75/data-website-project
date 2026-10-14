@@ -1,14 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { series, works } from '../lib/data.js';
+import { series, works, coverPath } from '../lib/data.js';
 
 const outlastWorks = works
   .filter((w) => series.works.includes(w.id))
   .sort((a, b) => a.order - b.order);
 
-const outlastCover = series.imagePrompt
-  ? `https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=${encodeURIComponent(series.imagePrompt)}&image_size=landscape_16_9`
-  : null;
+const outlastCover = coverPath('series', series.id);
 ---
 
 <BaseLayout title="游戏科普百科 · 首页">
