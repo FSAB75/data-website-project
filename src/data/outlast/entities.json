@@ -1,0 +1,385 @@
+{
+  "seriesId": "outlast",
+  "entities": [
+    {
+      "id": "miles-upshur",
+      "type": "character",
+      "nameZh": "迈尔斯·阿普舍",
+      "nameEn": "Miles Upshur",
+      "aliases": ["迈尔斯"],
+      "works": ["outlast1", "whistleblower"],
+      "summary": "独立调查记者，《逃生1》主角。靠一台带夜视功能的摄像机记录巨山精神病院的真相。",
+      "facts": {
+        "身份": "独立调查记者（主角）",
+        "结局": "关闭比利·霍普的维生系统后身亡，被瓦尔里德附身成为新宿主",
+        "配音": "Shawn Baichoo"
+      },
+      "bio": "收到一封匿名举报邮件后，独自驱车前往巨山精神病院调查穆克夫公司的非法人体实验。全程沉默，仅依靠摄像机镜头与散落各处的文档拼凑出病院内的恐怖真相。",
+      "deeds": [
+        "收到韦伦·帕克的匿名举报邮件，得知巨山精神病院存在非法人体实验。",
+        "独自冒雨潜入已废弃的巨山精神病院，开始调查瓦尔里德计划。",
+        "在病院内遭遇变种人暴动与克里斯·沃克的追杀，记录下大量影像证据。",
+        "被理查德·特雷格抓住并切掉两根手指，后成功逃脱。",
+        "在马丁神父的引导下前往地下实验室寻找真相。",
+        "关闭比利·霍普的生命维持系统，被瓦尔里德附身成为新宿主。"
+      ],
+      "relatedDocs": ["the-whistleblower", "billys-dreams"],
+      "relations": [
+        { "target": "waylon-park", "label": "举报邮件的来源" },
+        { "target": "father-martin", "label": "被其视为“见证者”并加以引导" },
+        { "target": "billy-hope", "label": "亲手关闭其维生系统" }
+      ]
+    },
+    {
+      "id": "waylon-park",
+      "type": "character",
+      "nameZh": "韦伦·帕克",
+      "nameEn": "Waylon Park",
+      "aliases": ["韦伦"],
+      "works": ["outlast1", "whistleblower"],
+      "summary": "穆克夫公司软件顾问，DLC《告密者》主角。因无法忍受非人道实验而向外界举报。",
+      "facts": {
+        "身份": "穆克夫软件顾问 / 外包技术员",
+        "别名": "告密者（Whistleblower）",
+        "结局": "成功逃出病院并公开证据",
+        "配音": "——"
+      },
+      "bio": "作为穆克夫外包人员在巨山精神病院从事软件维护，逐渐接触瓦尔里德计划的黑暗真相，最终选择将内部证据泄露给包括迈尔斯在内的外界。",
+      "deeds": [
+        "在巨山精神病院从事软件维护工作，接触到瓦尔里德计划的真相。",
+        "向独立记者迈尔斯·阿普舍发送匿名邮件，举报穆克夫公司的非法人体实验。",
+        "身份暴露后被穆克夫安保部门监禁，随后病院发生变种人大暴动。",
+        "在《告密者》DLC 中作为可玩主角，逃离巨山精神病院。",
+        "逃脱途中遭遇埃迪·格鲁斯金（新郎）与弗兰克·马内拉（厨师）。",
+        "最终成功逃离病院，并将大量证据公之于众。"
+      ],
+      "relatedDocs": ["the-whistleblower"],
+      "relations": [
+        { "target": "miles-upshur", "label": "向其发送匿名举报邮件" },
+        { "target": "jeremy-blaire", "label": "被其亲自追捕、灭口未遂" },
+        { "target": "the-walrider", "label": "片尾被迈尔斯形态的瓦尔里德救下" }
+      ]
+    },
+    {
+      "id": "chris-walker",
+      "type": "character",
+      "nameZh": "克里斯·沃克",
+      "nameEn": "Chris Walker",
+      "aliases": ["沃克"],
+      "works": ["outlast1"],
+      "summary": "前美国海军宪兵，变异后的巨型追猎者，口头禅为反复出现的“Little pig”。",
+      "facts": {
+        "身份": "前海军宪兵 / 巨型变异追踪者",
+        "别名": "胖子（Fatty）",
+        "结局": "在地下实验室被瓦尔里德杀死",
+        "配音": "Chimwemwe Miller"
+      },
+      "bio": "因经历或精神问题被送入巨山精神病院，接受变形引擎治疗后变异为体型极为壮硕的追踪者，面部毁容、头骨外露，手持巨大钝器。",
+      "deeds": [
+        "作为前海军宪兵，因经历或精神问题被送入巨山精神病院。",
+        "接受穆克夫的变形引擎治疗后变异，成为极具威胁的追踪者。",
+        "在病院各处追杀迈尔斯，多次试图将其杀死。",
+        "最终在地下实验室被瓦尔里德以极快速度肢解、杀死。"
+      ],
+      "relatedDocs": ["project-walrider-patient-status-report-for-chris-walker"],
+      "relations": [
+        { "target": "miles-upshur", "label": "主要追杀对象之一" },
+        { "target": "the-walrider", "label": "最终被其杀死" }
+      ]
+    },
+    {
+      "id": "father-martin",
+      "type": "character",
+      "nameZh": "马丁·阿奇姆鲍神父",
+      "nameEn": "Father Martin Archimbaud",
+      "aliases": ["马丁·阿奇姆鲍", "马丁神父", "马丁"],
+      "works": ["outlast1"],
+      "summary": "巨山精神病院的宗教狂热病人，将瓦尔里德视为神的启示，自称要引导迈尔斯“见证真相”。",
+      "facts": {
+        "身份": "巨山精神病院病人 / 宗教狂热者",
+        "别名": "神父、Father Martin",
+        "结局": "在女病房被钉上十字架后焚身殉道",
+        "配音": "Andreas Apergis"
+      },
+      "bio": "在病院内建立了一套以自己为中心的邪教式信仰体系，将病院事件视为“神谕”。多次与迈尔斯相遇却并不加害，反而用言语与笔记引导他深入病院。",
+      "deeds": [
+        "在巨山精神病院内建立以自己为中心的邪教式信仰体系。",
+        "多次与迈尔斯相遇，引导他前往病院深处“见证真相”。",
+        "在病院教堂区域组织仪式，将自己钉在十字架上并引火自焚。",
+        "临死前告诉迈尔斯：“去地下实验室，见证瓦尔里德。”"
+      ],
+      "relatedDocs": ["father-martin-finger-painter", "father-martins-cell"],
+      "relations": [
+        { "target": "miles-upshur", "label": "视其为“被选中之人”并加以引导" },
+        { "target": "the-walrider", "label": "将其视为神的启示" }
+      ]
+    },
+    {
+      "id": "richard-trager",
+      "type": "character",
+      "nameZh": "理查德·特雷格",
+      "nameEn": "Richard Trager",
+      "aliases": ["特雷格"],
+      "works": ["outlast1"],
+      "summary": "穆克夫前高管，暴乱后成为病院里的疯狂“外科医生”，切掉了迈尔斯的两根手指。",
+      "facts": {
+        "身份": "前穆克夫高管 / 病院外科医生、屠夫",
+        "别名": "医生、Trager",
+        "结局": "在电梯井中死亡",
+        "配音": "Alex Ivanovici"
+      },
+      "bio": "参与或默许了病院内的非法实验。病院暴动后，在废弃的手术室区域建立起自己的恐怖“诊所”，将人体实验视为“艺术”。",
+      "deeds": [
+        "作为穆克夫高管，参与或默许了病院内的非法实验。",
+        "病院暴动后，在废弃的手术室区域建立恐怖“诊所”。",
+        "抓住迈尔斯，以手术为名用剪刀剪断其两根手指。",
+        "最终在电梯井区域被升降的电梯当场夹死。"
+      ],
+      "relatedDocs": [],
+      "relations": [
+        { "target": "miles-upshur", "label": "抓住并残害迈尔斯" }
+      ]
+    },
+    {
+      "id": "rudolph-wernicke",
+      "type": "character",
+      "nameZh": "鲁道夫·韦尼克博士",
+      "nameEn": "Dr. Rudolf Wernicke",
+      "aliases": ["鲁道夫·韦尼克", "韦尼克博士", "韦尼克"],
+      "works": ["outlast1"],
+      "summary": "瓦尔里德计划的创始人，变形引擎的设计者。终章向迈尔斯揭示了瓦尔里德的真相。",
+      "facts": {
+        "身份": "科学家 / 瓦尔里德计划创始人",
+        "别名": "韦尼克博士",
+        "结局": "《逃生1》结尾存活，后续命运未交代",
+        "配音": "Marcel Jeannin"
+      },
+      "bio": "德国科学家，坐着轮椅、身体虚弱却头脑清醒，对科学有着近乎狂热的执着。据信其研究背景与二战后“回形针计划”引进德国科学家的历史互文。",
+      "deeds": [
+        "主持研发了变形引擎（Morphogenic Engine）。",
+        "被穆克夫公司雇佣或胁迫，在巨山精神病院地下实验室进行人体实验。",
+        "在迈尔斯到达地下实验室后，向他揭示瓦尔里德的真相。",
+        "指示迈尔斯关闭原宿主比利·霍普的生命维持系统。"
+      ],
+      "relatedDocs": ["dr-wernicke-death-certificate", "dr-wernicke-obituary", "morphogenic-engine-chamber-precaution"],
+      "relations": [
+        { "target": "billy-hope", "label": "最成功的宿主实验体" },
+        { "target": "morphogenic-engine", "label": "设计者" }
+      ]
+    },
+    {
+      "id": "billy-hope",
+      "type": "character",
+      "nameZh": "比利·霍普",
+      "nameEn": "Billy Hope",
+      "aliases": ["威廉·霍普", "比利"],
+      "works": ["outlast1"],
+      "summary": "瓦尔里德纳米虫群的原始成功宿主，自幼被穆克夫当作实验体，长期躺在维生舱中。",
+      "facts": {
+        "身份": "瓦尔里德纳米虫群宿主 / 长期住院病人",
+        "别名": "William Hope",
+        "结局": "生命维持系统被关闭，躯体死亡；瓦尔里德意识转移到迈尔斯身上",
+        "配音": "——"
+      },
+      "bio": "被穆克夫选为变形引擎的宿主候选人，成功与纳米机器虫群融合，成为瓦尔里德的物理与精神核心。其痛苦与扭曲的精神与纳米虫群融合，最终形成了瓦尔里德。",
+      "deeds": [
+        "被穆克夫选为变形引擎的宿主候选人。",
+        "成功与纳米机器虫群融合，成为瓦尔里德的核心。",
+        "瓦尔里德以他为中心在病院内游荡，制造了大量杀戮与恐怖事件。",
+        "生命维持系统被迈尔斯关闭，躯体死亡，瓦尔里德意识转移。"
+      ],
+      "relatedDocs": ["project-walrider-patient-status-report-for-william-hope", "billys-dreams"],
+      "relations": [
+        { "target": "the-walrider", "label": "宿主 / 精神核心" },
+        { "target": "miles-upshur", "label": "被其关闭维生系统" }
+      ]
+    },
+    {
+      "id": "jeremy-blaire",
+      "type": "character",
+      "nameZh": "杰里米·布莱尔",
+      "nameEn": "Jeremy Blaire",
+      "aliases": ["布莱尔"],
+      "works": ["outlast1", "whistleblower"],
+      "summary": "穆克夫公司高管，巨山精神病院项目负责人，代表公司利益、负责掩盖瓦尔里德计划。",
+      "facts": {
+        "身份": "穆克夫公司高管 / 巨山项目负责人",
+        "别名": "布莱尔",
+        "结局": "在《告密者》结尾被瓦尔里德杀死",
+        "配音": "——"
+      },
+      "bio": "作为穆克夫派驻巨山精神病院的高级管理人员，负责掩盖瓦尔里德计划。在正传中主要通过文件、广播和电话出现，是幕后操控者之一。",
+      "deeds": [
+        "负责掩盖瓦尔里德计划，是《逃生1》的幕后操控者之一。",
+        "在《告密者》DLC 结尾亲自追捕韦伦·帕克，试图灭口。",
+        "最终被瓦尔里德（迈尔斯形态）杀死。"
+      ],
+      "relatedDocs": [],
+      "relations": [
+        { "target": "waylon-park", "label": "亲自追捕、灭口未遂" },
+        { "target": "the-walrider", "label": "被其击杀" }
+      ]
+    },
+    {
+      "id": "eddie-gluskin",
+      "type": "character",
+      "nameZh": "埃迪·格鲁斯金",
+      "nameEn": "Eddie Gluskin",
+      "aliases": ["格鲁斯金", "新郎"],
+      "works": ["whistleblower"],
+      "summary": "DLC《告密者》的主要反派，绰号“新郎”，对“新娘”有病态执念。",
+      "facts": {
+        "身份": "巨山精神病院病人 / 瓦尔里德实验受试者",
+        "别名": "新郎（The Groom）",
+        "结局": "被韦伦·帕克杀死",
+        "配音": "——"
+      },
+      "bio": "身穿破损西装、戴婚礼面具、手持刀具，性格极端偏执，将男性也强行视为“新娘”，并进行残忍的“婚礼仪式”。",
+      "deeds": [
+        "在《告密者》DLC 中作为主要反派登场。",
+        "在病院内寻找“新娘”，将多名男性病人杀害或做成“新娘”。",
+        "多次追杀韦伦·帕克，试图将其作为自己的“新娘”。",
+        "最终在手术台相关场景中被韦伦反杀。"
+      ],
+      "relatedDocs": [],
+      "relations": [
+        { "target": "waylon-park", "label": "追杀并企图将其作为“新娘”" }
+      ]
+    },
+    {
+      "id": "the-walrider",
+      "type": "entity",
+      "nameZh": "瓦尔里德",
+      "nameEn": "The Walrider",
+      "aliases": [],
+      "works": ["outlast1", "whistleblower"],
+      "summary": "由纳米机器人组成的纳米虫群实体，并非鬼魂。以比利·霍普为原始宿主，后附身于迈尔斯。",
+      "facts": {
+        "类型": "纳米虫群武器实体",
+        "原始宿主": "比利·霍普",
+        "后续宿主": "迈尔斯·阿普舍",
+        "结局": "杀死沃克与穆克夫特种部队，以迈尔斯为新宿主离开巨山精神病院"
+      },
+      "bio": "韦尼克博士主导的“瓦尔里德计划”的核心产物：通过变形引擎让纳米机器虫群与宿主意识结合，形成具有超强战斗力的共生体。被病院内的患者们视为神或鬼魂。",
+      "deeds": [
+        "在地下实验室撕碎克里斯·沃克，证明其真实存在。",
+        "比利·霍普死后失去宿主，转而附身于重伤的迈尔斯。",
+        "屠杀赶来镇压的穆克夫特种部队。",
+        "以迈尔斯的形态离开巨山精神病院，在《告密者》片尾救下韦伦·帕克。"
+      ],
+      "relatedDocs": ["project-walrider-cost-report", "walrider-and-nightmares"],
+      "relations": [
+        { "target": "billy-hope", "label": "原始宿主" },
+        { "target": "miles-upshur", "label": "后续宿主" },
+        { "target": "project-walrider", "label": "该计划的产物" }
+      ]
+    },
+    {
+      "id": "murkoff",
+      "type": "organization",
+      "nameZh": "穆克夫公司",
+      "nameEn": "Murkoff Corporation",
+      "aliases": ["穆克夫"],
+      "works": ["outlast1", "whistleblower", "outlast2", "trials"],
+      "summary": "跨国企业，以慈善名义重开巨山精神病院，暗中资助瓦尔里德等非法人体实验。",
+      "facts": {
+        "类型": "跨国企业 / 幕后组织",
+        "关联机构": "巨山精神病院（研究与慈善分部）",
+        "现状": "巨山事件后对事件进行危机公关与信息封锁"
+      },
+      "bio": "以慈善机构与人道主义项目的表面名义重新开放巨山精神病院，实际将其变为秘密人体实验场所，为瓦尔里德计划提供场地、设备与受试者。旗下设有独立的安保、医疗与科研体系。",
+      "deeds": [
+        "2009 年以慈善名义重新开放巨山精神病院。",
+        "资助并主导瓦尔里德计划、变形引擎疗法等一系列非法人体实验。",
+        "巨山事件后出动特种部队镇压并清理现场。",
+        "对巨山事件进行危机公关与信息封锁，相关档案被隐藏或销毁。"
+      ],
+      "relatedDocs": ["project-walrider-profitabilty-report"],
+      "relations": [
+        { "target": "mount-massive", "label": "以慈善名义重开并用作实验基地" },
+        { "target": "project-walrider", "label": "资助方" },
+        { "target": "jeremy-blaire", "label": "派驻巨山的高管" }
+      ]
+    },
+    {
+      "id": "mount-massive",
+      "type": "place",
+      "nameZh": "巨山精神病院",
+      "nameEn": "Mount Massive Asylum",
+      "aliases": ["巨山病院", "巨山"],
+      "works": ["outlast1", "whistleblower"],
+      "summary": "位于美国科罗拉多州山区的精神病院，1971 年因丑闻关闭，2009 年被穆克夫以慈善名义重开，成为秘密实验基地。",
+      "facts": {
+        "类型": "地点 / 主要舞台",
+        "位置": "美国科罗拉多州偏远山区",
+        "沿革": "19 世纪建成 → 1971 年丑闻关闭 → 2009 年穆克夫重开",
+        "功能区": "行政楼、监狱区、下水道、男病房、庭院、女病房、地下实验室"
+      },
+      "bio": "建筑风格古朴、规模宏大、依山而建。院内通讯与外界隔绝，手机信号在病院周边即被屏蔽。2013 年 9 月 18 日，院内患者全面暴乱，实验失控。",
+      "deeds": [
+        "19 世纪在美国科罗拉多州山区建成，最初作为精神疾病治疗与收容机构。",
+        "1971 年因政府保密丑闻与医疗伦理事件被公众关注后关闭。",
+        "2009 年被穆克夫公司以慈善名义重新开放，成为秘密人体实验场所。",
+        "2013 年 9 月 18 日爆发患者暴乱，随后被穆克夫封锁并清理。"
+      ],
+      "relatedDocs": ["mount-massive-asylum", "warrant-for-seizure"],
+      "relations": [
+        { "target": "murkoff", "label": "重开并用作实验基地的公司" }
+      ]
+    },
+    {
+      "id": "project-walrider",
+      "type": "experiment",
+      "nameZh": "瓦尔里德计划",
+      "nameEn": "Project Walrider",
+      "aliases": [],
+      "works": ["outlast1", "whistleblower"],
+      "summary": "穆克夫在巨山精神病院主导的秘密计划，目标是制造可与人体宿主共生的纳米虫群武器。",
+      "facts": {
+        "类型": "实验 / 计划",
+        "时间跨度": "约 2009 年至 2013 年",
+        "主导者": "鲁道夫·韦尼克博士",
+        "目标": "制造具有超强战斗力的“超级士兵”",
+        "核心技术": "变形引擎疗法（Morphogenic Engine Therapy）"
+      },
+      "bio": "通过持续暴露让受试者与纳米虫群建立神经连接，最终筛选出能够成功承载瓦尔里德的宿主。大部分受试者精神崩溃或身体变异，仅有比利·霍普成为唯一成功宿主。",
+      "deeds": [
+        "2009 年至 2013 年间在巨山精神病院持续进行。",
+        "对大量患者实施变形引擎疗法，制造出大量受害者与“变种人”。",
+        "筛选出比利·霍普作为唯一成功宿主。",
+        "最终因宿主死亡而失控，成为巨山事件的核心。"
+      ],
+      "relatedDocs": ["project-walrider-cost-report", "project-walrider-profitabilty-report", "permission-to-proceed"],
+      "relations": [
+        { "target": "murkoff", "label": "资助与主导方" },
+        { "target": "morphogenic-engine", "label": "核心技术" },
+        { "target": "the-walrider", "label": "计划的最终产物" }
+      ]
+    },
+    {
+      "id": "morphogenic-engine",
+      "type": "experiment",
+      "nameZh": "变形引擎",
+      "nameEn": "Morphogenic Engine",
+      "aliases": ["形态发生引擎", "变形引擎疗法", "Morphogenic Engine"],
+      "works": ["outlast1"],
+      "summary": "由韦尼克博士设计的技术装置，通过纳米机器虫群与宿主意识结合，制造出“瓦尔里德”。",
+      "facts": {
+        "类型": "技术 / 装置",
+        "设计者": "鲁道夫·韦尼克博士",
+        "作用": "使人体与纳米虫群融合，筛选瓦尔里德宿主"
+      },
+      "bio": "瓦尔里德计划的核心技术。受试者经持续暴露后与纳米虫群建立神经连接；成功者可与虫群共生，失败者则精神崩溃或身体变异，沦为病院中的“变种人”。",
+      "deeds": [
+        "在巨山精神病院地下实验室持续运转，用于筛选宿主。",
+        "制造出比利·霍普这一唯一成功宿主。",
+        "同时制造出大量无法承受实验的“变种人”。"
+      ],
+      "relatedDocs": ["morphogenic-engine-chamber-precaution"],
+      "relations": [
+        { "target": "rudolph-wernicke", "label": "设计者" },
+        { "target": "project-walrider", "label": "所属计划的核心技术" }
+      ]
+    }
+  ]
+}

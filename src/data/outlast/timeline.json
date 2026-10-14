@@ -1,0 +1,209 @@
+{
+  "seriesId": "outlast",
+  "note": "世界观时间线：按时间顺序排列的大事件。confidence 三档：已核实 / 推测 / 未明确。",
+  "groups": [
+    {
+      "era": "病院史",
+      "events": [
+        {
+          "id": "asylum-built",
+          "time": "19 世纪",
+          "confidence": "未明确",
+          "title": "巨山精神病院建成",
+          "desc": "巨山精神病院在美国科罗拉多州山区建成，依山而建，拥有行政楼、监狱区、男病房、女病房、地下实验室等多个区块。",
+          "works": [],
+          "characters": []
+        },
+        {
+          "id": "asylum-closed",
+          "time": "1971 年",
+          "confidence": "已核实",
+          "title": "病院因丑闻关闭",
+          "desc": "巨山精神病院因一系列政府保密丑闻与医疗伦理事件被公众关注，随后正式关闭，进入废弃或半废弃状态。",
+          "works": [],
+          "characters": []
+        },
+        {
+          "id": "asylum-reopened",
+          "time": "2009 年",
+          "confidence": "已核实",
+          "title": "穆克夫以慈善名义重开病院",
+          "desc": "穆克夫公司以慈善机构与人道主义项目的表面名义重新开放巨山精神病院，实际将其变为秘密人体实验场所。",
+          "works": [],
+          "characters": ["murkoff", "mount-massive"]
+        }
+      ]
+    },
+    {
+      "era": "实验时代（2009–2013）",
+      "events": [
+        {
+          "id": "walrider-project-start",
+          "time": "约 2009–2013 年",
+          "confidence": "已核实（年份）/ 未明确（具体月份）",
+          "title": "瓦尔里德计划启动",
+          "desc": "韦尼克博士主导的瓦尔里德计划启动，目标是通过纳米机器虫群与宿主意识结合，制造具有超强战斗力的“超级士兵”。",
+          "works": [],
+          "characters": ["rudolph-wernicke", "project-walrider"]
+        },
+        {
+          "id": "morphogenic-therapy",
+          "time": "2009–2013 年间",
+          "confidence": "未明确",
+          "title": "变形引擎疗法与宿主筛选",
+          "desc": "穆克夫对大量患者实施变形引擎疗法。大部分受试者精神崩溃或身体变异，仅有极少数人具备成为宿主的条件，病院秩序被暴力与疯狂逐渐侵蚀。",
+          "works": [],
+          "characters": ["morphogenic-engine", "chris-walker"]
+        },
+        {
+          "id": "billy-hope-success",
+          "time": "未明确",
+          "confidence": "未明确",
+          "title": "比利·霍普成为唯一成功宿主",
+          "desc": "比利·霍普成功与纳米机器虫群融合，成为瓦尔里德的物理与精神核心，长期躺在生命维持系统中。",
+          "works": [],
+          "characters": ["billy-hope", "the-walrider"]
+        },
+        {
+          "id": "experiment-warning",
+          "time": "2013 年内",
+          "confidence": "推测",
+          "title": "实验失控前兆",
+          "desc": "实验进入关键阶段，部分受害者精神崩溃，病院秩序开始恶化。穆克夫高层已察觉失控风险，但未采取有效措施。",
+          "works": [],
+          "characters": ["murkoff"]
+        }
+      ]
+    },
+    {
+      "era": "2013-09-17 泄密日",
+      "events": [
+        {
+          "id": "leak-day",
+          "time": "2013 年 9 月 17 日",
+          "confidence": "已核实（日期）/ 未明确（时刻）",
+          "title": "韦伦·帕克泄露内部证据",
+          "desc": "韦伦·帕克将穆克夫内部的非法实验证据泄露给外界，收件人包括独立记者迈尔斯·阿普舍。泄密后他被穆克夫保安抓获关押，成为《告密者》DLC 的开端。",
+          "works": ["whistleblower"],
+          "characters": ["waylon-park", "miles-upshur"]
+        }
+      ]
+    },
+    {
+      "era": "2013-09-18 事件日",
+      "events": [
+        {
+          "id": "miles-arrives",
+          "time": "事件日夜晚",
+          "confidence": "未明确",
+          "title": "迈尔斯抵达病院，暴乱已爆发",
+          "desc": "迈尔斯驾车抵达巨山精神病院外围，冒雨进入病院，目击暴乱现场后遭克里斯·沃克袭击昏迷。正传《逃生1》就此展开。",
+          "works": ["outlast1"],
+          "characters": ["miles-upshur", "chris-walker"],
+          "region": "病院外围 / 行政楼"
+        },
+        {
+          "id": "waylon-escapes",
+          "time": "事件日夜晚",
+          "confidence": "未明确",
+          "title": "韦伦趁乱挣脱束缚开始逃亡",
+          "desc": "病院暴乱全面爆发，韦伦趁乱挣脱束缚，沿途遭遇食人者弗兰克·马内拉、双胞胎与“新郎”埃迪·格鲁斯金。",
+          "works": ["whistleblower"],
+          "characters": ["waylon-park", "eddie-gluskin"],
+          "region": "厨房 / 病院走廊"
+        },
+        {
+          "id": "trager-killed",
+          "time": "事件日夜晚",
+          "confidence": "未明确",
+          "title": "特雷格切掉迈尔斯手指后死于电梯井",
+          "desc": "理查德·特雷格在男病房抓住迈尔斯并切掉其两根手指，随后在电梯井区域被升降的电梯夹死。",
+          "works": ["outlast1"],
+          "characters": ["richard-trager", "miles-upshur"],
+          "region": "男病房"
+        },
+        {
+          "id": "martin-sacrifice",
+          "time": "2013 年 9 月 18 日晚",
+          "confidence": "已核实（日期）",
+          "title": "马丁神父被钉十字架焚身殉道",
+          "desc": "迈尔斯在女病房目睹马丁神父被狂热患者钉上十字架并纵火焚烧。马丁至死坚信自己的牺牲是“神的安排”。",
+          "works": ["outlast1"],
+          "characters": ["father-martin", "miles-upshur"],
+          "region": "女病房"
+        },
+        {
+          "id": "billy-dies",
+          "time": "事件日夜晚",
+          "confidence": "未明确",
+          "title": "比利·霍普维生系统被关闭，瓦尔里德易主",
+          "desc": "迈尔斯在地下实验室见到韦尼克博士，得知真相后关闭比利·霍普的生命维持系统。失去宿主的瓦尔里德附身于重伤的迈尔斯，迈尔斯成为新宿主。",
+          "works": ["outlast1"],
+          "characters": ["miles-upshur", "rudolph-wernicke", "billy-hope", "the-walrider"],
+          "region": "地下实验室"
+        },
+        {
+          "id": "blaire-dies",
+          "time": "事件日夜晚",
+          "confidence": "未明确",
+          "title": "瓦尔里德击杀穆克夫高管布莱尔，救下韦伦",
+          "desc": "杰里米·布莱尔在行政楼区域追捕韦伦·帕克，最终被迈尔斯形态的瓦尔里德杀死，韦伦因此获救。这是正传与 DLC 的关键交汇点。",
+          "works": ["outlast1", "whistleblower"],
+          "characters": ["jeremy-blaire", "waylon-park", "the-walrider"],
+          "region": "行政楼"
+        },
+        {
+          "id": "miles-leaves",
+          "time": "事件日夜晚",
+          "confidence": "未明确",
+          "title": "瓦尔里德以迈尔斯形态离开病院",
+          "desc": "穆克夫特种部队赶到地下实验室试图回收瓦尔里德，却被纳米虫群横扫屠杀。瓦尔里德以迈尔斯的形态离开巨山精神病院，走向外界。",
+          "works": ["outlast1"],
+          "characters": ["the-walrider", "miles-upshur"],
+          "region": "地下实验室 / 出口"
+        }
+      ]
+    },
+    {
+      "era": "2013-09-19 及之后",
+      "events": [
+        {
+          "id": "aftermath",
+          "time": "2013 年 9 月 19 日凌晨及之后",
+          "confidence": "已核实（次日）/ 未明确（精确时间）",
+          "title": "暴乱被平息，事件被封锁掩盖",
+          "desc": "病院暴乱基本平息，穆克夫封锁病院并清理现场，事件对外被严格掩盖。相关档案被隐藏或销毁。",
+          "works": [],
+          "characters": ["murkoff"]
+        },
+        {
+          "id": "murkoff-account",
+          "time": "巨山事件之后",
+          "confidence": "未明确",
+          "title": "漫画《The Murkoff Account》",
+          "desc": "补叙主要角色前史，揭示“坐标保密线”，为《逃生2》的坦普尔山门事件铺垫；同时描写穆克夫高层对巨山事件的善后与掩盖。",
+          "works": [],
+          "characters": ["murkoff"]
+        },
+        {
+          "id": "outlast2-temple-gate",
+          "time": "巨山事件之后",
+          "confidence": "未明确",
+          "title": "坦普尔山门事件",
+          "desc": "《逃生2》的故事发生地，位于亚利桑那州坦普尔山门，与巨山事件同属穆克夫公司更大阴谋的一部分。",
+          "works": ["outlast2"],
+          "characters": ["murkoff"]
+        },
+        {
+          "id": "trials-prehistory",
+          "time": "冷战初期（二战结束后）",
+          "confidence": "未明确",
+          "title": "穆克夫实验体系的早期源头",
+          "desc": "《逃生：试炼》补充了穆克夫公司人体实验的历史渊源，展现巨山实验项目更早的雏形。官方未给出精确年份。",
+          "works": ["trials"],
+          "characters": ["murkoff"]
+        }
+      ]
+    }
+  ]
+}

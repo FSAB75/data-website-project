@@ -1,0 +1,221 @@
+{
+  "seriesId": "outlast",
+  "works": [
+    {
+      "id": "trials",
+      "order": 1,
+      "title": "逃生：试炼",
+      "titleEn": "The Outlast Trials",
+      "type": "前传",
+      "year": 2023,
+      "developer": "Red Barrels",
+      "platforms": ["PC", "PlayStation", "Xbox"],
+      "genre": "合作生存恐怖",
+      "synopsis": "系列前传性质作品，背景设定在冷战时期穆克夫公司的实验项目，讲述巨山实验体系更早的源头。",
+      "full": false,
+      "characters": [],
+      "documents": [],
+      "chapters": [],
+      "sideChapters": [],
+      "connections": [
+        "定位为系列前传，补充穆克夫人体实验的历史渊源；官方未给出精确年份，推测为二战结束后的冷战初期。"
+      ]
+    },
+    {
+      "id": "outlast1",
+      "order": 2,
+      "title": "逃生1",
+      "titleEn": "Outlast",
+      "type": "正传",
+      "year": 2013,
+      "developer": "Red Barrels",
+      "platforms": ["PC", "PlayStation 4", "Xbox One"],
+      "genre": "第一人称生存恐怖",
+      "synopsis": "独立调查记者迈尔斯·阿普舍收到匿名举报后夜探巨山精神病院，随着收集到的文档与录像逐渐拼出穆克夫公司瓦尔里德计划的恐怖真相。",
+      "full": true,
+      "characters": [
+        "miles-upshur",
+        "father-martin",
+        "chris-walker",
+        "richard-trager",
+        "rudolph-wernicke",
+        "billy-hope",
+        "the-walrider"
+      ],
+      "documents": [
+        { "id": "the-whistleblower", "no": 1, "type": "Document", "nameEn": "The Whistleblower", "nameZh": "告密者", "chapter": "行政楼", "location": "抵达病院时自动获得", "summary": "匿名举报巨山精神病院与穆克夫公司罪行的信件，开启整个事件。", "relatedEntity": "miles-upshur" },
+        { "id": "project-walrider-patient-status-report-for-william-hope", "no": 2, "type": "Document", "nameEn": "Project Walrider Patient Status Report For William Hope", "nameZh": "瓦尔里德计划患者状态报告：威廉·霍普", "chapter": "行政楼", "location": "翻窗进入黑暗房间后，沿走廊左侧第二个房间的桌上", "summary": "瓦尔里德计划受试者威廉·霍普的治疗与实验状态记录。", "relatedEntity": "billy-hope" },
+        { "id": "warrant-for-seizure", "no": 3, "type": "Document", "nameEn": "Warrant for Seizure", "nameZh": "扣押令", "chapter": "行政楼", "location": "坠落至下层后，前方有桌与尸体的位置", "summary": "关于巨山精神病院资产扣押的法律令状。", "relatedEntity": "mount-massive" },
+        { "id": "project-walrider-patient-status-report-for-chris-walker", "no": 4, "type": "Document", "nameEn": "Project Walrider Patient Status Report For Chris Walker", "nameZh": "瓦尔里德计划患者状态报告：克里斯·沃克", "chapter": "行政楼", "location": "黑暗房间右侧、房间角落的明亮隔间内", "summary": "瓦尔里德计划受试者克里斯·沃克的治疗与实验状态记录。", "relatedEntity": "chris-walker" },
+        { "id": "project-walrider-profitabilty-report", "no": 5, "type": "Document", "nameEn": "Project Walrider Profitabilty Report", "nameZh": "瓦尔里德计划盈利报告", "chapter": "行政楼", "location": "走廊尽头、保安室旁的房间桌上", "summary": "穆克夫对瓦尔里德计划进行盈利评估的内部报告。", "relatedEntity": "murkoff" },
+        { "id": "father-martin-finger-painter", "no": 7, "type": "Document", "nameEn": "Father Martin, Finger Painter", "nameZh": "马丁神父，手指画家", "chapter": "监狱区", "location": "消毒室之后上楼，走廊尽头黑暗处的左侧", "summary": "关于自称为神父的病人马丁及其行为的记录。", "relatedEntity": "father-martin" },
+        { "id": "dr-wernicke-death-certificate", "no": 9, "type": "Document", "nameEn": "Dr. Wernicke Death Certificate", "nameZh": "韦尼克医生死亡证明", "chapter": "监狱区", "location": "淋浴间之后右侧房间、靠门的桌上", "summary": "韦尼克医生的官方死亡证明文件（与终章其本人出现形成矛盾伏笔）。", "relatedEntity": "rudolph-wernicke" },
+        { "id": "dr-wernicke-obituary", "no": 10, "type": "Document", "nameEn": "Dr. Wernicke Obituary", "nameZh": "韦尼克医生讣告", "chapter": "监狱区", "location": "逃离巨型变种人后、二层第一间牢房内", "summary": "韦尼克医生去世消息的讣告。", "relatedEntity": "rudolph-wernicke" },
+        { "id": "project-walrider-cost-report", "no": 13, "type": "Document", "nameEn": "Project Walrider Cost Report", "nameZh": "瓦尔里德计划成本报告", "chapter": "男病房", "location": "推开集装箱后进入的病房最里侧右侧", "summary": "瓦尔里德计划的成本核算报告。", "relatedEntity": "project-walrider" },
+        { "id": "walrider-and-nightmares", "no": 19, "type": "Document", "nameEn": "Walrider and Nightmares", "nameZh": "瓦尔里德与噩梦", "chapter": "女病房", "location": "进入长走廊后右转，楼梯井下方", "summary": "将瓦尔里德与噩梦联系在一起的记录。", "relatedEntity": "the-walrider" },
+        { "id": "billys-dreams", "no": 22, "type": "Document", "nameEn": "Billy's Dreams", "nameZh": "比利的梦", "chapter": "重返行政楼", "location": "通风管内右转的隐藏侧室", "summary": "记录比利·霍普梦境与幻觉的文档。", "relatedEntity": "billy-hope" },
+        { "id": "morphogenic-engine-chamber-precaution", "no": 29, "type": "Document", "nameEn": "Morphogenic Engine Chamber Precautions", "nameZh": "形态发生引擎室注意事项", "chapter": "地下实验室", "location": "大型球体机器前的服务器上", "summary": "形态发生引擎室的安全与操作注意事项。", "relatedEntity": "morphogenic-engine" },
+        { "id": "permission-to-proceed", "no": 31, "type": "Document", "nameEn": "Permission to Proceed", "nameZh": "继续许可", "chapter": "地下实验室", "location": "净化室之后上楼梯，前方桌上", "summary": "批准实验继续进行的许可文件。", "relatedEntity": "project-walrider" },
+        { "id": "death-of-hope", "no": 32, "type": "Document", "nameEn": "Death of Hope", "nameZh": "霍普之死", "chapter": "地下实验室", "location": "关闭比利·霍普维生系统后由迈尔斯留下的笔记", "summary": "迈尔斯亲手关闭原宿主生命维持系统后留下的记录。", "relatedEntity": "miles-upshur" },
+        { "id": "mount-massive-asylum", "no": 1, "type": "Note", "nameEn": "Mount Massive Asylum", "nameZh": "巨山精神病院", "chapter": "行政楼", "location": "离开汽车、穿过大门后看向眼前的病院建筑", "summary": "巨山精神病院的外部录像 / 录音笔记。", "relatedEntity": "mount-massive" },
+        { "id": "father-martins-cell", "no": 6, "type": "Note", "nameEn": "Father Martin's Cell", "nameZh": "马丁神父的牢房", "chapter": "监狱区", "location": "在软包房间醒来后，看向右侧墙上的血书“Rest in Peace”", "summary": "马丁神父牢房内的场景录音。", "relatedEntity": "father-martin" }
+      ],
+      "chapters": [
+        {
+          "id": "prologue",
+          "title": "序章：抵达",
+          "region": "病院外围 / 入口",
+          "paragraphs": [
+            "雨夜中，独立调查记者迈尔斯·阿普舍驱车抵达巨山精神病院。他发现手机信号在距病院约一英里处已被屏蔽，随后从被破坏的边门进入院区，沿外墙攀爬架翻入大楼内部。",
+            "院内早已是一片地狱般的景象：断电、血迹、尸体，暴乱已经发生，变种患者四处游荡。迈尔斯在一具保安尸体上找到钥匙卡，并在能源室恢复了部分电力。最终他被一名患者发现，在保安室附近被抓住并被注射大剂量镇静药物，失去意识。"
+          ]
+        },
+        {
+          "id": "chapter-1",
+          "title": "第一章：行政楼",
+          "region": "Administration Block",
+          "paragraphs": [
+            "迈尔斯在院内某处醒来，醒来处邻近马丁神父的牢房，墙面上可见血书“Rest in Peace”。他遭遇了被称为“双胞胎”的变种患者，并开始在这栋行政楼中逃亡。",
+            "在这一区域，他多次遭遇体型巨大的变种患者克里斯·沃克。在病院深处，迈尔斯第一次遇见马丁神父——这名重度宗教化的患者坚信迈尔斯是“上帝派来的见证者”，开始用言语和笔记引导他继续深入病院。"
+          ]
+        },
+        {
+          "id": "chapter-2",
+          "title": "第二章：监狱区",
+          "region": "Prison Block",
+          "paragraphs": [
+            "迈尔斯深入病院的监狱区域，继续躲避克里斯·沃克与其他变种患者。通过收集散落的文档，他逐步了解到穆克夫公司在院内进行的非人道实验、患者“终末计划”的概况，以及瓦尔里德计划的零星信息。",
+            "毫不夸张地说，这一章揭示了穆克夫将患者当作实验体的残酷本质，也为后续剧情埋下了伏笔。"
+          ]
+        },
+        {
+          "id": "chapter-3",
+          "title": "第三章：下水道",
+          "region": "Sewer",
+          "paragraphs": [
+            "为了躲避追猎，迈尔斯被迫进入病院地下的下水道系统。这里比上层更加黑暗、密闭与压抑，变种患者依然潜伏在阴影中。",
+            "在下水道中，迈尔斯通过更多文档与录像补全了穆克夫实验的背景信息，其中包括针对精神类药物的“闪回”实验等内容。"
+          ]
+        },
+        {
+          "id": "chapter-4",
+          "title": "第四章：男病房",
+          "region": "Male Ward",
+          "paragraphs": [
+            "迈尔斯被穆克夫前员工、如今已完全疯狂的理查德·特雷格抓住。特雷格将迈尔斯绑在手术椅上，一边高谈信仰与资本主义的扭曲理论，一边残忍地切掉了迈尔斯的两根手指。",
+            "挣脱束缚后，迈尔斯在通风管道与楼层之间逃亡。最终在电梯区域，特雷格从电梯井跌入楼层夹缝，被升降的电梯当场夹死。"
+          ]
+        },
+        {
+          "id": "chapter-5",
+          "title": "第五章：庭院",
+          "region": "Courtyard",
+          "paragraphs": [
+            "迈尔斯穿过病院的外部庭院区域，在追猎者与变种患者之间周旋。这里视野开阔但危险四伏，穆克夫留下的痕迹与患者的疯狂交织在一起。",
+            "马丁神父通过笔记与广播继续为迈尔斯指引方向，催促他前往女病房与自己汇合。"
+          ]
+        },
+        {
+          "id": "chapter-6",
+          "title": "第六章：女病房",
+          "region": "Female Ward",
+          "paragraphs": [
+            "迈尔斯进入女病房寻找马丁神父，却目睹了他的悲剧结局：狂热患者将马丁抓住，以仪式性献祭的方式将他钉在十字架上，并纵火焚烧。马丁在烈火中死去，日期为 2013 年 9 月 18 日。",
+            "直到生命的最后一刻，他仍坚信自己的牺牲是“神的安排”。马丁之死成为迈尔斯继续前行的动力，他必须完成马丁口中“见证真相”的使命。"
+          ]
+        },
+        {
+          "id": "chapter-7",
+          "title": "第七章：重返行政楼",
+          "region": "Return to Administration Block",
+          "paragraphs": [
+            "带着马丁的遗志，迈尔斯重返行政楼，进一步发现穆克夫高层与瓦尔里德计划之间的关联。与此同时，克里斯·沃克的追猎仍未停止，穆克夫的安保力量也开始在院内活动。"
+          ]
+        },
+        {
+          "id": "chapter-8",
+          "title": "第八章：地下实验室",
+          "region": "Underground Lab",
+          "paragraphs": [
+            "迈尔斯潜入病院最深处的瓦尔里德地下实验室。克里斯·沃克也追到了这里，企图彻底杀死迈尔斯。然而就在此刻，瓦尔里德——一团由纳米机器人组成的实体——现身，并在迈尔斯面前将沃克残暴撕碎。",
+            "迈尔斯遇见了负责瓦尔里德计划的老科学家鲁道夫·韦尼克博士。韦尼克揭示了核心真相：瓦尔里德并非鬼魂，而是由纳米机器人组成的“纳米虫群”；控制它的宿主是自幼被穆克夫当作实验体的患者比利·霍普。",
+            "韦尼克告诉迈尔斯：只有杀死比利，才能终结瓦尔里德。迈尔斯走到维生舱前，操作控制台关闭了比利的生命维持系统，并留下名为“霍普之死”的文档笔记。失去宿主的瓦尔里德暴走，而在迈尔斯死亡之际，瓦尔里德占据了他的身体，迈尔斯由此成为新的宿主。"
+          ]
+        },
+        {
+          "id": "ending",
+          "title": "终章：结局",
+          "region": "地下实验室 / 出口",
+          "paragraphs": [
+            "穆克夫特种部队随后赶到地下实验室，试图压制并回收瓦尔里德。他们向倒在地上的迈尔斯开火，但已被附身的迈尔斯并未真正死去——瓦尔里德纳米虫群从他体内爆发，横扫并屠杀了整支特种部队。",
+            "最终画面中，迈尔斯的身影在纳米虫群中浮现，瓦尔里德以迈尔斯的形态离开巨山精神病院，走向外界。在《逃生：告密者》的结局画面中，他出现在比利母亲蒂芙尼·霍普的住处附近，并杀死了穆克夫高层杰里米·布莱尔，救下了韦伦·帕克。"
+          ]
+        }
+      ],
+      "sideChapters": [
+        {
+          "id": "side-1",
+          "title": "可收集文档与录像",
+          "paragraphs": [
+            "游戏内散布着大量文档（Document）与录像笔记（Note）。前者多为穆克夫内部文件、医学报告与宗教文本，后者是迈尔斯用摄像机记录下的所见所闻。两者共同构成《逃生1》最主要的叙事补充。"
+          ]
+        },
+        {
+          "id": "side-2",
+          "title": "“双胞胎”“纵火狂”等次生威胁",
+          "paragraphs": [
+            "除主线反派外，病院内还游荡着“双胞胎”（食人双胞胎）、纵火狂等变种患者，它们不参与核心剧情，却是环境叙事与压迫感的重要来源。"
+          ]
+        }
+      ],
+      "connections": [
+        "与 DLC《告密者》：两者发生在同一夜晚（2013-09-18）。韦伦·帕克的逃亡与迈尔斯的探索在病院内交错，结局处迈尔斯以瓦尔里德形态救下韦伦。",
+        "与漫画《The Murkoff Account》：漫画补叙主要角色前史，并以“坐标保密线”为《逃生2》的坦普尔山门事件铺垫。",
+        "与《逃生2》：故事承接巨山事件之后，地点转移至亚利桑那州坦普尔山门，同属穆克夫公司更大阴谋的一部分。",
+        "与《逃生：试炼》：作为前传补充穆克夫实验体系的历史渊源，不改变《逃生1》的事件时间线。"
+      ]
+    },
+    {
+      "id": "whistleblower",
+      "order": 3,
+      "title": "逃生：告密者",
+      "titleEn": "Outlast: Whistleblower",
+      "type": "DLC",
+      "year": 2014,
+      "developer": "Red Barrels",
+      "platforms": ["PC", "PlayStation 4", "Xbox One"],
+      "genre": "第一人称生存恐怖",
+      "synopsis": "以穆克夫软件工程师韦伦·帕克为主角，讲述与正传同一夜晚、他在巨山精神病院内的逃亡与揭发，并交代正传结局的前后衔接。",
+      "full": false,
+      "characters": ["waylon-park", "eddie-gluskin", "jeremy-blaire", "miles-upshur"],
+      "documents": [],
+      "chapters": [],
+      "sideChapters": [],
+      "connections": [
+        "与正传《逃生1》严格并行：同一夜晚、同一病院，互为平行视角。",
+        "结尾处迈尔斯形态的瓦尔里德杀死了杰里米·布莱尔，救下韦伦，形成两部作品的关键交汇点。"
+      ]
+    },
+    {
+      "id": "outlast2",
+      "order": 4,
+      "title": "逃生2",
+      "titleEn": "Outlast II",
+      "type": "正传续作",
+      "year": 2017,
+      "developer": "Red Barrels",
+      "platforms": ["PC", "PlayStation 4", "Xbox One"],
+      "genre": "第一人称生存恐怖",
+      "synopsis": "故事发生在巨山事件之后，地点转移到亚利桑那州坦普尔山门，与穆克夫公司更大的阴谋相关联。",
+      "full": false,
+      "characters": [],
+      "documents": [],
+      "chapters": [],
+      "sideChapters": [],
+      "connections": [
+        "与漫画《The Murkoff Account》的“坐标保密线”直接相关，指向坦普尔山门的实验地点。",
+        "时间线位置：在《逃生1》事件之后。"
+      ]
+    }
+  ]
+}
