@@ -148,10 +148,10 @@
       "nameZh": "鲁道夫·韦尼克博士",
       "nameEn": "Dr. Rudolf Wernicke",
       "aliases": ["鲁道夫·韦尼克", "韦尼克博士", "韦尼克"],
-      "works": ["outlast1"],
-      "summary": "瓦尔里德计划的创始人，变形引擎的设计者。终章向迈尔斯揭示了瓦尔里德的真相。",
+      "works": ["trials", "outlast1"],
+      "summary": "瓦尔里德计划的创始人、变形引擎的设计者；在《逃生：试炼》中则是洛斯阿拉莫斯贵宾。",
       "facts": {
-        "身份": "科学家 / 瓦尔里德计划创始人",
+        "身份": "科学家 / 瓦尔里德计划主任 / 洛斯阿拉莫斯贵宾",
         "别名": "韦尼克博士",
         "结局": "《逃生1》结尾存活，后续命运未交代",
         "配音": "Marcel Jeannin"
@@ -161,9 +161,11 @@
         "主持研发了变形引擎（Morphogenic Engine）。",
         "被穆克夫公司雇佣或胁迫，在巨山精神病院地下实验室进行人体实验。",
         "在迈尔斯到达地下实验室后，向他揭示瓦尔里德的真相。",
-        "指示迈尔斯关闭原宿主比利·霍普的生命维持系统。"
+        "指示迈尔斯关闭原宿主比利·霍普的生命维持系统。",
+        "在《逃生：试炼》（1959 年）中作为洛斯阿拉莫斯贵宾出现，偶尔从睡眠室的观察室观察试剂。",
+        "在“巨山”结局中将试剂接入变形引擎，让玩家感受到瓦尔里德的侵袭——揭示车床计划的终极用途。"
       ],
-      "relatedDocs": ["dr-wernicke-death-certificate", "dr-wernicke-obituary", "morphogenic-engine-chamber-precaution"],
+      "relatedDocs": ["dr-wernicke-death-certificate", "dr-wernicke-obituary", "morphogenic-engine-chamber-precaution", "los-alamos", "the-eyes-of-dr-wernicke"],
       "relations": [
         { "target": "billy-hope", "label": "最成功的宿主实验体" },
         { "target": "morphogenic-engine", "label": "设计者" }
@@ -927,6 +929,430 @@
         { "target": "murkoff", "label": "所属公司" },
         { "target": "temple-gate", "label": "被其信号污染的区域" },
         { "target": "morphogenic-engine", "label": "同属穆克夫洗脑实验史" }
+      ]
+    },
+    {
+      "id": "reagent",
+      "type": "character",
+      "nameZh": "试剂",
+      "nameEn": "Reagent",
+      "aliases": ["试剂"],
+      "works": ["trials"],
+      "summary": "《逃生：试炼》中玩家所扮演的角色的统称——被穆克夫以慈善名义诱骗绑架、强制参加试炼的落魄者。",
+      "facts": {
+        "身份": "被绑架的落魄者 / 玩家化身",
+        "标志性装置": "头部被拧上不可摘除的夜视镜",
+        "结局": "随版本与玩家选择而定"
+      },
+      "bio": "穆克夫的招募计划专门物色那些落魄、无家可归、在社会上消失也不会有人发现的人：以慈善项目传单把他们骗来，随即绑架送往辛亚拉设施。他们被强制体检、在头上拧上夜视镜，被迫接受“入会试炼”，随后一场接一场地被投入危险的试炼之中。",
+      "deeds": [
+        "被穆克夫以慈善名义诱骗并绑架至辛亚拉设施。",
+        "被强制体检并在头部植入不可摘除的夜视镜。",
+        "接受“入会试炼”，被要求销毁自己所有的公开与私人记录。",
+        "在睡眠室休息并接受“治疗”，随后反复进入更危险的试炼。",
+        "累积释放代币后参加“重生协议”，被“释放”到外面的世界。"
+      ],
+      "relatedDocs": ["reagent-0877-surveillance", "reagents-escaped"],
+      "relations": [
+        { "target": "hendrick-easterman", "label": "自称其“父亲”的计划主任" }
+      ]
+    },
+    {
+      "id": "hendrick-easterman",
+      "type": "character",
+      "nameZh": "亨德里克·乔里特·伊斯特曼",
+      "nameEn": "Hendrick Joliet Easterman",
+      "aliases": ["亨德里克·乔里特·伊斯特曼", "伊斯特曼"],
+      "works": ["trials"],
+      "summary": "辛亚拉设施首席研究员、车床计划主任，《逃生：试炼》的主要反派。",
+      "facts": {
+        "身份": "辛亚拉设施首席研究员 / 车床计划主任",
+        "登场方式": "仅以广播与屏幕形象出现，试炼前的讲话中多隐没在黑暗里",
+        "结局": "未明确",
+        "配音": "——"
+      },
+      "bio": "聪慧、内敛、能言善辩且富有魅力。即便在项目初期饱受质疑，仍成功为穆克夫打造出一套可运转的方案。他自认为对试剂怀有“慈父般的爱”，常用温和安抚的语气讲话，甚至对他们说“我爱你们”；当其他科学家把试剂称作“老鼠”时，他会纠正说“这些是人，不是老鼠”——但他仍把这些试剂当作实现私利的棋子。",
+      "deeds": [
+        "主导车床计划，以“治疗 / 重生”为幌子把试剂投入一场场试炼。",
+        "要求试剂在入会试炼中销毁自己所有的公开与私人记录，抹去他们的过去。",
+        "以广播与屏幕形象自称试剂的“父亲”，持续下达试炼指令。",
+        "逃跑事件后暂停“重生”，启动“回归计划”作为对试剂的惩罚。"
+      ],
+      "relatedDocs": ["easterman-cia-interview-1", "easterman-recovered", "the-eighth-word"],
+      "relations": [
+        { "target": "the-lathe-project", "label": "所主导计划" },
+        { "target": "rudolph-wernicke", "label": "同属穆克夫实验体系的上层" },
+        { "target": "amelia-collier", "label": "其逃跑事件的最大威胁者" }
+      ]
+    },
+    {
+      "id": "a-bradley-avellanos",
+      "type": "character",
+      "nameZh": "A. 布拉德利·阿韦拉诺斯",
+      "nameEn": "A. Bradley Avellanos",
+      "aliases": ["布拉德利·阿韦拉诺斯", "阿韦拉诺斯"],
+      "works": ["trials"],
+      "summary": "穆克夫公司高管、辛亚拉设施主管，车床计划的幕后监督者之一。",
+      "facts": {
+        "身份": "穆克夫高管 / 辛亚拉设施主管",
+        "登场方式": "仅以音频出现",
+        "结局": "未明确"
+      },
+      "bio": "作为设施主管，他与伊斯特曼共同构成车床计划的行政与执行两级——伊斯特曼负责方案与试炼设计，他负责设施层面的监督与资源。",
+      "deeds": [
+        "以音频形式在设施内出现，监督车床计划的运转。"
+      ],
+      "relatedDocs": ["personnel-report"],
+      "relations": [
+        { "target": "hendrick-easterman", "label": "计划的执行搭档" },
+        { "target": "syanala-facility", "label": "所主管的设施" }
+      ]
+    },
+    {
+      "id": "clyde-perry",
+      "type": "character",
+      "nameZh": "克莱德·佩里",
+      "nameEn": "Clyde Perry",
+      "aliases": ["克莱德·佩里", "佩里"],
+      "works": ["trials"],
+      "summary": "穆克夫“收藏部门”代理人 / 历史精炼主任，负责把现实中的连环杀手“收藏”进车床计划。",
+      "facts": {
+        "身份": "穆克夫收藏部门代理人 / 历史精炼主任",
+        "结局": "死亡（被穿梭车拦腰斩断）"
+      },
+      "bio": "Prime Assets 并非穆克夫凭空造出的怪物，而是被“收藏部门”主动收集来的——佩里正是这条渠道的执行者：把现实社会中臭名昭著的连环杀手、变态罪犯抓来，充当试炼环境的主导者。",
+      "deeds": [
+        "作为收藏部门代理人，把现实中的连环杀手“收藏”进车床计划。",
+        "编写各 Prime Asset 的背景与评估证据文档。",
+        "在官方漫画中被阿米莉亚用砖头打倒于轨道上，撞上飞驰的穿梭车、被拦腰斩断。"
+      ],
+      "relatedDocs": ["gooseberry-background", "coyle-interview"],
+      "relations": [
+        { "target": "amelia-collier", "label": "被她借穿梭车杀死" },
+        { "target": "murkoff", "label": "所属公司" }
+      ]
+    },
+    {
+      "id": "cornelius-noakes",
+      "type": "character",
+      "nameZh": "科尼利厄斯·诺克斯",
+      "nameEn": "Cornelius Noakes",
+      "aliases": ["科尼利厄斯·诺克斯", "诺克斯"],
+      "works": ["trials"],
+      "summary": "辛亚拉设施的工程师，睡眠室 NPC，对试剂抱有同情。",
+      "facts": {
+        "身份": "辛亚拉设施工程师 / 睡眠室 NPC",
+        "结局": "未明确"
+      },
+      "bio": "作为设施工程师，他熟悉辛亚拉的内部构造与运作，是少数会向试剂透露内情、并希望试剂能逃出去终结穆克夫的角色之一。",
+      "deeds": [
+        "在睡眠室向试剂透露设施内情。",
+        "对阿米莉亚的逃跑行动表示称赞，并希望试剂逃跑以终结穆克夫。"
+      ],
+      "relatedDocs": [],
+      "relations": [
+        { "target": "amelia-collier", "label": "其逃跑行动的暗中支持者" },
+        { "target": "syanala-facility", "label": "其任职的设施" }
+      ]
+    },
+    {
+      "id": "emily-barlow",
+      "type": "character",
+      "nameZh": "艾米莉·巴洛",
+      "nameEn": "Emily Barlow",
+      "aliases": ["艾米莉·巴洛", "巴洛"],
+      "works": ["trials"],
+      "summary": "辛亚拉设施的药房护士，睡眠室 NPC，立场偏向穆克夫。",
+      "facts": {
+        "身份": "辛亚拉设施药房护士 / 睡眠室 NPC",
+        "结局": "未明确"
+      },
+      "bio": "负责设施内药房与“治疗”环节。与诺克斯不同，她鼓励试剂上报阿米莉亚的行踪、盼着伊斯特曼能阻止逃跑事件。",
+      "deeds": [
+        "负责药房与试剂的“治疗”环节。",
+        "鼓励试剂上报阿米莉亚的行踪。"
+      ],
+      "relatedDocs": [],
+      "relations": [
+        { "target": "amelia-collier", "label": "其逃跑行动的反对者" }
+      ]
+    },
+    {
+      "id": "dorris-ritter",
+      "type": "character",
+      "nameZh": "多丽丝·里特",
+      "nameEn": "Dorris Ritter",
+      "aliases": ["多丽丝·里特", "多丽丝"],
+      "works": ["trials"],
+      "summary": "试剂出身的违禁品贩子，绰号“影子夫人”，不再参加试炼。",
+      "facts": {
+        "身份": "试剂 / 违禁品与“安培”贩子",
+        "别名": "影子夫人（The Shadowy Dame）",
+        "结局": "未明确"
+      },
+      "bio": "她本人也是试剂，但因不再参加试炼而留在设施内，向其他试剂提供违禁品与“安培（Amps）”。她在睡眠室是特殊的存在：既是受害者，也是设施地下交易的一环。",
+      "deeds": [
+        "向其他试剂提供违禁品与“安培”。",
+        "对阿米莉亚的机智感到惊讶与兴奋。"
+      ],
+      "relatedDocs": [],
+      "relations": [
+        { "target": "reagent", "label": "其顾客群体" }
+      ]
+    },
+    {
+      "id": "mother-gooseberry",
+      "type": "character",
+      "nameZh": "鹅莓妈妈",
+      "nameEn": "Mother Gooseberry",
+      "aliases": ["鹅莓妈妈", "菲丽丝·福特曼"],
+      "works": ["trials"],
+      "summary": "五大 Prime Asset 之一，本名菲丽丝·福特曼，昔日失势的儿童节目主持与牙医助理。",
+      "facts": {
+        "身份": "Prime Asset（主要资产）",
+        "本名": "菲丽丝·福特曼（Phyllis Futterman）",
+        "主题环境": "孤儿院、游乐园、玩具工厂",
+        "结局": "未明确"
+      },
+      "bio": "作为被“收藏部门”收集来的连环杀手，她主宰着以儿童与玩具为主题的一组试炼环境。她的前史与“霍姆斯堡”监狱 / 精神病院相关。",
+      "deeds": [
+        "在被穆克夫收藏前为失势的儿童节目主持与牙医助理。",
+        "作为 Prime Asset 主导孤儿院、游乐园、玩具工厂等主题试炼。"
+      ],
+      "relatedDocs": ["gooseberry-background"],
+      "relations": [
+        { "target": "clyde-perry", "label": "收集他的人" },
+        { "target": "ex-pops", "label": "其试炼环境中的猎杀者群体" }
+      ]
+    },
+    {
+      "id": "leland-coyle",
+      "type": "character",
+      "nameZh": "利兰·科伊尔",
+      "nameEn": "Leland Coyle",
+      "aliases": ["利兰·科伊尔", "科伊尔"],
+      "works": ["trials"],
+      "summary": "五大 Prime Asset 之一，腐败的警长，滥用职权、施暴成性。",
+      "facts": {
+        "身份": "Prime Asset（主要资产）",
+        "被收藏前身份": "腐败的退役 / 在职警长",
+        "主题环境": "警察局、法院",
+        "结局": "未明确"
+      },
+      "bio": "以执法者的身份行施暴之实，被穆克夫收编后成为警察局与法院主题试炼的主导者。他的“合法性”外壳使其暴力显得格外冷酷。",
+      "deeds": [
+        "作为腐败警长滥用职权、施暴成性。",
+        "被收编为 Prime Asset，主导警察局与法院主题试炼。"
+      ],
+      "relatedDocs": ["coyle-interview"],
+      "relations": [
+        { "target": "clyde-perry", "label": "收集他的人" }
+      ]
+    },
+    {
+      "id": "franco-barbi",
+      "type": "character",
+      "nameZh": "弗兰科·巴比",
+      "nameEn": "Franco Barbi",
+      "aliases": ["弗兰科·巴比", "巴比", "Il Bambino"],
+      "works": ["trials"],
+      "summary": "五大 Prime Asset 之一，绰号“Il Bambino（小孩）”的毒贩黑帮。",
+      "facts": {
+        "身份": "Prime Asset（主要资产）",
+        "别名": "Il Bambino（小孩）",
+        "被收藏前身份": "毒贩黑帮",
+        "主题环境": "码头、市中心、郊区",
+        "结局": "未明确"
+      },
+      "bio": "以黑帮与毒品网络为背景的杀手，被“收藏部门”收编后主导码头、市中心与郊区主题的试炼。相关证据出自以“Lupara（黑手党暗杀手枪）”为名的主题群。",
+      "deeds": [
+        "作为毒贩黑帮成员犯下多起罪行。",
+        "被收编为 Prime Asset，主导码头、市中心与郊区主题试炼。"
+      ],
+      "relatedDocs": ["aka-il-bambino"],
+      "relations": [
+        { "target": "clyde-perry", "label": "收集他的人" }
+      ]
+    },
+    {
+      "id": "kress-twins",
+      "type": "character",
+      "nameZh": "奥托与阿罗拉·克雷斯",
+      "nameEn": "Otto & Arora Kress",
+      "aliases": ["奥托与阿罗拉·克雷斯", "克雷斯"],
+      "works": ["trials"],
+      "summary": "五大 Prime Asset 中的双人组合，连体贵族兄妹，继承化学帝国，绰号“水牛城弥诺陶洛斯”。",
+      "facts": {
+        "身份": "Prime Asset（双人）",
+        "别名": "水牛城弥诺陶洛斯（The Buffalo Minotaur）",
+        "被收藏前身份": "继承化学帝国的连体乱伦贵族",
+        "主题环境": "购物中心、电视台",
+        "结局": "未明确"
+      },
+      "bio": "两人在纽约水牛城犯下连环命案后被捕，随后被穆克夫收编，先在其研发部门工作，再被改造为 Prime Asset。他们连体而行，等于拥有三百六十度视野；阿罗拉投掷毒瓶使目标呕吐，奥托则持巨型电锯冲锋。",
+      "deeds": [
+        "在纽约水牛城犯下连环命案后被捕。",
+        "被穆克夫收编，先在研发部门工作，再被改造为 Prime Asset。",
+        "连体行动形成三百六十度视野，主导购物中心与电视台主题试炼。"
+      ],
+      "relatedDocs": ["kress-ambitions"],
+      "relations": [
+        { "target": "clyde-perry", "label": "收集他的人" },
+        { "target": "murkoff", "label": "其研发部门曾聘用二人" }
+      ]
+    },
+    {
+      "id": "liliya-bogomolova",
+      "type": "character",
+      "nameZh": "莉莉娅·博戈莫洛娃",
+      "nameEn": "Liliya Bogomolova",
+      "aliases": ["莉莉娅·博戈莫洛娃", "莉莉娅", "博戈莫洛娃"],
+      "works": ["trials"],
+      "summary": "五大 Prime Asset 之一，俄国出身的潜行女祭司 / 邪教领袖。",
+      "facts": {
+        "身份": "Prime Asset（主要资产）",
+        "被收藏前身份": "俄国出身的女祭司 / 邪教领袖",
+        "主题环境": "度假村",
+        "结局": "未明确"
+      },
+      "bio": "被割舌后仍能“再生”，并拥有近乎超自然的“说服力”。她以潜行与近身诡异的压迫感著称，主导度假村主题的试炼环境。",
+      "deeds": [
+        "作为邪教领袖被割舌，却展现出超自然的说服力。",
+        "被收编为 Prime Asset，主导度假村主题试炼。"
+      ],
+      "relatedDocs": ["her-tongue"],
+      "relations": [
+        { "target": "clyde-perry", "label": "收集他的人" }
+      ]
+    },
+    {
+      "id": "amelia-collier",
+      "type": "character",
+      "nameZh": "阿米莉亚·科利尔",
+      "nameEn": "Amelia Collier",
+      "aliases": ["阿米莉亚·科利尔", "阿米莉亚"],
+      "works": ["trials"],
+      "summary": "试剂出身，1960 年辛亚拉大规模逃跑事件的策划者。",
+      "facts": {
+        "身份": "试剂 / 逃跑事件策划者",
+        "结局": "被捕获并锁在睡眠室示众，随后转入医疗设施；最终下落未明确"
+      },
+      "bio": "极度坚定、富有正义感。她的男友达蒙·格林曾被克莱德·佩里折磨致死，这使她誓要摧毁辛亚拉设施。她黑入伊斯特曼的试炼简报，用广播呼吁试剂在她涂鸦中留下的日期“4-8”当天逃跑。",
+      "deeds": [
+        "黑入伊斯特曼的试炼简报，用广播呼吁试剂在“4-8”当天逃跑。",
+        "重排车辆调度系统，把试剂引向生物危害处理列车而非试炼环境。",
+        "数十名试剂在剧痛中拆除植入的夜视镜，成功逃入辛亚拉峡谷。",
+        "在官方漫画中用砖头将克莱德·佩里打倒于轨道上，借穿梭车将其拦腰斩断。",
+        "最终被穆克夫安保制伏，锁在已关闭的重生入口上方作为警告。"
+      ],
+      "relatedDocs": ["amelia", "amelia-captured", "shuttle-operation"],
+      "relations": [
+        { "target": "clyde-perry", "label": "杀死的对象（男友之仇）" },
+        { "target": "hendrick-easterman", "label": "其逃跑行动的头号威胁" },
+        { "target": "reagent", "label": "所号召的逃跑群体" }
+      ]
+    },
+    {
+      "id": "skinner-man",
+      "type": "entity",
+      "nameZh": "皮肤人",
+      "nameEn": "Skinner Man",
+      "aliases": ["皮肤人"],
+      "works": ["trials"],
+      "summary": "与伊斯特曼及精神错乱机制相关的幽灵实体，在被致幻或被口令触发时出现并袭击试剂。",
+      "facts": {
+        "类型": "幽灵实体",
+        "触发条件": "被“推搡者”喷雾致幻，或被口令触发",
+        "结局": "非实体存在"
+      },
+      "bio": "伊斯特曼的“真容”最接近的呈现就出现在试剂被致幻时——远处看是伊斯特曼的头，靠近时却化为骷髅，这也呼应了皮肤人的形象。游戏中多处结局都以它作为试剂被“处理”后的最终形态。",
+      "deeds": [
+        "在试剂被致幻时出现并袭击。",
+        "在多个“释放”结局中作为最终威胁出现。"
+      ],
+      "relatedDocs": ["skinner-man-research"],
+      "relations": [
+        { "target": "hendrick-easterman", "label": "形象与之高度相关" }
+      ]
+    },
+    {
+      "id": "ex-pops",
+      "type": "organization",
+      "nameZh": "实验种群",
+      "nameEn": "Experimental Population",
+      "aliases": ["实验种群", "Ex-Pops"],
+      "works": ["trials"],
+      "summary": "车床计划中失败的实验体，精神崩溃、极度暴力，成为试炼环境中游荡的猎杀者。",
+      "facts": {
+        "类型": "群体 / 失败实验体",
+        "别称": "Ex-Pops",
+        "构成": "常规 Ex-Pops、专家 Ex-Pops（掷弹手、夜猎人、推搡者等）",
+        "结局": "多数结局未明确"
+      },
+      "bio": "证据文档系统记录了他们的“性格与历史”，是他们被非人化的官方记录。专家型 Ex-Pops 拥有特定行为模式：掷弹手投掷燃烧瓶、夜猎人装备夜视镜在黑暗中潜行追杀、推搡者喷雾致幻并召唤皮肤人。",
+      "deeds": [
+        "作为失败实验体在试炼环境中猎杀试剂。",
+        "被划分为常规与专家两类，专家型具备特定攻击方式。"
+      ],
+      "relatedDocs": ["general-ex-pop", "night-hunters"],
+      "relations": [
+        { "target": "the-lathe-project", "label": "所属计划" },
+        { "target": "skinner-man", "label": "与推搡者致幻机制相关" }
+      ]
+    },
+    {
+      "id": "syanala-facility",
+      "type": "place",
+      "nameZh": "辛亚拉设施",
+      "nameEn": "Sinyala Facility",
+      "aliases": ["辛亚拉设施", "辛亚拉"],
+      "works": ["trials"],
+      "summary": "位于美国亚利桑那州的秘密设施，车床计划的执行场所，《逃生：试炼》的主要舞台。",
+      "facts": {
+        "类型": "地点 / 主要舞台",
+        "位置": "美国亚利桑那州",
+        "功能": "关押试剂、执行试炼、进行植入手术与身心改造",
+        "设施构成": "睡眠室、试炼模拟环境、实验区、生物危害处理设施等"
+      },
+      "bio": "设施由建筑师摩西·斯卡菲奥蒂设计，内部设有多个睡眠室以容纳庞大的试剂人口。这里同时是玩家的大厅与休息区：试剂在试炼之间回到睡眠室恢复、接受“治疗”，再进入下一场试炼。",
+      "deeds": [
+        "作为车床计划的执行场所，关押并改造数十名试剂。",
+        "1960 年发生以阿米莉亚为首的大规模逃跑事件。"
+      ],
+      "relatedDocs": ["scarfiotti-job-interview"],
+      "relations": [
+        { "target": "the-lathe-project", "label": "在此执行的计划" },
+        { "target": "hendrick-easterman", "label": "设施首席研究员" }
+      ]
+    },
+    {
+      "id": "the-lathe-project",
+      "type": "experiment",
+      "nameZh": "车床计划",
+      "nameEn": "Project LATHE",
+      "aliases": ["车床计划", "Project LATHE"],
+      "works": ["trials", "outlast2"],
+      "summary": "穆克夫在辛亚拉设施执行的秘密项目，以“治疗 / 重生”为幌子，把人改造成穆克夫的狂热追随者。",
+      "facts": {
+        "类型": "实验 / 计划",
+        "主任": "亨德里克·乔里特·伊斯特曼",
+        "时间": "1959 年（冷战高峰期），后续延伸至 1960 年",
+        "手段": "夜视镜植入手术 + 试炼中的生理与心理改造",
+        "终极目的": "为瓦尔里德计划筛选 / 培养可用对象"
+      },
+      "bio": "计划的“重生（Rebirth）”从来只是幌子：被“释放”的试剂实际上成了潜伏特工、自杀式刺客，或代理人战争中的工具。而最终的用途，是为瓦尔里德计划服务——这一结局把前传与正传《逃生1》严丝合缝地扣在一起。",
+      "deeds": [
+        "专门物色落魄、可被社会遗忘的人，以慈善之名招募后绑架。",
+        "通过夜视镜植入手术与反复试炼对试剂进行身心改造。",
+        "以“重生”为诱饵，把试剂“治疗”成穆克夫的狂热追随者。",
+        "终极目的为瓦尔里德计划筛选与培养可用对象。"
+      ],
+      "relatedDocs": ["lathe-two-begins", "the-eighth-word"],
+      "relations": [
+        { "target": "hendrick-easterman", "label": "主任" },
+        { "target": "murkoff", "label": "所属公司" },
+        { "target": "syanala-facility", "label": "执行场所" },
+        { "target": "morphogenic-engine", "label": "技术谱系上的后继者" }
       ]
     }
   ]

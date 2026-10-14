@@ -11,15 +11,149 @@
       "developer": "Red Barrels",
       "platforms": ["PC", "PlayStation", "Xbox"],
       "genre": "合作生存恐怖",
-      "synopsis": "系列前传性质作品，背景设定在冷战时期穆克夫公司的实验项目，讲述巨山实验体系更早的源头。",
+      "synopsis": "系列前传。1959 年冷战高峰期，穆克夫在亚利桑那州的辛亚拉设施执行“车床计划”：以慈善名义招募落魄者、绑架为“试剂”，用试炼与植入手术把人改造成公司的狂热追随者——这正是巨山瓦尔里德计划的技术源头。",
       "imagePrompt": "brutalist cold-war secret research facility interior, clinical white tile walls stained and cracked, harsh fluorescent lighting, vintage 1960s surveillance monitors and medical gurneys, oppressive institutional horror atmosphere, cinematic lighting, muted teal and grey palette, no text, no people",
-      "full": false,
-      "characters": [],
-      "documents": [],
-      "chapters": [],
-      "sideChapters": [],
+      "full": true,
+      "characters": ["reagent", "hendrick-easterman", "rudolph-wernicke", "a-bradley-avellanos", "clyde-perry", "cornelius-noakes", "emily-barlow", "dorris-ritter", "mother-gooseberry", "leland-coyle", "franco-barbi", "kress-twins", "liliya-bogomolova", "amelia-collier", "skinner-man"],
+      "documents": [
+        { "id": "easterman-cia-interview-1", "no": 1, "type": "Evidence", "nameEn": "Easterman CIA Interview 1", "nameZh": "伊斯特曼 CIA 访谈 第 1 部分", "chapter": "通往辛亚拉之路", "location": "试炼中随机出现；牢房终端阅读", "summary": "CIA 对伊斯特曼的访谈，揭示其学术与职业背景。", "content": "本作世界观的第一块拼图：一份 CIA 对伊斯特曼的访谈记录，交代了他进入穆克夫之前的学术与职业背景。它把车床计划的源头从“某个疯科学家”拉回到冷战国家机器的一部分——他是被体制选中的人，而不是自己长出来的怪物。", "relatedEntity": "hendrick-easterman" },
+        { "id": "easterman-recovered", "no": 4, "type": "Evidence", "nameEn": "Easterman Recovered", "nameZh": "伊斯特曼复原记录", "chapter": "通往辛亚拉之路", "location": "试炼中随机出现；牢房终端阅读", "summary": "伊斯特曼被穆克夫收编的过程。", "content": "记录伊斯特曼如何被穆克夫“收编”：这不是一次普通的招聘，而是把一个人连同他的研究一并纳入公司体系。与 CIA 访谈并读，可以看出车床计划从一开始就带着国家与企业的双重印记。", "relatedEntity": "hendrick-easterman" },
+        { "id": "lathe-two-begins", "no": 7, "type": "Evidence", "nameEn": "Lathe Two Begins", "nameZh": "车床二号启动", "chapter": "通往辛亚拉之路", "location": "试炼中随机出现；牢房终端阅读", "summary": "车床计划进入新阶段。", "content": "标题即内容：车床计划进入第二阶段。它标记了项目从试验走向规模化的节点——也解释了为什么辛亚拉后来能够容纳数量庞大的试剂人口。", "relatedEntity": "the-lathe-project" },
+        { "id": "los-alamos", "no": 8, "type": "Evidence", "nameEn": "Los Alamos", "nameZh": "洛斯阿拉莫斯", "chapter": "通往辛亚拉之路", "location": "试炼中随机出现；牢房终端阅读", "summary": "与核研究重镇及韦尼克的关联。", "content": "把车床计划与洛斯阿拉莫斯——美国核武器研究重镇——连在一起的文件。它也是韦尼克在本作中作为“洛斯阿拉莫斯贵宾”登场的依据，直接指向《逃生1》的瓦尔里德计划。", "relatedEntity": "rudolph-wernicke" },
+        { "id": "the-eighth-word", "no": 10, "type": "Evidence", "nameEn": "The Eighth Word", "nameZh": "第八个词", "chapter": "通往辛亚拉之路", "location": "试炼中随机出现；牢房终端阅读", "summary": "与“重生”口令机制相关的文本。", "content": "标题中的“第八个词”指向重生仪式中调谐频率获得的口令机制。它把“释放”的神秘感拆解成技术流程——所谓口令，其实是穆克夫用来触发试剂植入物与精神状态的一串指令。", "relatedEntity": "the-lathe-project" },
+        { "id": "gooseberry-background", "no": 11, "type": "Evidence", "nameEn": "Gooseberry Background", "nameZh": "鹅莓妈妈背景", "chapter": "鹅莓妈妈与科伊尔", "location": "试炼中随机出现；牢房终端阅读", "summary": "菲丽丝·福特曼的前史。", "content": "鹅莓妈妈的前史档案：从儿童节目主持到牙医助理，再被“收藏部门”收进车床计划。文件让这个以玩具与儿童为主题的杀手有了来处——她不是凭空出现的怪诞形象，而是现实社会的产物被穆克夫收编。", "relatedEntity": "mother-gooseberry" },
+        { "id": "coyle-interview", "no": 14, "type": "Evidence", "nameEn": "Coyle Interview", "nameZh": "科伊尔访谈", "chapter": "鹅莓妈妈与科伊尔", "location": "试炼中随机出现；牢房终端阅读", "summary": "利兰·科伊尔的收编记录。", "content": "科伊尔的收编记录。腐败警长被穆克夫“收藏”时，他的暴力履历不是障碍，而是入选理由——文件把这套挑选逻辑暴露得很清楚：穆克夫要的正是坏得彻底的人。", "relatedEntity": "leland-coyle" },
+        { "id": "general-ex-pop", "no": 19, "type": "Evidence", "nameEn": "General Ex-Pop", "nameZh": "常规实验种群", "chapter": "实验种群", "location": "试炼中随机出现；牢房终端阅读", "summary": "Ex-Pops 总述。", "content": "对实验种群（Ex-Pops）的总述：他们是车床计划中失败的实验体，精神崩溃、极度暴力。这份文件是把人非人化的官方记录——在此之后，他们在文档里只剩编号与行为数据。", "relatedEntity": "ex-pops" },
+        { "id": "night-hunters", "no": 24, "type": "Evidence", "nameEn": "Night Hunters", "nameZh": "夜猎人", "chapter": "实验种群", "location": "试炼中随机出现；牢房终端阅读", "summary": "装备夜视镜的追击型 Ex-Pop。", "content": "专门记录夜猎人：与试剂一样装备夜视镜、在黑暗区域潜行追杀的专家型 Ex-Pop。它暗示了一件更冷的事实——试剂头上的装置，同时也是把他们变成猎物的工具。", "relatedEntity": "ex-pops" },
+        { "id": "skinner-man-research", "no": 29, "type": "Evidence", "nameEn": "Skinner Man Research", "nameZh": "皮肤人研究", "chapter": "实验种群", "location": "试炼中随机出现；牢房终端阅读", "summary": "皮肤人相关研究。", "content": "关于皮肤人的研究记录。它是本作最接近超自然的存在，却被当作研究对象建档——伊斯特曼的“真容”在被致幻时化为骷髅、与皮肤人形象重叠，两者在文件中被放在一起讨论。", "relatedEntity": "skinner-man" },
+        { "id": "the-eyes-of-dr-wernicke", "no": 66, "type": "Evidence", "nameEn": "The Eyes of Dr. Wernicke", "nameZh": "韦尼克博士的眼睛", "chapter": "未来幽灵", "location": "试炼中随机出现；牢房终端阅读", "summary": "与韦尼克相关的未来线索。", "content": "标题就点明了它的作用：这是把前传与后续作品接起来的“未来幽灵”类证据之一。它指向韦尼克博士——一个在 1959 年就已经在为瓦尔里德计划铺路的人。", "relatedEntity": "rudolph-wernicke" },
+        { "id": "amelia", "no": 81, "type": "Evidence", "nameEn": "Amelia", "nameZh": "阿米莉亚", "chapter": "阿米莉亚", "location": "试炼中随机出现；牢房终端阅读", "summary": "阿米莉亚·科利尔主档。", "content": "阿米莉亚的主档。她与男友达蒙·格林的遭遇、以及由此产生的复仇动机，都记录在这里。她是整部作品中唯一一个真正把“反抗”付诸行动的人。", "relatedEntity": "amelia-collier" },
+        { "id": "amelia-captured", "no": 82, "type": "Evidence", "nameEn": "Amelia Captured", "nameZh": "阿米莉亚被捕", "chapter": "阿米莉亚", "location": "试炼中随机出现；牢房终端阅读", "summary": "其被捕获的记录。", "content": "记录逃跑事件后阿米莉亚被捕获的过程。她被锁在已关闭的重生入口上方示众，作为对所有企图逃跑者的警告——穆克夫用她本人做了一次公开的宣传。", "relatedEntity": "amelia-collier" },
+        { "id": "shuttle-operation", "no": 88, "type": "Evidence", "nameEn": "Shuttle Operation", "nameZh": "穿梭车调度", "chapter": "1960 逃跑事件", "location": "试炼中随机出现；牢房终端阅读", "summary": "阿米莉亚重排的调度系统。", "content": "逃跑的技术核心：阿米莉亚重排了设施车辆调度系统，把试剂引向生物危害处理列车而非试炼环境。一次成功的逃跑靠的不是暴力，而是她对本职系统的熟练。", "relatedEntity": "amelia-collier" },
+        { "id": "kress-ambitions", "no": 94, "type": "Evidence", "nameEn": "Kress Ambitions", "nameZh": "克雷斯的野心", "chapter": "弥诺陶洛斯", "location": "试炼中随机出现；牢房终端阅读", "summary": "克雷斯兄妹的图谋。", "content": "关于连体贵族兄妹奥托与阿罗拉·克雷斯的野心。他们在纽约水牛城犯下连环命案后被穆克夫收编，先在研发部门工作、再被改造为 Prime Asset——从罪犯到公司员工再到试炼主宰，这条路径本身就是穆克夫的画像。", "relatedEntity": "kress-twins" },
+        { "id": "her-tongue", "no": 101, "type": "Evidence", "nameEn": "Her Tongue", "nameZh": "她的舌头", "chapter": "Lupara", "location": "试炼中随机出现；牢房终端阅读", "summary": "莉莉娅被割舌的往事。", "content": "记录莉莉娅·博戈莫洛娃被割舌后仍能再生、并拥有近乎超自然说服力的往事。这份文件游走在医疗记录与灵异传说之间，为系列留下了一处刻意不解释的空白。", "relatedEntity": "liliya-bogomolova" },
+        { "id": "scarfiotti-job-interview", "no": 50, "type": "Evidence", "nameEn": "Scarfiotti Job Interview (excerpt)", "nameZh": "斯卡菲奥蒂求职面试（节选）", "chapter": "辛亚拉人事", "location": "试炼中随机出现；牢房终端阅读", "summary": "设施建筑师的招聘。", "content": "辛亚拉设施建筑师摩西·斯卡菲奥蒂的求职面试节选。一份看似普通的人事材料，却说明了一件事：这座关押与折磨人的设施，是被专业、合法地“建造”出来的。", "relatedEntity": "syanala-facility" },
+        { "id": "aka-il-bambino", "no": 74, "type": "Evidence", "nameEn": "AKA Il Bambino", "nameZh": "又名 Il Bambino（小孩）", "chapter": "Lupara", "location": "试炼中随机出现；牢房终端阅读", "summary": "弗兰科·巴比身份。", "content": "确认毒贩黑帮“Il Bambino（小孩）”就是弗兰科·巴比的身份文件。以黑手党“Lupara（暗杀手枪）”为名的主题群证据都由他串起——从街头犯罪到试炼主宰，只差一次穆克夫的收购。", "relatedEntity": "franco-barbi" },
+        { "id": "personnel-report", "no": 53, "type": "Evidence", "nameEn": "Personnel Report", "nameZh": "人事报告", "chapter": "辛亚拉人事", "location": "试炼中随机出现；牢房终端阅读", "summary": "人员情况。", "content": "设施内部的人事报告，涉及人员调配与管理事务。它把辛亚拉还原成一家“正常运转”的机构——有排班、有报告、有调任申请，而所有这些文书背后，是数十个被抹去过去的人。", "relatedEntity": "a-bradley-avellanos" },
+        { "id": "reagent-0877-surveillance", "no": 59, "type": "Evidence", "nameEn": "REAGENT 0877 SURVEILLANCE", "nameZh": "试剂 0877 监控", "chapter": "辛亚拉人事", "location": "试炼中随机出现；牢房终端阅读", "summary": "监控记录。", "content": "针对具体试剂（编号 0877）的监控记录。它让“试剂”这个抽象统称落到一个真实个体身上：被观察、被记录、被评估——这正是一个人在车床计划里被彻底物化的过程。", "relatedEntity": "reagent" },
+        { "id": "reagents-escaped", "no": 63, "type": "Evidence", "nameEn": "Reagents Escaped", "nameZh": "试剂逃跑", "chapter": "1960 逃跑事件", "location": "试炼中随机出现；牢房终端阅读", "summary": "逃跑事件记录。", "content": "1960 年逃跑事件的官方记录。从监控日志的角度看，这是一次“安全事故”；从试剂的角度看，这是唯一一次集体奔向自由。两种叙述之间的落差，正是本作要呈现的东西。", "relatedEntity": "reagent" }
+      ],
+      "chapters": [
+        {
+          "id": "phase-1",
+          "title": "阶段一：招募、绑架与“入会试炼”",
+          "region": "1959 年 · 冷战高峰期",
+          "paragraphs": [
+            "试剂们因各自的原因沦落街头，看到穆克夫“慈善项目”的传单后申请加入，随即被绑架送往亚利桑那州的辛亚拉设施。抵达后：强制体检、头部被拧上不可摘除的夜视镜、被迫接受“入会试炼”。",
+            "在入会试炼中，设施主任伊斯特曼博士通过广播指示试剂销毁自己所有的公开与私人记录，并在过程中躲避发狂的 Ex-Pops。完成入会试炼后，试剂获准进入睡眠室——这里同时是玩家的大厅与休息区。"
+          ]
+        },
+        {
+          "id": "phase-2",
+          "title": "阶段二：睡眠室与“治疗”日常",
+          "region": "睡眠室",
+          "paragraphs": [
+            "睡眠室被设计为让试剂休息、反思“课程”、从试炼中恢复的地方，同时也是辛亚拉员工观察试剂、方便施治的场所。设施内存在多个睡眠室以容纳庞大的试剂人口，因此许多试剂彼此隔绝。",
+            "在这里，试剂会接触几位关键 NPC：自称为试剂“父亲”的伊斯特曼（仅以广播与屏幕出现）、偶尔从观察室观察试剂的韦尼克、设施主管阿韦拉诺斯（仅以音频出现），以及睡眠室里的诺克斯、巴洛与“影子夫人”多丽丝。"
+          ]
+        },
+        {
+          "id": "phase-3",
+          "title": "阶段三：试炼推进与“主要资产”登场",
+          "region": "试炼模拟环境",
+          "paragraphs": [
+            "试炼的难度与危险性逐步升级。试剂面对的敌人分三类：常规 Ex-Pops（发狂的失败实验体）、专家 Ex-Pops（掷弹手、夜猎人、推搡者、重装、暴怒者、尖叫者、扑击者等拥有特定能力的变体），以及统治各自主题试炼环境的“主要资产（Prime Assets）”。",
+            "五大 Prime Assets 分别是：鹅莓妈妈（孤儿院 / 游乐园 / 玩具工厂）、利兰·科伊尔（警察局 / 法院）、弗兰科·巴比（码头 / 市中心 / 郊区）、奥托与阿罗拉·克雷斯（购物中心 / 电视台）、莉莉娅·博戈莫洛娃（度假村）。他们并非穆克夫凭空造出的怪物，而是被“收藏部门”从现实中收集来的连环杀手与变态罪犯。"
+          ]
+        },
+        {
+          "id": "phase-4",
+          "title": "阶段四：重生协议与多结局",
+          "region": "重生协议（Rebirth）",
+          "paragraphs": [
+            "通过反复完成试炼，试剂会积累释放代币。当穆克夫认为某位试剂“准备好了”，他就可以参加“重生协议”——完成最后一场试炼，然后被“释放”到外面的世界。在最终试炼中，试剂会被分配新身份的证件，并通过调谐多个频率获得一个“口令”。",
+            "打开最后一扇门后，试剂坠入一片黑暗的无限空间：他们行走在水面上，走向远处刺眼的光。结局共有五种（每次通关随机展示其一）：古巴（被改造成潜伏特工）、西贡（成为自杀式刺客）、中国（遭皮肤人攻击）、刚果（被投入冷战代理人战争），以及巨山精神病院地下实验室——试剂被韦尼克接入变形引擎、开始感觉到瓦尔里德的侵袭，直接接续《逃生1》的结局起点。",
+            "所谓“重生 / 释放”从来只是幌子：试剂被“治疗”成穆克夫的狂热追随者，是被派往世界各地的潜伏刺客；而最终极的用途，是为瓦尔里德计划筛选与培养可用对象。"
+          ]
+        },
+        {
+          "id": "phase-5",
+          "title": "阶段五：后续剧情更新（2025 年）",
+          "region": "持续更新的在线游戏",
+          "paragraphs": [
+            "作为服务型在线游戏，本作的主线随版本推进：2025 年 4 月 8 日的 Amor 更新加入了第 6 场试炼与第 6 个结局——逃出设施的试剂阿米莉亚·科利尔重排车辆调度系统，把数十名试剂引向生物危害处理列车，让他们在剧痛中拆除植入设备、逃入辛亚拉峡谷走向夕阳。",
+            "随后 2025 年 4 月 22 日的更新承接逃跑事件：伊斯特曼暂停“重生”、启动“回归计划”作为惩罚，让试剂更加依赖“治疗”；阿米莉亚被捕获并锁在睡眠室示众。2025 年 7 月的第 4 季则重新开放重生试炼，并首次支持合作模式。"
+          ]
+        }
+      ],
+      "sideChapters": [
+        {
+          "id": "side-1",
+          "title": "支线一 · 车床计划与伊斯特曼线",
+          "paragraphs": [
+            "伊斯特曼从未以清晰面貌直接现身：试炼前的讲话中他多隐没在黑暗里。他聪慧、内敛、能言善辩且富有魅力，自认为对试剂怀有“慈父般的爱”，常用温和安抚的语气讲话，甚至对他们说“我爱你们”；当其他科学家把试剂称作“老鼠”时，他会纠正“这些是人，不是老鼠”——但他仍把这些试剂当作实现私利的棋子。",
+            "车床计划的目的是：专门物色落魄、可被社会遗忘的人，以慈善之名招募后绑架；通过夜视镜植入手术与试炼进行身心改造；以“重生”为诱饵把试剂“治疗”成穆克夫的狂热追随者；终极目的（见“巨山”结局）是为瓦尔里德计划筛选与培养可用对象。",
+            "证据线还揭示了计划与洛斯阿拉莫斯及韦尼克的关系：韦尼克作为“洛斯阿拉莫斯贵宾”同时是瓦尔里德计划主任，这直接把本作与《逃生1》的瓦尔里德实验绑在一起。"
+          ]
+        },
+        {
+          "id": "side-2",
+          "title": "支线二 · “收藏部门”与 Prime Assets 收编线",
+          "paragraphs": [
+            "Prime Assets 并非穆克夫凭空造出来的怪物，而是被一个叫“收藏部门”的机构主动“收集”来的——他们把现实社会中臭名昭著的连环杀手、变态罪犯抓来，充当试炼环境的主导者。相关证据由部门代理人克莱德·佩里编写，他的头衔是“历史精炼主任”。",
+            "各资产的来源：鹅莓妈妈本名菲丽丝·福特曼，是失势的儿童节目主持与牙医助理，与“霍姆斯堡”监狱 / 精神病院有关；利兰·科伊尔是腐败的警长；弗兰科·巴比是外号“Il Bambino”的毒贩黑帮；奥托与阿罗拉·克雷斯是继承化学帝国的连体贵族，在纽约水牛城连环杀人、绰号“水牛城弥诺陶洛斯”；莉莉娅·博戈莫洛娃是俄国出身的邪教领袖。",
+            "克雷斯兄妹连体而行，等于拥有三百六十度视野：阿罗拉投掷毒瓶使目标呕吐，奥托持巨型电锯冲锋。"
+          ]
+        },
+        {
+          "id": "side-3",
+          "title": "支线三 · 实验种群（Ex-Pops）线",
+          "paragraphs": [
+            "实验种群（The Experimental Population），简称 Ex-Pops，是车床计划中失败的实验体。他们精神崩溃、极度暴力，成为试炼环境中游荡的猎杀者；证据文档系统记录了他们的“性格与历史”，是他们被非人化的官方记录。",
+            "Ex-Pops 内部又分常规 Ex-Pops（重装、暴怒者、尖叫者、扑击者、掷弹手、推搡者、夜猎人、伪装者等）与专家 Ex-Pops（拥有特定行为模式的子集，如掷弹手投掷燃烧瓶、夜猎人装备夜视镜在黑暗中潜行追杀、推搡者喷雾致幻并召唤皮肤人），以及特殊存在皮肤人。"
+          ]
+        },
+        {
+          "id": "side-4",
+          "title": "支线四 · 冷战与 CIA 线",
+          "paragraphs": [
+            "这条线把车床计划放进冷战大国博弈的背景里。证据文档展示了穆克夫公司与 CIA 如何共同塑造世界政治：CIA 中间人詹姆森·劳勒出现在证据中，是穆克夫与情报机构的接口。",
+            "结局中的古巴、西贡、刚果、中国等场景，正是 20 世纪 60 年代美国秘密行动的热点地区；试剂被“释放”后，实际成为潜伏特工、自杀式刺客，或代理人战争中的工具。"
+          ]
+        },
+        {
+          "id": "side-5",
+          "title": "支线五 · 变体与试炼机制线",
+          "paragraphs": [
+            "变体（Variators）指对试炼环境的实验性调整，即玩家会遇到的随机负面条件。它们既是玩法机制，也是世界观证据：说明车床计划在持续对试炼进行变量测试。",
+            "常见变体包括出血、骤冷、深度灼烧、健康病、猎手、永冻、永久伤害、资产轮盘、拾取装置、监控摄像头、毒性休克等。"
+          ]
+        },
+        {
+          "id": "side-6",
+          "title": "支线六 · 辛亚拉人事与“未来幽灵”线",
+          "paragraphs": [
+            "辛亚拉人事（SINYALA H.R.）主题的证据是关于车床计划流程与人员的报告，涉及设施的建筑、管理与人员调配。相关人物包括设施建筑师摩西·斯卡菲奥蒂、收藏部门代理人克莱德·佩里、穆克夫高管兼设施主管 A. 布拉德利·阿韦拉诺斯。",
+            "“未来幽灵（Ghosts of Outlast Future）”主题记录的则是“对穆克夫未来至关重要的角色”的起源——即把前传与后续作品（《逃生1 / 2》）的角色线索埋进来的部分，是理解“辛亚拉如何通向巨山与神殿之门”的关键证据群。"
+          ]
+        },
+        {
+          "id": "side-7",
+          "title": "支线七 · 阿米莉亚逃跑事件线（1960）",
+          "paragraphs": [
+            "阿米莉亚·科利尔是一位极度坚定、富有正义感的试剂。她的男友达蒙·格林曾被克莱德·佩里折磨致死，这使她誓要摧毁辛亚拉设施。",
+            "她黑入伊斯特曼的试炼简报，用广播呼吁试剂在她涂鸦中留下的日期“4-8”当天逃跑，并在电视上留下广播信息。睡眠室居民对此反应不一：诺克斯称赞她并希望试剂逃跑以终结穆克夫，巴洛则鼓励试剂上报她的行踪，多丽丝对她的机智感到惊讶与兴奋。",
+            "逃跑当日，她重排了车辆调度系统，把试剂引向生物危害处理列车而非试炼环境；试剂在剧痛中拆除植入的夜视镜，数十人成功逃入辛亚拉峡谷。最终阿米莉亚被穆克夫安保制伏，锁在已关闭的重生入口上方、戴氧气面罩，作为对所有企图逃跑者的警告。在官方漫画中，她还用砖头将克莱德·佩里打倒于轨道上、借穿梭车将其拦腰斩断。"
+          ]
+        }
+      ],
       "connections": [
-        "定位为系列前传，补充穆克夫人体实验的历史渊源；官方未给出精确年份，推测为二战结束后的冷战初期。"
+        "时间线位置：系列最早——1959 年（冷战高峰期），早于《逃生1》（2013 年）与《逃生2》（巨山事件之后）。",
+        "与《逃生1》：通过“巨山”结局直接接续——试剂被韦尼克接入变形引擎并感受到瓦尔里德的侵袭；巨山精神病院的惨剧，其技术与人力的源头可以追溯到辛亚拉的车床计划。",
+        "与韦尼克博士：与正传同一角色，本作中他是洛斯阿拉莫斯的贵宾、瓦尔里德计划主任。",
+        "穆克夫实验谱系：辛亚拉（本作）→ 巨山（《逃生1》）→ 神殿之门精神控制站（《逃生2》），构成完整的“穆克夫洗脑实验史”。",
+        "与官方漫画《Outlast: The Murkoff Collections》：补述阿米莉亚等角色的后续（如她与克莱德·佩里的对决）。",
+        "阅读提示：本作为持续更新的在线游戏，没有传统意义上的线性章节，世界观主要通过“证据（Evidence）”文档、伊斯特曼的广播与睡眠室 NPC 的对话碎片化呈现；后续版本可能新增剧情与证据。"
       ]
     },
     {

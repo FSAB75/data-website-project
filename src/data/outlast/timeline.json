@@ -3,6 +3,87 @@
   "note": "世界观时间线：按时间顺序排列的大事件。confidence 三档：已核实 / 推测 / 未明确；major 标记关键大事件。",
   "groups": [
     {
+      "era": "冷战 · 车床计划（1959–1960）",
+      "hint": "《逃生：试炼》是系列时间线最早的一段：1959 年冷战高峰期，穆克夫在亚利桑那州的辛亚拉设施执行车床计划。本作为持续更新的在线游戏，时间线随版本扩展。",
+      "events": [
+        {
+          "id": "lathe-project-start",
+          "time": "1959 年",
+          "confidence": "已核实（年份）/ 未明确（月份）",
+          "major": true,
+          "title": "车床计划启动",
+          "desc": "穆克夫公司在辛亚拉设施启动车床计划，由亨德里克·乔里特·伊斯特曼主导，以“治疗 / 重生”为幌子，把人改造成公司的狂热追随者。",
+          "works": ["trials"],
+          "characters": ["hendrick-easterman", "the-lathe-project", "murkoff"]
+        },
+        {
+          "id": "syanala-built",
+          "time": "1959 年前后（未明确）",
+          "confidence": "未明确",
+          "title": "辛亚拉设施建成",
+          "desc": "由建筑师摩西·斯卡菲奥蒂设计的辛亚拉设施落成，内部设有多个睡眠室与试炼模拟环境，用于关押试剂、执行试炼与植入手术。",
+          "works": ["trials"],
+          "characters": ["syanala-facility", "a-bradley-avellanos", "hendrick-easterman"]
+        },
+        {
+          "id": "reagent-recruitment",
+          "time": "1959 年",
+          "confidence": "已核实",
+          "title": "以慈善名义招募并绑架试剂",
+          "desc": "穆克夫以慈善项目传单招募那些落魄、无家可归、在社会上消失也不会有人发现的人，一旦上钩即被绑架送往辛亚拉设施。",
+          "works": ["trials"],
+          "characters": ["reagent", "murkoff"]
+        },
+        {
+          "id": "initiation-trial",
+          "time": "1959 年",
+          "confidence": "已核实",
+          "title": "入会试炼与夜视镜植入",
+          "desc": "试剂被强制体检、在头部拧上不可摘除的夜视镜，并在伊斯特曼的广播指示下销毁自己所有的公开与私人记录，随后进入睡眠室。",
+          "works": ["trials"],
+          "characters": ["reagent", "hendrick-easterman"]
+        },
+        {
+          "id": "prime-assets-collected",
+          "time": "1959 年前后（未明确）",
+          "confidence": "已核实（事件）/ 未明确（时间）",
+          "title": "收藏部门收编 Prime Assets",
+          "desc": "穆克夫的“收藏部门”把现实社会中臭名昭著的连环杀手与变态罪犯抓来，收编为统治各主题试炼环境的“主要资产”——鹅莓妈妈、利兰·科伊尔、弗兰科·巴比、克雷斯兄妹、莉莉娅·博戈莫洛娃。",
+          "works": ["trials"],
+          "characters": ["clyde-perry", "mother-gooseberry", "leland-coyle", "franco-barbi", "kress-twins", "liliya-bogomolova"]
+        },
+        {
+          "id": "rebirth-protocol",
+          "time": "1959 年及其后",
+          "confidence": "已核实",
+          "major": true,
+          "title": "“重生协议”与五种结局",
+          "desc": "试剂积累释放代币后参加重生协议，被“释放”到外面的世界。五种结局分别把他们送往古巴、西贡、中国、刚果，以及巨山精神病院地下实验室——最后一种中试剂被韦尼克接入变形引擎，直接接续《逃生1》。",
+          "works": ["trials"],
+          "characters": ["reagent", "hendrick-easterman", "rudolph-wernicke", "the-walrider", "skinner-man"]
+        },
+        {
+          "id": "amelia-escape",
+          "time": "约 1960 年 4 月",
+          "confidence": "已核实（月份来自玩家涂鸦线索“4-8”）",
+          "major": true,
+          "title": "阿米莉亚策划的大规模逃跑",
+          "desc": "试剂阿米莉亚·科利尔黑入伊斯特曼的试炼简报，重排车辆调度系统，把数十名试剂引向生物危害处理列车；试剂在剧痛中拆除植入设备，成功逃入辛亚拉峡谷。",
+          "works": ["trials"],
+          "characters": ["amelia-collier", "reagent", "clyde-perry"]
+        },
+        {
+          "id": "project-relapse",
+          "time": "1960 年（逃跑事件后）",
+          "confidence": "已核实",
+          "title": "回归计划与阿米莉亚示众",
+          "desc": "作为对逃跑事件的惩罚，伊斯特曼暂停“重生”、启动“回归计划”，让试剂更加依赖“治疗”；被捕获的阿米莉亚则被锁在已关闭的重生入口上方示众。",
+          "works": ["trials"],
+          "characters": ["amelia-collier", "hendrick-easterman"]
+        }
+      ]
+    },
+    {
       "era": "病院史",
       "events": [
         {
@@ -278,15 +359,6 @@
           "title": "坦普尔山门事件",
           "desc": "《逃生2》的故事发生地，位于亚利桑那州坦普尔山门，与巨山事件同属穆克夫公司更大阴谋的一部分。",
           "works": ["outlast2"],
-          "characters": ["murkoff"]
-        },
-        {
-          "id": "trials-prehistory",
-          "time": "冷战初期（二战结束后）",
-          "confidence": "未明确",
-          "title": "穆克夫实验体系的早期源头",
-          "desc": "《逃生：试炼》补充了穆克夫公司人体实验的历史渊源，展现巨山实验项目更早的雏形。官方未给出精确年份。",
-          "works": ["trials"],
           "characters": ["murkoff"]
         }
       ]
