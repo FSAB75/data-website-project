@@ -1,0 +1,20 @@
+# 构建镜像时不需要的内容
+node_modules
+dist
+.git
+.gitattributes
+.idea
+.vscode
+
+# 原始资料（只用于整理内容，构建站点不需要）
+资料
+
+# 容器相关（运行时才用）
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# 杂项
+*.log
+.DS_Store
+Thumbs.db
