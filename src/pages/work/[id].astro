@@ -116,7 +116,8 @@ const sections = [
       <section id="documents">
         <h2>收集资料</h2>
         <p class="lead">
-          游戏中可收集的文档（Document）与录像笔记（Note）。点击条目右侧的人物 / 机构标签可跳转到对应词条。
+          游戏中可收集的文档（Document）与录像笔记（Note）。点击条目上的标签可跳转到对应词条。
+          每条档案附有「编者解说」——基于公开资料整理的背景说明，<strong>非游戏内原文转录</strong>。
         </p>
         <div class="doc-list">
           {documents.map((d: any) => (
@@ -133,6 +134,12 @@ const sections = [
                 )}
               </div>
               <p class="doc__summary">{d.summary}</p>
+              {d.content && (
+                <details class="doc__more">
+                  <summary>展开编者解说</summary>
+                  <p class="doc__more-body" set:html={linkify(d.content, index, new Set())} />
+                </details>
+              )}
               {d.location && <p class="doc__loc">获取位置：{d.location}</p>}
             </article>
           ))}
@@ -228,6 +235,37 @@ const sections = [
   .doc__meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
   .doc__summary { font-size: 14px; color: var(--muted); margin: 0 0 4px; }
   .doc__loc { font-size: 12px; color: var(--dim); margin: 0; }
+
+  /* 「展开编者解说」——纯 HTML details，无需 JS */
+  .doc__more { margin: 10px 0 6px; }
+  .doc__more > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 12.5px;
+    color: var(--blood-bright);
+    list-style: none;
+    border: 1px solid rgba(224, 72, 60, 0.35);
+    border-radius: 999px;
+    padding: 2px 12px;
+    background: rgba(179, 37, 31, 0.1);
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .doc__more > summary::-webkit-details-marker { display: none; }
+  .doc__more > summary::before { content: '＋'; font-size: 11px; }
+  .doc__more[open] > summary::before { content: '－'; }
+  .doc__more > summary:hover { border-color: var(--blood-bright); background: rgba(179, 37, 31, 0.2); }
+  .doc__more-body {
+    margin: 10px 0 0;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #c9c6c0;
+    line-height: 1.8;
+    background: rgba(25, 25, 32, 0.6);
+    border-left: 2px solid rgba(224, 72, 60, 0.4);
+    border-radius: var(--radius);
+  }
 
   .conn-list { margin: 0; padding-left: 20px; }
   .conn-list li { margin-bottom: 12px; color: #c9c6c0; font-size: 14.5px; }
