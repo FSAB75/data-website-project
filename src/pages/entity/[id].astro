@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { entities, works, getEntity, getWork, typeLabels, seriesOfEntity, entitiesOfSeries } from '../../lib/data.js';
+import { entities, works, getEntity, getWork, typeLabels, docTypeLabel, seriesOfEntity, entitiesOfSeries } from '../../lib/data.js';
 import { buildEntityIndex, linkify } from '../../lib/linkify.js';
 
 export function getStaticPaths() {
@@ -94,7 +94,7 @@ const backWork = relations.length === 0 && relatedDocs.length === 0 ? null : nul
           {relatedDocs.map(({ doc, work }: any) => (
             <a class="doc" href={`/work/${work.id}/#doc-${doc.id}`}>
               <div class="doc__head">
-                <span class="doc__no">{doc.type === 'Note' ? '录像' : '文档'} {String(doc.no).padStart(2, '0')}</span>
+                <span class="doc__no">{docTypeLabel(doc.type)} {String(doc.no).padStart(2, '0')}</span>
                 <h3 class="doc__title">{doc.nameZh}</h3>
                 <span class="doc__en">{doc.nameEn}</span>
               </div>

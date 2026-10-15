@@ -123,7 +123,19 @@ export const typeLabels = {
   experiment: '实验 / 技术',
   place: '地点',
   entity: '存在',
+  ritual: '咒术 / 仪式',
+  item: '物品',
+  concept: '概念',
+  incident: '事件',
 };
+
+/** 收集资料的条目类型 → 展示用短标签 */
+export function docTypeLabel(type) {
+  if (!type) return '档案';
+  if (type === 'Note') return '录像';
+  if (type === 'Document' || type === 'Evidence') return '文档';
+  return type;
+}
 
 export const confidenceLabels = {
   '已核实': 'verified',

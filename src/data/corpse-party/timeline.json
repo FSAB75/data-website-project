@@ -1,0 +1,357 @@
+{
+  "seriesId": "corpse-party",
+  "note": "世界观时间线：以游戏本篇给出的年份为骨架，补入系列前史与后续衔接。confidence 三档：已核实 / 推测 / 未明确；major 标记关键大事件。",
+  "groups": [
+    {
+      "era": "中世纪 · 诅咒的起源",
+      "hint": "这一层设定来自系列后续作品的补完，《血色笼罩》本篇并未直接展开。它把「一所学校的怪谈」扩展成了跨越数百年的诅咒。",
+      "events": [
+        {
+          "id": "nirvana-born",
+          "time": "中世纪",
+          "confidence": "已核实",
+          "title": "魔女的怨念化为「涅槃」",
+          "desc": "一位在魔女狩猎中被杀的魔女，其怨念化为「涅槃（Nirvana）」被封印在一本禁书之中。",
+          "characters": ["cp-nirvana"],
+          "works": ["blood-drive"]
+        },
+        {
+          "id": "occult-orders",
+          "time": "中世纪之后（未明确）",
+          "confidence": "已核实（存在）/ 未明确（时间）",
+          "title": "黑魔术教团先后成立",
+          "desc": "与禁书相关的黑魔术教团「马尔托巴墓」与「御跋如」协会先后成立，成为这件东西的看守者。",
+          "characters": ["cp-martuba-tomb", "cp-mikage-association"],
+          "works": ["blood-drive"]
+        },
+        {
+          "id": "shinozaki-custody",
+          "time": "20 世纪早期",
+          "confidence": "已核实",
+          "title": "禁书与死逢石被交给篠崎家",
+          "desc": "「御跋如」协会把记载黑魔法禁术的《影之书》与「死逢石」秘密交予篠崎家保管——死逢石托付给篠崎护月，影之书托付给篠崎芳惠。这批人选择了「藏起来」而不是「用掉」，但禁书只是换了个柜子。",
+          "characters": ["cp-shadow-book", "cp-death-meeting-stone", "cp-mikage-association"],
+          "works": ["blood-drive"]
+        }
+      ]
+    },
+    {
+      "era": "1950 年代 · 篠崎家的代价",
+      "hint": "天神小学的诅咒并不是从幸子开始的——它先经过了她的父母。",
+      "events": [
+        {
+          "id": "seiji-near-death",
+          "time": "1950 年代",
+          "confidence": "已核实",
+          "major": true,
+          "title": "芳惠动用《影之书》禁术，涅槃被释放",
+          "desc": "篠崎芳惠的丈夫篠崎诚二濒死，她为救丈夫行使《影之书》中的禁术，遭受反噬、涅槃被释放。幼女篠崎幸子为救母亲，把涅槃吞下并封印在自己体内。",
+          "characters": ["cp-seiji-shinozaki", "cp-yoshie-shinozaki", "cp-sachiko-shinozaki", "cp-shadow-book", "cp-nirvana"],
+          "works": ["blood-drive"]
+        },
+        {
+          "id": "heavenly-host-opens",
+          "time": "1952 年 4 月 1 日",
+          "confidence": "已核实",
+          "title": "天神小学开校",
+          "desc": "诅咒的舞台诞生。谁也不会想到，一所普通小学会在第二年成为整条时间线的起点。",
+          "characters": ["cp-heavenly-host"],
+          "works": ["blood-covered"]
+        }
+      ]
+    },
+    {
+      "era": "1953 年 · 惨剧发生",
+      "hint": "幸子死去那天是她的生日。这一天的三件事，决定了往后七十年的全部走向。",
+      "events": [
+        {
+          "id": "yoshie-death",
+          "time": "1953 年 7 月 19 日",
+          "confidence": "已核实",
+          "major": true,
+          "title": "篠崎芳惠坠楼身亡",
+          "desc": "幸子生日当天，母亲篠崎芳惠（校保健医）因抗拒校长柳堀隆峰的性侵企图，在挣扎中坠楼、颈骨折断身亡。放学后来找母亲的幸子，亲眼目睹了这一幕。",
+          "region": "天神小学",
+          "characters": ["cp-yoshie-shinozaki", "cp-takamine-yanagihori", "cp-sachiko-shinozaki"],
+          "works": ["blood-covered"]
+        },
+        {
+          "id": "sachiko-murdered",
+          "time": "1953 年 7 月 19 日（同日稍后）",
+          "confidence": "已核实",
+          "major": true,
+          "title": "幸子被扼颈灭口、埋尸地下室",
+          "desc": "校长柳堀隆峰为灭口，追捕并扼死了年幼的篠崎幸子，把遗体掩埋于校舍地下室，对外谎称「芳惠死于意外」、幸子「失踪」。幸子的怨念从此扎根。",
+          "region": "天神小学 · 校舍地下室",
+          "characters": ["cp-sachiko-shinozaki", "cp-takamine-yanagihori"],
+          "works": ["blood-covered"]
+        },
+        {
+          "id": "tongue-cut",
+          "time": "此后数年间（未明确）",
+          "confidence": "已核实（事件）/ 未明确（时间）",
+          "title": "校长割下幸子的舌头",
+          "desc": "为了阻止幸子「说话」，精神逐渐异常的校长掘出遗体、割下她的舌头并用剪刀反复刺戳。这成为日后必须「归还舌头」才能超度她的伏笔。",
+          "characters": ["cp-sachiko-shinozaki", "cp-takamine-yanagihori"],
+          "works": ["blood-covered"]
+        }
+      ]
+    },
+    {
+      "era": "1973–1975 · 惨案扩大与废校",
+      "hint": "幸子的怨念在二十年后长出了新的形状——这一次，她借的是一个活人的手。",
+      "events": [
+        {
+          "id": "child-abduction",
+          "time": "1973 年 9 月 4 日",
+          "confidence": "已核实",
+          "major": true,
+          "title": "儿童连续诱拐杀害事件",
+          "desc": "天神小学地下防空洞内发生儿童连续诱拐杀害事件。凶手表面上是教师柳堀义雄，实为受幸子怨念操纵的傀儡。",
+          "region": "天神小学 · 地下防空洞",
+          "characters": ["cp-yoshikazu-yanagihori", "cp-sachiko-shinozaki", "cp-yuki-kanno", "cp-tokiko-tsuji", "cp-ryou-yoshizawa"],
+          "works": ["blood-covered"]
+        },
+        {
+          "id": "bodies-found",
+          "time": "1973 年 9 月 18 日",
+          "confidence": "已核实",
+          "title": "三名儿童遗体被发现，义雄被捕",
+          "desc": "菅乃雪（11 岁）、吉泽辽（8 岁）、辻时子（7 岁）被发现遇害，均遭割舌。幸子以「获救的幸存者」身份被发现——实为其伪装与嫁祸；教师柳堀义雄被当作嫌犯逮捕。",
+          "characters": ["cp-yuki-kanno", "cp-ryou-yoshizawa", "cp-tokiko-tsuji", "cp-yoshikazu-yanagihori", "cp-sachiko-shinozaki"],
+          "works": ["blood-covered"]
+        },
+        {
+          "id": "yoshikazu-suicide",
+          "time": "1974 年 2 月 20 日",
+          "confidence": "已核实",
+          "title": "柳堀义雄在地下室自缢，化为「锤子男」",
+          "desc": "义雄被送进精神病院后逃出，在天神小学地下室上吊自杀。死后化为怨灵「锤子男」，此后以锤子击杀闯入者——白檀高中的刻命裕也即死于其手。",
+          "region": "天神小学 · 地下室",
+          "characters": ["cp-yoshikazu-yanagihori", "cp-yuuya-kizami"],
+          "works": ["blood-covered"]
+        },
+        {
+          "id": "school-closed",
+          "time": "1975 年 11 月 18–19 日",
+          "confidence": "已核实",
+          "major": true,
+          "title": "天神小学废校，校长跳楼自杀",
+          "desc": "因连续惨案，学校于 11 月 18 日决定废校；19 日，校长柳堀隆峰从校舍屋顶跳楼自杀，学校随后被拆除。但诅咒并未终结——校舍虽被拆除，由三名被害儿童的灵魂维系着的「多重次元·封闭空间」仍在，一座永远处在黑夜里的天神小学继续吞噬闯入者。",
+          "characters": ["cp-takamine-yanagihori", "cp-heavenly-host", "cp-yuki-kanno", "cp-tokiko-tsuji", "cp-ryou-yoshizawa"],
+          "works": ["blood-covered"]
+        }
+      ]
+    },
+    {
+      "era": "1978 年起 · 如月学园时代",
+      "hint": "新学校盖在旧学校的骨头上。三十年后的 2 年 9 组，就在这里迎来了那场告别聚会。",
+      "events": [
+        {
+          "id": "kisaragi-opens",
+          "time": "1978 年 4 月 1 日",
+          "confidence": "已核实",
+          "title": "如月学园在原天神小学遗址开校",
+          "desc": "如月学园在原天神小学遗址上开校。校舍换了名字，地下的东西没有换。",
+          "characters": ["cp-kisaragi-academy", "cp-heavenly-host"],
+          "works": ["blood-covered"]
+        },
+        {
+          "id": "cast-born",
+          "time": "1985–1992 年",
+          "confidence": "已核实",
+          "title": "2 年 9 组众人的出生",
+          "desc": "宍戸结衣（1985-05-03）、持田哲志（1991-07-04）、篠崎步美（1991-09-12）、冴之木七星（1991-09-13）、岸沼良树（1991-11-08）、森繁朔太郎（1992-02-14）、中嶋直美（1992-12-14）、篠原世以子（1992-12-22）、铃本茧（1992-12-29）相继出生——他们日后将因为同一道咒语走进同一座学校。",
+          "characters": ["cp-yui-shishido", "cp-satoshi-mochida", "cp-ayumi-shinozaki", "cp-naho-saenoki", "cp-yoshiki-kishinuma", "cp-sakutaro-morishige", "cp-naomi-nakashima", "cp-seiko-shinohara", "cp-mayu-suzumoto"],
+          "works": ["blood-covered"]
+        }
+      ]
+    },
+    {
+      "era": "2008-09-13 · 引信点燃",
+      "hint": "整起事件的直接前因：一个作家求方法，一个通灵少女被抛下。",
+      "events": [
+        {
+          "id": "kibiki-enters",
+          "time": "2008 年 9 月 13 日",
+          "confidence": "已核实",
+          "major": true,
+          "title": "鬼碑忌浩与助手进入天神小学",
+          "desc": "作家鬼碑忌浩为调查天神小学事件，向通灵少女冴之木七星求取进入的方法与道具，随后抛下七星、只带助手田久地将五前往。两人此后再未出现。",
+          "characters": ["cp-kou-kibiki", "cp-shougo-taguchi", "cp-naho-saenoki"],
+          "works": ["blood-covered"]
+        },
+        {
+          "id": "blog-posted",
+          "time": "2008 年 9 月 13 日（当夜）",
+          "confidence": "已核实",
+          "major": true,
+          "title": "七星把咒语与错误用法发布在博客上",
+          "desc": "被抛下的七星陷入憎恨与自责，把「幸福的幸子小姐」作为一种祈福方式放到自己的博客上，并故意告知错误的方法。死者越多，怨念越强，幸子越难被超度——她亲手把这场诅咒做大了一圈。",
+          "characters": ["cp-naho-saenoki", "cp-sachiko-ever-after", "cp-heavenly-host"],
+          "works": ["blood-covered", "book-of-shadows"]
+        }
+      ]
+    },
+    {
+      "era": "2008-10-27 · 事件日",
+      "hint": "同一天，至少有三个学校的人被拖进同一座学校。左侧是《血色笼罩》的正传主线，右侧是同时进行的其他被卷入者。",
+      "dual": true,
+      "tracks": [
+        {
+          "key": "main",
+          "name": "正传 · 如月学园 2 年 9 组线",
+          "events": [
+            {
+              "id": "ritual-night",
+              "time": "2008 年 10 月 27 日 · 傍晚",
+              "confidence": "已核实",
+              "major": true,
+              "title": "第 30 回文化祭 · 咒语与坠落",
+              "desc": "为送别即将转学的铃本茧，2 年 9 组在班长篠崎步美提议下施行「幸福的幸子小姐」咒语；连同赶来送伞的持田由香，共 9 人被卷入异空间天神小学，并在各处被冲散。",
+              "characters": ["cp-ayumi-shinozaki", "cp-mayu-suzumoto", "cp-yuka-mochida", "cp-sachiko-ever-after", "cp-kisaragi-academy"],
+              "works": ["blood-covered"]
+            },
+            {
+              "id": "ch1-seiko",
+              "time": "同日 ～ 数日",
+              "confidence": "已核实",
+              "major": true,
+              "title": "第 1 章 · 世以子被吊死",
+              "desc": "中嶋直美与挚友篠原世以子同行求生，直美在黑化状态下精神失控，无意识中用绳索把世以子吊死在女厕所。世以子死后仍以手机短信陪伴她。",
+              "characters": ["cp-naomi-nakashima", "cp-seiko-shinohara", "cp-darkening"],
+              "works": ["blood-covered"]
+            },
+            {
+              "id": "ch2-mayu",
+              "time": "同日 ～ 数日",
+              "confidence": "已核实",
+              "title": "第 2 章 · 茧身体爆裂惨死",
+              "desc": "铃本茧试图独自超度一名儿童怨灵，失败后被怨灵猛烈撞向墙壁，身体当场爆裂、化为肉泥。岸沼良树与篠崎步美在别馆一带遭到儿童怨灵追击，步美因灵媒体质屡次被附身。",
+              "characters": ["cp-mayu-suzumoto", "cp-yoshiki-kishinuma", "cp-ayumi-shinozaki"],
+              "works": ["blood-covered"]
+            },
+            {
+              "id": "ch3-kizami",
+              "time": "同日 ～ 数日",
+              "confidence": "已核实",
+              "title": "第 3 章 · 刻命追杀由香",
+              "desc": "持田哲志与妹妹由香在别馆区域遭遇白檀高中的刻命裕也，由香遭到追杀。同时，「牺牲者手记」在池上 / 下见区域密集出现——读满 5 本即触发坏结局。",
+              "characters": ["cp-satoshi-mochida", "cp-yuka-mochida", "cp-yuuya-kizami", "cp-victim-memoir"],
+              "works": ["blood-covered"]
+            },
+            {
+              "id": "ch4-morishige",
+              "time": "同日 ～ 数日",
+              "confidence": "已核实",
+              "title": "第 4 章 · 森繁跳楼自杀",
+              "desc": "森繁朔太郎与茧失散后精神失常，沉迷于拍摄尸体照片；当他从照片中认出那团「肉泥」正是茧的遗体时，彻底崩溃，跳楼自杀。",
+              "characters": ["cp-sakutaro-morishige", "cp-mayu-suzumoto"],
+              "works": ["blood-covered"]
+            },
+            {
+              "id": "ch5-sachiko",
+              "time": "同日 ～ 数日（终章）",
+              "confidence": "已核实",
+              "major": true,
+              "title": "第 5 章 · 超度幸子，结衣牺牲",
+              "desc": "步美一行合流，集齐七星的笔记、取回幸子的舌头、献上黑猫玩偶，完成幸子的安魂仪式；副班主任宍戸结衣因地板陷落摔入深坑、为保护学生而牺牲。",
+              "characters": ["cp-ayumi-shinozaki", "cp-sachiko-shinozaki", "cp-naho-notes", "cp-sachiko-relics", "cp-yui-shishido"],
+              "works": ["blood-covered"]
+            }
+          ]
+        },
+        {
+          "key": "others",
+          "name": "并行 · 其他被卷入者线",
+          "events": [
+            {
+              "id": "byakudan-phrase",
+              "time": "2008 年 10 月 27 日前后（未明确）",
+              "confidence": "已核实（事件）/ 未明确（时间）",
+              "title": "白檀高中 2 年 4 组施行同一咒语",
+              "desc": "与如月学园毫无关系的白檀高中 2 年 4 组也施行了「幸福的幸子小姐」，因此被拖入天神小学。这一组之间没有怨灵，最致命的危险来自同伴本身。",
+              "characters": ["cp-byakudan-high", "cp-yuuya-kizami", "cp-sachiko-ever-after"],
+              "works": ["blood-covered"]
+            },
+            {
+              "id": "kurosaki-killed",
+              "time": "事件日前后（未明确）",
+              "confidence": "已核实",
+              "title": "刻命杀害黑崎健介并抛尸",
+              "desc": "刻命裕也在天神小学中彻底释放杀戮欲，杀害幼驯染兼同班同学黑崎健介并将尸体抛入深渊。",
+              "characters": ["cp-yuuya-kizami", "cp-kensuke-kurosaki"],
+              "works": ["blood-covered"]
+            },
+            {
+              "id": "naho-enters",
+              "time": "事件日前后（未明确）",
+              "confidence": "已核实",
+              "title": "七星与早矢香被困天神小学",
+              "desc": "星本人也被困于天神小学，好友大上早矢香因担心她而进入，寻找途中被黑化吞噬、消散。七星最终亦被黑化吞噬、失去意识后消散，但其灵魂仍在。",
+              "characters": ["cp-naho-saenoki", "cp-sayaka-ooue", "cp-darkening"],
+              "works": ["blood-covered", "book-of-shadows"]
+            },
+            {
+              "id": "kizami-killed",
+              "time": "事件日前后（未明确）",
+              "confidence": "已核实",
+              "title": "刻命被「锤子男」击毙",
+              "desc": "刻命裕也在癫狂中被怨灵柳堀义雄（锤子男）击杀，尸体制成了学校的解剖模型。最像怪物的人，死在真正的怪物手里。",
+              "characters": ["cp-yuuya-kizami", "cp-yoshikazu-yanagihori"],
+              "works": ["blood-covered"]
+            }
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "id": "escape-before-bell",
+          "time": "事件日 · 终章",
+          "confidence": "已核实",
+          "major": true,
+          "title": "第 7 次钟声前逃出别馆",
+          "desc": "幸子被超度后，逃生窗口只有钟声响过 7 次之前的大约两分二十秒。5 人在这段时间里施展「逆打法」逃往别馆，回到了现世。",
+          "characters": ["cp-ayumi-shinozaki", "cp-satoshi-mochida", "cp-naomi-nakashima", "cp-yoshiki-kishinuma", "cp-yuka-mochida"],
+          "works": ["blood-covered"]
+        },
+        {
+          "id": "erased-from-world",
+          "time": "事件结果",
+          "confidence": "已核实",
+          "major": true,
+          "title": "生还 5 人，其余人被现实遗忘",
+          "desc": "生还者 5 人：持田哲志、中嶋直美、篠崎步美、岸沼良树、持田由香。必死死者 4 人：篠原世以子、铃本茧、森繁朔太郎、宍戸结衣。其余被卷入者亦全部殒命。而所有死在天神小学的人，都会失去自己在现实世界中存在过的一切痕迹——世上只剩下这 5 个人记得他们。",
+          "characters": ["cp-satoshi-mochida", "cp-naomi-nakashima", "cp-ayumi-shinozaki", "cp-yoshiki-kishinuma", "cp-yuka-mochida", "cp-seiko-shinohara", "cp-mayu-suzumoto", "cp-sakutaro-morishige", "cp-yui-shishido"],
+          "works": ["blood-covered"]
+        }
+      ]
+    },
+    {
+      "era": "2008-11 起 · 后续衔接",
+      "hint": "天神小学篇并没有在真结局处结束——活下来的人选择不放手，于是有了《影之书》与《驭血》。",
+      "events": [
+        {
+          "id": "book-of-shadows-forbidden",
+          "time": "2008 年 11 月 11 日",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《影之书》篇 · 禁术反噬，篠崎丙被斩首",
+          "desc": "篠崎步美与中嶋直美为复活在天神小学死去的同伴，前往篠崎家旧宅动用《影之书》禁术，招致黑魔法反噬；步美之姊篠崎丙为救妹妹挡下魔法阵，被斩首身亡。",
+          "characters": ["cp-ayumi-shinozaki", "cp-naomi-nakashima", "cp-shadow-book", "cp-hinoe-shinozaki"],
+          "works": ["book-of-shadows"]
+        },
+        {
+          "id": "blood-drive-start",
+          "time": "2009 年 1 月 11 日",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《驭血》篇开端",
+          "desc": "受《影之书》事件影响的步美再度进入天神小学，为阻止影之书吞噬世界而战——官方把这一作定义为「天神小学篇完结作」。",
+          "characters": ["cp-ayumi-shinozaki", "cp-heavenly-host", "cp-shadow-book"],
+          "works": ["blood-drive"]
+        }
+      ]
+    }
+  ]
+}

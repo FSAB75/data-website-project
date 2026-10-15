@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { works, getEntity, typeLabels, seriesOfWork, entitiesOfSeries } from '../../lib/data.js';
+import { works, getEntity, typeLabels, docTypeLabel, seriesOfWork, entitiesOfSeries } from '../../lib/data.js';
 import { buildEntityIndex, linkify } from '../../lib/linkify.js';
 
 export function getStaticPaths() {
@@ -126,7 +126,7 @@ const sections = [
           {documents.map((d: any) => (
             <article class="doc" id={`doc-${d.id}`}>
               <div class="doc__head">
-                <span class="doc__no">{d.type === 'Note' ? '录像' : '文档'} {String(d.no).padStart(2, '0')}</span>
+                <span class="doc__no">{docTypeLabel(d.type)} {String(d.no).padStart(2, '0')}</span>
                 <h3 class="doc__title">{d.nameZh}</h3>
                 <span class="doc__en">{d.nameEn}</span>
               </div>
