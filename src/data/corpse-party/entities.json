@@ -6,8 +6,14 @@
       "type": "character",
       "nameZh": "持田哲志",
       "nameEn": "Satoshi Mochida",
-      "aliases": ["哲志"],
-      "works": ["blood-covered", "book-of-shadows", "blood-drive"],
+      "aliases": [
+        "哲志"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows",
+        "blood-drive"
+      ],
       "summary": "如月学园高等部 2 年 9 组学生，《血色笼罩》男主角。胆小怕黑，却处处护着妹妹与同伴。",
       "facts": {
         "身份": "如月学园高等部 2 年 9 组学生（男主角）",
@@ -25,9 +31,18 @@
         "在钟声响过 7 次之前逃出别馆，与直美、步美、良树、由香一同生还。"
       ],
       "relations": [
-        { "target": "cp-yuka-mochida", "label": "妹妹" },
-        { "target": "cp-naomi-nakashima", "label": "青梅竹马，互有好感" },
-        { "target": "cp-ayumi-shinozaki", "label": "同班同学，超度幸子的同伴" }
+        {
+          "target": "cp-yuka-mochida",
+          "label": "妹妹"
+        },
+        {
+          "target": "cp-naomi-nakashima",
+          "label": "青梅竹马，互有好感"
+        },
+        {
+          "target": "cp-ayumi-shinozaki",
+          "label": "同班同学，超度幸子的同伴"
+        }
       ]
     },
     {
@@ -35,8 +50,14 @@
       "type": "character",
       "nameZh": "中嶋直美",
       "nameEn": "Naomi Nakashima",
-      "aliases": ["直美"],
-      "works": ["blood-covered", "book-of-shadows", "blood-drive"],
+      "aliases": [
+        "直美"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows",
+        "blood-drive"
+      ],
       "summary": "如月学园 2 年 9 组学生，哲志的青梅竹马，第 1 章主视角。因黑化而在无意识中吊死了挚友世以子。",
       "facts": {
         "身份": "如月学园高等部 2 年 9 组学生 / 哲志的青梅竹马",
@@ -54,19 +75,36 @@
         "在《影之书》《驭血》中为复活死去的同伴而再度行动。"
       ],
       "relations": [
-        { "target": "cp-seiko-shinohara", "label": "挚友（被自己在黑化中杀害）" },
-        { "target": "cp-satoshi-mochida", "label": "青梅竹马" },
-        { "target": "cp-natsumi-nakashima", "label": "母亲" }
+        {
+          "target": "cp-seiko-shinohara",
+          "label": "挚友（被自己在黑化中杀害）"
+        },
+        {
+          "target": "cp-satoshi-mochida",
+          "label": "青梅竹马"
+        },
+        {
+          "target": "cp-natsumi-nakashima",
+          "label": "母亲"
+        }
       ],
-      "relatedDocs": ["victim-memoir-1"]
+      "relatedDocs": [
+        "victim-memoir-1"
+      ]
     },
     {
       "id": "cp-yoshiki-kishinuma",
       "type": "character",
       "nameZh": "岸沼良树",
       "nameEn": "Yoshiki Kishinuma",
-      "aliases": ["良树"],
-      "works": ["blood-covered", "book-of-shadows", "blood-drive"],
+      "aliases": [
+        "良树"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows",
+        "blood-drive"
+      ],
       "summary": "如月学园 2 年 9 组学生，班上的不良少年，暗恋班长篠崎步美。第 2 章主视角之一。",
       "facts": {
         "身份": "如月学园高等部 2 年 9 组学生",
@@ -83,8 +121,14 @@
         "在钟声响过 7 次前与同伴一同逃出，真结局生还。"
       ],
       "relations": [
-        { "target": "cp-ayumi-shinozaki", "label": "暗恋对象 / 同行者" },
-        { "target": "cp-miki-kishinuma", "label": "妹妹" }
+        {
+          "target": "cp-ayumi-shinozaki",
+          "label": "暗恋对象 / 同行者"
+        },
+        {
+          "target": "cp-miki-kishinuma",
+          "label": "妹妹"
+        }
       ]
     },
     {
@@ -92,8 +136,14 @@
       "type": "character",
       "nameZh": "篠崎步美",
       "nameEn": "Ayumi Shinozaki",
-      "aliases": ["步美"],
-      "works": ["blood-covered", "book-of-shadows", "blood-drive"],
+      "aliases": [
+        "步美"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows",
+        "blood-drive"
+      ],
       "summary": "如月学园 2 年 9 组班长，有灵媒体质。她是「幸福的幸子小姐」咒语的发起者，也是第 5 章主导超度幸子的人。",
       "facts": {
         "身份": "如月学园高等部 2 年 9 组班长 / 灵媒体质",
@@ -111,10 +161,22 @@
         "《影之书》中为复活死去的同伴动用《影之书》禁术，间接导致姊姊篠崎丙身亡。"
       ],
       "relations": [
-        { "target": "cp-sachiko-shinozaki", "label": "同姓；超度的对象" },
-        { "target": "cp-hinoe-shinozaki", "label": "姊姊（为救她而死）" },
-        { "target": "cp-yoshiki-kishinuma", "label": "被其暗恋 / 同行者" },
-        { "target": "cp-naho-saenoki", "label": "仰慕的通灵少女" }
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "同姓；超度的对象"
+        },
+        {
+          "target": "cp-hinoe-shinozaki",
+          "label": "姊姊（为救她而死）"
+        },
+        {
+          "target": "cp-yoshiki-kishinuma",
+          "label": "被其暗恋 / 同行者"
+        },
+        {
+          "target": "cp-naho-saenoki",
+          "label": "仰慕的通灵少女"
+        }
       ]
     },
     {
@@ -122,8 +184,12 @@
       "type": "character",
       "nameZh": "篠原世以子",
       "nameEn": "Seiko Shinohara",
-      "aliases": ["世以子"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "世以子"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "如月学园 2 年 9 组学生，直美最亲近的挚友。第 1 章中被黑化的直美吊死在女厕所，是系列最核心的悲剧。",
       "facts": {
         "身份": "如月学园高等部 2 年 9 组学生 / 直美的挚友",
@@ -139,7 +205,10 @@
         "死后其灵魂仍通过手机短信陪伴直美，帮助她维持理智活下去。"
       ],
       "relations": [
-        { "target": "cp-naomi-nakashima", "label": "挚友（被其在黑化中杀害）" }
+        {
+          "target": "cp-naomi-nakashima",
+          "label": "挚友（被其在黑化中杀害）"
+        }
       ]
     },
     {
@@ -147,8 +216,12 @@
       "type": "character",
       "nameZh": "铃本茧",
       "nameEn": "Mayu Suzumoto",
-      "aliases": ["铃本"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "铃本"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "演剧部成员、即将转学的学生。告别聚会的主角，也是整起事件的直接引子。第 2 章中身体爆裂惨死。",
       "facts": {
         "身份": "演剧部成员 / 即将转学者",
@@ -164,7 +237,10 @@
         "她的死状成为森繁朔太郎精神崩溃的导火索。"
       ],
       "relations": [
-        { "target": "cp-sakutaro-morishige", "label": "同为演剧部成员（因她的死而崩溃）" }
+        {
+          "target": "cp-sakutaro-morishige",
+          "label": "同为演剧部成员（因她的死而崩溃）"
+        }
       ]
     },
     {
@@ -172,8 +248,12 @@
       "type": "character",
       "nameZh": "森繁朔太郎",
       "nameEn": "Sakutaro Morishige",
-      "aliases": ["森繁"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "森繁"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "演剧部成员，第 4 章主视角。对尸体有异常兴趣，最终在认出茧的遗体后跳楼自杀。",
       "facts": {
         "身份": "演剧部成员（第 4 章主视角）",
@@ -189,7 +269,10 @@
         "精神彻底崩溃，跳楼自杀。"
       ],
       "relations": [
-        { "target": "cp-mayu-suzumoto", "label": "同为演剧部成员" }
+        {
+          "target": "cp-mayu-suzumoto",
+          "label": "同为演剧部成员"
+        }
       ]
     },
     {
@@ -197,8 +280,14 @@
       "type": "character",
       "nameZh": "持田由香",
       "nameEn": "Yuka Mochida",
-      "aliases": ["由香", "小由香"],
-      "works": ["blood-covered", "book-of-shadows"],
+      "aliases": [
+        "由香",
+        "小由香"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows"
+      ],
       "summary": "哲志之妹，如月学园中等部 2 年级学生。因给哥哥送伞而被卷入天神小学，遭刻命裕也追杀。",
       "facts": {
         "身份": "如月学园中等部 2 年级学生 / 哲志之妹",
@@ -213,8 +302,14 @@
         "在真结局中与其余 4 人一同生还。"
       ],
       "relations": [
-        { "target": "cp-satoshi-mochida", "label": "哥哥" },
-        { "target": "cp-yuuya-kizami", "label": "追杀者" }
+        {
+          "target": "cp-satoshi-mochida",
+          "label": "哥哥"
+        },
+        {
+          "target": "cp-yuuya-kizami",
+          "label": "追杀者"
+        }
       ]
     },
     {
@@ -222,8 +317,12 @@
       "type": "character",
       "nameZh": "宍戸结衣",
       "nameEn": "Yui Shishido",
-      "aliases": ["结衣老师"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "结衣老师"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "如月学园教师，2 年 9 组副班主任。第 5 章中为保护学生而牺牲。",
       "facts": {
         "身份": "如月学园教师（2 年 9 组副班主任）",
@@ -243,8 +342,12 @@
       "type": "character",
       "nameZh": "刻命裕也",
       "nameEn": "Yuuya Kizami",
-      "aliases": ["刻命"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "刻命"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "白檀高中 2 年 4 组学生，《血色笼罩》的主要反派。表面是同伴，实为以杀戮取乐的杀人狂。",
       "facts": {
         "身份": "白檀高中 2 年 4 组学生（主要反派）",
@@ -261,9 +364,18 @@
         "在癫狂中被怨灵柳堀义雄（锤子男）击杀，尸体被制成解剖模型。"
       ],
       "relations": [
-        { "target": "cp-kensuke-kurosaki", "label": "幼驯染兼同班同学（被他杀害）" },
-        { "target": "cp-yuka-mochida", "label": "追杀对象" },
-        { "target": "cp-yoshikazu-yanagihori", "label": "被其怨灵形态击杀" }
+        {
+          "target": "cp-kensuke-kurosaki",
+          "label": "幼驯染兼同班同学（被他杀害）"
+        },
+        {
+          "target": "cp-yuka-mochida",
+          "label": "追杀对象"
+        },
+        {
+          "target": "cp-yoshikazu-yanagihori",
+          "label": "被其怨灵形态击杀"
+        }
       ]
     },
     {
@@ -271,8 +383,12 @@
       "type": "character",
       "nameZh": "黑崎健介",
       "nameEn": "Kensuke Kurosaki",
-      "aliases": ["黑崎"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "黑崎"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "白檀高中 2 年 4 组学生、棒球部成员。刻命裕也的幼驯染，也是他在天神小学的第一批受害者之一。",
       "facts": {
         "身份": "白檀高中 2 年 4 组学生 / 棒球部成员",
@@ -287,8 +403,14 @@
         "被刻命残杀并抛尸深渊。"
       ],
       "relations": [
-        { "target": "cp-yuuya-kizami", "label": "幼驯染（被其杀害）" },
-        { "target": "cp-mitsuki-yamamoto", "label": "暗恋对象" }
+        {
+          "target": "cp-yuuya-kizami",
+          "label": "幼驯染（被其杀害）"
+        },
+        {
+          "target": "cp-mitsuki-yamamoto",
+          "label": "暗恋对象"
+        }
       ]
     },
     {
@@ -297,7 +419,9 @@
       "nameZh": "山本美月",
       "nameEn": "Mitsuki Yamamoto",
       "aliases": [],
-      "works": ["blood-covered"],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "白檀高中学生，黑崎健介暗恋的对象。她的名牌（NT013）记录着「背部被利器砍伤后失血而死」。",
       "facts": {
         "身份": "白檀高中学生（白檀组相关人物）",
@@ -310,7 +434,10 @@
         "死亡后遗体上留下名牌 NT013，记录死因为背部被利器砍伤、失血而死。"
       ],
       "relations": [
-        { "target": "cp-kensuke-kurosaki", "label": "暗恋她的人" }
+        {
+          "target": "cp-kensuke-kurosaki",
+          "label": "暗恋她的人"
+        }
       ]
     },
     {
@@ -318,8 +445,12 @@
       "type": "character",
       "nameZh": "雾崎冻孤",
       "nameEn": "Tohko Kirisaki",
-      "aliases": ["雾崎藤子"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "雾崎藤子"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "白檀高中学生，暗恋刻命裕也。被刻命拒绝并施暴后心理受创，走向黑化。",
       "facts": {
         "身份": "白檀高中学生（白檀组相关人物）",
@@ -332,7 +463,10 @@
         "心理受创后走向黑化。"
       ],
       "relations": [
-        { "target": "cp-yuuya-kizami", "label": "暗恋对象（拒绝并伤害了她）" }
+        {
+          "target": "cp-yuuya-kizami",
+          "label": "暗恋对象（拒绝并伤害了她）"
+        }
       ]
     },
     {
@@ -341,7 +475,9 @@
       "nameZh": "岛田海",
       "nameEn": "Kai Shimada",
       "aliases": [],
-      "works": ["blood-covered"],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "白檀高中学生，与刻命裕也的关系充满张力，曾持刀威胁刻命。名牌 NT009 记录其被利器割伤、失血而死。",
       "facts": {
         "身份": "白檀高中学生（白檀组相关人物）",
@@ -355,7 +491,10 @@
         "遗体留下名牌 NT009：被利器割伤、失血而死。"
       ],
       "relations": [
-        { "target": "cp-yuuya-kizami", "label": "对立者" }
+        {
+          "target": "cp-yuuya-kizami",
+          "label": "对立者"
+        }
       ]
     },
     {
@@ -364,7 +503,9 @@
       "nameZh": "袋井雅人",
       "nameEn": "Masato Fukuroi",
       "aliases": [],
-      "works": ["blood-covered"],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "白檀高中学生，黑崎健介的亲友。名牌 NT010 记录其被击打并刺入、失血而死。",
       "facts": {
         "身份": "白檀高中学生（白檀组相关人物）",
@@ -378,7 +519,10 @@
         "遗体留下名牌 NT010：被武器击打并被刺入，失血而死。"
       ],
       "relations": [
-        { "target": "cp-kensuke-kurosaki", "label": "亲友" }
+        {
+          "target": "cp-kensuke-kurosaki",
+          "label": "亲友"
+        }
       ]
     },
     {
@@ -386,8 +530,14 @@
       "type": "character",
       "nameZh": "冴之木七星",
       "nameEn": "Naho Saenoki",
-      "aliases": ["七星"],
-      "works": ["blood-covered", "book-of-shadows", "blood-drive"],
+      "aliases": [
+        "七星"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows",
+        "blood-drive"
+      ],
       "summary": "桐之学院高中学生、通灵少女与灵异博主。她把「幸福的幸子小姐」的错误用法散布到网上，直接扩大了灾祸。",
       "facts": {
         "身份": "桐之学院高中学生 / 灵能力者 / 通灵博主",
@@ -403,10 +553,22 @@
         "本人也被困于天神小学，最终黑化消散，但灵魂仍在——在资料室留下「七星的笔记」，成为第 5 章超度幸子的关键线索。"
       ],
       "relations": [
-        { "target": "cp-ayumi-shinozaki", "label": "仰慕她的人" },
-        { "target": "cp-kou-kibiki", "label": "仰慕的作家（抛下了她）" },
-        { "target": "cp-sayaka-ooue", "label": "好友" },
-        { "target": "cp-sachiko-ever-after", "label": "被她散布出去的咒语" }
+        {
+          "target": "cp-ayumi-shinozaki",
+          "label": "仰慕她的人"
+        },
+        {
+          "target": "cp-kou-kibiki",
+          "label": "仰慕的作家（抛下了她）"
+        },
+        {
+          "target": "cp-sayaka-ooue",
+          "label": "好友"
+        },
+        {
+          "target": "cp-sachiko-ever-after",
+          "label": "被她散布出去的咒语"
+        }
       ]
     },
     {
@@ -414,8 +576,13 @@
       "type": "character",
       "nameZh": "大上早矢香",
       "nameEn": "Sayaka Ooue",
-      "aliases": ["早矢香"],
-      "works": ["blood-covered", "book-of-shadows"],
+      "aliases": [
+        "早矢香"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows"
+      ],
       "summary": "桐之学院高中学生、七星的好友。因担心七星而进入天神小学，寻找途中被黑化吞噬、消散。",
       "facts": {
         "身份": "桐之学院高中学生 / 演艺圈相关从业者；七星的好友",
@@ -428,7 +595,10 @@
         "遗体留下名牌 NT060。"
       ],
       "relations": [
-        { "target": "cp-naho-saenoki", "label": "好友" }
+        {
+          "target": "cp-naho-saenoki",
+          "label": "好友"
+        }
       ]
     },
     {
@@ -436,8 +606,12 @@
       "type": "character",
       "nameZh": "鬼碑忌浩",
       "nameEn": "Kou Kibiki",
-      "aliases": ["鬼碑忌浩"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "鬼碑忌浩"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "作家、灵异研究者，七星仰慕的对象。2008 年 9 月携助手进入天神小学调查后失踪。",
       "facts": {
         "身份": "作家 / 灵异研究者",
@@ -450,8 +624,14 @@
         "抛下七星独自前往，此后失踪，下落不明。"
       ],
       "relations": [
-        { "target": "cp-naho-saenoki", "label": "向他提供方法的人" },
-        { "target": "cp-shougo-taguchi", "label": "助手，与他一同失踪" }
+        {
+          "target": "cp-naho-saenoki",
+          "label": "向他提供方法的人"
+        },
+        {
+          "target": "cp-shougo-taguchi",
+          "label": "助手，与他一同失踪"
+        }
       ]
     },
     {
@@ -460,7 +640,9 @@
       "nameZh": "田久地将五",
       "nameEn": "Shougo Taguchi",
       "aliases": [],
-      "works": ["blood-covered"],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "鬼碑忌浩的助手，与其一同进入天神小学后失踪。",
       "facts": {
         "身份": "鬼碑忌浩的助手",
@@ -472,7 +654,10 @@
         "此后与雇主一同失踪。"
       ],
       "relations": [
-        { "target": "cp-kou-kibiki", "label": "雇主" }
+        {
+          "target": "cp-kou-kibiki",
+          "label": "雇主"
+        }
       ]
     },
     {
@@ -480,8 +665,16 @@
       "type": "character",
       "nameZh": "篠崎幸子",
       "nameEn": "Sachiko Shinozaki",
-      "aliases": ["幸子", "幸子小姐"],
-      "works": ["blood-covered", "book-of-shadows", "blood-drive", "darkness-distortion"],
+      "aliases": [
+        "幸子",
+        "幸子小姐"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows",
+        "blood-drive",
+        "darkness-distortion"
+      ],
       "summary": "天神小学异空间的主宰，系列核心怨灵。1953 年目击母亲被杀后，被校长扼颈灭口、埋尸地下室。",
       "facts": {
         "身份": "天神小学学生（1953 年在校）/ 异空间主宰",
@@ -500,20 +693,42 @@
         "第 5 章中被归还舌头、献上母亲买给她的黑猫玩偶，得以安息。"
       ],
       "relations": [
-        { "target": "cp-yoshie-shinozaki", "label": "母亲" },
-        { "target": "cp-takamine-yanagihori", "label": "杀害她与其母的凶手" },
-        { "target": "cp-yoshikazu-yanagihori", "label": "被她的怨念操纵而行凶" },
-        { "target": "cp-heavenly-host", "label": "她主宰的异空间" }
+        {
+          "target": "cp-yoshie-shinozaki",
+          "label": "母亲"
+        },
+        {
+          "target": "cp-takamine-yanagihori",
+          "label": "杀害她与其母的凶手"
+        },
+        {
+          "target": "cp-yoshikazu-yanagihori",
+          "label": "被她的怨念操纵而行凶"
+        },
+        {
+          "target": "cp-heavenly-host",
+          "label": "她主宰的异空间"
+        }
       ],
-      "relatedDocs": ["naho-notes", "sachiko-tongue", "black-cat-plush"]
+      "relatedDocs": [
+        "naho-notes",
+        "sachiko-tongue",
+        "black-cat-plush"
+      ]
     },
     {
       "id": "cp-yoshie-shinozaki",
       "type": "character",
       "nameZh": "篠崎芳惠",
       "nameEn": "Yoshie Shinozaki",
-      "aliases": ["芳惠"],
-      "works": ["blood-covered", "book-of-shadows", "blood-drive"],
+      "aliases": [
+        "芳惠"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows",
+        "blood-drive"
+      ],
       "summary": "天神小学保健医，幸子之母。1953 年因抗拒校长柳堀隆峰的性侵企图而坠楼身亡——整起诅咒的源头。",
       "facts": {
         "身份": "天神小学保健医（校医）/ 幸子之母",
@@ -529,9 +744,18 @@
         "她的死成为天神小学一切诅咒的起点。"
       ],
       "relations": [
-        { "target": "cp-sachiko-shinozaki", "label": "女儿" },
-        { "target": "cp-seiji-shinozaki", "label": "丈夫" },
-        { "target": "cp-takamine-yanagihori", "label": "加害者" }
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "女儿"
+        },
+        {
+          "target": "cp-seiji-shinozaki",
+          "label": "丈夫"
+        },
+        {
+          "target": "cp-takamine-yanagihori",
+          "label": "加害者"
+        }
       ]
     },
     {
@@ -539,8 +763,12 @@
       "type": "character",
       "nameZh": "柳堀隆峰",
       "nameEn": "Takamine Yanagihori",
-      "aliases": ["隆峰"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "隆峰"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "天神小学 1953 年在任校长，整起悲剧的元凶。杀害篠崎芳惠与幸子后伪造意外，1975 年跳楼自杀。",
       "facts": {
         "身份": "天神小学 1953 年在任校长",
@@ -557,9 +785,18 @@
         "1975 年天神小学废校当天，从校舍屋顶跳楼自杀。"
       ],
       "relations": [
-        { "target": "cp-sachiko-shinozaki", "label": "被他杀害的目击者" },
-        { "target": "cp-yoshie-shinozaki", "label": "被他害死的保健医" },
-        { "target": "cp-yoshikazu-yanagihori", "label": "儿子" }
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "被他杀害的目击者"
+        },
+        {
+          "target": "cp-yoshie-shinozaki",
+          "label": "被他害死的保健医"
+        },
+        {
+          "target": "cp-yoshikazu-yanagihori",
+          "label": "儿子"
+        }
       ]
     },
     {
@@ -567,8 +804,12 @@
       "type": "character",
       "nameZh": "柳堀义雄",
       "nameEn": "Yoshikazu Yanagihori",
-      "aliases": ["锤子男"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "锤子男"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "天神小学教师、校长隆峰之子。1973 年被幸子的怨念操纵行凶，被捕后在地下室自缢，死后化为怨灵「锤子男」。",
       "facts": {
         "身份": "天神小学教师 / 校长隆峰之子",
@@ -585,10 +826,22 @@
         "击杀了白檀高中的杀人狂刻命裕也，其尸体被制成解剖模型。"
       ],
       "relations": [
-        { "target": "cp-takamine-yanagihori", "label": "父亲" },
-        { "target": "cp-sachiko-shinozaki", "label": "操纵他的怨灵" },
-        { "target": "cp-yuuya-kizami", "label": "被他击杀的闯入者" },
-        { "target": "cp-yuki-kanno", "label": "被他杀害的儿童之一" }
+        {
+          "target": "cp-takamine-yanagihori",
+          "label": "父亲"
+        },
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "操纵他的怨灵"
+        },
+        {
+          "target": "cp-yuuya-kizami",
+          "label": "被他击杀的闯入者"
+        },
+        {
+          "target": "cp-yuki-kanno",
+          "label": "被他杀害的儿童之一"
+        }
       ]
     },
     {
@@ -596,8 +849,13 @@
       "type": "character",
       "nameZh": "菅乃雪",
       "nameEn": "Yuki Kanno",
-      "aliases": ["乃雪"],
-      "works": ["blood-covered", "blood-drive"],
+      "aliases": [
+        "乃雪"
+      ],
+      "works": [
+        "blood-covered",
+        "blood-drive"
+      ],
       "summary": "天神小学学生，1973 年儿童连续诱拐杀害事件的被害者之一。后被设定为异空间中「新的幸子」候选。",
       "facts": {
         "身份": "天神小学学生（1973 年被害儿童）",
@@ -613,9 +871,18 @@
         "在系列后续作品中，被设定为异空间「新的幸子」候选。"
       ],
       "relations": [
-        { "target": "cp-yoshikazu-yanagihori", "label": "杀害她的凶手（被操纵的教师）" },
-        { "target": "cp-tokiko-tsuji", "label": "同案被害者" },
-        { "target": "cp-ryou-yoshizawa", "label": "同案被害者" }
+        {
+          "target": "cp-yoshikazu-yanagihori",
+          "label": "杀害她的凶手（被操纵的教师）"
+        },
+        {
+          "target": "cp-tokiko-tsuji",
+          "label": "同案被害者"
+        },
+        {
+          "target": "cp-ryou-yoshizawa",
+          "label": "同案被害者"
+        }
       ]
     },
     {
@@ -623,8 +890,12 @@
       "type": "character",
       "nameZh": "辻时子",
       "nameEn": "Tokiko Tsuji",
-      "aliases": ["时子"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "时子"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "天神小学 1 年 6 组学生，1973 年事件的被害儿童之一。被发现时上颚以上与舌头被切。",
       "facts": {
         "身份": "天神小学 1 年 6 组学生（1973 年被害儿童）",
@@ -638,8 +909,14 @@
         "死后成为天神小学的儿童怨灵之一。"
       ],
       "relations": [
-        { "target": "cp-yuki-kanno", "label": "同案被害者" },
-        { "target": "cp-ryou-yoshizawa", "label": "同案被害者" }
+        {
+          "target": "cp-yuki-kanno",
+          "label": "同案被害者"
+        },
+        {
+          "target": "cp-ryou-yoshizawa",
+          "label": "同案被害者"
+        }
       ]
     },
     {
@@ -647,8 +924,12 @@
       "type": "character",
       "nameZh": "吉泽辽",
       "nameEn": "Ryou Yoshizawa",
-      "aliases": ["吉泽"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "吉泽"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "天神小学 3 年 5 组学生，1973 年事件的被害儿童之一。被发现时舌头被切、腹部多处遭刺。",
       "facts": {
         "身份": "天神小学 3 年 5 组学生（1973 年被害儿童）",
@@ -662,8 +943,14 @@
         "死后成为天神小学的儿童怨灵之一。"
       ],
       "relations": [
-        { "target": "cp-yuki-kanno", "label": "同案被害者" },
-        { "target": "cp-tokiko-tsuji", "label": "同案被害者" }
+        {
+          "target": "cp-yuki-kanno",
+          "label": "同案被害者"
+        },
+        {
+          "target": "cp-tokiko-tsuji",
+          "label": "同案被害者"
+        }
       ]
     },
     {
@@ -671,8 +958,12 @@
       "type": "character",
       "nameZh": "篠崎丙",
       "nameEn": "Hinoe Shinozaki",
-      "aliases": ["篠崎丙"],
-      "works": ["book-of-shadows"],
+      "aliases": [
+        "篠崎丙"
+      ],
+      "works": [
+        "book-of-shadows"
+      ],
       "summary": "篠崎步美之姊。在《影之书》中为救步美而挡下魔法反噬，被斩首身亡。",
       "facts": {
         "身份": "篠崎步美之姊",
@@ -685,7 +976,10 @@
         "被魔法阵斩首身亡。"
       ],
       "relations": [
-        { "target": "cp-ayumi-shinozaki", "label": "妹妹（为她而死）" }
+        {
+          "target": "cp-ayumi-shinozaki",
+          "label": "妹妹（为她而死）"
+        }
       ]
     },
     {
@@ -693,8 +987,12 @@
       "type": "character",
       "nameZh": "篠崎诚二",
       "nameEn": "Seiji Shinozaki",
-      "aliases": ["诚二"],
-      "works": ["blood-drive"],
+      "aliases": [
+        "诚二"
+      ],
+      "works": [
+        "blood-drive"
+      ],
       "summary": "篠崎芳惠的丈夫、幸子之父。1950 年代濒死，芳惠为救他动用《影之书》禁术，招致反噬。",
       "facts": {
         "身份": "篠崎芳惠之夫 / 篠崎幸子之父",
@@ -707,8 +1005,14 @@
         "最终仍然去世。"
       ],
       "relations": [
-        { "target": "cp-yoshie-shinozaki", "label": "妻子" },
-        { "target": "cp-sachiko-shinozaki", "label": "女儿" }
+        {
+          "target": "cp-yoshie-shinozaki",
+          "label": "妻子"
+        },
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "女儿"
+        }
       ]
     },
     {
@@ -717,7 +1021,9 @@
       "nameZh": "中嶋夏海",
       "nameEn": "Natsumi Nakashima",
       "aliases": [],
-      "works": ["blood-covered"],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "中嶋直美之母，与直美相依为命。",
       "facts": {
         "身份": "中嶋直美之母",
@@ -729,7 +1035,10 @@
         "在直美被卷入天神小学后，成为她想要回去的理由之一。"
       ],
       "relations": [
-        { "target": "cp-naomi-nakashima", "label": "女儿" }
+        {
+          "target": "cp-naomi-nakashima",
+          "label": "女儿"
+        }
       ]
     },
     {
@@ -738,7 +1047,9 @@
       "nameZh": "岸沼美树",
       "nameEn": "Miki Kishinuma",
       "aliases": [],
-      "works": ["blood-covered"],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "岸沼良树之妹，是良树唯一能理解他的家人。",
       "facts": {
         "身份": "岸沼良树之妹",
@@ -750,7 +1061,10 @@
         "在良树被卷入天神小学后，成为他想要回去的理由之一。"
       ],
       "relations": [
-        { "target": "cp-yoshiki-kishinuma", "label": "哥哥" }
+        {
+          "target": "cp-yoshiki-kishinuma",
+          "label": "哥哥"
+        }
       ]
     },
     {
@@ -758,8 +1072,16 @@
       "type": "place",
       "nameZh": "天神小学",
       "nameEn": "Heavenly Host Elementary School",
-      "aliases": ["天神小学校"],
-      "works": ["blood-covered", "book-of-shadows", "blood-drive", "dead-patient", "darkness-distortion"],
+      "aliases": [
+        "天神小学校"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows",
+        "blood-drive",
+        "dead-patient",
+        "darkness-distortion"
+      ],
       "summary": "系列核心舞台。1952 年开校、1975 年废校拆除，但以「多重次元·封闭空间」的诅咒形态永远矗立着。",
       "facts": {
         "种类": "废弃小学 / 多重次元封闭空间",
@@ -775,9 +1097,18 @@
         "三名被害儿童的灵魂维系着「多重次元·封闭空间」，使天神小学以诅咒形态永远存在。"
       ],
       "relations": [
-        { "target": "cp-sachiko-shinozaki", "label": "此地的主宰" },
-        { "target": "cp-kisaragi-academy", "label": "建在其原址上的学校" },
-        { "target": "cp-darkening", "label": "长期滞留者会发生的异变" }
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "此地的主宰"
+        },
+        {
+          "target": "cp-kisaragi-academy",
+          "label": "建在其原址上的学校"
+        },
+        {
+          "target": "cp-darkening",
+          "label": "长期滞留者会发生的异变"
+        }
       ]
     },
     {
@@ -785,8 +1116,14 @@
       "type": "place",
       "nameZh": "如月学园",
       "nameEn": "Kisaragi Academy",
-      "aliases": ["如月学园高等部"],
-      "works": ["blood-covered", "book-of-shadows", "blood-drive"],
+      "aliases": [
+        "如月学园高等部"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows",
+        "blood-drive"
+      ],
       "summary": "1978 年建于天神小学原址上的学校。高等部 2 年 9 组是《血色笼罩》的主角团。",
       "facts": {
         "种类": "学校",
@@ -801,7 +1138,10 @@
         "文化祭当晚，2 年 9 组在被卷入天神小学。"
       ],
       "relations": [
-        { "target": "cp-heavenly-host", "label": "原址上的前身学校" }
+        {
+          "target": "cp-heavenly-host",
+          "label": "原址上的前身学校"
+        }
       ]
     },
     {
@@ -809,8 +1149,12 @@
       "type": "place",
       "nameZh": "白檀高中",
       "nameEn": "Byakudan Senior High School",
-      "aliases": ["白檀高中"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "白檀高中"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "另一所被卷入的学校。2 年 4 组独自施行了同一咒语，以刻命裕也为核心的这一组是「人性之恶」的集中展示。",
       "facts": {
         "种类": "学校",
@@ -828,8 +1172,14 @@
       "type": "ritual",
       "nameZh": "幸福的幸子小姐",
       "nameEn": "Sachiko Ever After",
-      "aliases": ["死逢のサチコさん", "幸子小姐的咒语"],
-      "works": ["blood-covered", "book-of-shadows"],
+      "aliases": [
+        "死逢のサチコさん",
+        "幸子小姐的咒语"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows"
+      ],
       "summary": "以纸人碎片施行的祈福咒语，实为把施行者拖入天神小学的诅咒。由冴之木七星故意教错用法后散布于网络。",
       "facts": {
         "种类": "咒术 / 仪式",
@@ -845,8 +1195,14 @@
         "2008 年 10 月 27 日，2 年 9 组施行该仪式，全班被卷入天神小学。"
       ],
       "relations": [
-        { "target": "cp-naho-saenoki", "label": "散布其错误用法的人" },
-        { "target": "cp-heavenly-host", "label": "仪式通往的地方" }
+        {
+          "target": "cp-naho-saenoki",
+          "label": "散布其错误用法的人"
+        },
+        {
+          "target": "cp-heavenly-host",
+          "label": "仪式通往的地方"
+        }
       ]
     },
     {
@@ -854,8 +1210,14 @@
       "type": "concept",
       "nameZh": "黑化",
       "nameEn": "Darkening",
-      "aliases": ["Darkening"],
-      "works": ["blood-covered", "book-of-shadows", "blood-drive"],
+      "aliases": [
+        "Darkening"
+      ],
+      "works": [
+        "blood-covered",
+        "book-of-shadows",
+        "blood-drive"
+      ],
       "summary": "在天神小学长期滞留者身上发生的异变：精神被怨念侵蚀，变得猜疑、疯狂，甚至亲手杀害同伴。",
       "facts": {
         "性质": "精神侵蚀现象",
@@ -870,7 +1232,10 @@
         "冴之木七星本人也被黑化吞噬、失去意识后消散。"
       ],
       "relations": [
-        { "target": "cp-heavenly-host", "label": "发生地被" }
+        {
+          "target": "cp-heavenly-host",
+          "label": "发生地被"
+        }
       ]
     },
     {
@@ -878,8 +1243,13 @@
       "type": "item",
       "nameZh": "牺牲者手记",
       "nameEn": "Victim Memoir",
-      "aliases": ["手记"],
-      "works": ["blood-covered", "blood-drive"],
+      "aliases": [
+        "手记"
+      ],
+      "works": [
+        "blood-covered",
+        "blood-drive"
+      ],
       "summary": "散落在各章场景中的文献，每章 5 本，共 25 本。记录过往被卷入者的遭遇，读满 5 本会触发坏结局。",
       "facts": {
         "种类": "收集文献",
@@ -893,7 +1263,10 @@
         "读满 5 本会触发「求知者必死」的坏结局。"
       ],
       "relations": [
-        { "target": "cp-heavenly-host", "label": "记录的场所" }
+        {
+          "target": "cp-heavenly-host",
+          "label": "记录的场所"
+        }
       ]
     },
     {
@@ -901,8 +1274,12 @@
       "type": "item",
       "nameZh": "七星的笔记",
       "nameEn": "Naho's Notes",
-      "aliases": ["Naho's Notes"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "Naho's Notes"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "第 5 章的关键文献，共 5 本。集齐后可推进超度幸子的剧情。",
       "facts": {
         "种类": "关键文献",
@@ -915,8 +1292,14 @@
         "第 5 章中集齐 5 本，成为超度幸子仪式的关键线索。"
       ],
       "relations": [
-        { "target": "cp-naho-saenoki", "label": "作者" },
-        { "target": "cp-sachiko-shinozaki", "label": "笔记所针对的怨灵" }
+        {
+          "target": "cp-naho-saenoki",
+          "label": "作者"
+        },
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "笔记所针对的怨灵"
+        }
       ]
     },
     {
@@ -924,8 +1307,13 @@
       "type": "item",
       "nameZh": "幸子的遗物",
       "nameEn": "Sachiko's Relics",
-      "aliases": ["幸子的舌头", "黑猫玩偶"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "幸子的舌头",
+        "黑猫玩偶"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "超度幸子所需的关键道具：被校长割下的「幸子的舌头」（校长室），以及母亲买给她的「黑猫毛绒玩具」。",
       "facts": {
         "种类": "关键道具",
@@ -939,7 +1327,10 @@
         "二者在安魂仪式上被献上，使幸子得以安息。"
       ],
       "relations": [
-        { "target": "cp-sachiko-shinozaki", "label": "遗物所属者" }
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "遗物所属者"
+        }
       ]
     },
     {
@@ -947,8 +1338,12 @@
       "type": "place",
       "nameZh": "尸体处理室",
       "nameEn": "Corpse Pool",
-      "aliases": ["腐尸池"],
-      "works": ["blood-covered"],
+      "aliases": [
+        "腐尸池"
+      ],
+      "works": [
+        "blood-covered"
+      ],
       "summary": "天神小学中尸体最密集的区域之一，第 5 章名牌的集中地。",
       "facts": {
         "种类": "校内场所",
@@ -966,8 +1361,13 @@
       "type": "item",
       "nameZh": "影之书",
       "nameEn": "Book of Shadows",
-      "aliases": ["影之書"],
-      "works": ["book-of-shadows", "blood-drive"],
+      "aliases": [
+        "影之書"
+      ],
+      "works": [
+        "book-of-shadows",
+        "blood-drive"
+      ],
       "summary": "记载黑魔法禁术的古书，由「御跋如」协会秘密交予篠崎家保管。招致反噬，也封印着「涅槃」。",
       "facts": {
         "种类": "黑魔法禁书",
@@ -981,9 +1381,18 @@
         "《影之书》篇中，步美为复活死去的同伴再次动用禁术，导致姊姊篠崎丙身亡。"
       ],
       "relations": [
-        { "target": "cp-nirvana", "label": "被其所封印的存在" },
-        { "target": "cp-yoshie-shinozaki", "label": "曾经的保管者" },
-        { "target": "cp-hinoe-shinozaki", "label": "因它的反噬而死" }
+        {
+          "target": "cp-nirvana",
+          "label": "被其所封印的存在"
+        },
+        {
+          "target": "cp-yoshie-shinozaki",
+          "label": "曾经的保管者"
+        },
+        {
+          "target": "cp-hinoe-shinozaki",
+          "label": "因它的反噬而死"
+        }
       ]
     },
     {
@@ -991,8 +1400,12 @@
       "type": "entity",
       "nameZh": "涅槃",
       "nameEn": "Nirvana",
-      "aliases": ["Nirvana"],
-      "works": ["blood-drive"],
+      "aliases": [
+        "Nirvana"
+      ],
+      "works": [
+        "blood-drive"
+      ],
       "summary": "中世纪死于魔女狩猎的魔女所留的怨念，被封印于《影之书》之中；后被幸子吞下、封印在自己体内。",
       "facts": {
         "种类": "怨念 / 被封印的存在",
@@ -1006,8 +1419,14 @@
         "幼女篠崎幸子为救母亲将其吞下，封印在自己体内。"
       ],
       "relations": [
-        { "target": "cp-shadow-book", "label": "封印它的书" },
-        { "target": "cp-sachiko-shinozaki", "label": "把它吞入体内的孩子" }
+        {
+          "target": "cp-shadow-book",
+          "label": "封印它的书"
+        },
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "把它吞入体内的孩子"
+        }
       ]
     },
     {
@@ -1015,8 +1434,12 @@
       "type": "item",
       "nameZh": "死逢石",
       "nameEn": "Death-Meeting Stone",
-      "aliases": ["死逢石"],
-      "works": ["blood-drive"],
+      "aliases": [
+        "死逢石"
+      ],
+      "works": [
+        "blood-drive"
+      ],
       "summary": "由「御跋如」协会连同《影之书》一起交予篠崎家保管的秘藏物，受托者为篠崎护月。",
       "facts": {
         "种类": "秘藏物",
@@ -1028,7 +1451,10 @@
         "由「御跋如」协会秘密交予篠崎家，受托保管者為篠崎护月。"
       ],
       "relations": [
-        { "target": "cp-mikage-association", "label": "交付方" }
+        {
+          "target": "cp-mikage-association",
+          "label": "交付方"
+        }
       ]
     },
     {
@@ -1036,8 +1462,12 @@
       "type": "organization",
       "nameZh": "马尔托巴墓",
       "nameEn": "Martuba's Tomb",
-      "aliases": ["Martuba's Tomb"],
-      "works": ["blood-drive"],
+      "aliases": [
+        "Martuba's Tomb"
+      ],
+      "works": [
+        "blood-drive"
+      ],
       "summary": "与《影之书》相关的黑魔术教团，在中世纪后成立。其成员在《驭血》中出现于地下通道。",
       "facts": {
         "种类": "黑魔术教团",
@@ -1050,8 +1480,14 @@
         "《驭血》中其成员（如大月义孝、加贺晶子等）的遗体与名牌出现于地下通道。"
       ],
       "relations": [
-        { "target": "cp-shadow-book", "label": "所信奉的禁书" },
-        { "target": "cp-mikage-association", "label": "相关教团" }
+        {
+          "target": "cp-shadow-book",
+          "label": "所信奉的禁书"
+        },
+        {
+          "target": "cp-mikage-association",
+          "label": "相关教团"
+        }
       ]
     },
     {
@@ -1059,8 +1495,12 @@
       "type": "organization",
       "nameZh": "御跋如",
       "nameEn": "Mikage Association",
-      "aliases": ["御跋如协会"],
-      "works": ["blood-drive"],
+      "aliases": [
+        "御跋如协会"
+      ],
+      "works": [
+        "blood-drive"
+      ],
       "summary": "与黑魔术相关的协会，负责秘密保管《影之书》与死逢石，并将其交予篠崎家。",
       "facts": {
         "种类": "秘仪协会",
@@ -1072,8 +1512,1708 @@
         "把二者交予篠崎家（死逢石→篠崎护月；影之书→篠崎芳惠）。"
       ],
       "relations": [
-        { "target": "cp-shadow-book", "label": "它所保管的禁书" },
-        { "target": "cp-death-meeting-stone", "label": "它所保管的秘藏物" }
+        {
+          "target": "cp-shadow-book",
+          "label": "它所保管的禁书"
+        },
+        {
+          "target": "cp-death-meeting-stone",
+          "label": "它所保管的秘藏物"
+        }
+      ]
+    },
+    {
+      "id": "cp-tsukasa-mikuni",
+      "type": "character",
+      "nameZh": "三国司",
+      "nameEn": "Tsukasa Mikuni",
+      "aliases": [
+        "三国"
+      ],
+      "works": [
+        "book-of-shadows"
+      ],
+      "summary": "六年前与宍戸结衣同为如月学园学生，两人曾交往。是《影之书》EP3『邂逅』中结衣高中往事的关键人物。",
+      "facts": {
+        "身份": "如月学园学生（宍戸结衣的高中同学）",
+        "登场": "EP3『邂逅』（前传）",
+        "与结衣关系": "高中同学；两人曾交往（据记载未曾接吻）",
+        "结局": "未明确"
+      },
+      "bio": "在结衣病中回忆的高中时代里，三国司是她当时交往的对象。这段关系为「把学生看得比自己重要的结衣老师」补上了一段私人过往。",
+      "deeds": [
+        "与宍戸结衣同为如月学园学生，两人相识并交往。",
+        "作为结衣高中往事的一部分，出现在 EP3 的梦境回忆中。",
+        "其后的去向与结局在公开来源中未明确。"
+      ],
+      "relations": [
+        {
+          "target": "cp-yui-shishido",
+          "label": "高中同学 / 曾交往"
+        }
+      ]
+    },
+    {
+      "id": "cp-makina-shinozaki",
+      "type": "character",
+      "nameZh": "篠崎真纪",
+      "nameEn": "Makina Shinozaki",
+      "aliases": [],
+      "works": ["book-of-shadows", "blood-drive"],
+      "summary": "篠崎芳惠的姑母、篠崎幸子的姑祖母。寿终正寝后化为友善却诡异的灵魂，是串联篠崎家血脉与诅咒的关键老人。",
+      "facts": {
+        "身份": "篠崎芳惠的姑母 / 篠崎幸子的姑祖母",
+        "登场": "《影之书》相关章节",
+        "结局": "寿终正寝（老死），死后化为友善而诡异的灵魂"
+      },
+      "bio": "她不属于热闹的剧情，却是把「篠崎家」这条隐线连起来的人——这位老人见证了家族与诅咒纠缠的漫长岁月。",
+      "deeds": [
+        "作为篠崎芳惠的姑母、幸子的姑祖母，属于篠崎家上一代的成员。",
+        "寿终正寝后，化为友善却带有诡异气息的灵魂。",
+        "在《影之书》相关章节中，串联起篠崎家的血脉与诅咒。"
+      ],
+      "relations": [
+        {
+          "target": "cp-yoshie-shinozaki",
+          "label": "侄女（姑侄）"
+        },
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "侄孙女"
+        }
+      ]
+    },
+    {
+      "id": "cp-shinozaki-residence",
+      "type": "place",
+      "nameZh": "篠崎家旧宅",
+      "nameEn": "Shinozaki Residence",
+      "aliases": [
+        "篠崎家"
+      ],
+      "works": [
+        "book-of-shadows"
+      ],
+      "summary": "篠崎家保管《影之书》的旧宅。《影之书》序章『血之辙』中，复活仪式在此举行并失败，招致黑魔法反噬。",
+      "facts": {
+        "种类": "宅邸（现世）",
+        "关联": "篠崎家 / 《影之书》禁术",
+        "关键事件": "序章『血之辙』的复活仪式与禁术反噬发生地"
+      },
+      "bio": "这座旧宅是现世里离诅咒最近的地方：它保管着那本不该被翻开的书，也见证了篠崎丙为救妹妹而死的瞬间。",
+      "deeds": [
+        "保管着篠崎家世代秘藏的黑魔法禁书《影之书》。",
+        "序章中，中嶋直美与篠崎步美在此动用《影之书》举行复活仪式。",
+        "仪式失败招致反噬，篠崎丙在此替步美挡下魔法阵、被斩首身亡。"
+      ],
+      "relations": [
+        {
+          "target": "cp-shadow-book",
+          "label": "在此保管并被动用"
+        },
+        {
+          "target": "cp-ayumi-shinozaki",
+          "label": "在此举行复活仪式"
+        },
+        {
+          "target": "cp-hinoe-shinozaki",
+          "label": "在此被反噬斩首"
+        }
+      ]
+    },
+    {
+      "id": "cp-shangri-la",
+      "type": "concept",
+      "nameZh": "理想乡",
+      "nameEn": "Shangri-La",
+      "aliases": [
+        "Shangri-La",
+        "理想郷"
+      ],
+      "works": [
+        "book-of-shadows"
+      ],
+      "summary": "《影之书》EP5 中出现在废墟里的「伪装的乐园」。它逐渐揭露出背叛、幻觉与牺牲，考验被诅咒空间中的友情。",
+      "facts": {
+        "种类": "概念 / 空间幻象",
+        "登场": "EP5『理想乡』",
+        "性质": "平行世界（非正史）",
+        "本质": "看似乐园，实为幻觉与背叛交织之地"
+      },
+      "bio": "它像一个邀请：在满是尸体的学校里，忽然出现一处「乐园」。但 EP5 很快表明，这个乐园与围坐其中的友情一样，是经不起注视的东西。",
+      "deeds": [
+        "作为 EP5 的核心意象出现，把森繁朔太郎与白檀组的行动线引向同一处。",
+        "在剧情推进中逐步显露出背叛、幻觉与牺牲，考验众人的友情。"
+      ],
+      "relations": [
+        {
+          "target": "cp-sakutaro-morishige",
+          "label": "被引向此处的角色之一"
+        },
+        {
+          "target": "cp-heavenly-host",
+          "label": "其所在的异空间"
+        }
+      ]
+    },
+    {
+      "id": "cp-annex-corpse",
+      "type": "concept",
+      "nameZh": "别馆的女尸",
+      "nameEn": "Corpse in the Annex",
+      "aliases": [
+        "别馆女尸"
+      ],
+      "works": [
+        "book-of-shadows"
+      ],
+      "summary": "《血色笼罩》别馆中出现的一具女尸。《影之书》EP7『齿』以白檀组视角揭示其与刻命裕也过去的渊源。",
+      "facts": {
+        "种类": "线索 / 尸体",
+        "揭示": "EP7『齿』（以雾崎冻孤视角）",
+        "关联": "刻命裕也的过去",
+        "具体身份": "未明确（公开来源未完整收录）"
+      },
+      "bio": "这具一直沉默在别馆里的女尸，是《血色笼罩》留下的一处悬念。EP7 把它与刻命裕也的过去接上，让「杀人狂」这个标签之外的东西第一次被看见。",
+      "deeds": [
+        "作为《血色笼罩》别馆中的一处悬念长期存在。",
+        "在 EP7『齿』中由白檀组视角与其过去联系起来，牵出刻命裕也的渊源。"
+      ],
+      "relations": [
+        {
+          "target": "cp-yuuya-kizami",
+          "label": "与其过去渊源有关"
+        }
+      ]
+    },
+    {
+      "id": "cp-magari-mizuki",
+      "type": "character",
+      "nameZh": "十三月爱狩",
+      "nameEn": "Magari Mizuki",
+      "aliases": [
+        "爱狩"
+      ],
+      "works": [
+        "blood-drive"
+      ],
+      "summary": "桐章学园高等部 2 年 1 组转学生，真实身份是黑魔术教团「马尔托巴之墓」的干部、教祖继承权第 4 位。本作两大魔女集团之一的首领，与步美亦敌亦友。",
+      "facts": {
+        "身份": "桐章学园高等部 2 年 1 组转学生 / 马尔托巴之墓干部",
+        "教祖继承权": "第 4 位（灾难后升为第 1 位）",
+        "形象": "人偶般的外貌、双马尾山吹色头发、粉红缎带、白色哥德萝莉装，偶持巨大镰刀",
+        "声优": "内田真礼",
+        "结局": "存活——灾后发誓重建教团"
+      },
+      "bio": "人偶般外貌的少女，表面是转学生，实为末日论黑魔术教团「马尔托巴之墓」的干部。她傲慢毒舌、好战残忍，却对已故的通灵少女冴之木七星抱有强烈的兴趣，视其为好对手。",
+      "deeds": [
+        "作为马尔托巴之墓干部，代表教团一方与步美接触，与之亦敌亦友。",
+        "派遣向导山村未来，引导步美前往篠崎真纪的公寓并取得死后相逢之石。",
+        "据公开资料，曾杀害一名姓篠崎的女性，并拆散七星与早矢香的友情（时间未明确）。",
+        "其教团在涅槃融合的灾难中几近覆灭，教祖惊坠楼梯身亡。",
+        "灾后继承马尔托巴之墓第 1 位，发誓重建教团。"
+      ],
+      "relations": [
+        {
+          "target": "cp-martuba-tomb",
+          "label": "所属教团"
+        },
+        {
+          "target": "cp-ayumi-shinozaki",
+          "label": "亦敌亦友的「另一方魔女」与利用对象"
+        },
+        {
+          "target": "cp-naho-saenoki",
+          "label": "视为好对手的通灵少女"
+        },
+        {
+          "target": "cp-satsuki-mizuhara",
+          "label": "部下 / 马尔托巴之墓成员"
+        },
+        {
+          "target": "cp-waldo-mizuki",
+          "label": "管家兼抚养者"
+        }
+      ]
+    },
+    {
+      "id": "cp-misuto-kiriya",
+      "type": "character",
+      "nameZh": "桐谷御帘徒",
+      "nameEn": "Misuto Kiriya",
+      "aliases": [
+        "御帘徒"
+      ],
+      "works": [
+        "blood-drive"
+      ],
+      "summary": "「御跋如」协会的唯一幸存者，本作主要反派。用谎言诱骗步美收集六鬼柱，意图让涅槃与现实融合、毁灭世界。被黑化尸变的水原皐月咬掉头颅而死。",
+      "facts": {
+        "身份": "「御跋如」协会的唯一幸存者 / 末裔",
+        "立场": "本作主要反派",
+        "声优": "大须贺纯",
+        "自称": "与步美之姊篠崎丙有渊源（实为操纵手段）",
+        "结局": "死亡——被黑化尸变的水原皐月咬掉头颅"
+      },
+      "bio": "「御跋如」协会的末裔，也是这个协会唯一的幸存者。他出现在深陷自责的步美面前，自称与她的姊姊篠崎丙有渊源，用「夺回影之书就能复活死者」的谎言把步美引向那场灾难。",
+      "deeds": [
+        "以「集齐六鬼柱即可夺回影之书、复活死者」的谎言诱骗步美收集六鬼柱。",
+        "真实目的是令天神小学与现实之「壁」崩裂，使涅槃融合现实、毁灭世界。",
+        "自称与步美之姊篠崎丙有渊源，借此操纵步美。",
+        "在阴谋即将得逞之际，被黑化尸变的水原皐月咬掉头颅而死。"
+      ],
+      "relations": [
+        {
+          "target": "cp-mikage-association",
+          "label": "所属 / 唯一幸存者"
+        },
+        {
+          "target": "cp-ayumi-shinozaki",
+          "label": "被他欺骗与操纵的对象"
+        },
+        {
+          "target": "cp-six-pillars",
+          "label": "诱骗步美收集的目标物"
+        },
+        {
+          "target": "cp-satsuki-mizuhara",
+          "label": "咬死他的人"
+        },
+        {
+          "target": "cp-hinoe-shinozaki",
+          "label": "自称与其有渊源（操纵手段）"
+        }
+      ]
+    },
+    {
+      "id": "cp-sachi-shinozaki",
+      "type": "character",
+      "nameZh": "篠崎幸",
+      "nameEn": "Sachi Shinozaki",
+      "aliases": [],
+      "works": [
+        "blood-drive"
+      ],
+      "summary": "篠崎幸子的「消失的双胞胎」（实为幸子的姐姐，出生前被幸子「吞并」）；死后成为幽灵。终局中夺回六鬼柱结晶、以感官承受涅槃核心之痛并重新封印核心。",
+      "facts": {
+        "身份": "篠崎幸子的「消失的双胞胎」（实为其姐姐）",
+        "状态": "幽灵",
+        "作用": "夺回六鬼柱结晶、封印涅槃核心",
+        "声优": "未确证",
+        "评价": "被部分评论视为「补完式」设定"
+      },
+      "bio": "幸子「消失的双胞胎」——在出生前就被幸子吞并、从未真正降生的一方，死后以幽灵形态存在。她的出现补完了「真结局之后，天神小学为何仍然存在」这个系列遗留问题。",
+      "deeds": [
+        "其存在被揭示后，补完了天神小学为何在幸子被超度后仍然存在。",
+        "终局中用体内获得的《影之书》夺回六鬼柱结晶。",
+        "以感官承受涅槃核心所受的酷刑（被挖出眼球），理解它的痛苦。",
+        "重新封印涅槃核心，使世界免于被吞噬。"
+      ],
+      "relations": [
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "双胞胎（姐姐 / 消失的一方）"
+        },
+        {
+          "target": "cp-ayumi-shinozaki",
+          "label": "终局的协力者"
+        },
+        {
+          "target": "cp-nirvana",
+          "label": "被她重新封印的核心"
+        },
+        {
+          "target": "cp-kuon-niwa",
+          "label": "借其灵力摧毁最后一柱"
+        }
+      ]
+    },
+    {
+      "id": "cp-kuon-niwa",
+      "type": "character",
+      "nameZh": "二羽久远",
+      "nameEn": "Kuon Niwa",
+      "aliases": [
+        "久远"
+      ],
+      "works": [
+        "blood-drive"
+      ],
+      "summary": "二羽爱子之姊；灵异巨型企业的社长，同时替任如月学园的英语教师。终局为摧毁「最后一柱」、借篠崎幸的灵力而牺牲自己。",
+      "facts": {
+        "身份": "灵异企业的社长 / 如月学园的替任英语教师",
+        "亲属": "二羽爱子之姊",
+        "结局": "牺牲自己——借篠崎幸的灵力摧毁「最后一柱」",
+        "声优": "未确证"
+      },
+      "bio": "二羽爱子的姊姊，身份显赫的灵异企业社长，同时替任如月学园的英语教师。她的「完美」起初被用于喜剧，结局却转为悲剧。",
+      "deeds": [
+        "以灵异企业社长身份活动，并替任如月学园的英语教师。",
+        "终局中借篠崎幸的灵力，摧毁六鬼柱中的「最后一柱」。",
+        "为此牺牲了自己。"
+      ],
+      "relations": [
+        {
+          "target": "cp-aiko-niwa",
+          "label": "妹妹"
+        },
+        {
+          "target": "cp-kisaragi-academy",
+          "label": "替任英语教师的学校"
+        },
+        {
+          "target": "cp-sachi-shinozaki",
+          "label": "借其灵力者"
+        }
+      ]
+    },
+    {
+      "id": "cp-mirai-yamamura",
+      "type": "character",
+      "nameZh": "山村未来",
+      "nameEn": "Mirai Yamamura",
+      "aliases": [
+        "未来"
+      ],
+      "works": [
+        "blood-drive"
+      ],
+      "summary": "受十三月爱狩派遣，引导步美前往篠崎真纪公寓、获得死后相逢之石。自称与篠崎丙有关（实为爱狩方的向导）。",
+      "facts": {
+        "身份": "十三月爱狩派出的向导",
+        "自称": "与篠崎丙有关（实为爱狩方派遣）",
+        "声优": "未确证"
+      },
+      "bio": "出现在深陷自责的步美面前的女子。她自称与步美的姊姊篠崎丙有关，实为十三月爱狩派来的向导，任务是把步美引向篠崎真纪的公寓。",
+      "deeds": [
+        "自称与篠崎丙有关，接近并引导步美。",
+        "带步美前往篠崎真纪的公寓，使其取得死后相逢之石。",
+        "实为十三月爱狩派遣的向导。"
+      ],
+      "relations": [
+        {
+          "target": "cp-magari-mizuki",
+          "label": "派遣她的人"
+        },
+        {
+          "target": "cp-ayumi-shinozaki",
+          "label": "被引导者"
+        },
+        {
+          "target": "cp-death-meeting-stone",
+          "label": "引导步美取得之物"
+        }
+      ]
+    },
+    {
+      "id": "cp-satsuki-mizuhara",
+      "type": "character",
+      "nameZh": "水原皐月",
+      "nameEn": "Satsuki Mizuhara",
+      "aliases": [
+        "皐月"
+      ],
+      "works": [
+        "sweet-sachiko",
+        "blood-drive"
+      ],
+      "summary": "持田由香的同班同学，系列另一支线的登场角色；本作中作为马尔托巴之墓成员、爱狩的部下登场。经「灵手术」获得怪物化能力，终局咬死御帘徒。",
+      "facts": {
+        "身份": "马尔托巴之墓成员 / 十三月爱狩的部下（系列早期为持田由香的同班同学）",
+        "特长": "经「灵手术」获得怪物化能力",
+        "声优": "原由实",
+        "结局": "存活——黑化尸变后咬死御帘徒"
+      },
+      "bio": "爱狩麾下的成员，接受教团的「灵手术」而获得了怪物化的身体。她在终局黑化尸变，咬掉了御帘徒的头颅，扭转了战局。",
+      "deeds": [
+        "作为马尔托巴之墓成员、爱狩的部下行动。",
+        "接受「灵手术」而获得怪物化能力。",
+        "在终局黑化尸变，咬掉御帘徒的头颅，扭转战局。"
+      ],
+      "relations": [
+        {
+          "target": "cp-magari-mizuki",
+          "label": "上司"
+        },
+        {
+          "target": "cp-misuto-kiriya",
+          "label": "被她咬死者"
+        },
+        {
+          "target": "cp-spiritual-surgery",
+          "label": "使其怪物化的秘术"
+        },
+        {
+          "target": "cp-martuba-tomb",
+          "label": "所属教团"
+        }
+      ]
+    },
+    {
+      "id": "cp-waldo-mizuki",
+      "type": "character",
+      "nameZh": "沃尔多",
+      "nameEn": "Waldo Mizuki",
+      "aliases": [],
+      "works": [
+        "blood-drive"
+      ],
+      "summary": "爱狩的管家兼抚养者；当年在教堂外捡到爱狩、把她引入教团。「马尔托巴之墓」成员。",
+      "facts": {
+        "身份": "十三月爱狩的管家兼抚养者 / 马尔托巴之墓成员",
+        "事迹": "当年在教堂外捡到爱狩，将其引入教团",
+        "声优": "未确证"
+      },
+      "bio": "爱狩的管家与抚养者。当年他在教堂外捡到年幼的爱狩，把她带进了「马尔托巴之墓」——爱狩日后的一切，都从这件事开始。",
+      "deeds": [
+        "在教堂外捡到年幼的十三月爱狩。",
+        "将爱狩引入马尔托巴之墓，成为她的抚养者与管家。"
+      ],
+      "relations": [
+        {
+          "target": "cp-magari-mizuki",
+          "label": "抚养者 / 管家（同姓 Mizuki）"
+        },
+        {
+          "target": "cp-martuba-tomb",
+          "label": "所属教团"
+        }
+      ]
+    },
+    {
+      "id": "cp-azusa-takai",
+      "type": "character",
+      "nameZh": "阿座见贵",
+      "nameEn": "Azusa Takai",
+      "aliases": [
+        "阿座"
+      ],
+      "works": [
+        "sweet-sachiko",
+        "blood-drive"
+      ],
+      "summary": "「马尔托巴之墓」第二号人物。前往天神小学寻找《影之书》后，因黑化而无法拯救。",
+      "facts": {
+        "身份": "马尔托巴之墓第二号人物",
+        "行动": "前往天神小学寻找《影之书》",
+        "结局": "因黑化而无法拯救",
+        "声优": "未确证"
+      },
+      "bio": "教团中地位仅次于教祖的第二号人物。她前往天神小学寻找《影之书》，最终被那片空间的黑化侵蚀，再也没能回来。",
+      "deeds": [
+        "作为马尔托巴之墓第二号人物活动。",
+        "前往天神小学寻找《影之书》。",
+        "因黑化侵蚀而无法拯救。"
+      ],
+      "relations": [
+        {
+          "target": "cp-martuba-tomb",
+          "label": "所属教团"
+        },
+        {
+          "target": "cp-shadow-book",
+          "label": "她前去寻找的禁书"
+        },
+        {
+          "target": "cp-darkening",
+          "label": "使她无法被拯救的异变"
+        }
+      ]
+    },
+    {
+      "id": "cp-aiko-niwa",
+      "type": "character",
+      "nameZh": "二羽爱子",
+      "nameEn": "Aiko Niwa",
+      "aliases": [
+        "爱子"
+      ],
+      "works": [
+        "sweet-sachiko",
+        "blood-drive"
+      ],
+      "summary": "桐章学园学生、拥有灵能的灵异情报商；二羽久远之妹。早见于《幸子小姐的派对》（2U），本作中与姊姊久远这条线相关联。",
+      "facts": {
+        "身份": "桐章学园学生 / 灵异情报商（拥有灵能）",
+        "亲属": "二羽久远之妹",
+        "声优": "山口立花子",
+        "关联": "与冴之木七星既友亦敌"
+      },
+      "bio": "拥有灵能的学生，二羽久远的妹妹。她最早在《幸子小姐的派对》中登场，本作中与姊姊久远的线索相关联。",
+      "deeds": [
+        "作为拥有灵能的学生、灵异情报商活动。",
+        "其姊二羽久远在《驭血》终局中牺牲。"
+      ],
+      "relations": [
+        {
+          "target": "cp-kuon-niwa",
+          "label": "姊姊"
+        },
+        {
+          "target": "cp-naho-saenoki",
+          "label": "朋友兼对手"
+        }
+      ]
+    },
+    {
+      "id": "cp-makina-apartment",
+      "type": "place",
+      "nameZh": "篠崎真纪的公寓",
+      "nameEn": "Makina Shinozaki's Apartment",
+      "aliases": [
+        "篠崎真纪公寓",
+        "真纪的公寓"
+      ],
+      "works": [
+        "blood-drive"
+      ],
+      "summary": "篠崎真纪（幸子的姑祖母）位于现世的公寓；《驭血》序章中，步美在此取得死后相逢之石。",
+      "facts": {
+        "种类": "私人住所",
+        "所有者": "篠崎真纪",
+        "作用": "《驭血》序章中步美取得死后相逢之石的地点",
+        "名牌": "第 9 章名牌 NT9-07（小林大辅）发现于公寓厨房"
+      },
+      "bio": "篠崎真纪位于现世的公寓。它是《驭血》序章的关键地点——被山村未来引来的步美在这里第一次接触到死后相逢之石，而公寓的厨房里还留着一具遭「活体解剖模型」反复刺击的遇害者。",
+      "deeds": [
+        "成为步美取得死后相逢之石的地点。",
+        "厨房中发现第 9 章名牌 NT9-07。"
+      ],
+      "relations": [
+        {
+          "target": "cp-makina-shinozaki",
+          "label": "屋主"
+        },
+        {
+          "target": "cp-death-meeting-stone",
+          "label": "在此被取得之物"
+        }
+      ]
+    },
+    {
+      "id": "cp-six-pillars",
+      "type": "item",
+      "nameZh": "六鬼柱",
+      "nameEn": "Pillars of the Six Demons",
+      "aliases": [],
+      "works": [
+        "blood-drive"
+      ],
+      "summary": "御帘徒抛给步美的诱饵：谎称集齐后可封印涅槃、夺回《影之书》；实为让涅槃与现实之「壁」崩裂的工具。含「智惠之柱」。",
+      "facts": {
+        "种类": "关键物 / 封印用柱",
+        "数量": "六柱（含「智惠之柱」等）",
+        "表面作用": "凝结为结晶、封印进「假影之书」，据称可夺回《影之书》、复活死者",
+        "真实作用": "使涅槃与现实之间的「壁」崩裂"
+      },
+      "bio": "御帘徒抛给步美的诱饵。他声称只要集齐六鬼柱、以篠崎家血脉将其凝结为结晶，就能封印灾祸、夺回《影之书》——但一步步收集的过程，本身就是在为涅槃与现实融合铺路。",
+      "deeds": [
+        "御帘徒谎称其为夺回影之书、复活死者的关键。",
+        "步美在不知情中被骗去收集六鬼柱。",
+        "收集过程使涅槃与现实的「壁」逐步崩裂。",
+        "篠崎幸最终夺回被凝结的结晶，二羽久远摧毁「最后一柱」。"
+      ],
+      "relations": [
+        {
+          "target": "cp-misuto-kiriya",
+          "label": "阴谋的策划者"
+        },
+        {
+          "target": "cp-ayumi-shinozaki",
+          "label": "被骗的收集者"
+        },
+        {
+          "target": "cp-sachi-shinozaki",
+          "label": "夺回结晶者"
+        },
+        {
+          "target": "cp-nirvana",
+          "label": "试图以此封印 / 针对的对象"
+        }
+      ],
+      "relatedDocs": [
+        "six-pillars-doc"
+      ]
+    },
+    {
+      "id": "cp-entity-wall",
+      "type": "concept",
+      "nameZh": "实体之壁",
+      "nameEn": "Entity Wall",
+      "aliases": [],
+      "works": [
+        "blood-drive"
+      ],
+      "summary": "涅槃开始与现实世界融合时产生的那层「壁」；它的出现标志着世界级灾难近在眼前。",
+      "facts": {
+        "种类": "现象",
+        "成因": "涅槃开始与现实世界融合",
+        "意义": "世界级灾难临近的标志"
+      },
+      "bio": "当涅槃挣脱束缚、开始把现实吞咽进自己内部时，出现的那层「壁」。它的出现，标志着这场校园怪谈已经升级为威胁整个世界的灾难。",
+      "deeds": [
+        "因涅槃开始与现实融合而出现。",
+        "标志着世界级灾难的临近。"
+      ],
+      "relations": [
+        {
+          "target": "cp-nirvana",
+          "label": "融合所产生之物"
+        },
+        {
+          "target": "cp-heavenly-host",
+          "label": "相关空间"
+        }
+      ]
+    },
+    {
+      "id": "cp-spiritual-surgery",
+      "type": "ritual",
+      "nameZh": "灵手术",
+      "nameEn": "Spiritual Surgery",
+      "aliases": [
+        "Spiritual Surgery"
+      ],
+      "works": [
+        "blood-drive"
+      ],
+      "summary": "「马尔托巴之墓」掌握的秘术之一，可使受术者获得怪物化的身体能力。水原皐月经此手术而怪物化。",
+      "facts": {
+        "种类": "黑魔术 / 秘术",
+        "效果": "使受术者获得怪物化的身体能力",
+        "相关": "马尔托巴之墓"
+      },
+      "bio": "「马尔托巴之墓」掌握的秘术之一。它能把人的身体改造到「怪物」的层面——水原皐月正是凭它咬死了御帘徒。",
+      "deeds": [
+        "作为马尔托巴之墓的秘术被使用。",
+        "水原皐月经此手术获得怪物化能力。"
+      ],
+      "relations": [
+        {
+          "target": "cp-martuba-tomb",
+          "label": "掌握它的教团"
+        },
+        {
+          "target": "cp-satsuki-mizuhara",
+          "label": "受术者"
+        }
+      ]
+    },
+    {
+      "id": "cp-phantom",
+      "type": "entity",
+      "nameZh": "幻影",
+      "nameEn": "Phantom",
+      "aliases": [
+        "Phantom"
+      ],
+      "works": [
+        "blood-drive"
+      ],
+      "summary": "本作的敌人类型之一，会无限追踪玩家，甚至穿越读盘区；能把躲进柜中的玩家拖出来殴打。",
+      "facts": {
+        "种类": "敌人 / 怨灵",
+        "行为": "无限追踪，甚至穿越读盘区",
+        "应对": "一次性符咒（Talisman）可抵挡"
+      },
+      "bio": "本作最缠人的敌人类型。它不像别的怨灵那样受区域限制，会一直追着你——甚至能穿越读盘区，把你从躲藏的柜子里拖出来。",
+      "deeds": [
+        "在本作中无限制地追踪玩家。",
+        "能够穿越读盘区继续追击。",
+        "会把躲入柜中的玩家拖出并攻击。"
+      ],
+      "relations": [
+        {
+          "target": "cp-heavenly-host",
+          "label": "出没地"
+        }
+      ]
+    },
+    {
+      "id": "cp-golem",
+      "type": "entity",
+      "nameZh": "魔像",
+      "nameEn": "Golem",
+      "aliases": [
+        "Golem"
+      ],
+      "works": [
+        "blood-drive"
+      ],
+      "summary": "本作的敌人类型之一，不跨越读盘区，威胁较幻影小。",
+      "facts": {
+        "种类": "敌人",
+        "行为": "不跨越读盘区",
+        "应对": "一次性符咒（Talisman）可抵挡"
+      },
+      "bio": "与幻影并存的另一类敌人。它的活动范围被限制在读盘区之内，威胁相对可控，但对缺少符咒的玩家仍然致命。",
+      "deeds": [
+        "在本作中作为敌人类型登场。",
+        "活动范围不跨越读盘区。"
+      ],
+      "relations": [
+        {
+          "target": "cp-heavenly-host",
+          "label": "出没地"
+        }
+      ]
+    },
+    {
+      "id": "cp-ayame-ito",
+      "type": "character",
+      "nameZh": "伊藤菖蒲",
+      "nameEn": "Ayame Itou",
+      "aliases": [
+        "あやめ",
+        "伊藤あやめ",
+        "Ayame"
+      ],
+      "works": [
+        "dead-patient"
+      ],
+      "summary": "本作主角。水无月学园高中 1 年 5 组学生，在封锁的医院手术台上失忆醒来，真结局中被揭示为「死亡病患」。",
+      "facts": {
+        "身份": "水无月学园高中 1 年 5 组学生 / 本作主角",
+        "姓氏": "伊藤（Itou）",
+        "状态": "在医院手术台上苏醒，麻醉未退、记忆严重缺失（连姓名都靠病历想起）",
+        "处境": "被困于被封锁的阿玛蕾·帕特里亚卡·克鲁西斯医院",
+        "关键真相": "真结局中被揭示为「死亡病患」"
+      },
+      "bio": "一位失去记忆的少女。她醒来时连自己是谁都不记得，只能靠病历上的名字确认身份；等待她的是空无一人的医院、游荡的丧尸与把她困在此处的武装人员。",
+      "deeds": [
+        "在医院手术台上醒来，靠病历上的名字想起自己是谁，随后独自逃离手术室。",
+        "在被封锁的医院中求生，寻找同伴与出口，试图拼合「自己为何在此」「医院里发生过什么」。",
+        "遭遇伙伴、敌对的全副武装 SWAT 部队，以及丧尸、超自然怪物与怨恨的亡灵。",
+        "在坏结局中被丧尸吞没；在真结局中与同伴一同被 SWAT 逮捕。",
+        "在真结局中被雅美掀起上衣，揭示其真实身份是「死亡病患」。"
+      ],
+      "relations": [
+        {
+          "target": "cp-chiyomi",
+          "label": "青梅竹马"
+        },
+        {
+          "target": "cp-masami",
+          "label": "揭穿其身份者"
+        },
+        {
+          "target": "cp-dead-patient",
+          "label": "真结局中被指认的身份"
+        },
+        {
+          "target": "cp-amare-hospital",
+          "label": "苏醒并被困的医院"
+        },
+        {
+          "target": "cp-minazuki-academy",
+          "label": "就读的学校"
+        }
+      ]
+    },
+    {
+      "id": "cp-chiyomi",
+      "type": "character",
+      "nameZh": "千代美",
+      "nameEn": "Chiyomi",
+      "aliases": [],
+      "works": [
+        "dead-patient"
+      ],
+      "summary": "伊藤あやめ的青梅竹马，为给住院的あやめ解闷而召集 1-5 班同学前来探望，是整起事件的缘起推动者。",
+      "facts": {
+        "身份": "あやめ的青梅竹马",
+        "姓氏": "公开资料未明确",
+        "行动": "召集水无月学园高中 1-5 班几名同学到医院探望あやめ",
+        "结局": "坏结局中被丧尸群吞没"
+      },
+      "bio": "事件当天为住院的あやめ解闷而召集同学前来探望的人。她既是主角醒来后急于寻找的对象之一，也是把众人推向那场惨剧的缘起。",
+      "deeds": [
+        "为给住院的あやめ解闷，约了 1-5 班的几名同学一同前来探望。",
+        "探望期间，医院爆发超常惨剧（一名母亲残杀自己的女儿，随后女儿起身尖叫）。",
+        "在第一章的坏结局中被丧尸群吞没。"
+      ],
+      "relations": [
+        {
+          "target": "cp-ayame-ito",
+          "label": "青梅竹马"
+        }
+      ]
+    },
+    {
+      "id": "cp-ritsuko",
+      "type": "character",
+      "nameZh": "里津子",
+      "nameEn": "Ritsuko",
+      "aliases": [],
+      "works": [
+        "dead-patient"
+      ],
+      "summary": "被困于医院的幸存者之一；其死亡是主角「虚假希望」坏结局的前奏。",
+      "facts": {
+        "身份": "被困医院的幸存者",
+        "姓氏": "公开资料未明确",
+        "结局": "坏结局中死亡",
+        "叙事作用": "其死亡引出主角的「虚假希望」坏结局"
+      },
+      "bio": "医院中的被困者之一。她（们）的死亡被安排在主角「短暂重获操作权」之前，用来把「也许还能逃」的错觉推到顶点再击碎。",
+      "deeds": [
+        "作为幸存者被困于阿玛蕾·帕特里亚卡·克鲁西斯医院。",
+        "在坏结局中死亡，成为主角「虚假希望」坏结局的前奏。"
+      ],
+      "relations": [
+        {
+          "target": "cp-ayame-ito",
+          "label": "被困者同伴"
+        }
+      ]
+    },
+    {
+      "id": "cp-satomi",
+      "type": "character",
+      "nameZh": "里见",
+      "nameEn": "Satomi",
+      "aliases": [],
+      "works": [
+        "dead-patient"
+      ],
+      "summary": "被困者之一；在某个坏结局中被丧尸咬下头颅，是「斩首展示」名场面的当事者。",
+      "facts": {
+        "身份": "被困者",
+        "姓氏": "公开资料未明确",
+        "结局": "某坏结局中被丧尸咬下头颅",
+        "名场面": "丧尸口衔其头颅的「斩首展示」"
+      },
+      "bio": "医院中的被困者之一。其结局被用作第一章最直接的一次视觉冲击——主角目睹丧尸转身、口中衔着她的头颅。",
+      "deeds": [
+        "作为被困者身处被封锁的医院。",
+        "在某个坏结局中被丧尸咬下头颅，构成「斩首展示」名场面。"
+      ],
+      "relations": [
+        {
+          "target": "cp-ayame-ito",
+          "label": "被困者同伴"
+        }
+      ]
+    },
+    {
+      "id": "cp-ryuuji",
+      "type": "character",
+      "nameZh": "龙司",
+      "nameEn": "Ryuuji",
+      "aliases": [],
+      "works": [
+        "dead-patient"
+      ],
+      "summary": "被困者之一；危难之际举着扫帚冲来营救主角，却功亏一篑。",
+      "facts": {
+        "身份": "被困者",
+        "姓氏": "公开资料未明确",
+        "名场面": "举着扫帚冲来营救主角（英雄救场）",
+        "结果": "被甩飞、撞在门上把门卡住，援救失败"
+      },
+      "bio": "医院中的被困者之一。公开资料记载的「英雄救场」属于他：在主角危难时举着扫帚冲来，却被甩飞、撞在门上把门卡住——救援没能成功。",
+      "deeds": [
+        "作为被困者身处被封锁的医院。",
+        "在主角危难之际举着扫帚冲来营救，却被甩飞、撞在门上把门卡住，英雄行为功亏一篑。"
+      ],
+      "relations": [
+        {
+          "target": "cp-ayame-ito",
+          "label": "被困者同伴（曾试图救援）"
+        }
+      ]
+    },
+    {
+      "id": "cp-masami",
+      "type": "character",
+      "nameZh": "雅美",
+      "nameEn": "Masami",
+      "aliases": [],
+      "works": [
+        "dead-patient"
+      ],
+      "summary": "本作中性格相当疯狂的角色；在真结局中揭穿主角是「死亡病患」。",
+      "facts": {
+        "身份": "存活于医院的被困者 / 性格疯狂角色",
+        "姓氏": "公开资料未明确",
+        "关键作用": "真结局中掀起あやめ的上衣，揭示其为「死亡病患」",
+        "结局": "真结局中与主角一行一同被 SWAT 逮捕"
+      },
+      "bio": "公开资料描述为「性格相当疯狂」的角色。她的存在集中在结局处：正是她在真结局里掀开主角的上衣，把「死亡病患」这一身份当众揭开。",
+      "deeds": [
+        "作为被困者身处被封锁的医院。",
+        "在真结局中掀起あやめ的上衣，向众人揭示主角是「死亡病患」——是主角身份谜团的关键揭穿者。"
+      ],
+      "relations": [
+        {
+          "target": "cp-ayame-ito",
+          "label": "揭穿其身份的人"
+        },
+        {
+          "target": "cp-dead-patient",
+          "label": "揭开的身份"
+        }
+      ]
+    },
+    {
+      "id": "cp-amare-hospital",
+      "type": "place",
+      "nameZh": "阿玛蕾·帕特里亚卡·克鲁西斯医院",
+      "nameEn": "Amare Patriarcha Crucis Hospital",
+      "aliases": [
+        "Amare Patriarcha Crucis"
+      ],
+      "works": [
+        "dead-patient"
+      ],
+      "summary": "本作主舞台——被封锁、洗劫、废弃的现代医院，院内游荡着嗜血丧尸、超自然怪物与怨恨的亡灵。",
+      "facts": {
+        "种类": "医院（被封锁、洗劫、废弃）",
+        "原文名": "Amare Patriarcha Crucis Hospital",
+        "内时间": "《驭血》事件约 5 年后（约 2014 年，推断）",
+        "状态": "空无一人、出入口上锁或被钢制卷帘封死",
+        "威胁": "嗜血丧尸、超自然怪物、怨恨的亡灵、敌对的 SWAT 部队"
+      },
+      "bio": "故事从被诅咒的异界小学搬到这所现代医院：文件散落、盆栽倾覆、尸体大多已变成游荡的丧尸。主角在这里苏醒，也被困在这里。",
+      "deeds": [
+        "成为本作主角伊藤あやめ苏醒并被困的舞台。",
+        "院内散落着名牌、病历与环境文本等收集要素。",
+        "惨剧在此爆发：一名母亲残杀女儿、女儿随即起身尖叫，医院随之陷入「醒着的噩梦」。"
+      ],
+      "relations": [
+        {
+          "target": "cp-ayame-ito",
+          "label": "主角苏醒并被困之地"
+        },
+        {
+          "target": "cp-swat",
+          "label": "封锁此地的武装部队"
+        },
+        {
+          "target": "cp-medical-charts",
+          "label": "院内收集的病历"
+        }
+      ]
+    },
+    {
+      "id": "cp-minazuki-academy",
+      "type": "place",
+      "nameZh": "水无月学园",
+      "nameEn": "Minazuki Academy High School",
+      "aliases": [
+        "水无月学园高中"
+      ],
+      "works": [
+        "dead-patient"
+      ],
+      "summary": "主角伊藤あやめ就读的高中（水无月学园高中），本作已知的学校背景之一。",
+      "facts": {
+        "种类": "学校",
+        "原文名": "Minazuki Academy High School",
+        "相关班级": "1 年 5 组",
+        "相关角色": "伊藤あやめ；其同学数名随千代美前来探望"
+      },
+      "bio": "主角与同学们就读的学校。本作已知与它相关的，主要是 1 年 5 组的学生——あやめ，以及随千代美前来探望的几名同学。",
+      "deeds": [
+        "伊藤あやめ与前来探望的几名同学均隶属于水无月学园高中 1 年 5 组。"
+      ],
+      "relations": [
+        {
+          "target": "cp-ayame-ito",
+          "label": "就读的学校"
+        }
+      ]
+    },
+    {
+      "id": "cp-dead-patient",
+      "type": "concept",
+      "nameZh": "死亡病患",
+      "nameEn": "Dead Patient",
+      "aliases": [
+        "Dead Patient"
+      ],
+      "works": [
+        "dead-patient"
+      ],
+      "summary": "真结局中揭示的、指向主角伊藤あやめ的身份／状态——她被当众指认为「死亡病患」。具体含义公开资料尚未完全说明。",
+      "facts": {
+        "种类": "身份／概念（亦为本作标题所指）",
+        "揭示者": "雅美（真结局中掀起主角上衣）",
+        "被指认者": "伊藤あやめ",
+        "含义": "公开资料尚未完整说明；剧情停在真相刚揭晓处"
+      },
+      "bio": "「死亡病患」既是本作的标题，也是真结局里扣在主角头上的一个身份。它暗示あやめ自身的存在就是医院谜团的一部分，但作品在这一刻断章，其确切含义至今未在公开资料中说明。",
+      "deeds": [
+        "真结局中，雅美掀起あやめ的上衣，向众人揭示她是「死亡病患」。",
+        "作为作品标题与核心谜题，指向主角自身的存在之谜。"
+      ],
+      "relations": [
+        {
+          "target": "cp-ayame-ito",
+          "label": "真结局中被指认者的身份"
+        },
+        {
+          "target": "cp-masami",
+          "label": "揭示者"
+        }
+      ]
+    },
+    {
+      "id": "cp-medical-charts",
+      "type": "item",
+      "nameZh": "病历",
+      "nameEn": "Medical Charts",
+      "aliases": [
+        "Medical Charts"
+      ],
+      "works": [
+        "dead-patient"
+      ],
+      "summary": "本作特色收集要素——收集死亡患者的病历，与名牌互补。",
+      "facts": {
+        "种类": "收集品",
+        "原文名": "Medical Charts",
+        "内容": "死亡患者在医院中的记录",
+        "作用": "与名牌互补，是解谜与剧情的关键线索",
+        "获取": "医院各场景"
+      },
+      "bio": "名牌给出「死者是谁、怎么死的」，病历给出「患者在医院中的记录」——两者叠在一起，才拼合出医院里究竟发生过什么。它相当于系列「名牌＋牺牲者手记」组合在医院语境下的对应物。",
+      "deeds": [
+        "作为本作的特色收集要素之一，分布在第 1 章医院各场景。",
+        "与名牌互补，共同还原医院内的死亡经过。"
+      ],
+      "relations": [
+        {
+          "target": "cp-amare-hospital",
+          "label": "收集场所"
+        },
+        {
+          "target": "cp-name-tags",
+          "label": "互补的收集要素"
+        }
+      ]
+    },
+    {
+      "id": "cp-name-tags",
+      "type": "item",
+      "nameZh": "名牌",
+      "nameEn": "Name Tags",
+      "aliases": [
+        "Name Tag"
+      ],
+      "works": [
+        "blood-covered",
+        "dead-patient"
+      ],
+      "summary": "系列传统的死者名牌；本作多数名牌直接散落在场景明处，靠近即可拾取，无需检视尸体。完整清单公开来源未收录。",
+      "facts": {
+        "种类": "系列传统收集品",
+        "原文名": "Name Tags",
+        "记录": "死者的姓名 / 年龄 / 学校 / 死因等",
+        "本作改动": "多数名牌直接放在明处，无需检视尸体",
+        "完整清单": "公开来源未收录（本作仅第一章且长期未更新）"
+      },
+      "bio": "名牌本是「每一具尸体配一枚」的收集物，本作却把它摊在了明处——因为医院里的「尸体」大多正起身游荡。每个名牌因此变成一位「死亡病患 / 遇难者」的注脚。",
+      "deeds": [
+        "作为系列传统收集要素移植到医院语境。",
+        "多数名牌明置于场景中，靠近即可获得，无需先找到并检查尸体。"
+      ],
+      "relations": [
+        {
+          "target": "cp-amare-hospital",
+          "label": "散落场所"
+        },
+        {
+          "target": "cp-medical-charts",
+          "label": "互补的收集要素"
+        }
+      ]
+    },
+    {
+      "id": "cp-swat",
+      "type": "organization",
+      "nameZh": "SWAT 部队",
+      "nameEn": "SWAT",
+      "aliases": [
+        "SWAT",
+        "SWAT 队员"
+      ],
+      "works": [
+        "dead-patient"
+      ],
+      "summary": "封锁医院的武装部队；对幸存者并不友善，属敌对势力，真结局中逮捕主角一行。",
+      "facts": {
+        "种类": "武装部队（敌对势力）",
+        "形象": "蓝色与黑色防暴装备、佩戴防毒面具",
+        "立场": "对幸存者并不友善",
+        "关键作用": "封锁医院；真结局中逮捕主角一行"
+      },
+      "bio": "公开资料把 SWAT 部队列为医院里三类存在中的「敌人」——正是这类人把主角困在此处，并对幸存者抱有敌意。",
+      "deeds": [
+        "全副武装、佩戴防毒面具，出现在被封锁的医院中。",
+        "在真结局中逮捕主角一行。"
+      ],
+      "relations": [
+        {
+          "target": "cp-amare-hospital",
+          "label": "封锁的场所"
+        },
+        {
+          "target": "cp-ayame-ito",
+          "label": "在真结局中将其逮捕"
+        }
+      ]
+    },
+    {
+      "id": "cp-haruka-nanami",
+      "type": "character",
+      "nameZh": "七海遥",
+      "nameEn": "Haruka Nanami",
+      "aliases": [
+        "遥"
+      ],
+      "works": [
+        "darkness-distortion"
+      ],
+      "summary": "青峰学园高等部 1 年 3 组学生，《黑暗扭曲》主人公。因陪同学直播验证都市传说「轮椅上的菖蒲小姐」而卷入诅咒。",
+      "facts": {
+        "身份": "青峰学园高等部 1 年 3 组学生（本作主人公）",
+        "声优": "市之濑加那（Kana Ichinose）",
+        "性格": "注意力有些散漫、是个冒失鬼；是非分明、不肯妥协",
+        "结局": "公开来源未完整收录"
+      },
+      "bio": "青峰学园高等部 1 年 3 组的学生。她虽然有点粗心冒失，安静下来时却算得上是个美人，而且是个不愿在是非上妥协的人。为了陪主播高梨寝夢验证都市传说，她与棺真理亚一同走进了那座废弃医院。",
+      "deeds": [
+        "与高梨寝夢、棺真理亚一同前往废弃医院，直播验证都市传说「轮椅上的菖蒲小姐」。",
+        "直播中触发医院数十年前被施加的诅咒，被送往另一个更黑暗的领域。",
+        "苏醒后与同伴一同身处「与原来似是而非、遭诅咒的废弃医院」，开始求生。",
+        "作为主人公，主线 6 章围绕逃离异界、查明「轮椅上的菖蒲小姐」的真相展开。"
+      ],
+      "relations": [
+        {
+          "target": "cp-nemu-takanashi",
+          "label": "同班同学 / 事件同行者"
+        },
+        {
+          "target": "cp-maria-hitsugi",
+          "label": "同班同学 / 事件同行者"
+        },
+        {
+          "target": "cp-ayame-kirishima",
+          "label": "威胁（诅咒源头）"
+        },
+        {
+          "target": "cp-aomine-academy",
+          "label": "就读学校"
+        }
+      ]
+    },
+    {
+      "id": "cp-nemu-takanashi",
+      "type": "character",
+      "nameZh": "高梨寝夢",
+      "nameEn": "Nemu Takanashi",
+      "aliases": [
+        "寝夢"
+      ],
+      "works": [
+        "darkness-distortion"
+      ],
+      "summary": "青峰学园高等部 1 年 3 组学生、YouRTuber 主播。为提升订阅数发起「直播验证都市传说」，是整起事件的直接导火索。",
+      "facts": {
+        "身份": "青峰学园高等部 1 年 3 组学生 / YouRTuber 主播（隶属事务所 LEED）",
+        "声优": "高桥李依（Rie Takahashi）",
+        "处境": "从事艺能活动却始终人气平平、内心焦虑",
+        "结局": "公开来源未完整收录"
+      },
+      "bio": "隶属事务所 LEED 的 YouRTuber 主播。人气迟迟起不来，这份焦虑让她把目光投向了都市传说——她召集了两位同学，决定用一场直播来验证「轮椅上的菖蒲小姐」。",
+      "deeds": [
+        "为提高订阅数，说服同学七海遥与棺真理亚一同前往废弃医院。",
+        "发起「直播验证都市传说」的行动，成为整起事件的直接导火索。",
+        "直播中触发医院数十年前的诅咒，与同伴一同消失。"
+      ],
+      "relations": [
+        {
+          "target": "cp-haruka-nanami",
+          "label": "同行者"
+        },
+        {
+          "target": "cp-maria-hitsugi",
+          "label": "同行者"
+        },
+        {
+          "target": "cp-ayames-mercy",
+          "label": "她所验证的都市传说"
+        }
+      ]
+    },
+    {
+      "id": "cp-maria-hitsugi",
+      "type": "character",
+      "nameZh": "棺真理亚",
+      "nameEn": "Maria Hitsugi",
+      "aliases": [
+        "真理亚"
+      ],
+      "works": [
+        "darkness-distortion"
+      ],
+      "summary": "青峰学园高等部 1 年 3 组学生、精通超自然现象的「灵异知识少女」，队伍的灵异担当。",
+      "facts": {
+        "身份": "青峰学园高等部 1 年 3 组学生 / 灵异知识少女",
+        "声优": "陶山惠实里（Emiri Suyama）",
+        "性格": "举止成熟冷静、精通超自然现象，神秘感十足",
+        "结局": "公开来源未完整收录"
+      },
+      "bio": "举止成熟、沉着冷静的同班同学，对超自然现象的了解远超同龄人。她被高梨寝夢拉进这场直播时，或许比谁都清楚自己面对的是什么。",
+      "deeds": [
+        "受邀与高梨寝夢、七海遥一同前往废弃医院验证都市传说。",
+        "是队伍中的「灵异担当」，其设定与系列传统的灵能力者角色相呼应。",
+        "随众人被卷入诅咒异界，成为求生者之一。"
+      ],
+      "relations": [
+        {
+          "target": "cp-nemu-takanashi",
+          "label": "同行者"
+        },
+        {
+          "target": "cp-haruka-nanami",
+          "label": "同行者"
+        },
+        {
+          "target": "cp-ayame-kirishima",
+          "label": "她所面对的怨灵"
+        }
+      ]
+    },
+    {
+      "id": "cp-yu-shindo",
+      "type": "character",
+      "nameZh": "進藤優",
+      "nameEn": "Yu Shindo",
+      "aliases": [
+        "優"
+      ],
+      "works": [
+        "darkness-distortion"
+      ],
+      "summary": "青峰学园高等部 1 年 3 组学生，本作中唯一的「普通人」。外貌出众却对艺能界毫无兴趣，是進藤明莉之兄。",
+      "facts": {
+        "身份": "青峰学园高等部 1 年 3 组学生（唯一的「普通人」）",
+        "声优": "菊地燎",
+        "特点": "外貌出众、常在街头被星探搭讪，本人却无意艺能界",
+        "家人": "妹·進藤明莉",
+        "结局": "公开来源未完整收录"
+      },
+      "bio": "1 年 3 组里少数没有任何特殊背景的人。他因为长相出众，常常被星探搭讪，但他自己从没动过进艺能圈的念头。",
+      "deeds": [
+        "作为青峰学园高等部 1 年 3 组的一员被卷入事件。",
+        "本作中唯一的「普通人」，与拥有灵异知识的棺真理亚形成对照。"
+      ],
+      "relations": [
+        {
+          "target": "cp-akari-shindo",
+          "label": "妹妹"
+        }
+      ]
+    },
+    {
+      "id": "cp-roddy",
+      "type": "character",
+      "nameZh": "羅迪",
+      "nameEn": "Roddy",
+      "aliases": [],
+      "works": [
+        "darkness-distortion"
+      ],
+      "summary": "青峰学园高等部 1 年 3 组学生，校内远近闻名的问题学生。",
+      "facts": {
+        "身份": "青峰学园高等部 1 年 3 组学生 / 问题学生",
+        "声优": "小笠原仁",
+        "性格": "造型浮夸、脾气火爆，常惹是生非",
+        "结局": "公开来源未完整收录"
+      },
+      "bio": "造型张扬、脾气一点就着，是青峰学园里出了名的问题学生。他多半不会想到，自己会因为一场直播被卷进一座不存在的医院。",
+      "deeds": [
+        "作为青峰学园高等部 1 年 3 组的一员被卷入事件。",
+        "以「校内远近闻名的问题学生」而为人所知。"
+      ],
+      "relations": [
+        {
+          "target": "cp-aomine-academy",
+          "label": "就读学校"
+        }
+      ]
+    },
+    {
+      "id": "cp-akari-shindo",
+      "type": "character",
+      "nameZh": "進藤明莉",
+      "nameEn": "Akari Shindo",
+      "aliases": [
+        "明莉"
+      ],
+      "works": [
+        "darkness-distortion"
+      ],
+      "summary": "青峰学园中等部 1 年 A 班学生、進藤優之妹。童星出道、备受期待的新星。",
+      "facts": {
+        "身份": "青峰学园中等部 1 年 A 班学生 / 進藤優之妹",
+        "声优": "本渡枫",
+        "经历": "童星出道，近期工作量渐增",
+        "性格": "比哥哥更稳重可靠",
+        "结局": "公开来源未完整收录"
+      },
+      "bio": "从小就出道的童星，近来通告越来越多，是备受期待的新星。相比哥哥進藤優，她反而更沉得住气。",
+      "deeds": [
+        "作为進藤優之妹，就读青峰学园中等部 1 年 A 班。",
+        "以童星身份出道，是近期开始走红的新星。"
+      ],
+      "relations": [
+        {
+          "target": "cp-yu-shindo",
+          "label": "哥哥"
+        }
+      ]
+    },
+    {
+      "id": "cp-ayame-kirishima",
+      "type": "character",
+      "nameZh": "桐島彩芽",
+      "nameEn": "Ayame Kirishima",
+      "aliases": [
+        "彩芽"
+      ],
+      "works": [
+        "darkness-distortion"
+      ],
+      "summary": "都市传说「轮椅上的菖蒲小姐」背后的怨灵，本作诅咒的源头与主要威胁。生前经历与「轮椅」意象的由来，公开资料尚未完整收录。",
+      "facts": {
+        "身份": "都市传说「轮椅上的菖蒲小姐」的怨灵 / 本作核心怨灵",
+        "关联咒语": "「彩芽（Ayame Kirishima），彩芽，请把他们送到医院来」",
+        "栖息地": "被诅咒的 Amare Est Vivere 医院",
+        "背景": "生前经历与「轮椅」意象的由来——公开来源未完整收录",
+        "结局": "未明确（其真相的揭晓是达成真结局的关键）"
+      },
+      "bio": "与「数十年前施加于 Amare Est Vivere 医院的诅咒」相关联的怨灵。施咒的核心句正是呼喊她的名字——咒语之所以能运作，是因为它要唤醒她。",
+      "deeds": [
+        "与「数十年前」施加于 Amare Est Vivere 医院的诅咒相关联。",
+        "其名被编入都市传说咒语的核心句，成为召唤仪式的关键。",
+        "栖居于异化的废弃医院，是主角们的主要威胁。",
+        "其生前经历与「轮椅」意象的真相，是通往唯一真结局的关键，而这份真相在公开资料中尚未完整收录。"
+      ],
+      "relations": [
+        {
+          "target": "cp-ayames-mercy",
+          "label": "与她相关联的咒语"
+        },
+        {
+          "target": "cp-amare-est-vivere",
+          "label": "她栖息的医院"
+        },
+        {
+          "target": "cp-haruka-nanami",
+          "label": "她威胁的对象"
+        }
+      ]
+    },
+    {
+      "id": "cp-aomine-academy",
+      "type": "place",
+      "nameZh": "青峰学园",
+      "nameEn": "Aomine Academy",
+      "aliases": [
+        "青峰学园高等部",
+        "青峰学园中等部"
+      ],
+      "works": [
+        "darkness-distortion"
+      ],
+      "summary": "《黑暗扭曲》为全新角色群设置的新舞台，取代系列此前的「如月学园」。高等部 1 年 3 组是本作主角团所在班级。",
+      "facts": {
+        "种类": "学校",
+        "关键班级": "高等部 1 年 3 组（主角团）／中等部 1 年 A 班",
+        "定位": "本作全新舞台，取代天神小学篇的「如月学园」",
+        "沿革": "公开来源未完整收录"
+      },
+      "bio": "一所普通的高中。高等部 1 年 3 组的学生们因为一场直播验证都市传说的行动，成了被诅咒医院带走的一群人；他们的同班同学随后也踏上了同一条路。",
+      "deeds": [
+        "成为《黑暗扭曲》全新角色群就读的学校。",
+        "高等部 1 年 3 组的学生前往废弃医院验证都市传说，触发事件。",
+        "观看直播的同班同学随后赶到医院、施行了同一咒语。"
+      ],
+      "relations": [
+        {
+          "target": "cp-haruka-nanami",
+          "label": "学生"
+        },
+        {
+          "target": "cp-nemu-takanashi",
+          "label": "学生"
+        },
+        {
+          "target": "cp-akari-shindo",
+          "label": "学生（中等部）"
+        }
+      ]
+    },
+    {
+      "id": "cp-amare-est-vivere",
+      "type": "place",
+      "nameZh": "阿玛蕾·艾斯特·维韦雷医院",
+      "nameEn": "Amare Est Vivere Hospital",
+      "aliases": [
+        "Amare Est Vivere 医院",
+        "Amare Est Vivere"
+      ],
+      "works": [
+        "darkness-distortion"
+      ],
+      "summary": "《黑暗扭曲》的舞台：一座废弃医院，以及「与原来似是而非、遭诅咒」的镜像版本。医院于数十年前被施加了诅咒。",
+      "facts": {
+        "种类": "废弃医院／遭诅咒的镜像空间",
+        "形态": "一座废弃医院，及其「与原来似是而非、遭诅咒的」镜像版本",
+        "诅咒": "「数十年前」被施加，与怨灵桐島彩芽相关联",
+        "易混": "与《死亡病患》的 Amare Patriarcha Crucis 医院不是同一处"
+      },
+      "bio": "一座废弃医院，以及它在诅咒中生成的另一个形态——两者「似是而非」。主角一行因直播踏入这里，又在苏醒后身处其中，逃不出去。",
+      "deeds": [
+        "「数十年前」被施加诅咒；怨灵桐島彩芽与此相关联。",
+        "成为高梨寝夢一行直播验证都市传说的现场。",
+        "诅咒触发后，被卷入者苏醒于「与原来似是而非、遭诅咒的」镜像版本之中。"
+      ],
+      "relations": [
+        {
+          "target": "cp-ayame-kirishima",
+          "label": "栖息于此的怨灵"
+        },
+        {
+          "target": "cp-ayames-mercy",
+          "label": "与之相连接的咒语"
+        }
+      ]
+    },
+    {
+      "id": "cp-ayames-mercy",
+      "type": "ritual",
+      "nameZh": "轮椅上的菖蒲小姐",
+      "nameEn": "Ayame's Mercy",
+      "aliases": [
+        "車椅子のアヤメさん",
+        "轮椅彩芽",
+        "Ayame's Mercy"
+      ],
+      "works": [
+        "darkness-distortion"
+      ],
+      "summary": "街头巷尾流传的都市传说咒语。核心句为「彩芽，彩芽，请把他们送到医院来」，施行者会被拖入遭诅咒的废弃医院。",
+      "facts": {
+        "种类": "咒术／仪式（都市传说）",
+        "核心句": "「彩芽（Ayame Kirishima），彩芽，请把他们送到医院来」",
+        "效果": "施行者被送往「另一个更黑暗的领域」（遭诅咒的废弃医院）",
+        "对照": "结构与天神小学篇的「幸福的幸子小姐」相呼应"
+      },
+      "bio": "和「幸福的幸子小姐」出自同一种模式：念诵咒文、施行仪式，然后被拖进另一个空间。不同的是，这一次的目的地是一座医院，而咒语呼唤的名字是「彩芽」。",
+      "deeds": [
+        "作为都市传说在街头巷尾流传。",
+        "被高梨寝夢一行用于直播验证，触发医院数十年前的诅咒。",
+        "观看直播的同班同学随后赶到医院，施行了同一咒语。"
+      ],
+      "relations": [
+        {
+          "target": "cp-ayame-kirishima",
+          "label": "被其呼唤的名字"
+        },
+        {
+          "target": "cp-amare-est-vivere",
+          "label": "咒语通往的舞台"
+        },
+        {
+          "target": "cp-sachiko-ever-after",
+          "label": "结构上呼应的姊妹咒语"
+        }
+      ]
+    },
+    {
+      "id": "cp-haruyuki-inumaru",
+      "type": "character",
+      "nameZh": "犬丸晴行",
+      "nameEn": "Haruyuki Inumaru",
+      "aliases": [
+        "犬丸"
+      ],
+      "works": [
+        "sweet-sachiko",
+        "blood-drive"
+      ],
+      "summary": "桐章学园学生、冴之木七星的同班同学；滑稽而喜欢鱼，暗恋青梅竹马大上早矢香却屡遭冷遇，是本作「番外角色」的代表。",
+      "facts": {
+        "身份": "桐章学园学生 / 七星同班同学",
+        "声优": "山口智大",
+        "性格": "滑稽、喜欢鱼",
+        "关系": "与大上早矢香是青梅竹马，暗恋她",
+        "后续": "《驭血》中性格大幅收敛，不再是滑稽的卡通式角色"
+      },
+      "bio": "在轻小说《影之书》中首度登场的角色，本作里他的搞笑基调最浓：屡次向早矢香示好又屡次碰壁，却不以为意。到了《驭血》，他收敛成了一个普通而正经的角色。",
+      "deeds": [
+        "作为幸子派对的参与者登场。",
+        "暗恋青梅竹马大上早矢香而屡遭冷遇。",
+        "在《驭血》中性格大幅收敛。"
+      ],
+      "relations": [
+        {
+          "target": "cp-sayaka-ooue",
+          "label": "青梅竹马 / 暗恋对象"
+        },
+        {
+          "target": "cp-naho-saenoki",
+          "label": "同班同学"
+        },
+        {
+          "target": "cp-tokisho-academy",
+          "label": "所属学园"
+        }
+      ]
+    },
+    {
+      "id": "cp-ran-kobayashi",
+      "type": "character",
+      "nameZh": "小林兰",
+      "nameEn": "Ran Kobayashi",
+      "aliases": [
+        "小林"
+      ],
+      "works": [
+        "sweet-sachiko"
+      ],
+      "summary": "本作真正的全新角色之一，与阿座见贵一同在正篇中突兀登场；其悲惨背景同样在额外章节揭晓。",
+      "facts": {
+        "身份": "本作全新角色",
+        "初登场": "《幸子小姐的派对》",
+        "背景揭晓": "额外章节（传统恐怖风格）",
+        "声优": "未确证"
+      },
+      "bio": "与阿座见贵一同被列为本作「突兀登场」的新人，两人在正篇中的定位是一个持续的谜。她的悲惨背景同样只在额外章节中交代，对后续作品的直接影响有限。",
+      "deeds": [
+        "在《幸子小姐的派对》正篇中作为「特别来宾」突兀登场。",
+        "其悲惨背景在额外章节中被揭晓。"
+      ],
+      "relations": [
+        {
+          "target": "cp-azusa-takai",
+          "label": "一同登场，背景同在额外章节揭晓"
+        }
+      ]
+    },
+    {
+      "id": "cp-tokisho-academy",
+      "type": "place",
+      "nameZh": "桐章学园",
+      "nameEn": "Tokisho Academy",
+      "aliases": [
+        "桐章学园"
+      ],
+      "works": [
+        "sweet-sachiko",
+        "blood-drive"
+      ],
+      "summary": "系列中另一条「另校线」的学校。二羽爱子、犬丸晴行、冴之木七星、大上早矢香等角色所属；本作让这条线大幅丰满。",
+      "facts": {
+        "种类": "学校",
+        "所属角色": "二羽爱子、犬丸晴行、冴之木七星、大上早矢香",
+        "定位": "系列「另校线」的主要舞台"
+      },
+      "bio": "与如月学园、白檀高中并列的第三所学校线。本作把它的人马大量请进幸子的派对——幸子的跟班二羽爱子、暗恋早矢香的犬丸晴行、与爱子既友亦敌的冴之木七星，都出自这里。",
+      "deeds": [
+        "其学生二羽爱子在本作中担任幸子的跟班。",
+        "其学生犬丸晴行、大上早矢香、冴之木七星在本作中登场。",
+        "相关角色在《驭血》中继续有正式戏份。"
+      ],
+      "relations": [
+        {
+          "target": "cp-aiko-niwa",
+          "label": "所属学生"
+        },
+        {
+          "target": "cp-haruyuki-inumaru",
+          "label": "所属学生"
+        },
+        {
+          "target": "cp-naho-saenoki",
+          "label": "所属学生"
+        },
+        {
+          "target": "cp-sayaka-ooue",
+          "label": "所属学生"
+        }
+      ]
+    },
+    {
+      "id": "cp-skeleton-necklace",
+      "type": "item",
+      "nameZh": "骸骨项链",
+      "nameEn": "Skeleton Necklace",
+      "aliases": [
+        "骸骨项链",
+        "骨之项链"
+      ],
+      "works": [
+        "sweet-sachiko"
+      ],
+      "summary": "终章中众人为幸子制作的生日礼物，寄托「死后也能自由」的愿望。派对结束后，它是唯一留存在幸子身上的东西。",
+      "facts": {
+        "种类": "关键道具（生日礼物）",
+        "出处": "终章众人合力制作",
+        "寓意": "寄托「死后也能自由」的愿望",
+        "结局": "派对结束后仍留在幸子脖子上"
+      },
+      "bio": "这串项链是本作最温柔的一个道具：它既是对一个被诅咒困住的孩子所能给出的全部安慰，也寄托着「死后也能自由」的心愿。当所有人都在派对结束后失去记忆，只有它还挂在幸子的颈上。",
+      "deeds": [
+        "由众人为幸子合力制作，作为她的生日礼物。",
+        "寄托了「死后也能自由」的愿望。",
+        "成为派对结束后唯一留在幸子身上的东西。"
+      ],
+      "relations": [
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "赠予对象"
+        }
+      ]
+    },
+    {
+      "id": "cp-hysteric-birthday",
+      "type": "concept",
+      "nameZh": "24 小时大赦",
+      "nameEn": "24-Hour Amnesty",
+      "aliases": [
+        "生日大赦",
+        "免罪大赦"
+      ],
+      "works": [
+        "sweet-sachiko"
+      ],
+      "summary": "幸子生日当天，天神小学的诅咒短暂减弱，她借此召集此前游戏中死去的几乎所有角色，给予他们 24 小时的免罪期。",
+      "facts": {
+        "性质": "幸子生日当天的诅咒减弱 / 死者的免罪期",
+        "时长": "24 小时",
+        "范围": "此前游戏中死去的几乎所有角色",
+        "结果": "一天结束即「回档」，众人失去当日记忆"
+      },
+      "bio": "这是整部外传的舞台设定：正因为诅咒在幸子生日这天会短暂减弱，一群死者才能被召回来陪她玩一天。也正因为身处「轮回夹缝」，众人脑中融合了多个平行轮回世界的未来，对「坏结局」的记忆大多模糊。",
+      "deeds": [
+        "让此前在游戏中死去的几乎全体角色得以在生日当天重新登场。",
+        "使众人同时带有多个平行轮回世界的模糊记忆。",
+        "以「一天结束即回档、记忆归零」的方式收尾。"
+      ],
+      "relations": [
+        {
+          "target": "cp-sachiko-shinozaki",
+          "label": "发起者"
+        },
+        {
+          "target": "cp-heavenly-host",
+          "label": "发生地"
+        }
       ]
     }
   ]

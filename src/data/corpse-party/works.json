@@ -9,7 +9,13 @@
       "type": "正传 第一部",
       "year": 2008,
       "developer": "Team GrisGris / MAGES.",
-      "platforms": ["Windows", "PSP", "3DS", "Switch", "Steam"],
+      "platforms": [
+        "Windows",
+        "PSP",
+        "3DS",
+        "Switch",
+        "Steam"
+      ],
       "genre": "生存恐怖 / 文字冒险",
       "synopsis": "系列真正起步之作，重制自 1996 年的免费同人初代《CORPSE-PARTY》。如月学园的九名学生与教师因「幸福的幸子小姐」咒语被拖入天神小学，为了活下去、也为了超度这场诅咒的源头，必须在怨灵徘徊的校舍里寻找出口。",
       "imagePrompt": "japanese school classroom at night, overturned desks and scattered chalk, faded wooden floor, bloodstained blackboard, dark crimson shadow in the corner, sepia washi paper grain, japanese horror atmosphere, cinematic, no text, no people",
@@ -170,19 +176,162 @@
         }
       ],
       "documents": [
-        { "id": "victim-memoir-1", "no": 1, "type": "文献", "nameEn": "Victim Memoir", "nameZh": "牺牲者手记（第 1 章）", "chapter": "第 1 章", "location": "主楼各场景中散落", "summary": "第 1 章的 5 本手记，记录过往被卷入者的经历。", "content": "牺牲者手记是本作最核心的收集要素之一：每章 5 本，合计 25 本。它们让玩家在推进主线的同时不断意识到一件事——主角一行不是第一批被拖进来的人。手记与名牌是一对：名牌写「怎么死的」，手记写「经历了什么」。而全部读完的代价是被直接送进坏结局，这正是本作「求知者必死」的设计哲学。", "relatedEntity": "cp-victim-memoir" },
-        { "id": "victim-memoir-2", "no": 2, "type": "文献", "nameEn": "Victim Memoir", "nameZh": "牺牲者手记（第 2 章）", "chapter": "第 2 章", "location": "别馆一带散落", "summary": "第 2 章的 5 本手记。", "content": "这一章的手记靠近别馆区域。它们讲述的遭遇与前一批死者互相印证：同样是被突然拖入、同样在寻找出口的过程中耗尽体力与理智，最后只剩下无名的一具尸体。读到这里，天神小学的运作模式已经非常清楚——它是一座只进不出的学校。", "relatedEntity": "cp-victim-memoir" },
-        { "id": "victim-memoir-3", "no": 3, "type": "文献", "nameEn": "Victim Memoir", "nameZh": "牺牲者手记（第 3 章）", "chapter": "第 3 章", "location": "池上 / 下见区域散落", "summary": "第 3 章的 5 本手记，位于手记最密集的区域。", "content": "池上与下见一带是手记最密集的地方。这一章的收集体验被设计得格外残酷：玩家越是深入探索这条区域，就越接近「读满 5 本触发死亡」的红线。换句话说，想看清这座学校的全貌，就必须拿命去换。", "relatedEntity": "cp-victim-memoir" },
-        { "id": "victim-memoir-4", "no": 4, "type": "文献", "nameEn": "Victim Memoir", "nameZh": "牺牲者手记（第 4 章）", "chapter": "第 4 章", "location": "各区域散落", "summary": "第 4 章的 5 本手记。", "content": "第 4 章的手记与森繁朔太郎的崩溃在同一段流程里展开。玩家一边读着别人的死亡记录，一边看着本班同学变成拍尸体的相机——两个层面的恐怖叠在一起，这一章也因此成为全作最压抑的一段。", "relatedEntity": "cp-victim-memoir" },
-        { "id": "victim-memoir-5", "no": 5, "type": "文献", "nameEn": "Victim Memoir", "nameZh": "牺牲者手记（第 5 章）", "chapter": "第 5 章", "location": "别馆与尸体处理室一带散落", "summary": "第 5 章的 5 本手记，与名牌最密集的区域重合。", "content": "最后一章的手记集中在尸体处理室与别馆附近，与第 5 章密集的名牌同处一地。这些文献与身边成排的尸体共同构成终点前的最后一份证词：所有没能被超度的人，最后都只是这里的一枚名牌。", "relatedEntity": "cp-victim-memoir" },
-        { "id": "naho-notes", "no": 6, "type": "关键文献", "nameEn": "Naho's Notes", "nameZh": "七星的笔记", "chapter": "第 5 章", "location": "资料室", "summary": "推进超度幸子剧情的关键文献，共 5 本。", "content": "七星的笔记是这场诅咒里唯一的「说明书」。写它的人正是把咒语散布出去的人：她既是灾祸的扩大者，也是唯一留下正确做法的人。第 5 章必须集齐 5 本，才能凑出安魂仪式的完整步骤——这也是全作少有的「用知识救人」的时刻。", "relatedEntity": "cp-naho-notes" },
-        { "id": "sachiko-tongue", "no": 7, "type": "关键道具", "nameEn": "Sachiko's Tongue", "nameZh": "幸子的舌头", "chapter": "第 5 章", "location": "校长室", "summary": "超度幸子所需的关键献上物。", "content": "校长柳堀隆峰当年掘出幸子的遗体、割下她的舌头，据说是为了「阻止她说话」。这个细节解释了为什么超度幸子必须把舌头还回去：她要的从来不是报复，而是把被夺走的东西还回来。", "relatedEntity": "cp-sachiko-relics" },
-        { "id": "black-cat-plush", "no": 8, "type": "关键道具", "nameEn": "Black Cat Plush", "nameZh": "黑猫毛绒玩具", "chapter": "第 5 章", "location": "校内一处角落", "summary": "母亲买给幸子的黑猫玩偶，安魂仪式的献上物。", "content": "它是一件很日常的东西——母亲买给女儿的玩具。把它放进安魂仪式，是把「幸子」从「怨灵」重新还原成「一个七岁的孩子」：她死去那天是她的生日，而这只玩偶大概本来该是那天的礼物之一。", "relatedEntity": "cp-sachiko-relics" },
-        { "id": "extra-chapters-doc", "no": 9, "type": "额外章节", "nameEn": "Extra Chapters", "nameZh": "额外章节（EX1–EX10）", "chapter": "跨章节", "location": "主菜单 Extra（按结局解锁）", "summary": "正篇之外可解锁的短篇追加章节，PSP 版共 10 个。", "content": "额外章节是主菜单里的另一条线：它们不推进主线，而是补完配角与 IF 剧情。PSP 版共 10 个，解锁条件全部挂在正篇各章的通关与结局收集上；3DS 版另有独占章节。部分章节之间构成解锁链，需要按顺序打通。", "relatedEntity": "cp-heavenly-host" },
-        { "id": "wrong-endings-doc", "no": 10, "type": "结局收集", "nameEn": "Wrong Endings", "nameZh": "误入结局（坏结局）", "chapter": "各章", "location": "各章分支路线", "summary": "每章 1 个真结局 + 1–7 个坏结局。", "content": "坏结局不是失败，而是本作叙事的一部分。触发方式包括与怨灵对视、被抓住、被黑化侵蚀致死、读满 5 本牺牲者手记，以及带错人、走错门、检查了不该检查的东西。它们构成了一张密集的死亡地图——也解释了为什么「名牌」会有整整 84 枚。", "relatedEntity": "cp-darkening" },
-        { "id": "endings-gallery", "no": 11, "type": "结局收集", "nameEn": "Endings", "nameZh": "结局一览", "chapter": "各章", "location": "通关后可回放", "summary": "每章真结局与全部坏结局的收集与回放。", "content": "本作把结局本身做成了收集要素：通关后可以在结局列表中回放看过的每一个结局。真结局只有一条路，坏结局遍地都是——这个比例本身就是作者想说的话。", "relatedEntity": "cp-heavenly-host" },
-        { "id": "cg-gallery", "no": 12, "type": "收集品", "nameEn": "CG Gallery", "nameZh": "CG 回廊", "chapter": "全局", "location": "主菜单 Gallery", "summary": "收集游戏内插画 CG。", "content": "CG 回廊收录玩家在流程中触发的插画，包括大量坏结局的死亡场面。它是这套「以死亡为收集品」的设计思路最直接的呈现：你收集的每一个 CG，都对应某个人的某一个结局。", "relatedEntity": "cp-heavenly-host" },
-        { "id": "version-collectibles", "no": 13, "type": "特典", "nameEn": "Version-exclusive Collectibles", "nameZh": "各版本特色收集品", "chapter": "跨版本", "location": "—", "summary": "不同版本追加的名牌与独家收集内容。", "content": "1996 年 PC-98 初代没有名牌系统，该机制是重制版引入的；PSP 版把名牌系统定型为 84 个并新增第 5 章与全语音；3DS 版追加独占额外章节；2021 完整版追加未收录语音与追加剧本并支持简繁中文。因此不同版本的收集内容并不完全一致，本站以 PSP 及后续版本的综合口径为准。", "relatedEntity": "cp-heavenly-host" }
+        {
+          "id": "victim-memoir-1",
+          "no": 1,
+          "type": "文献",
+          "nameEn": "Victim Memoir",
+          "nameZh": "牺牲者手记（第 1 章）",
+          "chapter": "第 1 章",
+          "location": "主楼各场景中散落",
+          "summary": "第 1 章的 5 本手记，记录过往被卷入者的经历。",
+          "content": "牺牲者手记是本作最核心的收集要素之一：每章 5 本，合计 25 本。它们让玩家在推进主线的同时不断意识到一件事——主角一行不是第一批被拖进来的人。手记与名牌是一对：名牌写「怎么死的」，手记写「经历了什么」。而全部读完的代价是被直接送进坏结局，这正是本作「求知者必死」的设计哲学。",
+          "relatedEntity": "cp-victim-memoir"
+        },
+        {
+          "id": "victim-memoir-2",
+          "no": 2,
+          "type": "文献",
+          "nameEn": "Victim Memoir",
+          "nameZh": "牺牲者手记（第 2 章）",
+          "chapter": "第 2 章",
+          "location": "别馆一带散落",
+          "summary": "第 2 章的 5 本手记。",
+          "content": "这一章的手记靠近别馆区域。它们讲述的遭遇与前一批死者互相印证：同样是被突然拖入、同样在寻找出口的过程中耗尽体力与理智，最后只剩下无名的一具尸体。读到这里，天神小学的运作模式已经非常清楚——它是一座只进不出的学校。",
+          "relatedEntity": "cp-victim-memoir"
+        },
+        {
+          "id": "victim-memoir-3",
+          "no": 3,
+          "type": "文献",
+          "nameEn": "Victim Memoir",
+          "nameZh": "牺牲者手记（第 3 章）",
+          "chapter": "第 3 章",
+          "location": "池上 / 下见区域散落",
+          "summary": "第 3 章的 5 本手记，位于手记最密集的区域。",
+          "content": "池上与下见一带是手记最密集的地方。这一章的收集体验被设计得格外残酷：玩家越是深入探索这条区域，就越接近「读满 5 本触发死亡」的红线。换句话说，想看清这座学校的全貌，就必须拿命去换。",
+          "relatedEntity": "cp-victim-memoir"
+        },
+        {
+          "id": "victim-memoir-4",
+          "no": 4,
+          "type": "文献",
+          "nameEn": "Victim Memoir",
+          "nameZh": "牺牲者手记（第 4 章）",
+          "chapter": "第 4 章",
+          "location": "各区域散落",
+          "summary": "第 4 章的 5 本手记。",
+          "content": "第 4 章的手记与森繁朔太郎的崩溃在同一段流程里展开。玩家一边读着别人的死亡记录，一边看着本班同学变成拍尸体的相机——两个层面的恐怖叠在一起，这一章也因此成为全作最压抑的一段。",
+          "relatedEntity": "cp-victim-memoir"
+        },
+        {
+          "id": "victim-memoir-5",
+          "no": 5,
+          "type": "文献",
+          "nameEn": "Victim Memoir",
+          "nameZh": "牺牲者手记（第 5 章）",
+          "chapter": "第 5 章",
+          "location": "别馆与尸体处理室一带散落",
+          "summary": "第 5 章的 5 本手记，与名牌最密集的区域重合。",
+          "content": "最后一章的手记集中在尸体处理室与别馆附近，与第 5 章密集的名牌同处一地。这些文献与身边成排的尸体共同构成终点前的最后一份证词：所有没能被超度的人，最后都只是这里的一枚名牌。",
+          "relatedEntity": "cp-victim-memoir"
+        },
+        {
+          "id": "naho-notes",
+          "no": 6,
+          "type": "关键文献",
+          "nameEn": "Naho's Notes",
+          "nameZh": "七星的笔记",
+          "chapter": "第 5 章",
+          "location": "资料室",
+          "summary": "推进超度幸子剧情的关键文献，共 5 本。",
+          "content": "七星的笔记是这场诅咒里唯一的「说明书」。写它的人正是把咒语散布出去的人：她既是灾祸的扩大者，也是唯一留下正确做法的人。第 5 章必须集齐 5 本，才能凑出安魂仪式的完整步骤——这也是全作少有的「用知识救人」的时刻。",
+          "relatedEntity": "cp-naho-notes"
+        },
+        {
+          "id": "sachiko-tongue",
+          "no": 7,
+          "type": "关键道具",
+          "nameEn": "Sachiko's Tongue",
+          "nameZh": "幸子的舌头",
+          "chapter": "第 5 章",
+          "location": "校长室",
+          "summary": "超度幸子所需的关键献上物。",
+          "content": "校长柳堀隆峰当年掘出幸子的遗体、割下她的舌头，据说是为了「阻止她说话」。这个细节解释了为什么超度幸子必须把舌头还回去：她要的从来不是报复，而是把被夺走的东西还回来。",
+          "relatedEntity": "cp-sachiko-relics"
+        },
+        {
+          "id": "black-cat-plush",
+          "no": 8,
+          "type": "关键道具",
+          "nameEn": "Black Cat Plush",
+          "nameZh": "黑猫毛绒玩具",
+          "chapter": "第 5 章",
+          "location": "校内一处角落",
+          "summary": "母亲买给幸子的黑猫玩偶，安魂仪式的献上物。",
+          "content": "它是一件很日常的东西——母亲买给女儿的玩具。把它放进安魂仪式，是把「幸子」从「怨灵」重新还原成「一个七岁的孩子」：她死去那天是她的生日，而这只玩偶大概本来该是那天的礼物之一。",
+          "relatedEntity": "cp-sachiko-relics"
+        },
+        {
+          "id": "extra-chapters-doc",
+          "no": 9,
+          "type": "额外章节",
+          "nameEn": "Extra Chapters",
+          "nameZh": "额外章节（EX1–EX10）",
+          "chapter": "跨章节",
+          "location": "主菜单 Extra（按结局解锁）",
+          "summary": "正篇之外可解锁的短篇追加章节，PSP 版共 10 个。",
+          "content": "额外章节是主菜单里的另一条线：它们不推进主线，而是补完配角与 IF 剧情。PSP 版共 10 个，解锁条件全部挂在正篇各章的通关与结局收集上；3DS 版另有独占章节。部分章节之间构成解锁链，需要按顺序打通。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "wrong-endings-doc",
+          "no": 10,
+          "type": "结局收集",
+          "nameEn": "Wrong Endings",
+          "nameZh": "误入结局（坏结局）",
+          "chapter": "各章",
+          "location": "各章分支路线",
+          "summary": "每章 1 个真结局 + 1–7 个坏结局。",
+          "content": "坏结局不是失败，而是本作叙事的一部分。触发方式包括与怨灵对视、被抓住、被黑化侵蚀致死、读满 5 本牺牲者手记，以及带错人、走错门、检查了不该检查的东西。它们构成了一张密集的死亡地图——也解释了为什么「名牌」会有整整 84 枚。",
+          "relatedEntity": "cp-darkening"
+        },
+        {
+          "id": "endings-gallery",
+          "no": 11,
+          "type": "结局收集",
+          "nameEn": "Endings",
+          "nameZh": "结局一览",
+          "chapter": "各章",
+          "location": "通关后可回放",
+          "summary": "每章真结局与全部坏结局的收集与回放。",
+          "content": "本作把结局本身做成了收集要素：通关后可以在结局列表中回放看过的每一个结局。真结局只有一条路，坏结局遍地都是——这个比例本身就是作者想说的话。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "cg-gallery",
+          "no": 12,
+          "type": "收集品",
+          "nameEn": "CG Gallery",
+          "nameZh": "CG 回廊",
+          "chapter": "全局",
+          "location": "主菜单 Gallery",
+          "summary": "收集游戏内插画 CG。",
+          "content": "CG 回廊收录玩家在流程中触发的插画，包括大量坏结局的死亡场面。它是这套「以死亡为收集品」的设计思路最直接的呈现：你收集的每一个 CG，都对应某个人的某一个结局。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "version-collectibles",
+          "no": 13,
+          "type": "特典",
+          "nameEn": "Version-exclusive Collectibles",
+          "nameZh": "各版本特色收集品",
+          "chapter": "跨版本",
+          "location": "—",
+          "summary": "不同版本追加的名牌与独家收集内容。",
+          "content": "1996 年 PC-98 初代没有名牌系统，该机制是重制版引入的；PSP 版把名牌系统定型为 84 个并新增第 5 章与全语音；3DS 版追加独占额外章节；2021 完整版追加未收录语音与追加剧本并支持简繁中文。因此不同版本的收集内容并不完全一致，本站以 PSP 及后续版本的综合口径为准。",
+          "relatedEntity": "cp-heavenly-host"
+        }
       ],
       "connections": [
         "「幸福的幸子小姐」是整条主线的引信：这道咒语把 2 年 9 组从现世送进了天神小学，而它的错误用法是冴之木七星故意散布出去的。",
@@ -200,13 +349,359 @@
       "type": "正传 第二部",
       "year": 2011,
       "developer": "Team GrisGris / MAGES.",
-      "platforms": ["PSP", "iOS", "Windows"],
+      "platforms": [
+        "PSP",
+        "iOS",
+        "Windows"
+      ],
       "genre": "生存恐怖 / 文字冒险",
       "synopsis": "承上启下之作：以多个视角重述《血色笼罩》前后不为人知的片段，并收录大量外传章节、误入结局与 IF 平行世界线，把天神小学事件的前因后果补齐。",
       "imagePrompt": "old japanese school library at dusk, shelves of rotting books and scattered papers, a diary open on the floor, dim amber lamp light, washi paper texture, uneasy school ghost story mood, cinematic, no text, no people",
-      "full": false,
-      "characters": [],
-      "documents": []
+      "full": true,
+      "characters": [
+        "cp-naomi-nakashima",
+        "cp-ayumi-shinozaki",
+        "cp-satoshi-mochida",
+        "cp-yuka-mochida",
+        "cp-mayu-suzumoto",
+        "cp-sakutaro-morishige",
+        "cp-yui-shishido",
+        "cp-sayaka-ooue",
+        "cp-naho-saenoki",
+        "cp-yuuya-kizami",
+        "cp-tohko-kirisaki",
+        "cp-kensuke-kurosaki",
+        "cp-mitsuki-yamamoto",
+        "cp-masato-fukuroi",
+        "cp-kai-shimada",
+        "cp-seiko-shinohara",
+        "cp-sachiko-shinozaki",
+        "cp-hinoe-shinozaki",
+        "cp-tsukasa-mikuni",
+        "cp-makina-shinozaki",
+        "cp-kou-kibiki",
+        "cp-shougo-taguchi",
+        "cp-yoshikazu-yanagihori",
+        "cp-heavenly-host",
+        "cp-kisaragi-academy",
+        "cp-byakudan-high",
+        "cp-sachiko-ever-after",
+        "cp-darkening",
+        "cp-shadow-book",
+        "cp-shinozaki-residence",
+        "cp-shangri-la",
+        "cp-annex-corpse"
+      ],
+      "documents": [
+        {
+          "id": "end-true",
+          "no": 1,
+          "type": "结局收集",
+          "nameEn": "True End",
+          "nameZh": "真结局",
+          "chapter": "各章",
+          "location": "各章正确选项路线",
+          "summary": "每章 1 个真结局，由正确选项路线达成。",
+          "content": "每一章都只有一条正确的路线，通向所谓「真结局」；其余路线几乎都会把人送进某个坏结局。这种「唯一正解、遍地死路」的比例，本身就是作者想说的事——在本作的世界里，活着比死去难得多。真结局的具体情节因章而异，档案在此只记录它的结构。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "wrong-end-lavatory",
+          "no": 2,
+          "type": "结局收集",
+          "nameEn": "Wrong End - Lavatory",
+          "nameZh": "坏结局 · 女厕",
+          "chapter": "EP1",
+          "location": "女厕事件分支",
+          "summary": "EP1 女厕事件中的坏结局，与篠原世以子之死相关。",
+          "content": "在女厕事件里，玩家若选择「使用外面的水桶」、或反复选「想别的办法」，都会触发这条坏结局。它把《血色笼罩》第 1 章的那场悲剧在平行世界里重新演了一遍——直美与世以子的结局不会因为她的记忆而改变。这条坏结局由错误选项触发，收集它同时也是解锁最终章的条件之一。",
+          "relatedEntity": "cp-seiko-shinohara"
+        },
+        {
+          "id": "wrong-end-ryou",
+          "no": 3,
+          "type": "结局收集",
+          "nameEn": "Wrong End - Ryou",
+          "nameZh": "坏结局 · 辽",
+          "chapter": "EP2",
+          "location": "校门口 / 4-A 教室",
+          "summary": "EP2 检视亡灵「辽」触发的坏结局。",
+          "content": "在 EP2 中，若在校门口检视出现的亡灵「辽（Ryou）」，或作为良树首次进入 4-A 教室时检视他，就会触发这条坏结局，被儿童怨灵所害。「辽」呼应的正是 1973 年儿童连续诱拐杀害事件中的被害者吉泽辽——异空间把过去与现在叠在了一起。",
+          "relatedEntity": "cp-ryou-yoshizawa"
+        },
+        {
+          "id": "wrong-end-chase",
+          "no": 4,
+          "type": "结局收集",
+          "nameEn": "Wrong End - Chase Timeout",
+          "nameZh": "坏结局 · 追逐超时",
+          "chapter": "EP2",
+          "location": "追逐战",
+          "summary": "EP2 追逐战中让计时归零触发的坏结局。",
+          "content": "在追逐战里，哪怕只是犹豫片刻、让计时归零，也会被怨灵杀死。这条坏结局把本作「限时选择」的压力摆到了明面上：在这座学校里，反应慢同样可以致死。",
+          "relatedEntity": "cp-mayu-suzumoto"
+        },
+        {
+          "id": "wrong-end-science-lab",
+          "no": 5,
+          "type": "结局收集",
+          "nameEn": "Wrong End - Science Lab",
+          "nameZh": "坏结局 · 理科准备室",
+          "chapter": "EP2",
+          "location": "理科准备室",
+          "summary": "EP2 追逐战中进入理科准备室检视尸体触发的坏结局。",
+          "content": "追逐战中若进入理科准备室、并检视里面的尸体，就会被卷进猎奇的死亡结局。它延续了系列一贯的「求知者必死」设计——玩家越是想弄清发生了什么，就越接近自己的死法。",
+          "relatedEntity": "cp-mayu-suzumoto"
+        },
+        {
+          "id": "wrong-end-hide-broom",
+          "no": 6,
+          "type": "结局收集",
+          "nameEn": "Wrong End - Hide / Broom",
+          "nameZh": "坏结局 · 躲藏 / 扫帚",
+          "chapter": "EP3",
+          "location": "室内躲藏与武器选择分支",
+          "summary": "EP3 躲柜、选扫帚等触发的坏结局。",
+          "content": "EP3 的坏结局集中在「躲藏与反抗」的两难上：选择离开房间、躲进储物柜并保持躲藏，或把扫帚当武器，都会招致被害；限时选择耗尽时间、以及随后「在铅笔前祈祷」同样是死路。它让结衣这场本该平静的回忆，变成了一段不断劝人认命的噩梦。",
+          "relatedEntity": "cp-yui-shishido"
+        },
+        {
+          "id": "wrong-end-death-room",
+          "no": 7,
+          "type": "结局收集",
+          "nameEn": "Wrong End - Death Room",
+          "nameZh": "坏结局 · 死亡房间",
+          "chapter": "EP4",
+          "location": "死亡房间（Death Room）",
+          "summary": "EP4「死亡房间」事件中选「躲在血染的桌子下」触发的坏结局。",
+          "content": "在早矢香寻找七星的途中，会经过所谓的「死亡房间（Death Room）」；若选择躲在血染的桌子下，就会触发这一章少见的坏结局。名字本身就说明了这里的规则——房间里没有安全的地方，桌子下也不例外。",
+          "relatedEntity": "cp-sayaka-ooue"
+        },
+        {
+          "id": "wrong-end-hidden",
+          "no": 8,
+          "type": "结局收集",
+          "nameEn": "Wrong End (Hidden)",
+          "nameZh": "坏结局 · 隐藏",
+          "chapter": "EP5",
+          "location": "真结局达成后开放的分支",
+          "summary": "EP5 需先达成真结局后才开放的隐藏坏结局。",
+          "content": "EP5 的部分坏结局（如第 6、7 条）属于隐藏分支，需要先达成本章真结局才会开放。这意味着玩家必须先「看到过希望」，才能回头去看那些被错过的死法——本作的收集机制被刻意设计成了这样一层残忍的循环。",
+          "relatedEntity": "cp-sakutaro-morishige"
+        },
+        {
+          "id": "col-cg-gallery",
+          "no": 9,
+          "type": "收集品",
+          "nameEn": "CG Gallery",
+          "nameZh": "CG 回廊",
+          "chapter": "全局",
+          "location": "主菜单 Gallery",
+          "summary": "随剧情解锁的 CG 插画回廊，可保存到 PSP 本体。",
+          "content": "CG 回廊收录玩家在流程中解锁的插画，其中相当一部分是坏结局的死亡场面。把它做成一间可以逐张浏览的画廊，正是本作「以死亡为收集品」这一思路最直白的呈现——你收集的每一张 CG，都对应某个人的某一个结局。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "col-voice-gallery",
+          "no": 10,
+          "type": "收集品",
+          "nameEn": "Voice / Scream Gallery",
+          "nameZh": "语音 / 惨叫鉴赏",
+          "chapter": "全局",
+          "location": "主菜单 Gallery",
+          "summary": "收录角色台词与「惨叫（悲鸣）」录音的鉴赏功能。",
+          "content": "语音鉴赏把角色的台词与「惨叫」录音单独抽出来供玩家回放，与《血色笼罩》以双耳录音营造 3D 音效的做法一脉相承。这也是本作恐怖体验的一部分：恐怖不只在画面里，也在声音里。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "col-music-gallery",
+          "no": 11,
+          "type": "收集品",
+          "nameEn": "Music Gallery",
+          "nameZh": "音乐鉴赏",
+          "chapter": "全局",
+          "location": "主菜单 Gallery",
+          "summary": "随进程解锁的游戏内 BGM 鉴赏。",
+          "content": "音乐鉴赏收录游戏内 BGM，随剧情推进逐步解锁。对一部以氛围见长的文字冒险来说，音乐本身就是情绪的一部分；把它单独留出一栏，也是让玩家能反复回到那些场面的方式。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "col-completion",
+          "no": 12,
+          "type": "收集品",
+          "nameEn": "Chapter Completion",
+          "nameZh": "章节完成度",
+          "chapter": "全局",
+          "location": "章节选择菜单",
+          "summary": "可针对单章重玩并追踪各章完成百分比的章节选择功能。",
+          "content": "章节选择允许玩家针对某一章重新游玩，并追踪各章的完成百分比。这套功能与「每章多个结局」互为配套：它把「反复重玩、补齐所有分支」变成了一道明确的进度条，鼓励玩家收集全部结局。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "bonus-save-inheritance",
+          "no": 13,
+          "type": "特典",
+          "nameEn": "Save Data Inheritance",
+          "nameZh": "存档继承特典",
+          "chapter": "全局",
+          "location": "需《血色笼罩》PSP 存档",
+          "summary": "继承《血色笼罩》PSP 存档后可浏览其 CG 并免收集解锁最终章。",
+          "content": "若 PSP 本体中存在《尸体派对：血色笼罩》的存档，玩家可以在本作直接浏览前作的 CG，并免收集直接解锁最终章『血之辙』。这既是给老玩家的奖励，也说明两作在剧情与收集上是连着的——前作的一周目记录，就是本作的一张入场券。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "lore-shadow-book-rite",
+          "no": 14,
+          "type": "关键道具",
+          "nameEn": "Book of Shadows",
+          "nameZh": "《影之书》与复活仪式",
+          "chapter": "序章",
+          "location": "篠崎家旧宅",
+          "summary": "《影之书》与序章中失败、招致反噬的复活仪式。",
+          "content": "《影之书》是篠崎家世代保管的黑魔法禁书，序章『血之辙』中被中嶋直美与篠崎步美用来复活死去的同伴。行使其中的禁术会招致反噬——这场复活仪式失败，代价是篠崎丙的性命。这本书同时也是系列里反复出现的那条暗线：它先被篠崎芳惠翻开过，多年后又被步美翻开。",
+          "relatedEntity": "cp-shadow-book"
+        },
+        {
+          "id": "lore-shinozaki-residence",
+          "no": 15,
+          "type": "文献",
+          "nameEn": "Shinozaki Residence",
+          "nameZh": "篠崎家旧宅",
+          "chapter": "序章",
+          "location": "现世 · 篠崎家旧宅",
+          "summary": "篠崎家旧宅——序章复活仪式与禁术反噬的发生地。",
+          "content": "篠崎家旧宅是序章『血之辙』的舞台：直美与步美在这里动用《影之书》举行复活仪式，也在这里遭遇黑魔法的反噬。旧宅藏着这个家族与诅咒相连的过去——它的具体构造与内部细节在公开来源中未被完整收录。",
+          "relatedEntity": "cp-shinozaki-residence"
+        }
+      ],
+      "chapters": [
+        {
+          "id": "prologue",
+          "title": "序章 · 血之辙（Blood Drive）",
+          "region": "现世 · 篠崎家旧宅",
+          "paragraphs": [
+            "《血色笼罩》真结局的两周后，生还的中嶋直美与篠崎步美发现了一件比死亡更残忍的事：所有死在天神小学的同伴，已经被现实世界彻底抹去——照片上的人脸消失，周围的人也不记得他们曾经存在过。",
+            "为了让同伴重新存在、甚至把他们复活，两人前往篠崎家旧宅，动用篠崎家秘藏的禁书《影之书》。这场复活仪式最终失败，招来黑魔法的反噬。",
+            "千钧一发之际，步美之姊篠崎丙赶到，替妹妹挡下了那记致命的魔法阵，当场被斩首身亡。这一结局直接成为续作《驭血》的引子——官方也建议先玩《影之书》，否则直接进入《驭血》会被开场剧透。"
+          ]
+        },
+        {
+          "id": "ep1",
+          "title": "EP1 · 刻印（Seal）",
+          "region": "天神小学 · 主楼（平行世界）",
+          "paragraphs": [
+            "本作第一章把《血色笼罩》第 1 章的情节重新演了一遍，视角仍是中嶋直美。区别在于——这一次，直美清楚地记得将要发生什么，也知道自己会亲手吊死挚友篠原世以子。",
+            "她拼尽一切想改变命运、阻止悲剧。但在异空间既定的规则与「黑化」的双重压迫下，她一次次被逼向那唯一的终点。",
+            "本章的核心不是惊吓，而是「明知结局却无法改变」的绝望感。它属于平行世界（非正史），却把直美与世以子的羁绊照得比本篇更清楚。"
+          ]
+        },
+        {
+          "id": "ep2",
+          "title": "EP2 · 夭逝（Demise）",
+          "region": "天神小学 · 走廊与理科准备室一带",
+          "paragraphs": [
+            "视角转到铃本茧。她在坠落中大腿严重受伤，只能拖着伤腿，在血迹斑斑的走廊里爬行求生。",
+            "她一路呼唤挚友森繁朔太郎的名字，面对的却是不断升级的猎奇恐怖——校门口的亡灵「辽」、限时的追逐、不该打开的门。",
+            "本章大量补完了这位在《血色笼罩》里「早早死亡」的角色的性格与内心，也同属平行世界（非正史），结局并不轻松。"
+          ]
+        },
+        {
+          "id": "ep3",
+          "title": "EP3 · 邂逅（Encounter）",
+          "region": "宍戸结衣的住处 / 如月学园（梦境 · 前传）",
+          "paragraphs": [
+            "视角是 2 年 9 组的副班主任宍戸结衣。她因病在家休养，学生持田哲志前来探望。",
+            "在与病痛交织的梦境里，结衣回忆起自己仍是如月学园高中生时的往事——包括她与同学三国司的那段关系。这场梦同时埋下天神小学诅咒的早期线索。",
+            "本章是本作的正史前传：它为这位「为保护学生而死」的教师补上了背景与遗憾——她也曾只是这所学校里一个有遗憾的学生。"
+          ]
+        },
+        {
+          "id": "ep4",
+          "title": "EP4 · 炼狱（Purgatory）",
+          "region": "天神小学（前传）",
+          "paragraphs": [
+            "视角是大上早矢香。为寻找失踪的好友——灵能力者冴之木七星——她进入了天神小学。",
+            "本章解释了《血色笼罩》里两个看似突兀的设定：七星为什么把咒语散布到博客，以及她与作家鬼碑忌浩的失踪究竟有何关系。两人此前曾一同调查天神小学 1970 年代的惨案，并与鬼碑忌浩、助手田久地将五的调查线交织。",
+            "结果是一路的陷阱与怨灵，最终以悲剧收场。作为正史前传，它把「散布咒语」这件事从突兀的设定，还原成了一个人被辜负之后的选择。"
+          ]
+        },
+        {
+          "id": "ep5",
+          "title": "EP5 · 理想乡（Shangri-La）",
+          "region": "天神小学 · 废墟（平行世界）",
+          "paragraphs": [
+            "本章有两条并行的线：森繁朔太郎在废墟里寻找铃本茧；白檀高中的山本美月与袋井雅人则在寻找失散的同学。",
+            "两条线最终交汇，众人被引到一个伪装的「乐园（理想乡）」——它逐渐揭露出背叛、幻觉与牺牲，考验着被诅咒空间里的友情。",
+            "本章也深化了森繁那个「恋尸癖」人格的成因。它同样属于平行世界（非正史）。"
+          ]
+        },
+        {
+          "id": "ep6",
+          "title": "EP6 · 泥泞（Mire）",
+          "region": "天神小学（平行世界）",
+          "paragraphs": [
+            "视角是持田由香。本章承接《血色笼罩》的坏结局——由香被白檀高中的刻命裕也抓住。",
+            "她在校内四处寻找出路，途中帮助了一名受困的小学女生——那其实是幸子以孩子的形象出现。",
+            "本章补完了由香在本篇中「遭追杀」却未被展开的那段黑暗经历，也刻画了刻命「病态保护欲」与杀戮欲之间的自相矛盾。"
+          ]
+        },
+        {
+          "id": "ep7",
+          "title": "EP7 · 齿（Tooth）",
+          "region": "天神小学 · 别馆（中传）",
+          "paragraphs": [
+            "视角是白檀高中的雾崎冻孤。白檀组——刻命裕也、黑崎健介、岛田海、山本美月、雾崎冻孤等人——施行咒语、被卷入天神小学的过程在这里被重新讲述。",
+            "与如月学园那边不同，这一组之间没有怨灵，最致命的危险来自同伴本身：人性在封闭空间里逐渐崩坏。",
+            "本章是 PC 版《血色笼罩》「Extra Preview」章节的重述（改为雾崎的视角），也是正史中传；它同时解释了别馆里那具女尸与刻命裕也过去的渊源。"
+          ]
+        }
+      ],
+      "sideChapters": [
+        {
+          "id": "what-if-line",
+          "title": "支线一 · 平行世界（What-if）线",
+          "paragraphs": [
+            "本作有 4 章属于平行世界（非正史）——EP1『刻印』、EP2『夭逝』、EP5『理想乡』、EP6『泥泞』。它们都从《血色笼罩》的某个坏结局分叉出来，回答的是「如果……会怎样」。",
+            "EP1、EP2、EP5 的共同起点是坏结局 Wrong End 6-8：幸子把众人送回施行咒语之前并抹除记忆，唯独持田哲志保留了记忆。EP1 问的是——如果中嶋直美记得未来，她能否救下篠原世以子；EP2 问的是——如果铃本茧没有立即死去，她能撑多久；EP5 问的是——如果森繁朔太郎与白檀组相遇，能否逃出「理想乡」。",
+            "EP6 则从另一处坏结局（由香被刻命抓住）分叉，补完持田由香被抓住之后的经历。这 4 章不能当作系列正史看待，但为理解角色的心理提供了重要补完。"
+          ]
+        },
+        {
+          "id": "wrong-endings-line",
+          "title": "支线二 · 坏结局（Wrong Endings）线",
+          "paragraphs": [
+            "本作每章都有 1 个真结局与多个坏结局。坏结局由错误选项、检视特定尸体或物品、限时选择超时、走错路线等触发。",
+            "代表性触发包括：EP1 女厕事件中选「使用外面的水桶」等；EP2 检视校门口出现的亡灵「辽」、在追逐战中让计时归零、或进入理科准备室检视尸体；EP3 躲进储物柜、把扫帚当武器、或在铅笔前祈祷；EP4 选「躲在血染的桌子下」。",
+            "坏结局数量众多，逐条穷举需以官方攻略为准，本作档案只列结构与代表示例。收集前几章的结局，是解锁最终章『血之辙』的条件之一；若继承《血色笼罩》PSP 版存档，则可直接解锁。"
+          ]
+        },
+        {
+          "id": "canon-prequel-line",
+          "title": "支线三 · 正史前传 · 中传补完线",
+          "paragraphs": [
+            "本作的另一类「支线」其实是正史补完：EP3『邂逅』与 EP4『炼狱』是发生在《血色笼罩》之前的前传，EP7『齿』是与主线同期发生的中传。",
+            "EP3 以一场 2008 年的梦回溯宍戸结衣的高中时代与三国司；EP4 揭晓冴之木七星散布咒语、与早矢香一同调查天神小学惨案的经过；EP7 以白檀高中组（雾崎冻孤视角）重述 PC 版《血色笼罩》的 Extra Preview，解释别馆女尸与刻命的过去。",
+            "这三章不否定《血色笼罩》的任何设定，而是为配角补上弧光——它们才是理解系列时间线真正需要的部分。"
+          ]
+        },
+        {
+          "id": "gallery-collection-line",
+          "title": "支线四 · 画廊与收集要素线",
+          "paragraphs": [
+            "本作没有沿用《血色笼罩》的名牌系统，转向视觉小说式的「结局 + 画廊」收集。",
+            "核心收集要素包括：CG 回廊（可保存到 PSP 本体）、语音与「惨叫」鉴赏、音乐鉴赏，以及可针对单章重玩、追踪各章完成百分比的章节选择与完成度。",
+            "此外还有存档继承特典：若 PSP 中存在《血色笼罩》的存档，可直接浏览其 CG，并免收集解锁最终章『血之辙』。网络上「散落残页」的说法来源不可靠，权威攻略中未见对应机制，本作档案不予采信。"
+          ]
+        }
+      ],
+      "connections": [
+        "《影之书》是《血色笼罩》与《驭血》之间的桥梁：它不推翻前作设定，而是为配角补上背景，并用一个失败的复活仪式直接引出续作。",
+        "本作的角色结构分四类：前传（EP3、EP4）、中传（EP7）、平行世界（EP1、EP2、EP5、EP6）与后传（序章 血之辙）。分清这四类，是理解系列时间线的关键。",
+        "序章的结局——篠崎丙为救妹妹被魔法阵斩首——在《驭血》开场即被直接承接；官方也建议先玩《影之书》，否则直接进入《驭血》会被开场剧透。",
+        "《影之书》这本禁书贯穿全系列：它先被交给篠崎芳惠，被她用来救丈夫而招致反噬；多年后又被篠崎步美翻开，用来复活同伴，代价是姊姊的性命。",
+        "本作新增「黑化值（Darkening Meter）」系统：主角目睹尸体、身陷险境时精神值下降，降到一定程度便出现幻觉、偏执与崩溃，直接影响分支走向——它把「黑化」从设定变成了可量化的压力。",
+        "白檀高中组与如月学园组几乎同时被同一道咒语卷入：EP7『齿』说明，那一组最致命的危险不是怨灵，而是同伴本身（刻命裕也）。"
+      ]
     },
     {
       "id": "blood-drive",
@@ -216,13 +711,295 @@
       "type": "正传 第三部 · 天神小学篇完结",
       "year": 2014,
       "developer": "Team GrisGris / MAGES.",
-      "platforms": ["PS Vita", "Windows", "Switch", "手机"],
+      "platforms": [
+        "PS Vita",
+        "Windows",
+        "Switch",
+        "手机"
+      ],
       "genre": "生存恐怖 / 文字冒险",
       "synopsis": "官方定义为「天神小学篇完结作」。幸存者们为了复活在事件中失去的同伴，再次踏入被诅咒的空间，最终直面幸子与那个让一切开始的契约。",
       "imagePrompt": "abandoned japanese school hallway collapsing into darkness, broken ceiling and exposed beams, a single red lantern glow, drifting dust, deep crimson and charcoal palette, washi grain, despairing school horror atmosphere, cinematic, no text, no people",
-      "full": false,
-      "characters": [],
-      "documents": []
+      "full": true,
+      "characters": [
+        "cp-ayumi-shinozaki",
+        "cp-naomi-nakashima",
+        "cp-yoshiki-kishinuma",
+        "cp-satoshi-mochida",
+        "cp-yuka-mochida",
+        "cp-magari-mizuki",
+        "cp-misuto-kiriya",
+        "cp-sachi-shinozaki",
+        "cp-satsuki-mizuhara",
+        "cp-kuon-niwa",
+        "cp-mirai-yamamura",
+        "cp-waldo-mizuki",
+        "cp-azusa-takai",
+        "cp-makina-shinozaki",
+        "cp-aiko-niwa",
+        "cp-sachiko-shinozaki",
+        "cp-hinoe-shinozaki",
+        "cp-naho-saenoki",
+        "cp-sayaka-ooue",
+        "cp-nirvana",
+        "cp-shadow-book",
+        "cp-death-meeting-stone",
+        "cp-six-pillars",
+        "cp-entity-wall",
+        "cp-spiritual-surgery",
+        "cp-phantom",
+        "cp-golem",
+        "cp-makina-apartment",
+        "cp-martuba-tomb",
+        "cp-mikage-association",
+        "cp-heavenly-host",
+        "cp-darkening"
+      ],
+      "documents": [
+        {
+          "id": "nt-system",
+          "no": 1,
+          "type": "收集品",
+          "nameEn": "Name Tag System",
+          "nameZh": "名牌系统",
+          "chapter": "跨章节",
+          "location": "天神小学各场景",
+          "summary": "本作回归并改良的收集系统：名牌改为按章节分类，发现时直接显示全部内容。",
+          "content": "名牌（Name Tag）是散落在天神小学各处尸体上的登记牌，记录姓名、年龄与性别、就读学校与班级、死因与发现位置。与《血色笼罩》按「学校」归档不同，本作改为按章节排列，且发现时即显示全部内容，不必再进菜单翻查。公开来源未给出名牌的完整总数，本站收录的是已公开的第 6–9 章条目，其余章节留待补充，不作臆造。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "extra-chapters-doc",
+          "no": 2,
+          "type": "额外章节",
+          "nameEn": "Extra Chapters",
+          "nameZh": "额外章节（8 个）",
+          "chapter": "跨章节",
+          "location": "主菜单，随进程解锁",
+          "summary": "正篇之外可解锁的 8 个视觉小说式短篇章节。",
+          "content": "额外章节全部是视觉小说式，没有探索玩法，只含一条无关紧要的分支。篇幅从「一小时的短篇」到「不到一分钟的凑数章」不等，其中一些承担了关键背景信息，或作为已死角色的「最后遗言」。它们随正篇进程逐步解锁；官方标题在公开来源中未逐一给出。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "endings",
+          "no": 3,
+          "type": "结局收集",
+          "nameEn": "Endings",
+          "nameZh": "结局一览（真结局与坏结局）",
+          "chapter": "各章",
+          "location": "通关后可回放",
+          "summary": "每章真结局 + 多个坏结局，需反复重玩解锁好结局。",
+          "content": "本作正篇 11 章，每章都有真结局与多个坏结局，许多章节必须反复重玩才能解锁好结局。结局本身也作为收集要素被记录下来，可在通关后回放。真结局只有一条路，坏结局遍地都是——这个比例本身就是作者想说的话。",
+          "relatedEntity": "cp-darkening"
+        },
+        {
+          "id": "art-gallery",
+          "no": 4,
+          "type": "收集品",
+          "nameEn": "Art Gallery",
+          "nameZh": "美术画廊",
+          "chapter": "全局",
+          "location": "主菜单 Gallery",
+          "summary": "收录游戏内 CG 与设定美术。",
+          "content": "美术画廊收录玩家在流程中触发的插画与设定美术，其中包括大量坏结局的死亡场面。它延续了系列「以死亡为收集品」的设计思路。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "music-gallery",
+          "no": 5,
+          "type": "收集品",
+          "nameEn": "Music Gallery",
+          "nameZh": "音乐鉴赏",
+          "chapter": "全局",
+          "location": "主菜单 Gallery",
+          "summary": "收录游戏内 BGM。",
+          "content": "音乐鉴赏收录本作的游戏内 BGM。配合 3D 化的新表现手法，音乐在本作中承担了相当一部分的压迫感与恐怖氛围。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "va-interviews",
+          "no": 6,
+          "type": "特典",
+          "nameEn": "Voice Actor Interviews",
+          "nameZh": "声优访谈",
+          "chapter": "全局",
+          "location": "主菜单 Gallery",
+          "summary": "本作特色的配音演员访谈影像 / 音频。",
+          "content": "声优访谈是本作独有的收集要素之一，收录了配音演员的访谈内容。它与美术、音乐并列，构成主菜单中的画廊部分。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "cameo-name-tags",
+          "no": 7,
+          "type": "彩蛋",
+          "nameEn": "Cameo Name Tags",
+          "nameZh": "彩蛋名牌",
+          "chapter": "第 8 / 9 章",
+          "location": "Second Wing 2F 东走廊、螺旋楼梯",
+          "summary": "制作组自我致敬的两枚名牌。",
+          "content": "本作收录了两枚制作组自我致敬的名牌：第 8 章的「Makoto Asada（Mages' Guild, Leader）」对应 MAGES. 的制作人浅田诚；第 9 章的「Makoto Kedouin（GRINDHOUSE Academy, Villain）」对应本作主笔兼制作人祁答院慎本人。后者位于螺旋楼梯，需要集齐 6 处蓝光后才会出现，是系列最著名的「作者自嘲」彩蛋。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "everafter-stone",
+          "no": 8,
+          "type": "关键道具",
+          "nameEn": "Everafter Stone",
+          "nameZh": "死后相逢之石（死遭之石）",
+          "chapter": "序章",
+          "location": "篠崎真纪的公寓",
+          "summary": "本作唯一能进出残存天神小学的手段。",
+          "content": "步美在篠崎真纪的公寓中取得的老物件。它是本作唯一能进出那座「残存的、正被涅槃吞噬的天神小学」的手段，也是步美此后一系列行动的前提。据系列世界观，它即「御跋如」协会连同《影之书》交付篠崎家保管的秘藏物（死逢石）。",
+          "relatedEntity": "cp-death-meeting-stone"
+        },
+        {
+          "id": "six-pillars-doc",
+          "no": 9,
+          "type": "关键道具",
+          "nameEn": "Pillars of the Six Demons",
+          "nameZh": "六鬼柱",
+          "chapter": "第 4–6 章",
+          "location": "天神小学各处",
+          "summary": "御帘徒谎称可用来封印涅槃、夺回影之书的六根柱子。",
+          "content": "六鬼柱是御帘徒抛给步美的诱饵。他声称集齐六柱、以篠崎家血脉将其凝结为结晶、封印进「假影之书」，就能夺回《影之书》、复活死者。真相恰恰相反：收集六鬼柱的过程本身，就是在让涅槃与现实之间的「壁」逐步崩裂。这条线最终推进到「智惠之柱」，把步美引向涅槃核心。",
+          "relatedEntity": "cp-six-pillars"
+        }
+      ],
+      "chapters": [
+        {
+          "id": "ch0",
+          "title": "序章 · 篠崎宅邸与「死后相逢之石」",
+          "region": "篠崎真纪的公寓",
+          "paragraphs": [
+            "承《影之书》序章『血之辙』的结局：为复活同伴而施行的仪式失败，步美之姊篠崎丙替她挡下魔法反噬、被斩首身亡。接连失去同伴与姊姊的步美，陷进一种几乎要把自己压垮的自责里。",
+            "就在这时，一名自称与篠崎丙有关的女子出现在她面前——她实为十三月爱狩派来的向导山村未来。未来把步美引向篠崎真纪（幸子的姑祖母）的公寓。",
+            "在公寓里，步美拿到了「死后相逢之石（死遭之石）」。这是本作唯一能进出那座「残存的、正被涅槃吞噬的天神小学」的手段，也是她此后一切行动的前提。",
+            "本作是「天神小学篇」三部曲（《血色笼罩》→《影之书》→《驭血》）的最终章，正篇共 11 章（Chapter 0–10），另附 8 个额外章节。"
+          ]
+        },
+        {
+          "id": "ch1-3",
+          "title": "第一章至第三章 · 重返天神小学",
+          "region": "天神小学（残存空间）",
+          "paragraphs": [
+            "凭死后相逢之石，步美再度踏入天神小学。这一次她的目标不再是逃走，而是阻止《影之书》招来的灾祸、挽回同伴的死。",
+            "在这座残存的空间里，她接触到两个彼此敌对的魔女集团：一是末日论黑魔术教团「马尔托巴之墓」，代表为十三月爱狩；二是「御跋如」协会的末裔桐谷御帘徒。",
+            "两条线就此铺开——马尔托巴之墓一方与步美亦敌亦友，御跋如一方则从一开始就带着别的算盘。"
+          ]
+        },
+        {
+          "id": "ch4-6",
+          "title": "第四章至第六章 · 六鬼柱与「智惠之柱」",
+          "region": "天神小学 · 各柱 / 地下",
+          "paragraphs": [
+            "御帘徒向步美抛出一个她无法拒绝的说法：只要集齐「六鬼柱」、以篠崎家血脉把它们凝结为结晶、再封印进一本「祖父辈的假影之书」，就能夺回《影之书》、复活死者。",
+            "步美信了，开始一座一座地收集六鬼柱。她没有意识到，这恰恰是御帘徒要的——他需要的就是这个过程，让天神小学与现实之间的「壁」一点一点崩裂。",
+            "剧情随后推进到「智惠之柱」。沿着这条线，步美逐步逼近了涅槃的核心——也就是那座学校真正的真身。"
+          ]
+        },
+        {
+          "id": "ch7-8",
+          "title": "第七章至第八章 · 家族的真相与「篠崎幸」",
+          "region": "天神小学 · 更深处",
+          "paragraphs": [
+            "更大的真相在这里被揭开：篠崎幸的存在。她是幸子的「消失的双胞胎」——严格说，是幸子的姐姐，在出生之前就被幸子吞并、从未真正降生的一方。",
+            "幸的幽灵补完了系列长期悬置的一个问题：《血色笼罩》真结局里幸子明明已被超度，天神小学为什么还在这里？",
+            "家族血脉、《影之书》与涅槃三者之间的纠葛，也在这两章集中展开。"
+          ]
+        },
+        {
+          "id": "ch9-10",
+          "title": "第九章至第十章 · 殊死一战与结局",
+          "region": "涅槃核心",
+          "paragraphs": [
+            "御帘徒的阴谋即将得逞，涅槃开始与现实融合，产生了「实体之壁」——一场世界级的灾难就此逼近。",
+            "在最坏的一刻，幸子选择牺牲自己，把时间倒流回御帘徒即将毁灭世界之前；篠崎幸则用自己体内获得的《影之书》夺回结晶。二羽久远为摧毁「最后一柱」、借篠崎幸的灵力，也牺牲了自己。",
+            "众人抵达涅槃核心，看到它的真相：一名在欧洲魔女狩猎中被献祭的女巫的怨念。篠崎幸以感官去「感受」核心所受的刑罚——被挖出眼球——理解它的痛苦，重新封印了核心。",
+            "最直接的一步由步美完成：她吞下涅槃，把它一并收束进自己体内。众人终于回到了现实世界。"
+          ]
+        },
+        {
+          "id": "ending",
+          "title": "终章 · 代价与「最后的篠崎」",
+          "region": "现世 / 平行世界",
+          "paragraphs": [
+            "回到现世后，死在天神小学的人重新拥有了「存在过的证据」——他们不再只是被遗忘的名字。",
+            "代价随之而来：作为封印涅槃的等价交换，步美在现实世界中的存在被抹去，并失去了一只眼睛。她作为篠崎家的末裔，成了《影之书》最后的守护者。",
+            "最后一幕落在留存的步美与岸沼良树身上：良树保有全部记忆，他借死后相逢之石寻到了步美，两人疑似一同前往另一个平行世界。"
+          ]
+        }
+      ],
+      "sideChapters": [
+        {
+          "id": "extra-chapters",
+          "title": "支线一 · 额外章节（8 个）线",
+          "paragraphs": [
+            "本作正篇之外另有 8 个额外章节，全部是视觉小说式——没有探索玩法，只含一条无关紧要的分支路径。",
+            "它们有的为《血色笼罩》中死去的同伴补上「最后一面」，有的补充马尔托巴之墓、御跋如等组织的历史，也有的基调接近《幸子小姐的派对》的喜剧番外；篇幅从「一小时的短篇」到「不到一分钟的凑数章」不等。",
+            "关于这 8 个额外章节的具体官方标题，公开来源未逐一给出，本站不作臆造，仅按功能类型归纳。"
+          ]
+        },
+        {
+          "id": "wrong-ends",
+          "title": "支线二 · 坏结局（Wrong Ends）线",
+          "paragraphs": [
+            "每个正篇章节都有真结局与多个坏结局；在限时选择处「不作选择」（计时耗尽）同样会触发坏结局。多数玩家首次通关会以坏结局收场，需重玩解锁好结局。",
+            "触发方式包括选错分支、限时超时、踩中玻璃碎片与塌陷地板等陷阱、被 Phantom 拖出柜子殴打、以及奔跑后体力耗尽被追上。",
+            "与前作相比，本作的坏结局更「干脆」——多是瞬间的死亡描写，而非冗长的猎奇铺陈。"
+          ]
+        },
+        {
+          "id": "magari-line",
+          "title": "支线三 · 十三月爱狩线（教团线）",
+          "paragraphs": [
+            "十三月爱狩是桐章学园高等部 2 年 1 组的转学生，真实身份是黑魔术教团马尔托巴之墓的干部、教祖继承权第 4 位。她人偶般的外貌、双马尾与白色哥德萝莉装，是系列辨识度最高的反派形象之一。",
+            "她对已故的通灵少女冴之木七星抱有强烈兴趣，视其为好对手。据公开资料，她曾杀害一名姓篠崎的女性，并拆散了七星与早矢香的友情。",
+            "本作中她作为另一方「魔女」与步美亦敌亦友：既利用她，也在关键时刻收手。教团在涅槃融合的灾难中几近覆灭（教祖惊坠楼梯身亡）；灾后她继承第 1 位，发誓重建教团。"
+          ]
+        },
+        {
+          "id": "kiriya-line",
+          "title": "支线四 · 桐谷御帘徒线（反派线）",
+          "paragraphs": [
+            "桐谷御帘徒是「御跋如」协会的唯一幸存者，也是本作的主要反派。他出现在深陷自责的步美面前，自称与她的姊姊篠崎丙有渊源。",
+            "他用「夺回影之书就能复活死者」的谎言诱骗步美收集六鬼柱，真正想要的是让涅槃与现实融合、把世界一并毁掉。",
+            "他的结局是被黑化尸变的水原皐月咬掉头颅而死——一个操纵他人的人，最后死在自己人手里。"
+          ]
+        },
+        {
+          "id": "sachi-line",
+          "title": "支线五 · 篠崎幸线（家族线）",
+          "paragraphs": [
+            "篠崎幸是幸子「消失的双胞胎」，是那个在出生前就被吞并、从未真正降生的一方。她死后以幽灵形态存在，成为「天神小学为何在真结局后仍然存在」的补完解释。",
+            "终局中，她用体内的《影之书》夺回结晶，以感官承受涅槃核心的酷刑并将它重新封印。",
+            "部分评论者认为她是一个「从帽子里变出来的设定」，但她确实收束了系列遗留多年的问题。"
+          ]
+        },
+        {
+          "id": "niwa-line",
+          "title": "支线六 · 二羽久远线（企业线）",
+          "paragraphs": [
+            "二羽久远是二羽爱子的姊姊，身份是灵异巨型企业的社长，同时替任如月学园的英语教师。",
+            "她的「完美」起初被用于喜剧，后来转为悲剧：为摧毁六鬼柱中的「最后一柱」，她借篠崎幸的灵力，牺牲了自己。"
+          ]
+        },
+        {
+          "id": "martuba-line",
+          "title": "支线七 · 马尔托巴墓线（组织线）",
+          "paragraphs": [
+            "马尔托巴之墓是末日论黑魔术教团，与「御跋如」为敌对关系。已知成员包括教祖（第 1 位）、阿座见贵（第 2 位）、十三月爱狩（第 4 位→灾后第 1 位）、水原皐月与管家沃尔多，以及「灵手术 / PROJECT DOLLIES」等计划的相关者。",
+            "教团在涅槃融合的灾难中大部分成员死亡或逃散：教祖惊坠楼梯身亡，爱狩则在灾后立志重建。"
+          ]
+        }
+      ],
+      "connections": [
+        "《驭血》是「天神小学篇」三部曲（《血色笼罩》→《影之书》→《驭血》）的最终章，直接承接《影之书》序章『血之辙』的结局——步美之姊篠崎丙替她挡下反噬被杀。",
+        "本作最大的补完是把「天神小学」的真身解释为涅槃：它源自中世纪欧洲魔女狩猎中被献祭女巫的怨念集合体，被封印于《影之书》，又经由篠崎芳惠的禁术被释放、被幼女幸子吞进体内。",
+        "「六鬼柱收集」是本作的主线陷阱：步美以为在救人，实则为御帘徒加速世界毁灭；「救人」与「灭世」用的是同一套道具。",
+        "等价交换是系列的铁律：复活同伴失败（影之书）、吸收涅槃必须以「现实存在与一只眼睛」为代价，都是同一条规则的两面。",
+        "两大家族与教团推动着本作的全部冲突：马尔托巴之墓（爱狩、皐月、沃尔多、阿座见贵）与御跋如（御帘徒），一个求重建，一个求毁灭。",
+        "「天神小学篇完结」并不等于整个系列完结——本作只收束了涅槃与《影之书》这条线，之后系列转向《尸体派对 2：死亡病患》等新篇。"
+      ]
     },
     {
       "id": "dead-patient",
@@ -232,13 +1009,165 @@
       "type": "新篇章",
       "year": 2013,
       "developer": "GrindHouse / MAGES.",
-      "platforms": ["Windows", "Steam"],
+      "platforms": [
+        "Windows",
+        "Steam"
+      ],
       "genre": "生存恐怖 / 文字冒险",
       "synopsis": "分章发布的新篇章，舞台从天神小学转移到被封锁的医院。失去记忆的少女伊藤菖蒲在手术台上苏醒，面对的是一座空无一人、却处处留下死者的病院。",
       "imagePrompt": "abandoned hospital operating room, rusted surgical table under a flickering lamp, peeling tiles and stained curtains, scattered medical charts, cold desaturated teal with dark red accents, japanese hospital horror atmosphere, cinematic, no text, no people",
-      "full": false,
-      "characters": [],
-      "documents": []
+      "full": true,
+      "characters": [
+        "cp-ayame-ito",
+        "cp-chiyomi",
+        "cp-ritsuko",
+        "cp-satomi",
+        "cp-ryuuji",
+        "cp-masami",
+        "cp-amare-hospital",
+        "cp-minazuki-academy",
+        "cp-dead-patient",
+        "cp-medical-charts",
+        "cp-name-tags",
+        "cp-swat",
+        "cp-heavenly-host"
+      ],
+      "documents": [
+        {
+          "id": "name-tags-doc",
+          "no": 1,
+          "type": "收集品",
+          "nameEn": "Name Tags",
+          "nameZh": "名牌",
+          "chapter": "第 1 章",
+          "location": "散落于医院各场景（多数明置于场景中）",
+          "summary": "系列传统的死者名牌；本作改为明置于场景中，靠近即可拾取。",
+          "content": "名牌是本作沿袭系列的标志性收集物，记录死者的姓名、年龄、学校与死因。与《血色笼罩》不同，本作多数名牌直接散落在场景明处，无需先检视尸体——这正是对「医院里的尸体大多已变成丧尸在游荡」这一设定的适配。公开来源未收录本作名牌的完整清单，因此本站只收录体系说明，不为具体死者臆造条目。",
+          "relatedEntity": "cp-name-tags"
+        },
+        {
+          "id": "medical-charts-doc",
+          "no": 2,
+          "type": "收集品",
+          "nameEn": "Medical Charts",
+          "nameZh": "病历",
+          "chapter": "第 1 章",
+          "location": "医院各场景",
+          "summary": "本作特色收集要素：收集死亡患者的病历。",
+          "content": "病历是本作明确的收集要素之一，内容为死亡患者在医院中的记录。它与名牌互补：名牌给出「死者身份与死因」，病历给出「患者在医院中的记录」，两者共同拼合出医院里发生过什么。就系列对照而言，它相当于《血色笼罩》「名牌＋牺牲者手记」组合在医院语境下的对应物。",
+          "relatedEntity": "cp-medical-charts"
+        },
+        {
+          "id": "environmental-text-doc",
+          "no": 3,
+          "type": "收集品",
+          "nameEn": "Environmental Text",
+          "nameZh": "环境文本",
+          "chapter": "第 1 章",
+          "location": "散落的文件与物件",
+          "summary": "散落于医院的文件与物件所提供的故事与解谜线索。",
+          "content": "环境文本指从散落的文件、病例与物件中收集到的文字线索，用于补充剧情与推进解谜。它与名牌、病历同属「阅读型」收集要素，但载体更零碎——玩家需要把物件上的只言片语与病历、名牌交叉起来，才能大致读出医院在被封锁前经历了什么。",
+          "relatedEntity": "cp-amare-hospital"
+        },
+        {
+          "id": "extra-chapter-1-doc",
+          "no": 4,
+          "type": "额外章节",
+          "nameEn": "Extra Chapter 1",
+          "nameZh": "额外章节 1",
+          "chapter": "额外章节",
+          "location": "通关后解锁",
+          "summary": "《...NEUES;》重制版新增的额外章节，从天神小学旧识视角重述第一章。",
+          "content": "额外章节 1 于通关后解锁，从「一位天神小学旧识」的视角重述第一章的故事。它不推进主线，功能是在一条全新故事线中置入「天神小学篇」的怀旧锚点，强化本作与前作（尤其《驭血》）的联系。该章节由 2017 年的重制版《...NEUES;》新增。",
+          "relatedEntity": "cp-heavenly-host"
+        },
+        {
+          "id": "wrong-endings-doc",
+          "no": 5,
+          "type": "结局收集",
+          "nameEn": "Wrong Ends",
+          "nameZh": "坏结局",
+          "chapter": "第 1 章",
+          "location": "各分支路线",
+          "summary": "第一章的多个坏结局，全部以被丧尸吞食告终。",
+          "content": "沿袭系列惯例，第一章除真结局外还有多个坏结局，触发方式为走错路线或被丧尸抓住；它们全部以被丧尸活活吃掉告终。其中「虚假希望」坏结局尤其残酷：在目睹里津子与千代美死亡后，玩家短暂重获操作权，但逃跑必然失败，主角仍被吞没。坏结局的完整清单公开来源未完整收录，故本节只述其结构与已公开要点。",
+          "relatedEntity": "cp-amare-hospital"
+        },
+        {
+          "id": "true-end-doc",
+          "no": 6,
+          "type": "结局收集",
+          "nameEn": "True End",
+          "nameZh": "真结局",
+          "chapter": "第 1 章",
+          "location": "通关路线",
+          "summary": "第一章的真结局：主角一行被 SWAT 逮捕，主角身份被揭穿。",
+          "content": "第一章的真结局同样不是好结局：主角一行被全副武装的 SWAT 部队逮捕，性情疯狂的雅美掀起あやめ的上衣，向众人揭示她是「死亡病患」。故事正停在这个真相刚被揭开的瞬间，后续发展因本作长期未更新而尚无公开资料。",
+          "relatedEntity": "cp-dead-patient"
+        },
+        {
+          "id": "save-candles-doc",
+          "no": 7,
+          "type": "系统",
+          "nameEn": "Save Candles",
+          "nameZh": "存档蜡烛",
+          "chapter": "全作",
+          "location": "医院内",
+          "summary": "系列传统存档点——存档蜡烛在本作回归。",
+          "content": "存档蜡烛是系列传统的存档方式，本作以存档点系统予以回归，而非随时存档。它既是系列老玩家熟悉的设计记号，也把「在恐惧中寻找一处喘息点」变成了游戏节奏的一部分。",
+          "relatedEntity": "cp-amare-hospital"
+        }
+      ],
+      "chapters": [
+        {
+          "id": "ch1",
+          "title": "第一章（Chapter 1）",
+          "region": "阿玛蕾·帕特里亚卡·克鲁西斯医院",
+          "paragraphs": [
+            "本章是本作目前唯一发售的主线章节。主角伊藤あやめ是水无月学园高中 1 年 5 组的学生，她在阿玛蕾·帕特里亚卡·克鲁西斯医院的手术台上醒来——被束缚带绑着，点滴与心电图等仪器仍在运转，仿佛刚从麻醉中醒来。医生不见踪影，而她的记忆（甚至姓名）严重缺失，只能靠病历上的名字想起自己是谁。",
+            "走出手术室的她发现医院空无一人：文件散落、盆栽倾覆，仿佛刚发生过一场暴动。所有出入口要么上锁、要么被钢制卷帘封死，她被彻底困在了这里。",
+            "很快她意识到医院里并非只有自己：有同样被困、想查明真相的伙伴；有把她困在此处、如今想要伤害她的敌对者（装备防毒面具、全副武装的 SWAT 部队）；还有本不该存在于世的东西——嗜血丧尸、超自然巨物与怨恨的亡灵。她必须一边求生，一边拼合「自己为何在此」「医院里发生过什么」。",
+            "本章有多条坏结局与一个真结局，而真结局同样不是好结局：坏结局全部以被丧尸吞食告终，其中包括在目睹里津子与千代美死亡后短暂重获操作权、却注定逃不掉的「虚假希望」；真结局中主角一行被 SWAT 部队逮捕，性情疯狂的雅美掀起あやめ的上衣，向众人揭示她是「死亡病患」——真相刚揭晓，故事即断在此处。",
+            "需要说明的是，本作是分章发布的作品：截至公开资料仅发售第一章与额外章节 1，后续章节长期无消息。因此本作的分章结构与各章标题公开来源尚未完整收录，这里不作臆测。"
+          ]
+        }
+      ],
+      "sideChapters": [
+        {
+          "id": "wrong-ends",
+          "title": "支线一 · 坏结局（Wrong Ends）线",
+          "paragraphs": [
+            "沿袭系列惯例，本作第一章除真结局外还有多个坏结局，且「真结局」并不等于「好结局」。第一章的坏结局全部以被丧尸活活吃掉告终，构成一条密集的死亡分支线。",
+            "其中最特别的是「虚假希望」坏结局：在目睹里津子与千代美死亡后，玩家会短暂重获操作权，暗示「也许还能逃」；但丧尸来得太快，虽被提示「尝试逃跑」，逃跑必然失败，主角同样被吞没。",
+            "另有以「斩首展示」为名场面的坏结局：主角目睹一具丧尸转身，口中还衔着里见残留的头颅，辅以主角精神崩溃的演出。"
+          ]
+        },
+        {
+          "id": "extra-chapter-1",
+          "title": "支线二 · 额外章节 1（Extra Chapter 1）",
+          "paragraphs": [
+            "额外章节 1 是《...NEUES;》重制版新增的章节，从「一位天神小学旧识」的视角重述第一章的故事，是为系列老玩家准备的呼应／对照章节。",
+            "它的意义在于：在一条全新故事线中置入「天神小学篇」的怀旧锚点，强化本作与前作（尤其《驭血》）血脉相连的关系。"
+          ]
+        },
+        {
+          "id": "survivors",
+          "title": "支线三 · 被困者群像线",
+          "paragraphs": [
+            "医院中的幸存者并非同一阵营。公开资料用「幸存者内部并不团结（A House Divided）」形容这一点——不同的人有不同的求生方式，人际冲突本身成为支线张力之一。",
+            "主角身边聚集了几位有名有姓的被困者：青梅竹马千代美召集同学前来探望，是整起事件的缘起推动者；里津子、里见、龙司等人则在探索与遭遇中各有其结局——里津子在坏结局中死亡，里见在某个坏结局中被丧尸咬下头颅，龙司在危难中举着扫帚冲来救援，却被甩飞、撞在门上把门卡住。",
+            "场景层面也留下若干探索点：护士站可通过通风管道逃脱、主角曾目睹一名正在上吊自杀的女子、可利用拐杖与扫帚等自制临时武器，柜子则用来躲避追杀者。"
+          ]
+        }
+      ],
+      "connections": [
+        "本作时间设定在《驭血》事件约 5 年后（约 2014 年，推断），以全新故事线开启「尸体派对2」，但与天神小学篇血脉相连。",
+        "额外章节 1 从「一位天神小学旧识」的视角重述第一章，是系列老玩家在全新故事线里的怀旧锚点。",
+        "舞台发生重大迁移：恐怖场景从「被诅咒的异界小学」搬到「被封锁的现代医院」，玩法也从谜题探索转向动作追击，并首次引入正式的 Boss 战。",
+        "真结局依然不是好结局：主角一行被 SWAT 逮捕，雅美当众揭穿あやめ是「死亡病患」——本作以「真相刚揭开即断章」收束。",
+        "勿与 MAGES. 开发的《尸体派对II：黑暗扭曲》（2026）混淆：两者并非同一作品。",
+        "本作是分章发布的作品，截至公开资料仅发售第一章与额外章节 1，后续章节长期无消息，处于「再启动」状态。"
+      ]
     },
     {
       "id": "darkness-distortion",
@@ -248,13 +1177,233 @@
       "type": "完全新作",
       "year": 2026,
       "developer": "Team GrisGris / MAGES.",
-      "platforms": ["PS4", "PS5", "Switch", "Windows"],
+      "platforms": [
+        "PS4",
+        "PS5",
+        "Switch",
+        "Windows"
+      ],
       "genre": "生存恐怖 / 文字冒险",
       "synopsis": "系列完全新作（并非《死亡病患》的移植或延伸）。全新舞台「青峰学园」与「Amare Est Vivere 医院」，围绕都市传说「轮椅上的菖蒲小姐」展开——公开资料尚不完整，本站按现有资料收录，缺项一律标注未明确。",
       "imagePrompt": "night-time japanese high school building seen from the schoolyard, a wheelchair silhouette at a lit window, heavy rain and mist, deep indigo and crimson palette, modern urban legend horror atmosphere, cinematic, no text, no people",
-      "full": false,
-      "characters": [],
-      "documents": []
+      "full": true,
+      "characters": [
+        "cp-haruka-nanami",
+        "cp-nemu-takanashi",
+        "cp-maria-hitsugi",
+        "cp-yu-shindo",
+        "cp-roddy",
+        "cp-akari-shindo",
+        "cp-ayame-kirishima"
+      ],
+      "documents": [
+        {
+          "id": "main-chapters",
+          "no": 1,
+          "type": "章节结构",
+          "nameEn": "Six Main Chapters",
+          "nameZh": "主线六章",
+          "chapter": "—",
+          "location": "—",
+          "summary": "主线共 6 章，承载「彩芽诅咒」主线。",
+          "content": "《黑暗扭曲》采用「6 章主线」的结构，与《血色笼罩》《影之书》的旧命名方式不同。可以确认的是，这 6 章共同推进「彩芽诅咒」这条主线，舞台则始终是被诅咒的 Amare Est Vivere 医院。各章的具体标题与概要，公开来源尚未完整收录。",
+          "relatedEntity": "cp-ayame-kirishima"
+        },
+        {
+          "id": "additional-scenarios-doc",
+          "no": 2,
+          "type": "追加场景",
+          "nameEn": "Additional Scenarios",
+          "nameZh": "追加场景（8 段）",
+          "chapter": "—",
+          "location": "—",
+          "summary": "与主线并存的 8 段追加场景，用于扩展世界观、补完配角。",
+          "content": "主线之外，本作另有 8 段「追加场景」。它们扩展世界观、补完角色，或呈现主线未曾展开的另一面，与 6 章主线共同构成完整叙事。每一段的标题与概要，官方尚未完整公开，因此此处只确认「共 8 段」这一数量。",
+          "relatedEntity": "cp-aomine-academy"
+        },
+        {
+          "id": "wrong-ends",
+          "no": 3,
+          "type": "结局收集",
+          "nameEn": "Wrong Ends",
+          "nameZh": "错误结局（Wrong Ends）",
+          "chapter": "各章",
+          "location": "各章分支路线",
+          "summary": "多个血腥错误结局，由错误决策或被恶灵捕获触发。",
+          "content": "本作延续系列标志性的「错误结局」设计：由错误决策、被恶灵捕获等触发，导向猎奇死亡的分支，且数量为「多个」。游戏因此鼓励玩家谨慎决策、细察环境，因为在这里选错即死。具体结局名目，官方尚未完整公开。",
+          "relatedEntity": "cp-ayame-kirishima"
+        },
+        {
+          "id": "true-ending",
+          "no": 4,
+          "type": "结局收集",
+          "nameEn": "True Ending",
+          "nameZh": "真结局（True Ending）",
+          "chapter": "最终",
+          "location": "—",
+          "summary": "唯一的真结局，需揭开「轮椅上的菖蒲小姐」的真相。",
+          "content": "本作只有一条真结局路线，达成条件是揭开「轮椅上的菖蒲小姐」——也就是怨灵桐島彩芽——背后的真相。这条唯一路径与遍布各处的错误结局构成鲜明对比，也解释了为什么「真相」本身就是这一作的最终目标。",
+          "relatedEntity": "cp-ayame-kirishima"
+        },
+        {
+          "id": "nametag-unconfirmed",
+          "no": 5,
+          "type": "收集品",
+          "nameEn": "Name Tag (unconfirmed)",
+          "nameZh": "名牌（待确认）",
+          "chapter": "全作",
+          "location": "未知",
+          "summary": "是否延续「名牌」传统收集系统，官方尚未完整公开。",
+          "content": "系列过去的标志性收集要素——记录死者姓名与死状的名牌——是否在本作中延续，官方尚未完整公开，因此无法确认。可以确认的是，本作的「收集重心」明确落在结局分支上（多个错误结局 + 唯一的真结局）。",
+          "relatedEntity": "cp-amare-est-vivere"
+        },
+        {
+          "id": "limited-edition",
+          "no": 6,
+          "type": "特典",
+          "nameEn": "Ayame's Mercy Edition",
+          "nameZh": "限定版「彩芽的怜悯」",
+          "chapter": "—",
+          "location": "—",
+          "summary": "限定版收录 64 页画集、LED 蓝蜡烛、医疗箱金属外盒、透镜卡与证据套件。",
+          "content": "限定版「Ayame's Mercy Edition」的实物收藏呼应了本作「医院 / 都市传说 / 证据调查」的主题：64 页设定画集、「Save Yourself」LED 蓝色蜡烛（呼应系列传统的存档蜡烛）、Amare Est Vivere 医疗箱造型的金属外盒，以及「Ayame's Mercy」透镜变化卡。它们把游戏之外的收藏也纳入了世界观。",
+          "relatedEntity": "cp-ayames-mercy"
+        },
+        {
+          "id": "evidence-kit",
+          "no": 7,
+          "type": "特典",
+          "nameEn": "Evidence Kit",
+          "nameZh": "证据套件",
+          "chapter": "—",
+          "location": "限定版特典",
+          "summary": "含日记残页、照片阵列、名片、传单，呼应「证据调查」主题。",
+          "content": "证据套件是限定版中最贴合本作气质的一件收藏：日记残页、照片阵列、名片与传单——它们被设计成仿佛是从一所废弃医院里捡回来的调查物。这与「都市传说 ＋ 直播验证」的叙事框架一致：玩家在游戏里做的事，正是一场证据调查。",
+          "relatedEntity": "cp-amare-est-vivere"
+        },
+        {
+          "id": "immersive-features",
+          "no": 8,
+          "type": "系统",
+          "nameEn": "First / Third Person & Binaural Audio",
+          "nameZh": "视角切换与双耳音效",
+          "chapter": "全作",
+          "location": "—",
+          "summary": "第一／第三人称自由切换、双耳音效与潜行躲避，构成本作的沉浸式恐怖体验。",
+          "content": "本作在玩法上强调临场感：玩家可自由切换第一人称与第三人称探索 3D 渲染的医院，双耳（binaural）音效配合日文全程配音营造包围感，而面对恶灵时以潜行与智取躲避追捕。视角、声音与操作三者合起来，构成了「被关在医院里」的体验。",
+          "relatedEntity": "cp-amare-est-vivere"
+        }
+      ],
+      "chapters": [
+        {
+          "id": "ch1",
+          "title": "第一章 · 标题公开来源未完整收录",
+          "region": "阿玛蕾·艾斯特·维韦雷医院（遭诅咒的镜像版本）",
+          "paragraphs": [
+            "《黑暗扭曲》主线由 6 章构成，本章为其中的第 1 章，舞台是遭诅咒的 Amare Est Vivere 医院，推进「彩芽诅咒」这条主线。",
+            "本作是 2026 年的系列完全新作，官方在中文公开资料中尚未完整收录各章标题与概要，因此本站按「6 章」的统计口径收录，不臆造章节名目。"
+          ]
+        },
+        {
+          "id": "ch2",
+          "title": "第二章 · 标题公开来源未完整收录",
+          "region": "阿玛蕾·艾斯特·维韦雷医院（遭诅咒的镜像版本）",
+          "paragraphs": [
+            "《黑暗扭曲》主线由 6 章构成，本章为其中的第 2 章，舞台是遭诅咒的 Amare Est Vivere 医院，推进「彩芽诅咒」这条主线。",
+            "本作是 2026 年的系列完全新作，官方在中文公开资料中尚未完整收录各章标题与概要，因此本站按「6 章」的统计口径收录，不臆造章节名目。"
+          ]
+        },
+        {
+          "id": "ch3",
+          "title": "第三章 · 标题公开来源未完整收录",
+          "region": "阿玛蕾·艾斯特·维韦雷医院（遭诅咒的镜像版本）",
+          "paragraphs": [
+            "《黑暗扭曲》主线由 6 章构成，本章为其中的第 3 章，舞台是遭诅咒的 Amare Est Vivere 医院，推进「彩芽诅咒」这条主线。",
+            "本作是 2026 年的系列完全新作，官方在中文公开资料中尚未完整收录各章标题与概要，因此本站按「6 章」的统计口径收录，不臆造章节名目。"
+          ]
+        },
+        {
+          "id": "ch4",
+          "title": "第四章 · 标题公开来源未完整收录",
+          "region": "阿玛蕾·艾斯特·维韦雷医院（遭诅咒的镜像版本）",
+          "paragraphs": [
+            "《黑暗扭曲》主线由 6 章构成，本章为其中的第 4 章，舞台是遭诅咒的 Amare Est Vivere 医院，推进「彩芽诅咒」这条主线。",
+            "本作是 2026 年的系列完全新作，官方在中文公开资料中尚未完整收录各章标题与概要，因此本站按「6 章」的统计口径收录，不臆造章节名目。"
+          ]
+        },
+        {
+          "id": "ch5",
+          "title": "第五章 · 标题公开来源未完整收录",
+          "region": "阿玛蕾·艾斯特·维韦雷医院（遭诅咒的镜像版本）",
+          "paragraphs": [
+            "《黑暗扭曲》主线由 6 章构成，本章为其中的第 5 章，舞台是遭诅咒的 Amare Est Vivere 医院，推进「彩芽诅咒」这条主线。",
+            "本作是 2026 年的系列完全新作，官方在中文公开资料中尚未完整收录各章标题与概要，因此本站按「6 章」的统计口径收录，不臆造章节名目。"
+          ]
+        },
+        {
+          "id": "ch6",
+          "title": "第六章 · 标题公开来源未完整收录",
+          "region": "阿玛蕾·艾斯特·维韦雷医院（遭诅咒的镜像版本）",
+          "paragraphs": [
+            "《黑暗扭曲》主线由 6 章构成，本章为其中的第 6 章，舞台是遭诅咒的 Amare Est Vivere 医院，推进「彩芽诅咒」这条主线。",
+            "本作是 2026 年的系列完全新作，官方在中文公开资料中尚未完整收录各章标题与概要，因此本站按「6 章」的统计口径收录，不臆造章节名目。"
+          ]
+        }
+      ],
+      "sideChapters": [
+        {
+          "id": "additional-scenarios",
+          "title": "支线一 · 追加场景（Additional Scenarios）线",
+          "paragraphs": [
+            "除了 6 章主线，本作还设有 8 段「追加场景（Additional Scenarios）」。它们与主线并存，用来扩展世界观、补完配角，或呈现故事未曾展开的另一面。",
+            "官方尚未完整公开每一段追加场景的标题与概要，本站不臆造具体名目，只能确认「共有 8 段」这一数量口径。",
+            "与《血色笼罩》《影之书》以「Extra 章节」「各章支线」命名的旧结构不同，本作把追加内容明确计为「8 段追加场景」，是更现代的分量划分。"
+          ]
+        },
+        {
+          "id": "wrong-endings",
+          "title": "支线二 · 错误结局（Wrong Ends）线",
+          "paragraphs": [
+            "系列惯例的「多个血腥错误结局 + 唯一的真结局」在本作中延续：错误决策或被恶灵捕获，都会直接导向 Wrong End。",
+            "游戏因此鼓励玩家谨慎决策、细察环境——在这个世界里，「选错即死」是字面意义上的规则。",
+            "具体结局名目官方尚未完整公开，本站不臆造清单，只按「多个 Wrong Ends + 1 个真结局」的结构口径收录。"
+          ]
+        },
+        {
+          "id": "classmates-line",
+          "title": "支线三 · 留守同学们的双线",
+          "paragraphs": [
+            "本作叙事的独特之处在于：被卷入的不止是直播的三人。遥三人消失后，观看直播的同班同学成为焦急的旁观者，随后赶到医院、施行了同样的咒语。",
+            "结果是所有人都失去意识，醒来时已身处「与原来似是而非、遭诅咒的废弃医院」——异界侧和现世侧因此同时展开。",
+            "官方描述留下了「当同学们在现世寻找她们的同时……」这样的线索，暗示现世一侧也有调查与救援的动作。"
+          ]
+        },
+        {
+          "id": "ayame-mercy-line",
+          "title": "支线四 · 都市传说与「仪式恐惧」",
+          "paragraphs": [
+            "本作以都市传说「轮椅上的菖蒲小姐」为核心仪式：念诵咒语，然后被送往医院。它与天神小学篇的「幸福的幸子小姐」在结构上同构——同样是「施行咒语 → 被拖入异界」。",
+            "变化发生在两处：舞台从异界小学换成了遭诅咒的废弃医院；引信则换成了现代的网络直播文化——主角之一就是一名主播。",
+            "「都市传说 + 直播」的组合，把系列的仪式恐惧接到了当下的媒介环境里。"
+          ]
+        },
+        {
+          "id": "series-links",
+          "title": "支线五 · 与系列的联系与致敬",
+          "paragraphs": [
+            "官方明确：本作并非《尸体派对2：死亡病患》的移植或延伸，而是祁答院慎撰写新剧本、与系列共用世界观的完全新作。",
+            "宣传口径同时强调，它是「新玩家的理想入门作」，也为长期粉丝准备了不少致敬与彩蛋。",
+            "需要留意的是「医院篇」的两位同名 Ayame：本作的主角是七海遥，核心怨灵是桐島彩芽（Ayame）；而《死亡病患》的主角叫伊藤菖蒲（Ayame Itou），两者只是名字上的巧合。"
+          ]
+        }
+      ],
+      "connections": [
+        "与天神小学篇的「幸福的幸子小姐」结构呼应：同样是「施行咒语 → 被拖入异界」，只是舞台从异界小学换成了遭诅咒的废弃医院，而呼唤的名字从「幸子」换成了「彩芽」。",
+        "官方明确本作并非《死亡病患》的移植或延伸，而是祁答院慎新剧本、与系列共用世界观的完全新作；两作的医院名相近但不同（Amare Est Vivere 与 Amare Patriarcha Crucis），勿混为一处。",
+        "本作由两条线交织而成：异界侧的遥一行，与现世侧赶到医院、施行同一咒语的同班同学；官方留下「当同学们在现世寻找她们的同时……」的描述，暗示双线并行。",
+        "达成唯一真结局的关键，是揭开「轮椅上的菖蒲小姐」背后——也就是怨灵桐島彩芽——的真相；真相本身即是这一作的最终目标。",
+        "本作 2026 年发售（原定 2024 年秋，历经两次跳票并追加 PS5 版），既是新玩家的入门作，也为长期粉丝准备了大量致敬彩蛋。"
+      ]
     },
     {
       "id": "sweet-sachiko",
@@ -264,13 +1413,317 @@
       "type": "外传",
       "year": 2012,
       "developer": "Team GrisGris / MAGES.",
-      "platforms": ["PSP", "Windows"],
+      "platforms": [
+        "PSP",
+        "Windows"
+      ],
       "genre": "喜剧 / 恋爱 / 文字冒险",
       "synopsis": "以幸子的生日派对为舞台的外传。恐怖要素较轻，以荒诞喜剧与恋爱互动为主，收录大量章节与结局，是系列里少见的一次「全员放下怨恨」的聚会。",
       "imagePrompt": "absurd festive japanese classroom party, crooked paper garlands and a small birthday cake, faded wooden desks pushed aside, warm pink and amber lighting over dark red shadows, slightly eerie celebration mood, cinematic, no text, no people",
-      "full": false,
-      "characters": [],
-      "documents": []
+      "full": true,
+      "characters": [
+        "cp-sachiko-shinozaki",
+        "cp-satoshi-mochida",
+        "cp-naomi-nakashima",
+        "cp-yoshiki-kishinuma",
+        "cp-ayumi-shinozaki",
+        "cp-seiko-shinohara",
+        "cp-sakutaro-morishige",
+        "cp-yuuya-kizami",
+        "cp-kensuke-kurosaki",
+        "cp-masato-fukuroi",
+        "cp-mitsuki-yamamoto",
+        "cp-sayaka-ooue",
+        "cp-naho-saenoki",
+        "cp-yoshie-shinozaki",
+        "cp-satsuki-mizuhara",
+        "cp-aiko-niwa",
+        "cp-haruyuki-inumaru",
+        "cp-azusa-takai",
+        "cp-ran-kobayashi",
+        "cp-heavenly-host",
+        "cp-tokisho-academy",
+        "cp-skeleton-necklace",
+        "cp-hysteric-birthday"
+      ],
+      "documents": [
+        {
+          "id": "chapter-list",
+          "no": 1,
+          "type": "章节",
+          "nameEn": "Chapters",
+          "nameZh": "章节一览（#0–#7 + 额外章节）",
+          "chapter": "全作",
+          "location": "—",
+          "summary": "本体共 8 章 + 1 额外章节，每章 1 个 Clear End。",
+          "content": "本作是「电视节目 / 活动式」的短篇集：每一章对应一项生日派对活动，只有拿到该章的 Clear End，才能推进到下一章。资料完整给出的标题只有第 0–2 章与终章；第 3–6 章的官方中文标题未统一，档案里仅留下活动内容的标签，因此这里以活动描述代替，不作臆造。",
+          "relatedEntity": "cp-hysteric-birthday"
+        },
+        {
+          "id": "clear-ends",
+          "no": 2,
+          "type": "结局收集",
+          "nameEn": "Clear Ends",
+          "nameZh": "各章通关结局（Clear End）",
+          "chapter": "各章",
+          "location": "正确选项链",
+          "summary": "每章 1 个，达成后才能推进到下一章。",
+          "content": "Clear End 是本作唯一的「正路」：每一章只有一条正确的选项链能通向它，其余的岔路几乎全是坏结局。第 1 章的 Clear End 尤其残酷——世以子避开了陷阱面包，却误触利线而身首分离。也就是说，通关本身并不能保证有人好好活着。",
+          "relatedEntity": "cp-sachiko-shinozaki"
+        },
+        {
+          "id": "ch1-endings",
+          "no": 3,
+          "type": "结局收集",
+          "nameEn": "Chapter 1 Endings",
+          "nameZh": "第 1 章结局（战场上的耻辱）",
+          "chapter": "第 1 章",
+          "location": "吃面包大赛 / 独木桥",
+          "summary": "含 3 个坏结局与 1 个 Clear End。",
+          "content": "第 1 章的结局最完整地展示了本作的脾气：选「保持沉默、继续为她加油」，世以子被垂下的「面包怪」吞食（早就料到了）；选「制止她」→「别信她，继续观察」，黑崎健介被以为他在享受受辱的山本美月推下深渊（我无怨无悔）；选「制止她」→「就信她一次」→「穿上选定的服装」，则通向换装类恶搞（新娘难为）。只有「和森繁交换」这一步，才导向该章 Clear End。以上结局名与内容整理自公开资料，均为概括转述。",
+          "relatedEntity": "cp-seiko-shinohara"
+        },
+        {
+          "id": "ch2-endings",
+          "no": 4,
+          "type": "结局收集",
+          "nameEn": "Chapter 2 Endings",
+          "nameZh": "第 2 章结局（聚光灯下的陌生人）",
+          "chapter": "第 2 章",
+          "location": "舞台剧 / 表演",
+          "summary": "含 2 个坏结局与 1 个 Clear End。",
+          "content": "第 2 章的分歧围绕「要不要配合剧本」展开：连续三次选择「全都糟糕」以外的方向，通向「我衷心的梦想」；一路选择「反抗剧本」，则是「我到底干了什么？！？」；只有选「一切都糟糕」、又至少一次不顺从剧本，才能拿到 Clear End。把「配合还是不配合」做成生死开关，是本章对舞台剧这一题材的恶搞方式。",
+          "relatedEntity": "cp-sakutaro-morishige"
+        },
+        {
+          "id": "wrong-ends",
+          "no": 5,
+          "type": "结局收集",
+          "nameEn": "Wrong Ends",
+          "nameZh": "坏结局（Wrong Ends）总集",
+          "chapter": "各章",
+          "location": "各章分支",
+          "summary": "除各章 Clear End 与额外章结局外，其余皆为荒诞的坏结局。",
+          "content": "本作把「选错就死」推到了喜剧的地步：坏结局不再承担恐怖功能，而是变成换装、名场面与吐槽的载体。游戏会把已看过的分支标蓝，帮助玩家回收结局，但岔路实在太多，提示作用有限。就整体比例而言，坏结局远多于 Clear End——这个结构本身就是作者想开的玩笑。",
+          "relatedEntity": "cp-sachiko-shinozaki"
+        },
+        {
+          "id": "death-styles",
+          "no": 6,
+          "type": "结局收集",
+          "nameEn": "Absurd Deaths",
+          "nameZh": "代表性荒诞死法集",
+          "chapter": "多章",
+          "location": "选错选项",
+          "summary": "钢琴线腰斩、头被吃掉、黑化四连击、羞愧死（BL）、挖出内脏、被美臀憋死等。",
+          "content": "这些死法被玩家与评论者概括为系列的「一绝」，共同特征是把猎奇处理成笑料：被钢琴线拦腰截断、头被怪物吞掉、同伴接连黑化互杀、因为过于羞耻而死（BL 剧情）、内脏被剜出，甚至被「美臀」憋死。它们是本作换装 / 名场面式恶搞的集中体现，明确属于喜剧演出，而非恐怖正剧。",
+          "relatedEntity": "cp-sachiko-shinozaki"
+        },
+        {
+          "id": "extra-chapter",
+          "no": 7,
+          "type": "额外章节",
+          "nameEn": "Extra Chapter",
+          "nameZh": "额外章节（Extra Chapter）",
+          "chapter": "额外章节",
+          "location": "通关后解锁",
+          "summary": "本作唯一的正剧章节，补完新角色阿座见贵与小林兰的悲剧背景。",
+          "content": "额外章节在通关后解锁，风格与正篇的搞笑基调完全相反——它回归传统恐怖。内容补完了正篇中「突兀登场」的阿座见贵与小林兰的悲惨背景，是理解「她们为何出现在幸子的派对上」的关键，也是全作唯一的正剧段落。",
+          "relatedEntity": "cp-azusa-takai"
+        },
+        {
+          "id": "extra-endings",
+          "no": 8,
+          "type": "结局收集",
+          "nameEn": "Extra Endings",
+          "nameZh": "额外章节结局（2 个）",
+          "chapter": "额外章节",
+          "location": "达成特定条件",
+          "summary": "额外章节包含 2 个正剧结局。",
+          "content": "计入这 2 个额外章节结局后，结局总数为 30 个；若不计额外章节，一些资料把「剧情结局」记为 28 个。两说并存，差异仅在于统计口径是否纳入额外章节。这里不对具体结局名作臆测。",
+          "relatedEntity": "cp-ran-kobayashi"
+        },
+        {
+          "id": "total-endings",
+          "no": 9,
+          "type": "说明",
+          "nameEn": "Total Endings",
+          "nameZh": "结局总数（30 / 28 两说）",
+          "chapter": "全作",
+          "location": "—",
+          "summary": "资料称共 30 个结局，亦有记为 28 个剧情结局。",
+          "content": "结局总数是这套收集体系的核心口径：多数资料记为 30 个（含额外章节的 2 个结局与各章 Clear End），另有资料把不含额外章节的「剧情结局」记为 28 个。两种说法并存，本站不替任何一方下结论。",
+          "relatedEntity": "cp-hysteric-birthday"
+        },
+        {
+          "id": "cg-gallery",
+          "no": 10,
+          "type": "收集品",
+          "nameEn": "CG Gallery",
+          "nameZh": "CG 画廊",
+          "chapter": "全作",
+          "location": "随进程解锁",
+          "summary": "收录游戏内插画，含大量恶搞 / 换装 CG。",
+          "content": "CG 画廊随进程解锁，收录正篇中触发的插画。由于本作的基调是恶搞与换装，画廊里出现最多的是角色们被摆出各种离奇姿态的画面，而非正传式的死亡场面——它直观记录了这部作品「把恐怖系列玩坏」的姿态。",
+          "relatedEntity": "cp-hysteric-birthday"
+        },
+        {
+          "id": "voice-gallery",
+          "no": 11,
+          "type": "收集品",
+          "nameEn": "Voice Gallery",
+          "nameZh": "语音鉴赏",
+          "chapter": "全作",
+          "location": "随进程解锁",
+          "summary": "原班声优全员回归。",
+          "content": "语音鉴赏收录角色语音。本作的一大卖点是系列原班声优几乎全员回归，演绎了正传里「从未听过」的台词——同一批声音在喜剧语境下的发挥，是这部外传的一大看点。",
+          "relatedEntity": "cp-sachiko-shinozaki"
+        },
+        {
+          "id": "music-gallery",
+          "no": 12,
+          "type": "收集品",
+          "nameEn": "Music Gallery",
+          "nameZh": "音乐鉴赏",
+          "chapter": "全作",
+          "location": "随进程解锁",
+          "summary": "收录游戏内 BGM。",
+          "content": "音乐鉴赏收录游戏内使用的 BGM。与正传的压抑氛围不同，本作配乐整体偏向轻快与喜剧，与终章那段难得的伤感形成对照。",
+          "relatedEntity": "cp-hysteric-birthday"
+        },
+        {
+          "id": "skeleton-necklace",
+          "no": 13,
+          "type": "关键道具",
+          "nameEn": "Skeleton Necklace",
+          "nameZh": "骸骨项链（生日礼物）",
+          "chapter": "终章",
+          "location": "天神小学讲堂",
+          "summary": "众人为幸子制作的生日礼物，寄托「死后也能自由」的愿望。",
+          "content": "终章里，众人为幸子准备了一份生日礼物——一条骸骨项链。它寄托的愿望是「死后也能自由」：既是对这个被诅咒困住的孩子的安慰，也是众人唯一能给出的东西。派对结束后，所有人的记忆都被抹去，只有这条项链仍留在幸子的脖子上。",
+          "relatedEntity": "cp-skeleton-necklace"
+        }
+      ],
+      "chapters": [
+        {
+          "id": "ch0",
+          "title": "第零章 · 生日开幕（Hysteric Birthday）",
+          "region": "天神小学讲堂",
+          "paragraphs": [
+            "幸子生日这天，天神小学的诅咒短暂减弱。被幸子的能力「重新安排命运」的持田哲志与同伴们齐聚天神小学讲堂——连那些本该不会再出现的人，也一并被请了回来。",
+            "篠崎幸子突然现身，宣布要开办一场以「校园文化祭」为名的生日派对，主题是——Love Comedy（恋爱喜剧）。她给了在场所有人 24 小时的免罪大赦，让他们陪自己玩到最后。",
+            "由于时间轮回的缘故，众人的脑中融合了多个平行轮回世界的未来：对「坏结局」的记忆大多模糊，而刻命裕也这样同时记得好几份记忆的人，却毫不混乱。",
+            "至此，一场有爱、有泪、有欢笑（也不乏猎奇死亡）的「幸子的恋爱游戏」正式开幕。"
+          ]
+        },
+        {
+          "id": "ch1",
+          "title": "第一章 · 战场上的耻辱",
+          "region": "天神小学讲堂",
+          "paragraphs": [
+            "第 1 章的主题是体力搞笑竞技：「吃面包大赛」与「过独木桥」。篠原世以子、中嶋直美被推上台，森繁朔太郎也被卷入其中。",
+            "选择稍有不慎，就会出现荒诞的死亡结局——世以子吃下藏有陷阱的面包，被天花板垂下的「面包怪」当场吞食；而在独木桥环节，黑崎健介、袋井雅人、山本美月遭到触手袭击，黑崎最终被以为他在享受自己受辱的山本推下深渊。",
+            "这一章的 Clear End 同样不温柔：世以子避开了陷阱面包，却误触利线而身首分离，直美自责痛哭。",
+            "喜剧的糖衣底下，仍是「怎么选都有人死」的老配方——只是这一次，死亡被处理成了笑点。"
+          ]
+        },
+        {
+          "id": "ch2",
+          "title": "第二章 · 聚光灯下的陌生人",
+          "region": "天神小学讲堂",
+          "paragraphs": [
+            "第 2 章换成舞台剧与表演类恶搞，森繁朔太郎在这里被安排了不少桥段（连「女仆」之类的装扮也没能逃掉）。剧情分歧相当复杂，选项的组合会反复改变留给玩家的结局。",
+            "连续选对「糟糕」以外的方向，会走向「我衷心的梦想」；一路「反抗剧本」则是「我到底干了什么？！？」；只有选「一切都糟糕」、又至少一次不顺从剧本，才能拿到这一章的 Clear End。",
+            "官方为本章给出的结局名本就带着吐槽味——这一幕本身就是对恋爱喜剧类型的一次解构。"
+          ]
+        },
+        {
+          "id": "ch3",
+          "title": "第三章 · 派对游戏（男女混合）",
+          "region": "天神小学讲堂",
+          "paragraphs": [
+            "第 3 章是男女混合的派对游戏与交友类活动——让杀人鬼与被杀者被迫凑成一队，是这一章最大的笑点。",
+            "这一章的官方中文标题未统一，档案里只留下「Party Game（男女混合）」这样的内容标签，因此这里以活动描述代替，不作臆造。",
+            "选择依旧通向一系列荒诞的坏结局；只有一条正确的选项链，才能迈向下一章。"
+          ]
+        },
+        {
+          "id": "ch4",
+          "title": "第四章 · 料理 / 咖喱",
+          "region": "天神小学讲堂",
+          "paragraphs": [
+            "第 4 章把舞台交给了烹饪对决——围裙上身的众人围着锅与咖喱，把「生死」暂时换成「好不好吃」。",
+            "这一章的确切标题同样未见于完整公开来源，档案中只留下「料理 / 咖喱」的活动标签。",
+            "料理题材的恶搞依旧沿用本作的老规矩：选错一步，通往的不是黑暗料理，而是黑暗结局。"
+          ]
+        },
+        {
+          "id": "ch5",
+          "title": "第五章 · 电影拍摄",
+          "region": "天神小学讲堂",
+          "paragraphs": [
+            "第 5 章是实况 / 拍摄类的恶搞，众人扛起摄影器材，把派对本身拍成了一部现场电影。",
+            "与正传里沉迷拍摄尸体的森繁朔太郎形成鲜明对照——同样是「镜头」，在这里却成了搞笑桥段的道具。",
+            "本章的官方标题在公开来源中亦未完整给出，这里以「电影拍摄」的活动内容代称。"
+          ]
+        },
+        {
+          "id": "ch6",
+          "title": "第六章 · 赛跑 / 竞技",
+          "region": "天神小学讲堂",
+          "paragraphs": [
+            "第 6 章是竞速与竞技类活动，众人被拉进你追我赶的比赛里。",
+            "这一章的确切标题在公开来源中未完整给出，档案里只留下「Race（赛跑 / 竞技）」的标签。",
+            "在人人「不断死去活来」的派对里，比赛的意义本就不在输赢——只是又一种让众人凑在一起闹腾的形式。"
+          ]
+        },
+        {
+          "id": "ch7",
+          "title": "终章 · 幸子想学游泳",
+          "region": "天神小学讲堂",
+          "paragraphs": [
+            "终章里，幸子说出了自己的心愿——她想学游泳。众人围着她，把这件小小的愿望认真对待。",
+            "作为生日礼物，他们为幸子制作了一条骸骨项链，寄托「死后也能自由」的愿望。",
+            "派对尾声，幸子暂时从诅咒的包裹中剥离，感受到一个 7 岁女孩与「朋友」分别的悲伤；她扑进母亲篠崎芳惠的怀里恸哭，说出心声：妈妈，我不想再……",
+            "然而就在此刻，这一天结束了。所有人失去这一天的记忆，幸子重新被诅咒侵蚀——只有那条骸骨项链，仍留在她的脖子上。"
+          ]
+        }
+      ],
+      "sideChapters": [
+        {
+          "id": "wrong-ends-line",
+          "title": "支线一 · 坏结局（Wrong Ends）· 荒诞死法集",
+          "paragraphs": [
+            "这是本作最具标志性的「支线」——大量荒诞的死亡坏结局。它们不再承担恐怖功能，而是变成换装、名场面与吐槽的载体：被钢琴线拦腰截断、头被怪物吞掉、同伴接连黑化互杀、因过于羞耻而死（BL 剧情）、内脏被剜出，甚至「被美臀憋死」。",
+            "游戏会把已看过的分支标蓝，帮助玩家回收结局，但岔路实在太多，提示作用有限。就比例而言，坏结局远远多于各章的 Clear End。",
+            "值得强调的是：这些死法全部属于喜剧演出，与正传的猎奇死亡不是同一种东西——本作正是用这种反差，把「最绝望的系列」变成了「最欢乐的番外」。"
+          ]
+        },
+        {
+          "id": "extra-chapter-line",
+          "title": "支线二 · 额外章节（Extra Chapter）· 唯一的正剧",
+          "paragraphs": [
+            "额外章节在通关后解锁，并与正篇的搞笑基调完全相反：它回归传统恐怖。内容补完了正篇中「突兀登场」的阿座见贵与小林兰的悲惨背景。",
+            "这是理解「她们为何出现在幸子的派对上」的关键，也是全作唯一的正剧段落。它把原本可能沦为纯搞笑的一部作品，重新接回了系列的悲剧血脉。"
+          ]
+        },
+        {
+          "id": "collect-line",
+          "title": "支线三 · 结局收集与画廊",
+          "paragraphs": [
+            "本作是纯视觉小说，没有名牌系统、也没有地图探索——收集的重心完全落在「结局」上。各章 Clear End、坏结局、额外章节结局加起来，资料称约 30 个（亦有记为 28 个剧情结局的说法）。",
+            "此外还有 CG 画廊、语音鉴赏与音乐鉴赏：原班声优几乎全员回归，配乐整体偏轻快，CG 里则满是恶搞与换装画面。",
+            "因此本作的「收集」并不指向解谜，而是指向一场被完整记录下来的派对——玩家收集的每一个结局，都是幸子这一天的一种玩法。"
+          ]
+        }
+      ],
+      "connections": [
+        "本作与《血色笼罩》《影之书》的关系是「系列内部的番外」：舞台仍是天神小学，被幸子「重新安排命运」的持田哲志与同伴，正是 2 年 9 组那批人。",
+        "本作的舞台设定来自幸子的生日：这一天诅咒短暂减弱，她召集此前游戏中死去的几乎所有角色，给予 24 小时的免罪大赦——于是杀人鬼与被杀者被迫一起玩派对游戏。",
+        "登场阵容几乎覆盖系列全体，包括本不该出现的外传角色，被称为幸子的「特别来宾」；新登场的二羽爱子、水原皐月、犬丸晴行、阿座见贵后来都在《驭血》中有正式戏份。",
+        "桐章学园这条「另校线」在本作中大幅丰满：二羽爱子是幸子的跟班，犬丸晴行暗恋大上早矢香，冴之木七星与二羽爱子既是朋友也是对手。",
+        "终章把基调拉回悲剧：幸子暂时从诅咒中剥离、扑进母亲篠崎芳惠的怀里恸哭，随后这一天结束、众人失忆、诅咒重新侵蚀——只有骸骨项链留下。"
+      ]
     }
   ]
 }
