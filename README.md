@@ -35,23 +35,21 @@
 
 ## 协作
 
-**双仓库并行**，两个远端内容保持同步（分支统一为 `master`）：
-
-| 远端 | 用途 | 地址 |
-|---|---|---|
-| `origin` | Gitee，国内访问快，日常主用 | `git@gitee.com:sun-jiaheng123/data-website-project.git` |
-| `github` | GitHub，对外通用（便于以后接自动部署） | `git@github.com:FSAB75/data-website-project.git` |
-
-推送方式：
-
-```bash
-git push          # 只推 Gitee（origin）
-git pushall       # 两个远端一起推（等价于依次 git push origin master 与 git push github master）
-```
-
+- **远程仓库**：GitHub —— `git@github.com:FSAB75/data-website-project.git`（远端名 `origin`）
+- **分支**：`master`
+- 旧的 Gitee 仓库（远端名 `gitee`）**已停止同步，仅作历史备份，平时不用推**
+- 日常三步：`git pull` → 改 → `git push`
 - 开发工具：IntelliJ IDEA / Trae，通过 Git 同步
-- **新加入的协作者要准备「自己的」账号与 SSH 公钥**，Gitee 与 GitHub 各挂一份，**不要共用别人的密钥**；
-  若 GitHub 仓库是私有的，还需先被加为 Collaborator
+- **协作者要准备「自己的」GitHub 账号与 SSH 公钥**，不要共用别人的密钥
+
+### 协作纪律（避免互相覆盖）
+
+- **严禁 `git push --force`**，也不要 rebase 已推送的提交 —— 这是唯一会真正抹掉别人提交的操作
+- 动手前先 `git pull`，改完立刻 `git push`；**提交粒度尽量小**（一个系列 / 一个功能一次提交）
+- 按 `src/data/<系列>/` 文件夹分工，各改各的系列，天然不冲突
+- **改公共文件前先打招呼**：`astro.config.mjs`、`package.json` / `package-lock.json`、`README.md`、`待优化清单.md`、`src/layouts/BaseLayout.astro`
+- **加依赖只由一个人做**，做完推上去、另一个人 `npm install` 同步（否则 `package-lock.json` 必冲突）
+- `src/data/*/nametags.json` 是脚本生成的产物，**不要手工改**；要改就改源 CSV，再重跑 `scripts/parse-nametags.mjs`
 
 ## 内容结构：加一个系列 = 加一个文件夹
 
