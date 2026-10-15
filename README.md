@@ -35,8 +35,23 @@
 
 ## 协作
 
-- 远程仓库：Gitee（`sun-jiaheng123/data-website-project`）
+**双仓库并行**，两个远端内容保持同步（分支统一为 `master`）：
+
+| 远端 | 用途 | 地址 |
+|---|---|---|
+| `origin` | Gitee，国内访问快，日常主用 | `git@gitee.com:sun-jiaheng123/data-website-project.git` |
+| `github` | GitHub，对外通用（便于以后接自动部署） | `git@github.com:FSAB75/data-website-project.git` |
+
+推送方式：
+
+```bash
+git push          # 只推 Gitee（origin）
+git pushall       # 两个远端一起推（等价于依次 git push origin master 与 git push github master）
+```
+
 - 开发工具：IntelliJ IDEA / Trae，通过 Git 同步
+- **新加入的协作者要准备「自己的」账号与 SSH 公钥**，Gitee 与 GitHub 各挂一份，**不要共用别人的密钥**；
+  若 GitHub 仓库是私有的，还需先被加为 Collaborator
 
 ## 内容结构：加一个系列 = 加一个文件夹
 
