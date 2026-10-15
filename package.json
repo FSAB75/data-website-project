@@ -11,5 +11,8 @@
   },
   "dependencies": {
     "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "ssh2": "^1.17.0"
   }
 }

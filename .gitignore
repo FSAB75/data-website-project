@@ -14,6 +14,9 @@ out/
 .env.*
 !.env.example
 
+# 本地私有配置（NAS 部署凭证等，绝不提交）
+scripts/.nas-credentials.json
+
 # 日志
 *.log
 npm-debug.log*

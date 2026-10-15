@@ -75,11 +75,12 @@ src/data/<seriesId>/
 - **收集资料的 `content` 是「编者解说」**：基于公开资料的背景说明，**不是游戏内原文转录**。
 - 开发期自动做引用完整性自检（`npm run dev` 时打印到控制台）——任何指向不存在 id 的引用都会报「断链」。
 
-### 两个辅助脚本
+### 几个辅助脚本
 
 ```bash
 node scripts/parse-nametags.mjs      # 解析 资料/尸体派对/*/03_*_档案清单.csv → nametags.json（含死法类型自动归类）
 node scripts/merge-fragments.mjs     # 把 _fragments/*.json 的并行内容片段合并进 works/entities/timeline
+node scripts/deploy-nas.mjs          # 一键部署到绿联 NAS（构建 → 打包 → 上传 → 校验）
 ```
 
 ## 本地开发
@@ -93,57 +94,117 @@ npm run build    # 产出静态站点到 dist/
 > 国内网络建议先把 npm 源切到 npmmirror：
 > `npm config set registry https://registry.npmmirror.com`
 
-## 部署（Docker / 绿联 NAS）
+## 部署（绿联 NAS + Docker，已实操验证）
 
-站点是纯静态产物，**运行时不需要 Node 常驻进程**，只用一个 nginx 容器托管 `dist/` 即可，资源占用极小。
+站点是纯静态产物，**运行时不需要 Node 常驻进程**，一个 nginx 容器托管 `dist/` 即可，资源占用极小。
 
-### 方式 A（推荐，速度快）：本地构建 + 挂载 dist
+### 为什么不做「容器内构建」
 
-1. 本地执行 `npm run build`，得到 `dist/`
-2. 把 `dist/` 与 `docker/nginx.conf` 拷到 NAS 共享文件夹，例如 `/volume1/docker/game-wiki/`
-3. 在 NAS（绿联 UGOS 的 Docker 应用 → 项目 / Compose）新建项目，compose 内容：
+NAS（绿联 DH4300 PLUS，ARM aarch64）上**没有 git / npm**，而且 CPU 较弱。
+所以走「**本地构建 → 上传 dist → NAS 只挂载**」这条路：NAS 端只需要一个 nginx 镜像，秒级启动。
 
-```yaml
-name: game-wiki
-services:
-  web:
-    image: nginx:1.27-alpine
-    container_name: game-wiki
-    restart: unless-stopped
-    ports:
-      - "8080:80"
-    volumes:
-      - /volume1/docker/game-wiki/dist:/usr/share/nginx/html:ro
-      - /volume1/docker/game-wiki/nginx.conf:/etc/nginx/conf.d/default.conf:ro
-    environment:
-      - TZ=Asia/Shanghai
+### 一键部署（推荐）
+
+先把连接信息放进一个**不会被提交**的本地文件（已在 `.gitignore` 里）：
+
+```json
+// scripts/.nas-credentials.json
+{ "host": "10.216.0.182", "username": "你的NAS账号", "password": "你的密码" }
 ```
 
-4. 启动后访问 `http://NAS内网IP:8080/`
+也可以用环境变量 `NAS_HOST / NAS_USER / NAS_PASS` 代替。
+**绝对不要把密码写进任何会被提交的文件。**
 
-### 方式 B：容器内构建（git clone 后一条命令）
-
-把仓库 clone 到 NAS，在项目根目录执行：
+随后：
 
 ```bash
-docker compose up -d --build
+node scripts/deploy-nas.mjs              # 构建 + 打包 + 上传 + 校验
+node scripts/deploy-nas.mjs --no-build   # 只上传现有 dist（跳过构建）
+node scripts/deploy-nas.mjs --up         # 额外执行 sudo docker compose up -d
+node scripts/deploy-nas.mjs --run "命令"  # 只在 NAS 上跑一条命令（带 sudo）
 ```
 
-NAS 的 CPU 较弱，首次构建会偏慢（Dockerfile 已默认使用 npmmirror 源）。
+脚本流程：本地 `npm run build` → 连同 `docker/nginx.conf`、`docker-compose.mount.yml` 一起打包
+→ 经 SSH 传到 `/volume1/docker/game-wiki/` → 解包 → 用 curl 校验首页与几个关键页。
+
+### NAS 上的目录结构
+
+```
+/volume1/docker/game-wiki/
+├── docker-compose.yml   ← 来自仓库的 docker-compose.mount.yml
+├── nginx.conf           ← 来自仓库的 docker/nginx.conf
+└── dist/                ← 本地构建产物
+```
+
+首次部署后在 NAS 上起容器（之后改内容**不用**再执行）：
+
+```bash
+cd /volume1/docker/game-wiki && sudo docker compose up -d
+```
+
+> 绿联 UGOS 自己占用了 `80 / 443 / 9999`，所以站点用 `8080`。
 
 ### 内容更新
 
-- 方式 A：重新 `npm run build` → 覆盖 NAS 上的 `dist/`（容器无需重启，HTML 已配置为不缓存）
-- 方式 B：`git pull` 后 `docker compose up -d --build`
+```bash
+node scripts/deploy-nas.mjs     # 一条命令
+```
 
-### 对外访问（先自查网络条件）
+**不需要重启容器** —— nginx 已配置 HTML 不缓存，刷新浏览器就是新版。
 
-内网访问（`http://NAS内网IP:8080/`）随时可用。能否“持续对外提供服务”，取决于家庭网络的实际情况：
+### 对外访问（内网穿透）
 
-- **公网 IPv4**：登录路由器，对比 WAN 口 IP 与在终端执行 `curl ifconfig.me` 得到的出口 IP。
-  两者不同即说明是运营商 CGNAT（没有公网 IP）。有公网 IP 时可做 DDNS + 使用非标准端口（如 8080 / 8443）。
-  注意：国内家宽对 **80 / 443 端口普遍封锁**，且域名解析到家庭宽带涉及 **ICP 备案** 问题。
-- **无公网 IP**：可选 IPv6（若运营商支持），或 **frp 内网穿透**（需要一台有公网 IP 的服务器做中转）。
-- **安全红线**：只暴露 nginx 容器的端口，**绝不要把 NAS 管理界面暴露到公网**。
+先自查网络条件再选路线：
 
-> 如果外网条件不理想，也可以把纯静态站托管到 Cloudflare Pages / Vercel / Gitee Pages 作为正式对外入口，NAS 则作为内网镜像使用。
+| 路线 | 需要什么 | 说明 |
+|---|---|---|
+| **Cloudflare Tunnel（推荐）** | 阶段一不用域名；阶段二需要域名 | 不需要公网 IP、不需要开端口，HTTPS 自动；免费不限流量 |
+| DDNS + 端口映射 | 公网 IPv4 + 域名 | 国内家宽普遍封 80/443，域名解析到家宽涉及 **ICP 备案** |
+| IPv6 | 运营商提供 IPv6 | 访问方也要支持 IPv6 |
+| frp 等穿透 | 一台有公网 IP 的中转服务器 | 要额外维护 |
+
+**Cloudflare Tunnel 两阶段**（阶段一已在 NAS 上跑通）：
+
+1. **快速隧道** —— 不需要域名、不需要账号。在 `docker-compose.mount.yml` 里启用 `tunnel` 服务，
+   `docker compose up -d` 后从日志里取地址：
+
+   ```bash
+   sudo docker logs game-wiki-tunnel 2>&1 | grep trycloudflare
+   ```
+
+   ⚠️ 该地址**每次重启都会变**，属于试用性质，别当正式服务依赖。
+2. **命名隧道** —— 买了域名后：域名托管到 Cloudflare，用固定 token 连接，
+   得到自己域名的固定地址 + 自动 HTTPS。
+
+**安全红线**：隧道只指向 `http://web:80`（这一个站点），**绝不要把 NAS 管理界面暴露到公网**。
+
+### 踩坑记录：NAS 拉不动镜像
+
+现象：`docker compose up -d` 报 `Get "https://registry-1.docker.io/v2/": context deadline exceeded`。
+
+原因：`/etc/docker/daemon.json` 里原来只配了 `docker.1ms.run` 一个加速器，
+**它只代理 manifest，blob 仍指向被墙的 `registry-1.docker.io`**，所以镜像拉不下来。
+
+解决：换成多个能代理 blob 的加速器，然后重启 docker：
+
+```json
+{
+  "data-root": "/volume1/@docker",
+  "features": { "containerd-snapshotter": false },
+  "registry-mirrors": [
+    "https://docker.m.daocloud.io",
+    "https://docker.1ms.run",
+    "https://docker.1panel.live",
+    "https://hub.rat.dev"
+  ]
+}
+```
+
+> 改前先备份原文件；**`data-root` 必须原样保留**，改了容器会「凭空消失」。
+> 另外：重启 docker 守护进程会让**所有 `restart=always` 的容器自动复活**（哪怕你先前手动停过）——
+> 这是 Docker 的既定行为，不是 bug。改完记得顺手把不用的容器策略改成 `no`。
+
+### 方式 B（不推荐）：容器内构建
+
+根目录的 `Dockerfile` + `docker-compose.yml` 是「容器内自行构建」版本，适合**本机已装 Docker**的机器。
+NAS 上走这条要先装 git/npm，且 ARM 构建很慢。

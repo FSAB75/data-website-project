@@ -1,0 +1,45 @@
+# 游戏科普百科 —— 静态站点容器（「挂载版」，NAS 上不构建）
+#
+# 与仓库根目录 docker-compose.yml 的区别：
+#   - 根目录那份是「容器内自行构建」，需要 NAS 上有 git / npm，构建慢
+#   - 本文件是「本地构建好后挂载」，NAS 上只需要 nginx 镜像，秒级启动（绿联 NAS 推荐）
+#
+# NAS 上的目录结构：
+#   /volume1/docker/game-wiki/
+#   ├── docker-compose.yml   ← 本文件（部署脚本会把它放成这个名字）
+#   ├── nginx.conf           ← 仓库里的 docker/nginx.conf
+#   └── dist/                ← 本地 npm run build 的产物
+#
+# 用法：
+#   首次或改动本文件 / nginx.conf 后：  sudo docker compose up -d
+#   只更新了内容（dist）时无需重启容器（nginx 已配置 HTML 不缓存）
+#   也可以直接用：                      node scripts/deploy-nas.mjs
+#
+# 注意：绿联 UGOS 自己占用了 80 / 443 / 9999，所以这里用 8080。
+
+services:
+  web:
+    image: nginx:1.27-alpine
+    container_name: game-wiki
+    restart: unless-stopped
+    ports:
+      # 左侧是 NAS 上的端口，被占用时改成别的即可
+      - "8080:80"
+    volumes:
+      - /volume1/docker/game-wiki/dist:/usr/share/nginx/html:ro
+      - /volume1/docker/game-wiki/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    environment:
+      - TZ=Asia/Shanghai
+
+  # 可选：内网穿透（无需公网 IP、无需开端口）。
+  # 用不到时删掉这一段即可；用的话把它和 web 放同一个 compose 项目里，
+  # 这样 tunnel 可以直接用服务名 web 访问 web 容器。
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: game-wiki-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate --url http://web:80
+    environment:
+      - TZ=Asia/Shanghai
+    depends_on:
+      - web
