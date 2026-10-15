@@ -105,7 +105,7 @@ const groups = timeline.groups || [];
     background: var(--panel);
     transition: color 0.15s, border-color 0.15s;
   }
-  .tl-index a:hover { color: var(--blood-bright); border-color: rgba(224, 72, 60, 0.45); }
+  .tl-index a:hover { color: var(--blood-bright); border-color: rgba(var(--accent-rgb), 0.45); }
 
   /* 时代分组 */
   .tl-group { margin-bottom: 44px; scroll-margin-top: 84px; }
@@ -130,7 +130,7 @@ const groups = timeline.groups || [];
     bottom: 0;
     width: 1px;
     margin-left: -0.5px;
-    background: linear-gradient(180deg, rgba(224, 72, 60, 0.55), rgba(43, 43, 53, 0.15));
+    background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.55), rgba(43, 43, 53, 0.15));
   }
   .tl-item {
     position: relative;
@@ -160,7 +160,7 @@ const groups = timeline.groups || [];
     margin-top: 19px;
     background: var(--blood);
     border-color: var(--blood-bright);
-    box-shadow: 0 0 0 5px rgba(179, 37, 31, 0.16), 0 0 16px rgba(224, 72, 60, 0.5);
+    box-shadow: 0 0 0 5px rgba(var(--accent-deep-rgb), 0.16), 0 0 16px rgba(var(--accent-rgb), 0.5);
   }
 
   /* ---------- 双轨：并行 ---------- */
@@ -181,7 +181,7 @@ const groups = timeline.groups || [];
     font-size: 13px;
     letter-spacing: 0.08em;
     color: var(--blood-bright);
-    border-bottom: 1px solid rgba(224, 72, 60, 0.4);
+    border-bottom: 1px solid rgba(var(--accent-rgb), 0.4);
     padding-bottom: 3px;
   }
   .tl-col[data-track='waylon'] .tl-col__name { color: #c9a227; border-bottom-color: rgba(201, 162, 39, 0.4); }
@@ -199,7 +199,7 @@ const groups = timeline.groups || [];
     top: 4px;
     bottom: 4px;
     width: 1px;
-    background: linear-gradient(180deg, rgba(224, 72, 60, 0.45), rgba(43, 43, 53, 0.15));
+    background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.45), rgba(43, 43, 53, 0.15));
   }
   .tl-col[data-track='waylon'] .tl-col__rail::before {
     background: linear-gradient(180deg, rgba(201, 162, 39, 0.45), rgba(43, 43, 53, 0.15));
@@ -226,7 +226,7 @@ const groups = timeline.groups || [];
     top: 18px;
     background: var(--blood);
     border-color: var(--blood-bright);
-    box-shadow: 0 0 0 4px rgba(179, 37, 31, 0.16);
+    box-shadow: 0 0 0 4px rgba(var(--accent-deep-rgb), 0.16);
   }
   .tl-col[data-track='waylon'] .tl-card--major::after {
     background: #c9a227;
@@ -238,8 +238,8 @@ const groups = timeline.groups || [];
   .tl-crossings {
     margin-top: 26px;
     padding: 18px 20px;
-    background: linear-gradient(90deg, rgba(179, 37, 31, 0.12), rgba(179, 37, 31, 0.02));
-    border: 1px dashed rgba(224, 72, 60, 0.5);
+    background: linear-gradient(90deg, rgba(var(--accent-deep-rgb), 0.12), rgba(var(--accent-deep-rgb), 0.02));
+    border: 1px dashed rgba(var(--accent-rgb), 0.5);
     border-radius: var(--radius);
   }
   .tl-crossings .tl-card { margin: 0; }
@@ -249,7 +249,7 @@ const groups = timeline.groups || [];
     position: relative;
     background: var(--panel);
     border: 1px solid var(--line);
-    border-left: 2px solid rgba(224, 72, 60, 0.35);
+    border-left: 2px solid rgba(var(--accent-rgb), 0.35);
     border-radius: var(--radius);
     padding: 14px 18px;
     transition: border-color 0.15s, background 0.15s;
@@ -257,12 +257,12 @@ const groups = timeline.groups || [];
   .tl-card:hover { background: var(--panel-2); border-left-color: var(--blood-bright); }
   .tl-card--major {
     border-left-color: var(--blood);
-    background: linear-gradient(180deg, rgba(179, 37, 31, 0.09), var(--panel) 60%);
+    background: linear-gradient(180deg, rgba(var(--accent-deep-rgb), 0.09), var(--panel) 60%);
   }
   .tl-card--crossing {
-    border: 1px solid rgba(224, 72, 60, 0.55);
+    border: 1px solid rgba(var(--accent-rgb), 0.55);
     border-left: 3px solid var(--blood-bright);
-    background: linear-gradient(180deg, rgba(179, 37, 31, 0.16), var(--panel) 70%);
+    background: linear-gradient(180deg, rgba(var(--accent-deep-rgb), 0.16), var(--panel) 70%);
   }
 
   .tl-card__head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 6px; }
@@ -291,7 +291,7 @@ const groups = timeline.groups || [];
     text-decoration: none;
     transition: color 0.15s, border-color 0.15s;
   }
-  .chip:hover { color: var(--blood-bright); border-color: rgba(224, 72, 60, 0.45); }
+  .chip:hover { color: var(--blood-bright); border-color: rgba(var(--accent-rgb), 0.45); }
   .chip--work { color: var(--dim); }
 
   /* ---------- 窄屏：折叠为中轴左侧单列 ---------- */

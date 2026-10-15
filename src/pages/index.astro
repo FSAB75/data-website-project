@@ -1,12 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { series, works, coverPath } from '../lib/data.js';
+import { seriesList, worksOfSeries, coverPath } from '../lib/data.js';
 
-const outlastWorks = works
-  .filter((w) => series.works.includes(w.id))
-  .sort((a, b) => a.order - b.order);
-
-const outlastCover = coverPath('series', series.id);
+const cards = seriesList.map((pack) => {
+  const item = pack.series;
+  const list = worksOfSeries(pack.id);
+  return {
+    pack,
+    item,
+    works: list,
+    cover: coverPath('series', item.id),
+    fullCount: list.filter((w) => w.full).length,
+  };
+});
 ---
 
 <BaseLayout title="游戏科普百科 · 首页">
@@ -19,36 +25,28 @@ const outlastCover = coverPath('series', series.id);
 
   <h2>系列库</h2>
   <div class="grid grid--2">
-    <a class="card series-card" href="/series/outlast/">
-      {outlastCover && (
-        <div class="series-card__cover">
-          <img src={outlastCover} alt="逃生系列氛围插画" loading="lazy" />
-          <span class="series-card__cover-tag">SURVIVAL HORROR</span>
-        </div>
-      )}
-      <div class="card__index">2013 起 · {series.developer}</div>
-      <h3 class="card__title">逃生</h3>
-      <div class="card__en">Outlast</div>
-      <p class="card__desc">{series.intro}</p>
-      <div class="meta-row">
-        <span class="tag">{outlastWorks.length} 部作品</span>
-        <span class="tag">{series.entityCount} 个词条</span>
-        <span class="tag">世界观时间线</span>
-      </div>
-      <div class="card__foot">进入系列 →</div>
-    </a>
-
-    <div class="card card--soon">
-      <div class="card__index">筹备中</div>
-      <h3 class="card__title">尸体派对</h3>
-      <div class="card__en">Corpse Party</div>
-      <p class="card__desc">
-        计划收录系列各代作品，并增加该系列专属的「死法收集图鉴」——每个误入天神小学的人，其不同的结局单独成条。
-      </p>
-      <div class="meta-row">
-        <span class="tag tag--blood">待开工建设</span>
-      </div>
-    </div>
+    {
+      cards.map(({ item, works, cover, fullCount }) => (
+        <a class="card series-card" href={`/series/${item.id}/`}>
+          {cover && (
+            <div class="series-card__cover">
+              <img src={cover} alt={`${item.nameZh}系列氛围插画`} loading="lazy" />
+              <span class="series-card__cover-tag">{item.taglineEn || item.nameEn.toUpperCase()}</span>
+            </div>
+          )}
+          <div class="card__index">{item.firstRelease} 起 · {item.developer}</div>
+          <h3 class="card__title">{item.nameZh}</h3>
+          <div class="card__en">{item.nameEn}</div>
+          <p class="card__desc">{item.intro}</p>
+          <div class="meta-row">
+            <span class="tag">{works.length} 部作品</span>
+            <span class="tag">{fullCount} 部已录入</span>
+            <span class="tag">{item.entityCount} 个词条</span>
+          </div>
+          <div class="card__foot">进入系列 →</div>
+        </a>
+      ))
+    }
   </div>
 
   <h2>本站的阅读结构</h2>
@@ -59,16 +57,14 @@ const outlastCover = coverPath('series', series.id);
       正文中出现的<strong>人名、实验 / 项目名称、组织名、地点名</strong>，以及与游戏内文档可对应的关键词，
       都会被自动识别为可交互词条：悬停弹出简介卡片，点击进入词条页，从而把「剧情」「人物」「档案」三个板块串成一张网。
     </p>
+    <p class="dim">
+      不同系列可有自己的专属模块与视觉基调——例如《逃生》的世界观时间线、《尸体派对》的「死法收集图鉴」。
+    </p>
   </div>
 </BaseLayout>
 
 <style>
-  .card--soon {
-    border-style: dashed;
-    opacity: 0.72;
-    cursor: default;
-  }
-  .card--soon:hover { transform: none; background: var(--panel); }
+  .dim { color: var(--dim); font-size: 13.5px; }
 
   .series-card { padding-top: 0; overflow: hidden; }
   .series-card__cover {
@@ -91,7 +87,7 @@ const outlastCover = coverPath('series', series.id);
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(8, 8, 11, 0) 35%, rgba(8, 8, 11, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(var(--overlay-rgb), 0) 35%, rgba(var(--overlay-rgb), 0.9) 100%);
     pointer-events: none;
   }
   .series-card__cover-tag {
@@ -102,7 +98,7 @@ const outlastCover = coverPath('series', series.id);
     font-size: 11px;
     letter-spacing: 0.14em;
     color: #fff;
-    background: rgba(179, 37, 31, 0.85);
+    background: rgba(var(--accent-deep-rgb), 0.85);
     border-radius: 2px;
     padding: 1px 8px;
   }

@@ -1,0 +1,30 @@
+﻿编号,类型,名称（英/日）,名称（中）,所属章节,达成条件/位置,内容要点
+CH00,章节,Hysteric Birthday,生日开幕,第0章,自动,幸子登场宣布“恋爱喜剧”文化祭
+CH01,章节,Shame Upon the Battlefield,战场上的耻辱,第1章,吃面包大赛/独木桥,世以子等参与搞笑竞技
+CH02,章节,Stranger in the Spotlight,聚光灯下的陌生人,第2章,舞台剧/表演,表演类恶搞
+CH03,章节,Party Game（男女混合）,派对游戏·男女混合,第3章,交友/混合活动,男女互动类恶搞
+CH04,章节,Cooking/Curry,料理/咖喱,第4章,烹饪对决,咖喱烹饪类
+CH05,章节,Movie,电影拍摄,第5章,实况/拍摄,拍摄类恶搞
+CH06,章节,Race,赛跑/竞技,第6章,竞速,竞技类
+CH07,章节,Final Chapter,终章,第7章,幸子“想学游泳”,众人制作骸骨项链作生日礼物；幸子扑母恸哭后被诅咒重新侵蚀
+CH-EX,章节,Extra Chapter,额外章节,额外章节,通关后解锁,传统恐怖风；补完阿座见贵、小林兰的悲剧背景
+END0-C,结局,Clear End (Ch0),第0章通关结局,第0章,完成本章,推进至第1章
+END1-C,结局,Clear End (Ch1),第1章通关结局,第1章,选“制止她”→“就信她一次”→“和森繁交换”,世以子误触利线身首分离
+END1-W1,坏结局,Called It (orz),早就料到了,第1章,选“保持沉默，继续加油”,世以子被“面包怪”吞食
+END1-W2,坏结局,I Regret Nothing!,我无怨无悔,第1章,选“制止她”→“别信她，继续观察”,黑崎被山本推下深渊
+END1-W3,坏结局,Brides Have It Tough,新娘难为,第1章,选“制止她”→“就信她一次”→“穿上选定服装”,换装类恶搞结局
+END2-C,结局,Clear End (Ch2),第2章通关结局,第2章,选“一切都糟糕”→至少一次不选“反抗剧本”,推进至第3章
+END2-W1,坏结局,My Heartfelt Dream,我衷心的梦想,第2章,连续三次选“全都糟糕”以外,表演类坏结局
+END2-W2,坏结局,What the Hell Did I Do?!,我到底干了什么,第2章,选“全都糟糕”→每次选“反抗剧本”,表演类坏结局
+END-EX1,结局,Extra Ending 1,额外章节结局1,额外章节,达成特定条件,正剧结局
+END-EX2,结局,Extra Ending 2,额外章节结局2,额外章节,达成特定条件,正剧结局
+DEATH-01,坏结局,The Piano Wire,钢琴线腰斩,多章,选错选项,代表性荒诞死法
+DEATH-02,坏结局,Head-Eaten,头被吃掉,多章,选错选项,代表性荒诞死法
+DEATH-03,坏结局,Darkening Combo,黑化四连击,多章,选错选项,代表性荒诞死法
+DEATH-04,坏结局,Shame Death (BL),羞愧死（BL剧情）,多章,选错选项,代表性荒诞死法
+DEATH-05,坏结局,Gut-Pulling,挖出内脏死,多章,选错选项,代表性荒诞死法
+DEATH-06,坏结局,Suffocated by Buttocks,被美臀憋死,多章,选错选项,代表性荒诞死法
+GALLERY-01,收集品,CG Gallery,CG画廊,全作,随进程解锁,含大量恶搞/换装CG
+GALLERY-02,收集品,Voice Gallery,语音鉴赏,全作,随进程解锁,原班声优全员回归
+GALLERY-03,收集品,Music Gallery,音乐鉴赏,全作,随进程解锁,游戏内BGM
+NOTE-01,说明,Total Endings,结局总数,全作,—,共30个（含额外章2个+各章Clear End；另有资料记28个）

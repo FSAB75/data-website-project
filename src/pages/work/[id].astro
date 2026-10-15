@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { works, entities, getEntity, typeLabels } from '../../lib/data.js';
+import { works, getEntity, typeLabels, seriesOfWork, entitiesOfSeries } from '../../lib/data.js';
 import { buildEntityIndex, linkify } from '../../lib/linkify.js';
 
 export function getStaticPaths() {
@@ -8,7 +8,10 @@ export function getStaticPaths() {
 }
 
 const { work } = Astro.props;
-const index = buildEntityIndex(entities);
+// 词条索引按系列隔离：本作品正文只联动「所属系列」的词条，避免跨系列误命中
+const pack = seriesOfWork(work.id);
+const index = buildEntityIndex(entitiesOfSeries(pack.id));
+const theme = pack.series.theme;
 
 const chapters = work.chapters || [];
 const sideChapters = work.sideChapters || [];
@@ -24,7 +27,7 @@ const sections = [
 ].filter(Boolean);
 ---
 
-<BaseLayout title={`${work.title} · 作品`}>
+<BaseLayout title={`${work.title} · 作品`} theme={theme}>
   <p class="eyebrow">{work.type} · {work.year}</p>
   <h1>{work.title} <span class="title-en">{work.titleEn}</span></h1>
   <p class="lead">{work.synopsis}</p>
@@ -46,7 +49,7 @@ const sections = [
     !work.full && (
       <div class="panel soon-note">
         <strong>该作品内容整理中。</strong>
-        样板阶段仅完整录入《逃生1》。本部作品的剧情、人物与档案将在后续内容整理完成后填入——结构与《逃生1》完全一致。
+        本部作品的剧情、人物与档案将在后续内容整理完成后填入——结构与本站已完整录入的作品一致。
       </div>
     )
   }
@@ -190,7 +193,7 @@ const sections = [
     background: var(--panel);
     transition: color 0.15s, border-color 0.15s;
   }
-  .quick-nav a:hover { color: var(--blood-bright); border-color: rgba(224, 72, 60, 0.45); }
+  .quick-nav a:hover { color: var(--blood-bright); border-color: rgba(var(--accent-rgb), 0.45); }
 
   .soon-note {
     margin-top: 24px;
@@ -216,7 +219,7 @@ const sections = [
   .doc {
     background: var(--panel);
     border: 1px solid var(--line);
-    border-left: 3px solid rgba(224, 72, 60, 0.55);
+    border-left: 3px solid rgba(var(--accent-rgb), 0.55);
     border-radius: var(--radius);
     padding: 14px 18px;
   }
@@ -226,7 +229,7 @@ const sections = [
     font-size: 11px;
     letter-spacing: 0.1em;
     color: var(--blood-bright);
-    border: 1px solid rgba(224, 72, 60, 0.4);
+    border: 1px solid rgba(var(--accent-rgb), 0.4);
     border-radius: 999px;
     padding: 0 8px;
   }
@@ -246,16 +249,16 @@ const sections = [
     font-size: 12.5px;
     color: var(--blood-bright);
     list-style: none;
-    border: 1px solid rgba(224, 72, 60, 0.35);
+    border: 1px solid rgba(var(--accent-rgb), 0.35);
     border-radius: 999px;
     padding: 2px 12px;
-    background: rgba(179, 37, 31, 0.1);
+    background: rgba(var(--accent-deep-rgb), 0.1);
     transition: border-color 0.15s, background 0.15s;
   }
   .doc__more > summary::-webkit-details-marker { display: none; }
   .doc__more > summary::before { content: '＋'; font-size: 11px; }
   .doc__more[open] > summary::before { content: '－'; }
-  .doc__more > summary:hover { border-color: var(--blood-bright); background: rgba(179, 37, 31, 0.2); }
+  .doc__more > summary:hover { border-color: var(--blood-bright); background: rgba(var(--accent-deep-rgb), 0.2); }
   .doc__more-body {
     margin: 10px 0 0;
     padding: 12px 14px;
@@ -263,7 +266,7 @@ const sections = [
     color: #c9c6c0;
     line-height: 1.8;
     background: rgba(25, 25, 32, 0.6);
-    border-left: 2px solid rgba(224, 72, 60, 0.4);
+    border-left: 2px solid rgba(var(--accent-rgb), 0.4);
     border-radius: var(--radius);
   }
 

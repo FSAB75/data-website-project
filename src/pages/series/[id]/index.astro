@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import WorkCard from '../../../components/WorkCard.astro';
+import Timeline from '../../../components/Timeline.astro';
+import {
+  seriesList,
+  worksOfSeries,
+  entitiesOfSeries,
+  timelineOfSeries,
+  extraOfSeries,
+  coverPath,
+} from '../../../lib/data.js';
+import { buildEntityIndex } from '../../../lib/linkify.js';
+
+export function getStaticPaths() {
+  return seriesList.map((s) => ({ params: { id: s.id }, props: { pack: s } }));
+}
+
+const { pack } = Astro.props;
+const item = pack.series;
+const index = buildEntityIndex(entitiesOfSeries(pack.id));
+
+const seriesWorks = worksOfSeries(pack.id);
+const timeline = timelineOfSeries(pack.id);
+const nametags = extraOfSeries(pack.id, 'nametags');
+
+const hero = coverPath('series', item.id);
+
+// 系列专属子页（有对应扩展数据才显示入口）
+const subPages = [
+  nametags && { href: `/series/${item.id}/deaths/`, label: '死法收集图鉴', desc: `收录 ${nametags.nametags.length} 条名牌，可按作品 / 章节 / 学校 / 死法筛选` },
+].filter(Boolean);
+---
+
+<BaseLayout title={`${item.nameZh} · 系列`} theme={item.theme}>
+  <p class="eyebrow">系列 SERIES</p>
+  <h1>{item.nameZh} <span class="title-en">{item.nameEn}</span></h1>
+  <p class="lead">{item.intro}</p>
+  <div class="meta-row">
+    <span class="tag">{item.developer}</span>
+    <span class="tag">首作 {item.firstRelease}</span>
+    <span class="tag">{seriesWorks.filter((w) => w.full).length} / {seriesWorks.length} 部作品已录入</span>
+    <span class="tag">{pack.entities.length} 个词条</span>
+  </div>
+
+  {hero && (
+    <div class="series-hero">
+      <img src={hero} alt={`${item.nameZh}系列氛围插画`} />
+      <span class="series-hero__caption">{item.tagline}</span>
+    </div>
+  )}
+
+  {
+    subPages.length > 0 && (
+      <section>
+        <h2>系列专属</h2>
+        <div class="grid grid--2">
+          {subPages.map((p: any) => (
+            <a class="card" href={p.href}>
+              <div class="card__index">SPECIAL</div>
+              <h3 class="card__title">{p.label}</h3>
+              <p class="card__desc">{p.desc}</p>
+              <div class="card__foot">进入 →</div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <h2>作品</h2>
+  <div class="grid grid--2">
+    {seriesWorks.map((w) => <WorkCard work={w} />)}
+  </div>
+
+  {
+    (timeline.groups || []).length > 0 && (
+      <section>
+        <h2>世界观时间线</h2>
+        <p class="lead">
+          什么时间发生了什么大事件，哪一部作品的哪个角色在经历什么——按时间顺序排列如下。
+          <span class="dim">（标绿色为已核实、黄色为推测、灰色为官方未明确。）</span>
+        </p>
+        <Timeline timeline={timeline} index={index} />
+      </section>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .title-en {
+    font-size: 16px;
+    color: var(--dim);
+    font-family: var(--sans);
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    margin-left: 6px;
+  }
+  .dim { color: var(--dim); font-size: 13px; }
+
+  .series-hero {
+    position: relative;
+    margin: 26px 0 8px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 21 / 8;
+    background: var(--panel-3);
+  }
+  .series-hero img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.85) contrast(1.05);
+  }
+  .series-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(var(--overlay-rgb), 0.15) 30%, rgba(var(--overlay-rgb), 0.95) 100%);
+    pointer-events: none;
+  }
+  .series-hero__caption {
+    position: absolute;
+    left: 22px;
+    bottom: 18px;
+    z-index: 1;
+    font-family: var(--serif);
+    font-size: 19px;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
+  }
+</style>

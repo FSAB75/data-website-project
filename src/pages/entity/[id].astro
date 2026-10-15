@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { entities, works, getEntity, getWork, typeLabels } from '../../lib/data.js';
+import { entities, works, getEntity, getWork, typeLabels, seriesOfEntity, entitiesOfSeries } from '../../lib/data.js';
 import { buildEntityIndex, linkify } from '../../lib/linkify.js';
 
 export function getStaticPaths() {
@@ -8,7 +8,10 @@ export function getStaticPaths() {
 }
 
 const { entity } = Astro.props;
-const index = buildEntityIndex(entities);
+// 词条索引按系列隔离
+const pack = seriesOfEntity(entity.id);
+const index = buildEntityIndex(entitiesOfSeries(pack.id));
+const theme = pack.series.theme;
 
 const docToWork = new Map();
 for (const w of works) {
@@ -29,7 +32,7 @@ const appearedWorks = (entity.works || []).map(getWork).filter(Boolean);
 const backWork = relations.length === 0 && relatedDocs.length === 0 ? null : null;
 ---
 
-<BaseLayout title={`${entity.nameZh} · 词条`}>
+<BaseLayout title={`${entity.nameZh} · 词条`} theme={theme}>
   <p class="eyebrow">{typeLabels[entity.type] || '词条'} · ENTITY</p>
   <h1>{entity.nameZh} <span class="title-en">{entity.nameEn}</span></h1>
   <p class="lead">{entity.summary}</p>
@@ -115,7 +118,7 @@ const backWork = relations.length === 0 && relatedDocs.length === 0 ? null : nul
     margin-left: 6px;
   }
   .tag--link { text-decoration: none; transition: color 0.15s, border-color 0.15s; }
-  .tag--link:hover { color: var(--blood-bright); border-color: rgba(224, 72, 60, 0.45); }
+  .tag--link:hover { color: var(--blood-bright); border-color: rgba(var(--accent-rgb), 0.45); }
 
   .facts {
     width: 100%;
@@ -159,7 +162,7 @@ const backWork = relations.length === 0 && relatedDocs.length === 0 ? null : nul
     padding: 12px 16px;
     transition: border-color 0.15s, background 0.15s;
   }
-  .rel:hover { border-color: rgba(224, 72, 60, 0.5); background: var(--panel-2); }
+  .rel:hover { border-color: rgba(var(--accent-rgb), 0.5); background: var(--panel-2); }
   .rel__name { font-family: var(--serif); font-size: 15px; color: var(--text); }
   .rel__label { font-size: 12.5px; color: var(--muted); }
 
@@ -169,19 +172,19 @@ const backWork = relations.length === 0 && relatedDocs.length === 0 ? null : nul
     text-decoration: none;
     background: var(--panel);
     border: 1px solid var(--line);
-    border-left: 3px solid rgba(224, 72, 60, 0.55);
+    border-left: 3px solid rgba(var(--accent-rgb), 0.55);
     border-radius: var(--radius);
     padding: 14px 18px;
     transition: border-color 0.15s, background 0.15s;
   }
-  .doc:hover { background: var(--panel-2); border-color: rgba(224, 72, 60, 0.5); }
+  .doc:hover { background: var(--panel-2); border-color: rgba(var(--accent-rgb), 0.5); }
   .doc__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; }
   .doc__no {
     font-family: Georgia, serif;
     font-size: 11px;
     letter-spacing: 0.1em;
     color: var(--blood-bright);
-    border: 1px solid rgba(224, 72, 60, 0.4);
+    border: 1px solid rgba(var(--accent-rgb), 0.4);
     border-radius: 999px;
     padding: 0 8px;
   }

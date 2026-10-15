@@ -1,0 +1,22 @@
+﻿编号,类型,名称（英/日）,名称（中）,所属章节,位置/条件,内容要点
+EP00,章节,Blood Drive（ブラッドドライブ）,血之辙,序章,承接真结局两周后, Naomi与Ayumi前往篠崎家旧宅动用影之书；Hinoe替步美挡下反噬被斩首
+EP01,章节,Seal（刻印）,刻印,EP1,视角：中嶋直美, 重演血色笼罩第一章；直美带着记忆试图改变命运
+EP02,章节,Demise（夭逝）,夭逝,EP2,视角：铃本茧, 茧大腿重伤、爬行求生，补完人格
+EP03,章节,Encounter（邂逅）,邂逅,EP3,视角：宍戸结衣, 前传；结衣生病、哲志来访，梦中回忆高中往事
+EP04,章节,Purgatory（煉獄）,炼狱,EP4,视角：大上早矢香, 前传；早矢香寻找七星，揭晓咒语散布背景
+EP05,章节,Shangri-La（理想郷）,理想乡,EP5,视角：森繁朔太郎+白檀组, 双线交汇，面对伪装的“乐园”
+EP06,章节,Mire（泥濘）,泥泞,EP6,视角：持田由香, 承接血色笼罩Wrong End 2-4；由香被刻命抓住后的逃亡
+EP07,章节,Tooth（歯）,齿,EP7,视角：霧崎冻孤/白檀组, 中传；PC版Extra Preview重述，解释别馆女尸
+END-T1,真结局,True End 1,真结局1,EP1,正确选项路线,世以子获救或结局改变（依路线）
+END-W1,坏结局,Wrong End - Lavatory,坏结局·女厕,EP1,选“使用外面的水桶”等,世以子之死相关
+END-W2,坏结局,Wrong End - Ryou,坏结局·辽,EP2,检视亡灵“辽”,被儿童怨灵所害
+END-W3,坏结局,Wrong End - Chase Timeout,坏结局·追逐超时,EP2,追逐战中计时归零,被怨灵杀死
+END-W4,坏结局,Wrong End - Science Lab,坏结局·理科准备室,EP2,追逐战中检视尸体,猎奇死法
+END-W5,坏结局,Wrong End - Hide/Broom,坏结局·躲藏/扫帚,EP3,躲柜/选扫帚等,被害
+END-W6,坏结局,Wrong End - Death Room,坏结局·死亡房间,EP4,选“躲在血染的桌子下”,被害
+END-W7,坏结局,Wrong End (Hidden),坏结局·隐藏,EP5,需先达成真结局,隐藏分支
+COL-CG,收集品,CG Gallery,CG回廊,全局,随剧情解锁,解锁的CG插画，可保存至PSP本体
+COL-VOICE,收集品,Voice/Scream Gallery,语音/惨叫鉴赏,全局,随剧情解锁,角色台词与惨叫录音
+COL-MUSIC,收集品,Music Gallery,音乐鉴赏,全局,随进程解锁,游戏内BGM
+COL-COMP,收集品,Chapter Completion,章节完成度,全局,章节选择菜单,各章完成百分比追踪
+BONUS-01,特典,Save Data Inheritance,存档继承特典,全局,需《血色笼罩》PSP存档,可浏览血色笼罩CG并免收集解锁最终章

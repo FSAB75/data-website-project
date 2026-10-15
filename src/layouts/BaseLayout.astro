@@ -1,9 +1,13 @@
 ---
+import { seriesList } from '../lib/data.js';
+
 interface Props {
   title: string;
   description?: string;
+  /** 视觉主题；不同系列可用不同基调（默认为逃生的暗黑恐怖风） */
+  theme?: string;
 }
-const { title, description = '以游戏系列为单位的剧情与世界观科普百科' } = Astro.props;
+const { title, description = '以游戏系列为单位的剧情与世界观科普百科', theme = 'outlast' } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,7 +18,7 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
     <title>{title}</title>
     <meta name="description" content={description} />
   </head>
-  <body>
+  <body data-theme={theme}>
     <div class="bg-layer" aria-hidden="true"></div>
 
     <header class="site-header">
@@ -25,7 +29,7 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
         </a>
         <nav class="nav">
           <a href="/">首页</a>
-          <a href="/series/outlast/">逃生系列</a>
+          {seriesList.map((s) => <a href={`/series/${s.id}/`}>{s.series.nameZh}系列</a>)}
         </nav>
       </div>
     </header>
@@ -37,7 +41,7 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
     <footer class="site-footer">
       <div class="shell">
         <p>本站为粉丝向资料汇编站，内容仅供学习、研究与归档参考；游戏设定以官方原作与出版物为准。</p>
-        <p>页面中的封面插画为根据剧情氛围生成的原创氛围图，<strong>非官方美术素材</strong>；游戏名称、角色与相关设定版权归 Red Barrels 等原权利方所有。</p>
+        <p>页面中的封面插画为根据剧情氛围生成的原创氛围图，<strong>非官方美术素材</strong>；游戏名称、角色与相关设定版权归各自原权利方所有。</p>
         <p class="site-footer__dim">样板版本 · Astro 构建</p>
       </div>
     </footer>
@@ -59,7 +63,43 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
         --serif: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
         --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif;
         --radius: 4px;
+
+        /* 派生色：供页面内 rgba() 使用，随主题切换 */
+        --accent-rgb: 224, 72, 60;
+        --accent-deep-rgb: 179, 37, 31;
+        --overlay-rgb: 8, 8, 11;
       }
+
+      /* ---------- 主题：逃生 · 暗黑科技恐怖风 ---------- */
+
+      /* ---------- 主题：尸体派对 · 和风校园怪谈（褪色木色 / 暗红 / 宣纸质感） ---------- */
+      [data-theme='corpse-party'] {
+        --bg: #12100d;
+        --panel: #1b1714;
+        --panel-2: #231d18;
+        --panel-3: #2c241d;
+        --line: #3a3026;
+        --text: #ded4c4;
+        --muted: #a2947f;
+        --dim: #6d6353;
+        --blood: #8c2f2a;
+        --blood-bright: #c9503f;
+        --serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", "Songti SC", "SimSun", serif;
+
+        --accent-rgb: 201, 80, 63;
+        --accent-deep-rgb: 140, 47, 42;
+        --overlay-rgb: 18, 16, 13;
+      }
+      [data-theme='corpse-party'] .bg-layer {
+        background:
+          radial-gradient(1100px 620px at 50% -10%, rgba(var(--accent-deep-rgb), 0.22), transparent 62%),
+          radial-gradient(900px 700px at 100% 100%, rgba(120, 160, 160, 0.06), transparent 65%),
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.016) 0 1px, transparent 1px 5px),
+          repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.16) 0 1px, transparent 1px 6px),
+          var(--bg);
+      }
+      [data-theme='corpse-party'] .site-header { background: rgba(18, 16, 13, 0.85); }
+      [data-theme='corpse-party'] .term { cursor: help; }
 
       * { box-sizing: border-box; }
 
@@ -82,7 +122,7 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
         z-index: -1;
         pointer-events: none;
         background:
-          radial-gradient(1100px 620px at 50% -10%, rgba(179, 37, 31, 0.14), transparent 60%),
+          radial-gradient(1100px 620px at 50% -10%, rgba(var(--accent-deep-rgb), 0.14), transparent 60%),
           radial-gradient(900px 700px at 100% 100%, rgba(60, 70, 90, 0.12), transparent 65%),
           repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.014) 0 1px, transparent 1px 3px),
           var(--bg);
@@ -100,7 +140,7 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
       /* ---------- 页头 ---------- */
       .site-header {
         border-bottom: 1px solid var(--line);
-        background: rgba(8, 8, 11, 0.82);
+        background: rgba(var(--overlay-rgb), 0.82);
         backdrop-filter: blur(6px);
         position: sticky;
         top: 0;
@@ -156,7 +196,7 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
 
       /* ---------- 通用组件 ---------- */
       .panel {
-        background: linear-gradient(180deg, var(--panel), rgba(17, 17, 22, 0.4));
+        background: linear-gradient(180deg, var(--panel), rgba(var(--overlay-rgb), 0.4));
         border: 1px solid var(--line);
         border-radius: var(--radius);
         padding: 20px 22px;
@@ -172,7 +212,7 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
         color: var(--muted);
         background: var(--panel-2);
       }
-      .tag--blood { color: var(--blood-bright); border-color: rgba(224, 72, 60, 0.45); background: rgba(179, 37, 31, 0.12); }
+      .tag--blood { color: var(--blood-bright); border-color: rgba(var(--accent-rgb), 0.45); background: rgba(var(--accent-deep-rgb), 0.12); }
       .tag--verified { color: var(--verified); border-color: rgba(111, 174, 124, 0.4); }
       .tag--inferred { color: var(--inferred); border-color: rgba(201, 162, 39, 0.4); }
 
@@ -202,7 +242,7 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
         opacity: 0;
         transition: opacity 0.15s;
       }
-      .card:hover { border-color: rgba(224, 72, 60, 0.5); background: var(--panel-2); transform: translateY(-2px); }
+      .card:hover { border-color: rgba(var(--accent-rgb), 0.5); background: var(--panel-2); transform: translateY(-2px); }
       .card:hover::before { opacity: 1; }
       .card__index {
         font-family: var(--serif);
@@ -225,11 +265,11 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
         position: relative;
         color: var(--blood-bright);
         text-decoration: none;
-        border-bottom: 1px dashed rgba(224, 72, 60, 0.5);
+        border-bottom: 1px dashed rgba(var(--accent-rgb), 0.5);
         cursor: help;
       }
       .term__hit { border-radius: 2px; transition: background 0.12s; }
-      .term:hover .term__hit, .term:focus .term__hit { background: rgba(224, 72, 60, 0.2); }
+      .term:hover .term__hit, .term:focus .term__hit { background: rgba(var(--accent-rgb), 0.2); }
 
       .term__card {
         display: none;
@@ -261,7 +301,7 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
         display: inline-block;
         font-size: 11px;
         color: var(--blood-bright);
-        border: 1px solid rgba(224, 72, 60, 0.4);
+        border: 1px solid rgba(var(--accent-rgb), 0.4);
         border-radius: 999px;
         padding: 0 7px;
         margin-bottom: 7px;
