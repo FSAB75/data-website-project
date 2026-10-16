@@ -1,13 +1,43 @@
 ---
-import { seriesList } from '../lib/data.js';
+import { seriesList, works, entities } from '../lib/data.js';
 
 interface Props {
   title: string;
   description?: string;
+  /** 分享卡缩略图（相对路径，如 /images/works/outlast1.jpg）；不传则不输出 og:image */
+  image?: string | null;
+  /** og:type，文章类页面可传 article */
+  type?: string;
   /** 视觉主题；不同系列可用不同基调（默认为逃生的暗黑恐怖风） */
   theme?: string;
 }
-const { title, description = '以游戏系列为单位的剧情与世界观科普百科', theme = 'outlast' } = Astro.props;
+const {
+  title,
+  description = '游戏档案室 —— 以「游戏系列」为单位的剧情与世界观资料汇编',
+  image = null,
+  type = 'website',
+  theme = 'outlast',
+} = Astro.props;
+
+// 站内规模（页脚展示用）
+const nametagCount = seriesList.reduce((n, s) => n + ((s.nametags?.nametags || []).length), 0);
+const scale = [
+  `${seriesList.length} 个系列`,
+  `${works.length} 部作品`,
+  `${entities.length} 个词条`,
+  nametagCount ? `${nametagCount} 条名牌` : null,
+].filter(Boolean).join(' · ');
+
+// 页面构建日期（页脚极淡小字）
+const buildDate = new Date().toISOString().slice(0, 10);
+
+// 浏览器地址栏配色随主题走
+const themeColor = theme === 'corpse-party' ? '#12100d' : '#08080b';
+
+// canonical / og:image 需要绝对地址；site 已在 astro.config.mjs 中配置
+const url = (p: string) => (Astro.site ? new URL(p, Astro.site).href : p);
+const canonical = url(Astro.url.pathname);
+const ogImage = image ? url(image) : null;
 ---
 
 <!doctype html>
@@ -17,6 +47,27 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content={themeColor} />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="游戏档案室" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    {ogImage && <meta property="og:image:width" content="2560" />}
+    {ogImage && <meta property="og:image:height" content="1440" />}
+    <meta property="og:image:alt" content={title} />
+
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+    <meta name="generator" content={Astro.generator} />
   </head>
   <body data-theme={theme}>
     <div class="bg-layer" aria-hidden="true"></div>
@@ -24,12 +75,21 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
     <header class="site-header">
       <div class="shell header-inner">
         <a class="brand" href="/">
-          <span class="brand__mark">▮</span>
-          <span class="brand__text">游戏科普百科</span>
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.5 9.6h5.1l1.5 1.7h10.4c.9 0 1.5.7 1.5 1.5v6.1c0 .9-.7 1.6-1.6 1.6H4.1c-.9 0-1.6-.7-1.6-1.6v-7.7c0-.9.7-1.6 1.6-1.6z" fill="currentColor"/>
+              <path d="M5.6 5.4h3.6l1.3 1.4h6.1c.8 0 1.4.6 1.4 1.4v.9H3.9V6.8c0-.8.7-1.4 1.7-1.4z" fill="currentColor" opacity=".55"/>
+            </svg>
+          </span>
+          <span class="brand__lockup">
+            <span class="brand__text">游戏档案室</span>
+            <span class="brand__en">GAME ARCHIVE</span>
+          </span>
         </a>
         <nav class="nav">
           <a href="/">首页</a>
           {seriesList.map((s) => <a href={`/series/${s.id}/`}>{s.series.nameZh}系列</a>)}
+          <a href="/search/">搜索</a>
         </nav>
       </div>
     </header>
@@ -40,11 +100,37 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
 
     <footer class="site-footer">
       <div class="shell">
+        <p class="site-footer__scale">目前已收录 <strong>{scale}</strong>，内容仍在持续补充。</p>
         <p>本站为粉丝向资料汇编站，内容仅供学习、研究与归档参考；游戏设定以官方原作与出版物为准。</p>
-        <p>页面中的封面插画为根据剧情氛围生成的原创氛围图，<strong>非官方美术素材</strong>；游戏名称、角色与相关设定版权归各自原权利方所有。</p>
-        <p class="site-footer__dim">样板版本 · Astro 构建</p>
+        <p>
+          页面配图来自各游戏<strong>官方商店页（Steam）的宣传素材</strong>与本站生成的原创氛围图——
+          非官方授权出版物，仅作介绍与氛围示意；如相关权利人提出异议，本站将立即撤下。
+        </p>
+        <p>游戏名称、角色与相关设定版权归各自原权利方所有。</p>
+        <p>资料整理难免有疏漏或推测成分，<strong>发现错误或想补充内容欢迎反馈</strong>（项目仓库 GitHub：FSAB75/data-website-project）。</p>
+        <p class="site-footer__dim">由玩家自发整理维护 · 最后构建 {buildDate}</p>
       </div>
     </footer>
+
+    <!-- C2：回到顶部（原生锚点 #top，零 JS） -->
+    <a class="to-top" href="#top" aria-label="回到顶部">回到顶部 ↑</a>
+
+    <script>
+      // C3：词条悬停卡片原本一律向上弹出，词条靠近视口顶部时会被裁切。
+      // 这里在悬停 / 聚焦时量一下位置，靠得太近就改成向下弹出。
+      const FAR_ENOUGH = 210;
+      function placeCard(ev) {
+        const target = ev.target;
+        if (!target || !target.closest) return;
+        const term = target.closest('.term');
+        if (!term) return;
+        const card = term.querySelector('.term__card');
+        if (!card) return;
+        term.classList.toggle('term--below', term.getBoundingClientRect().top < FAR_ENOUGH);
+      }
+      document.addEventListener('mouseover', placeCard);
+      document.addEventListener('focusin', placeCard);
+    </script>
 
     <style is:global>
       :root {
@@ -55,7 +141,7 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
         --line: #2b2b35;
         --text: #d9d6d0;
         --muted: #8d8d98;
-        --dim: #5f5f6b;
+        --dim: #7f7f8c; /* C4：实测对比度约 5.1:1（原 #5f5f6b 仅 3.2:1，低于 4.5:1 无障碍线） */
         --blood: #b3251f;
         --blood-bright: #e0483c;
         --verified: #6fae7c;
@@ -81,7 +167,7 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
         --line: #3a3026;
         --text: #ded4c4;
         --muted: #a2947f;
-        --dim: #6d6353;
+        --dim: #8b8172; /* C4：对比度约 5.0:1（原 #6d6353 仅 3.3:1） */
         --blood: #8c2f2a;
         --blood-bright: #c9503f;
         --serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", "Songti SC", "SimSun", serif;
@@ -104,6 +190,11 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
       * { box-sizing: border-box; }
 
       html, body { margin: 0; padding: 0; }
+
+      /* 锚点跳转平滑滚动（区块导航 / 回到顶部 / 名牌深链）；尊重系统的「减少动态效果」设置 */
+      @media (prefers-reduced-motion: no-preference) {
+        html { scroll-behavior: smooth; }
+      }
 
       body {
         background: var(--bg);
@@ -157,10 +248,33 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
         align-items: center;
         gap: 10px;
         text-decoration: none;
-        letter-spacing: 0.06em;
       }
-      .brand__mark { color: var(--blood-bright); }
-      .brand__text { font-family: var(--serif); font-size: 18px; color: var(--text); }
+      .brand__mark {
+        display: inline-flex;
+        width: 24px;
+        height: 24px;
+        color: var(--blood-bright);
+        transition: color 0.15s;
+      }
+      .brand__mark svg { width: 100%; height: 100%; }
+      .brand__lockup { display: flex; flex-direction: column; }
+      .brand__text {
+        font-family: var(--serif);
+        font-size: 18px;
+        line-height: 1.2;
+        color: var(--text);
+        letter-spacing: 0.1em;
+      }
+      .brand__en {
+        font-size: 9px;
+        line-height: 1.2;
+        letter-spacing: 0.26em;
+        color: var(--dim);
+        transition: color 0.15s;
+        white-space: nowrap;
+      }
+      .brand:hover .brand__mark,
+      .brand:hover .brand__en { color: var(--blood-bright); }
       .nav { display: flex; gap: 22px; font-size: 14px; }
       .nav a {
         text-decoration: none;
@@ -212,7 +326,40 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
         color: var(--muted);
         background: var(--panel-2);
       }
+
+      /* ---------- 页面内插图（D1）：图片 + 说明 + 来源 ---------- */
+      .scene-list {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        margin: 22px 0 6px;
+      }
+      .scene {
+        margin: 0;
+        padding: 0;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        background: var(--panel-3);
+      }
+      .scene img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+      .scene__cap {
+        display: block;
+        padding: 10px 14px;
+        font-size: 12.5px;
+        line-height: 1.6;
+        color: var(--muted);
+        background: var(--panel);
+      }
+      .scene__src { display: block; margin-top: 2px; font-size: 11.5px; color: var(--dim); }
+      .scene__src a { color: var(--dim); }
       .tag--blood { color: var(--blood-bright); border-color: rgba(var(--accent-rgb), 0.45); background: rgba(var(--accent-deep-rgb), 0.12); }
+      .tag--read { color: var(--text); border-color: rgba(var(--accent-rgb), 0.55); background: rgba(var(--accent-deep-rgb), 0.18); }
       .tag--verified { color: var(--verified); border-color: rgba(111, 174, 124, 0.4); }
       .tag--inferred { color: var(--inferred); border-color: rgba(201, 162, 39, 0.4); }
 
@@ -294,6 +441,8 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
       .term:hover .term__card, .term:focus .term__card, .term:focus-within .term__card {
         display: block;
       }
+      /* C3：词条靠近视口顶部时改为向下弹出，避免卡片被裁切 */
+      .term--below .term__card { bottom: auto; top: calc(100% + 2px); }
       .term__card-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin-bottom: 4px; }
       .term__name { font-family: var(--serif); font-size: 16px; color: var(--text); }
       .term__en { font-size: 11px; color: var(--dim); letter-spacing: 0.04em; }
@@ -319,7 +468,34 @@ const { title, description = '以游戏系列为单位的剧情与世界观科�
         color: var(--dim);
       }
       .site-footer p { margin: 0 0 6px; }
-      .site-footer__dim { color: #43434d; }
+      .site-footer__scale { color: var(--muted); }
+      .site-footer__scale strong { color: var(--text); font-weight: 600; }
+      .site-footer__dim { color: var(--dim); } /* C4：原来写死 #43434d，对比度不足 */
+
+      /* C2：回到顶部（原生锚点，零 JS） */
+      .to-top {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        z-index: 40;
+        font-size: 12.5px;
+        text-decoration: none;
+        color: var(--muted);
+        background: rgba(var(--overlay-rgb), 0.9);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 7px 15px;
+        backdrop-filter: blur(6px);
+        transition: color 0.15s, border-color 0.15s;
+      }
+      .to-top:hover { color: var(--blood-bright); border-color: rgba(var(--accent-rgb), 0.5); }
+
+      /* C9：触屏设备上把顶栏导航与「回到顶部」的可点区域放大 */
+      @media (pointer: coarse) {
+        .nav { gap: 16px; }
+        .nav a { padding: 16px 4px; }
+        .to-top { padding: 12px 20px; font-size: 13.5px; }
+      }
 
       @media (max-width: 640px) {
         h1 { font-size: 24px; }

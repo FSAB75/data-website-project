@@ -117,6 +117,33 @@ export function coverPath(kind, id) {
   return fs.existsSync(abs) ? rel : null;
 }
 
+/**
+ * 取页面内插图路径（public/images/scenes/<name>.jpg）。
+ * 与 coverPath 同一套机制：文件不存在就返回 null，页面自动不渲染这张图。
+ */
+export function scenePath(name) {
+  return coverPath('scenes', name);
+}
+
+/** 页面内插图的默认来源说明（图由本站生成；若某张图另有来源，可在数据里用 source 字段覆盖） */
+export const DEFAULT_IMAGE_SOURCE = '本站生成的原创氛围图 · 非游戏截图、非官方美术素材';
+
+/**
+ * 作品封面图（作品卡片 / 分享卡用）：默认取该作品「第一张已审定的官方截图」，
+ * 即 scenes/<作品id>-shot-01.jpg —— 16:9 正好匹配卡片槽位，且都是审过敏感内容的官方素材。
+ * 若某部作品要单独指定封面，在 works.json 里加 "cover": "<scenes 文件名>" 即可。
+ */
+export function workCover(work) {
+  if (!work) return null;
+  return (work.cover && scenePath(work.cover)) || scenePath(`${work.id}-shot-01`) || coverPath('works', work.id);
+}
+
+/** 系列封面图（首页系列卡片 + 系列页横幅）：由 series.json 的 "cover" 字段指定 */
+export function seriesCover(item) {
+  if (!item) return null;
+  return (item.cover && scenePath(item.cover)) || coverPath('series', item.id);
+}
+
 export const typeLabels = {
   character: '人物',
   organization: '组织',
@@ -135,6 +162,17 @@ export function docTypeLabel(type) {
   if (type === 'Note') return '录像';
   if (type === 'Document' || type === 'Evidence') return '文档';
   return type;
+}
+
+/**
+ * 把长文本压成一行并截断，用作页面 <meta name="description"> 与分享卡描述。
+ * 压平换行与连续空白，超长时截断并补省略号（并清掉截断处残留的标点）。
+ */
+export function clip(text, max = 110) {
+  if (!text) return '';
+  const flat = String(text).replace(/\s+/g, ' ').trim();
+  if (flat.length <= max) return flat;
+  return flat.slice(0, max).replace(/[，、；：,;:\s]+$/, '') + '…';
 }
 
 export const confidenceLabels = {

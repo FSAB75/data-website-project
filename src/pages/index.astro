@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { seriesList, worksOfSeries, coverPath } from '../lib/data.js';
+import { seriesList, works, entities, worksOfSeries, seriesCover } from '../lib/data.js';
 
 const cards = seriesList.map((pack) => {
   const item = pack.series;
@@ -9,19 +9,57 @@ const cards = seriesList.map((pack) => {
     pack,
     item,
     works: list,
-    cover: coverPath('series', item.id),
+    cover: seriesCover(item),
     fullCount: list.filter((w) => w.full).length,
   };
 });
+
+// 首页规模数字：全部由数据自动算出，新增内容后自动变
+const nametagCount = seriesList.reduce((n, s) => n + ((s.nametags?.nametags || []).length), 0);
+const chapterCount = works.reduce((n, w) => n + ((w.chapters || []).length), 0);
+const docCount = works.reduce((n, w) => n + ((w.documents || []).length), 0);
+
+const stats = [
+  { n: works.length, unit: '部', label: '作品' },
+  { n: entities.length, unit: '个', label: '词条' },
+  { n: chapterCount, unit: '章', label: '主线剧情' },
+  { n: docCount, unit: '条', label: '收集档案' },
+  nametagCount ? { n: nametagCount, unit: '条', label: '名牌' } : null,
+].filter(Boolean);
+
+const description = `游戏档案室：以「游戏系列」为单位的剧情与世界观资料汇编。${seriesList.length} 个系列、${works.length} 部作品、${entities.length} 个词条，逐部整理主线与支线剧情、人物图鉴、游戏内收集档案，并汇聚成世界观时间线。正文中的专有名词悬停即出词条卡片。`;
+const shareImage = cards.find((c) => c.cover)?.cover || null;
 ---
 
-<BaseLayout title="游戏科普百科 · 首页">
+<BaseLayout title="游戏档案室 · 首页" description={description} image={shareImage}>
   <p class="eyebrow">Game Lore Wiki</p>
   <h1>以「游戏系列」为单位，读懂剧情与世界观</h1>
   <p class="lead">
     每个系列逐部作品展开：主线与支线剧情、人物图鉴、游戏内可收集档案，最后在系列层汇聚成一条完整的世界观时间线。
     正文里的人名与专有名词均可交互——悬停即出词条卡片，点击跳转详情。
   </p>
+
+  <form class="home-search" role="search" method="get" action="/search/">
+    <input
+      class="home-search__input"
+      type="search"
+      name="q"
+      placeholder="搜作品 / 人物 / 术语 / 名牌姓名…"
+      aria-label="搜索关键词"
+      autocomplete="off"
+    />
+    <button class="home-search__btn" type="submit">搜索</button>
+  </form>
+
+  <ul class="stats">
+    {stats.map((s: any) => (
+      <li class="stats__item">
+        <span class="stats__n">{s.n}</span>
+        <span class="stats__unit">{s.unit}</span>
+        <span class="stats__l">{s.label}</span>
+      </li>
+    ))}
+  </ul>
 
   <h2>系列库</h2>
   <div class="grid grid--2">
@@ -65,6 +103,63 @@ const cards = seriesList.map((pack) => {
 
 <style>
   .dim { color: var(--dim); font-size: 13.5px; }
+
+  /* 首页搜索入口：GET 直接跳搜索页，无需 JS */
+  .home-search {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 16px;
+    max-width: 560px;
+  }
+  .home-search__input {
+    flex: 1 1 260px;
+    min-width: 0;
+    font: inherit;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+  }
+  .home-search__input::placeholder { color: var(--dim); }
+  .home-search__input:focus {
+    outline: none;
+    border-color: rgba(var(--accent-rgb), 0.6);
+    background: var(--panel-2);
+  }
+  .home-search__btn {
+    flex: 0 0 auto;
+    font: inherit;
+    font-size: 14px;
+    color: var(--blood-bright);
+    background: var(--panel);
+    border: 1px solid rgba(var(--accent-rgb), 0.45);
+    border-radius: var(--radius);
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .home-search__btn:hover { border-color: var(--blood-bright); background: rgba(var(--accent-deep-rgb), 0.18); }
+
+  /* 规模数字：格间用 1px 缝隙露出底色当分隔线，边框不叠加 */
+  .stats {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+    gap: 1px;
+    margin: 0 0 8px;
+    padding: 0;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .stats__item { background: var(--panel); padding: 12px 14px; text-align: center; }
+  .stats__n { font-family: var(--serif); font-size: 22px; color: var(--text); }
+  .stats__unit { font-size: 12px; color: var(--muted); margin-left: 2px; }
+  .stats__l { display: block; font-size: 12px; color: var(--dim); margin-top: 2px; letter-spacing: 0.04em; }
 
   .series-card { padding-top: 0; overflow: hidden; }
   .series-card__cover {

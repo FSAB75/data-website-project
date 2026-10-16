@@ -17,6 +17,9 @@ out/
 # 本地私有配置（NAS 部署凭证等，绝不提交）
 scripts/.nas-credentials.json
 
+# 配图候选（网上收集的待选素材，选定后再拷进 public/images；不进仓库，避免版权素材混进公开仓库）
+配图候选/
+
 # 日志
 *.log
 npm-debug.log*

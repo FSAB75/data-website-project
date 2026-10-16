@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { entities, works, getEntity, getWork, typeLabels, docTypeLabel, seriesOfEntity, entitiesOfSeries } from '../../lib/data.js';
+import { entities, works, getEntity, getWork, typeLabels, docTypeLabel, seriesOfEntity, entitiesOfSeries, workCover, scenePath, clip, DEFAULT_IMAGE_SOURCE } from '../../lib/data.js';
 import { buildEntityIndex, linkify } from '../../lib/linkify.js';
 
 export function getStaticPaths() {
@@ -29,16 +29,59 @@ const relatedDocs = (entity.relatedDocs || []).map((docId: string) => {
 }).filter(Boolean);
 const appearedWorks = (entity.works || []).map(getWork).filter(Boolean);
 
-const backWork = relations.length === 0 && relatedDocs.length === 0 ? null : null;
+// C6：没有 relations、也没有 relatedDocs 的词条（组织 / 地点 / 物品类居多）读完就无路可走。
+// 这里做自动兜底：优先同类型 + 有共同登场作品的同系列词条，凑不满也不硬凑。
+const isOrphan = relations.length === 0 && relatedDocs.length === 0;
+const suggestions = isOrphan
+  ? entitiesOfSeries(pack.id)
+      .filter((e: any) => e.id !== entity.id)
+      .map((e: any) => {
+        const sameType = e.type === entity.type ? 2 : 0;
+        const sharedWork = (e.works || []).some((w: string) => (entity.works || []).includes(w)) ? 1 : 0;
+        return { e, score: sameType + sharedWork };
+      })
+      .filter((s: any) => s.score > 0)
+      .sort((a: any, b: any) => b.score - a.score || String(a.e.nameZh).localeCompare(String(b.e.nameZh), 'zh'))
+      .slice(0, 9)
+      .map((s: any) => s.e)
+  : [];
+
+const description = clip(`${entity.nameZh}（${typeLabels[entity.type] || '词条'}）：${entity.summary}`, 115);
+const shareImage = appearedWorks.length > 0 ? workCover(appearedWorks[0]) : null;
+
+// D1：词条页顶部插图（数据里写文件名，图片不存在就自动不渲染）
+const scenes = (entity.images || [])
+  .map((img: any) => ({ ...img, src: scenePath(img.file) }))
+  .filter((img: any) => img.src);
 ---
 
-<BaseLayout title={`${entity.nameZh} · 词条`} theme={theme}>
+<BaseLayout title={`${entity.nameZh} · 词条`} theme={theme} description={description} image={shareImage} type="article">
   <p class="eyebrow">{typeLabels[entity.type] || '词条'} · ENTITY</p>
   <h1>{entity.nameZh} <span class="title-en">{entity.nameEn}</span></h1>
   <p class="lead">{entity.summary}</p>
   <div class="meta-row">
     {appearedWorks.map((w: any) => <a class="tag tag--link" href={`/work/${w.id}/`}>登场：{w.title}</a>)}
   </div>
+
+  {
+    scenes.length > 0 && (
+      <div class="scene-list">
+        {scenes.map((img: any) => (
+          <figure class="scene">
+            <img src={img.src} alt={img.caption || `${entity.nameZh} 氛围插画`} loading="lazy" />
+            <figcaption class="scene__cap">
+              {img.caption}
+              <span class="scene__src">
+                来源：{img.sourceUrl
+                  ? <a href={img.sourceUrl} target="_blank" rel="noopener noreferrer">{img.source || DEFAULT_IMAGE_SOURCE}</a>
+                  : (img.source || DEFAULT_IMAGE_SOURCE)}
+              </span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    )
+  }
 
   <h2>档案</h2>
   <table class="facts">
@@ -106,6 +149,30 @@ const backWork = relations.length === 0 && relatedDocs.length === 0 ? null : nul
       </section>
     )
   }
+  {
+    isOrphan && suggestions.length > 0 && (
+      <section>
+        <h2>继续浏览</h2>
+        <p class="lead">
+          本词条暂无额外关联，下面列出同系列中「类型相同」或「有共同登场作品」的词条，供继续浏览。
+        </p>
+        <div class="meta-row">
+          <a class="tag tag--link" href={`/series/${pack.id}/`}>回到 {pack.series.nameZh} 系列页</a>
+        </div>
+        <div class="grid grid--3 suggest-list">
+          {suggestions.map((e: any) => (
+            <a class="card" href={`/entity/${e.id}/`}>
+              <div class="card__index">{typeLabels[e.type] || '词条'}</div>
+              <h3 class="card__title">{e.nameZh}</h3>
+              {e.nameEn && <div class="card__en">{e.nameEn}</div>}
+              <p class="card__desc">{e.summary}</p>
+              <div class="card__foot">查看词条 →</div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
 </BaseLayout>
 
 <style>
@@ -119,6 +186,9 @@ const backWork = relations.length === 0 && relatedDocs.length === 0 ? null : nul
   }
   .tag--link { text-decoration: none; transition: color 0.15s, border-color 0.15s; }
   .tag--link:hover { color: var(--blood-bright); border-color: rgba(var(--accent-rgb), 0.45); }
+
+  /* C6：孤岛词条的兜底推荐 */
+  .suggest-list { margin-top: 16px; }
 
   .facts {
     width: 100%;
@@ -136,7 +206,7 @@ const backWork = relations.length === 0 && relatedDocs.length === 0 ? null : nul
     font-weight: 400;
     border-bottom: 1px solid var(--line);
     border-right: 1px solid var(--line);
-    background: rgba(25, 25, 32, 0.7);
+    background: var(--panel-2); /* 随主题走（原为写死的冷灰，在尸体派对暖色主题上是块突兀的灰） */
     white-space: nowrap;
   }
   .facts td {

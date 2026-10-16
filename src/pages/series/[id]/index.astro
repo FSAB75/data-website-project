@@ -9,6 +9,8 @@ import {
   timelineOfSeries,
   extraOfSeries,
   coverPath,
+  seriesCover,
+  clip,
 } from '../../../lib/data.js';
 import { buildEntityIndex } from '../../../lib/linkify.js';
 
@@ -24,15 +26,23 @@ const seriesWorks = worksOfSeries(pack.id);
 const timeline = timelineOfSeries(pack.id);
 const nametags = extraOfSeries(pack.id, 'nametags');
 
-const hero = coverPath('series', item.id);
+const hero = seriesCover(item);
+
+// B3：卡片改按「推荐阅读顺序」（readingOrder）排列；"order" 仍是系列内编年序，只在时间线里体现
+const orderedWorks = [...seriesWorks].sort(
+  (a: any, b: any) => (a.readingOrder ?? 99) - (b.readingOrder ?? 99) || (a.order ?? 99) - (b.order ?? 99),
+);
+const hasReadingOrder = seriesWorks.some((w: any) => w.readingOrder);
 
 // 系列专属子页（有对应扩展数据才显示入口）
 const subPages = [
   nametags && { href: `/series/${item.id}/deaths/`, label: '死法收集图鉴', desc: `收录 ${nametags.nametags.length} 条名牌，可按作品 / 章节 / 学校 / 死法筛选` },
 ].filter(Boolean);
+
+const description = clip(`${item.nameZh}（${item.nameEn}）系列百科：${item.intro}`, 115);
 ---
 
-<BaseLayout title={`${item.nameZh} · 系列`} theme={item.theme}>
+<BaseLayout title={`${item.nameZh} · 系列`} theme={item.theme} description={description} image={hero}>
   <p class="eyebrow">系列 SERIES</p>
   <h1>{item.nameZh} <span class="title-en">{item.nameEn}</span></h1>
   <p class="lead">{item.intro}</p>
@@ -41,6 +51,7 @@ const subPages = [
     <span class="tag">首作 {item.firstRelease}</span>
     <span class="tag">{seriesWorks.filter((w) => w.full).length} / {seriesWorks.length} 部作品已录入</span>
     <span class="tag">{pack.entities.length} 个词条</span>
+    {item.updatedAt && <span class="tag">资料整理 {item.updatedAt}</span>}
   </div>
 
   {hero && (
@@ -68,9 +79,37 @@ const subPages = [
     )
   }
 
+  {
+    hasReadingOrder && (
+      <section>
+        <h2>推荐阅读顺序</h2>
+        <p class="lead">
+          按<strong>发售 / 游玩顺序</strong>排列 —— 第一次接触这个系列的人，照这个顺序读即可。
+          <span class="dim">（故事内的编年顺序与这里不同，见下方世界观时间线。）</span>
+        </p>
+        <ol class="ro-list">
+          {orderedWorks.map((w: any) => (
+            <li class="ro-item">
+              {w.keyArt && coverPath('keyart', w.keyArt as string) && (
+                <img class="ro-item__art" src={coverPath('keyart', w.keyArt as string)} alt={`${w.title} 官方主视觉`} loading="lazy" />
+              )}
+              <span class="ro-item__no">{w.readingOrder}</span>
+              <span class="ro-item__body">
+                <a class="ro-item__title" href={`/work/${w.id}/`}>{w.title}</a>
+                <span class="ro-item__meta">{w.year} · {w.type}</span>
+                {w.readingNote && <span class="ro-item__note">{w.readingNote}</span>}
+              </span>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
+
   <h2>作品</h2>
+  <p class="lead">按推荐阅读顺序排列；每张卡片标出「建议第 N 个看」。</p>
   <div class="grid grid--2">
-    {seriesWorks.map((w) => <WorkCard work={w} />)}
+    {orderedWorks.map((w: any) => <WorkCard work={w} />)}
   </div>
 
   {
@@ -97,6 +136,48 @@ const subPages = [
     margin-left: 6px;
   }
   .dim { color: var(--dim); font-size: 13px; }
+
+  /* B3：推荐阅读顺序 */
+  .ro-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .ro-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid rgba(var(--accent-rgb), 0.5);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+  }
+  .ro-item__no {
+    flex: 0 0 auto;
+    min-width: 22px;
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.35;
+    color: var(--blood-bright);
+  }
+  .ro-item__art {
+    flex: 0 0 auto;
+    width: 118px;
+    height: 56px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: var(--panel-3);
+  }
+  .ro-item__body { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+  .ro-item__title {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .ro-item__title:hover { color: var(--blood-bright); border-bottom-color: var(--blood); }
+  .ro-item__meta { font-size: 12.5px; color: var(--dim); }
+  .ro-item__note { flex: 1 1 100%; font-size: 13px; color: var(--muted); margin-top: 2px; }
 
   .series-hero {
     position: relative;

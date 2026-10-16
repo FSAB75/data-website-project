@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="游戏档案室">
+  <rect width="32" height="32" rx="6" fill="#08080b"/>
+  <path d="M7 13.4h6.4l1.9 2h9.7c1.1 0 2 .9 2 2v6.2c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2v-8.2c0-1.1.9-2 2-2z" fill="#e0483c"/>
+  <path d="M9.6 8.4h4.2l1.5 1.6h6.9c1 0 1.8.8 1.8 1.8v1.6H7.5V10.2c0-1 .9-1.8 2.1-1.8z" fill="#8c1f19"/>
+</svg>

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { seriesList, extraOfSeries } from '../../../lib/data.js';
+import { seriesList, extraOfSeries, coverPath } from '../../../lib/data.js';
 
 // 只给「有 nametags 数据」的系列生成该子页（目前是尸体派对）
 export function getStaticPaths() {
@@ -23,9 +23,12 @@ const schoolOptions = uniq(list.map((n) => n.school));
 const typeOptions = deathTypes.filter((t) => list.some((n) => n.deathType === t.key));
 
 const byType = Object.fromEntries(deathTypes.map((t) => [t.key, list.filter((n) => n.deathType === t.key).length]));
+
+const description = `${item.nameZh}系列死法收集图鉴：汇总全系列 ${list.length} 条名牌，可按作品、章节、就读学校与死法类型筛选，并附死法分布速览。`;
+const shareImage = coverPath('series', item.id);
 ---
 
-<BaseLayout title="死法收集图鉴 · 尸体派对" theme={item.theme}>
+<BaseLayout title="死法收集图鉴 · 尸体派对" theme={item.theme} description={description} image={shareImage}>
   <p class="eyebrow">SPECIAL · 死法收集图鉴</p>
   <h1>死法收集图鉴 <span class="title-en">Name Tags</span></h1>
   <p class="lead">
@@ -85,11 +88,15 @@ const byType = Object.fromEntries(deathTypes.map((t) => [t.key, list.filter((n) 
     <span class="nt-count" data-count>显示 {list.length} / {list.length} 条</span>
   </section>
 
+  <div class="nt-applied" data-applied hidden></div>
+  <p class="nt-notice" data-notice hidden></p>
+
   <div class="nt-grid" data-grid>
     {
       list.map((n) => (
         <article
           class={`nt-card nt-card--${n.deathType}`}
+          id={`nt-${n.id}`}
           data-work={n.workTitle}
           data-chapter={n.chapter}
           data-school={n.school}
@@ -130,6 +137,10 @@ const byType = Object.fromEntries(deathTypes.map((t) => [t.key, list.filter((n) 
         </article>
       ))
     }
+  </div>
+
+  <div class="nt-more-wrap">
+    <button type="button" class="nt-more" data-more hidden>显示更多</button>
   </div>
 
   <p class="nt-empty" data-empty hidden>没有符合条件的名牌，试试放宽筛选条件。</p>
@@ -225,6 +236,42 @@ const byType = Object.fromEntries(deathTypes.map((t) => [t.key, list.filter((n) 
   .nt-reset:hover { color: var(--blood-bright); border-color: rgba(var(--accent-rgb), 0.5); }
   .nt-count { margin-left: auto; padding-bottom: 6px; }
 
+  /* 已应用的筛选条件：做成可视化胶囊，可单个点掉 —— 分享链接时一眼能看出带了哪些条件 */
+  .nt-applied {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 16px;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .nt-chip {
+    font: inherit;
+    font-size: 12.5px;
+    color: var(--blood-bright);
+    background: rgba(var(--accent-deep-rgb), 0.12);
+    border: 1px solid rgba(var(--accent-rgb), 0.4);
+    border-radius: 999px;
+    padding: 3px 12px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .nt-chip:hover { border-color: var(--blood-bright); background: rgba(var(--accent-deep-rgb), 0.22); }
+  .nt-chip__x { font-size: 10px; opacity: 0.8; }
+  .nt-chip--all { color: var(--muted); background: var(--panel-2); border-color: var(--line); }
+  .nt-chip--all:hover { color: var(--text); border-color: var(--line); background: var(--panel-3); }
+  .nt-notice {
+    margin: 0 0 16px;
+    font-size: 13px;
+    color: var(--inferred);
+    background: rgba(201, 162, 39, 0.08);
+    border: 1px solid rgba(201, 162, 39, 0.35);
+    border-left: 3px solid var(--inferred);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+  }
+
   /* ---------- 名牌卡片墙 ---------- */
   .nt-grid {
     display: grid;
@@ -239,9 +286,12 @@ const byType = Object.fromEntries(deathTypes.map((t) => [t.key, list.filter((n) 
     border-radius: var(--radius);
     padding: 14px 18px 12px;
     transition: border-color 0.15s, background 0.15s;
+    /* 搜索结果会深链到具体名牌（#nt-NT001），留出吸顶页头的高度 */
+    scroll-margin-top: 84px;
   }
   .nt-card:hover { background: var(--panel-2); }
   .nt-card[hidden] { display: none; }
+  .nt-card:target { border-color: rgba(var(--accent-rgb), 0.7); background: var(--panel-2); }
 
   .nt-card--blunt { --nt-color: #8a6f4a; }
   .nt-card--sharp { --nt-color: #a8453c; }
@@ -303,6 +353,28 @@ const byType = Object.fromEntries(deathTypes.map((t) => [t.key, list.filter((n) 
   .nt-notes ul { margin: 0; padding-left: 20px; }
   .nt-notes li { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
 
+  /* 分批显示：先出前 24 张，需要再点「显示更多」 */
+  .nt-more-wrap { display: flex; justify-content: center; margin: 18px 0 4px; }
+  .nt-more {
+    font: inherit;
+    font-size: 13.5px;
+    color: var(--blood-bright);
+    background: var(--panel);
+    border: 1px solid rgba(var(--accent-rgb), 0.45);
+    border-radius: 999px;
+    padding: 8px 24px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .nt-more:hover { border-color: var(--blood-bright); background: rgba(var(--accent-deep-rgb), 0.2); }
+
+  /* C9：触屏设备上放大筛选控件与可点胶囊（顶部死法分布胶囊本身就是筛选快捷键） */
+  @media (pointer: coarse) {
+    .nt-sum { min-height: 44px; padding: 10px 16px; }
+    .nt-chip, .nt-more, .nt-reset { min-height: 38px; }
+    .nt-filter select, .nt-filter input { min-height: 44px; font-size: 15px; }
+  }
+
   @media (max-width: 640px) {
     .nt-filter select, .nt-filter input, .nt-filter--q input { min-width: 100%; }
     .nt-filter { width: 100%; }
@@ -311,48 +383,182 @@ const byType = Object.fromEntries(deathTypes.map((t) => [t.key, list.filter((n) 
 </style>
 
 <script>
-  // 静态站上的纯前端筛选：不匹配的卡片直接 hidden，无需请求后台
+  // 静态站上的纯前端筛选：不匹配的卡片直接 hidden，无需请求后台。
+  // C5：① 筛选条件同步到 URL（?work=&chapter=&school=&death=&q=），可分享、刷新不丢；
+  //     ② 命中结果先出前 24 张，其余由「显示更多」按批放出来，避免一屏铺 116 张。
+  const BATCH = 24;
+
   const selects = [...document.querySelectorAll('select[data-filter]')];
   const search = document.querySelector('input[data-filter="q"]');
   const cards = [...document.querySelectorAll('.nt-card')];
   const countEl = document.querySelector('[data-count]');
   const emptyEl = document.querySelector('[data-empty]');
+  const moreBtn = document.querySelector('[data-more]');
+  const appliedEl = document.querySelector('[data-applied]');
+  const noticeEl = document.querySelector('[data-notice]');
+
+  let limit = BATCH;
+
+  const KEYS = ['work', 'chapter', 'school', 'death'];
+  const LABELS = { work: '作品', chapter: '章节', school: '就读学校', death: '死法类型', q: '搜索' };
+
+  const escapeHtml = (s) =>
+    String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  /** 比对前先做兼容归一化：消除全/半角、兼容字符与首尾空白的差异，避免「看着一样却匹配不上」 */
+  const norm = (s) => String(s == null ? '' : s).normalize('NFKC').trim();
+
+  const findSelect = (key) => selects.find((s) => s.dataset.filter === key);
 
   const pick = (key) => {
-    const el = selects.find((s) => s.dataset.filter === key);
+    const el = findSelect(key);
     return el ? el.value : '';
   };
 
-  function apply() {
-    const work = pick('work');
-    const chapter = pick('chapter');
-    const school = pick('school');
-    const death = pick('death');
-    const q = search ? search.value.trim().toLowerCase() : '';
-    let shown = 0;
-    for (const card of cards) {
-      const ok =
-        (!work || card.dataset.work === work) &&
-        (!chapter || card.dataset.chapter === chapter) &&
-        (!school || card.dataset.school === school) &&
-        (!death || card.dataset.death === death) &&
-        (!q || card.dataset.name.includes(q));
-      card.hidden = !ok;
-      if (ok) shown++;
+  /** 设置下拉值：按归一化后的值去找真实选项，找不到就置空并返回 false（让调用方知道这个条件被忽略了） */
+  const setPick = (key, value) => {
+    const el = findSelect(key);
+    if (!el) return false;
+    const want = norm(value);
+    if (!want) {
+      el.value = '';
+      return true;
     }
-    if (countEl) countEl.textContent = `显示 ${shown} / ${cards.length} 条`;
-    if (emptyEl) emptyEl.hidden = shown !== 0;
+    const hit = [...el.options].find((o) => norm(o.value) === want);
+    el.value = hit ? hit.value : '';
+    return !!hit;
+  };
+
+  /** 从 URL 回填筛选条件（支持直接打开别人分享的筛选链接） */
+  function readUrl() {
+    const p = new URLSearchParams(location.search);
+    const ignored = [];
+    for (const key of KEYS) {
+      const v = p.get(key);
+      if (v && !setPick(key, v)) ignored.push(`${LABELS[key]}「${v}」`);
+    }
+    if (search) search.value = p.get('q') || '';
+    if (noticeEl) {
+      noticeEl.hidden = ignored.length === 0;
+      if (ignored.length) {
+        noticeEl.textContent = `链接中的筛选条件 ${ignored.join('、')} 在本页找不到对应项，已忽略；其余条件照常生效。`;
+      }
+    }
   }
 
-  for (const el of selects) el.addEventListener('change', apply);
-  if (search) search.addEventListener('input', apply);
+  /** 把当前筛选写回 URL（replaceState，不污染浏览历史） */
+  function writeUrl() {
+    const p = new URLSearchParams();
+    for (const key of KEYS) {
+      const v = pick(key);
+      if (v) p.set(key, v);
+    }
+    const q = search ? search.value.trim() : '';
+    if (q) p.set('q', q);
+    const qs = p.toString();
+    history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+  }
+
+  /** 只判断是否命中，不处理显示 */
+  function matches(card) {
+    const work = norm(pick('work'));
+    const chapter = norm(pick('chapter'));
+    const school = norm(pick('school'));
+    const death = norm(pick('death'));
+    const q = search ? search.value.trim().toLowerCase() : '';
+    return (
+      (!work || norm(card.dataset.work) === work) &&
+      (!chapter || norm(card.dataset.chapter) === chapter) &&
+      (!school || norm(card.dataset.school) === school) &&
+      (!death || norm(card.dataset.death) === death) &&
+      (!q || card.dataset.name.includes(q))
+    );
+  }
+
+  /** 把「当前生效的筛选」渲染成一排可点掉的胶囊，并同步「显示更多」按钮 */
+  function renderApplied() {
+    if (!appliedEl) return;
+    const parts = KEYS.map((key) => {
+      const el = findSelect(key);
+      if (!el || !el.value) return null;
+      const opt = el.options[el.selectedIndex];
+      const text = opt && opt.textContent ? opt.textContent : el.value;
+      return `<button type="button" class="nt-chip" data-clear="${key}">${LABELS[key]}：${escapeHtml(text)} <span class="nt-chip__x">✕</span></button>`;
+    }).filter(Boolean);
+    const q = search ? search.value.trim() : '';
+    if (q) parts.push(`<button type="button" class="nt-chip" data-clear="q">${LABELS.q}：${escapeHtml(q)} <span class="nt-chip__x">✕</span></button>`);
+    if (!parts.length) {
+      appliedEl.hidden = true;
+      appliedEl.innerHTML = '';
+      return;
+    }
+    appliedEl.hidden = false;
+    appliedEl.innerHTML =
+      '<span>当前筛选：</span>' +
+      parts.join('') +
+      '<button type="button" class="nt-chip nt-chip--all" data-clear="__all">清空全部</button>';
+  }
+
+  function apply() {
+    const hits = cards.filter(matches);
+    const shown = hits.slice(0, limit);
+    for (const card of cards) card.hidden = true;
+    for (const card of shown) card.hidden = false;
+
+    if (countEl) {
+      countEl.textContent =
+        limit < hits.length
+          ? `显示 ${shown.length} / ${hits.length} 条（共收录 ${cards.length} 条）`
+          : `显示 ${hits.length} / ${cards.length} 条`;
+    }
+    if (moreBtn) {
+      const rest = hits.length - shown.length;
+      moreBtn.hidden = rest <= 0;
+      if (rest > 0) moreBtn.textContent = `显示更多（还有 ${rest} 条）`;
+    }
+    if (emptyEl) emptyEl.hidden = hits.length !== 0;
+    renderApplied();
+  }
+
+  /** 筛选条件变了：分批进度归零后重新应用 */
+  function applyFresh() {
+    limit = BATCH;
+    if (noticeEl) noticeEl.hidden = true; // URL 已被改写，之前那条「条件被忽略」的提示不再适用
+    apply();
+    writeUrl();
+  }
+
+  readUrl();
+
+  for (const el of selects) el.addEventListener('change', applyFresh);
+  if (search) search.addEventListener('input', applyFresh);
+
+  if (moreBtn) moreBtn.addEventListener('click', () => { limit += BATCH; apply(); });
+
+  // 点胶囊上的 ✕ 单独取消某个筛选条件
+  if (appliedEl) {
+    appliedEl.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('[data-clear]');
+      if (!btn) return;
+      const key = btn.dataset.clear;
+      if (key === '__all') {
+        for (const el of selects) el.value = '';
+        if (search) search.value = '';
+      } else if (key === 'q') {
+        if (search) search.value = '';
+      } else {
+        setPick(key, '');
+      }
+      applyFresh();
+    });
+  }
 
   const reset = document.querySelector('[data-reset]');
   if (reset) {
     reset.addEventListener('click', () => {
       for (const el of selects) el.value = '';
       if (search) search.value = '';
-      apply();
+      applyFresh();
     });
   }
 
@@ -362,7 +568,7 @@ const byType = Object.fromEntries(deathTypes.map((t) => [t.key, list.filter((n) 
     for (const chip of document.querySelectorAll('.nt-sum[data-death]')) {
       chip.addEventListener('click', () => {
         deathSelect.value = deathSelect.value === chip.dataset.death ? '' : chip.dataset.death;
-        apply();
+        applyFresh();
       });
     }
   }

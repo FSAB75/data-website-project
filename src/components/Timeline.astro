@@ -101,7 +101,10 @@ const groups = timeline.groups || [];
     color: var(--muted);
     border: 1px solid var(--line);
     border-radius: 999px;
-    padding: 3px 12px;
+    padding: 7px 15px;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
     background: var(--panel);
     transition: color 0.15s, border-color 0.15s;
   }
@@ -281,9 +284,11 @@ const groups = timeline.groups || [];
   .tl-card__chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
 
   .chip {
-    display: inline-block;
-    font-size: 11px;
-    padding: 1px 8px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 11.5px;
+    padding: 4px 11px;
+    min-height: 26px;
     border: 1px solid var(--line);
     border-radius: 999px;
     color: var(--muted);
@@ -303,5 +308,11 @@ const groups = timeline.groups || [];
     .tl-node--major { margin-top: 19px; }
 
     .tl-dual { grid-template-columns: 1fr; gap: 30px; }
+  }
+
+  /* C9：触屏设备上放大可点区域（时代导航胶囊与事件卡片上的词条胶囊） */
+  @media (pointer: coarse) {
+    .tl-index a { min-height: 46px; padding: 13px 20px; }
+    .chip { min-height: 34px; padding: 7px 14px; font-size: 12px; }
   }
 </style>

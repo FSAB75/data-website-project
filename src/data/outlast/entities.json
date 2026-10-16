@@ -314,6 +314,9 @@
       "id": "mount-massive",
       "type": "place",
       "nameZh": "巨山精神病院",
+      "images": [
+        { "file": "outlast1-shot-01", "caption": "《逃生1》中巨山精神病院的官方游戏画面", "source": "Steam 官方商店页 · Outlast（© Red Barrels）", "sourceUrl": "https://store.steampowered.com/app/238320/" }
+      ],
       "nameEn": "Mount Massive Asylum",
       "aliases": ["巨山病院", "巨山"],
       "works": ["outlast1", "whistleblower"],

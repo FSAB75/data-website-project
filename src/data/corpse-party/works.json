@@ -4,6 +4,12 @@
     {
       "id": "blood-covered",
       "order": 1,
+      "readingOrder": 1,
+      "keyArt": "blood-covered",
+      "images": [
+        { "file": "blood-covered-shot-01", "caption": "《尸体派对：血色笼罩》官方游戏画面 1", "source": "Steam 官方商店页 · Corpse Party (2021)（© MAGES. / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/1273260/" },
+        { "file": "blood-covered-shot-02", "caption": "《尸体派对：血色笼罩》官方游戏画面 2", "source": "Steam 官方商店页 · Corpse Party (2021)（© MAGES. / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/1273260/" }
+      ],
       "title": "尸体派对：血色笼罩",
       "titleEn": "Corpse Party: Blood Covered",
       "type": "正传 第一部",
@@ -344,6 +350,11 @@
     {
       "id": "book-of-shadows",
       "order": 2,
+      "readingOrder": 2,
+      "images": [
+        { "file": "book-of-shadows-shot-01", "caption": "《尸体派对：影之书》官方游戏画面 1", "source": "Steam 官方商店页 · Corpse Party: Book of Shadows（© MAGES. / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/778390/" },
+        { "file": "book-of-shadows-shot-02", "caption": "《尸体派对：影之书》官方游戏画面 2", "source": "Steam 官方商店页 · Corpse Party: Book of Shadows（© MAGES. / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/778390/" }
+      ],
       "title": "尸体派对：影之书",
       "titleEn": "Corpse Party: Book of Shadows",
       "type": "正传 第二部",
@@ -706,6 +717,12 @@
     {
       "id": "blood-drive",
       "order": 3,
+      "readingOrder": 3,
+      "keyArt": "blood-drive",
+      "images": [
+        { "file": "blood-drive-shot-01", "caption": "《尸体派对：驭血》官方游戏画面 1", "source": "Steam 官方商店页 · Corpse Party: Blood Drive（© MAGES. / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/824830/" },
+        { "file": "blood-drive-shot-02", "caption": "《尸体派对：驭血》官方游戏画面 2", "source": "Steam 官方商店页 · Corpse Party: Blood Drive（© MAGES. / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/824830/" }
+      ],
       "title": "尸体派对：驭血",
       "titleEn": "Corpse Party: Blood Drive",
       "type": "正传 第三部 · 天神小学篇完结",
@@ -1004,6 +1021,13 @@
     {
       "id": "dead-patient",
       "order": 4,
+      "readingOrder": 4,
+      "keyArt": "dead-patient",
+      "images": [
+        { "file": "dead-patient-shot-01", "caption": "《尸体派对2：死亡病患》官方游戏画面 1", "source": "Steam 官方商店页 · Corpse Party 2: Dead Patient（© GrisGris / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/940310/" },
+        { "file": "dead-patient-shot-02", "caption": "《尸体派对2：死亡病患》官方游戏画面 2", "source": "Steam 官方商店页 · Corpse Party 2: Dead Patient（© GrisGris / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/940310/" }
+      ],
+      "readingNote": "新篇章、新角色，与三部曲主线相对独立；在《驭血》之后读衔接更顺",
       "title": "尸体派对2：死亡病患",
       "titleEn": "Corpse Party 2: Dead Patient",
       "type": "新篇章",
@@ -1172,6 +1196,12 @@
     {
       "id": "darkness-distortion",
       "order": 5,
+      "readingOrder": 5,
+      "keyArt": "darkness-distortion",
+      "images": [
+        { "file": "darkness-distortion-shot-01", "caption": "《尸体派对II：黑暗扭曲》官方游戏画面 1", "source": "Steam 官方商店页 · Corpse Party II: Darkness Distortion（© MAGES. / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/3254990/" },
+        { "file": "darkness-distortion-shot-02", "caption": "《尸体派对II：黑暗扭曲》官方游戏画面 2", "source": "Steam 官方商店页 · Corpse Party II: Darkness Distortion（© MAGES. / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/3254990/" }
+      ],
       "title": "尸体派对II：黑暗扭曲",
       "titleEn": "Corpse Party II: Darkness Distortion",
       "type": "完全新作",
@@ -1408,6 +1438,13 @@
     {
       "id": "sweet-sachiko",
       "order": 6,
+      "readingOrder": 6,
+      "keyArt": "sweet-sachiko",
+      "images": [
+        { "file": "sweet-sachiko-shot-01", "caption": "《尸体派对：幸子小姐的派对》官方游戏画面 1", "source": "Steam 官方商店页 · Corpse Party: Sweet Sachiko's Hysteric Birthday Bash（© MAGES. / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/778400/" },
+        { "file": "sweet-sachiko-shot-02", "caption": "《尸体派对：幸子小姐的派对》官方游戏画面 2", "source": "Steam 官方商店页 · Corpse Party: Sweet Sachiko's Hysteric Birthday Bash（© MAGES. / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/778400/" }
+      ],
+      "readingNote": "与主线相对独立的外传，可随时穿插阅读，适合当调剂",
       "title": "尸体派对：幸子小姐的派对",
       "titleEn": "Sweet Sachiko's Hysteric Birthday Bash",
       "type": "外传",

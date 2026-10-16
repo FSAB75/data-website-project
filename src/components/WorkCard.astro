@@ -1,12 +1,12 @@
 ---
-import { coverPath } from '../lib/data.js';
+import { workCover } from '../lib/data.js';
 
 interface Props {
   work: any;
 }
 const { work } = Astro.props;
 
-const cover = coverPath('works', work.id);
+const cover = workCover(work);
 ---
 
 <a class="card work-card" href={`/work/${work.id}/`}>
@@ -21,6 +21,7 @@ const cover = coverPath('works', work.id);
   <div class="card__en">{work.titleEn}</div>
   <p class="card__desc">{work.synopsis}</p>
   <div class="meta-row">
+    {work.readingOrder && <span class="tag tag--read">建议第 {work.readingOrder} 个看</span>}
     {work.platforms.map((p: string) => <span class="tag">{p}</span>)}
     {!work.full && <span class="tag tag--blood">内容整理中</span>}
   </div>

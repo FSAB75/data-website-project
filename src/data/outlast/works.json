@@ -4,6 +4,13 @@
     {
       "id": "trials",
       "order": 1,
+      "readingOrder": 4,
+      "keyArt": "trials",
+      "images": [
+        { "file": "trials-shot-01", "caption": "《逃生：试炼》官方游戏画面 1", "source": "Steam 官方商店页 · The Outlast Trials（© Red Barrels）", "sourceUrl": "https://store.steampowered.com/app/1304930/" },
+        { "file": "trials-shot-02", "caption": "《逃生：试炼》官方游戏画面 2", "source": "Steam 官方商店页 · The Outlast Trials（© Red Barrels）", "sourceUrl": "https://store.steampowered.com/app/1304930/" }
+      ],
+      "readingNote": "时间线上更早的前传，但在《逃生1》之后才发售，且是持续更新的在线作品——建议放在最后看",
       "title": "逃生：试炼",
       "titleEn": "The Outlast Trials",
       "type": "前传",
@@ -159,6 +166,12 @@
     {
       "id": "outlast1",
       "order": 2,
+      "readingOrder": 1,
+      "keyArt": "outlast1",
+      "images": [
+        { "file": "outlast1-shot-01", "caption": "《逃生1》官方游戏画面 1", "source": "Steam 官方商店页 · Outlast（© Red Barrels）", "sourceUrl": "https://store.steampowered.com/app/238320/" },
+        { "file": "outlast1-shot-02", "caption": "《逃生1》官方游戏画面 2", "source": "Steam 官方商店页 · Outlast（© Red Barrels）", "sourceUrl": "https://store.steampowered.com/app/238320/" }
+      ],
       "title": "逃生1",
       "titleEn": "Outlast",
       "type": "正传",
@@ -317,6 +330,11 @@
     {
       "id": "whistleblower",
       "order": 3,
+      "readingOrder": 2,
+      "keyArt": "whistleblower",
+      "images": [
+        { "file": "whistleblower-shot-01", "caption": "《逃生：告密者》官方游戏画面", "source": "Steam 官方商店页 · Outlast: Whistleblower（© Red Barrels）", "sourceUrl": "https://store.steampowered.com/app/273300/" }
+      ],
       "title": "逃生：告密者",
       "titleEn": "Outlast: Whistleblower",
       "type": "DLC",
@@ -499,6 +517,12 @@
     {
       "id": "outlast2",
       "order": 4,
+      "readingOrder": 3,
+      "keyArt": "outlast2",
+      "images": [
+        { "file": "outlast2-shot-01", "caption": "《逃生2》官方游戏画面 1", "source": "Steam 官方商店页 · Outlast 2（© Red Barrels）", "sourceUrl": "https://store.steampowered.com/app/414700/" },
+        { "file": "outlast2-shot-02", "caption": "《逃生2》官方游戏画面 2", "source": "Steam 官方商店页 · Outlast 2（© Red Barrels）", "sourceUrl": "https://store.steampowered.com/app/414700/" }
+      ],
       "title": "逃生2",
       "titleEn": "Outlast II",
       "type": "正传续作",

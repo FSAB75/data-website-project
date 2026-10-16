@@ -1071,6 +1071,9 @@
       "id": "cp-heavenly-host",
       "type": "place",
       "nameZh": "天神小学",
+      "images": [
+        { "file": "blood-covered-shot-01", "caption": "《尸体派对：血色笼罩》中天神小学的官方游戏画面", "source": "Steam 官方商店页 · Corpse Party (2021)（© MAGES. / XSEED Games）", "sourceUrl": "https://store.steampowered.com/app/1273260/" }
+      ],
       "nameEn": "Heavenly Host Elementary School",
       "aliases": [
         "天神小学校"

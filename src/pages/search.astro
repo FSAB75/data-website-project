@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { seriesList, works, entities } from '../lib/data.js';
+
+const nametagCount = seriesList.reduce((n, s) => n + ((s.nametags?.nametags || []).length), 0);
+const scaleText = [
+  `${seriesList.length} 个系列`,
+  `${works.length} 部作品`,
+  `${entities.length} 个词条`,
+  nametagCount ? `${nametagCount} 条名牌` : null,
+].filter(Boolean).join(' · ');
+
+const description = `站内搜索：可搜《逃生》《尸体派对》等系列的作品名、人物与术语（含别名）、名牌姓名与编号，共 ${scaleText}。`;
+---
+
+<BaseLayout title="站内搜索" description={description}>
+  <p class="eyebrow">SEARCH · 站内搜索</p>
+  <h1>站内搜索</h1>
+  <p class="lead">
+    一次搜全站：作品名、人物与术语（<strong>别名也能搜到</strong>，如搜「沃克」可命中「克里斯·沃克」）、
+    以及尸体派对的<strong>名牌</strong>（姓名 / 编号 / 学校 / 章节）。中文直接输入即可，不需要分词。
+  </p>
+
+  <form class="s-form" role="search" method="get" action="/search/" data-search-form>
+    <input
+      class="s-input"
+      type="search"
+      name="q"
+      data-search-input
+      placeholder="试试「天神小学」「瓦尔里德」「NT001」…"
+      autocomplete="off"
+      aria-label="搜索关键词"
+    />
+    <button class="s-btn" type="submit">搜索</button>
+  </form>
+
+  <p class="s-status" data-search-status aria-live="polite">目前可搜索 {scaleText}。</p>
+
+  <noscript>
+    <p class="s-status">站内搜索需要启用 JavaScript；也可直接从<strong>系列页</strong>按作品与时间线浏览全部内容。</p>
+  </noscript>
+
+  <!-- 搜索结果由 /search-index.json（构建期生成）驱动，纯前端子串匹配 -->
+  <div class="s-results" data-search-results></div>
+</BaseLayout>
+
+<script>
+  const KIND_ORDER = ['series', 'work', 'entity', 'nametag'];
+  const KIND_TITLE = { series: '系列', work: '作品', entity: '词条', nametag: '名牌' };
+  const KIND_BONUS = { series: 8, work: 6, entity: 4, nametag: 2 };
+  const GROUP_LIMIT = 12;
+
+  const form = document.querySelector('[data-search-form]');
+  const input = document.querySelector('[data-search-input]');
+  const box = document.querySelector('[data-search-results]');
+  const statusEl = document.querySelector('[data-search-status]');
+  const idleStatus = statusEl ? statusEl.textContent : '';
+
+  const escapeHtml = (s) =>
+    String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+  let entriesPromise = null;
+  function loadEntries() {
+    if (!entriesPromise) {
+      entriesPromise = fetch('/search-index.json')
+        .then((r) => (r.ok ? r.json() : Promise.reject(new Error('index unavailable'))))
+        .then((data) => data.entries || [])
+        .catch(() => {
+          entriesPromise = null;
+          return null;
+        });
+    }
+    return entriesPromise;
+  }
+
+  function highlight(text, terms) {
+    let html = escapeHtml(text);
+    for (const t of terms) {
+      const re = new RegExp(escapeRegExp(escapeHtml(t)), 'gi');
+      html = html.replace(re, (m) => '<mark>' + m + '</mark>');
+    }
+    return html;
+  }
+
+  function scoreOf(entry, terms) {
+    for (const t of terms) if (!entry.key.includes(t)) return -1;
+    const title = entry.title.toLowerCase();
+    const en = (entry.en || '').toLowerCase();
+    let score = KIND_BONUS[entry.kind] || 0;
+    for (const t of terms) {
+      if (title === t) score += 100;
+      else if (title.startsWith(t)) score += 60;
+      else if (title.includes(t)) score += 38;
+      else if (en.includes(t)) score += 18;
+      else score += 6;
+    }
+    return score;
+  }
+
+  function render(q, entries) {
+    const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+    if (!terms.length) {
+      box.innerHTML = '';
+      statusEl.textContent = idleStatus;
+      return;
+    }
+
+    const hits = entries
+      .map((e) => ({ e, s: scoreOf(e, terms) }))
+      .filter((h) => h.s >= 0)
+      .sort((a, b) => b.s - a.s)
+      .map((h) => h.e);
+
+    if (!hits.length) {
+      statusEl.textContent = '没有匹配的结果';
+      box.innerHTML =
+        '<p class="s-empty">没有匹配「' +
+        escapeHtml(q) +
+        '」的条目。可以试试：人物本名或别名、作品名、名牌编号（如 NT001）、就读学校名。</p>';
+      return;
+    }
+
+    statusEl.textContent = '找到 ' + hits.length + ' 条结果';
+    box.innerHTML = KIND_ORDER.map((kind) => {
+      const items = hits.filter((e) => e.kind === kind);
+      if (!items.length) return '';
+      const shown = items.slice(0, GROUP_LIMIT);
+      const more = items.length - shown.length;
+      const list = shown
+        .map(
+          (e) =>
+            '<li><a class="s-item" href="' +
+            e.url +
+            '">' +
+            '<span class="s-item__row">' +
+            '<span class="s-item__title">' +
+            highlight(e.title, terms) +
+            '</span>' +
+            (e.en ? '<span class="s-item__en">' + escapeHtml(e.en) + '</span>' : '') +
+            '<span class="s-item__badge">' +
+            escapeHtml(e.badge) +
+            '</span>' +
+            '</span>' +
+            '<span class="s-item__meta">' +
+            escapeHtml(e.meta) +
+            '</span>' +
+            (e.desc ? '<span class="s-item__desc">' + escapeHtml(e.desc) + '</span>' : '') +
+            '</a></li>',
+        )
+        .join('');
+      return (
+        '<section class="s-group">' +
+        '<h2 class="s-group__title">' +
+        KIND_TITLE[kind] +
+        '<span class="s-group__n">' +
+        items.length +
+        '</span></h2>' +
+        '<ul class="s-list">' +
+        list +
+        '</ul>' +
+        (more ? '<p class="s-more">另有 ' + more + ' 条同类结果，输入更具体的关键词可缩小范围。</p>' : '') +
+        '</section>'
+      );
+    }).join('');
+  }
+
+  let running = null;
+  async function run(q) {
+    const token = (running = q);
+    const entries = await loadEntries();
+    if (token !== running) return; // 已有更新的输入，丢弃这次结果
+    if (!entries) {
+      statusEl.textContent = '搜索索引暂时不可用；本地请先执行 npm run build 生成索引。';
+      box.innerHTML = '';
+      return;
+    }
+    render(q, entries);
+    const next = q ? '/search/?q=' + encodeURIComponent(q) : '/search/';
+    history.replaceState(null, '', next);
+  }
+
+  if (form && input && box && statusEl) {
+    let timer;
+    input.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => run(input.value.trim()), 160);
+    });
+    form.addEventListener('submit', (ev) => {
+      ev.preventDefault();
+      run(input.value.trim());
+    });
+
+    const q0 = new URLSearchParams(location.search).get('q');
+    if (q0) {
+      input.value = q0;
+      run(q0.trim());
+    }
+  }
+</script>
+
+<style>
+  .s-form {
+    display: flex;
+    gap: 10px;
+    margin: 22px 0 10px;
+    flex-wrap: wrap;
+  }
+  .s-input {
+    flex: 1 1 320px;
+    min-width: 0;
+    font: inherit;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+  }
+  .s-input::placeholder { color: var(--dim); }
+  .s-input:focus {
+    outline: none;
+    border-color: rgba(var(--accent-rgb), 0.6);
+    background: var(--panel-2);
+  }
+  .s-btn {
+    flex: 0 0 auto;
+    font: inherit;
+    font-size: 14px;
+    color: var(--blood-bright);
+    background: var(--panel);
+    border: 1px solid rgba(var(--accent-rgb), 0.45);
+    border-radius: var(--radius);
+    padding: 10px 22px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .s-btn:hover { border-color: var(--blood-bright); background: rgba(var(--accent-deep-rgb), 0.18); }
+
+  .s-status { font-size: 13px; color: var(--dim); margin: 0 0 6px; }
+
+  .s-group { margin-top: 26px; }
+  .s-group__title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    padding-left: 0;
+    border-left: none;
+    color: var(--text);
+  }
+  .s-group__n {
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0 8px;
+  }
+  .s-more { font-size: 13px; color: var(--dim); margin: 8px 0 0; }
+
+  .s-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  .s-item {
+    display: block;
+    text-decoration: none;
+    height: 100%;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid rgba(var(--accent-rgb), 0.5);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .s-item:hover { border-color: rgba(var(--accent-rgb), 0.6); background: var(--panel-2); }
+  .s-item__row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+  .s-item__title { font-family: var(--serif); font-size: 16px; color: var(--text); }
+  .s-item__en { font-size: 11.5px; color: var(--dim); letter-spacing: 0.04em; }
+  .s-item__badge {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--blood-bright);
+    border: 1px solid rgba(var(--accent-rgb), 0.4);
+    border-radius: 999px;
+    padding: 0 8px;
+  }
+  .s-item__meta { display: block; font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+  .s-item__desc { display: block; font-size: 13px; color: var(--dim); margin-top: 6px; line-height: 1.7; }
+  .s-item mark { background: rgba(var(--accent-rgb), 0.28); color: var(--text); border-radius: 2px; }
+
+  .s-empty {
+    font-size: 14px;
+    color: var(--muted);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--blood);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin-top: 18px;
+  }
+</style>

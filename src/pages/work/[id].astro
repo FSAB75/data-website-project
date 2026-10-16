@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { works, getEntity, typeLabels, docTypeLabel, seriesOfWork, entitiesOfSeries } from '../../lib/data.js';
+import { works, getEntity, typeLabels, docTypeLabel, seriesOfWork, entitiesOfSeries, workCover, scenePath, clip, DEFAULT_IMAGE_SOURCE } from '../../lib/data.js';
 import { buildEntityIndex, linkify } from '../../lib/linkify.js';
 
 export function getStaticPaths() {
@@ -25,9 +25,17 @@ const sections = [
   documents.length && { id: 'documents', label: '收集资料' },
   (work.connections || []).length && { id: 'connections', label: '剧情连接' },
 ].filter(Boolean);
+
+const description = clip(`${work.title}（${work.titleEn}）${work.year} · ${work.synopsis}`, 115);
+const shareImage = workCover(work);
+
+// D1：页面内插图（数据里写文件名，图片不存在就自动不渲染）
+const scenes = (work.images || [])
+  .map((img: any) => ({ ...img, src: scenePath(img.file) }))
+  .filter((img: any) => img.src);
 ---
 
-<BaseLayout title={`${work.title} · 作品`} theme={theme}>
+<BaseLayout title={`${work.title} · 作品`} theme={theme} description={description} image={shareImage} type="article">
   <p class="eyebrow">{work.type} · {work.year}</p>
   <h1>{work.title} <span class="title-en">{work.titleEn}</span></h1>
   <p class="lead">{work.synopsis}</p>
@@ -36,6 +44,28 @@ const sections = [
     {work.genre && <span class="tag">{work.genre}</span>}
     {work.platforms.map((p: string) => <span class="tag">{p}</span>)}
   </div>
+
+  {pack.series.updatedAt && <p class="updated-note">本页资料整理于 {pack.series.updatedAt}</p>}
+
+  {
+    scenes.length > 0 && (
+      <div class="scene-list">
+        {scenes.map((img: any) => (
+          <figure class="scene">
+            <img src={img.src} alt={img.caption || `${work.title} 氛围插画`} loading="lazy" />
+            <figcaption class="scene__cap">
+              {img.caption}
+              <span class="scene__src">
+                来源：{img.sourceUrl
+                  ? <a href={img.sourceUrl} target="_blank" rel="noopener noreferrer">{img.source || DEFAULT_IMAGE_SOURCE}</a>
+                  : (img.source || DEFAULT_IMAGE_SOURCE)}
+              </span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    )
+  }
 
   {
     sections.length > 0 && (
@@ -55,6 +85,18 @@ const sections = [
   }
 
   {
+    (chapters.length > 0 || sideChapters.length > 0 || (work.connections || []).length > 0) && (
+      <div class="spoiler-bar">
+        <span class="spoiler-bar__text">
+          以下剧情正文<strong>默认收起以免剧透</strong>；点每段的「含剧透 · 点击展开」可单独展开一章，也可一键全展开。
+          只想了解「这游戏讲什么」，看上面的简介就够了。
+        </span>
+        <button type="button" class="spoiler-bar__btn" data-spoiler-toggle aria-expanded="false">展开全部剧透</button>
+      </div>
+    )
+  }
+
+  {
     chapters.length > 0 && (
       <section id="story">
         <h2>主线剧情</h2>
@@ -65,9 +107,12 @@ const sections = [
                 <h3 class="chapter__title">{c.title}</h3>
                 {c.region && <span class="tag">{c.region}</span>}
               </header>
-              <div class="prose">
-                {c.paragraphs.map((p: string) => <p set:html={linkify(p, index, new Set())} />)}
-              </div>
+              <details class="spoiler" data-spoiler>
+                <summary class="spoiler__summary">含剧透 · 点击展开</summary>
+                <div class="prose">
+                  {c.paragraphs.map((p: string) => <p set:html={linkify(p, index, new Set())} />)}
+                </div>
+              </details>
             </article>
           ))}
         </div>
@@ -85,9 +130,12 @@ const sections = [
               <header class="chapter__head">
                 <h3 class="chapter__title">{c.title}</h3>
               </header>
-              <div class="prose">
-                {c.paragraphs.map((p: string) => <p set:html={linkify(p, index, new Set())} />)}
-              </div>
+              <details class="spoiler" data-spoiler>
+                <summary class="spoiler__summary">含剧透 · 点击展开</summary>
+                <div class="prose">
+                  {c.paragraphs.map((p: string) => <p set:html={linkify(p, index, new Set())} />)}
+                </div>
+              </details>
             </article>
           ))}
         </div>
@@ -138,7 +186,7 @@ const sections = [
               </div>
               <p class="doc__summary">{d.summary}</p>
               {d.content && (
-                <details class="doc__more">
+                <details class="doc__more" data-doc={d.id}>
                   <summary>展开编者解说</summary>
                   <p class="doc__more-body" set:html={linkify(d.content, index, new Set())} />
                 </details>
@@ -155,17 +203,70 @@ const sections = [
     (work.connections || []).length > 0 && (
       <section id="connections">
         <h2>剧情连接</h2>
-        <div class="panel prose">
-          <ul class="conn-list">
-            {work.connections.map((c: string) => <li set:html={linkify(c, index, new Set())} />)}
-          </ul>
-        </div>
+        <details class="spoiler" data-spoiler>
+          <summary class="spoiler__summary">含剧透 · 点击展开</summary>
+          <div class="panel prose">
+            <ul class="conn-list">
+              {work.connections.map((c: string) => <li set:html={linkify(c, index, new Set())} />)}
+            </ul>
+          </div>
+        </details>
       </section>
     )
   }
 </BaseLayout>
 
+<script>
+  // C1 剧透遮挡：剧情正文默认收起，此处给「一键展开 / 收起全部」按钮接逻辑。
+  // details 自身的 toggle 事件不冒泡，所以监听时用捕获阶段；无 JS 时每段仍可单独点开。
+  const btn = document.querySelector('[data-spoiler-toggle]');
+  const boxes = [...document.querySelectorAll('details[data-spoiler]')];
+  if (btn && boxes.length) {
+    const sync = () => {
+      const allOpen = boxes.every((d) => d.open);
+      btn.textContent = allOpen ? '收起全部剧透' : '展开全部剧透';
+      btn.setAttribute('aria-expanded', String(allOpen));
+    };
+    btn.addEventListener('click', () => {
+      const next = !boxes.every((d) => d.open);
+      boxes.forEach((d) => { d.open = next; });
+      sync();
+    });
+    document.addEventListener('toggle', sync, true);
+    sync();
+  }
+
+  // C8：记住「展开编者解说」的状态（按文档 id 记在 localStorage 里），下次进页面自动恢复，
+  // 免得读多条档案时每次都要重新点开。隐私模式等写不了存储的场景静默降级为「不记忆」。
+  const DOC_KEY = 'gw:docs-open';
+  const docBoxes = [...document.querySelectorAll('details[data-doc]')];
+  if (docBoxes.length) {
+    const readOpen = () => {
+      try { return new Set(JSON.parse(localStorage.getItem(DOC_KEY) || '[]')); } catch { return new Set(); }
+    };
+    const saveOpen = (set) => {
+      try { localStorage.setItem(DOC_KEY, JSON.stringify([...set])); } catch { /* 忽略 */ }
+    };
+    const opened = readOpen();
+    for (const box of docBoxes) if (opened.has(box.dataset.doc)) box.open = true;
+    document.addEventListener('toggle', (ev) => {
+      const box = ev.target;
+      if (!box || !box.dataset || !box.dataset.doc) return;
+      const set = readOpen();
+      if (box.open) set.add(box.dataset.doc); else set.delete(box.dataset.doc);
+      saveOpen(set);
+    }, true);
+  }
+</script>
+
 <style>
+  /* C2：锚点跳转时为两条吸顶栏（页头 62px + 区块导航）留出余量 */
+  #story, #side, #characters, #documents, #connections { scroll-margin-top: 132px; }
+  .chapter, .doc { scroll-margin-top: 132px; }
+
+  /* D3：资料整理日期 */
+  .updated-note { margin: 10px 0 0; font-size: 12.5px; color: var(--dim); }
+
   .title-en {
     font-size: 16px;
     color: var(--dim);
@@ -180,8 +281,14 @@ const sections = [
     flex-wrap: wrap;
     gap: 8px;
     margin: 22px 0 8px;
-    padding-bottom: 16px;
+    padding: 10px 0 14px;
     border-bottom: 1px solid var(--line);
+    /* C2：区块导航吸顶（页头 62px 高），滚到中部也能直接跳区块 */
+    position: sticky;
+    top: 62px;
+    z-index: 20;
+    background: rgba(var(--overlay-rgb), 0.92);
+    backdrop-filter: blur(6px);
   }
   .quick-nav a {
     font-size: 13px;
@@ -189,7 +296,10 @@ const sections = [
     color: var(--muted);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 4px 12px;
+    padding: 8px 14px;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
     background: var(--panel);
     transition: color 0.15s, border-color 0.15s;
   }
@@ -214,6 +324,62 @@ const sections = [
   .chapter__head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
   .chapter__title { margin: 0; font-size: 17px; color: var(--text); }
   .chapter .prose { color: #c9c6c0; font-size: 14.5px; }
+
+  /* C1 剧透遮挡：正文默认收起，点开才显示 */
+  .spoiler-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 22px 0 6px;
+    padding: 12px 16px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
+    background: rgba(var(--accent-deep-rgb), 0.1);
+    border: 1px solid rgba(var(--accent-rgb), 0.3);
+    border-left: 3px solid var(--blood);
+    border-radius: var(--radius);
+  }
+  .spoiler-bar__text { flex: 1 1 320px; }
+  .spoiler-bar__text strong { color: var(--blood-bright); }
+  .spoiler-bar__btn {
+    flex: 0 0 auto;
+    font: inherit;
+    font-size: 13px;
+    color: var(--blood-bright);
+    background: var(--panel);
+    border: 1px solid rgba(var(--accent-rgb), 0.45);
+    border-radius: 999px;
+    padding: 8px 18px;
+    min-height: 38px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .spoiler-bar__btn:hover { border-color: var(--blood-bright); background: rgba(var(--accent-deep-rgb), 0.2); }
+  .spoiler-bar__btn:focus-visible { outline: 2px solid var(--blood-bright); outline-offset: 2px; }
+
+  .spoiler__summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 12.5px;
+    color: var(--blood-bright);
+    list-style: none;
+    border: 1px solid rgba(var(--accent-rgb), 0.35);
+    border-radius: 999px;
+    padding: 7px 16px;
+    min-height: 34px;
+    background: rgba(var(--accent-deep-rgb), 0.1);
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .spoiler__summary::-webkit-details-marker { display: none; }
+  .spoiler__summary::before { content: '＋'; font-size: 11px; }
+  .spoiler[open] > .spoiler__summary::before { content: '－'; }
+  .spoiler__summary:hover { border-color: var(--blood-bright); background: rgba(var(--accent-deep-rgb), 0.2); }
+  .spoiler > .prose { margin-top: 12px; }
 
   .doc-list { display: flex; flex-direction: column; gap: 12px; }
   .doc {
@@ -251,7 +417,8 @@ const sections = [
     list-style: none;
     border: 1px solid rgba(var(--accent-rgb), 0.35);
     border-radius: 999px;
-    padding: 2px 12px;
+    padding: 7px 16px;
+    min-height: 34px;
     background: rgba(var(--accent-deep-rgb), 0.1);
     transition: border-color 0.15s, background 0.15s;
   }
@@ -265,7 +432,7 @@ const sections = [
     font-size: 14px;
     color: #c9c6c0;
     line-height: 1.8;
-    background: rgba(25, 25, 32, 0.6);
+    background: rgba(var(--overlay-rgb), 0.45);
     border-left: 2px solid rgba(var(--accent-rgb), 0.4);
     border-radius: var(--radius);
   }
@@ -273,4 +440,12 @@ const sections = [
   .conn-list { margin: 0; padding-left: 20px; }
   .conn-list li { margin-bottom: 12px; color: #c9c6c0; font-size: 14.5px; }
   .conn-list li:last-child { margin-bottom: 0; }
+
+  /* C9：触屏设备（手指）上把可点区域放大到 44px 上下；
+     桌面用鼠标的环境保持紧凑，不牺牲观感 */
+  @media (pointer: coarse) {
+    .quick-nav a, .spoiler-bar__btn { min-height: 46px; }
+    .doc__more > summary, .spoiler__summary { min-height: 44px; padding: 10px 18px; }
+    .tag { padding: 4px 12px; }
+  }
 </style>
