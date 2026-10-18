@@ -1,0 +1,24 @@
+{
+  "id": "forgive-me-father",
+  "nameZh": "宽恕我神父",
+  "nameEn": "Forgive Me Father",
+  "theme": "forgive-me-father",
+  "order": 3,
+  "taglineEn": "COMIC HORROR FPS",
+  "developer": "Byte Barrel",
+  "firstRelease": 2022,
+  "updatedAt": "2026-10-17",
+  "cover": null,
+  "tagline": "瘟疫、邪教、旧日支配者，还有一个正在崩坏的心智",
+  "intro": "由波兰独立工作室 Byte Barrel 开发的复古第一人称射击（Boomer Shooter）系列，以手绘漫画风格与克苏鲁神话为底色。故事从新英格兰的港口小镇佩斯提斯维尔开始——瘟疫与邪教同时降临，主角应表兄之邀而来；第 2 作则把舞台搬进精神病院，主角在扭曲的记忆里一路下行，去分辨「噩梦止于何处，现实又始于何方」。",
+  "imagePrompt": "hand-drawn comic style horror scene, abandoned new england port town street at night, crooked wooden houses and a dead streetlamp, thick ink outlines and halftone dot shading, sickly yellow-green glow from a window, lovecraftian dread, no text, no people",
+  "works": ["fmf1", "fmf2"],
+  "entityCount": 40,
+  "gaps": [
+    "两作的关卡级流程与官方关卡名尚未完整收录（资料侧重叙事结构，未逐关列出）",
+    "秘密区域、彩蛋与隐藏补给点的精确触发条件与位置仍待补",
+    "收集类档案目前只录入编号 / 名称 / 位置 / 内容要点，编者解说分批补写",
+    "游戏内未给出精确年份与日期，时间线上标注【推测】的锚点暂无官方依据可替代",
+    "系列页与作品页配图（官方商店页素材）尚未收集落地"
+  ]
+}

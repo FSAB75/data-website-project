@@ -1,0 +1,17 @@
+﻿编号,类型,名称（英）,名称（中）,位置/条件,内容要点,备注
+FILE-01,文件,Files / Logs,文件/日志,邮轮/山区据点/废船内,揭示特拉格里亚惨案、T-Abyss研究、兰斯代尔与Veltro关系、杰西卡身份线索,系列环境叙事传统
+ITEM-01,剧情关键,T-Abyss Sample,T-Abyss病毒样本,片尾彩蛋,雷蒙德交给杰西卡的样本；暗示TRICELL线,
+ITEM-02,剧情关键,Norman's PDA / Video,诺曼的PDA/录像,Queen Dido上,揭露兰斯代尔的决定性证据；克里斯与吉尔通过它播放录像,
+ITEM-03,剧情关键,Queen Dido Coordinates,迪多女王号坐标,BSAA数据分析得出,第三艘姊妹船的位置；被兰斯代尔击沉以销毁罪证,
+SYS-01,系统,Genesis Scanner,创世扫描仪,全作,自动扫描12米内物品；发现隐藏物品；分析敌人弱点（扫描后可见未覆盖部位提升伤害）,消耗电量需充电；本作标志性系统
+WPN-01,武器,Handgun,手枪,初期,常规
+WPN-02,武器,Shotgun,霰弹枪,中期,近战主力
+WPN-03,武器,Submachine Gun,冲锋枪,中期,高射速
+WPN-04,武器,Rifle,步枪,中期,中远程
+WPN-05,武器,Magnum,马格南,后期,高威力
+WPN-06,武器,Grenade Launcher,榴弹发射器,后期,高火力
+ENM-01,敌人,T-Abyss Zombies,T-Abyss丧尸,邮轮与据点,水中感染形成的丧尸
+ENM-02,敌人,Infected Creatures,各类感染怪物,全作,T-Abyss造物
+ENM-03,敌人,Veltro Operatives,Veltro武装人员,全作,戴防毒面具的恐怖分子
+ENM-04,首领,Final Form Abyss,最终形态·深渊,Queen Dido,杰克·诺曼注入过量T-Abyss后变异成的新型暴君
+MODE-01,隐藏模式,Raid Mode,突击模式,额外模式,限时击杀/生存的高分挑战；系列传统模式重要载体

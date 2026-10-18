@@ -33,9 +33,31 @@ const shareImage = workCover(work);
 const scenes = (work.images || [])
   .map((img: any) => ({ ...img, src: scenePath(img.file) }))
   .filter((img: any) => img.src);
+
+// F5：结构化数据（作品页 → VideoGame）
+const abs = (p: string) => (Astro.site ? new URL(p, Astro.site).href : p);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: work.title,
+  alternateName: work.titleEn,
+  url: abs(`/work/${work.id}/`),
+  description: clip(work.synopsis, 160),
+  inLanguage: 'zh-CN',
+  ...(work.genre ? { genre: work.genre } : {}),
+  ...(work.platforms?.length ? { gamePlatform: work.platforms } : {}),
+  datePublished: String(work.year),
+  ...(shareImage ? { image: abs(shareImage) } : {}),
+  publisher: { '@type': 'Organization', name: work.developer },
+  isPartOf: {
+    '@type': 'VideoGameSeries',
+    name: pack.series.nameZh,
+    url: abs(`/series/${pack.id}/`),
+  },
+};
 ---
 
-<BaseLayout title={`${work.title} · 作品`} theme={theme} description={description} image={shareImage} type="article">
+<BaseLayout title={`${work.title} · 作品`} theme={theme} description={description} image={shareImage} type="article" jsonLd={jsonLd}>
   <p class="eyebrow">{work.type} · {work.year}</p>
   <h1>{work.title} <span class="title-en">{work.titleEn}</span></h1>
   <p class="lead">{work.synopsis}</p>
@@ -167,8 +189,13 @@ const scenes = (work.images || [])
       <section id="documents">
         <h2>收集资料</h2>
         <p class="lead">
-          游戏中可收集的文档（Document）与录像笔记（Note）。点击条目上的标签可跳转到对应词条。
-          每条档案附有「编者解说」——基于公开资料整理的背景说明，<strong>非游戏内原文转录</strong>。
+          游戏中可收集的文档、物件与追加内容。点击条目上的标签可跳转到对应词条。
+          {documents.some((d: any) => d.content)
+            ? '附有编者解说的条目，其内容基于公开资料整理——非游戏内原文转录。'
+            : ''}
+          {documents.some((d: any) => !d.content) && (
+            <span class="dim">（部分条目只保留内容要点，编者解说仍在补写中。）</span>
+          )}
         </p>
         <div class="doc-list">
           {documents.map((d: any) => (

@@ -1,0 +1,315 @@
+{
+  "seriesId": "forgive-me-father",
+  "note": "世界观时间线：宽恕我神父系列没有官方日历——游戏内未给出任何精确年份与日期，因此本表用「相对时序」而非日期来组织。confidence 三档：已核实 / 推测 / 未明确；标【推测】的锚点均来自公开资料对美术风格与设定背景的推断。",
+  "groups": [
+    {
+      "era": "20 世纪初 · 战争与创伤",
+      "hint": "这一层主要来自第 2 作对主角身份的补完，第 1 作并未展开。",
+      "events": [
+        {
+          "id": "war-veteran",
+          "time": "1914–1918",
+          "confidence": "已核实",
+          "title": "主角作为士兵参加第一次世界大战并生还",
+          "desc": "第 2 作确立了主角参加过一战、且是幸存者这一身份，为整部作品的战争创伤（PTSD）主题奠基。",
+          "characters": ["fmf-the-priest"],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "committed-to-asylum",
+          "time": "一战之后（具体年份未明确）",
+          "confidence": "已核实（设定）/ 未明确（年份）",
+          "title": "退伍归来，作为众多病患之一被送入精神病院",
+          "desc": "公开资料只说明主角战后被送入病院，未给出年份。资料中「20 世纪初」的表述属依设定与历史背景的推定。",
+          "characters": ["fmf-the-priest", "fmf-asylum"],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "asylum-era",
+          "time": "20 世纪初以后（未明确）",
+          "confidence": "已核实",
+          "title": "脑叶切除术者、被实验的病患与互不信任的退伍军人",
+          "desc": "病院里共存着脑叶切除患者与被实验的病患；退伍军人与执法者（侦探）之间彼此不信任。这些时代注脚在第 2 作的关卡意象里反复出现。",
+          "characters": ["fmf-asylum"],
+          "works": ["fmf2"]
+        }
+      ]
+    },
+    {
+      "era": "数十年前 · 佩斯提斯维尔的种子",
+      "hint": "第 1 作把源头推到「数十年前」，但只留下一个模糊的起点。",
+      "events": [
+        {
+          "id": "seed-sown",
+          "time": "事件前数十年（未明确）",
+          "confidence": "已核实（存在）/ 未明确（时间）",
+          "major": true,
+          "title": "镇上若干关键人物聚集，播下了「一尊伟大而恐怖之物苏醒的种子」",
+          "desc": "这是整个系列最早的一个锚点：资料只写到「镇上若干关键人物聚集」及由此播下的那颗种子——这些人是谁、具体做了什么，公开来源均未明确。",
+          "characters": ["fmf-old-gods"],
+          "works": ["fmf1"]
+        },
+        {
+          "id": "cult-formed",
+          "time": "（随后）",
+          "confidence": "已核实",
+          "title": "邪教形成，镇内外接连发生离奇惨剧",
+          "desc": "种子之后是邪教的成形，以及一连串「离奇而悲惨的事件」。第 1 作里玩家面对的邪教徒，就是这条线长出来的东西。",
+          "characters": ["fmf-pestisville-cult", "fmf-cultists"],
+          "works": ["fmf1"]
+        },
+        {
+          "id": "louis-investigates",
+          "time": "第 1 作 事件前夕",
+          "confidence": "已核实",
+          "title": "路易斯·马丁调查邪教，因性命受威胁写信求助",
+          "desc": "佩斯提斯维尔居民路易斯·马丁在调查新兴邪教后开始为性命担忧，于是写信向主角求助——这封信就是整个故事的起点。",
+          "characters": ["fmf-louis-martin", "fmf-pestisville-cult"],
+          "works": ["fmf1"]
+        },
+        {
+          "id": "arrival",
+          "time": "第 1 作 开场",
+          "confidence": "已核实",
+          "title": "主角乘火车抵达佩斯提斯维尔，表兄已经失踪",
+          "desc": "无论选择神父还是女记者，主角都独自乘火车赶来，按指示找到那间 1920 年代风格的公寓，随后几乎立刻遭到袭击。",
+          "characters": ["fmf-the-priest", "fmf-the-journalist", "fmf-louis-apartment"],
+          "works": ["fmf1"]
+        }
+      ]
+    },
+    {
+      "era": "宽恕我神父 · 五个世界",
+      "hint": "第 1 作的游戏内流程，按五个大世界的顺序推进；越往下走，场景越脱离现实。",
+      "events": [
+        {
+          "id": "world-1",
+          "time": "第 1 世界",
+          "confidence": "已核实",
+          "title": "旅馆与街区：找齐三色钥匙，击败占据整面墙的触手怪",
+          "desc": "旅馆走廊被布置成迷宫，街区已经废弃；本层以寻找红、蓝、金三色钥匙与应对「怪物壁橱」的波次围攻为主。",
+          "characters": ["fmf-hotel", "fmf-pestisville", "fmf-tentacle-monster", "fmf-monster-closets", "fmf-zombified-townsfolk"],
+          "works": ["fmf1"]
+        },
+        {
+          "id": "world-2",
+          "time": "第 2 世界",
+          "confidence": "已核实",
+          "title": "雷暴夜的森林与废弃农场：击碎水晶，击退「黄衣之王」的仿者",
+          "desc": "尖叫的邪教徒在林间成群出现；首领靠水晶维持护盾、水晶还会再生，公开评测普遍把这一战评为全作最难。",
+          "characters": ["fmf-forest", "fmf-farm", "fmf-hastur-like", "fmf-hastur", "fmf-yellow-priests", "fmf-cultists"],
+          "works": ["fmf1"]
+        },
+        {
+          "id": "world-3",
+          "time": "第 3 世界",
+          "confidence": "已核实",
+          "title": "船坞与港口：涨落的岛屿与跃出水面的巨大鱼类",
+          "desc": "水面随时吞掉脚下的地面，首领从水中跃出、掀起浪涌并不断召唤小怪。",
+          "characters": ["fmf-docks", "fmf-giant-fish"],
+          "works": ["fmf1"]
+        },
+        {
+          "id": "world-4",
+          "time": "第 4 世界",
+          "confidence": "已核实",
+          "title": "清晨的竞技场：一场高速追逐战",
+          "desc": "本作少见的明亮场景。首领以极高速度移动并不断制造克隆体，多家评测视其为全作最有趣的一场战斗。",
+          "characters": ["fmf-speedy-boss-clones"],
+          "works": ["fmf1"]
+        },
+        {
+          "id": "world-5",
+          "time": "第 5 世界",
+          "confidence": "已核实",
+          "major": true,
+          "title": "下至深渊：在巨眼遗迹与海底面对克苏鲁",
+          "desc": "场景到这里已不再像是现实中会存在的地方。最终首领克苏鲁以弹幕式火球波次与大范围攻击封锁场地。",
+          "characters": ["fmf-abyss", "fmf-cyclopean-ruins", "fmf-catacombs", "fmf-cthulhu"],
+          "works": ["fmf1"]
+        },
+        {
+          "id": "awakening",
+          "time": "第 1 作 结局",
+          "confidence": "已核实",
+          "major": true,
+          "title": "在精神病院醒来：他是在幻觉中屠杀了整座小镇",
+          "desc": "击败克苏鲁之后主角在精神病院醒来——瘟疫、丧尸、邪教乃至克苏鲁本身，都是他精神崩坏的投射。不同主角与玩法会导向不同的结局切片，但底色相同。",
+          "characters": ["fmf-asylum", "fmf-hallucination", "fmf-pestisville-massacre", "fmf-the-priest", "fmf-the-journalist"],
+          "works": ["fmf1"]
+        }
+      ]
+    },
+    {
+      "era": "宽恕我神父2 · 病院与扭曲记忆",
+      "hint": "第 2 作紧接第 1 作结局，故事发生在病院与由记忆化现的关卡之间。",
+      "events": [
+        {
+          "id": "admitted",
+          "time": "第 2 作 开局",
+          "confidence": "已核实",
+          "major": true,
+          "title": "神父因屠杀整座佩斯提斯维尔，被送进精神病院",
+          "desc": "开场即确立前作留下的结果：他因被克苏鲁蛊惑而屠杀全镇，被送进病院，连剃须都成了奢侈。",
+          "characters": ["fmf-the-priest", "fmf-asylum", "fmf-pestisville-massacre"],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "hub-established",
+          "time": "第 2 作 全程",
+          "confidence": "已核实",
+          "title": "病院成为枢纽：升级、换装武器变体、自定义《暗黑之典》",
+          "desc": "关卡之间的策略层都在病院里完成。从病院出发，他进入的每一处环境都由扭曲的记忆化现而成。",
+          "characters": ["fmf-asylum", "fmf-dark-tome"],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "early-levels",
+          "time": "第 2 作 前期关卡",
+          "confidence": "已核实",
+          "title": "记忆的表层：宅邸、闹鬼别墅与被亵渎的大教堂",
+          "desc": "最初几关呈现悲伤、困惑与愤怒，敌人从丧尸般的傀儡逐步升级；场景本身即是被压抑又重现的过去。",
+          "characters": ["fmf-distorted-memory"],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "trenches",
+          "time": "第 2 作 中期核心",
+          "confidence": "已核实",
+          "major": true,
+          "title": "穿过自家过去的大门：进入一战战壕",
+          "desc": "主角敲打潜意识的高墙，招牌敌人「德军士兵」——披着德军制服的邪恐怖憎体——就在这一层诞生。",
+          "characters": ["fmf-trenches", "fmf-german-soldiers"],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "moral-trials",
+          "time": "第 2 作 前三场首领战后",
+          "confidence": "已核实",
+          "title": "每一次首领战后各有一次道德试炼",
+          "desc": "选项只有两个：信赖信仰，或让行为定义自己。累计取向占比更高的一方决定最终能走到哪个结局。",
+          "characters": ["fmf-moral-trials"],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "late-levels",
+          "time": "第 2 作 后期关卡",
+          "confidence": "已核实",
+          "title": "更深的噩梦层：植物园、废弃地铁隧道与大学",
+          "desc": "官方把这些关卡概括为「十座由伟大古神创造的噩梦」，疯狂在此既是能力来源，也是必须应对的威胁。",
+          "characters": ["fmf-distorted-memory", "fmf-madness", "fmf-old-gods"],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "nightmare-land",
+          "time": "第 2 作 后期",
+          "confidence": "已核实",
+          "title": "「噩梦之地」：回到克苏鲁的领域",
+          "desc": "克苏鲁这一次只是待在背景里，身边盘绕着数十条触手，真正的对手另有其人。",
+          "characters": ["fmf-nightmare-land", "fmf-cthulhu"],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "final-battle",
+          "time": "第 2 作 最终战",
+          "confidence": "已核实",
+          "major": true,
+          "title": "与「疯狂边缘」决战",
+          "desc": "最终首领是克苏鲁的人形化身。到这里，本作已经不再区分「他是在记忆里，还是真的在那里」。",
+          "characters": ["fmf-edge-of-madness", "fmf-cthulhu"],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "two-endings",
+          "time": "第 2 作 结局",
+          "confidence": "已核实",
+          "major": true,
+          "title": "两个结局：牺牲与解放",
+          "desc": "牺牲：接受信仰、拒绝腐蚀，自愿回到病院把克苏鲁困在自己心智里。解放：抛弃道德、拥抱腐蚀，把自己的世界置于更大危险。官方口径是两个结局都不算绝对的真结局。",
+          "characters": ["fmf-ending-sacrifice", "fmf-ending-liberation", "fmf-the-priest"],
+          "works": ["fmf2"]
+        }
+      ]
+    },
+    {
+      "era": "现实时间轴 · 作品沿革",
+      "hint": "上面都是游戏内的时间；这一组是两款作品在现实中的发布节点。",
+      "events": [
+        {
+          "id": "studio-founded",
+          "time": "2017",
+          "confidence": "已核实",
+          "title": "Byte Barrel 工作室成立",
+          "desc": "波兰格但斯克的独立工作室，团队规模九人。",
+          "characters": [],
+          "works": []
+        },
+        {
+          "id": "fmf1-ea",
+          "time": "2021-10-28",
+          "confidence": "已核实",
+          "title": "《宽恕我神父》进入 Early Access",
+          "desc": "含三关 demo 的抢先体验版本。",
+          "characters": [],
+          "works": ["fmf1"]
+        },
+        {
+          "id": "fmf1-release",
+          "time": "2022-04-07",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《宽恕我神父》PC 正式版发售",
+          "desc": "系列真正意义上的起点；舞台为新英格兰港口小镇佩斯提斯维尔。",
+          "characters": [],
+          "works": ["fmf1"]
+        },
+        {
+          "id": "fmf1-console",
+          "time": "2023-09-28",
+          "confidence": "已核实",
+          "title": "《宽恕我神父》登陆 Switch / PS4 / Xbox One",
+          "desc": "第 1 作的主机版发行。",
+          "characters": [],
+          "works": ["fmf1"]
+        },
+        {
+          "id": "fmf2-ea",
+          "time": "2023-10-19",
+          "confidence": "已核实",
+          "title": "《宽恕我神父2》进入 Early Access",
+          "desc": "含免费 demo 前两关，改用 Unreal Engine 5。",
+          "characters": [],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "fmf2-release",
+          "time": "2024-10-24",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《宽恕我神父2》PC 1.0 正式发售",
+          "desc": "Steam / GOG / Epic 同步，2024-11-07 有一次首发后更新。",
+          "characters": [],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "fmf2-console",
+          "time": "2025-09",
+          "confidence": "已核实",
+          "title": "《宽恕我神父2》登陆 PS5 / Xbox Series X|S",
+          "desc": "主机版发行；同一时期参与了 Lovecraftian Days、Boomstock 2025、Steam Scream Fest 等活动并推出支持者包。",
+          "characters": [],
+          "works": ["fmf2"]
+        },
+        {
+          "id": "fmf2-switch",
+          "time": "2026-01-22",
+          "confidence": "已核实",
+          "title": "《宽恕我神父2》登陆 Nintendo Switch",
+          "desc": "目前系列最新的一次平台扩展。",
+          "characters": [],
+          "works": ["fmf2"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,479 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { seriesList, extrasOfSeries, EXTRA_DOC_GROUPS, coverPath } from '../../../lib/data.js';
+
+// 只为「有关卡 / 系统 / 秘密类收集条目」的系列生成该子页
+export function getStaticPaths() {
+  return seriesList
+    .filter((s) => extrasOfSeries(s.id).length > 0)
+    .map((s) => ({ params: { id: s.id }, props: { pack: s } }));
+}
+
+const { pack } = Astro.props;
+const item = pack.series;
+const list = extrasOfSeries(pack.id);
+
+const uniq = (arr) => [...new Set(arr.filter(Boolean))];
+
+// 分类顺序按 data.js 的定义来（缺的自动跳过），类别顺序按条目数量从多到少
+const groupOptions = EXTRA_DOC_GROUPS.map((g) => g.label).filter((label) => list.some((d) => d.group === label));
+const grouped = (label) => list.filter((d) => d.group === label);
+
+const typeCount = {};
+for (const d of list) typeCount[d.type] = (typeCount[d.type] || 0) + 1;
+const typeOptions = Object.keys(typeCount).sort((a, b) => typeCount[b] - typeCount[a]);
+
+const workIds = uniq(list.map((d) => d.workId));
+const workOptions = workIds.map((id) => {
+  const w = pack.works.find((x) => x.id === id);
+  return { id, title: w ? w.title : id, year: w ? w.year : '' };
+});
+const workTitleOf = Object.fromEntries(workOptions.map((w) => [w.id, w.title]));
+
+const chapterCount = grouped('关卡与章节').length;
+const systemCount = grouped('系统与模式').length;
+const secretCount = grouped('秘密与解谜').length;
+
+const description = `${item.nameZh}系列关卡与秘密索引：汇总全系列 ${list.length} 条关卡结构、玩法系统、隐藏要素与谜题条目，可按作品、分类与关键词筛选。`;
+const shareImage = coverPath('series', item.id);
+---
+
+<BaseLayout title={`关卡与秘密索引 · ${item.nameZh}`} theme={item.theme} description={description} image={shareImage}>
+  <p class="eyebrow">SPECIAL · 关卡与秘密索引</p>
+  <h1>关卡与秘密索引 <span class="title-en">Levels, Systems &amp; Secrets</span></h1>
+  <p class="lead">
+    本页把全系列已收录的<strong>关卡结构、玩法系统、隐藏要素与谜题</strong>汇总成一页，可按作品、分类与关键词筛选。
+    条目整理自公开资料，<strong>只做概括性转述</strong>，不复制游戏内原文。
+  </p>
+  <div class="meta-row">
+    <span class="tag tag--blood">{list.length} 条条目</span>
+    <span class="tag">{chapterCount} 条关卡 / 章节</span>
+    <span class="tag">{systemCount} 条系统 / 模式</span>
+    <span class="tag">{secretCount} 条秘密 / 解谜</span>
+    <span class="tag">{workOptions.length} 部作品有收录</span>
+  </div>
+
+  <section class="ex-summary">
+    {groupOptions.map((label) => (
+      <span class="ex-sum" data-group={label}>
+        <span class="ex-sum__n">{grouped(label).length}</span>
+        <span class="ex-sum__l">{label}</span>
+      </span>
+    ))}
+  </section>
+
+  <!-- 窄屏用这个按钮收放筛选栏（原生 checkbox，零 JS）；宽屏整块不显示 -->
+  <input type="checkbox" id="ex-filter-toggle" class="ex-toggle" aria-controls="ex-filter-panel" />
+  <label for="ex-filter-toggle" class="ex-toggle-btn">筛选</label>
+
+  <section class="ex-filters" id="ex-filter-panel" aria-label="筛选">
+    <label class="ex-filter">
+      <span>作品</span>
+      <select data-filter="work">
+        <option value="">全部</option>
+        {workOptions.map((w) => <option value={w.id}>{w.title}</option>)}
+      </select>
+    </label>
+    <label class="ex-filter">
+      <span>分类</span>
+      <select data-filter="group">
+        <option value="">全部</option>
+        {groupOptions.map((g) => <option value={g}>{g}</option>)}
+      </select>
+    </label>
+    <label class="ex-filter">
+      <span>类别</span>
+      <select data-filter="type">
+        <option value="">全部</option>
+        {typeOptions.map((t) => <option value={t}>{t}（{typeCount[t]}）</option>)}
+      </select>
+    </label>
+    <label class="ex-filter ex-filter--q">
+      <span>搜索</span>
+      <input type="search" data-filter="q" placeholder="名称 / 编号 / 关键词" />
+    </label>
+    <button type="button" class="ex-reset" data-reset>重置</button>
+    <span class="ex-count" data-count>显示 {list.length} / {list.length} 条</span>
+  </section>
+
+  <div class="ex-applied" data-applied hidden></div>
+
+  <div class="ex-grid" data-grid>
+    {
+      list.map((d) => (
+        <article
+          class="ex-card"
+          id={`ex-${d.id}`}
+          data-work={d.workId}
+          data-type={d.type}
+          data-group={d.group}
+          data-name={`${d.nameZh} ${d.nameEn || ''} ${d.no} ${d.summary || ''}`.toLowerCase()}
+        >
+          <header class="ex-card__head">
+            <span class="ex-card__no">{d.type} {String(d.no).padStart(2, '0')}</span>
+            <span class="ex-card__work">{workTitleOf[d.workId]}</span>
+          </header>
+          <h3 class="ex-card__name">{d.nameZh}</h3>
+          {d.nameEn && <div class="ex-card__en">{d.nameEn}</div>}
+          <p class="ex-card__summary">{d.summary}</p>
+          <footer class="ex-card__foot">
+            <span class="tag tag--group">{d.group}</span>
+            {d.chapter && <span class="tag">{d.chapter}</span>}
+            {d.location && d.location !== '未明确' && <span class="tag">{d.location}</span>}
+          </footer>
+        </article>
+      ))
+    }
+  </div>
+
+  <p class="ex-empty" data-empty hidden>没有符合条件的条目，试试放宽筛选条件。</p>
+
+  <section class="ex-notes">
+    <h2>收录说明</h2>
+    <div class="panel prose">
+      <ul>
+        <li>本页条目由各作品的「收集资料」派生而来 —— 只收录公开资料能支撑的名称、类别、所属作品与一句话要点。</li>
+        <li><strong>分类只是归类方式：</strong>「关卡与章节」＝章节结构 / 额外章节 / 追加场景；「系统与模式」＝玩法系统 / 难度 / 重玩 / DLC 等；
+          「秘密与解谜」＝隐藏要素 / 彩蛋 / 谜题与密码。卡片上仍标注原始类别，便于精确定位。</li>
+        <li><strong>不收录具体解法与数值：</strong>谜题答案的完整步骤、密码的全部组合、隐藏要素的触发条件细节，公开来源不完整，
+          本页只给到「在哪里、是什么」这一层，<strong>不做推测性补全</strong>。</li>
+        <li>各作对「章节 / 关卡」的划分口径并不统一（有的按章、有的按阶段、有的是持续更新的在线内容），本页按各作资料原样保留。</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .title-en {
+    font-size: 16px;
+    color: var(--dim);
+    font-family: var(--sans);
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    margin-left: 6px;
+  }
+
+  /* ---------- 分类概览（本身也是筛选快捷键） ---------- */
+  .ex-summary { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 22px; }
+  .ex-sum {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    padding: 6px 13px;
+    border: 1px solid var(--line);
+    border-left-width: 3px;
+    border-left-color: rgba(var(--accent-rgb), 0.6);
+    border-radius: var(--radius);
+    background: var(--panel);
+    cursor: pointer;
+    user-select: none;
+  }
+  .ex-sum:hover { background: var(--panel-2); }
+  .ex-sum__n { font-family: var(--serif); font-size: 19px; color: var(--text); }
+  .ex-sum__l { font-size: 12.5px; color: var(--muted); }
+
+  /* ---------- 筛选栏 ---------- */
+  .ex-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 16px 18px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 22px;
+  }
+  .ex-filter { display: flex; flex-direction: column; gap: 5px; font-size: 12px; color: var(--dim); }
+  .ex-filter select,
+  .ex-filter input {
+    font: inherit;
+    font-size: 13.5px;
+    color: var(--text);
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 5px 10px;
+    min-width: 132px;
+  }
+  .ex-filter--q input { min-width: 200px; }
+  .ex-filter select:focus,
+  .ex-filter input:focus { outline: none; border-color: var(--blood); }
+  .ex-reset, .ex-count { font: inherit; font-size: 12.5px; color: var(--muted); }
+  .ex-reset {
+    cursor: pointer;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 6px 14px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .ex-reset:hover { color: var(--blood-bright); border-color: rgba(var(--accent-rgb), 0.5); }
+  .ex-count { margin-left: auto; padding-bottom: 6px; }
+
+  .ex-applied {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 16px;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .ex-chip {
+    font: inherit;
+    font-size: 12.5px;
+    color: var(--blood-bright);
+    background: rgba(var(--accent-deep-rgb), 0.12);
+    border: 1px solid rgba(var(--accent-rgb), 0.4);
+    border-radius: 999px;
+    padding: 3px 12px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .ex-chip:hover { border-color: var(--blood-bright); background: rgba(var(--accent-deep-rgb), 0.22); }
+  .ex-chip__x { font-size: 10px; opacity: 0.8; }
+  .ex-chip--all { color: var(--muted); background: var(--panel-2); border-color: var(--line); }
+  .ex-chip--all:hover { color: var(--text); border-color: var(--line); background: var(--panel-3); }
+
+  /* ---------- 条目卡片墙 ---------- */
+  .ex-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  }
+  .ex-card {
+    position: relative;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid rgba(var(--accent-rgb), 0.55);
+    border-radius: var(--radius);
+    padding: 14px 18px 12px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .ex-card:hover { background: var(--panel-2); }
+  .ex-card[hidden] { display: none; }
+  .ex-card__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+  .ex-card__no {
+    font-family: var(--serif);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--blood-bright);
+  }
+  .ex-card__work { font-size: 11px; color: var(--dim); text-align: right; }
+  .ex-card__name { font-family: var(--serif); font-size: 17px; margin: 0 0 2px; }
+  .ex-card__en { font-size: 11.5px; color: var(--dim); letter-spacing: 0.03em; margin-bottom: 8px; }
+  .ex-card__summary { margin: 0 0 10px; font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .ex-card__foot { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+  .tag--group {
+    color: var(--text);
+    border-color: rgba(var(--accent-rgb), 0.45);
+    background: rgba(var(--accent-deep-rgb), 0.1);
+  }
+
+  .ex-empty {
+    margin: 26px 0 0;
+    padding: 22px;
+    text-align: center;
+    color: var(--dim);
+    font-size: 14px;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+  }
+  .ex-notes ul { margin: 0; padding-left: 20px; }
+  .ex-notes li { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+
+  /* 窄屏：筛选栏可折叠（原生 checkbox，零 JS），控件占满宽度 */
+  .ex-toggle, .ex-toggle-btn { display: none; }
+
+  @media (pointer: coarse) {
+    .ex-sum { min-height: 44px; padding: 10px 16px; }
+    .ex-chip, .ex-reset { min-height: 38px; }
+    .ex-filter select, .ex-filter input { min-height: 44px; font-size: 15px; }
+  }
+
+  @media (max-width: 640px) {
+    .ex-toggle {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      margin: 0;
+    }
+    .ex-toggle-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 44px;
+      margin-bottom: 10px;
+      padding: 11px 14px;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      cursor: pointer;
+    }
+    .ex-toggle-btn::after { content: '展开'; margin-left: auto; font-size: 12px; color: var(--dim); }
+    .ex-toggle:checked + .ex-toggle-btn { border-color: rgba(var(--accent-rgb), 0.5); }
+    .ex-toggle:checked + .ex-toggle-btn::after { content: '收起'; }
+    .ex-toggle:focus-visible + .ex-toggle-btn { outline: 2px solid rgba(var(--accent-rgb), 0.7); outline-offset: 2px; }
+
+    .ex-filter, .ex-reset { display: none; }
+    .ex-toggle:checked ~ .ex-filters .ex-filter { display: flex; }
+    .ex-toggle:checked ~ .ex-filters .ex-reset { display: inline-block; }
+
+    .ex-filter select, .ex-filter input, .ex-filter--q input { min-width: 100%; }
+    .ex-filter { width: 100%; }
+    .ex-filters { padding: 12px 14px; margin-bottom: 14px; }
+    .ex-count { margin-left: 0; }
+
+    .ex-summary { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+    .ex-sum { flex: 0 0 auto; }
+  }
+</style>
+
+<script>
+  // 纯前端筛选：不匹配的卡片直接 hidden；筛选条件同步到 URL（?work=&group=&type=&q=），可分享、刷新不丢。
+  const selects = [...document.querySelectorAll('select[data-filter]')];
+  const search = document.querySelector('input[data-filter="q"]');
+  const cards = [...document.querySelectorAll('.ex-card')];
+  const countEl = document.querySelector('[data-count]');
+  const emptyEl = document.querySelector('[data-empty]');
+  const appliedEl = document.querySelector('[data-applied]');
+
+  const KEYS = ['work', 'group', 'type'];
+  const LABELS = { work: '作品', group: '分类', type: '类别', q: '搜索' };
+
+  const escapeHtml = (s) =>
+    String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const norm = (s) => String(s == null ? '' : s).normalize('NFKC').trim();
+
+  const findSelect = (key) => selects.find((s) => s.dataset.filter === key);
+  const pick = (key) => {
+    const el = findSelect(key);
+    return el ? el.value : '';
+  };
+  const setPick = (key, value) => {
+    const el = findSelect(key);
+    if (!el) return;
+    el.value = norm(value);
+    if (el.value !== norm(value)) el.value = '';
+  };
+
+  function readUrl() {
+    const p = new URLSearchParams(location.search);
+    for (const key of KEYS) {
+      const v = p.get(key);
+      if (v) setPick(key, v);
+    }
+    if (search) search.value = p.get('q') || '';
+  }
+
+  function writeUrl() {
+    const p = new URLSearchParams();
+    for (const key of KEYS) {
+      const v = pick(key);
+      if (v) p.set(key, v);
+    }
+    const q = search ? search.value.trim() : '';
+    if (q) p.set('q', q);
+    const qs = p.toString();
+    history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+  }
+
+  function matches(card) {
+    const work = norm(pick('work'));
+    const group = norm(pick('group'));
+    const type = norm(pick('type'));
+    const q = search ? search.value.trim().toLowerCase() : '';
+    return (
+      (!work || norm(card.dataset.work) === work) &&
+      (!group || norm(card.dataset.group) === group) &&
+      (!type || norm(card.dataset.type) === type) &&
+      (!q || card.dataset.name.includes(q))
+    );
+  }
+
+  function renderApplied() {
+    if (!appliedEl) return;
+    const parts = KEYS.map((key) => {
+      const el = findSelect(key);
+      if (!el || !el.value) return null;
+      const opt = el.options[el.selectedIndex];
+      const text = opt && opt.textContent ? opt.textContent : el.value;
+      return `<button type="button" class="ex-chip" data-clear="${key}">${LABELS[key]}：${escapeHtml(text)} <span class="ex-chip__x">✕</span></button>`;
+    }).filter(Boolean);
+    const q = search ? search.value.trim() : '';
+    if (q) parts.push(`<button type="button" class="ex-chip" data-clear="q">${LABELS.q}：${escapeHtml(q)} <span class="ex-chip__x">✕</span></button>`);
+    if (!parts.length) {
+      appliedEl.hidden = true;
+      appliedEl.innerHTML = '';
+      return;
+    }
+    appliedEl.hidden = false;
+    appliedEl.innerHTML =
+      '<span>当前筛选：</span>' + parts.join('') +
+      '<button type="button" class="ex-chip ex-chip--all" data-clear="__all">清空全部</button>';
+  }
+
+  function apply() {
+    const hits = cards.filter(matches);
+    for (const card of cards) card.hidden = true;
+    for (const card of hits) card.hidden = false;
+    if (countEl) countEl.textContent = `显示 ${hits.length} / ${cards.length} 条`;
+    if (emptyEl) emptyEl.hidden = hits.length !== 0;
+    renderApplied();
+  }
+
+  function applyFresh() {
+    apply();
+    writeUrl();
+  }
+
+  readUrl();
+
+  for (const el of selects) el.addEventListener('change', applyFresh);
+  if (search) search.addEventListener('input', applyFresh);
+
+  if (appliedEl) {
+    appliedEl.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('[data-clear]');
+      if (!btn) return;
+      const key = btn.dataset.clear;
+      if (key === '__all') {
+        for (const el of selects) el.value = '';
+        if (search) search.value = '';
+      } else if (key === 'q') {
+        if (search) search.value = '';
+      } else {
+        setPick(key, '');
+      }
+      applyFresh();
+    });
+  }
+
+  const reset = document.querySelector('[data-reset]');
+  if (reset) {
+    reset.addEventListener('click', () => {
+      for (const el of selects) el.value = '';
+      if (search) search.value = '';
+      applyFresh();
+    });
+  }
+
+  // 顶部分类概览胶囊 = 筛选快捷键
+  const groupSelect = findSelect('group');
+  if (groupSelect) {
+    for (const chip of document.querySelectorAll('.ex-sum[data-group]')) {
+      chip.addEventListener('click', () => {
+        groupSelect.value = groupSelect.value === chip.dataset.group ? '' : chip.dataset.group;
+        applyFresh();
+      });
+    }
+  }
+
+  apply();
+</script>

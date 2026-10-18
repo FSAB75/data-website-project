@@ -1,0 +1,22 @@
+﻿编号,类型,名称（英）,名称（中）,位置/条件,内容要点,备注
+FILE-01,文件,Files / Diaries,文件/日记,监狱/宅邸/南极基地内,揭示阿什福德家族史、圣女计划、T-Veronica研究、阿尔弗雷德精神分裂,系列环境叙事传统
+PUZ-01,解谜收集,Ashford Family Insignia,阿什福德家族徽记,宅邸内,一枚完整家族纹章分裂为两个半块；需合并才能开启关键门,本作最著名解谜
+PUZ-02,解谜收集,Emblems / Statues,纹章/雕像,宅邸与基地,系列传统解谜,流程依版本而异
+ITEM-01,剧情关键,T-Veronica Sample,T-维罗妮卡病毒样本,阿莱克西亚身上,威斯克与HCF的核心目标；最终被威斯克提取,
+ITEM-02,剧情关键,Steve's Corpse,史蒂夫的遗体,南极基地,被威斯克带走用于维罗妮卡病毒研究,
+ITEM-03,剧情关键,Linear Laser Cannon,线性激光炮,南极基地,击败阿莱克西亚的关键武器,
+ITEM-04,剧情关键,Seaplane,水上飞机,洛克福特岛,逃离洛克福特岛的载具；后被阿尔弗雷德遥控驶向南极,
+ITEM-05,剧情关键,Self-Destruct Device,自毁装置,南极基地,克里斯启动基地自毁,
+WPN-01,武器,Handgun,手枪,初期,常规
+WPN-02,武器,Shotgun,霰弹枪,中期,近战主力
+WPN-03,武器,Grenade Launcher,榴弹发射器,中期,高火力
+WPN-04,武器,Flamethrower,火焰喷射器,中期,需燃料
+WPN-05,武器,Magnum,马格南,后期,高威力
+WPN-06,武器,Linear Laser Cannon,线性激光炮,后期,击败阿莱克西亚的关键
+ENM-01,敌人,Zombies,丧尸,全作,T病毒感染
+ENM-02,敌人,Infected Dogs,感染犬类,室外区域,室外敌人
+ENM-03,敌人,Hunter,猎杀者,岛与基地,军事用B.O.W.
+ENM-04,敌人,Insects / Moths,昆虫/飞蛾,场景,场景敌人
+ENM-05,首领,Nosferatu,诺斯拉图,南极实验室底下,亚历山大·阿什福德变异而成；被封印后脱逃；被击败后由阿莱克西亚冷冻处决
+ENM-06,首领,Alexia（various forms）,阿莱克西亚（各形态）,南极基地,最终首领；具飞翔能力、召唤昆虫、免疫普通物理攻击；因冷冻期不足而有缺陷
+ENM-07,敌人,Steve（mutated）,史蒂夫（变异）,南极基地,被注入T-Veronica后变异；最后一刻恢复理智

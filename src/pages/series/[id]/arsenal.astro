@@ -1,0 +1,465 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { seriesList, arsenalOfSeries, coverPath, getEntity } from '../../../lib/data.js';
+
+// 只为「有武器 / 能力类收集条目」的系列生成该子页
+export function getStaticPaths() {
+  return seriesList
+    .filter((s) => arsenalOfSeries(s.id).length > 0)
+    .map((s) => ({ params: { id: s.id }, props: { pack: s } }));
+}
+
+const { pack } = Astro.props;
+const item = pack.series;
+const list = arsenalOfSeries(pack.id);
+
+// 类别顺序：武器 → 武器变体 → 能力 → 技能 → 疯狂技能（缺的类别自动跳过）
+const TYPE_ORDER = ['武器', '武器变体', '能力', '技能', '疯狂技能'];
+const uniq = (arr) => [...new Set(arr.filter(Boolean))];
+const typeOptions = uniq([...TYPE_ORDER.filter((t) => list.some((d) => d.type === t)), ...list.map((d) => d.type)]);
+const byType = Object.fromEntries(typeOptions.map((t) => [t, list.filter((d) => d.type === t).length]));
+
+const workIds = uniq(list.map((d) => d.workId));
+const workOptions = workIds.map((id) => {
+  const w = pack.works.find((x) => x.id === id);
+  return { id, title: w ? w.title : id, year: w ? w.year : '' };
+});
+const workTitleOf = Object.fromEntries(workOptions.map((w) => [w.id, w.title]));
+
+const weaponCount = list.filter((d) => d.type === '武器').length;
+const abilityCount = list.filter((d) => d.type !== '武器').length;
+
+const description = `${item.nameZh}系列武器与能力图鉴：汇总全系列 ${list.length} 条武器、变体与能力条目，可按作品、类别与关键词筛选。`;
+const shareImage = coverPath('series', item.id);
+---
+
+<BaseLayout title={`武器与能力图鉴 · ${item.nameZh}`} theme={item.theme} description={description} image={shareImage}>
+  <p class="eyebrow">SPECIAL · 武器与能力图鉴</p>
+  <h1>武器与能力图鉴 <span class="title-en">Arsenal &amp; Abilities</span></h1>
+  <p class="lead">
+    本页把全系列已收录的<strong>武器、武器变体与能力</strong>条目汇总成一页，可按作品、类别与关键词筛选。
+    条目内容整理自公开资料，<strong>只做概括性转述</strong>，不复制游戏内原文。
+  </p>
+  <div class="meta-row">
+    <span class="tag tag--blood">{list.length} 条条目</span>
+    <span class="tag">{weaponCount} 件武器</span>
+    <span class="tag">{abilityCount} 项能力 / 变体</span>
+    <span class="tag">{workOptions.length} 部作品有收录</span>
+  </div>
+
+  <section class="ar-summary">
+    {typeOptions.map((t) => (
+      <span class="ar-sum" data-type={t}>
+        <span class="ar-sum__n">{byType[t]}</span>
+        <span class="ar-sum__l">{t}</span>
+      </span>
+    ))}
+  </section>
+
+  <!-- 窄屏用这个按钮收放筛选栏（原生 checkbox，零 JS）；宽屏整块不显示 -->
+  <input type="checkbox" id="ar-filter-toggle" class="ar-toggle" aria-controls="ar-filter-panel" />
+  <label for="ar-filter-toggle" class="ar-toggle-btn">筛选</label>
+
+  <section class="ar-filters" id="ar-filter-panel" aria-label="筛选">
+    <label class="ar-filter">
+      <span>作品</span>
+      <select data-filter="work">
+        <option value="">全部</option>
+        {workOptions.map((w) => <option value={w.id}>{w.title}</option>)}
+      </select>
+    </label>
+    <label class="ar-filter">
+      <span>类别</span>
+      <select data-filter="type">
+        <option value="">全部</option>
+        {typeOptions.map((t) => <option value={t}>{t}</option>)}
+      </select>
+    </label>
+    <label class="ar-filter ar-filter--q">
+      <span>搜索</span>
+      <input type="search" data-filter="q" placeholder="名称 / 编号 / 关键词" />
+    </label>
+    <button type="button" class="ar-reset" data-reset>重置</button>
+    <span class="ar-count" data-count>显示 {list.length} / {list.length} 条</span>
+  </section>
+
+  <div class="ar-applied" data-applied hidden></div>
+
+  <div class="ar-grid" data-grid>
+    {
+      list.map((d) => (
+        <article
+          class="ar-card"
+          id={`ar-${d.id}`}
+          data-work={d.workId}
+          data-type={d.type}
+          data-name={`${d.nameZh} ${d.nameEn || ''} ${d.no} ${d.summary || ''}`.toLowerCase()}
+        >
+          <header class="ar-card__head">
+            <span class="ar-card__no">{d.type} {String(d.no).padStart(2, '0')}</span>
+            <span class="ar-card__work">{workTitleOf[d.workId]}</span>
+          </header>
+          <h3 class="ar-card__name">{d.nameZh}</h3>
+          {d.nameEn && <div class="ar-card__en">{d.nameEn}</div>}
+          <p class="ar-card__summary">{d.summary}</p>
+          <footer class="ar-card__foot">
+            {d.chapter && <span class="tag">{d.chapter}</span>}
+            {d.location && d.location !== '未明确' && <span class="tag">{d.location}</span>}
+            {d.relatedEntity && getEntity(d.relatedEntity) && d.relatedEntity.startsWith(`${pack.id}-`) && (
+              <a class="chip" href={`/entity/${d.relatedEntity}/`}>{getEntity(d.relatedEntity)!.nameZh}</a>
+            )}
+          </footer>
+        </article>
+      ))
+    }
+  </div>
+
+  <p class="ar-empty" data-empty hidden>没有符合条件的条目，试试放宽筛选条件。</p>
+
+  <section class="ar-notes">
+    <h2>收录说明</h2>
+    <div class="panel prose">
+      <ul>
+        <li>本页条目由各作品的「收集资料」派生而来 —— 只收录公开资料能支撑的名称、类别、所属作品与一句话要点。</li>
+        <li><strong>未收录的明确标注：</strong>武器数值（伤害、射速、弹药）、升级分支的具体收益与完整变体清单，公开来源不完整，本页不做估算与补全。</li>
+        <li>同一件武器在不同作品里的变体已知两作存在差异（第 1 作可携带全部武器，第 2 作改为有限携行），具体以游戏本体为准。</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .title-en {
+    font-size: 16px;
+    color: var(--dim);
+    font-family: var(--sans);
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    margin-left: 6px;
+  }
+
+  /* ---------- 类别概览（本身也是筛选快捷键） ---------- */
+  .ar-summary { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 22px; }
+  .ar-sum {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    padding: 6px 13px;
+    border: 1px solid var(--line);
+    border-left-width: 3px;
+    border-left-color: rgba(var(--accent-rgb), 0.6);
+    border-radius: var(--radius);
+    background: var(--panel);
+    cursor: pointer;
+    user-select: none;
+  }
+  .ar-sum:hover { background: var(--panel-2); }
+  .ar-sum__n { font-family: var(--serif); font-size: 19px; color: var(--text); }
+  .ar-sum__l { font-size: 12.5px; color: var(--muted); }
+
+  /* ---------- 筛选栏 ---------- */
+  .ar-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 16px 18px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    margin-bottom: 22px;
+  }
+  .ar-filter { display: flex; flex-direction: column; gap: 5px; font-size: 12px; color: var(--dim); }
+  .ar-filter select,
+  .ar-filter input {
+    font: inherit;
+    font-size: 13.5px;
+    color: var(--text);
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 5px 10px;
+    min-width: 132px;
+  }
+  .ar-filter--q input { min-width: 210px; }
+  .ar-filter select:focus,
+  .ar-filter input:focus { outline: none; border-color: var(--blood); }
+  .ar-reset, .ar-count { font: inherit; font-size: 12.5px; color: var(--muted); }
+  .ar-reset {
+    cursor: pointer;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 6px 14px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .ar-reset:hover { color: var(--blood-bright); border-color: rgba(var(--accent-rgb), 0.5); }
+  .ar-count { margin-left: auto; padding-bottom: 6px; }
+
+  .ar-applied {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 16px;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .ar-chip {
+    font: inherit;
+    font-size: 12.5px;
+    color: var(--blood-bright);
+    background: rgba(var(--accent-deep-rgb), 0.12);
+    border: 1px solid rgba(var(--accent-rgb), 0.4);
+    border-radius: 999px;
+    padding: 3px 12px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .ar-chip:hover { border-color: var(--blood-bright); background: rgba(var(--accent-deep-rgb), 0.22); }
+  .ar-chip__x { font-size: 10px; opacity: 0.8; }
+  .ar-chip--all { color: var(--muted); background: var(--panel-2); border-color: var(--line); }
+  .ar-chip--all:hover { color: var(--text); border-color: var(--line); background: var(--panel-3); }
+
+  /* ---------- 条目卡片墙 ---------- */
+  .ar-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  }
+  .ar-card {
+    position: relative;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid rgba(var(--accent-rgb), 0.55);
+    border-radius: var(--radius);
+    padding: 14px 18px 12px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .ar-card:hover { background: var(--panel-2); }
+  .ar-card[hidden] { display: none; }
+  .ar-card__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+  .ar-card__no {
+    font-family: var(--serif);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--blood-bright);
+  }
+  .ar-card__work { font-size: 11px; color: var(--dim); text-align: right; }
+  .ar-card__name { font-family: var(--serif); font-size: 17px; margin: 0 0 2px; }
+  .ar-card__en { font-size: 11.5px; color: var(--dim); letter-spacing: 0.03em; margin-bottom: 8px; }
+  .ar-card__summary { margin: 0 0 10px; font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .ar-card__foot { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+  .chip {
+    font-size: 12px;
+    text-decoration: none;
+    color: var(--blood-bright);
+    border: 1px solid rgba(var(--accent-rgb), 0.4);
+    border-radius: 999px;
+    padding: 1px 9px;
+  }
+
+  .ar-empty {
+    margin: 26px 0 0;
+    padding: 22px;
+    text-align: center;
+    color: var(--dim);
+    font-size: 14px;
+    border: 1px dashed var(--line);
+    border-radius: var(--radius);
+  }
+  .ar-notes ul { margin: 0; padding-left: 20px; }
+  .ar-notes li { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+
+  /* 窄屏：筛选栏可折叠（原生 checkbox，零 JS），控件占满宽度 */
+  .ar-toggle, .ar-toggle-btn { display: none; }
+
+  @media (pointer: coarse) {
+    .ar-sum { min-height: 44px; padding: 10px 16px; }
+    .ar-chip, .ar-reset { min-height: 38px; }
+    .ar-filter select, .ar-filter input { min-height: 44px; font-size: 15px; }
+  }
+
+  @media (max-width: 640px) {
+    .ar-toggle {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      margin: 0;
+    }
+    .ar-toggle-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 44px;
+      margin-bottom: 10px;
+      padding: 11px 14px;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      cursor: pointer;
+    }
+    .ar-toggle-btn::after { content: '展开'; margin-left: auto; font-size: 12px; color: var(--dim); }
+    .ar-toggle:checked + .ar-toggle-btn { border-color: rgba(var(--accent-rgb), 0.5); }
+    .ar-toggle:checked + .ar-toggle-btn::after { content: '收起'; }
+    .ar-toggle:focus-visible + .ar-toggle-btn { outline: 2px solid rgba(var(--accent-rgb), 0.7); outline-offset: 2px; }
+
+    .ar-filter, .ar-reset { display: none; }
+    .ar-toggle:checked ~ .ar-filters .ar-filter { display: flex; }
+    .ar-toggle:checked ~ .ar-filters .ar-reset { display: inline-block; }
+
+    .ar-filter select, .ar-filter input, .ar-filter--q input { min-width: 100%; }
+    .ar-filter { width: 100%; }
+    .ar-filters { padding: 12px 14px; margin-bottom: 14px; }
+    .ar-count { margin-left: 0; }
+
+    .ar-summary { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+    .ar-sum { flex: 0 0 auto; }
+  }
+</style>
+
+<script>
+  // 纯前端筛选：不匹配的卡片直接 hidden；筛选条件同步到 URL（?work=&type=&q=），可分享、刷新不丢。
+  const selects = [...document.querySelectorAll('select[data-filter]')];
+  const search = document.querySelector('input[data-filter="q"]');
+  const cards = [...document.querySelectorAll('.ar-card')];
+  const countEl = document.querySelector('[data-count]');
+  const emptyEl = document.querySelector('[data-empty]');
+  const appliedEl = document.querySelector('[data-applied]');
+
+  const KEYS = ['work', 'type'];
+  const LABELS = { work: '作品', type: '类别', q: '搜索' };
+
+  const escapeHtml = (s) =>
+    String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const norm = (s) => String(s == null ? '' : s).normalize('NFKC').trim();
+
+  const findSelect = (key) => selects.find((s) => s.dataset.filter === key);
+  const pick = (key) => {
+    const el = findSelect(key);
+    return el ? el.value : '';
+  };
+  const setPick = (key, value) => {
+    const el = findSelect(key);
+    if (!el) return;
+    el.value = norm(value);
+    if (el.value !== norm(value)) el.value = '';
+  };
+
+  function readUrl() {
+    const p = new URLSearchParams(location.search);
+    for (const key of KEYS) {
+      const v = p.get(key);
+      if (v) setPick(key, v);
+    }
+    if (search) search.value = p.get('q') || '';
+  }
+
+  function writeUrl() {
+    const p = new URLSearchParams();
+    for (const key of KEYS) {
+      const v = pick(key);
+      if (v) p.set(key, v);
+    }
+    const q = search ? search.value.trim() : '';
+    if (q) p.set('q', q);
+    const qs = p.toString();
+    history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+  }
+
+  function matches(card) {
+    const work = norm(pick('work'));
+    const type = norm(pick('type'));
+    const q = search ? search.value.trim().toLowerCase() : '';
+    return (
+      (!work || norm(card.dataset.work) === work) &&
+      (!type || norm(card.dataset.type) === type) &&
+      (!q || card.dataset.name.includes(q))
+    );
+  }
+
+  function renderApplied() {
+    if (!appliedEl) return;
+    const parts = KEYS.map((key) => {
+      const el = findSelect(key);
+      if (!el || !el.value) return null;
+      const opt = el.options[el.selectedIndex];
+      const text = opt && opt.textContent ? opt.textContent : el.value;
+      return `<button type="button" class="ar-chip" data-clear="${key}">${LABELS[key]}：${escapeHtml(text)} <span class="ar-chip__x">✕</span></button>`;
+    }).filter(Boolean);
+    const q = search ? search.value.trim() : '';
+    if (q) parts.push(`<button type="button" class="ar-chip" data-clear="q">${LABELS.q}：${escapeHtml(q)} <span class="ar-chip__x">✕</span></button>`);
+    if (!parts.length) {
+      appliedEl.hidden = true;
+      appliedEl.innerHTML = '';
+      return;
+    }
+    appliedEl.hidden = false;
+    appliedEl.innerHTML =
+      '<span>当前筛选：</span>' + parts.join('') +
+      '<button type="button" class="ar-chip ar-chip--all" data-clear="__all">清空全部</button>';
+  }
+
+  function apply() {
+    const hits = cards.filter(matches);
+    for (const card of cards) card.hidden = true;
+    for (const card of hits) card.hidden = false;
+    if (countEl) countEl.textContent = `显示 ${hits.length} / ${cards.length} 条`;
+    if (emptyEl) emptyEl.hidden = hits.length !== 0;
+    renderApplied();
+  }
+
+  function applyFresh() {
+    apply();
+    writeUrl();
+  }
+
+  readUrl();
+
+  for (const el of selects) el.addEventListener('change', applyFresh);
+  if (search) search.addEventListener('input', applyFresh);
+
+  if (appliedEl) {
+    appliedEl.addEventListener('click', (ev) => {
+      const btn = ev.target.closest('[data-clear]');
+      if (!btn) return;
+      const key = btn.dataset.clear;
+      if (key === '__all') {
+        for (const el of selects) el.value = '';
+        if (search) search.value = '';
+      } else if (key === 'q') {
+        if (search) search.value = '';
+      } else {
+        setPick(key, '');
+      }
+      applyFresh();
+    });
+  }
+
+  const reset = document.querySelector('[data-reset]');
+  if (reset) {
+    reset.addEventListener('click', () => {
+      for (const el of selects) el.value = '';
+      if (search) search.value = '';
+      applyFresh();
+    });
+  }
+
+  // 顶部类别概览胶囊 = 筛选快捷键
+  const typeSelect = findSelect('type');
+  if (typeSelect) {
+    for (const chip of document.querySelectorAll('.ar-sum[data-type]')) {
+      chip.addEventListener('click', () => {
+        typeSelect.value = typeSelect.value === chip.dataset.type ? '' : chip.dataset.type;
+        applyFresh();
+      });
+    }
+  }
+
+  apply();
+</script>

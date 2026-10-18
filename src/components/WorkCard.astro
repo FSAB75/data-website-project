@@ -45,7 +45,10 @@ const cover = workCover(work);
     filter: saturate(0.85) contrast(1.05);
     transition: transform 0.4s ease, filter 0.3s ease;
   }
-  .work-card:hover .card__cover img { transform: scale(1.04); filter: saturate(1) contrast(1.1); }
+  /* E7：封面推近只在能真正悬停的设备上做，触屏点完不会停在放大态 */
+  @media (hover: hover) {
+    .work-card:hover .card__cover img { transform: scale(1.04); filter: saturate(1) contrast(1.1); }
+  }
   .card__cover::after {
     content: '';
     position: absolute;

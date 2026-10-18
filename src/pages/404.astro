@@ -1,0 +1,113 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { seriesList, worksOfSeries, works, entities } from '../lib/data.js';
+
+// F2：自定义 404。纯静态托管时由托管方在找不到路径时回落到这个页面（nginx 已配 error_page）。
+const description = '这一页不在档案里 —— 它可能被移动、改名，或者从来就不存在。';
+const scaleText = `${seriesList.length} 个系列 · ${works.length} 部作品 · ${entities.length} 个词条`;
+---
+
+<BaseLayout title="页面不存在 · 404" description={description} noindex>
+  <p class="eyebrow">ERROR 404</p>
+  <h1>这一页不在档案里</h1>
+  <p class="lead">
+    它可能被移动、改过名字，或者从来就不存在。<br />
+    下面是这份档案的入口 —— 也可以直接用站内搜索找你要的东西。
+  </p>
+
+  <form class="s404-form" role="search" method="get" action="/search/">
+    <label class="s404-label" for="q">站内搜索</label>
+    <div class="s404-row">
+      <input id="q" name="q" type="search" placeholder="作品名、人物、术语、别名都能搜到" autocomplete="off" />
+      <button type="submit">搜索</button>
+    </div>
+  </form>
+
+  <nav class="s404-links" aria-label="站点入口">
+    <a href="/">← 回到首页</a>
+    <span class="dim">{scaleText}</span>
+  </nav>
+
+  <h2 class="s404-h2">或从某个系列进去</h2>
+  <ul class="s404-series">
+    {seriesList.map((pack) => (
+      <li>
+        <a href={`/series/${pack.id}/`}>{pack.series.nameZh}</a>
+        <span class="dim">
+          {worksOfSeries(pack.id).map((w) => w.title).join(' · ')}
+        </span>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
+
+<style>
+  .dim { color: var(--dim); font-size: 13px; }
+
+  .s404-form { margin: 26px 0 18px; }
+
+  .s404-label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--dim);
+    margin-bottom: 7px;
+  }
+
+  .s404-row { display: flex; flex-wrap: wrap; gap: 8px; max-width: 520px; }
+
+  .s404-row input {
+    flex: 1 1 240px;
+    min-width: 0;
+    padding: 10px 12px;
+    font: inherit;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+  }
+
+  .s404-row button {
+    padding: 10px 18px;
+    font: inherit;
+    font-size: 14px;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .s404-row input:focus-visible,
+  .s404-row button:focus-visible {
+    outline: 2px solid var(--blood);
+    outline-offset: 2px;
+  }
+
+  .s404-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 16px;
+    margin: 0 0 34px;
+    font-size: 14px;
+  }
+
+  .s404-h2 { font-size: 15px; margin: 0 0 12px; }
+
+  .s404-series { list-style: none; margin: 0; padding: 0; }
+
+  .s404-series li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 12px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .s404-series li:first-child { border-top: 1px solid var(--line); }
+
+  .s404-series a { font-size: 15px; }
+</style>

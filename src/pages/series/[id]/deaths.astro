@@ -51,7 +51,11 @@ const shareImage = coverPath('series', item.id);
     ))}
   </section>
 
-  <section class="nt-filters" aria-label="筛选">
+  <!-- E6：窄屏用这个「筛选」按钮收放筛选栏（原生 checkbox，零 JS）；宽屏整块不显示 -->
+  <input type="checkbox" id="nt-filter-toggle" class="nt-toggle" aria-controls="nt-filter-panel" />
+  <label for="nt-filter-toggle" class="nt-toggle-btn">筛选</label>
+
+  <section class="nt-filters" id="nt-filter-panel" aria-label="筛选">
     <label class="nt-filter">
       <span>作品</span>
       <select data-filter="work">
@@ -276,7 +280,7 @@ const shareImage = coverPath('series', item.id);
   .nt-grid {
     display: grid;
     gap: 14px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
   }
   .nt-card {
     position: relative;
@@ -375,10 +379,51 @@ const shareImage = coverPath('series', item.id);
     .nt-filter select, .nt-filter input { min-height: 44px; font-size: 15px; }
   }
 
+  /* E6：窄屏把筛选栏收进「筛选」按钮（原生 checkbox，零 JS）；这两个元素宽屏一律不显示 */
+  .nt-toggle, .nt-toggle-btn { display: none; }
+
   @media (max-width: 640px) {
+    .nt-toggle {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      margin: 0;
+    }
+    .nt-toggle-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      min-height: 44px;
+      margin-bottom: 10px;
+      padding: 11px 14px;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      cursor: pointer;
+    }
+    .nt-toggle-btn::after { content: '展开'; margin-left: auto; font-size: 12px; color: var(--dim); }
+    .nt-toggle:checked + .nt-toggle-btn { border-color: rgba(var(--accent-rgb), 0.5); }
+    .nt-toggle:checked + .nt-toggle-btn::after { content: '收起'; }
+    .nt-toggle:focus-visible + .nt-toggle-btn { outline: 2px solid rgba(var(--accent-rgb), 0.7); outline-offset: 2px; }
+
+    /* 收起时只留「显示 N 条」这一行，展开才出现各个控件 */
+    .nt-filter, .nt-reset { display: none; }
+    .nt-toggle:checked ~ .nt-filters .nt-filter { display: flex; }
+    .nt-toggle:checked ~ .nt-filters .nt-reset { display: inline-block; }
+
     .nt-filter select, .nt-filter input, .nt-filter--q input { min-width: 100%; }
     .nt-filter { width: 100%; }
+    .nt-filters { padding: 12px 14px; margin-bottom: 14px; }
     .nt-count { margin-left: 0; }
+
+    /* 死法分布胶囊改成一行横滑，省掉好几行竖向空间 */
+    .nt-summary { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+    .nt-sum { flex: 0 0 auto; }
   }
 </style>
 

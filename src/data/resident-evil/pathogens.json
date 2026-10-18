@@ -1,0 +1,352 @@
+{
+  "seriesId": "resident-evil",
+  "updatedAt": "2026-10-18",
+  "chain": [
+    "re-progenitor-virus",
+    "re-t-virus",
+    "re-g-virus",
+    "re-t-veronica-virus",
+    "re-plaga",
+    "re-uroboros",
+    "re-c-virus",
+    "re-mold"
+  ],
+  "chainNote": "始祖病毒之后，系列各代主要病原体依次登场的演进主线",
+  "pathogenGroups": [
+    {
+      "era": "远古 · 一切病原体的源头",
+      "hint": "安布雷拉与三联制药全部病毒研究的最上游。",
+      "items": [
+        {
+          "entity": "re-progenitor-virus",
+          "kind": "病毒",
+          "parent": null,
+          "derives": [
+            "re-t-virus",
+            "re-g-virus",
+            "re-t-veronica-virus",
+            "re-mold"
+          ],
+          "origin": "西非太阳阶梯花朵中发现的远古病毒",
+          "note": "本谱系的最上游节点。T 病毒、G 病毒、T-维罗妮卡病毒与霉菌研究都能上溯至此，它也是斯宾塞永生计划的起点；再往上只剩始祖花这一植物源头。"
+        }
+      ]
+    },
+    {
+      "era": "安布雷拉时代 · 两代主力病毒",
+      "hint": "公司以始祖病毒为基础造出的两条主力路线。",
+      "items": [
+        {
+          "entity": "re-t-virus",
+          "kind": "病毒",
+          "parent": "re-progenitor-virus",
+          "derives": [],
+          "origin": "安布雷拉基于始祖病毒研制",
+          "note": "始祖病毒最直接的改良株，向外分出的兵器数量为全谱系之最：暴君、猎杀者、利查特、地狱犬、绯红头颅等皆出自它。"
+        },
+        {
+          "entity": "re-g-virus",
+          "kind": "病毒",
+          "parent": "re-progenitor-virus",
+          "derives": [],
+          "origin": "威廉·柏金在安布雷拉主导研发",
+          "note": "与 T 病毒并列的衍生株，走的是宿主自身极限变异的路线，因此在谱系里几乎没有量产兵器分支，产物以单个变异体为主。"
+        }
+      ]
+    },
+    {
+      "era": "阿什福德家族与欧洲分部",
+      "hint": "同一时代里另起炉灶的家族计划与欧洲分支研究。",
+      "items": [
+        {
+          "entity": "re-t-veronica-virus",
+          "kind": "病毒",
+          "parent": "re-progenitor-virus",
+          "derives": [],
+          "origin": "阿什福德家族以始祖病毒与女王蚁基因研制",
+          "note": "圣女计划的成果，被公认为强于 T 病毒的一代病毒；谱系上与 T 病毒同出始祖病毒，却自成一脉，失败产物即诺斯拉图。"
+        },
+        {
+          "entity": "re-nemesis-alpha-parasite",
+          "kind": "寄生虫",
+          "parent": null,
+          "derives": [],
+          "origin": "安布雷拉欧洲分部第六实验室开发",
+          "note": "谱系中少见的非病毒节点：它本身不感染宿主，而是作为关键组件被植入暴君，直接催生出追迹者。"
+        }
+      ]
+    },
+    {
+      "era": "寄生虫与新型病原体",
+      "hint": "系列换用寄生虫与全新毒株的一代，源头各自独立。",
+      "items": [
+        {
+          "entity": "re-plaga",
+          "kind": "寄生虫",
+          "parent": null,
+          "derives": [],
+          "origin": "光明教团崇奉的古代寄生虫",
+          "note": "谱系中的第二条独立源头：它并非由病毒派生，而是本就存在的寄生虫，被教团重新发掘后支配村民，并延续出马吉尼。"
+        },
+        {
+          "entity": "re-t-abyss",
+          "kind": "病毒",
+          "parent": null,
+          "derives": [],
+          "origin": "特拉格里亚研究的水中传播病毒",
+          "note": "名带 T 字，但现有素材未写明它与 T 病毒的派生关系，故此处不设上级节点，仅记录其在浣熊市事件后的独立登场。"
+        },
+        {
+          "entity": "re-uroboros",
+          "kind": "病毒",
+          "parent": null,
+          "derives": [],
+          "origin": "三联制药以始祖花研制的新毒株",
+          "note": "由始祖花制成，而始祖花也是始祖病毒的来源植物，二者更像同源并出而非直接派生，因此不挂在始祖病毒之下。"
+        },
+        {
+          "entity": "re-c-virus",
+          "kind": "病毒",
+          "parent": null,
+          "derives": [],
+          "origin": "本作新病毒，卡拉为主要研究者",
+          "note": "保留宿主意识的一代病原体，现有素材未点明它由 T 或 G 派生，谱系上暂作独立节点处理，与 J'vo 等感染体相连。"
+        }
+      ]
+    },
+    {
+      "era": "霉菌线",
+      "hint": "系列后期转向霉菌，源头仍与始祖病毒研究纠缠。",
+      "items": [
+        {
+          "entity": "re-mold",
+          "kind": "霉菌",
+          "parent": "re-progenitor-virus",
+          "derives": [],
+          "origin": "东欧巨菌（菌主）所出；另说为安布雷拉早期研究分支",
+          "note": "被明确标示为安布雷拉早期始祖病毒研究的分支，故挂在始祖病毒之下；另有说法称其出自东欧巨菌，两种来源并存待考。"
+        },
+        {
+          "entity": "re-cadou",
+          "kind": "寄生虫",
+          "parent": null,
+          "derives": [],
+          "origin": "母神米兰达创造的寄生体",
+          "note": "由米兰达以巨型霉菌为材料造出的寄生体，因上游是兵器节点而非病原体，此处不设派生边，由它直接产出狼人等残次品。"
+        }
+      ]
+    },
+    {
+      "era": "安布雷拉的两大计划",
+      "hint": "为产出特定病毒与兵器而设的组织性计划。",
+      "items": [
+        {
+          "entity": "re-tyrant-program",
+          "kind": "计划",
+          "parent": null,
+          "derives": [],
+          "origin": "安布雷拉为制造终极兵器而设",
+          "note": "计划本身不是病原体，而是暴君谱系的组织性起点：其产物暴君与追迹者作为兵器在另一栏归类。"
+        },
+        {
+          "entity": "re-veronica-project",
+          "kind": "计划",
+          "parent": null,
+          "derives": [],
+          "origin": "亚历山大·阿什福德为复兴家族发起",
+          "note": "谱系中少见的家族级计划，其唯一成果是一株病毒；该病毒已在病原体栏按始祖病毒派生归类，故本节点不另设派生边。"
+        }
+      ]
+    }
+  ],
+  "bowGroups": [
+    {
+      "label": "T 病毒系",
+      "from": "re-t-virus",
+      "hint": "安布雷拉以 T 病毒量产的一代兵器与感染体。",
+      "items": [
+        {
+          "entity": "re-tyrant",
+          "kind": "暴君型",
+          "note": "T 病毒路线的顶点，由暴君计划推进的量产兵器，洋馆的 T-002 与浣熊市的 T-103 均属此系。"
+        },
+        {
+          "entity": "re-licker",
+          "kind": "变异体",
+          "note": "人形宿主感染 T 病毒后进一步变异所成，是病毒在无人干预下自行产生的怪物。"
+        },
+        {
+          "entity": "re-cerberus",
+          "kind": "感染体",
+          "note": "军用猎犬被 T 病毒感染后的产物，洋馆事件序章最早现身的敌人之一。"
+        },
+        {
+          "entity": "re-hunter",
+          "kind": "人工造物",
+          "note": "以 T 病毒为基础定向制造的军事用兵器，与暴君同为安布雷拉的制式产品。"
+        },
+        {
+          "entity": "re-crimson-head",
+          "kind": "变异体",
+          "note": "T 病毒感染后继续变异的更凶悍形态，属于病毒自然变异路线的延伸。"
+        },
+        {
+          "entity": "re-queen-leech",
+          "kind": "变异体",
+          "note": "感染 T 病毒的水蛭，因吞并濒死者而继承其记忆，是病毒产物中极为特殊的一例。"
+        }
+      ]
+    },
+    {
+      "label": "Nemesis-α 寄生虫系",
+      "from": "re-nemesis-alpha-parasite",
+      "hint": "在暴君基础上植入寄生虫再改造出的追击型兵器。",
+      "items": [
+        {
+          "entity": "re-nemesis",
+          "kind": "追击型",
+          "note": "把该寄生虫植入 T-103 型暴君体内得到的个体，是暴君谱系被寄生虫改造后的追击特化型。"
+        }
+      ]
+    },
+    {
+      "label": "T-维罗妮卡系",
+      "from": "re-t-veronica-virus",
+      "hint": "圣女计划病毒在人体实验上留下的怪物。",
+      "items": [
+        {
+          "entity": "re-nosferatu",
+          "kind": "变异体",
+          "note": "注入 T-维罗妮卡病毒失败的产物，既是该病毒唯一的变异产物，也标记着阿什福德家族悲剧的起点。"
+        }
+      ]
+    },
+    {
+      "label": "普拉卡系",
+      "from": "re-plaga",
+      "hint": "被普拉卡支配或以普拉卡制造的教团怪物，素材未逐一点明派生关系。",
+      "items": [
+        {
+          "entity": "re-ganado",
+          "kind": "感染体",
+          "note": "被普拉卡控制的村民，保住人形却失去自主，是该寄生虫最典型的产物。"
+        },
+        {
+          "entity": "re-zealot",
+          "kind": "感染体",
+          "note": "光明教团的武装人员，与普拉卡控制体系同属教团势力，归入此系以示归属。"
+        },
+        {
+          "entity": "re-el-gigante",
+          "kind": "变异体",
+          "note": "教团用普拉卡催生的巨型怪物，说明该寄生虫不只是控制人，也能造出大型战斗体。"
+        },
+        {
+          "entity": "re-garrador",
+          "kind": "变异体",
+          "note": "双目被毁、以声音捕猎的实验体，属教团对普拉卡应用的一次极端改造。"
+        },
+        {
+          "entity": "re-regenerador",
+          "kind": "变异体",
+          "note": "以普拉卡强化再生能力的实验体，代表教团对该寄生虫再生特性的开发方向。"
+        },
+        {
+          "entity": "re-majini",
+          "kind": "感染体",
+          "note": "被普拉卡变种感染、仍能持械行动的当地人，是同一寄生虫在非洲战场的延续。"
+        }
+      ]
+    },
+    {
+      "label": "T-深渊系",
+      "from": "re-t-abyss",
+      "hint": "诺曼注入过量病毒后诞生的新型暴君。",
+      "items": [
+        {
+          "entity": "re-final-form-abyss",
+          "kind": "暴君型",
+          "note": "注入过量 T-深渊后变异成的新型暴君，说明该病毒同样能走向暴君式的终极形态。"
+        }
+      ]
+    },
+    {
+      "label": "C 病毒系",
+      "from": "re-c-virus",
+      "hint": "保留宿主意识的新一代病毒所制造的产物。",
+      "items": [
+        {
+          "entity": "re-j-vo",
+          "kind": "感染体",
+          "note": "C 病毒感染者的统称，与 T 病毒丧尸的分野就在于仍保有部分意识与伪装能力。"
+        },
+        {
+          "entity": "re-haos",
+          "kind": "人工造物",
+          "note": "水下设施中的巨大兵器，与 C 病毒同代登场，归入该系以示其所属代际。"
+        },
+        {
+          "entity": "re-ustanak",
+          "kind": "追击型",
+          "note": "为追猎杰克与雪莉而造的巨型兵器，以不知疲倦的追击成为 C 病毒代的追猎担当。"
+        }
+      ]
+    },
+    {
+      "label": "霉菌与菌主系",
+      "from": "re-mold",
+      "hint": "霉菌线中的实验体、菌兽与其源头巨菌。",
+      "items": [
+        {
+          "entity": "re-megamycete",
+          "kind": "霉菌体",
+          "note": "霉菌线的自然总源头，米兰达在洞窟中发现；严格说它是各家霉菌的上游而非产物，此处按系归类。"
+        },
+        {
+          "entity": "re-eveline",
+          "kind": "人工造物",
+          "note": "联结组织以霉菌造的 E 系列实验体，能分泌霉菌感染他人，是霉菌武器化的直接产物。"
+        },
+        {
+          "entity": "re-swamp-man",
+          "kind": "霉菌体",
+          "note": "由霉菌维系的不死菌兽，真身是被霉菌重塑的尸体，代表霉菌线再生能力的极限。"
+        }
+      ]
+    },
+    {
+      "label": "恩赐系",
+      "from": "re-cadou",
+      "hint": "米兰达以恩赐改造出的村庄怪物。",
+      "items": [
+        {
+          "entity": "re-lycan",
+          "kind": "变异体",
+          "note": "承受恩赐失败的村民所化，是该寄生体最容易量产、数量最多的残次品。"
+        },
+        {
+          "entity": "re-angie",
+          "kind": "人工造物",
+          "note": "受恩赐影响的领主所操控的人偶，虽非直接变异体，仍归入恩赐系的村庄造物。"
+        }
+      ]
+    },
+    {
+      "label": "衔尾蛇系",
+      "from": "re-uroboros",
+      "hint": "岛上与亚历克斯研究同处的变异体，素材未点明其病原体，暂归此系。",
+      "items": [
+        {
+          "entity": "re-revenant",
+          "kind": "感染体",
+          "note": "流刑地岛上的主要变异体，素材未点名其与衔尾蛇病毒的派生关系，按岛屿归属暂归此系。"
+        },
+        {
+          "entity": "re-glasp",
+          "kind": "变异体",
+          "note": "与还魂尸同处一岛的变异体，同样未写明病原体，一并归入该系以示所属。"
+        }
+      ]
+    }
+  ]
+}

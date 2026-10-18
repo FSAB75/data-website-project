@@ -1,0 +1,30 @@
+﻿编号,类型,名称（英）,名称（中）,位置/条件,内容要点,备注
+FILE-01,文件,Files / Diaries,文件/日记,警局/母巢/工厂内,揭示安布雷拉阴谋、威廉的G病毒研究、浣熊市惨状、雪莉身世,系列环境叙事传统
+PUZ-01,解谜收集,Unicorn Medallion,独角兽纹章,浣熊市警察局,警局经典三纹章之一；需与另两枚组合,
+PUZ-02,解谜收集,Lion Medallion,狮子纹章,浣熊市警察局,三纹章之二,
+PUZ-03,解谜收集,Eagle Medallion,老鹰纹章,浣熊市警察局,三纹章之三,
+PUZ-04,解谜收集,Combined Medallion,组合奖章,警局,三纹章嵌入后取得；开启关键门,本作最著名解谜
+PUZ-05,解谜收集,Chess Pieces / Plugs,棋子/插头类,警局与母巢,后续解谜链,流程依版本而异
+KEY-01,钥匙,NEST Keycards,母巢门禁卡,母巢内,进出NEST各区域,
+ITEM-01,剧情关键,Sherry's Amulet,雪莉的圆形吊坠,雪莉身上,G病毒样本的藏匿处；艾达取下后发现样本,核心剧情物品
+ITEM-02,剧情关键,G-Virus Sample,G病毒样本,藏于吊坠,各方争夺核心；艾达最终带走；汉克为回收它而战,
+ITEM-03,剧情关键,DEVIL Vaccine,DEVIL疫苗,母巢/医院制造,阻止雪莉体内胚胎融合；安妮特临终告知配方,
+ITEM-04,剧情关键,Rocket Launcher / RPG,火箭发射器,结局,艾达（未死）扔给里昂；用于击杀超级暴君,
+WPN-01,武器,Combat Knife,战斗刀,初始,
+WPN-02,武器,Handgun,手枪,初期,伯莱塔/M92F等
+WPN-03,武器,Shotgun,霰弹枪,中期,近战主力
+WPN-04,武器,Grenade Launcher,榴弹发射器,中期,可发射火焰、爆炸、硫酸弹
+WPN-05,武器,Flamethrower,火焰喷射器,中期,需燃料补给
+WPN-06,武器,Magnum,马格南,后期,高威力
+WPN-07,武器,Submachine Gun,冲锋枪,中期,
+ENM-01,敌人,Zombies,丧尸,全作,T病毒感染市民；含女性丧尸、丧尸犬
+ENM-02,敌人,Licker,利查特,警局/母巢,长舌、无眼、脑部外露的变异怪物
+ENM-03,敌人,Tyrant T-103（Mr. X）,暴君T-103,警局与母巢,安布雷拉派出的追踪型暴君；后变异为超级暴君
+ENM-04,敌人,Super Tyrant,超级暴君,母巢,T-103变异形态；最终被火箭筒击杀
+ENM-05,敌人,William Birkin（G）,威廉·柏金（G）,母巢与工厂,G病毒怪物；共5种形态
+ENM-06,敌人,G Embryo,G幼体,雪莉体内,植入雪莉体内的胚胎
+ENM-07,敌人,Moths / Insects,飞蛾/飞虫,场景,场景敌人
+MODE-01,隐藏模式,The 4th Survivor,第四生存者,额外模式,操控汉克完成G病毒回收；穿越敌人（含两具T-103）抵达警局屋顶；属正史
+MODE-02,隐藏模式,The To-fu Survivor,豆腐生存者,额外模式,操控豆腐、仅持小刀的高压搞笑模式；独立于剧情
+MODE-03,隐藏模式,Extreme Battle,极限战斗,额外模式,限定区域生存挑战；独立于剧情
+MODE-04,隐藏模式,Ghost Survivors,幽灵生存者,重制版新增,三个平行世界模式（强忍悲伤/大逃亡/被遗忘的士兵）；结局与本体截然相反

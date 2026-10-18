@@ -53,9 +53,28 @@ const shareImage = appearedWorks.length > 0 ? workCover(appearedWorks[0]) : null
 const scenes = (entity.images || [])
   .map((img: any) => ({ ...img, src: scenePath(img.file) }))
   .filter((img: any) => img.src);
+
+// F5：结构化数据（词条页 → DefinedTerm）
+const abs = (p: string) => (Astro.site ? new URL(p, Astro.site).href : p);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: entity.nameZh,
+  ...(entity.nameEn || (entity.aliases || []).length
+    ? { alternateName: [entity.nameEn, ...(entity.aliases || [])].filter(Boolean) }
+    : {}),
+  url: abs(`/entity/${entity.id}/`),
+  description: clip(entity.summary, 160),
+  inLanguage: 'zh-CN',
+  inDefinedTermSet: {
+    '@type': 'DefinedTermSet',
+    name: `${pack.series.nameZh} · 词条表`,
+    url: abs(`/series/${pack.id}/`),
+  },
+};
 ---
 
-<BaseLayout title={`${entity.nameZh} · 词条`} theme={theme} description={description} image={shareImage} type="article">
+<BaseLayout title={`${entity.nameZh} · 词条`} theme={theme} description={description} image={shareImage} type="article" jsonLd={jsonLd}>
   <p class="eyebrow">{typeLabels[entity.type] || '词条'} · ENTITY</p>
   <h1>{entity.nameZh} <span class="title-en">{entity.nameEn}</span></h1>
   <p class="lead">{entity.summary}</p>
@@ -220,7 +239,7 @@ const scenes = (entity.images || [])
   .deeds li { margin-bottom: 10px; color: #c9c6c0; font-size: 14.5px; }
   .deeds li:last-child { margin-bottom: 0; }
 
-  .rel-list { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .rel-list { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
   .rel {
     display: flex;
     flex-direction: column;
@@ -262,4 +281,18 @@ const scenes = (entity.images || [])
   .doc__en { font-size: 12px; color: var(--dim); }
   .doc__summary { font-size: 14px; color: var(--muted); margin: 8px 0 6px; }
   .doc__from { font-size: 12px; color: var(--blood-bright); }
+
+  /* E3：窄屏把「标签 / 值」两列压成上下两行，不再横向挤 */
+  @media (max-width: 640px) {
+    .facts, .facts tbody, .facts tr, .facts th, .facts td { display: block; width: auto; }
+    .facts th {
+      border-right: none;
+      border-bottom: none;
+      padding: 9px 14px 2px;
+      white-space: normal;
+    }
+    .facts td { padding: 0 14px 11px; }
+    .facts tr { border-bottom: 1px solid var(--line); }
+    .facts tr:last-child { border-bottom: none; }
+  }
 </style>

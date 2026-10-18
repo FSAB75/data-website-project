@@ -1,0 +1,3139 @@
+{
+  "seriesId": "resident-evil",
+  "note": "世界观时间线：本系列正史的骨架由年份与日期构成 —— 洋馆事件与浣熊市事件都有明确日期，其余多为相对表述。confidence 三档：已核实 / 推测 / 未明确；major 标记关键大事件。本系列 13 部作品已全部接入。部分作品的年份在公开来源间记为两说、或官方未明示精确日期，已在对应事件中以「约」或并列标注；《生化危机9：安魂曲》的结局细节在整理时官方尚未披露，本站不予补全。",
+  "groups": [
+    {
+      "era": "1918–1953 · 菌主与米兰达",
+      "hint": "系列里更早的一层起源 —— 安布雷拉的标志、始祖病毒，乃至后来所有的霉菌实验，源头都指向东欧村庄的这位母亲。",
+      "events": [
+        {
+          "id": "miranda-loses-eva",
+          "time": "1918 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "米兰达在西班牙流感中失去女儿伊娃",
+          "desc": "这一个人的死亡，成了此后一百年所有实验的理由。",
+          "characters": [
+            "re-mother-miranda",
+            "re-eva"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "megamycete-found",
+          "time": "1918 年之后",
+          "confidence": "已核实",
+          "major": true,
+          "title": "米兰达在一处洞窟发现「菌主」——一株能储存死者意识的巨型霉菌",
+          "desc": "它正是整个系列「霉菌线」的总源头：后来的恩赐、伊芙琳所用的霉菌，乃至伊森与贝克一家的再生能力，都能追到这里。",
+          "characters": [
+            "re-mother-miranda",
+            "re-megamycete",
+            "re-eva"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "miranda-experiments",
+          "time": "1918 年之后",
+          "confidence": "已核实",
+          "title": "米兰达开始用霉菌进行人体实验，寻找能承载伊娃意识的「完美容器」",
+          "desc": "她此后实现长生不老，又创造出寄生体「恩赐」拿村民做实验——整座村庄就此变成她的实验场。",
+          "characters": [
+            "re-mother-miranda",
+            "re-eva",
+            "re-cadou",
+            "re-village"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "spencer-pupil",
+          "time": "1953 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "年轻医学生斯宾塞曾师从米兰达；安布雷拉的标志源自米兰达村庄的古老符号",
+          "desc": "斯宾塞受她启发，理念却不同：米兰达只为复活女儿，斯宾塞则想用病毒「重塑人类」。他离开后创立了安布雷拉 —— 系列的病毒史由此接上另一条线。",
+          "characters": [
+            "re-oswell-e-spencer",
+            "re-mother-miranda",
+            "re-umbrella"
+          ],
+          "works": [
+            "re8"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "1960s–1980s · 伞公司的起点",
+      "hint": "这一层是系列背景：一切灾难都出自同一家公司的同一项野心。",
+      "events": [
+        {
+          "id": "umbrella-founded",
+          "time": "1960s–1980s",
+          "confidence": "已核实",
+          "major": true,
+          "title": "奥斯威尔·E·斯宾塞创立安布雷拉，始祖病毒被发现",
+          "desc": "斯宾塞与合伙人创立了安布雷拉（保护伞公司）；同期，作为系列全部病原体源头的「始祖病毒」被发现。",
+          "characters": [
+            "re-oswell-e-spencer",
+            "re-umbrella",
+            "re-progenitor-virus",
+            "re-james-marcus",
+            "re-edward-ashford"
+          ],
+          "works": [
+            "re0"
+          ]
+        },
+        {
+          "id": "virus-weapons",
+          "time": "1960s–1980s 之后",
+          "confidence": "已核实",
+          "title": "T 病毒等生化武器研发持续推进",
+          "desc": "在始祖病毒的基础上，安布雷拉开发出多支病原体并把它武器化；「病毒武器」这条线从此贯穿整个系列。",
+          "characters": [
+            "re-t-virus",
+            "re-umbrella",
+            "re-bow"
+          ],
+          "works": []
+        },
+        {
+          "id": "mansion-as-lab",
+          "time": "事发前（具体年份未明确）",
+          "confidence": "已核实",
+          "title": "阿克雷山区建起斯宾塞洋馆，实为秘密研究所",
+          "desc": "洋馆以斯宾塞的姓氏命名，内部进行 T 病毒与 B.O.W. 研究——包括后来成为最强生物兵器的暴君 T-002。",
+          "characters": [
+            "re-spencer-mansion",
+            "re-arklay-mountains",
+            "re-tyrant",
+            "re-tyrant-program"
+          ],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "arklay-murders",
+          "time": "1998 年 7 月之前",
+          "confidence": "已核实",
+          "title": "阿克雷山区接连发生离奇的食人惨案",
+          "desc": "警方最初把这些案子归咎于邪教活动，随后请求特种部队 S.T.A.R.S. 支援——这正是洋馆事件的开端。",
+          "characters": [
+            "re-arklay-mountains",
+            "re-stars",
+            "re-raccoon-city"
+          ],
+          "works": [
+            "re1",
+            "re0"
+          ]
+        },
+        {
+          "id": "marcus-director",
+          "time": "其后（具体年份未明确）",
+          "confidence": "已核实",
+          "title": "马库斯出任干部养成所初代所长；威斯克受命清理阿克雷实验室",
+          "desc": "作为安布雷拉的三位创始人之一，马库斯主持了干部养成所（干部培训所）——一处挂着培养干部名义的研究机构。车床计划式的往事之外，这里也是后来马库斯「复活」与复仇的舞台；而威斯克受命在 S.T.A.R.S. 抵达前处理阿克雷实验室的病毒泄漏、回收实验证据。",
+          "characters": [
+            "re-james-marcus",
+            "re-training-facility",
+            "re-albert-wesker",
+            "re-william-birkin",
+            "re-umbrella"
+          ],
+          "works": [
+            "re0"
+          ]
+        },
+        {
+          "id": "e-mold-branch",
+          "time": "早期研究（具体年份未明确）",
+          "confidence": "已核实",
+          "title": "E 型霉菌是安布雷拉早期始祖病毒研究的分支项目",
+          "desc": "这一条要到《生化危机7》的实验室里才被读到：在贝克农场的隐蔽实验室中，能找到始祖病毒研究者斯宾塞的日志，把霉菌线钉在了安布雷拉的早期研究上。",
+          "characters": [
+            "re-oswell-e-spencer",
+            "re-umbrella",
+            "re-mold",
+            "re-progenitor-virus"
+          ],
+          "works": [
+            "re7"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "1998 年 7 月 · 黄道列车事件",
+      "hint": "洋馆事件前数日 —— 布拉沃小队自己的这一趟任务，也是系列正史最早的一段。它交代了 T 病毒的来路，以及威斯克与威廉早年的关系。",
+      "events": [
+        {
+          "id": "helicopter-down",
+          "time": "1998 年 7 月",
+          "confidence": "已核实",
+          "major": true,
+          "title": "布拉沃小队的直升机途中故障迫降，队员在山区发现一辆囚车",
+          "desc": "押送的宪兵已经死亡；车上的囚犯是因「虐杀 23 人」被判死刑的前海军陆战队少尉比利·寇恩。队长下令展开搜寻，瑞贝卡与队友分开行动。",
+          "characters": [
+            "re-rebecca-chambers",
+            "re-billy-coen",
+            "re-stars",
+            "re-arklay-mountains"
+          ],
+          "works": [
+            "re0"
+          ]
+        },
+        {
+          "id": "ecliptic-express-found",
+          "time": "1998 年 7 月",
+          "confidence": "已核实",
+          "title": "瑞贝卡在轨道上发现停驶的「黄道特快车」",
+          "desc": "这列停在森林轨道上的特快车，是本作前半段的主要舞台；此时车厢里已经爆发了感染 T 病毒的水蛭之灾。",
+          "characters": [
+            "re-rebecca-chambers",
+            "re-ecliptic-express",
+            "re-t-virus"
+          ],
+          "works": [
+            "re0"
+          ]
+        },
+        {
+          "id": "billy-trust",
+          "time": "1998 年 7 月",
+          "confidence": "已核实",
+          "title": "比利救下遇险的瑞贝卡，两人为逃出生天共同行动",
+          "desc": "一个是布拉沃小队最年轻的医疗兵，一个是被判死刑的囚犯——这段临时同盟成了本作的核心关系，也奠定了系列首个双主角实时切换系统。",
+          "characters": [
+            "re-rebecca-chambers",
+            "re-billy-coen"
+          ],
+          "works": [
+            "re0"
+          ]
+        },
+        {
+          "id": "marcus-return",
+          "time": "此前（本作前史）",
+          "confidence": "已核实",
+          "major": true,
+          "title": "马库斯死后经 T 病毒与水蛭女王「复活」，以年轻时的模样归来",
+          "desc": "濒死的马库斯打翻培养皿，使感染 T 病毒的水蛭女王进入自己体内；在病毒长年累月的作用下，水蛭女王继承了他的记忆与意志，以博士年轻时的模样重获新生。",
+          "characters": [
+            "re-james-marcus",
+            "re-queen-leech",
+            "re-t-virus"
+          ],
+          "works": [
+            "re0"
+          ]
+        },
+        {
+          "id": "marcus-revenge",
+          "time": "1998 年 7 月",
+          "confidence": "已核实",
+          "major": true,
+          "title": "水蛭女王决定向安布雷拉复仇，列车与森林沦为实验造物的战场",
+          "desc": "它要散布病毒，并准备让整个世界被地狱之火焚烧殆尽；列车、森林与干部养成所的连环惨案由此而来。",
+          "characters": [
+            "re-queen-leech",
+            "re-james-marcus",
+            "re-umbrella",
+            "re-training-facility"
+          ],
+          "works": [
+            "re0"
+          ]
+        },
+        {
+          "id": "training-facility-fight",
+          "time": "1998 年 7 月",
+          "confidence": "已核实",
+          "title": "两人穿过森林，在安布雷拉干部养成所对抗马库斯的造物",
+          "desc": "养成所挂着培养干部的名义，实际是研究机构；威斯克与威廉·柏金正在此推进项目重启。",
+          "characters": [
+            "re-training-facility",
+            "re-rebecca-chambers",
+            "re-billy-coen",
+            "re-william-birkin",
+            "re-albert-wesker"
+          ],
+          "works": [
+            "re0"
+          ]
+        },
+        {
+          "id": "queen-leech-defeated",
+          "time": "1998 年 7 月",
+          "confidence": "已核实",
+          "major": true,
+          "title": "靠惧怕阳光的弱点击败水蛭女王，养成所随自爆化为灰烬",
+          "desc": "在自毁装置引起的连锁爆炸中，水蛭女王与马库斯的复仇计划一同毁灭；瑞贝卡与比利顺利逃脱。这也是系列里少见地明确给出致命弱点的首领战。",
+          "characters": [
+            "re-queen-leech",
+            "re-james-marcus",
+            "re-rebecca-chambers",
+            "re-billy-coen",
+            "re-training-facility"
+          ],
+          "works": [
+            "re0"
+          ]
+        },
+        {
+          "id": "billy-farewell",
+          "time": "1998 年 7 月",
+          "confidence": "已核实",
+          "title": "瑞贝卡收下比利的身份牌，替他伪造死讯",
+          "desc": "她已弄清比利只是代罪羔羊，于是替他结案；比利隐姓埋名、从此下落不明 —— 这是系列里著名的留白。",
+          "characters": [
+            "re-rebecca-chambers",
+            "re-billy-coen"
+          ],
+          "works": [
+            "re0"
+          ]
+        },
+        {
+          "id": "rebecca-to-mansion",
+          "time": "1998 年 7 月（洋馆事件前数日）",
+          "confidence": "已核实",
+          "major": true,
+          "title": "瑞贝卡独自前往斯宾塞洋馆与队长汇合 —— 直接接上洋馆事件",
+          "desc": "本作的结尾就是《生化危机1》的开头：数日之后，布拉沃小队失联，阿尔法小队进场。",
+          "characters": [
+            "re-rebecca-chambers",
+            "re-spencer-mansion",
+            "re-albert-wesker",
+            "re-mansion-incident"
+          ],
+          "works": [
+            "re0",
+            "re1"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "1998-07-23 · 洋馆事件",
+      "hint": "系列正史的起点。布拉沃小队的失联、洋馆里的谎言与地下研究所的真相，都发生在这一两天里。",
+      "events": [
+        {
+          "id": "bravo-dispatched",
+          "time": "1998-07-23",
+          "confidence": "已核实",
+          "major": true,
+          "title": "威斯克派布拉沃小队进入山区调查",
+          "desc": "S.T.A.R.S. 队长威斯克派出布拉沃小队作为先头部队进入阿克雷山区，随后与该队失联。",
+          "characters": [
+            "re-albert-wesker",
+            "re-stars",
+            "re-arklay-mountains"
+          ],
+          "works": [
+            "re1",
+            "re0"
+          ]
+        },
+        {
+          "id": "alpha-arrives",
+          "time": "1998-07-23",
+          "confidence": "已核实",
+          "title": "阿尔法小队抵达，发现布拉沃小队的直升机残骸",
+          "desc": "阿尔法小队进入山区后找到了先头部队损毁的直升机，随即遭到丧尸犬攻击。",
+          "characters": [
+            "re-chris-redfield",
+            "re-jill-valentine",
+            "re-barry-burton",
+            "re-albert-wesker"
+          ],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "cerberus-attack",
+          "time": "1998-07-23",
+          "confidence": "已核实",
+          "title": "丧尸犬袭击：约瑟夫遇害，布拉德驾机逃离",
+          "desc": "队员约瑟夫·弗罗斯特当场遇害；飞行员布拉德·维克斯因恐慌抛下队友飞走——他的逃亡之路要到《生化危机3》才终结。",
+          "characters": [
+            "re-cerberus",
+            "re-joseph-frost",
+            "re-brad-vickers"
+          ],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "enter-mansion",
+          "time": "1998-07-23",
+          "confidence": "已核实",
+          "title": "幸存四人被迫逃入洋馆",
+          "desc": "克里斯、吉尔、巴瑞与威斯克被丧尸犬围堵，只能退进附近的洋馆——也就是安布雷拉的研究所。",
+          "characters": [
+            "re-spencer-mansion",
+            "re-chris-redfield",
+            "re-jill-valentine",
+            "re-barry-burton",
+            "re-albert-wesker"
+          ],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "wesker-vanishes",
+          "time": "洋馆事件当晚",
+          "confidence": "已核实",
+          "title": "威斯克突然消失，主角独自求生",
+          "desc": "主角发现队长不见踪影，只能独自在洋馆中寻找伙伴与逃生手段；逐步遭遇布拉沃小队的幸存成员，并发现这里其实是安布雷拉的研究机构。",
+          "characters": [
+            "re-albert-wesker",
+            "re-rebecca-chambers",
+            "re-t-virus"
+          ],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "hunter-deployed",
+          "time": "洋馆事件当晚",
+          "confidence": "已核实",
+          "title": "宿舍区出现军事用生物兵器「猎杀者」",
+          "desc": "主角在宿舍区与威斯克重逢，被要求搜查其他区域，并首次遭遇猎杀者。",
+          "characters": [
+            "re-hunter",
+            "re-albert-wesker"
+          ],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "enrico-killed",
+          "time": "洋馆事件当晚",
+          "confidence": "已核实",
+          "major": true,
+          "title": "恩里科说出「S.T.A.R.S. 内部有叛徒」，随即被枪杀",
+          "desc": "重伤濒死的布拉沃队长恩里科刚说出这句话，就被隐藏在暗处的某人开枪打死。",
+          "characters": [
+            "re-enrico-marini",
+            "re-stars"
+          ],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "lab-reveal",
+          "time": "洋馆事件当晚",
+          "confidence": "已核实",
+          "major": true,
+          "title": "地下研究所对峙：威斯克是安布雷拉间谍",
+          "desc": "真相揭晓——威斯克把 S.T.A.R.S. 引到这里，是为了获取生物武器的实战战斗数据；他以巴瑞家人的性命相要挟，随后释放暴君欲抹杀主角，自己却惨死于暴君之手。",
+          "characters": [
+            "re-albert-wesker",
+            "re-umbrella",
+            "re-tyrant",
+            "re-barry-burton",
+            "re-mansion-underground-lab"
+          ],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "tyrant-destroyed",
+          "time": "洋馆事件当晚",
+          "confidence": "已核实",
+          "title": "停机坪上的最后一战：布拉德投下火箭筒",
+          "desc": "巴瑞看清威斯克只是虚张声势后与主角合力击败暴君；主角前往停机坪发射信号弹，暴君二度来袭时，布拉德从直升机上投下火箭筒将其彻底摧毁。",
+          "characters": [
+            "re-tyrant",
+            "re-brad-vickers",
+            "re-barry-burton"
+          ],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "mansion-destroyed",
+          "time": "1998-07-23 之后",
+          "confidence": "已核实",
+          "major": true,
+          "title": "洋馆在火光中化为灰烬（正史：四人逃出）",
+          "desc": "洋馆的爆破装置被启动（推测为威斯克预先布置）。按《生化危机2》承接的正史口径：暴君被打倒、洋馆被毁，克里斯、吉尔、巴瑞与瑞贝卡四人均成功逃出；另有若干结局分支以洋馆未毁、暴君逃入森林收束。",
+          "characters": [
+            "re-spencer-mansion",
+            "re-chris-redfield",
+            "re-jill-valentine",
+            "re-barry-burton",
+            "re-rebecca-chambers"
+          ],
+          "works": [
+            "re1"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "1998-09-28 起 · 浣熊市事件（双轨）",
+      "hint": "《生化危机2》与《生化危机3》发生在同一时段：左侧是警局与地下的里昂 / 克莱尔线，右侧是市区逃生的吉尔线。两者互为平行视角，下方卡片是它们交汇的节点。",
+      "dual": true,
+      "tracks": [
+        {
+          "key": "re2",
+          "name": "生化危机2 · 里昂 / 克莱尔线",
+          "work": "re2",
+          "events": [
+            {
+              "id": "leon-arrives",
+              "time": "1998-09-29 前后",
+              "confidence": "已核实",
+              "title": "里昂开车抵达浣熊市",
+              "desc": "上任第一天的新人警察里昂因为起晚了，将近傍晚才开车进城——城里已经只剩丧尸。",
+              "region": "市区 · 警察局",
+              "characters": [
+                "re-leon-s-kennedy",
+                "re-raccoon-city"
+              ]
+            },
+            {
+              "id": "claire-arrives",
+              "time": "1998-09-29 前后",
+              "confidence": "已核实",
+              "title": "克莱尔骑摩托车赶来寻找哥哥",
+              "desc": "克莱尔·雷德菲尔德为寻找失联的哥哥克里斯抵达浣熊市——她并不知道哥哥此刻正在欧洲调查安布雷拉。",
+              "region": "市区 · 警察局",
+              "characters": [
+                "re-claire-redfield",
+                "re-chris-redfield"
+              ]
+            },
+            {
+              "id": "rpd-meeting",
+              "time": "1998-09-29 前后",
+              "confidence": "已核实",
+              "title": "两人在警察局大厅相遇，目击雪莉逃走",
+              "desc": "里昂与克莱尔在 R.P.D. 大厅碰上，都看见了雪莉·柏金从丧尸处逃开；里昂把无线电交给克莱尔，两人从此分头行动又互相补位。",
+              "region": "警察局",
+              "characters": [
+                "re-raccoon-police-department",
+                "re-sherry-birkin",
+                "re-leon-s-kennedy",
+                "re-claire-redfield"
+              ]
+            },
+            {
+              "id": "irons-corruption",
+              "time": "1998-09-29 前后",
+              "confidence": "已核实",
+              "title": "警局内的利查特与腐败的局长",
+              "desc": "两人在警局遭遇变异怪物利查特；局长布莱恩·艾恩斯与安布雷拉勾结，在局内暗藏被制成标本的尸体，最终被 G 病毒怪物杀死。",
+              "region": "警察局",
+              "characters": [
+                "re-licker",
+                "re-brian-irons",
+                "re-marvin-branagh"
+              ]
+            },
+            {
+              "id": "nest-found",
+              "time": "1998-09-29 前后",
+              "confidence": "已核实",
+              "title": "下抵地下研究所「母巢」",
+              "desc": "顺着警局的暗门与下水道，两人抵达安布雷拉建在城市地下的研究所——警局之所以结构错综，就是为了掩盖它的入口。",
+              "region": "下水道 · 母巢",
+              "characters": [
+                "re-nest",
+                "re-raccoon-sewer",
+                "re-umbrella"
+              ]
+            },
+            {
+              "id": "birkin-becomes-g",
+              "time": "1998-09-29 前后",
+              "confidence": "已核实",
+              "major": true,
+              "title": "威廉·柏金注射 G 病毒，化为怪物「G」",
+              "desc": "威廉·柏金因争夺 G 病毒被射杀，临死前给自己注射了它；他的女儿雪莉在混乱中被 G 威廉植入了胚胎。",
+              "region": "母巢",
+              "characters": [
+                "re-william-birkin",
+                "re-g-virus",
+                "re-sherry-birkin",
+                "re-annette-birkin"
+              ]
+            },
+            {
+              "id": "ada-truth",
+              "time": "1998-09-29 前后",
+              "confidence": "已核实",
+              "title": "艾达的真相：她不是来找恋人的",
+              "desc": "自称寻找失联恋人的艾达·王其实是某秘密组织派出的间谍，目标是回收 G 病毒样本；安妮特认出她佩戴着雪莉的吊坠，动手时被推落重伤。",
+              "region": "母巢",
+              "characters": [
+                "re-ada-wong",
+                "re-sherry-amulet",
+                "re-annette-birkin"
+              ]
+            },
+            {
+              "id": "annette-dies",
+              "time": "1998-09-29 前后",
+              "confidence": "已核实",
+              "title": "安妮特重伤不治，留下 DEVIL 疫苗的配方",
+              "desc": "威廉之妻安妮特为救女儿四处奔走，最终重伤不治——临终前交代了制造疫苗「DEVIL」的方法，这是停下雪莉体内胚胎融合的唯一办法。",
+              "region": "母巢",
+              "characters": [
+                "re-annette-birkin",
+                "re-devil-vaccine",
+                "re-sherry-birkin"
+              ]
+            },
+            {
+              "id": "super-tyrant",
+              "time": "1998-09-29 前后",
+              "confidence": "已核实",
+              "title": "暴君变异为超级暴君，被火箭发射器击杀",
+              "desc": "艾达遭 G 威廉袭击重伤，危急时刻让暴君掉入熔炉；之后「死去」的她从远处把火箭发射器扔给里昂，里昂用它击杀了追击而来的超级暴君。",
+              "region": "母巢 · 站台",
+              "characters": [
+                "re-tyrant",
+                "re-ada-wong",
+                "re-leon-s-kennedy"
+              ]
+            },
+            {
+              "id": "train-escape",
+              "time": "1998-09-30 前后",
+              "confidence": "已核实",
+              "major": true,
+              "title": "列车逃生：注射疫苗，威廉随母巢同归于尽",
+              "desc": "里昂登上行驶中的列车，与克莱尔、雪莉会合，三人给雪莉注射疫苗；最后一节车厢被第五形态的威廉勾住，克莱尔把车厢与列车分离，威廉随已经爆炸的母巢一起毁灭。",
+              "region": "母巢 · 列车",
+              "characters": [
+                "re-william-birkin",
+                "re-nest",
+                "re-claire-redfield",
+                "re-leon-s-kennedy",
+                "re-sherry-birkin"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "re3",
+          "name": "生化危机3 · 吉尔线",
+          "work": "re3",
+          "events": [
+            {
+              "id": "nemesis-deployed",
+              "time": "事发前",
+              "confidence": "已核实",
+              "title": "追迹者在保护伞欧洲分部第六实验室完成",
+              "desc": "Nemesis-α 寄生虫被植入 T-103 暴君体内——这是与《生化危机1》暴君同一技术路线的延伸，任务是追杀 S.T.A.R.S. 的幸存者。",
+              "region": "保护伞欧洲分部",
+              "characters": [
+                "re-nemesis",
+                "re-nemesis-alpha-parasite",
+                "re-tyrant"
+              ]
+            },
+            {
+              "id": "jill-hunted",
+              "time": "1998-09-28 起",
+              "confidence": "已核实",
+              "title": "吉尔前往警局途中遭追迹者袭击",
+              "desc": "洋馆事件后，吉尔独自留在浣熊市调查安布雷拉。城市爆发那天，她在前往警察局整顿装备的路上被追迹者盯上，原定计划作废，逃亡就此开始。",
+              "region": "市区 · 警察局",
+              "characters": [
+                "re-jill-valentine",
+                "re-nemesis",
+                "re-raccoon-police-department"
+              ]
+            },
+            {
+              "id": "carlos-joins",
+              "time": "1998-09-28 起",
+              "confidence": "已核实",
+              "title": "遇见卡洛斯，U.B.C.S. 几乎全灭",
+              "desc": "吉尔遇到 U.B.C.S. 士兵卡洛斯·奥利维拉：这支部队名义上是来救平民的，实际抵达浣熊市的人几乎全灭、人员死伤分离，卡洛斯因此决定与她同行。",
+              "region": "市区",
+              "characters": [
+                "re-carlos-oliveira",
+                "re-ubcs",
+                "re-umbrella"
+              ]
+            },
+            {
+              "id": "tram-michael",
+              "time": "事件期间",
+              "confidence": "已核实",
+              "major": true,
+              "title": "启动电车，米歇尔引爆手雷牺牲",
+              "desc": "吉尔在电车上遇到尼古拉与重伤的米歇尔·维克多，得知钟楼可以寻求直升机救援；众人协作启动电车，追迹者再度袭来，米歇尔引爆手雷把它炸出车外，自己也因此牺牲。",
+              "region": "电车",
+              "characters": [
+                "re-michael-victor",
+                "re-nicholai-ginovaef",
+                "re-nemesis"
+              ]
+            },
+            {
+              "id": "clocktower-down",
+              "time": "事件期间",
+              "confidence": "已核实",
+              "major": true,
+              "title": "钟楼的直升机被火箭发射器轰碎，吉尔感染",
+              "desc": "吉尔敲响钟声引来 U.B.C.S. 的救援直升机，追迹者却用火箭发射器把它打了下来；她虽暂时击退对方，却负伤并感染 T 病毒，危在旦夕。",
+              "region": "钟楼",
+              "characters": [
+                "re-clock-tower",
+                "re-nemesis",
+                "re-jill-valentine",
+                "re-t-virus"
+              ]
+            },
+            {
+              "id": "hospital-truth",
+              "time": "事件期间",
+              "confidence": "已核实",
+              "major": true,
+              "title": "医院：疫苗、U.B.C.S. 的真相与「监视员」尼古拉",
+              "desc": "卡洛斯赶往医院寻找疫苗，得知 U.B.C.S. 被派进来的真实目的是充当测试 B.O.W. 实战能力的实验品，而尼古拉是安插在部队里的监视员，负责回收数据并销毁证据；医院随后在尼古拉设置的炸弹下崩塌，卡洛斯带着疫苗逃出。",
+              "region": "医院",
+              "characters": [
+                "re-city-hospital",
+                "re-carlos-oliveira",
+                "re-nicholai-ginovaef",
+                "re-ubcs",
+                "re-devil-vaccine"
+              ]
+            },
+            {
+              "id": "nemesis-defeated",
+              "time": "1998-09-30 至 10-01",
+              "confidence": "已核实",
+              "major": true,
+              "title": "废品处理厂：击败变异的追迹者",
+              "desc": "得知美军将在天亮时发射核弹后，两人辗转市区寻找出路；吉尔在废弃工厂最终击败了变异的追迹者。",
+              "region": "废弃工厂",
+              "characters": [
+                "re-waste-disposal-plant",
+                "re-nemesis",
+                "re-jill-valentine"
+              ]
+            },
+            {
+              "id": "barry-rescue",
+              "time": "1998-10-01 黎明前",
+              "confidence": "已核实",
+              "title": "巴瑞驾直升机赶来，两人在爆炸前逃出",
+              "desc": "卡洛斯通过无线电找到直升机救援——赶来的人正是吉尔的老队友巴瑞·伯顿。这是 S.T.A.R.S. 旧情的收束。",
+              "region": "市区",
+              "characters": [
+                "re-barry-burton",
+                "re-carlos-oliveira",
+                "re-jill-valentine"
+              ]
+            }
+          ]
+        }
+      ],
+      "crossings": [
+        {
+          "id": "city-outbreak",
+          "time": "1998-09 末",
+          "confidence": "已核实",
+          "major": true,
+          "title": "交汇点：浣熊市大规模 T 病毒泄漏，城市沦为地狱",
+          "desc": "这是两部作品共同的起点——同一天、同一座城市，一边是警局里的里昂与克莱尔，一边是市区的吉尔。",
+          "works": [
+            "re2",
+            "re3"
+          ],
+          "characters": [
+            "re-raccoon-city",
+            "re-t-virus",
+            "re-umbrella"
+          ]
+        },
+        {
+          "id": "brad-killed",
+          "time": "1998-09 末",
+          "confidence": "已核实",
+          "title": "交汇点：布拉德·维克斯在城市中被追迹者杀害",
+          "desc": "洋馆事件里那位丢下队友飞走的飞行员，逃亡之路在这里终结——他是两条线共用的旧线索。",
+          "works": [
+            "re2",
+            "re3"
+          ],
+          "characters": [
+            "re-brad-vickers",
+            "re-nemesis"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "1998-10-01 · 浣熊市被抹去",
+      "hint": "本系列的转折点：此前的灾难还能被掩盖，此后病毒与阴谋进入了全球尺度。",
+      "events": [
+        {
+          "id": "missile-launched",
+          "time": "1998-10-01",
+          "confidence": "已核实",
+          "major": true,
+          "title": "美军发射核弹，浣熊市化为焦土",
+          "desc": "伴随黎明的曙光，核弹落下：病毒造物与可能遗留的幸存者尽数毁灭，约 10 万人死亡。",
+          "characters": [
+            "re-raccoon-city",
+            "re-raccoon-city-destruction"
+          ],
+          "works": [
+            "re3"
+          ]
+        },
+        {
+          "id": "raccoon-city-incident",
+          "time": "1998-10-01 之后",
+          "confidence": "已核实",
+          "title": "史称「浣熊市生化危机事件」，纷争由此正式开始",
+          "desc": "这场惨剧震惊世界，直接导致美国政府掩盖真相、安布雷拉走向崩解——病毒引发的纷争从此进入全球尺度。",
+          "characters": [
+            "re-raccoon-city-incident",
+            "re-umbrella"
+          ],
+          "works": [
+            "re2",
+            "re3"
+          ]
+        },
+        {
+          "id": "loose-ends",
+          "time": "1998 年 10 月及之后",
+          "confidence": "已核实",
+          "title": "各人的去向",
+          "desc": "克莱尔继续寻找哥哥克里斯，接上《代号维罗妮卡》；里昂与雪莉被美国政府拘捕，接上《生化危机4》；艾达被暗示生还并带走了 G 病毒样本；汉克则完成了 G 病毒回收任务，把样本带回了安布雷拉。",
+          "characters": [
+            "re-claire-redfield",
+            "re-leon-s-kennedy",
+            "re-sherry-birkin",
+            "re-ada-wong",
+            "re-hunk",
+            "re-g-virus-sample"
+          ],
+          "works": [
+            "re2",
+            "re3"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "1998-12 · 洛克福特岛事件",
+      "hint": "浣熊市被抹去三个月后，故事在南大西洋的一座监狱岛上继续 —— 而这一次，主线是「妹妹去找哥哥」。",
+      "events": [
+        {
+          "id": "claire-paris",
+          "time": "1998-12",
+          "confidence": "已核实",
+          "title": "克莱尔潜入安布雷拉巴黎研究所，行踪暴露被擒",
+          "desc": "为了寻找哥哥克里斯，克莱尔独闯安布雷拉的巴黎研究所，随即被捕，并被移送至南大西洋的洛克福特岛收容所。",
+          "characters": [
+            "re-claire-redfield",
+            "re-paris-laboratory",
+            "re-umbrella"
+          ],
+          "works": [
+            "re-cv"
+          ]
+        },
+        {
+          "id": "rockfort-bombed",
+          "time": "1998-12",
+          "confidence": "已核实",
+          "major": true,
+          "title": "洛克福特岛遭轰炸：T 病毒泄漏、生物武器失控",
+          "desc": "岛上监狱陷入混乱，克莱尔在混乱中逃出，遇到同样被囚禁的史蒂夫·伯恩赛德。这座岛上的监狱属于阿什福德家族。",
+          "characters": [
+            "re-rockfort-island",
+            "re-t-virus",
+            "re-alfred-ashford",
+            "re-steve-burnside"
+          ],
+          "works": [
+            "re-cv"
+          ]
+        },
+        {
+          "id": "wesker-returns",
+          "time": "1998-12",
+          "confidence": "已核实",
+          "major": true,
+          "title": "威斯克现身：靠始祖病毒之力复活，为圣女病毒而来",
+          "desc": "岛上的 T 病毒泄漏正是他放出来的。他受某个组织（HCF）之托寻找阿莱克西亚、取得圣女病毒，并在发现克莱尔后意识到可以用她当诱饵，把克里斯引来。",
+          "characters": [
+            "re-albert-wesker",
+            "re-progenitor-virus",
+            "re-hcf",
+            "re-veronica-project"
+          ],
+          "works": [
+            "re-cv"
+          ]
+        },
+        {
+          "id": "steve-alliance",
+          "time": "1998-12",
+          "confidence": "已核实",
+          "title": "孤岛亡命：阿尔弗雷德的持续追杀",
+          "desc": "克莱尔与史蒂夫在岛上寻找离开的办法，而岛主阿尔弗雷德·阿什福德因精神分裂、以双胞胎妹妹的人格对他们展开追杀。",
+          "characters": [
+            "re-alfred-ashford",
+            "re-steve-burnside",
+            "re-claire-redfield"
+          ],
+          "works": [
+            "re-cv"
+          ]
+        },
+        {
+          "id": "plane-hijacked",
+          "time": "1998-12",
+          "confidence": "已核实",
+          "title": "水上飞机被远程控制，两人被送往南极研究所",
+          "desc": "两人找到水上飞机逃离，阿尔弗雷德却让飞机进入自动驾驶；抵达南极后才发现这里同样已被病毒侵蚀。",
+          "characters": [
+            "re-antarctic-base",
+            "re-alfred-ashford"
+          ],
+          "works": [
+            "re-cv"
+          ]
+        },
+        {
+          "id": "nosferatu",
+          "time": "1998-12",
+          "confidence": "已核实",
+          "major": true,
+          "title": "怪物「诺斯拉图」的真身：亚历山大·阿什福德",
+          "desc": "两人遭到诺斯拉图袭击。它的真身是前任阿什福德家当主——被注入圣女病毒失败后变异，原本封印在南极实验室底下。",
+          "characters": [
+            "re-nosferatu",
+            "re-alexander-ashford",
+            "re-veronica-project"
+          ],
+          "works": [
+            "re-cv"
+          ]
+        },
+        {
+          "id": "alexia-awakes",
+          "time": "1998-12",
+          "confidence": "已核实",
+          "major": true,
+          "title": "阿莱克西亚苏醒：圣女计划真正完成的样本",
+          "desc": "阿尔弗雷德临死前唤醒妹妹。她在与病毒共眠 15 年后已能保持自我意识并使身体变异——血液具有发火的能力。",
+          "characters": [
+            "re-alexia-ashford",
+            "re-t-veronica-virus",
+            "re-alfred-ashford"
+          ],
+          "works": [
+            "re-cv"
+          ]
+        },
+        {
+          "id": "chris-arrives-island",
+          "time": "1998-12-28 前后",
+          "confidence": "已核实",
+          "title": "克里斯赶到洛克福特岛，与威斯克短暂照面",
+          "desc": "克里斯得知克莱尔已经离岛，并在岛上遇见威斯克；确认妹妹下落后，两人分别前往南极。",
+          "characters": [
+            "re-chris-redfield",
+            "re-albert-wesker",
+            "re-rockfort-island"
+          ],
+          "works": [
+            "re-cv"
+          ]
+        },
+        {
+          "id": "steve-dies",
+          "time": "南极基地",
+          "confidence": "已核实",
+          "title": "史蒂夫被注入 T-维罗妮卡，恢复理智后被阿莱克西亚杀死",
+          "desc": "变异后的史蒂夫追杀克莱尔，却在最后一刻克制住自己，随即被杀，临终前向她表白。",
+          "characters": [
+            "re-steve-burnside",
+            "re-t-veronica-virus",
+            "re-alexia-ashford",
+            "re-claire-redfield"
+          ],
+          "works": [
+            "re-cv"
+          ]
+        },
+        {
+          "id": "three-way-standoff",
+          "time": "南极基地",
+          "confidence": "已核实",
+          "major": true,
+          "title": "三方对峙：病毒被取走，阿莱克西亚被击败",
+          "desc": "威斯克要求交出 T-维罗妮卡，却发现自己无法控制阿莱克西亚而退走；克里斯启动自毁程序并击败了她。威斯克带走了史蒂夫的遗体，并从阿莱克西亚身上提取了病毒样本。",
+          "characters": [
+            "re-albert-wesker",
+            "re-alexia-ashford",
+            "re-chris-redfield",
+            "re-t-veronica-virus",
+            "re-linear-laser-cannon",
+            "re-antarctic-base"
+          ],
+          "works": [
+            "re-cv"
+          ]
+        },
+        {
+          "id": "cv-escape",
+          "time": "南极基地 · 爆炸前",
+          "confidence": "已核实",
+          "title": "克里斯与克莱尔逃离；与威斯克的一战尚未结束",
+          "desc": "克里斯试图杀死威斯克却落入下风，最后靠机关重创对方，威斯克放弃追击离去。两人在基地爆炸前乘战斗机逃出——这场宿命一战要到系列后面才分晓。",
+          "characters": [
+            "re-chris-redfield",
+            "re-claire-redfield",
+            "re-albert-wesker"
+          ],
+          "works": [
+            "re-cv"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "2004–2005 · 西班牙光明教事件",
+      "hint": "与前一组相隔六年 —— 这六年里发生的事主要由未收录的外传与编年史作品填充（如《枪下游魂》《逃出生天》）。这一作把系列的威胁从「病毒」推到了「寄生虫」。",
+      "events": [
+        {
+          "id": "ashley-kidnapped",
+          "time": "事件前",
+          "confidence": "已核实",
+          "major": true,
+          "title": "总统女儿阿什莉被光明教团绑架，并被注射普拉卡",
+          "desc": "她被带到邪教组织「光明教团」盘踞的欧洲某村庄，被注射普拉卡寄生虫，用来控制她。绑架的执行者原版是听命于威斯克的克劳萨，重制版改成听命于教主萨德勒。",
+          "characters": [
+            "re-ashley-graham",
+            "re-los-illuminados",
+            "re-plaga",
+            "re-osmund-saddler"
+          ],
+          "works": [
+            "re4"
+          ]
+        },
+        {
+          "id": "leon-sent",
+          "time": "2004–2005",
+          "confidence": "已核实",
+          "title": "里昂受命前往村庄营救",
+          "desc": "此时的他已是总统直属机密组织的成员，只身进入光明教团的据点——村庄、古堡与人工岛。",
+          "characters": [
+            "re-leon-s-kennedy",
+            "re-spanish-village"
+          ],
+          "works": [
+            "re4"
+          ]
+        },
+        {
+          "id": "ada-earlier",
+          "time": "里昂抵达前一日",
+          "confidence": "已核实",
+          "title": "艾达比里昂早一天到达，真实委托人是威斯克",
+          "desc": "她的目标是从路易斯·塞拉手中取得「琥珀」。里昂在村庄途中遇到过她，却不知道这条暗线。",
+          "characters": [
+            "re-ada-wong",
+            "re-albert-wesker",
+            "re-amber",
+            "re-luis-sera"
+          ],
+          "works": [
+            "re4"
+          ]
+        },
+        {
+          "id": "leon-infected",
+          "time": "村庄",
+          "confidence": "已核实",
+          "title": "里昂被村长击晕，被萨德勒注射与阿什莉相同的普拉卡",
+          "desc": "他与路易斯会合后得知阿什莉被关在教堂——救人和自救从这一刻起变成同一件事。",
+          "characters": [
+            "re-bitores-mendez",
+            "re-osmund-saddler",
+            "re-plaga",
+            "re-leon-s-kennedy"
+          ],
+          "works": [
+            "re4"
+          ]
+        },
+        {
+          "id": "church-rescue",
+          "time": "教堂 → 村庄",
+          "confidence": "已核实",
+          "title": "里昂救出阿什莉，随后消灭村长门德斯",
+          "desc": "得知她也被注射了普拉卡之后，两人决定一同寻找解毒方法并逃出这里。",
+          "characters": [
+            "re-church",
+            "re-ashley-graham",
+            "re-bitores-mendez"
+          ],
+          "works": [
+            "re4"
+          ]
+        },
+        {
+          "id": "castle-salazar",
+          "time": "古堡",
+          "confidence": "已核实",
+          "major": true,
+          "title": "古堡：萨拉扎抓走阿什莉，路易斯被萨德勒杀害",
+          "desc": "阿什莉被带往小岛准备举行「同化为寄生虫宿主」的仪式。路易斯找到了解毒药物与样本，却在临死前把「小岛实验室有清除装置」这条线索交给了里昂。",
+          "characters": [
+            "re-castle",
+            "re-ramon-salazar",
+            "re-luis-sera",
+            "re-osmund-saddler",
+            "re-luis-laboratory"
+          ],
+          "works": [
+            "re4"
+          ]
+        },
+        {
+          "id": "krauser-fight",
+          "time": "人工岛",
+          "confidence": "已核实",
+          "major": true,
+          "title": "里昂击败变异的克劳萨；艾达牵制萨德勒",
+          "desc": "克劳萨是里昂的前教官与战友，据报已死，却为「更强大的力量」加入了光明教团。里昂随后被体内的普拉卡反制，靠艾达牵制萨德勒才得以带着阿什莉脱身。",
+          "characters": [
+            "re-artificial-island",
+            "re-jack-krauser",
+            "re-leon-s-kennedy",
+            "re-ada-wong"
+          ],
+          "works": [
+            "re4"
+          ]
+        },
+        {
+          "id": "plaga-removed",
+          "time": "小岛实验室",
+          "confidence": "已核实",
+          "title": "激光手术清除体内的普拉卡",
+          "desc": "里昂先接受手术，醒来的阿什莉再帮他完成移除；这也是本作的核心转折——寄生虫可被清除，感染不再是不可逆的判决。",
+          "characters": [
+            "re-laser-surgery-device",
+            "re-plaga",
+            "re-suppressant",
+            "re-luis-laboratory",
+            "re-ashley-graham"
+          ],
+          "works": [
+            "re4"
+          ]
+        },
+        {
+          "id": "saddler-defeated",
+          "time": "小岛港口",
+          "confidence": "已核实",
+          "major": true,
+          "title": "港口最终战：击杀变异后的萨德勒，艾达取得「琥珀」",
+          "desc": "萨德勒释放体内普拉卡的力量变成巨大怪物，并抓住艾达；里昂赶到救下她，两人合力彻底击杀对方。艾达取得含有更强力量的「琥珀」。",
+          "characters": [
+            "re-osmund-saddler",
+            "re-amber",
+            "re-ada-wong",
+            "re-leon-s-kennedy",
+            "re-artificial-island"
+          ],
+          "works": [
+            "re4"
+          ]
+        },
+        {
+          "id": "ada-defies-wesker",
+          "time": "事件之后",
+          "confidence": "已核实",
+          "title": "艾达拒绝把琥珀交给威斯克",
+          "desc": "威斯克打算以数十亿人伤亡为代价迎接所谓「新的曙光」；得知这一点后，艾达选择抗命，并逼迫直升机驾驶员改变航向。这条线直接指向《生化危机5》。",
+          "characters": [
+            "re-ada-wong",
+            "re-albert-wesker",
+            "re-amber"
+          ],
+          "works": [
+            "re4"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "2005 · 女王号事件",
+      "hint": "《生化危机4》之后、《生化危机5》之前的一段插曲 —— 舞台从西班牙的村庄换到了地中海的邮轮上。",
+      "events": [
+        {
+          "id": "terragrigia-disaster",
+          "time": "事发前（具体日期未明确）",
+          "confidence": "已核实",
+          "major": true,
+          "title": "海上城市特拉格里亚遭 Veltro 生化武器袭击，城市被摧毁",
+          "desc": "特拉格里亚是建在海上的「太阳能城市」，同时也是 T-深渊病毒的研究地。袭击由生化恐怖组织 Veltro 发动，而 FBC 专员兰斯代尔与这件事的关系要到故事后段才被摆上台面。",
+          "characters": [
+            "re-terragrigia",
+            "re-veltro",
+            "re-t-abyss",
+            "re-morgan-lansdale",
+            "re-terragrigia-incident"
+          ],
+          "works": [
+            "re-rev"
+          ]
+        },
+        {
+          "id": "lansdale-coverup",
+          "time": "惨案之后",
+          "confidence": "已核实",
+          "title": "兰斯代尔击沉第三艘船「迪多女王号」以销毁罪证",
+          "desc": "为掩盖与 Veltro 的合谋，FBC 专员兰斯代尔下令把第三艘姊妹船击沉；这艘船的存在，直到本作后段才由数据分析重新浮出水面。",
+          "characters": [
+            "re-morgan-lansdale",
+            "re-queen-dido",
+            "re-fbc"
+          ],
+          "works": [
+            "re-rev"
+          ]
+        },
+        {
+          "id": "o-brian-gambit",
+          "time": "2005 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "奥布莱恩设局「复活 Veltro」，把吉尔与克里斯分别引向两艘船",
+          "desc": "BSAA 主席奥布莱恩与雷蒙德发现兰斯代尔与 Veltro 有关却缺乏证据，于是搭假据点、故意让 Veltro「复活」，再以「克里斯与杰西卡失联」为由把吉尔与帕克引向另一艘船。整起事件由此变成一场由「好人」设计的局。",
+          "characters": [
+            "re-clive-o-brian",
+            "re-raymond-vester",
+            "re-veltro",
+            "re-morgan-lansdale",
+            "re-jill-valentine",
+            "re-chris-redfield"
+          ],
+          "works": [
+            "re-rev"
+          ]
+        },
+        {
+          "id": "zenobia-board",
+          "time": "2005 年",
+          "confidence": "已核实",
+          "title": "吉尔与帕克登上季诺碧亚女王号，克里斯与杰西卡登上姊妹船",
+          "desc": "两条线同时展开：吉尔与帕克在邮轮上遭遇大量 T-深渊感染的怪物与一名戴防毒面具的恐怖分子；克里斯与杰西卡则从欧洲山区的假据点出发，经由地中海女王号抵达。",
+          "characters": [
+            "re-queen-zenobia",
+            "re-queen-semiramis",
+            "re-jill-valentine",
+            "re-parker-luciani",
+            "re-chris-redfield",
+            "re-jessica-sherawat",
+            "re-t-abyss"
+          ],
+          "works": [
+            "re-rev"
+          ]
+        },
+        {
+          "id": "rachel-killed",
+          "time": "2005 年",
+          "confidence": "已核实",
+          "title": "蕾切尔在游戏初期被杀 —— 全作唯一非怪物致死",
+          "desc": "兰斯代尔派蕾切尔与雷蒙德登船。蕾切尔在初期就被杀，是本作唯一不是死在怪物手上的角色；她的身份与任务在系列中仍是留白。",
+          "characters": [
+            "re-rachel-foley",
+            "re-morgan-lansdale",
+            "re-raymond-vester",
+            "re-fbc"
+          ],
+          "works": [
+            "re-rev"
+          ]
+        },
+        {
+          "id": "jessica-exposed",
+          "time": "2005 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "杰西卡暴露为内鬼：枪击帕克并启动船只自毁",
+          "desc": "杰西卡被揭穿是 BSAA 内鬼、实为 FBC 卧底。她向帕克开枪并启动自毁以销毁证据；雷蒙德赶到为帕克挡下子弹，并告诉他杰西卡毁船的原因。杰西卡随后未被察觉地逃脱。",
+          "characters": [
+            "re-jessica-sherawat",
+            "re-parker-luciani",
+            "re-raymond-vester",
+            "re-fbc",
+            "re-queen-zenobia"
+          ],
+          "works": [
+            "re-rev"
+          ]
+        },
+        {
+          "id": "norman-abyss",
+          "time": "2005 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "迪多女王号：诺曼注入过量 T-深渊，变异为「最终形态·深渊」并被击败",
+          "desc": "克里斯与吉尔登上第三艘船寻找 Veltro 首领诺曼。他靠 T-深渊撑过一年、靠复仇执念抵抗变异，最终注入过量病毒，把两人当成 FBC 派来的杀手，变异成新型暴君。被击败后，他临终表示自己终于能得到平静。",
+          "characters": [
+            "re-queen-dido",
+            "re-jack-norman",
+            "re-final-form-abyss",
+            "re-t-abyss",
+            "re-chris-redfield",
+            "re-jill-valentine"
+          ],
+          "works": [
+            "re-rev"
+          ]
+        },
+        {
+          "id": "lansdale-arrested",
+          "time": "2005 年 · 结局",
+          "confidence": "已核实",
+          "major": true,
+          "title": "PDA 录像揭露兰斯代尔；FBC 被解散、奥布莱恩辞职",
+          "desc": "克里斯与吉尔通过诺曼的 PDA 播放录像，公开了兰斯代尔与 Veltro 的关系。兰斯代尔被逮捕，特拉格里亚真相公开，FBC 被解散、大部分人员与资源转入 BSAA；策划了整个局的奥布莱恩辞去 BSAA 主席。帕克在马耳他获救，一个月后重返岗位。",
+          "characters": [
+            "re-morgan-lansdale",
+            "re-clive-o-brian",
+            "re-fbc",
+            "re-bsaa",
+            "re-parker-luciani"
+          ],
+          "works": [
+            "re-rev"
+          ]
+        },
+        {
+          "id": "rev-post-credits",
+          "time": "2005 年 · 片尾彩蛋",
+          "confidence": "已核实",
+          "title": "雷蒙德把 T-深渊样本交给杰西卡 —— 两人同属三联制药",
+          "desc": "片尾彩蛋中，雷蒙德在咖啡馆接近杰西卡，递给她一份 T-深渊病毒样本；她问他为何救帕克，他只答「我有我的理由」。按半官方情报，两人一直在为既非 FBC、也非 BSAA、更非 Veltro 的三联制药效力。",
+          "characters": [
+            "re-raymond-vester",
+            "re-jessica-sherawat",
+            "re-tricell",
+            "re-t-abyss"
+          ],
+          "works": [
+            "re-rev"
+          ]
+        },
+        {
+          "id": "rev-to-mansion",
+          "time": "2005 年 · 结尾",
+          "confidence": "已核实",
+          "title": "克里斯与吉尔走向斯宾塞宅邸 —— 接上《生化危机5》的「迷失在噩梦」",
+          "desc": "本作结尾展示两人走向斯宾塞宅邸，这正是《生化危机5》追加篇章「迷失在噩梦」的入口，也是吉尔坠崖与被洗脑之前的一环。",
+          "characters": [
+            "re-chris-redfield",
+            "re-jill-valentine",
+            "re-albert-wesker"
+          ],
+          "works": [
+            "re-rev",
+            "re5"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "2008–2009 · 西非基祖祖事件",
+      "hint": "《生化危机4》五年后的西非 —— 系列核心反派的宿命一战，也是「安布雷拉 → 三联制药」这条线的收束。游戏内年份有 2008 / 2009 两说，本站并列标注。",
+      "events": [
+        {
+          "id": "bsaa-era",
+          "time": "记载不一（多记 2009 年）",
+          "confidence": "已核实",
+          "title": "BSAA 成立，克里斯成为其特工",
+          "desc": "BSAA（生化恐怖主义安全评估联盟）以消除世界各地任何以生化科技达成个人野心的计划为宗旨。克里斯·雷德菲尔德在《生化危机4》之后加入其中——而这个组织本身的资金来源，正是幕后的三联制药。",
+          "characters": [
+            "re-bsaa",
+            "re-chris-redfield",
+            "re-tricell"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "kijuju-arrival",
+          "time": "2008-04 或 2009（来源不一）",
+          "confidence": "已核实",
+          "major": true,
+          "title": "克里斯与谢娃抵达基祖祖，任务是逮捕军火商欧文",
+          "desc": "克里斯被派往西非基祖祖，与新搭档谢娃·阿洛玛会合；目标是在欧文把生化武器卖到黑市之前把他抓住。Wikipedia 把这件事记为 2009 年，游民星空编年史则记在 2008 年 4 月。",
+          "characters": [
+            "re-kijuju",
+            "re-chris-redfield",
+            "re-sheva-alomar",
+            "re-ricardo-irving"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "majini-outbreak",
+          "time": "事件期间",
+          "confidence": "已核实",
+          "title": "当地人已被普拉卡变种感染，「马吉尼」遍地",
+          "desc": "两人发现基祖祖的居民已被普拉卡寄生虫的变种感染，这些感染者被称为「马吉尼」，还能使用武器、成群行动；BSAA 的阿尔法小队已经被歼灭。",
+          "characters": [
+            "re-majini",
+            "re-plaga",
+            "re-bsaa",
+            "re-kijuju"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "delta-team",
+          "time": "事件期间",
+          "confidence": "已核实",
+          "title": "三角洲小队救出两人；克里斯在斯通的数据里看到吉尔的照片",
+          "desc": "BSAA 三角洲小队（队长为谢娃的导师约书亚·斯通）救出克里斯与谢娃。斯通的数据中有一张吉尔·瓦伦蒂安的照片——她在与威斯克的那场对抗之后已被认定死亡，这张照片成了两人继续追下去的理由。",
+          "characters": [
+            "re-josh-stone",
+            "re-jill-valentine",
+            "re-chris-redfield",
+            "re-sheva-alomar",
+            "re-bsaa"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "irving-escapes",
+          "time": "事件期间",
+          "confidence": "已核实",
+          "title": "欧文在蒙面人帮助下逃走，留下调虎离山的文件",
+          "desc": "两人逼近欧文，却被一个戴兜帽的蒙面人搅局：欧文逃走，只留下会把调查引向沼泽油田的文件——到了才发现那是调虎离山之计。那个蒙面人，后来被证明是被洗脑的吉尔。",
+          "characters": [
+            "re-ricardo-irving",
+            "re-jill-valentine",
+            "re-chris-redfield"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "delta-wiped",
+          "time": "事件期间",
+          "confidence": "已核实",
+          "title": "三角洲小队被一只巨魔状巨型 B.O.W. 屠杀",
+          "desc": "两人试图与三角洲小队会合时，发现小队已被一只变异的巨魔状巨型生物兵器屠杀；斯通不在死者之中。",
+          "characters": [
+            "re-josh-stone",
+            "re-kijuju"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "irving-dies",
+          "time": "事件期间",
+          "confidence": "已核实",
+          "major": true,
+          "title": "沼泽：欧文注射普拉卡变种，变异成章鱼状怪物被击败",
+          "desc": "克里斯决定不向总部报告，与谢娃继续追查吉尔的下落；两人在沼泽中与斯通重逢，并追踪到欧文的船。欧文给自己注射普拉卡变种后变异成巨大的章鱼状怪物，被击败——他的临终遗言把两人引向洞穴。",
+          "characters": [
+            "re-ricardo-irving",
+            "re-plaga",
+            "re-josh-stone",
+            "re-chris-redfield",
+            "re-sheva-alomar"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "progenitor-flower",
+          "time": "事件期间",
+          "confidence": "已核实",
+          "title": "洞穴深处：始祖花与衔尾蛇病毒的源头",
+          "desc": "洞穴是一朵花的来源——这朵花曾被用于制造安布雷拉过去的病毒，也是新毒株「衔尾蛇病毒（Uroboros）」的源头。",
+          "characters": [
+            "re-progenitor-flower",
+            "re-uroboros",
+            "re-progenitor-virus",
+            "re-umbrella",
+            "re-kijuju"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "tricell-lab",
+          "time": "事件期间",
+          "confidence": "已核实",
+          "major": true,
+          "title": "三联制药接管安布雷拉的前地下实验室，吉尔的胶囊是空的",
+          "desc": "两人发现：三联制药（也就是资助 BSAA 的公司）接管了安布雷拉以前的地下实验室并继续研究。设施里有数千个装着人体实验对象的胶囊，其中标着吉尔的那一枚是空的。",
+          "characters": [
+            "re-tricell",
+            "re-umbrella",
+            "re-uroboros",
+            "re-jill-valentine",
+            "re-bsaa"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "uroboros-plan",
+          "time": "事件期间",
+          "confidence": "已核实",
+          "major": true,
+          "title": "吉奥内与威斯克的密谋：用衔尾蛇病毒导弹袭击全球",
+          "desc": "三联 CEO 艾克塞拉·吉奥内与威斯克密谋用装载衔尾蛇病毒的导弹袭击全球。威斯克的目标是从感染的混乱中挑出少数人，创造他所谓的「新人类」。同一时间，拦截两人的蒙面人被揭晓为被洗脑的吉尔。",
+          "characters": [
+            "re-excella-gionne",
+            "re-albert-wesker",
+            "re-uroboros",
+            "re-jill-valentine",
+            "re-tricell"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "jill-freed",
+          "time": "事件期间",
+          "confidence": "已核实",
+          "major": true,
+          "title": "制服吉尔并移除脑控装置；三联油轮与吉奥内之死",
+          "desc": "吉奥内与威斯克逃向三联油轮。克里斯与谢娃与吉尔一战，把她制服并移除了胸前的脑控装置；恢复神智的吉尔催促两人去追威斯克。在油轮上，吉奥内丢下一箱注射器后逃走（谢娃留下了几支）；威斯克通过船内广播宣布背叛吉奥内并用衔尾蛇病毒感染了她，吉奥内随即变异成巨大怪物被击败。",
+          "characters": [
+            "re-jill-valentine",
+            "re-excella-gionne",
+            "re-albert-wesker",
+            "re-tricell-tanker",
+            "re-uroboros",
+            "re-chris-redfield",
+            "re-sheva-alomar"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "wesker-serum",
+          "time": "事件期间",
+          "confidence": "已核实",
+          "title": "吉尔告知血清的秘密：威斯克的力量靠剂量维持",
+          "desc": "吉尔通过无线电告知：威斯克必须精确、定期服用血清来维持力量，剂量偏大或偏小都会中毒。谢娃意识到，吉奥内掉下的那几支注射器正是这种药物——两人追上装载衔尾蛇导弹的轰炸机，把注射器打进威斯克体内。",
+          "characters": [
+            "re-jill-valentine",
+            "re-albert-wesker",
+            "re-excella-gionne",
+            "re-sheva-alomar"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "wesker-falls",
+          "time": "终局",
+          "confidence": "已核实",
+          "major": true,
+          "title": "威斯克用衔尾蛇把自己变成触手怪物，坠入岩浆",
+          "desc": "走投无路的威斯克用机上的病毒自我变异——但研究并未完成，心脏外露。克里斯在极限状态下用怪力把石头推成桥；威斯克被重创后跌入岩浆，又从岩浆里伸出触手试图拉下救援直升机。机上恰有两具火箭筒，爆炸掀起的岩浆最终把他掩埋。",
+          "characters": [
+            "re-albert-wesker",
+            "re-uroboros",
+            "re-volcano",
+            "re-chris-redfield",
+            "re-sheva-alomar",
+            "re-jill-valentine",
+            "re-josh-stone"
+          ],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "kijuju-aftermath",
+          "time": "结局",
+          "confidence": "已核实",
+          "major": true,
+          "title": "吉尔与斯通搭直升机救援；克里斯兑现十年前的承诺",
+          "desc": "吉尔与斯通搭直升机及时救出克里斯与谢娃。克里斯救出吉尔、与谢娃一同离开非洲——他完成了十年前在南极基地许下的那个承诺，而威斯克与他的野心，随喷发不息的火山岩浆一同消失。",
+          "characters": [
+            "re-jill-valentine",
+            "re-josh-stone",
+            "re-chris-redfield",
+            "re-sheva-alomar",
+            "re-albert-wesker"
+          ],
+          "works": [
+            "re5"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "约 2011 · 流刑地岛屿事件",
+      "hint": "《生化危机5》与《6》之间的一段插曲 —— 一座岛、两代人、六个月的时间裂缝。本作与《启示录》没有剧情关联，克里斯与吉尔都不登场。",
+      "events": [
+        {
+          "id": "penal-colony",
+          "time": "事发前（具体年份未明确）",
+          "confidence": "已核实",
+          "title": "该岛被用作「流刑地」监狱；亚历克斯·威斯克在岛上进行永生实验",
+          "desc": "她的研究设施伪装成宅邸，目标只有一个——「征服恐惧、逃脱死亡」，而她手里握着的东西是 Uroboros。",
+          "characters": [
+            "re-alex-wesker",
+            "re-penal-colony-island",
+            "re-penal-colony-incident",
+            "re-uroboros"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "moira-trauma",
+          "time": "早年",
+          "confidence": "已核实",
+          "title": "莫伊拉误用父亲的枪射伤妹妹波莉，从此恐惧枪械",
+          "desc": "虽然错在巴瑞（枪未妥善保管），但巴瑞责怪了莫伊拉，父女关系因此严重破裂。波莉幸存，莫伊拉却从此无法拿起枪——这条创伤就是本作的情感主线。",
+          "characters": [
+            "re-moira-burton",
+            "re-barry-burton"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "rev2-stranded",
+          "time": "约 2011 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "克莱尔与莫伊拉登岛后被困，在流刑地监狱中求生",
+          "desc": "两人的能力是不对称的：克莱尔能用枪，莫伊拉只能靠手电筒照亮黑暗、照出隐藏物。",
+          "characters": [
+            "re-claire-redfield",
+            "re-moira-burton",
+            "re-penal-colony-island"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "rev2-revenants",
+          "time": "约 2011 年",
+          "confidence": "已核实",
+          "title": "两人深入岛屿，遭遇还魂尸等变异体",
+          "desc": "与此同时，她们开始接触到「监视者」的踪迹 —— 那正是亚历克斯·威斯克。",
+          "characters": [
+            "re-revenant",
+            "re-glasp",
+            "re-alex-wesker"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "rev2-tower",
+          "time": "约 2011 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "监视者的高塔：亚历克斯要释放 Uroboros 以「正当化」FBC",
+          "desc": "两人循尼尔·费舍尔留下的字条前往工厂，未找到他，随后经下水道抵达高塔，得知了这个意图。",
+          "characters": [
+            "re-alex-wesker",
+            "re-overseer-tower",
+            "re-uroboros",
+            "re-fbc",
+            "re-neil-fisher"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "neil-killed",
+          "time": "约 2011 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "与被感染的尼尔对峙，不得不将其杀死 —— 由谁扣下这一枪决定结局",
+          "desc": "尼尔被亚历克斯感染后变异。是莫伊拉亲手开枪（克服枪械恐惧，进入正史），还是克莱尔开枪（莫伊拉未能克服，走向坏结局），就在这里分野。",
+          "characters": [
+            "re-neil-fisher",
+            "re-moira-burton",
+            "re-claire-redfield"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "barry-lands",
+          "time": "六个月后",
+          "confidence": "已核实",
+          "major": true,
+          "title": "巴瑞收到莫伊拉的求救信号，独自驾船登岛，遇见娜塔莉亚",
+          "desc": "娜塔莉亚能感知墙壁后怪物的位置，而她的真实身份，是亚历克斯「夺取躯体」的目标。",
+          "characters": [
+            "re-barry-burton",
+            "re-moira-burton",
+            "re-natalia-korda"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "alex-self-destruct",
+          "time": "约 2011 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "纪念碑对峙：亚历克斯开枪自尽、触发高塔自毁，并在最后一刻开始变异",
+          "desc": "克莱尔与莫伊拉登上纪念碑直面亚历克斯，得知她要「征服恐惧、逃脱死亡」。她自尽后，不为人知的是——她在生命的最后时刻感受到了恐惧，并因此开始变异。",
+          "characters": [
+            "re-alex-wesker",
+            "re-claire-redfield",
+            "re-moira-burton"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "moira-sacrifice",
+          "time": "高塔崩塌中",
+          "confidence": "已核实",
+          "title": "莫伊拉牺牲自己让克莱尔逃生；克莱尔获救后昏迷六个月",
+          "desc": "这一段与《斗争》奖励章相接——被留下的莫伊拉，正是靠叶夫根尼的帮助在荒岛上撑过了那半年。",
+          "characters": [
+            "re-moira-burton",
+            "re-claire-redfield",
+            "re-evgeny-rebic"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "alex-mutates",
+          "time": "六个月后",
+          "confidence": "已核实",
+          "title": "亚历克斯注射 Uroboros 二度变异，假装死亡后发难",
+          "desc": "巴瑞与娜塔莉亚穿越毒气矿场，抵达伪装成宅邸的研究设施；亚历克斯通过手环嘲弄娜塔莉亚，随后制服巴瑞并抓住她。",
+          "characters": [
+            "re-alex-wesker",
+            "re-uroboros",
+            "re-barry-burton",
+            "re-natalia-korda",
+            "re-poison-gas-mine",
+            "re-alex-wesker-research-facility",
+            "re-alex-bracelet"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "rev2-good-end",
+          "time": "结局（正史）",
+          "confidence": "已核实",
+          "major": true,
+          "title": "莫伊拉克服恐惧：她救下娜塔莉亚，克莱尔以火箭发射器摧毁亚历克斯",
+          "desc": "莫伊拉在高塔崩塌中幸存，及时现身举枪逼退亚历克斯；父女时隔半年重逢。克莱尔搭直升机赶到，全员撤离，巴瑞决定收养娜塔莉亚、父女和解。",
+          "characters": [
+            "re-moira-burton",
+            "re-barry-burton",
+            "re-natalia-korda",
+            "re-claire-redfield",
+            "re-alex-wesker"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "rev2-bad-end",
+          "time": "结局（非正史）",
+          "confidence": "已核实",
+          "title": "克莱尔开枪：莫伊拉被落石砸死，亚历克斯夺舍娜塔莉亚",
+          "desc": "亚历克斯掐死娜塔莉亚，寄宿在她体内的亚历克斯人格觉醒并摧毁自己残破的肉身；巴瑞举枪却无法对眼前的小女孩扣下扳机。",
+          "characters": [
+            "re-moira-burton",
+            "re-alex-wesker",
+            "re-natalia-korda",
+            "re-barry-burton"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "rev2-epilogue",
+          "time": "数月后",
+          "confidence": "已核实",
+          "major": true,
+          "title": "尾声：娜塔莉亚露出诡异微笑 —— 亚历克斯的人格并未消失；克莱尔随即接上《生化危机6》",
+          "desc": "娜塔莉亚读着卡夫卡的《札宰阿箴言》，周围是报道《生化危机6》事件的报纸。同一时间，克莱尔得知克里斯正在中国执行任务，回应「告诉皮尔斯照顾好他」。",
+          "characters": [
+            "re-natalia-korda",
+            "re-alex-wesker",
+            "re-claire-redfield",
+            "re-chris-redfield",
+            "re-piers-nivans"
+          ],
+          "works": [
+            "re-rev2",
+            "re6"
+          ]
+        },
+        {
+          "id": "little-miss-dlc",
+          "time": "娜塔莉亚遇见巴瑞之前（奖励章）",
+          "confidence": "已核实",
+          "title": "《小姑娘》：黑暗娜塔莉亚引她寻找泰迪熊洛蒂，最终揭示这是夺舍计划",
+          "desc": "「黑暗娜塔莉亚」是亚历克斯心智的显化，能感知怪物存在。「洛蒂」全是亚历克斯为引诱她而设的圈套，另一个娜塔莉亚也随之消失。",
+          "characters": [
+            "re-natalia-korda",
+            "re-alex-wesker",
+            "re-lottie"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "the-struggle-dlc",
+          "time": "六个月空档（奖励章）",
+          "confidence": "已核实",
+          "title": "《斗争》：莫伊拉在叶夫根尼帮助下荒岛求生；老人得知女儿死讯后失去求生意志",
+          "desc": "叶夫根尼把莫伊拉救下，两人在食物极其稀缺的岛上共处。找到女儿的信之后，他把自己锁在屋里等死，并劝莫伊拉独自逃走——心碎的她最终决定前行，也因此赶上了救下父亲与娜塔莉亚。",
+          "characters": [
+            "re-moira-burton",
+            "re-evgeny-rebic"
+          ],
+          "works": [
+            "re-rev2"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "2012–2013 · 全球 C 病毒爆发",
+      "hint": "威斯克死后三年，系列的对手换成了「人」——一个为爱疯狂的男人，和被他制造出来的另一个自己。四条战役在同一段时间里交织，游戏内主线集中在 2013 年 6 月底至 7 月初。",
+      "events": [
+        {
+          "id": "simmons-origin",
+          "time": "1998 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "西蒙斯是摧毁浣熊市的决策人之一；艾达在他的授意下潜入浣熊市",
+          "desc": "这一段正是《生化危机2》的剧情。因不满西蒙斯毁灭浣熊市的作为，艾达事后断绝了与他的联系 —— 这层关系要到本作才被揭开。",
+          "characters": [
+            "re-derek-simmons",
+            "re-ada-wong",
+            "re-raccoon-city",
+            "re-raccoon-city-destruction"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "ada-clone-project",
+          "time": "其后约十年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "西蒙斯为克隆艾达投入十年实验，首席研究员卡拉屡次失败",
+          "desc": "艾达断绝联系后，西蒙斯疯狂地迷恋她，并开始利用生化病毒企图克隆她。",
+          "characters": [
+            "re-derek-simmons",
+            "re-carla-radames",
+            "re-ada-wong",
+            "re-c-virus"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "carla-becomes-ada",
+          "time": "克隆成功时",
+          "confidence": "已核实",
+          "major": true,
+          "title": "西蒙斯诱骗卡拉本人作试验体，终于造出「假艾达」",
+          "desc": "卡拉被改造成艾达之后，原有记忆与性格全部丧失，在西蒙斯栽培下一直认为自己是艾达，并忠心为他效力。",
+          "characters": [
+            "re-carla-radames",
+            "re-derek-simmons",
+            "re-ada-wong"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "carla-recovers",
+          "time": "2012 年",
+          "confidence": "已核实",
+          "title": "卡拉记忆有所恢复，制造东欧生化事件，让艾达被 BSAA 追捕",
+          "desc": "她的外貌与艾达一模一样且自称艾达 —— 蓝衣是卡拉、红衣是艾达，这是本作给玩家的分辨线索；她随后冒充西蒙斯把艾达引向一艘潜艇。",
+          "characters": [
+            "re-carla-radames",
+            "re-ada-wong",
+            "re-bsaa",
+            "re-edonia"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "tall-oaks-attack",
+          "time": "2013 年 6 月底",
+          "confidence": "已核实",
+          "major": true,
+          "title": "高橡市爆发生化袭击，美国总统被杀",
+          "desc": "里昂与海莲娜是仅有的幸存者，被迫亲手杀死已经变异的总统。这场袭击由西蒙斯策划，目的是掩盖国家丑闻。",
+          "characters": [
+            "re-tall-oaks",
+            "re-derek-simmons",
+            "re-leon-s-kennedy",
+            "re-helena-harper",
+            "re-neo-umbrella"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "jake-flees",
+          "time": "2013 年",
+          "confidence": "已核实",
+          "title": "杰克与雪莉在东欧伊多尼亚逃离俘虏，尤斯坦纳一路追猎",
+          "desc": "杰克是威斯克之子，体内的抗体是 C 病毒的解药，也是各方争夺的核心；西蒙斯想借它成为世界的「救世主」。",
+          "characters": [
+            "re-jake-muller",
+            "re-sherry-birkin",
+            "re-ustanak",
+            "re-edonia"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "chris-amnesia",
+          "time": "2013 年 6 月底",
+          "confidence": "已核实",
+          "title": "克里斯从失忆中恢复，却鲁莽追逐「艾达」导致队员伤亡",
+          "desc": "他所追的那个「艾达」其实是卡拉。这条线也是后来才被拼上的 —— 玩家会在克里斯线看到「艾达」炸楼，切到艾达线才知道是卡拉在栽赃。",
+          "characters": [
+            "re-chris-redfield",
+            "re-piers-nivans",
+            "re-bsaa",
+            "re-carla-radames"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "lanshiang-outbreak",
+          "time": "2013-06-29",
+          "confidence": "已核实",
+          "major": true,
+          "title": "蓝祥爆发生化混乱；艾达追踪卡拉并救助杰克与雪莉",
+          "desc": "西蒙斯赶来收拾残局。中国广东省的这座虚构都市，成为四条战役交汇的舞台。",
+          "characters": [
+            "re-lanshiang",
+            "re-carla-radames",
+            "re-ada-wong",
+            "re-jake-muller",
+            "re-sherry-birkin",
+            "re-derek-simmons"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "deborah-dies",
+          "time": "2013 年 6 月底",
+          "confidence": "已核实",
+          "title": "黛博拉被西蒙斯注射病毒变异，里昂、海莲娜与艾达联手将其杀死",
+          "desc": "黛博拉是海莲娜的亲妹妹，也是她卷入整起事件的直接原因。",
+          "characters": [
+            "re-deborah",
+            "re-derek-simmons",
+            "re-leon-s-kennedy",
+            "re-helena-harper",
+            "re-ada-wong"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "cvirus-missiles",
+          "time": "2013 年 6 月底",
+          "confidence": "已核实",
+          "major": true,
+          "title": "克里斯与皮尔斯追至航空母舰，摧毁装载 C 病毒的巡航导弹",
+          "desc": "导弹里装的是气状 C 病毒 —— 一旦发射，整座蓝祥都会沦为丧尸之城。",
+          "characters": [
+            "re-c-virus",
+            "re-chris-redfield",
+            "re-piers-nivans",
+            "re-j-vo"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "piers-sacrifice",
+          "time": "2013 年 6 月底",
+          "confidence": "已核实",
+          "major": true,
+          "title": "水下设施：皮尔斯注射 C 病毒助战，牺牲自己把克里斯推入逃生舱",
+          "desc": "两人在这里救出被俘的杰克与雪莉，并遭遇巨大生化武器哈奥斯。皮尔斯深知自己终将变异，用变异后的力量摧毁了整座设施 —— 这一战让克里斯失去了一名搭档。",
+          "characters": [
+            "re-piers-nivans",
+            "re-haos",
+            "re-chris-redfield",
+            "re-c-virus",
+            "re-jake-muller",
+            "re-sherry-birkin"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "carla-killed",
+          "time": "2013-06-30",
+          "confidence": "已核实",
+          "major": true,
+          "title": "卡拉被「家族」灭口；死前注射加强 C 病毒化为「卡拉孢子」",
+          "desc": "艾达在航母上调查卡拉留下的文件，拼出整件事的来龙去脉；卡拉因事情败露被灭口，尸体从艾达眼前坠落。她死前给自己注射了加强的 C 病毒，变异成孢子追杀艾达，最终仍死在真正的艾达手里。",
+          "characters": [
+            "re-carla-radames",
+            "re-the-family",
+            "re-ada-wong",
+            "re-c-virus",
+            "re-neo-umbrella"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "simmons-defeated",
+          "time": "2013-07-01",
+          "confidence": "已核实",
+          "major": true,
+          "title": "艾达加入里昂一方，联手将再度变异的西蒙斯彻底击杀",
+          "desc": "西蒙斯被卡拉的手下暗算、注射 C 病毒变成怪物，并在与里昂、海莲娜的决斗中承认自己为维持国家安全刺杀了总统。",
+          "characters": [
+            "re-derek-simmons",
+            "re-leon-s-kennedy",
+            "re-helena-harper",
+            "re-ada-wong",
+            "re-c-virus",
+            "re-j-vo"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "ada-departs",
+          "time": "2013-07-01 · 尾声",
+          "confidence": "已核实",
+          "title": "艾达发现卡拉也克隆了西蒙斯的替身，摧毁实验室后离去",
+          "desc": "她认为这已经超出人性的底线，于是摧毁实验室、烧掉联络用手机，接受新任务后潇洒离去。",
+          "characters": [
+            "re-ada-wong",
+            "re-carla-radames"
+          ],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "re6-aftermath",
+          "time": "结局",
+          "confidence": "已核实",
+          "title": "各人的去向：里昂恢复职务，克里斯留在 BSAA，杰克赴发展中国家",
+          "desc": "里昂与海莲娜洗清嫌疑、恢复职务；克里斯克服愧疚后留在 BSAA 指挥新小队（失去了皮尔斯）；雪莉继续作为 DSO 特工工作；杰克在发展中国家开始对抗生化恐怖主义的新生活，身份由 BSAA 隐瞒。",
+          "characters": [
+            "re-leon-s-kennedy",
+            "re-helena-harper",
+            "re-chris-redfield",
+            "re-jake-muller",
+            "re-sherry-birkin",
+            "re-bsaa"
+          ],
+          "works": [
+            "re6"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "2014–2017 · 贝克农场事件",
+      "hint": "威斯克死后数年，系列换上了新主角 —— 舞台从全球战场缩回路易斯安那的一栋农舍。这一组里既有三年前那场事故的前史，也有本体的这几天。",
+      "events": [
+        {
+          "id": "e-series-project",
+          "time": "近年（具体年份未明确）",
+          "confidence": "已核实",
+          "major": true,
+          "title": "联结组织开发 E 系列霉菌实验体，E-001 被设计成十岁女孩的模样",
+          "desc": "这一组织的目标，是创造可以控制感染者思想、渗透敌方的新一代生物武器。而据《生化危机8：村庄》揭示，它掌握的霉菌其实来自母神米兰达。",
+          "characters": [
+            "re-the-connections",
+            "re-eveline",
+            "re-mold",
+            "re-mother-miranda"
+          ],
+          "works": [
+            "re7"
+          ]
+        },
+        {
+          "id": "tanker-crash",
+          "time": "三年前",
+          "confidence": "已核实",
+          "major": true,
+          "title": "伊芙琳转运途中发生意外，轮船在贝克家附近的沼泽失事",
+          "desc": "负责监护她的两名联结组织特工米娅与艾伦遇上意外。好心的贝克夫妇救起了伊芙琳与米娅，却不知自己带回的是灾难。",
+          "characters": [
+            "re-eveline",
+            "re-mia-winters",
+            "re-alan",
+            "re-baker-farm",
+            "re-the-connections"
+          ],
+          "works": [
+            "re7"
+          ]
+        },
+        {
+          "id": "bakers-infected",
+          "time": "三年前 · 当晚",
+          "confidence": "已核实",
+          "major": true,
+          "title": "贝克夫妇被伊芙琳感染控制，成为她扭曲的「父母」",
+          "desc": "她执着地把米娅视为「妈妈」，米娅的抗拒让她不满；唯一清醒的人，是杰克的小儿子卢卡斯——他并非免疫于控制，而是从一开始就站在联结组织那边。",
+          "characters": [
+            "re-jack-baker",
+            "re-marguerite-baker",
+            "re-eveline",
+            "re-zoe-baker",
+            "re-lucas-baker"
+          ],
+          "works": [
+            "re7"
+          ]
+        },
+        {
+          "id": "ethan-lured",
+          "time": "2017 年之前",
+          "confidence": "已核实",
+          "title": "伊芙琳控制米娅发出邮件，把毫不知情的伊森骗来",
+          "desc": "她要让他成为「爸爸」，好拼凑一个完整的家庭 —— 伊森的失踪妻子，其实是一封伪造邮件的收信人。",
+          "characters": [
+            "re-eveline",
+            "re-mia-winters",
+            "re-ethan-winters"
+          ],
+          "works": [
+            "re7"
+          ]
+        },
+        {
+          "id": "ethan-arrives",
+          "time": "2017 年（约）",
+          "confidence": "已核实",
+          "major": true,
+          "title": "伊森为寻找失踪三年的妻子来到贝克农场，随即被这一家人制住",
+          "desc": "他被折磨并被试图喂下人肉，直到一个电话分散了贝克一家的注意才得以挣脱。",
+          "characters": [
+            "re-ethan-winters",
+            "re-baker-farm",
+            "re-jack-baker",
+            "re-baker-farm-incident"
+          ],
+          "works": [
+            "re7"
+          ]
+        },
+        {
+          "id": "ethan-already-dead",
+          "time": "2017 年 · 本作埋线",
+          "confidence": "已核实",
+          "major": true,
+          "title": "伏笔：伊森刚踏进贝克家客厅就被杰克杀死，此后行动的是霉菌重构的躯体",
+          "desc": "这也是他断手断脚都能接回去的原因。伊芙琳那句「你也和我一样啊」，以及文档里「霉菌感染越深越能保持自我意识与再生」的说法都是佐证；这层真相本作并未挑明，要到《生化危机8：村庄》才正式揭晓。",
+          "characters": [
+            "re-ethan-winters",
+            "re-jack-baker",
+            "re-eveline",
+            "re-mold"
+          ],
+          "works": [
+            "re7",
+            "re8"
+          ]
+        },
+        {
+          "id": "zoe-ally",
+          "time": "2017 年",
+          "confidence": "已核实",
+          "title": "佐伊·贝克成为伊森的盟友；伊森发现米娅仍然活着",
+          "desc": "在一整座被霉菌笼罩的庄园里，她是唯一还站在人这边的人。",
+          "characters": [
+            "re-zoe-baker",
+            "re-ethan-winters",
+            "re-mia-winters"
+          ],
+          "works": [
+            "re7"
+          ]
+        },
+        {
+          "id": "serum-choice",
+          "time": "2017 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "两剂解毒剂：一剂永久杀死杰克，另一剂决定救米娅还是佐伊",
+          "desc": "伊森先杀死玛格丽特、赶走卢卡斯，再用一剂解毒剂永久杀死变异的杰克；只剩最后一剂时，救谁就成了正史与非正史的分界。",
+          "characters": [
+            "re-ethan-winters",
+            "re-marguerite-baker",
+            "re-lucas-baker",
+            "re-jack-baker",
+            "re-serum",
+            "re-mia-winters",
+            "re-zoe-baker"
+          ],
+          "works": [
+            "re7"
+          ]
+        },
+        {
+          "id": "mia-memory",
+          "time": "2017 年 · 沼泽",
+          "confidence": "已核实",
+          "major": true,
+          "title": "米娅恢复记忆：伊芙琳正是实验体 E-001",
+          "desc": "她原本在为某家企业研发基于霉菌的生化武器。恢复记忆后，她抵抗到足以帮伊森逃脱，并把伊芙琳的 DNA 样本交给他。",
+          "characters": [
+            "re-mia-winters",
+            "re-eveline",
+            "re-ethan-winters",
+            "re-the-connections"
+          ],
+          "works": [
+            "re7"
+          ]
+        },
+        {
+          "id": "eveline-killed",
+          "time": "2017 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "伊森给伊芙琳注射毒素；她的真身是「贝克奶奶」",
+          "desc": "伊芙琳变异成巨大怪物，最终被伊森摧毁。蓝色保护伞的部队及时赶到，领队正是克里斯·雷德菲尔德。",
+          "characters": [
+            "re-eveline",
+            "re-ethan-winters",
+            "re-chris-redfield",
+            "re-blue-umbrella"
+          ],
+          "works": [
+            "re7"
+          ]
+        },
+        {
+          "id": "re7-good-end",
+          "time": "结局（正史）",
+          "confidence": "已核实",
+          "major": true,
+          "title": "解毒剂给米娅：两人被救出，之后隐居并生下女儿萝丝",
+          "desc": "这是官方正史，也是与《生化危机8：村庄》之间唯一的接口。若把解毒剂给佐伊，则进入非正史结局：米娅被杀，只有伊森一人被救走。",
+          "characters": [
+            "re-ethan-winters",
+            "re-mia-winters",
+            "re-chris-redfield",
+            "re-blue-umbrella",
+            "re-rose-winters"
+          ],
+          "works": [
+            "re7",
+            "re8"
+          ]
+        },
+        {
+          "id": "not-a-hero-dlc",
+          "time": "2017 年（DLC）",
+          "confidence": "已核实",
+          "title": "《并非英雄》：克里斯追捕卢卡斯并将其击杀",
+          "desc": "以克里斯为可操作角色的追加篇章，补全他带蓝色保护伞清剿联结组织残党的行动，也解释了主线中他为何会突然出现。",
+          "characters": [
+            "re-chris-redfield",
+            "re-lucas-baker",
+            "re-blue-umbrella",
+            "re-the-connections"
+          ],
+          "works": [
+            "re7"
+          ]
+        },
+        {
+          "id": "end-of-zoe-dlc",
+          "time": "2017 年（DLC）",
+          "confidence": "已核实",
+          "title": "《佐伊的结局》：乔·贝克永久杀死「沼泽人」，佐伊被治愈",
+          "desc": "补全正史线中被留下的佐伊的后续。乔取得解毒剂并救出被绑架的佐伊，最终终结了杰克变异尸体所化的沼泽人。",
+          "characters": [
+            "re-joe-baker",
+            "re-zoe-baker",
+            "re-jack-baker",
+            "re-swamp-man",
+            "re-blue-umbrella",
+            "re-serum"
+          ],
+          "works": [
+            "re7"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "约 2020 · 东欧村庄事件",
+      "hint": "伊森线的终点。四条封口的线在这里收束：霉菌的来源、安布雷拉标志的来历、伊森早就死了的真相，以及他最后一次做父亲的选择。",
+      "events": [
+        {
+          "id": "rose-born",
+          "time": "2017 年之后",
+          "confidence": "已核实",
+          "title": "伊森与米娅隐居东欧，生下女儿萝丝玛丽",
+          "desc": "一家人在 BSAA 的保护下生活 —— 而萝丝的存在本身，就是米兰达复活女儿的钥匙。",
+          "characters": [
+            "re-ethan-winters",
+            "re-mia-winters",
+            "re-rose-winters",
+            "re-bsaa"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "miranda-supplies-eveline",
+          "time": "近年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "米兰达向犯罪组织「联盟」提供了制造伊芙琳的 DNA 与霉菌",
+          "desc": "也就是说，《生化危机7》里那个想组建家庭的孩子，本身就只是米兰达实验里的残次品 —— 这一层要到本作才被揭开。",
+          "characters": [
+            "re-mother-miranda",
+            "re-the-connections",
+            "re-eveline",
+            "re-megamycete",
+            "re-mold"
+          ],
+          "works": [
+            "re7",
+            "re8"
+          ]
+        },
+        {
+          "id": "chris-raid",
+          "time": "某夜",
+          "confidence": "已核实",
+          "major": true,
+          "title": "克里斯率队突袭伊森家，当面射杀「米娅」并抢走婴儿萝丝",
+          "desc": "被他射杀的那个「米娅」，其实是米兰达借助菌主变成米娅的样子潜入家中。克里斯为不惊动她而选择突袭——但米兰达只是装死，在运输途中发难，全车人除伊森外都遇难。",
+          "characters": [
+            "re-chris-redfield",
+            "re-ethan-winters",
+            "re-mia-winters",
+            "re-mother-miranda",
+            "re-rose-winters",
+            "re-blue-umbrella"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "ethan-in-village",
+          "time": "其后",
+          "confidence": "已核实",
+          "title": "运输车遭袭翻覆，伊森醒来时身处被冰雪覆盖的村庄",
+          "desc": "他很快被卡尔·海森伯格俘虏并带到米兰达面前，但设法逃脱了。",
+          "characters": [
+            "re-ethan-winters",
+            "re-village",
+            "re-karl-heisenberg",
+            "re-mother-miranda"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "four-lords",
+          "time": "村庄事件期间",
+          "confidence": "已核实",
+          "major": true,
+          "title": "四位领主分掌城堡、宅邸、水库与工厂；萝丝被肢解成四份分装四只瓶子",
+          "desc": "这是本作最残忍的设定：伊森要抢的不是瓶子，而是被切成四份的女儿。四位领主也不是单纯的拦路者，而是米兰达如何用「恩赐」控制整座村庄的答案。",
+          "characters": [
+            "re-lady-dimitrescu",
+            "re-donna-beneviento",
+            "re-salvatore-moreau",
+            "re-karl-heisenberg",
+            "re-rose-winters",
+            "re-four-bottles",
+            "re-cadou",
+            "re-mother-miranda"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "dimitrescu-defeated",
+          "time": "村庄事件期间",
+          "confidence": "已核实",
+          "title": "伊森击败城堡之主蒂米特雷斯库夫人，取得第一只瓶子",
+          "desc": "城堡段落是系列最古典的哥特恐怖配方：追逐、密室与近身压迫。",
+          "characters": [
+            "re-lady-dimitrescu",
+            "re-castle-dimitrescu",
+            "re-ethan-winters",
+            "re-four-bottles"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "duke-intel",
+          "time": "村庄事件期间",
+          "confidence": "已核实",
+          "title": "商人公爵告知：找回四只瓶子就能复活萝丝",
+          "desc": "这一条情报把四条领主支线收束成同一个目标。",
+          "characters": [
+            "re-duke",
+            "re-ethan-winters",
+            "re-rose-winters",
+            "re-four-bottles"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "lords-defeated",
+          "time": "村庄事件期间",
+          "confidence": "已核实",
+          "title": "伊森先后击败宅邸之主贝内文托与水库之主莫罗",
+          "desc": "贝内文托宅邸是全作最心理恐怖的一段——几乎没有战斗；莫罗则已经几乎不像人，是一只栖在水库里的鱼形怪物。",
+          "characters": [
+            "re-donna-beneviento",
+            "re-beneviento-house",
+            "re-angie",
+            "re-salvatore-moreau",
+            "re-moreau-reservoir",
+            "re-ethan-winters",
+            "re-four-bottles"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "chris-truth",
+          "time": "村庄事件期间",
+          "confidence": "已核实",
+          "major": true,
+          "title": "克里斯与伊森重逢，坦白被射杀的「米娅」是米兰达假扮",
+          "desc": "两人就此分道扬镳：克里斯去炸掉那座造兵工厂，伊森则继续抢瓶子。",
+          "characters": [
+            "re-chris-redfield",
+            "re-ethan-winters",
+            "re-mother-miranda",
+            "re-mia-winters"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "heisenberg-defeated",
+          "time": "村庄事件期间",
+          "confidence": "已核实",
+          "title": "伊森开着克里斯自制的坦克击败能操控金属的海森伯格",
+          "desc": "海森伯格是唯一想「换个玩法」的领主：他提议与伊森联手反米兰达，但合作的条件里包含利用伊森的女儿，因此被拒绝。",
+          "characters": [
+            "re-karl-heisenberg",
+            "re-heisenberg-factory",
+            "re-ethan-winters",
+            "re-chris-redfield",
+            "re-four-bottles"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "ethan-impaled",
+          "time": "村庄事件期间",
+          "confidence": "已核实",
+          "title": "米兰达突然现身，承认计划并刺穿伊森的心脏",
+          "desc": "但伊森又「起死回生」——公爵把他带回了祭坛附近。",
+          "characters": [
+            "re-mother-miranda",
+            "re-ethan-winters",
+            "re-duke"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "ethan-reveal",
+          "time": "其后 · 昏迷中",
+          "confidence": "已核实",
+          "major": true,
+          "title": "伊森终于意识到：自己三年前在贝克家就已经被杰克杀死",
+          "desc": "因为感染了霉菌，他一直苟延残喘，早已是被菌丝撑起来的躯体；而米娅一直瞒着没有告诉他。幻觉中出现的伊芙琳，正是来点破这件事的 —— 《生化危机7》埋下的最深的伏笔在这里闭环。",
+          "characters": [
+            "re-ethan-winters",
+            "re-jack-baker",
+            "re-eveline",
+            "re-mia-winters",
+            "re-mold"
+          ],
+          "works": [
+            "re8",
+            "re7"
+          ]
+        },
+        {
+          "id": "chris-lab",
+          "time": "村庄事件期间",
+          "confidence": "已核实",
+          "major": true,
+          "title": "克里斯救出被囚禁的真正的米娅，揭露霉菌的来源",
+          "desc": "他在米兰达的实验室里找到了被囚禁的米娅，也确认了那件事：《生化危机7》中制造伊芙琳的 DNA 与霉菌，正是米兰达提供给「联盟」的，而伊芙琳本身只是一个残次品。",
+          "characters": [
+            "re-chris-redfield",
+            "re-mia-winters",
+            "re-mother-miranda",
+            "re-eveline",
+            "re-the-connections",
+            "re-megamycete"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "miranda-defeated",
+          "time": "终局",
+          "confidence": "已核实",
+          "major": true,
+          "title": "伊森与米兰达对峙并将其击败，救出复原的萝丝",
+          "desc": "一百年的实验与执念，在这里走到了尽头。",
+          "characters": [
+            "re-mother-miranda",
+            "re-ethan-winters",
+            "re-rose-winters",
+            "re-four-bottles"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "ethan-sacrifice",
+          "time": "终局",
+          "confidence": "已核实",
+          "major": true,
+          "title": "克里斯安放炸弹摧毁菌主；伊森把女儿托付给他，留下断后与米兰达同归于尽",
+          "desc": "伊森受伤太重，霉菌的再生能力已经无法支撑。村庄在爆炸的火海中湮灭 —— 而他的意识，却借着菌主留了下来。",
+          "characters": [
+            "re-ethan-winters",
+            "re-chris-redfield",
+            "re-rose-winters",
+            "re-mother-miranda",
+            "re-megamycete",
+            "re-village"
+          ],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "rose-shadows",
+          "time": "16 年后（约 2036 年）",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《萝丝魅影》：萝丝在巨菌领域与「米迦勒」相遇，彻底消灭米兰达的残余",
+          "desc": "「米迦勒」就是她的父亲伊森 —— 肉体虽死，意识通过巨菌幸存。他帮她脱出陷阱，萝丝最终接受了他的力量；回到现实时，她收到了父亲的结婚戒指。",
+          "characters": [
+            "re-rose-winters",
+            "re-ethan-winters",
+            "re-eveline",
+            "re-mother-miranda",
+            "re-megamycete"
+          ],
+          "works": [
+            "re8"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "约 2028 · 安魂曲事件",
+      "hint": "浣熊市被抹去约三十年后 —— 系列第一次正式回到一切开始的地方。本作整理时官方尚未公开完整结局，故只列已核实的主线节点。",
+      "events": [
+        {
+          "id": "alyssa-survivor",
+          "time": "1998 年",
+          "confidence": "已核实",
+          "title": "艾丽莎·阿什克罗夫特是浣熊市事件的幸存者之一（《生化危机：爆发》）",
+          "desc": "事件发生时她是一名新闻记者，个性刚强、带着新闻工作者的使命感；事件之后，她仍锲而不舍地追查安布雷拉幕后的真相。",
+          "characters": [
+            "re-alyssa-ashcroft",
+            "re-raccoon-city-incident",
+            "re-umbrella"
+          ],
+          "works": [
+            "re9"
+          ]
+        },
+        {
+          "id": "alyssa-murdered",
+          "time": "八年前（约 2020 年）",
+          "confidence": "已核实",
+          "major": true,
+          "title": "艾丽莎在同一家废弃旅馆遇害 —— 这就是格蕾丝的心结",
+          "desc": "她的女儿格蕾丝·阿什克罗夫特后来成为 FBI 分析员，母亲的离世让她沉默寡言；本作的调查正是从同一家旅馆开始。",
+          "characters": [
+            "re-alyssa-ashcroft",
+            "re-grace-ashcroft"
+          ],
+          "works": [
+            "re9"
+          ]
+        },
+        {
+          "id": "re9-deaths",
+          "time": "约 2028 年",
+          "confidence": "已核实",
+          "title": "美国各地接连发生离奇死亡事件，又一具尸体在废弃旅馆内被发现",
+          "desc": "DSO 老将里昂·S·肯尼迪正在调查美国中西部的同一串案子；他接到「有警员在旅馆失踪」的通报后火速赶往现场。",
+          "characters": [
+            "re-leon-s-kennedy",
+            "re-dso",
+            "re-abandoned-hotel"
+          ],
+          "works": [
+            "re9"
+          ]
+        },
+        {
+          "id": "re9-grace-assigned",
+          "time": "约 2028 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "格蕾丝被指派调查旅馆现场 —— 八年前她母亲正是在同一家旅馆遇害",
+          "desc": "她的上司内森·登普西明知她内心因母亲去世充满阴霾，仍把这个案子交给了她；格蕾丝为了解开过往的心结，毅然独自前往。",
+          "characters": [
+            "re-grace-ashcroft",
+            "re-nathan-dempsey",
+            "re-alyssa-ashcroft",
+            "re-abandoned-hotel"
+          ],
+          "works": [
+            "re9"
+          ]
+        },
+        {
+          "id": "re9-paths-cross",
+          "time": "约 2028 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "两人的命运开始交错，逐步逼近浣熊市事件背后隐藏的真相",
+          "desc": "格蕾丝在丧尸游荡的疗养院里遇见长期被隔离的女孩艾米莉；玩家则在这座疗养院与灭菌作战后化为废墟的浣熊市之间穿梭。",
+          "characters": [
+            "re-grace-ashcroft",
+            "re-leon-s-kennedy",
+            "re-emily",
+            "re-rhodes-hill",
+            "re-infected-blood"
+          ],
+          "works": [
+            "re9"
+          ]
+        },
+        {
+          "id": "re9-suspect",
+          "time": "约 2028 年",
+          "confidence": "已核实",
+          "title": "嫌疑人维克多·基甸浮出水面 —— 他曾在安布雷拉从事 T 病毒研究",
+          "desc": "他与美国各地接连发生的离奇死亡事件有关，把这一串案子接回了浣熊市事件的旧线。",
+          "characters": [
+            "re-victor-gideon",
+            "re-t-virus",
+            "re-umbrella"
+          ],
+          "works": [
+            "re9"
+          ]
+        },
+        {
+          "id": "re9-raccoon-ruins",
+          "time": "约 2028 年",
+          "confidence": "已核实",
+          "major": true,
+          "title": "主线剧情首次回归浣熊市 —— 舞台是灭菌作战后化为废墟的城市",
+          "desc": "这是《生化危机2》之后主线第一次回到一切开始的地方，也是系列三十年情怀的落点。里昂作为事件幸存者之一，成年后重返旧地的心态变化是剧情一大看点。",
+          "characters": [
+            "re-raccoon-city",
+            "re-raccoon-city-destruction",
+            "re-leon-s-kennedy"
+          ],
+          "works": [
+            "re9"
+          ]
+        },
+        {
+          "id": "re9-ending-unclear",
+          "time": "本作整理时",
+          "confidence": "未明确",
+          "title": "结局走向：官方尚未披露完整细节，本站不列具体结局条目",
+          "desc": "官方标语是「予生者恐惧。给尸者安魂。」——面对那段充满阴霾的往事，他们是会困于旧日的噩梦，还是能为逝者奏响安魂曲？这一点目前仍属公开来源未完整收录。",
+          "characters": [],
+          "works": [
+            "re9"
+          ]
+        }
+      ]
+    },
+    {
+      "era": "现实时间轴 · 作品沿革",
+      "hint": "上面都是游戏内的年份；这一组是这几部作品在现实中的发布节点。",
+      "events": [
+        {
+          "id": "sweet-home",
+          "time": "1989",
+          "confidence": "已核实",
+          "title": "Capcom《Sweet Home》发售 —— 本作玩法与叙事的直接源头",
+          "desc": "《生化危机》的洋馆结构、道具管理与恐怖演出都从这部红白机时代的作品继承而来。",
+          "characters": [],
+          "works": []
+        },
+        {
+          "id": "dev-start",
+          "time": "1993–1994",
+          "confidence": "已核实",
+          "title": "项目开发启动：三上真司独自写了六个月剧本",
+          "desc": "最初开发在 SFC 上进行，1994 年转向 PlayStation——这次转向决定了系列后来呈现的样子。",
+          "characters": [],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "re1-release",
+          "time": "1996-03-22",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《生化危机》日本 PS 版发售 —— 系列原点",
+          "desc": "「生存恐怖」这一类型由此被确立；台湾译名为《恶灵古堡》。",
+          "characters": [],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "re2-release",
+          "time": "1998",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《生化危机2》发售",
+          "desc": "双主角表里关把系列带到黄金时代的巅峰。",
+          "characters": [],
+          "works": [
+            "re2"
+          ]
+        },
+        {
+          "id": "re3-release",
+          "time": "1999",
+          "confidence": "已核实",
+          "title": "《生化危机3》发售",
+          "desc": "引入「追迹者」的追踪压迫机制；据原版总监所述，本作最初是按「外传」立项的。",
+          "characters": [],
+          "works": [
+            "re3"
+          ]
+        },
+        {
+          "id": "re1-remake",
+          "time": "2002",
+          "confidence": "已核实",
+          "title": "《生化危机》GameCube 重制版发售",
+          "desc": "追加绯红头颅、丽莎·特雷弗、蝰蛇与黄蜂等新要素，洋馆的布局与演出被大幅重写。",
+          "characters": [
+            "re-lisa-trevor",
+            "re-crimson-head"
+          ],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "chronicles-2007",
+          "time": "2007",
+          "confidence": "已核实",
+          "title": "《保护伞编年史》把洋馆事件做成关卡",
+          "desc": "分 Round 1 / Round 2 / Round 3 与瑞贝卡篇、威斯克转生篇再现了洋馆事件。",
+          "characters": [],
+          "works": [
+            "re1"
+          ]
+        },
+        {
+          "id": "re2-remake",
+          "time": "2019",
+          "confidence": "已核实",
+          "title": "《生化危机2 重制版》发售",
+          "desc": "改用越肩视角与全新引擎重做警局与母巢，并新增「幽灵生存者」系列平行世界模式。",
+          "characters": [
+            "re-robert-kendo",
+            "re-katherine-warren",
+            "re-hunk"
+          ],
+          "works": [
+            "re2"
+          ]
+        },
+        {
+          "id": "re3-remake",
+          "time": "2020",
+          "confidence": "已核实",
+          "title": "《生化危机3 重制版》发售",
+          "desc": "追迹者更早登场、砍掉钟楼并新增医院关卡，同时移除了原版的「实时动作选择」机制。",
+          "characters": [],
+          "works": [
+            "re3"
+          ]
+        },
+        {
+          "id": "cv-release",
+          "time": "2000",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《生化危机：代号维罗妮卡》Dreamcast 版发售",
+          "desc": "由世嘉开发、Capcom 授权，初衷是为 Dreamcast 拉动销量。",
+          "characters": [],
+          "works": [
+            "re-cv"
+          ]
+        },
+        {
+          "id": "cv-complete",
+          "time": "2001",
+          "confidence": "已核实",
+          "title": "《代号维罗妮卡 完全版》发售，同时登陆 Dreamcast 与 PS2",
+          "desc": "因 DC 销售不佳而移植 PS2，并追加了部分内容。",
+          "characters": [],
+          "works": [
+            "re-cv"
+          ]
+        },
+        {
+          "id": "cv-hd",
+          "time": "2011",
+          "confidence": "已核实",
+          "title": "HD 版登陆 Xbox 360 / PS3，与《生化危机4》合辑发售",
+          "desc": "画质大幅提升，是这两作第一次被放在一起发售。",
+          "characters": [],
+          "works": [
+            "re-cv",
+            "re4"
+          ]
+        },
+        {
+          "id": "re4-release",
+          "time": "2005",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《生化危机4》GameCube 版发售 —— 过肩视角革命",
+          "desc": "它重新定义了动作射击的手感，也让系列完成了一次转型。",
+          "characters": [],
+          "works": [
+            "re4"
+          ]
+        },
+        {
+          "id": "re4-ports",
+          "time": "2006–2007",
+          "confidence": "已核实",
+          "title": "PS2 / PC / Wii 移植；PC 版收录 Separate Ways",
+          "desc": "艾达篇随 PC 版收录，成为理解本作暗线的关键补充。",
+          "characters": [],
+          "works": [
+            "re4"
+          ]
+        },
+        {
+          "id": "re4-remake",
+          "time": "2023",
+          "confidence": "已核实",
+          "title": "《生化危机4 重制版》发售",
+          "desc": "改用越肩视角与全新引擎重做，废除 QTE，并把克劳萨与威斯克的关系切断（改为听命于萨德勒）。",
+          "characters": [],
+          "works": [
+            "re4"
+          ]
+        },
+        {
+          "id": "re5-release",
+          "time": "2009",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《生化危机5》PS3 / Xbox 360 版发售 —— 系列首次双人合作",
+          "desc": "本作把动作化推到系列高点，也是「克里斯 vs 威斯克」宿命一战的终点。PC 版需发售日补丁才能访问线上多人。",
+          "characters": [],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "re5-ports",
+          "time": "2016 / 2019",
+          "confidence": "已核实",
+          "title": "《生化危机5》登陆 PS4 / Xbox One，随后推出 Switch 版",
+          "desc": "2016 年移植到 PS4 与 Xbox One，2019 年推出 Switch 版。",
+          "characters": [],
+          "works": [
+            "re5"
+          ]
+        },
+        {
+          "id": "re-rev-release",
+          "time": "2012",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《生化危机：启示录》Nintendo 3DS 版发售",
+          "desc": "专为掌机设计的一作，使用 MT Framework Mobile 引擎；它的开发始于测试 3DS 机能的《生化危机：佣兵 3D》之前。",
+          "characters": [],
+          "works": [
+            "re-rev"
+          ]
+        },
+        {
+          "id": "re-rev-ports",
+          "time": "2013 及之后",
+          "confidence": "已核实",
+          "title": "《启示录》移植 Wii U / PS3 / Xbox 360，之后再登陆现代全平台",
+          "desc": "2013 年移植到家用机，其后陆续登陆 PS4 / Xbox One / Switch 与 PC。",
+          "characters": [],
+          "works": [
+            "re-rev"
+          ]
+        },
+        {
+          "id": "re0-release",
+          "time": "2002-11-21",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《生化危机0》日本 GameCube 版发售 —— 独占三部曲的第二部",
+          "desc": "本作原计划在任天堂 64 推出，后转移至 GameCube；它是系列在 GameCube 独占三部曲（重制版《生化危机》、《生化危机0》、《生化危机4》）的第二部。",
+          "characters": [],
+          "works": [
+            "re0"
+          ]
+        },
+        {
+          "id": "re0-ports",
+          "time": "2008 / 2016 前后",
+          "confidence": "已核实",
+          "title": "《生化危机0》推出 Wii 移植版，其后登陆现代全平台",
+          "desc": "2008 年移植到 Wii，之后陆续登陆 PS4 / Xbox One / Switch 与 PC。",
+          "characters": [],
+          "works": [
+            "re0"
+          ]
+        },
+        {
+          "id": "re6-release",
+          "time": "2012-10-02",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《生化危机6》PS3 / Xbox 360 版发售 —— 四线并行",
+          "desc": "本作把系列的格局从求生推到了战争，是「全球化动作大片」的极致。",
+          "characters": [],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "re6-ports",
+          "time": "2013 / 2016 / 2019",
+          "confidence": "已核实",
+          "title": "《生化危机6》推出 PC 版，随后登陆 PS4 / Xbox One 与 Switch",
+          "desc": "2013 年 PC 版，2016 年 PS4 / Xbox One，2019 年 Switch。",
+          "characters": [],
+          "works": [
+            "re6"
+          ]
+        },
+        {
+          "id": "re7-release",
+          "time": "2017-01-24",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《生化危机7》日本发售 —— RE 引擎首作，支持 PSVR",
+          "desc": "第一人称视角的回归之作，也是系列「新三部曲」的开篇。",
+          "characters": [],
+          "works": [
+            "re7"
+          ]
+        },
+        {
+          "id": "re7-dlc",
+          "time": "2017",
+          "confidence": "已核实",
+          "title": "《生化危机7》推出两部 DLC：《并非英雄》《佐伊的结局》",
+          "desc": "前者补全克里斯清剿联结组织残党的行动，后者补完佐伊的后续。",
+          "characters": [],
+          "works": [
+            "re7"
+          ]
+        },
+        {
+          "id": "re8-release",
+          "time": "2021-05-07",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《生化危机8：村庄》发售",
+          "desc": "伊森线的终点，把系列的病原体源头一路追到了菌主与米兰达。",
+          "characters": [],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "re8-rose-dlc",
+          "time": "2022",
+          "confidence": "已核实",
+          "title": "DLC《萝丝魅影》（Shadows of Rose）随黄金版推出",
+          "desc": "主线 16 年后的续章，以萝丝为主角。",
+          "characters": [],
+          "works": [
+            "re8"
+          ]
+        },
+        {
+          "id": "re-rev2-release",
+          "time": "2015-02-25 起",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《生化危机：启示录2》开始以每周分章形式发售",
+          "desc": "系列少见的分章发售；最终章发售时推出完整版，2015 年 8 月 18 日推出 PS Vita 版（Frima Studio 移植）。销量 160 万份，超过前作。",
+          "characters": [],
+          "works": [
+            "re-rev2"
+          ]
+        },
+        {
+          "id": "re9-release",
+          "time": "2026-02-27",
+          "confidence": "已核实",
+          "major": true,
+          "title": "《生化危机9：安魂曲》发售 —— 系列三十年的总结之作",
+          "desc": "登陆 PS5 / Xbox Series X|S / PC / Nintendo Switch 2；发售后全球销量突破 800 万份，Metacritic 89–90、OpenCritic 90。",
+          "characters": [],
+          "works": [
+            "re9"
+          ]
+        },
+        {
+          "id": "re9-launch-marks",
+          "time": "2025-09 至 2026-03",
+          "confidence": "已核实",
+          "title": "《安魂曲》发售前后的联动与活动",
+          "desc": "2025-09-13 宣布登陆 Nintendo Switch 2；2025-10-30 格蕾丝的 amiibo 登场；2025-12-12 与保时捷联动；2026-01-16 播放 Resident Evil Showcase；2026-01-27 汉米尔顿推出手表；2026-03-04 起购买指定 RTX 50 系显卡可获赠本作。",
+          "characters": [],
+          "works": [
+            "re9"
+          ]
+        }
+      ]
+    }
+  ]
+}

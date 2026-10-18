@@ -1,0 +1,28 @@
+﻿编号,类型,名称（英）,名称（中）,位置/条件,内容要点,备注
+FILE-01,文件,Files / Intel,文件/情报,村庄/油田/实验室/油轮,揭示TRICELL接管安布雷拉实验室、Uroboros研究、马吉尼感染机制、威斯克与吉奥内密谋,系列环境叙事传统
+TR-01,收集品,Treasures,宝物,各场景,可出售换钱；换取武器弹药升级,清单依版本而异
+ITEM-01,剧情关键,Photo of Jill,吉尔照片,斯通的数据中,证明吉尔可能还活着的关键线索,
+ITEM-02,剧情关键,Irving's Documents,欧文的文件,欧文遗留,引向沼泽油田（实为调虎离山）,陷阱性线索
+ITEM-03,剧情关键,Irving's Dying Words,欧文的临终遗言,击败欧文后,引向洞穴（Uroboros花之源头）,
+ITEM-04,剧情关键,The Flower,始祖花,洞穴,曾被用于制造安布雷拉过去的病毒，以及新毒株Uroboros,Uroboros源头
+ITEM-05,剧情关键,Test Subject Capsules,实验胶囊,地下设施,数千个装着人体实验对象的胶囊；吉尔的胶囊（空的）,
+ITEM-06,剧情关键,Jill's Mind-Control Device,吉尔的脑控装置,吉尔胸前,移除后吉尔恢复神智；并指出威斯克靠血清维持力量,
+ITEM-07,剧情关键,Gionne's Serum Syringes,吉奥内的血清注射器,油轮,谢娃留下数支；用于破坏威斯克的力量稳定性,终局关键
+ITEM-08,剧情关键,Uroboros Missiles,Uroboros导弹,轰炸机上,威斯克全球感染计划的核心,
+WPN-01,武器,Handgun,手枪,初期,常规
+WPN-02,武器,Shotgun,霰弹枪,中期,近战主力
+WPN-03,武器,Rifle,步枪,中期,中远程
+WPN-04,武器,Submachine Gun,冲锋枪,中期,高射速
+WPN-05,武器,Sniper Rifle,狙击枪,中期,远距精确
+WPN-06,武器,Magnum,马格南,后期,高威力
+WPN-07,武器,Rocket/Grenade Launcher,火箭/榴弹发射器,后期,高火力
+WPN-08,武器,Melee Weapons,近战武器,全作,刀、电击棒等；本作强化近战攻击系统
+ENM-01,敌人,Majini,马吉尼,全作,被普拉卡变种感染的当地人；保留部分智慧与武器使用能力
+ENM-02,敌人,Troll-like Giant B.O.W.,变异巨魔状巨型B.O.W.,三角洲小队现场,屠杀三角洲小队
+ENM-03,敌人,Irving（octopus mutation）,欧文（章鱼状变异体）,沼泽,注射普拉卡变种后的形态
+ENM-04,敌人,Gionne（giant mutation）,吉奥内（巨大变异体）,油轮,被Uroboros感染的三联CEO
+ENM-05,首领,Wesker（tentacle monster）,威斯克（触手怪物）,火山,用Uroboros自我变异；心脏外露；最终坠入岩浆
+SYS-01,系统,Co-op（2P）,双人合作,全作,系列首次双人合作；AI或真人搭档
+SYS-02,系统,Action & Cover,动作与掩体,全作,增加近战攻击与掩体系统
+SYS-03,系统,Online Patch,联机补丁,发售日,需下载发售日补丁才能访问线上多人模式
+MODE-01,隐藏模式,The Mercenaries,佣兵模式,通关剧情后解锁,系列传统限时挑战

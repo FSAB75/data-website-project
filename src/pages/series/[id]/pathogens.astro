@@ -1,0 +1,290 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { seriesList, pathogensOfSeries, getEntity, coverPath } from '../../../lib/data.js';
+
+// 只有写了独立数据文件 pathogens.json 的系列才生成这一页
+export function getStaticPaths() {
+  return seriesList
+    .filter((s) => pathogensOfSeries(s.id))
+    .map((s) => ({ params: { id: s.id }, props: { pack: s } }));
+}
+
+const { pack } = Astro.props;
+const item = pack.series;
+const data = pathogensOfSeries(pack.id)!;
+
+// 词条查表：找不到就退化为纯文本（不会因为缺词条而报错）
+const ent = (id) => getEntity(id);
+const nameOf = (id) => {
+  const e = ent(id);
+  return e ? e.nameZh : id;
+};
+
+const pathogenItems = (data.pathogenGroups || []).flatMap((g) => g.items || []);
+const bowItems = (data.bowGroups || []).flatMap((g) => g.items || []);
+const chain = data.chain || [];
+
+const description = `${item.nameZh}系列的 B.O.W. 与病原体谱系：把 ${pathogenItems.length} 个病原体 / 计划与 ${bowItems.length} 种生物兵器按「谁派生自谁」串成一张关系表。`;
+const shareImage = coverPath('series', item.id);
+
+// 节点在页面上的锚点
+const anchor = (id) => `p-${id}`;
+---
+
+<BaseLayout title={`B.O.W. 与病原体谱系 · ${item.nameZh}`} theme={item.theme} description={description} image={shareImage}>
+  <p class="eyebrow">SPECIAL · B.O.W. 与病原体谱系</p>
+  <h1>B.O.W. 与病原体谱系 <span class="title-en">Pathogens &amp; Bio Organic Weapons</span></h1>
+  <p class="lead">
+    本页把全系列已收录的<strong>病原体、计划与生物兵器</strong>按「<strong>谁派生自谁</strong>」串成一张关系表 ——
+    节点的详细背景在各自的<strong>词条页</strong>里，本页只负责关系、归类与一句补充。
+    内容整理自公开资料，<strong>不做推测性补全</strong>。
+  </p>
+  <div class="meta-row">
+    <span class="tag tag--blood">{pathogenItems.length} 个病原体 / 计划</span>
+    <span class="tag">{bowItems.length} 种生物兵器 / 变异体</span>
+    {(data.pathogenGroups || []).length > 0 && <span class="tag">{(data.pathogenGroups || []).length} 个世代分组</span>}
+  </div>
+
+  <nav class="pg-nav" aria-label="本页导航">
+    <a href="#pg-chain">主干链</a>
+    <a href="#pg-pathogens">病原体谱系</a>
+    <a href="#pg-bows">生物兵器</a>
+    <a href="#pg-notes">收录说明</a>
+  </nav>
+
+  {
+    chain.length > 1 && (
+      <section class="pg-section" id="pg-chain">
+        <h2 class="pg-h2">主干链</h2>
+        {data.chainNote && <p class="pg-hint">{data.chainNote}</p>}
+        <ol class="pg-chain">
+          {chain.map((id) => (
+            <li>
+              <a class="pg-chain__node" href={`#${anchor(id)}`}>{nameOf(id)}</a>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
+
+  <section class="pg-section" id="pg-pathogens">
+    <h2 class="pg-h2">病原体谱系 <span class="pg-h2__en">按世代分组</span></h2>
+    {
+      (data.pathogenGroups || []).map((g) => (
+        <div class="pg-group">
+          <h3 class="pg-group__title">{g.era}</h3>
+          {g.hint && <p class="pg-hint">{g.hint}</p>}
+          <div class="pg-grid">
+            {(g.items || []).map((n) => (
+              <article class="pg-card" id={anchor(n.entity)}>
+                <header class="pg-card__head">
+                  <span class="pg-card__kind">{n.kind}</span>
+                </header>
+                <h4 class="pg-card__name">
+                  <a href={`/entity/${n.entity}/`}>{nameOf(n.entity)}</a>
+                </h4>
+                {ent(n.entity)?.nameEn && <div class="pg-card__en">{ent(n.entity)!.nameEn}</div>}
+                {n.origin && <p class="pg-card__origin"><span>来历</span>{n.origin}</p>}
+                {n.note && <p class="pg-card__note">{n.note}</p>}
+                <footer class="pg-card__foot">
+                  {n.parent && (
+                    <span class="pg-rel">
+                      派生自
+                      <a href={`#${anchor(n.parent)}`}>{nameOf(n.parent)}</a>
+                    </span>
+                  )}
+                  {(n.derives || []).length > 0 && (
+                    <span class="pg-rel">
+                      衍生出
+                      {(n.derives || []).map((d, i) => (
+                        <>{i > 0 && '、'}<a href={`#${anchor(d)}`}>{nameOf(d)}</a></>
+                      ))}
+                    </span>
+                  )}
+                </footer>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </section>
+
+  <section class="pg-section" id="pg-bows">
+    <h2 class="pg-h2">生物兵器 <span class="pg-h2__en">按其病原体来源分组</span></h2>
+    {
+      (data.bowGroups || []).map((g) => (
+        <div class="pg-group">
+          <h3 class="pg-group__title">
+            {g.label}
+            {g.from && (
+              <span class="pg-group__from">
+                —— 来源：<a href={`#${anchor(g.from)}`}>{nameOf(g.from)}</a>
+              </span>
+            )}
+          </h3>
+          {g.hint && <p class="pg-hint">{g.hint}</p>}
+          <div class="pg-grid">
+            {(g.items || []).map((n) => (
+              <article class="pg-card">
+                <header class="pg-card__head">
+                  <span class="pg-card__kind">{n.kind}</span>
+                </header>
+                <h4 class="pg-card__name">
+                  <a href={`/entity/${n.entity}/`}>{nameOf(n.entity)}</a>
+                </h4>
+                {ent(n.entity)?.nameEn && <div class="pg-card__en">{ent(n.entity)!.nameEn}</div>}
+                {n.note && <p class="pg-card__note">{n.note}</p>}
+              </article>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </section>
+
+  <section class="pg-section pg-notes" id="pg-notes">
+    <h2 class="pg-h2">收录说明</h2>
+    <div class="panel prose">
+      <ul>
+        <li>本页的<strong>关系数据</strong>来自独立整理，不依赖各作品的收集档案；每个节点都可以点进去看它的<strong>完整词条页</strong>（背景、事迹与关联条目）。</li>
+        <li><strong>「派生自 / 衍生出」只写有公开来源支撑的关系</strong>；判断不了的一律留空并在节点里注明，<strong>不靠命名相似硬连</strong>。</li>
+        <li>「生物兵器（B.O.W.）」是系列内的专有说法，指被有意制造出来的战斗用生物；本页把感染体与变异体也一并列出，用 <strong>种类</strong> 标签区分，不混为一谈。</li>
+        <li>各作对同一病原体的译名与命名口径不完全统一，本页按词条表已有的中文名书写。</li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .title-en {
+    font-size: 16px;
+    color: var(--dim);
+    font-family: var(--sans);
+    letter-spacing: 0.06em;
+    font-weight: 400;
+    margin-left: 6px;
+  }
+
+  .pg-h2__en {
+    font-size: 12.5px;
+    color: var(--dim);
+    font-family: var(--sans);
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    margin-left: 8px;
+  }
+
+  /* ---------- 本页导航 ---------- */
+  .pg-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 24px 0 8px;
+  }
+  .pg-nav a {
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--muted);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 14px;
+  }
+  .pg-nav a:hover { color: var(--text); border-color: rgba(var(--accent-rgb), 0.5); }
+
+  .pg-section { margin: 32px 0 0; scroll-margin-top: 132px; }
+  .pg-h2 { font-size: 19px; margin: 0 0 10px; }
+  .pg-hint { margin: 0 0 14px; font-size: 13.5px; color: var(--muted); line-height: 1.75; }
+
+  /* ---------- 主干链 ---------- */
+  .pg-chain {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 2px;
+    margin: 0 0 14px;
+    padding: 0;
+  }
+  .pg-chain li { display: flex; align-items: center; }
+  .pg-chain li + li::before {
+    content: '→';
+    color: var(--dim);
+    font-size: 13px;
+    margin: 0 4px;
+  }
+  .pg-chain__node {
+    font-size: 13.5px;
+    text-decoration: none;
+    color: var(--blood-bright);
+    background: rgba(var(--accent-deep-rgb), 0.1);
+    border: 1px solid rgba(var(--accent-rgb), 0.35);
+    border-radius: 999px;
+    padding: 4px 13px;
+  }
+  .pg-chain__node:hover { border-color: var(--blood-bright); background: rgba(var(--accent-deep-rgb), 0.2); }
+
+  /* ---------- 分组与小节 ---------- */
+  .pg-group { margin: 0 0 26px; }
+  .pg-group__title {
+    font-family: var(--serif);
+    font-size: 15.5px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    padding-left: 11px;
+    border-left: 3px solid rgba(var(--accent-rgb), 0.6);
+  }
+  .pg-group__from { font-family: var(--sans); font-size: 13px; font-weight: 400; color: var(--dim); }
+  .pg-group__from a { color: var(--blood-bright); text-decoration: none; }
+
+  .pg-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  }
+
+  .pg-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid rgba(var(--accent-rgb), 0.55);
+    border-radius: var(--radius);
+    padding: 14px 18px 13px;
+    scroll-margin-top: 132px;
+  }
+  .pg-card:target { border-left-color: var(--blood-bright); background: var(--panel-2); }
+  .pg-card__head { margin-bottom: 7px; }
+  .pg-card__kind {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--blood-bright);
+    border: 1px solid rgba(var(--accent-rgb), 0.35);
+    border-radius: 999px;
+    padding: 1px 9px;
+  }
+  .pg-card__name { font-family: var(--serif); font-size: 17px; margin: 0 0 2px; }
+  .pg-card__name a { color: var(--text); text-decoration: none; }
+  .pg-card__name a:hover { color: var(--blood-bright); }
+  .pg-card__en { font-size: 11.5px; color: var(--dim); letter-spacing: 0.03em; margin-bottom: 9px; }
+  .pg-card__origin { margin: 0 0 8px; font-size: 12.5px; color: var(--muted); line-height: 1.7; }
+  .pg-card__origin span {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    color: var(--dim);
+    margin-right: 7px;
+  }
+  .pg-card__note { margin: 0 0 10px; font-size: 13px; color: var(--muted); line-height: 1.75; }
+  .pg-card__foot { display: flex; flex-direction: column; gap: 5px; margin: 0; }
+  .pg-rel { font-size: 12.5px; color: var(--dim); line-height: 1.7; }
+  .pg-rel a { color: var(--blood-bright); text-decoration: none; border-bottom: 1px dotted rgba(var(--accent-rgb), 0.45); }
+  .pg-rel a:hover { border-bottom-style: solid; }
+
+  .pg-notes ul { margin: 0; padding-left: 20px; }
+  .pg-notes li { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+
+  @media (pointer: coarse) {
+    .pg-nav a { min-height: 40px; display: inline-flex; align-items: center; }
+    .pg-chain__node { padding: 7px 15px; }
+  }
+</style>

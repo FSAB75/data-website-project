@@ -10,6 +10,10 @@ interface Props {
   type?: string;
   /** 视觉主题；不同系列可用不同基调（默认为逃生的暗黑恐怖风） */
   theme?: string;
+  /** F5：结构化数据（JSON-LD），传对象则输出到 <head> */
+  jsonLd?: Record<string, unknown> | null;
+  /** 不需要被搜索引擎收录的页面（如 404）置为 true */
+  noindex?: boolean;
 }
 const {
   title,
@@ -17,6 +21,8 @@ const {
   image = null,
   type = 'website',
   theme = 'outlast',
+  jsonLd = null,
+  noindex = false,
 } = Astro.props;
 
 // 站内规模（页脚展示用）
@@ -31,8 +37,19 @@ const scale = [
 // 页面构建日期（页脚极淡小字）
 const buildDate = new Date().toISOString().slice(0, 10);
 
+// F4：ICP 备案号与公安网备案号（工信部要求备案号须在网站底部展示并链接到 beian.miit.gov.cn）。
+// 未设置环境变量时不渲染，因此备案期间不影响现有页面。
+const icp = import.meta.env.PUBLIC_ICP || '';
+const gongan = import.meta.env.PUBLIC_GONGAN || '';
+
 // 浏览器地址栏配色随主题走
-const themeColor = theme === 'corpse-party' ? '#12100d' : '#08080b';
+const THEME_COLORS: Record<string, string> = {
+  'outlast': '#08080b',
+  'corpse-party': '#12100d',
+  'forgive-me-father': '#0b0d0b',
+  'resident-evil': '#090b0c',
+};
+const themeColor = THEME_COLORS[theme] || '#08080b';
 
 // canonical / og:image 需要绝对地址；site 已在 astro.config.mjs 中配置
 const url = (p: string) => (Astro.site ? new URL(p, Astro.site).href : p);
@@ -50,6 +67,8 @@ const ogImage = image ? url(image) : null;
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content={themeColor} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content="游戏档案室" />
@@ -91,6 +110,20 @@ const ogImage = image ? url(image) : null;
           {seriesList.map((s) => <a href={`/series/${s.id}/`}>{s.series.nameZh}系列</a>)}
           <a href="/search/">搜索</a>
         </nav>
+        <!-- E2：窄屏（≤640px）改汉堡菜单；用原生 details，零 JS；宽屏整块不显示 -->
+        <details class="nav-menu">
+          <summary class="nav-menu__btn" aria-label="打开导航菜单">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            </svg>
+            <span class="nav-menu__txt">导航</span>
+          </summary>
+          <nav class="nav-menu__panel">
+            <a href="/">首页</a>
+            {seriesList.map((s) => <a href={`/series/${s.id}/`}>{s.series.nameZh}系列</a>)}
+            <a href="/search/">搜索</a>
+          </nav>
+        </details>
       </div>
     </header>
 
@@ -103,11 +136,22 @@ const ogImage = image ? url(image) : null;
         <p class="site-footer__scale">目前已收录 <strong>{scale}</strong>，内容仍在持续补充。</p>
         <p>本站为粉丝向资料汇编站，内容仅供学习、研究与归档参考；游戏设定以官方原作与出版物为准。</p>
         <p>
-          页面配图来自各游戏<strong>官方商店页（Steam）的宣传素材</strong>与本站生成的原创氛围图——
+          页面配图均来自各游戏<strong>官方商店页（Steam）的宣传素材</strong>——
           非官方授权出版物，仅作介绍与氛围示意；如相关权利人提出异议，本站将立即撤下。
         </p>
         <p>游戏名称、角色与相关设定版权归各自原权利方所有。</p>
         <p>资料整理难免有疏漏或推测成分，<strong>发现错误或想补充内容欢迎反馈</strong>（项目仓库 GitHub：FSAB75/data-website-project）。</p>
+        {(icp || gongan) && (
+          <p class="site-footer__beian">
+            {icp && (
+              <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer nofollow">{icp}</a>
+            )}
+            {icp && gongan && ' · '}
+            {gongan && (
+              <a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener noreferrer nofollow">{gongan}</a>
+            )}
+          </p>
+        )}
         <p class="site-footer__dim">由玩家自发整理维护 · 最后构建 {buildDate}</p>
       </div>
     </footer>
@@ -130,6 +174,48 @@ const ogImage = image ? url(image) : null;
       }
       document.addEventListener('mouseover', placeCard);
       document.addEventListener('focusin', placeCard);
+
+      // E4：触屏没有 hover，手指点高亮词会直接跳走，那张速览卡片永远看不到。
+      // 这里在「无真实悬停」的设备上改成：第一次点先弹卡片，再点一下才跳转；
+      // 点空白处 / 滚动 / 按 Esc 收起。桌面（有 hover）完全不进这段逻辑。
+      const noHover = window.matchMedia('(hover: none)').matches;
+
+      function closeTerms() {
+        for (const t of document.querySelectorAll('.term--open')) t.classList.remove('term--open');
+      }
+
+      function openTerm(term) {
+        closeTerms();
+        term.classList.add('term--open');
+        const card = term.querySelector('.term__card');
+        if (!card) return;
+        // 横向位置不写 left，而是「先量它在哪儿、再平移多少」：
+        // 词条是 inline，跨行时绝对定位的包含块原点会偏离词条本身（实测能差 100px 以上），
+        // 直接算 left 会偏；先量实际渲染位置再平移，对这种情况免疫。
+        card.style.left = '';
+        card.style.transform = '';
+        const cw = card.offsetWidth || 302;
+        const r = term.getBoundingClientRect();
+        const maxLeft = Math.max(8, window.innerWidth - cw - 8);
+        const want = Math.min(Math.max(r.left + r.width / 2 - cw / 2, 8), maxLeft);
+        const shift = want - card.getBoundingClientRect().left;
+        if (shift) card.style.transform = `translateX(${shift.toFixed(1)}px)`;
+        // 纵向：默认向上弹（样式里 bottom:150%）；词条离视口顶部太近就改成向下弹
+        // （这里自己算一遍，不依赖兼容鼠标事件触发的 C3 逻辑）
+        term.classList.toggle('term--below', r.top < (card.offsetHeight || 0) + 16);
+      }
+
+      if (noHover) {
+        document.addEventListener('click', (ev) => {
+          const target = ev.target;
+          const term = target && target.closest ? target.closest('.term') : null;
+          if (!term) { closeTerms(); return; }
+          if (term.classList.contains('term--open')) return; // 已展开：放行走默认跳转
+          ev.preventDefault();
+          openTerm(term);
+        });
+        document.addEventListener('keydown', (ev) => { if (ev.key === 'Escape') closeTerms(); });
+      }
     </script>
 
     <style is:global>
@@ -186,6 +272,59 @@ const ogImage = image ? url(image) : null;
       }
       [data-theme='corpse-party'] .site-header { background: rgba(18, 16, 13, 0.85); }
       [data-theme='corpse-party'] .term { cursor: help; }
+
+      /* ---------- 主题：宽恕我神父 · 手绘漫画恐怖（墨黑 / 硫黄 / 半调网点质感） ---------- */
+      [data-theme='forgive-me-father'] {
+        --bg: #0b0d0b;
+        --panel: #141713;
+        --panel-2: #1d211b;
+        --panel-3: #262b23;
+        --line: #333a2f;
+        --text: #d9d5c7;
+        --muted: #94927e;
+        --dim: #82836f; /* 与 C4 同口径：对 --bg 的对比度约 5.4:1 */
+        --blood: #8a7a1f;
+        --blood-bright: #cbb43c;
+
+        --accent-rgb: 203, 180, 60;
+        --accent-deep-rgb: 138, 122, 31;
+        --overlay-rgb: 11, 13, 11;
+      }
+      [data-theme='forgive-me-father'] .bg-layer {
+        background:
+          radial-gradient(1100px 620px at 50% -10%, rgba(var(--accent-deep-rgb), 0.2), transparent 62%),
+          radial-gradient(900px 700px at 100% 100%, rgba(70, 90, 70, 0.08), transparent 65%),
+          repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.06) 0 2px, transparent 2px 4px),
+          var(--bg);
+      }
+      [data-theme='forgive-me-father'] .site-header { background: rgba(11, 13, 11, 0.85); }
+
+      /* ---------- 主题：生化危机 · 冷调实验室（冷蓝灰 + 血红强调，网格化纹理） ---------- */
+      [data-theme='resident-evil'] {
+        --bg: #090b0c;
+        --panel: #111517;
+        --panel-2: #1a2023;
+        --panel-3: #232b2f;
+        --line: #2f3a3f;
+        --text: #d6d8d6;
+        --muted: #8f9a99;
+        --dim: #7f8b8a; /* 对 --bg 的对比度约 5.7:1 */
+        --blood: #8f2b24;
+        --blood-bright: #d9534a;
+
+        --accent-rgb: 217, 83, 74;
+        --accent-deep-rgb: 143, 43, 36;
+        --overlay-rgb: 9, 11, 12;
+      }
+      [data-theme='resident-evil'] .bg-layer {
+        background:
+          radial-gradient(1100px 620px at 50% -10%, rgba(var(--accent-deep-rgb), 0.18), transparent 60%),
+          radial-gradient(900px 700px at 100% 100%, rgba(40, 90, 95, 0.12), transparent 65%),
+          repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.012) 0 1px, transparent 1px 4px),
+          repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.12) 0 1px, transparent 1px 4px),
+          var(--bg);
+      }
+      [data-theme='resident-evil'] .site-header { background: rgba(9, 11, 12, 0.85); }
 
       * { box-sizing: border-box; }
 
@@ -285,6 +424,53 @@ const ogImage = image ? url(image) : null;
       }
       .nav a:hover { color: var(--text); border-bottom-color: var(--blood); }
 
+      /* E2：汉堡菜单 —— 宽屏整块隐藏，≤640px 才出现（原生 details，无 JS） */
+      .nav-menu { display: none; position: relative; }
+      .nav-menu__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        list-style: none;
+        cursor: pointer;
+        font-size: 13px;
+        color: var(--muted);
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 6px 11px;
+        min-height: 38px;
+        transition: color 0.15s, border-color 0.15s;
+      }
+      .nav-menu__btn::-webkit-details-marker { display: none; }
+      .nav-menu__btn svg { width: 18px; height: 18px; }
+      .nav-menu__btn:focus-visible { outline: 2px solid rgba(var(--accent-rgb), 0.7); outline-offset: 2px; }
+      .nav-menu[open] .nav-menu__btn { color: var(--text); border-color: rgba(var(--accent-rgb), 0.5); }
+      .nav-menu__panel {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 8px);
+        z-index: 50;
+        min-width: 184px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        padding: 6px;
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+      }
+      .nav-menu__panel a {
+        display: block;
+        padding: 11px 12px;
+        font-size: 14.5px;
+        text-decoration: none;
+        color: var(--muted);
+        border-radius: var(--radius);
+        transition: color 0.15s, background 0.15s;
+      }
+      .nav-menu__panel a:hover { color: var(--text); background: var(--panel-2); }
+
       main { padding: 40px 24px 64px; }
 
       /* ---------- 标题 ---------- */
@@ -331,7 +517,7 @@ const ogImage = image ? url(image) : null;
       .scene-list {
         display: grid;
         gap: 14px;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
         margin: 22px 0 6px;
       }
       .scene {
@@ -366,9 +552,10 @@ const ogImage = image ? url(image) : null;
       .meta-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 
       /* ---------- 卡片网格 ---------- */
+      /* E1：min(100%, Xpx) 保证轨道永远塞得进容器 —— 窄屏自动塌成单列，不再撑出横向滚动 */
       .grid { display: grid; gap: 16px; }
-      .grid--3 { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
-      .grid--2 { grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); }
+      .grid--3 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+      .grid--2 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
 
       .card {
         display: block;
@@ -389,8 +576,12 @@ const ogImage = image ? url(image) : null;
         opacity: 0;
         transition: opacity 0.15s;
       }
-      .card:hover { border-color: rgba(var(--accent-rgb), 0.5); background: var(--panel-2); transform: translateY(-2px); }
+      .card:hover { border-color: rgba(var(--accent-rgb), 0.5); background: var(--panel-2); }
       .card:hover::before { opacity: 1; }
+      /* E7：上浮只在「真有指针、能真正悬停」的设备上做，触屏点完不会浮起来卡住 */
+      @media (hover: hover) {
+        .card:hover { transform: translateY(-2px); }
+      }
       .card__index {
         font-family: var(--serif);
         font-size: 12px;
@@ -471,6 +662,9 @@ const ogImage = image ? url(image) : null;
       .site-footer__scale { color: var(--muted); }
       .site-footer__scale strong { color: var(--text); font-weight: 600; }
       .site-footer__dim { color: var(--dim); } /* C4：原来写死 #43434d，对比度不足 */
+      .site-footer__beian { margin-top: 10px; }
+      .site-footer__beian a { color: var(--dim); text-decoration: none; border-bottom: 1px solid var(--line); }
+      .site-footer__beian a:hover { color: var(--text); }
 
       /* C2：回到顶部（原生锚点，零 JS） */
       .to-top {
@@ -495,6 +689,26 @@ const ogImage = image ? url(image) : null;
         .nav { gap: 16px; }
         .nav a { padding: 16px 4px; }
         .to-top { padding: 12px 20px; font-size: 13.5px; }
+      }
+
+      /* E2：窄屏隐藏横排导航，改用汉堡菜单 */
+      @media (max-width: 640px) {
+        .nav { display: none; }
+        .nav-menu { display: block; }
+      }
+
+      /* E4：触屏（没有真实悬停）上，词条卡片改为「点一下先弹出来」
+         —— 位置仍相对词条（绝对定位），由脚本把横向夹在视口内，避免右侧撑出横向滚动。
+         注意：这里不能用 position: fixed —— 页面里存在带 transform/filter 的祖先容器，
+         它们会成为 fixed 的包含块，卡片会被「劫持」到别处去。 */
+      @media (hover: none) {
+        .term--open .term__card {
+          display: block;
+          width: min(302px, calc(100vw - 24px));
+          pointer-events: auto;
+          z-index: 80;
+        }
+        .term--open .term__hit { background: rgba(var(--accent-rgb), 0.24); }
       }
 
       @media (max-width: 640px) {

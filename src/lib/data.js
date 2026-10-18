@@ -43,6 +43,8 @@ function buildRegistry() {
       entities: (files.entities && files.entities.entities) || [],
       timeline: files.timeline || { groups: [] },
       nametags: files.nametags || null,
+      // 系列专属的「B.O.W. 与病原体谱系」（独立数据文件，只有写了 pathogens.json 的系列才有）
+      pathogens: files.pathogens || null,
     });
   }
   list.sort((a, b) => (a.series.order ?? 99) - (b.series.order ?? 99));
@@ -93,6 +95,99 @@ export function timelineOfSeries(seriesId) {
 export function extraOfSeries(seriesId, key) {
   const s = getSeriesData(seriesId);
   return s ? s[key] || null : null;
+}
+
+/**
+ * 「武器与能力」类收集条目的类型标签。
+ * 系列专属的「武器与能力图鉴」子页直接由各作品的 documents 派生，不需要额外数据文件；
+ * 以后想扩到敌人 / 关卡等类型，只在这里加标签即可。
+ */
+export const ARSENAL_DOC_TYPES = ['武器', '武器变体', '技能', '能力', '疯狂技能'];
+
+/**
+ * 「怪物与首领」类收集条目的类型标签。
+ * 与武器图鉴同源：系列专属子页直接从各作品的 documents 派生，不用额外数据文件；
+ * 想再扩到关卡 / 秘密等类型，只在这里加标签即可。
+ */
+export const BESTIARY_DOC_TYPES = ['敌人', '首领'];
+
+/**
+ * 「关卡与秘密」类收集条目的类型标签，以及它们在页面上的三大分类。
+ * 分类只用于展示与筛选，原始 type 仍保留在卡片上，便于精确定位。
+ */
+export const EXTRA_DOC_TYPES = [
+  '章节',
+  '章节结构',
+  '额外章节',
+  '追加场景',
+  '系统',
+  '模式',
+  '隐藏模式',
+  '难度',
+  '重玩',
+  '分支机制',
+  'DLC',
+  '隐藏要素',
+  '秘密',
+  '彩蛋',
+  '解谜',
+  '解谜密码',
+];
+
+export const EXTRA_DOC_GROUPS = [
+  { label: '关卡与章节', types: ['章节', '章节结构', '额外章节', '追加场景'] },
+  { label: '系统与模式', types: ['系统', '模式', '隐藏模式', '难度', '重玩', '分支机制', 'DLC'] },
+  { label: '秘密与解谜', types: ['隐藏要素', '秘密', '彩蛋', '解谜', '解谜密码'] },
+];
+
+/** 某系列里属于给定类型标签的收集条目（附所属作品信息），按作品顺序 + 条目编号排列 */
+function collectByTypes(seriesId, types) {
+  const s = getSeriesData(seriesId);
+  if (!s) return [];
+  const order = new Map((s.series.works || []).map((id, i) => [id, i]));
+  const list = [];
+  for (const w of s.works) {
+    for (const d of w.documents || []) {
+      if (types.includes(d.type)) {
+        list.push({ ...d, workId: w.id, workTitle: w.title, workYear: w.year });
+      }
+    }
+  }
+  list.sort(
+    (a, b) =>
+      (order.get(a.workId) ?? 99) - (order.get(b.workId) ?? 99) || (a.no ?? 0) - (b.no ?? 0),
+  );
+  return list;
+}
+
+/** 某系列里属于「武器与能力」类的收集条目 */
+export function arsenalOfSeries(seriesId) {
+  return collectByTypes(seriesId, ARSENAL_DOC_TYPES);
+}
+
+/** 某系列里属于「怪物与首领」类的收集条目 */
+export function bestiaryOfSeries(seriesId) {
+  return collectByTypes(seriesId, BESTIARY_DOC_TYPES);
+}
+
+/** 某系列里属于「关卡与秘密」类的收集条目（额外带上所属分类 group，供页面筛选） */
+export function extrasOfSeries(seriesId) {
+  const groupOf = new Map();
+  for (const g of EXTRA_DOC_GROUPS) for (const t of g.types) groupOf.set(t, g.label);
+  return collectByTypes(seriesId, EXTRA_DOC_TYPES).map((d) => ({
+    ...d,
+    group: groupOf.get(d.type) || '其他',
+  }));
+}
+
+/**
+ * 系列专属的「B.O.W. 与病原体谱系」数据。
+ * 与上面三个图鉴不同，**它不是从收集档案派生**，而是读该系列目录下的独立数据文件 `pathogens.json`
+ * （因为谱系关系是跨作品整理出来的，档案里没有）。没有这个文件的系列返回 null、页面不生成。
+ */
+export function pathogensOfSeries(seriesId) {
+  const s = getSeriesData(seriesId);
+  return (s && s.pathogens) || null;
 }
 
 /** 作品 → 所属系列数据包 */

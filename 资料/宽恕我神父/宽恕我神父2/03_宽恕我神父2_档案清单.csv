@@ -1,0 +1,30 @@
+﻿编号,类型,名称（英）,名称（中）,类别,位置/条件,内容要点
+WPN-01,武器,Knife,匕首,近战,—,简单致命；处决弱小/受伤敌并省弹药
+WPN-02,武器,Axe,斧头,近战,—,威力大但慢；一击可多杀
+WPN-03,武器,Revolver,左轮手枪,手枪,—,高伤害首发精准；连射失准装填慢
+WPN-04,武器,Pistol,手枪,手枪,—,射速快装填更快精度极佳
+WPN-05,武器,Pump Shotgun,泵动霰弹枪,霰弹,—,后坐强但更疼；近战极有效
+WPN-06,武器,Double Barrel Shotgun,双管霰弹枪,霰弹,—,一枪撕碎敌人；装填极慢
+WPN-07,武器,Rifle,步枪,步枪,—,快速射击杀戮机器；弹药不便宜
+WPN-08,武器,Grenade Launcher,榴弹发射器,爆炸,—,成群敌人首选；传闻自海底打捞
+WPN-09,武器,Rocket Launcher,火箭发射器,爆炸,—,活体武器几乎无法驯服
+WPN-10,武器,Mortar,迫击炮,异星,—,巨型鹦鹉螺壳；食植实体般的外表
+VAR-01,武器变体,Blood Pumper,血泵,活体武器,枢纽解锁,心脏形器官；外露管子与阀门
+VAR-02,武器变体,Eternal Fish,永恒之鱼,活体武器,枢纽解锁,被念珠链锁住的鱼
+VAR-03,武器变体,Calaber,卡拉贝尔,活体武器,枢纽解锁,枪托是鱿鱼状生物
+VAR-04,武器变体,Anemone,海葵,活体武器,枢纽解锁,巨型海葵造型的炮
+VAR-05,武器变体,Cobber Gun,眼镜蛇枪,活体武器,枢纽解锁,由触手与眼柄构成
+VAR-06,武器变体,Obelisk,方尖碑,特殊武器,枢纽解锁,百度百科提及的特殊武器
+ABL-01,能力,The Dark Tome,《暗黑之典》,Limit Break,造成伤害充能；枢纽自定义,唯一Limit Break；最多3种增益；效果含汲血/伤害/范围攻击
+SKL-01,疯狂技能,Resistance,抗性,疯狂技能,—,大幅降低所有来源伤害
+SKL-02,疯狂技能,Haste,疾速,疯狂技能,—,大幅提升射速与装填速度
+SKL-03,疯狂技能,Lifesteal,汲血,疯狂技能,—,造成伤害按百分比治疗自身
+SKL-04,疯狂技能,Might,威能,疯狂技能,—,疯狂充盈身体与武器造成额外伤害
+SYS-01,系统,Madness,疯狂,全作,战斗中积累,既是最大敌人也是最好朋友；驱动暗黑之典
+SYS-02,系统,Hand-Cranked Flashlight,手摇手电筒,全作,—,需不时上发条；可与武器同时使用
+SYS-03,系统,Token Collection,特殊代币收集,各关,沿途收集,每关推进目标之一
+SEC-01,秘密,Hidden Stashes,隐藏秘藏,各关,探索黑暗角落与侧路,类Doom隐藏房；因弹药/生命跨关继承收益放大
+DOC-01,叙事物,Leaflets & Books,传单与书籍,各关,关卡中拾获,补充剧情的可选阅读物
+ACH-01,成就,Steam Achievements（32）,Steam成就（32项）,全作,—,共32项
+DLX-01,收藏向,Digital Artbook（50+ pages）,数字美术集（50+页）,Deluxe版,—,Deluxe Edition 内容物
+DLX-02,收藏向,Soundtrack（30 tracks by Tim Fialka）,原声带（30首）,Deluxe版,—,Deluxe Edition 内容物

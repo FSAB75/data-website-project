@@ -11,6 +11,10 @@ import {
   coverPath,
   seriesCover,
   clip,
+  arsenalOfSeries,
+  bestiaryOfSeries,
+  extrasOfSeries,
+  pathogensOfSeries,
 } from '../../../lib/data.js';
 import { buildEntityIndex } from '../../../lib/linkify.js';
 
@@ -35,9 +39,26 @@ const orderedWorks = [...seriesWorks].sort(
 const hasReadingOrder = seriesWorks.some((w: any) => w.readingOrder);
 
 // 系列专属子页（有对应扩展数据才显示入口）
+const arsenal = arsenalOfSeries(pack.id);
+const bestiary = bestiaryOfSeries(pack.id);
+const extras = extrasOfSeries(pack.id);
+const pathogens = pathogensOfSeries(pack.id);
+const pathogenCount = pathogens
+  ? (pathogens.pathogenGroups || []).reduce((n: number, g: any) => n + (g.items || []).length, 0)
+  : 0;
+const bowCount = pathogens
+  ? (pathogens.bowGroups || []).reduce((n: number, g: any) => n + (g.items || []).length, 0)
+  : 0;
 const subPages = [
   nametags && { href: `/series/${item.id}/deaths/`, label: '死法收集图鉴', desc: `收录 ${nametags.nametags.length} 条名牌，可按作品 / 章节 / 学校 / 死法筛选` },
+  bestiary.length > 0 && { href: `/series/${item.id}/bestiary/`, label: '怪物与首领图鉴', desc: `汇总 ${bestiary.length} 条敌人与首领条目，可按作品 / 类别筛选` },
+  arsenal.length > 0 && { href: `/series/${item.id}/arsenal/`, label: '武器与能力图鉴', desc: `汇总 ${arsenal.length} 条武器、武器变体与能力条目，可按作品 / 类别筛选` },
+  extras.length > 0 && { href: `/series/${item.id}/extras/`, label: '关卡与秘密索引', desc: `汇总 ${extras.length} 条关卡结构、玩法系统、隐藏要素与谜题条目，可按作品 / 分类筛选` },
+  pathogens && { href: `/series/${item.id}/pathogens/`, label: 'B.O.W. 与病原体谱系', desc: `把 ${pathogenCount} 个病原体 / 计划与 ${bowCount} 种生物兵器按「谁派生自谁」串成一张关系表` },
 ].filter(Boolean);
+
+// 收录状态：明写「还缺什么」（缺项一律标注，不做虚构补全）
+const gaps = item.gaps || [];
 
 const description = clip(`${item.nameZh}（${item.nameEn}）系列百科：${item.intro}`, 115);
 ---
@@ -121,6 +142,23 @@ const description = clip(`${item.nameZh}（${item.nameEn}）系列百科：${ite
           <span class="dim">（标绿色为已核实、黄色为推测、灰色为官方未明确。）</span>
         </p>
         <Timeline timeline={timeline} index={index} />
+      </section>
+    )
+  }
+
+  {
+    gaps.length > 0 && (
+      <section>
+        <h2>收录状态</h2>
+        <p class="lead">
+          本系列的骨架与内容按「可核实程度」分批录入。<span class="dim">（资料本身没写清的，一律标注，不做虚构补全。）</span>
+        </p>
+        <div class="panel">
+          <p class="gaps__head">已知缺口</p>
+          <ul class="gaps">
+            {gaps.map((g: string) => <li>{g}</li>)}
+          </ul>
+        </div>
       </section>
     )
   }
@@ -213,4 +251,18 @@ const description = clip(`${item.nameZh}（${item.nameEn}）系列百科：${ite
     color: var(--text);
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
   }
+
+  /* E5：窄屏把 21/8 的横幅改成 16/9（原来在竖屏上被压成一条，封面看不清）；
+     顺带把「推荐阅读顺序」缩略图收小，给标题留出宽度 */
+  @media (max-width: 640px) {
+    .series-hero { aspect-ratio: 16 / 9; }
+    .series-hero__caption { left: 14px; bottom: 12px; font-size: 16px; }
+    .ro-item { gap: 10px; padding: 12px 14px; }
+    .ro-item__art { width: 92px; height: 48px; }
+  }
+  /* 收录状态（借鉴参考站的「已知缺口」写法）：把缺什么明确写出来 */
+  .gaps { margin: 0; padding-left: 20px; }
+  .gaps li { color: var(--muted); font-size: 14px; margin-bottom: 7px; }
+  .gaps li:last-child { margin-bottom: 0; }
+  .gaps__head { margin: 0 0 10px; font-size: 12.5px; letter-spacing: 0.14em; color: var(--blood-bright); }
 </style>
