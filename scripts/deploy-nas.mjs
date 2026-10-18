@@ -96,6 +96,20 @@ function execRemote(conn, command, { stdinPath, passwordForSudo } = {}) {
 /** 需要 sudo 的命令：把密码喂给 sudo -S 的标准输入 */
 const withSudo = (command) => `sudo -S bash -c ${JSON.stringify(command)}`;
 
+/** 从本地 dist/sitemap.xml 里取几条有代表性的路径做校验（新增系列 / 页面会自动被覆盖到） */
+function samplePathsFromSitemap(max = 8) {
+  const p = path.join(ROOT, 'dist', 'sitemap.xml');
+  if (!fs.existsSync(p)) return ['/'];
+  const locs = [...fs.readFileSync(p, 'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)]
+    .map((m) => m[1].replace(/^https?:\/\/[^/]+/, ''))
+    .filter(Boolean);
+  if (!locs.length) return ['/'];
+  const step = Math.max(1, Math.floor(locs.length / (max - 1)));
+  const picked = ['/'];
+  for (let i = 0; i < locs.length && picked.length < max; i += step) picked.push(locs[i]);
+  return [...new Set(picked)];
+}
+
 function buildTarball() {
   const stage = fs.mkdtempSync(path.join(os.tmpdir(), 'game-wiki-stage-'));
   const distSrc = path.join(ROOT, 'dist');
@@ -130,8 +144,9 @@ async function main() {
   // 模式二：完整部署
   if (!has('--no-build')) {
     console.log('[1/4] 本地构建');
-    const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
-    execFileSync(npm, ['run', 'build'], { cwd: ROOT, stdio: 'inherit' });
+    // Windows 上 npm 是 npm.cmd 批处理文件：Node 对 .cmd 的 spawn 要求 shell: true，否则报 spawnSync EINVAL。
+    // 这里把整条命令作为单个字符串交给 shell，避免「args + shell:true」触发的 DEP0190 警告。
+    execFileSync('npm run build', { cwd: ROOT, stdio: 'inherit', shell: true });
   } else {
     console.log('[1/4] 跳过构建（--no-build）');
   }
@@ -147,11 +162,35 @@ async function main() {
   process.stdout.write(up.out);
   if (!up.out.includes('UNPACK_OK')) throw new Error('远端解包失败');
 
+  // nginx.conf 是「按单个文件」绑定挂载进容器的：tar 解包是删除 + 新建，inode 会变，
+  // 而容器仍然指着旧 inode —— 新配置不会生效（nginx -s reload 也只是重载旧文件）。
+  // 这里比对容器内外的配置指纹，不一致就重启站点容器让它重新绑定。
+  const CONTAINER = process.env.NAS_CONTAINER || 'game-wiki';
+  const drift = await execRemote(
+    conn,
+    withSudo(
+      `a=$(md5sum ${REMOTE_DIR}/nginx.conf | cut -d' ' -f1); ` +
+        `b=$(docker exec ${CONTAINER} md5sum /etc/nginx/conf.d/default.conf 2>/dev/null | cut -d' ' -f1); ` +
+        `[ -n "$b" ] && [ "$a" != "$b" ] && echo DRIFT || echo SAME`
+    ),
+    { passwordForSudo: cfg.password }
+  );
+  if (drift.out.includes('DRIFT')) {
+    console.log('[配置] nginx.conf 有变更 → 重启站点容器，让新配置真正生效');
+    const rs = await execRemote(conn, withSudo(`docker restart ${CONTAINER}`), { passwordForSudo: cfg.password });
+    process.stdout.write(rs.out);
+    await new Promise((r) => setTimeout(r, 5000));
+  } else {
+    console.log('[配置] nginx.conf 与容器内一致，无需重启');
+  }
+
   console.log('[4/4] 校验');
+  const sample = samplePathsFromSitemap();
   const check = await execRemote(
     conn,
-    `for p in / /series/corpse-party/ /series/corpse-party/deaths/ /work/blood-covered/ ; do ` +
+    `for p in ${sample.map((s) => `'${s}'`).join(' ')} ; do ` +
       `printf '%s  %s\\n' "$(curl -sS -m 8 -o /dev/null -w '%{http_code}' http://127.0.0.1:8080$p)" "$p"; done; ` +
+      `printf '%s  %s\\n' "$(curl -sS -m 8 -o /dev/null -w '%{http_code}' http://127.0.0.1:8080/no-such-page-xyz/)" "任意错路径（应为 404）"; ` +
       `du -sh ${REMOTE_DIR}`
   );
   process.stdout.write(check.out);
@@ -171,7 +210,8 @@ async function main() {
   fs.rmSync(stage, { recursive: true, force: true });
   fs.rmSync(tarPath, { force: true });
   console.log('\n[完成] 部署成功。内网地址：http://' + cfg.host + ':8080/');
-  console.log('       内容更新后 nginx 不缓存 HTML，刷新浏览器即可生效，无需重启容器。');
+  console.log('       内容更新后 nginx 不缓存 HTML，刷新浏览器即可生效，无需重启容器；');
+  console.log('       若本次改动了 docker/nginx.conf，脚本会自动检测并重启站点容器。');
 }
 
 main().catch((e) => {
