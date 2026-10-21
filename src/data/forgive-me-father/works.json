@@ -229,30 +229,201 @@
           "nameZh": "左轮手枪",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "高伤害、首发精准，但连射易失准且装填较慢。",
-          "content": "首发精准、单发威力高的“老派手感”武器，代价是连射会失准、装填偏慢，逼玩家在中近距离控制节奏。它是本作枪械里最强调每一枪都要算数的一把。"
+          "summary": "开局第一把枪：单发威力高、首发精准，代价是连射会失准、装填偏慢。",
+          "content": "全作手感最“老派”的一把，也是玩家拾取的第一件武器。技能树给它两条分支：一条走双持、把节奏交给持续输出，另一条是诺勒 G40 这一强化形态——同一把枪被改造成两种完全不同的用法。",
+          "models": [
+            {
+              "key": "fmf1--w1-revolver",
+              "nameZh": "左轮手枪",
+              "nameEn": "Revolver",
+              "ver": "基础",
+              "ammo": "手枪弹药（Pistol Ammo）",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "游戏开局拾取的第一把武器；击锤上刻着一枚克苏鲁头像。",
+              "images": [
+                {
+                  "file": "fmf1-revolver"
+                }
+              ],
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Revolver",
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            },
+            {
+              "key": "fmf1--w1-two-revolvers",
+              "nameZh": "双持左轮",
+              "nameEn": "Two Revolvers",
+              "ver": "分支 A",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "左轮升级树的第一条分支：改为双持。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            },
+            {
+              "key": "fmf1--w1-noller-g40",
+              "nameZh": "诺勒 G40",
+              "nameEn": "Noller G40",
+              "ver": "分支 B",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "左轮升级树的第二条分支。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            }
+          ]
         },
         {
           "id": "fmf1-doc-06",
           "no": 6,
           "type": "武器",
-          "nameEn": "Pistol",
-          "nameZh": "手枪",
+          "nameEn": "Trockentod MP18",
+          "nameZh": "冲锋枪（Trockentod MP18）",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "射速快、装填更快，精度好的一把常规手枪。",
-          "content": "与左轮形成互补：射速与装填更快、精度可靠，适合持续交火与清理杂兵。它以“稳”为卖点，在技能树强化后是性价比很高的基础枪械。"
+          "summary": "本作的第一把冲锋枪，命名沿用一战德军 MP18 的型号；高射速换来压制力，弹药开销也高。",
+          "content": "以高射速换取压制力，续战能力强，但弹药消耗与开销都偏高，逼玩家在打得爽与省着用之间权衡。技能树给它两条分支：Trockentod MP28，以及纳斯托德 LD32（还能再进阶为 LD62）。",
+          "models": [
+            {
+              "key": "fmf1--w2-trockentod-mp18",
+              "nameZh": "特罗肯托德 MP18",
+              "nameEn": "Trockentod MP18",
+              "ver": "基础",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "型号直接沿用 MP18 冲锋枪的命名。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons",
+                "https://www.youtube.com/watch?v=L_59BErDMTI"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-trockentod-mp18-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf1--w2-trockentod-mp28",
+              "nameZh": "特罗肯托德 MP28",
+              "nameEn": "Trockentod MP28",
+              "ver": "分支 A",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "升级树的第一条分支。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons",
+                "https://www.youtube.com/watch?v=L_59BErDMTI"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-trockentod-mp28-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf1--w2-nasstod-ld32",
+              "nameZh": "纳斯托德 LD32",
+              "nameEn": "Nasstod LD32",
+              "ver": "分支 B",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "升级树的第二条分支，可再进阶。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons",
+                "https://www.youtube.com/watch?v=L_59BErDMTI"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-nasstod-ld32-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf1--w2-nasstod-ld62",
+              "nameZh": "纳斯托德 LD62",
+              "nameEn": "Nasstod LD62",
+              "ver": "分支 B 进阶",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "纳斯托德 LD32 的后续进阶形态。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            }
+          ]
         },
         {
           "id": "fmf1-doc-07",
           "no": 7,
           "type": "武器",
-          "nameEn": "Machine Gun",
-          "nameZh": "冲锋枪",
+          "nameEn": "Rusty Vito",
+          "nameZh": "冲锋枪（Rusty Vito）",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "高射速的杀伤武器，但弹药价格不便宜。",
-          "content": "以高射速换取压制力，续战能力强，但弹药消耗与开销都偏高，逼玩家在打得爽与省着用之间权衡。技能树还能进一步强化它的输出。"
+          "summary": "弹鼓上写着 “Seafood”、枪身缠着触手的冲锋枪，现实原型是汤普森冲锋枪。",
+          "content": "又一把以高射速换取压制力的枪，观感却彻底跑偏：弹鼓上印着“Seafood”，枪身缠着触手。技能树给它两条分支——更锈的 Rustier Vito，以及食尸鬼 DES Goules（可再进阶为 Mk.II）。",
+          "models": [
+            {
+              "key": "fmf1--w3-rusty-vito",
+              "nameZh": "锈蚀维托",
+              "nameEn": "Rusty Vito",
+              "ver": "基础",
+              "ammo": "机枪弹药（Machine Gun Ammo）",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "弹鼓上印有 “Seafood”，枪身带触手；现实原型为汤普森冲锋枪。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Rusty_Vito",
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-rusty-vito"
+                },
+                {
+                  "file": "fmf1-rusty-vito-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf1--w3-rustier-vito",
+              "nameZh": "更锈的维托",
+              "nameEn": "Rustier Vito",
+              "ver": "分支 A",
+              "ammo": "机枪弹药（Machine Gun Ammo）",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "升级树的第一条分支。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            },
+            {
+              "key": "fmf1--w3-des-goules",
+              "nameZh": "食尸鬼",
+              "nameEn": "Des Goules",
+              "ver": "分支 B",
+              "ammo": "机枪弹药（Machine Gun Ammo）",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "升级树的第二条分支，可再进阶。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons",
+                "https://www.youtube.com/watch?v=L_59BErDMTI"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-des-goules-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf1--w3-des-goules-mk-ii",
+              "nameZh": "食尸鬼 Mk.II",
+              "nameEn": "Des Goules Mk.II",
+              "ver": "分支 B 进阶",
+              "ammo": "机枪弹药（Machine Gun Ammo）",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "食尸鬼的后续进阶形态。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            }
+          ]
         },
         {
           "id": "fmf1-doc-08",
@@ -262,78 +433,322 @@
           "nameZh": "霰弹枪",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "威力极强，近战极为有效。",
-          "content": "近身威力极强，是应对成堆丧尸与怪物壁橱波次的主力。经典 FPS 的近距离暴力在这一把上体现得最直接，也让贴脸战斗成为本作的常用打法。"
+          "summary": "近身威力极强，是应对成堆丧尸与怪物波次的主力。",
+          "content": "经典 FPS 的近距离暴力在这一把上体现得最直接，也让贴脸战斗成为本作的常用打法。技能树给它两条分支：强力霰弹枪，以及喷吐者 Spitter——后者还能进一步变成深渊霰弹枪。",
+          "models": [
+            {
+              "key": "fmf1--w4-shotgun",
+              "nameZh": "霰弹枪",
+              "nameEn": "Shotgun",
+              "ver": "基础",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "基础霰弹枪。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons",
+                "https://www.youtube.com/watch?v=L_59BErDMTI"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-shotgun-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf1--w4-power-shotgun",
+              "nameZh": "强力霰弹枪",
+              "nameEn": "Power Shotgun",
+              "ver": "分支 A",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "升级树的第一条分支。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons",
+                "https://www.youtube.com/watch?v=L_59BErDMTI"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-power-shotgun-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf1--w4-spitter",
+              "nameZh": "喷吐者",
+              "nameEn": "Spitter",
+              "ver": "分支 B",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "升级树的第二条分支，可再进阶。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons",
+                "https://www.youtube.com/watch?v=L_59BErDMTI"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-spitter-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf1--w4-abyssal-shotgun",
+              "nameZh": "深渊霰弹枪",
+              "nameEn": "Abyssal Shotgun",
+              "ver": "分支 B 进阶",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "喷吐者的后续进阶形态。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons",
+                "https://www.youtube.com/watch?v=L_59BErDMTI"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-abyssal-shotgun-action"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "fmf1-doc-09",
           "no": 9,
           "type": "武器",
-          "nameEn": "Thompson",
-          "nameZh": "汤姆逊冲锋枪",
+          "nameEn": "Harpoon",
+          "nameZh": "鱼叉枪",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "常规枪械阵容中的一员。",
-          "content": "常规枪械阵容的一员，与其他连射武器一同构成中距离的火力选项。资料对它的独有特性着墨不多，只确认它属于本作可升级的枪械序列。"
+          "summary": "可改造为一次投射多支箭矢的鱼叉，升级线本身比基础形态更有意思。",
+          "content": "它的价值更多在升级路线上：可改造为一次投射多支箭矢的形态“鲸之灾”（Whale's Bane），适合面对成群敌人。这也体现了本作技能树“武器能被改成更古怪形态”的设计取向。",
+          "models": [
+            {
+              "key": "fmf1--w5-harpoon",
+              "nameZh": "鱼叉",
+              "nameEn": "Harpoon",
+              "ver": "基础",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "基础形态。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons",
+                "https://www.youtube.com/watch?v=L_59BErDMTI"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-harpoon-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf1--w5-whale-s-bane",
+              "nameZh": "鲸之灾",
+              "nameEn": "Whale's Bane",
+              "ver": "分支 A",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "升级形态：一次可投射多支箭矢。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            }
+          ]
         },
         {
           "id": "fmf1-doc-10",
           "no": 10,
           "type": "武器",
-          "nameEn": "Harpoon Gun",
-          "nameZh": "鱼叉枪",
+          "nameEn": "Thunderonomicon",
+          "nameZh": "闪电枪",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "可升级为多箭矢弩的远程武器。",
-          "content": "它的价值更多在升级路线上：可改造为一次投射多支的多箭矢弩，适合面对成群敌人。这也体现了本作技能树“武器能被改成更古怪形态”的设计取向。"
+          "summary": "克苏鲁式的超自然枪械，标志本作武器从写实枪械向异质兵器过渡。",
+          "content": "属于超自然枪械一档，名字由“Thunder”与《死灵之书》的 Necronomicon 拼成。这类武器多在关卡后段或探索中取得，强化了越走越脱离现实的整体基调；技能树可把它升级为 Mk.II。",
+          "models": [
+            {
+              "key": "fmf1--w6-thunderonomicon",
+              "nameZh": "雷霆死灵书",
+              "nameEn": "Thunderonomicon",
+              "ver": "基础",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "名字为 Thunder 与 Necronomicon 的拼合。（配图截自官方宣传片的实机画面）",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-thunderonomicon"
+                }
+              ]
+            },
+            {
+              "key": "fmf1--w6-thunderonomicon-mk-ii",
+              "nameZh": "雷霆死灵书 Mk.II",
+              "nameEn": "Thunderonomicon Mk.II",
+              "ver": "分支 A",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "唯一升级形态。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            }
+          ]
         },
         {
           "id": "fmf1-doc-11",
           "no": 11,
           "type": "武器",
-          "nameEn": "Assault Rifle",
-          "nameZh": "突击步枪",
+          "nameEn": "Energy Booster",
+          "nameZh": "能量增幅器",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "可升级为发射爆炸弹的突击步枪。",
-          "content": "升级后能发射爆炸弹，把持续火力换成范围杀伤，是技能树互斥分支的典型样本——你要在更直白的强化与更古怪的改装之间二选一。"
+          "summary": "异星能量驱动的重火力，可沿两条分支改造成触媒或虫巢。",
+          "content": "官方描述里，神父一手持经、一手握着由未知物质驱动的武器；能量增幅器正是这条设定在重火力上的落点。技能树给它两条分支：能量触媒，以及虫巢 Worm Nest（可再进阶为巨型虫巢）。",
+          "models": [
+            {
+              "key": "fmf1--w7-energy-booster",
+              "nameZh": "能量增幅器",
+              "nameEn": "Energy Booster",
+              "ver": "基础",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "由未知物质驱动的异星重火力。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons",
+                "https://www.youtube.com/watch?v=L_59BErDMTI"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-energy-booster-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf1--w7-energy-catalyst",
+              "nameZh": "能量触媒",
+              "nameEn": "Energy Catalyst",
+              "ver": "分支 A",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "升级树的第一条分支。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            },
+            {
+              "key": "fmf1--w7-worm-nest",
+              "nameZh": "虫巢",
+              "nameEn": "Worm Nest",
+              "ver": "分支 B",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "升级树的第二条分支，可再进阶。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons",
+                "https://www.youtube.com/watch?v=L_59BErDMTI"
+              ],
+              "images": [
+                {
+                  "file": "fmf1-worm-nest-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf1--w7-big-worm-nest",
+              "nameZh": "巨型虫巢",
+              "nameEn": "Big Worm Nest",
+              "ver": "分支 B 进阶",
+              "reload": "本作武器没有换弹动作（官方描述为 non-reloading weapons）",
+              "note": "虫巢的后续进阶形态。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            }
+          ]
         },
         {
           "id": "fmf1-doc-12",
           "no": 12,
           "type": "武器",
-          "nameEn": "Lightning Gun",
-          "nameZh": "闪电枪",
+          "nameEn": "Tormentor",
+          "nameZh": "折磨者重机枪",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "一件超自然的枪械类武器。",
-          "content": "属于超自然枪械一档，标志本作武器从写实枪械向克苏鲁式异质兵器的过渡。这类武器多在关卡后段或探索中取得，强化了越走越脱离现实的整体基调。"
+          "summary": "藏在秘密区域的刘易斯轻机枪，子弹会在墙面反弹；拿到后无法丢弃，直到打空弹药。",
+          "content": "属于秘密武器：只出现在隐藏区域，拾取后不能丢弃、也不能切换到其他武器，直到把它的弹药打空。子弹会从墙面反弹，现实原型为刘易斯轻机枪（Lewis Gun）。",
+          "models": [
+            {
+              "key": "fmf1--w8-tormentor",
+              "nameZh": "折磨者",
+              "nameEn": "Tormentor",
+              "ver": "基础",
+              "note": "秘密武器：拾取后无法丢弃或换枪，直到弹药打空；子弹会在墙面反弹。现实原型为刘易斯轻机枪。",
+              "images": [
+                {
+                  "file": "fmf1-tormentor"
+                }
+              ],
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Tormentor",
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            }
+          ]
         },
         {
           "id": "fmf1-doc-13",
           "no": 13,
           "type": "武器",
-          "nameEn": "Alien Rocket Launcher",
-          "nameZh": "外星火箭筒",
+          "nameEn": "Knife",
+          "nameZh": "近战刀具",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "极具异星感的重型火箭类武器。",
-          "content": "重火力选项，异星造型直接呼应本作的洛夫克拉夫特底色——武器不只是工具，也参与塑造世界正在异变的观感。资料对它的取得方式未作明确说明。"
+          "summary": "近战与投掷刀一系，用来给濒死敌人补刀以节省弹药。",
+          "content": "近战在本作是“省着打”的一部分：与其浪费子弹，不如用刀给弱小的敌人补上最后一击。技能树把这条线扩展成四条：砍刀、投掷飞刀，以及投掷飞刀的变异形态“变异飞刀”。",
+          "models": [
+            {
+              "key": "fmf1--w9-knife",
+              "nameZh": "匕首",
+              "nameEn": "Knife",
+              "ver": "基础",
+              "note": "基础近战武器，用于处决弱敌以节省弹药。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            },
+            {
+              "key": "fmf1--w9-machete",
+              "nameZh": "砍刀",
+              "nameEn": "Machete",
+              "ver": "分支 A",
+              "note": "升级树的第一条分支。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            },
+            {
+              "key": "fmf1--w9-throwing-knife",
+              "nameZh": "投掷飞刀",
+              "nameEn": "Throwing Knife",
+              "ver": "分支 B",
+              "note": "升级树的第二条分支，可再进阶。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            },
+            {
+              "key": "fmf1--w9-mutated-knife",
+              "nameZh": "变异飞刀",
+              "nameEn": "Mutated Knife",
+              "ver": "分支 B 进阶",
+              "note": "投掷飞刀的后续进阶形态。",
+              "sources": [
+                "https://forgive-me-father.fandom.com/wiki/Weapons"
+              ]
+            }
+          ],
+          "images": [
+            {
+              "file": "fmf1-knife",
+              "caption": "宽恕我神父 · 近战刀具（官方宣传片实机画面）",
+              "source": "Steam 商店页（宣传片截取）",
+              "sourceUrl": "https://store.steampowered.com/app/1590910/Forgive_Me_Father/"
+            }
+          ]
         },
         {
           "id": "fmf1-doc-14",
           "no": 14,
-          "type": "武器",
-          "nameEn": "Throwing Knife",
-          "nameZh": "黑暗触须匕首",
-          "chapter": "全作",
-          "location": "未明确",
-          "summary": "灌注黑暗恶魔触须的投掷刀，用于处决弱敌并节省弹药。",
-          "content": "灌注黑暗触须的投掷刀，用于处决弱小或受伤的敌人以节省弹药。它把省着打变成一种设计：与其浪费子弹，不如留着它给濒死的敌人补上最后一击。"
-        },
-        {
-          "id": "fmf1-doc-15",
-          "no": 15,
           "type": "技能",
           "nameEn": "Crucifix",
           "nameZh": "十字架",
@@ -343,8 +758,8 @@
           "content": "神父线专属能力，提供回复生命的手段，且据评测其回复偏自动发生。它与死灵之书、圣水共同构成神父偏防御、擅一对一的定位。"
         },
         {
-          "id": "fmf1-doc-16",
-          "no": 16,
+          "id": "fmf1-doc-15",
+          "no": 15,
           "type": "技能",
           "nameEn": "Necronomicon",
           "nameZh": "死灵之书",
@@ -354,8 +769,8 @@
           "content": "神父线能力，可短暂进入无敌状态。在双主角设计里，这类无条件豁免的能力让神父明显更强，多家评测也因此认为女记者线相当于困难模式。"
         },
         {
-          "id": "fmf1-doc-17",
-          "no": 17,
+          "id": "fmf1-doc-16",
+          "no": 16,
           "type": "技能",
           "nameEn": "Holy Water",
           "nameZh": "圣水",
@@ -365,8 +780,8 @@
           "content": "神父线能力，能短时间麻痹敌人，为突围或换弹争取空间。它与十字架、死灵之书配套，服务神父能扛、擅一对一的战斗节奏。"
         },
         {
-          "id": "fmf1-doc-18",
-          "no": 18,
+          "id": "fmf1-doc-17",
+          "no": 17,
           "type": "技能",
           "nameEn": "Camera",
           "nameZh": "相机",
@@ -376,8 +791,8 @@
           "content": "女记者线能力，可震慑或眩晕敌人，但需精准命中才算数。正因这类要瞄准才触发的限制，女记者整体被玩家当作高难玩法。"
         },
         {
-          "id": "fmf1-doc-19",
-          "no": 19,
+          "id": "fmf1-doc-18",
+          "no": 18,
           "type": "技能",
           "nameEn": "Voodoo Doll",
           "nameZh": "爆炸巫毒娃娃",
@@ -387,8 +802,8 @@
           "content": "女记者线的爆破手段，需精准命中才能发挥。它与相机一同体现女记者以技巧换强度的定位——能力上限更高，但容错更低。"
         },
         {
-          "id": "fmf1-doc-20",
-          "no": 20,
+          "id": "fmf1-doc-19",
+          "no": 19,
           "type": "技能",
           "nameEn": "Time Slow",
           "nameZh": "时间减缓",
@@ -398,8 +813,8 @@
           "content": "女记者线能力，可短暂减缓时间，用来应对群体敌人。它说明女记者的强项在控场而非硬扛，与神父形成了两种截然不同的战斗节奏。"
         },
         {
-          "id": "fmf1-doc-21",
-          "no": 21,
+          "id": "fmf1-doc-20",
+          "no": 20,
           "type": "系统",
           "nameEn": "Madness",
           "nameZh": "疯狂值",
@@ -409,8 +824,8 @@
           "content": "本作最有辨识度的机制：积累时画面除红色外近乎全灰，同时给出攻防增益，但持续不击杀就会回落。它本质是一张不断消耗的连击表，奖励激进打法，也用视觉干扰惩罚贪心。"
         },
         {
-          "id": "fmf1-doc-22",
-          "no": 22,
+          "id": "fmf1-doc-21",
+          "no": 21,
           "type": "系统",
           "nameEn": "Skill Tree",
           "nameZh": "技能树",
@@ -420,140 +835,196 @@
           "content": "以击杀与发现秘密换取经验，可强化武器、能力、生命护甲与照明油灯等。其互斥分支是重玩性的关键——同一把武器常要在常规强化与异星改法之间二选一。"
         },
         {
+          "id": "fmf1-doc-22",
+          "no": 22,
+          "type": "敌人",
+          "nameEn": "Wretched",
+          "nameZh": "悲惨者",
+          "chapter": "第 1 世界起",
+          "location": "未明确",
+          "summary": "最先遇到的杂兵：生命值 5、近战伤害 10（wiki 属性表），弱到几乎不用理会。",
+          "content": "游戏里遇到的第一个敌人，近战很轻。它有一个专门整治爆头的设计：如果它抱着一颗断头，你打中它的头，它会用手里那颗头替换上去继续走——想爆头就得连打两次。这个细节把本作向经典 FPS 玩家开玩笑的恶意体现得很直白。",
+          "images": [
+            {
+              "file": "fmf1-enemy-wretch",
+              "caption": "宽恕我神父 · 悲惨者（实机截屏）",
+              "source": "Forgive Me Father Wiki（Fandom）",
+              "sourceUrl": "https://forgive-me-father.fandom.com/wiki/Wretched"
+            }
+          ]
+        },
+        {
           "id": "fmf1-doc-23",
           "no": 23,
           "type": "敌人",
-          "nameEn": "Zombified Townsfolk",
-          "nameZh": "丧尸镇民",
+          "nameEn": "Fat Fish",
+          "nameZh": "肥鱼人",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "携带断头的丧尸；被爆头时会把手中的头颅接回脖子上。",
-          "content": "设计中藏着的小恶意：若直接爆头，它会把手中的断头接回脖子上继续行动，得先打掉那颗头。这个细节把本作向经典 FPS 玩家开玩笑的幽默与难度并存体现得很直白。"
+          "summary": "发绿发胖的鱼人，生命值 20，近战 5 / 远程 15（wiki 属性表）。",
+          "content": "既能贴脸也能远程，属于把远程威胁塞进杂兵堆里的那种敌人。官方 wiki 形容它是“丑陋、发绿、发胖的鱼人”，与后段深海主题的敌人同属一套海生母题。",
+          "images": [
+            {
+              "file": "fmf1-enemy-fat-fish",
+              "caption": "宽恕我神父 · 肥鱼人（实机截屏，已裁去界面）",
+              "source": "Forgive Me Father Wiki（Fandom）",
+              "sourceUrl": "https://forgive-me-father.fandom.com/wiki/Fat_Fish"
+            }
+          ]
         },
         {
           "id": "fmf1-doc-24",
           "no": 24,
           "type": "敌人",
-          "nameEn": "Crawling Zombies",
-          "nameZh": "爬行丧尸",
+          "nameEn": "Yellow Cultist",
+          "nameZh": "黄衣信徒",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "重伤后仍能爬行的丧尸，持续构成威胁。",
-          "content": "重伤倒地后仍会爬行扑咬，逼玩家别急着转身去捡补给。它用最朴素的机制维持压迫感，也让战斗看似结束之后仍需收尾。"
+          "summary": "信奉邪神的教徒，生命值 30、远程伤害 15（wiki 属性表）。",
+          "content": "邪教在战斗层的直接体现：血薄、远程输出，靠数量与站位制造压力。名字里的“黄”与黄衣之王母题呼应，与第 2 世界首领阿兹兹属于同一条信仰线。"
         },
         {
           "id": "fmf1-doc-25",
           "no": 25,
           "type": "敌人",
-          "nameEn": "Tentacle Soldiers",
-          "nameZh": "触手士兵",
+          "nameEn": "Squad Leader",
+          "nameZh": "小队指挥官",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "长出触手的人形敌人。",
-          "content": "人形躯干上长出触手的敌人，是“人正在被异形力量改写”这一图像的直接呈现，把瘟疫、邪教与古神三条线索统一在同一具躯体上。"
+          "summary": "带队冲锋的前线指挥官，生命值 50，光环 10、远程 15×5（wiki 属性表）。",
+          "content": "官方 wiki 说它是“带领一队怪物的前线指挥官”。两根触手缠着冲锋枪、双持开火，是杂兵堆里少数需要优先处理的目标——放着不管，它会把整队敌人的火力都带上来。",
+          "images": [
+            {
+              "file": "fmf1-enemy-squad-leader",
+              "caption": "宽恕我神父 · 小队指挥官（实机截屏，已裁去界面）",
+              "source": "Forgive Me Father Wiki（Fandom）",
+              "sourceUrl": "https://forgive-me-father.fandom.com/wiki/Squad_Leader"
+            }
+          ]
         },
         {
           "id": "fmf1-doc-26",
           "no": 26,
           "type": "敌人",
-          "nameEn": "Crustacean-Human Hybrids",
-          "nameZh": "甲壳人形混种",
+          "nameEn": "Fisher",
+          "nameZh": "渔夫",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "甲壳与人形混种的敌人，其中包含巨大蟹怪。",
-          "content": "甲壳与人形混种，其中包含难缠的巨大蟹怪。这类敌人把克苏鲁神话里的深海恐怖搬上岸，也让本作后段的敌人谱系越发离开人类范畴。"
+          "summary": "半人半渔夫的巨躯敌人，生命值 40，投掷爆炸物造成 30 点伤害（wiki 属性表）。",
+          "content": "官方 wiki 描述为“拥有巨大身躯的半渔夫”。他扔的是爆炸物而不是子弹，威胁来自弹道预判——站着不动最容易被炸到。鱼、网与船钩挂满一身，和港口关卡的海事背景连在一起。",
+          "images": [
+            {
+              "file": "fmf1-enemy-fisher",
+              "caption": "宽恕我神父 · 渔夫（实机截屏，已裁去界面）",
+              "source": "Forgive Me Father Wiki（Fandom）",
+              "sourceUrl": "https://forgive-me-father.fandom.com/wiki/Fisher"
+            }
+          ]
         },
         {
           "id": "fmf1-doc-27",
           "no": 27,
           "type": "敌人",
-          "nameEn": "Cultists",
-          "nameZh": "邪教徒",
+          "nameEn": "Ghoul",
+          "nameZh": "食尸鬼",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "邪教徒敌人，含会瞬移到玩家身后的传送型。",
-          "content": "邪教徒是小镇被邪教侵蚀在战斗层的体现，其中会瞬移到玩家身后的传送型尤其难应付，把剧情里的信仰腐化变成了实打实的背后突袭。"
+          "summary": "在墓地游荡的怪物，生命值 70、近战伤害 25（wiki 属性表），扛着一口石棺当武器。",
+          "content": "出没在墓园的近战精英：血厚、单下伤害高，造型还把一口带十字的石棺举在头顶，视觉上先替关卡把“这里埋过很多人”说完了。它属于本作把环境元素直接做成敌人武器的典型。",
+          "images": [
+            {
+              "file": "fmf1-enemy-ghoul",
+              "caption": "宽恕我神父 · 食尸鬼（实机截屏，已裁去界面）",
+              "source": "Forgive Me Father Wiki（Fandom）",
+              "sourceUrl": "https://forgive-me-father.fandom.com/wiki/Ghoul"
+            }
+          ]
         },
         {
           "id": "fmf1-doc-28",
           "no": 28,
           "type": "敌人",
-          "nameEn": "Demons",
-          "nameZh": "恶魔",
+          "nameEn": "Crab-man",
+          "nameZh": "蟹人",
           "chapter": "全作",
           "location": "未明确",
-          "summary": "一类常规的地狱系敌人。",
-          "content": "常规的地狱系敌人，在本作多为填充战斗密度的角色。相比丧尸与混种，它更接近经典 FPS 的敌人原型，承担节奏调节而非叙事功能。"
+          "summary": "人与蟹融合的怪物，生命值 200；远程伤害 wiki 写作 5000（量级明显异常，照录存疑）。",
+          "content": "官方 wiki 描述为“把人与螃蟹融合在一起的怪物”。血厚、远程输出，属于后段用来消耗弹药的硬目标。它的属性表把远程伤害写成 5000，与同页其他敌人（10～30）差了两个数量级，疑为笔误；此处照录并标为存疑，不做修正。"
         },
         {
           "id": "fmf1-doc-29",
           "no": 29,
-          "type": "敌人",
-          "nameEn": "Barrel Mimic",
-          "nameZh": "炸药桶模仿者",
-          "chapter": "全作",
-          "location": "未明确",
-          "summary": "伪装成炸药桶并向玩家冲锋的敌人。",
-          "content": "伪装成炸药桶、见人就冲锋的模仿者，专治看到桶就想射击的惯性。它延续了经典射击游戏用环境物件做陷阱的传统，也让每次进房间都多一层警觉。"
+          "type": "首领",
+          "nameEn": "Ca'tharsis",
+          "nameZh": "卡'塔西斯",
+          "chapter": "第1世界",
+          "location": "世界终点",
+          "summary": "第 1 世界终点首领，官方 wiki 只用“难以名状的存在”描述它，体型占满整面墙。",
+          "content": "第 1 世界的终点首领，官方 wiki 对它的全部描述只有“一种难以名状的存在（an indescribable existence）”。战斗上要求玩家一边闪避一边打击它占满整面墙的大脸，为本作定下“每个世界以首领收尾”的结构节奏。",
+          "images": [
+            {
+              "file": "fmf1-boss-catharsis",
+              "caption": "宽恕我神父 · 第 1 世界首领卡'塔西斯（实机截屏，已裁去界面）",
+              "source": "Forgive Me Father Wiki（Fandom）",
+              "sourceUrl": "https://forgive-me-father.fandom.com/wiki/Ca%27tharsis"
+            }
+          ]
         },
         {
           "id": "fmf1-doc-30",
           "no": 30,
           "type": "首领",
-          "nameEn": "Tentacle Monster",
-          "nameZh": "巨型触手怪",
-          "chapter": "第1世界",
+          "nameEn": "Azyzz",
+          "nameZh": "阿兹兹",
+          "chapter": "第2世界",
           "location": "世界终点",
-          "summary": "第1世界终点的首领，占满整面墙，需闪避并射击其大脸。",
-          "content": "第 1 世界的终点首领，体型占满整面墙，玩法上要求玩家一边闪避一边打击它的大脸。它给全作定下每一世界都以首领收尾的结构节奏。"
+          "summary": "第 2 世界首领：崇拜邪神的教团领袖，全作最难的一场，需击毁会再生的护盾水晶。",
+          "content": "官方 wiki 说它是“崇拜邪神的教团领袖”，并注明这一形象是对爱伦·坡《黄衣之王》的致敬。战斗上须先击毁维持护盾的水晶，而水晶受损后会再生，后期还会生成疼痛能量墙逼玩家走位——因此被普遍视为全作最难的一场。"
         },
         {
           "id": "fmf1-doc-31",
           "no": 31,
           "type": "首领",
-          "nameEn": "Hastur-like（King in Yellow）",
-          "nameZh": "黄衣之王仿者",
-          "chapter": "第2世界",
+          "nameEn": "Big Ugly Fish",
+          "nameZh": "巨丑鱼",
+          "chapter": "第3世界",
           "location": "世界终点",
-          "summary": "第2世界终点的首领，全作最难，需击毁会再生的护盾水晶。",
-          "content": "第 2 世界首领，被普遍视为全作最难：须先击毁维持其护盾的水晶，而水晶受损后会再生，后期还会生成疼痛能量墙逼迫走位。它是对黄衣之王母题的致敬，而非正统的哈斯塔。"
+          "summary": "第 3 世界首领，wiki 注明它是对洛夫克拉夫特《大衮》的明确致敬。",
+          "content": "第 3 世界首领，从水中跃出、掀起浪涌并召唤小怪；战斗场地会随水位涨落，把船坞与港口的海域设定变成实打实的走位压力。wiki 直接把它标为对《大衮》（Dagon）的引用。"
         },
         {
           "id": "fmf1-doc-32",
           "no": 32,
           "type": "首领",
-          "nameEn": "Giant Fish",
-          "nameZh": "巨型丑鱼",
-          "chapter": "第3世界",
+          "nameEn": "Glitch",
+          "nameZh": "故障体",
+          "chapter": "第4世界",
           "location": "世界终点",
-          "summary": "第3世界终点的首领，从水中跃出掀浪并召唤小怪。",
-          "content": "第 3 世界首领，从水中跃出、掀起浪涌并召唤小怪。其战斗场地会随水位涨落，把船坞与港口的海域设定变成了实际的走位压力。"
+          "summary": "第 4 世界首领：高速移动并能制造克隆体，被认为是最有趣的一场首领战。",
+          "content": "第 4 世界首领，以高速移动与克隆体构成一场追逐战，被广泛认为是最有趣的一场。它在阳光明亮的竞技场里进行，与前后关卡形成强烈反差。公开资料对它的来历着墨不多，只确认“高机动 + 分身”这两个战斗特征。",
+          "images": [
+            {
+              "file": "fmf1-boss-glitch",
+              "caption": "宽恕我神父 · 第 4 世界首领故障体（实机截屏，已裁去界面）",
+              "source": "Forgive Me Father Wiki（Fandom）",
+              "sourceUrl": "https://forgive-me-father.fandom.com/wiki/Glitch"
+            }
+          ]
         },
         {
           "id": "fmf1-doc-33",
           "no": 33,
           "type": "首领",
-          "nameEn": "Speedy Boss & Clones",
-          "nameZh": "高速首领与克隆体",
-          "chapter": "第4世界",
-          "location": "世界终点",
-          "summary": "第4世界终点的追逐战首领，被认为是最有趣的一场。",
-          "content": "第 4 世界首领，以高速移动与克隆体构成一场追逐战，被广泛认为是最有趣的一场。它在阳光明亮的竞技场里进行，与前后关卡形成强烈反差。"
-        },
-        {
-          "id": "fmf1-doc-34",
-          "no": 34,
-          "type": "首领",
           "nameEn": "Cthulhu",
           "nameZh": "克苏鲁",
           "chapter": "第5世界",
           "location": "世界终点",
-          "summary": "第5世界终点的首领，以弹幕式火球与范围攻击作战。",
-          "content": "第 5 世界的终点首领，也是本作的最终对手，以弹幕式火球与范围攻击作战。击败它之后，游戏才抛出一切皆为幻觉的反转，因此它同时也是叙事高潮的开关。"
+          "summary": "第 5 世界终点首领，也是本作最终对手，以弹幕式火球与范围攻击作战。",
+          "content": "第 5 世界的终点首领，也是本作的最终对手（wiki 原文：Boss of World 5 and the final boss of the game），以弹幕式火球与范围攻击作战。击败它之后，游戏才抛出“一切皆为幻觉”的反转，因此它同时也是叙事高潮的开关。"
         },
         {
-          "id": "fmf1-doc-35",
-          "no": 35,
+          "id": "fmf1-doc-34",
+          "no": 34,
           "type": "模式",
           "nameEn": "Endless Mode",
           "nameZh": "无尽模式",
@@ -563,8 +1034,8 @@
           "content": "通关后可挑战的无尽模式，为追求极限的玩家提供重复挑战的空间。它延续了本作奖励激进打法的疯狂值设计，也让高难度在主线之外有了去处。"
         },
         {
-          "id": "fmf1-doc-36",
-          "no": 36,
+          "id": "fmf1-doc-35",
+          "no": 35,
           "type": "结局",
           "nameEn": "Multiple Endings",
           "nameZh": "多结局",
@@ -740,181 +1211,371 @@
           "id": "fmf2-doc-01",
           "no": 1,
           "type": "武器",
-          "nameEn": "Knife",
-          "nameZh": "匕首",
-          "chapter": "近战",
+          "nameEn": "Melee",
+          "nameZh": "近战武器",
+          "chapter": "全作",
           "location": "未明确",
-          "summary": "简单的近战武器，用于处决弱小或受伤敌人并节省弹药。",
-          "content": "简单但致命的近战武器，主要用来处决弱小或已受伤的敌人，以节省本就稀缺的弹药。它承担的是收尾而非主攻，体现了续作对资源管理的收紧。"
+          "summary": "续作的四件近战：匕首、莱尼、斧头与可疑箱子；近战第一次有了正经的输出地位。",
+          "content": "前作近战只是省弹的补刀手段，本作把它做成了独立的一类：斧头一类重武器一次挥砍可劈中多个敌人。同一槽位有四件可选，其中一部分要靠在剧情模式里逐步收集零件才解锁。",
+          "models": [
+            {
+              "key": "fmf2--w1-knife",
+              "nameZh": "匕首",
+              "nameEn": "Knife",
+              "note": "简单但致命的近战武器，主要用来处决弱小或已受伤的敌人，以节省本就稀缺的弹药。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/"
+              ]
+            },
+            {
+              "key": "fmf2--w1-nasty-lenny",
+              "nameZh": "莱尼",
+              "nameEn": "Nasty Lenny",
+              "note": "近战槽位的四件之一，公开资料未收录具体说明。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/"
+              ]
+            },
+            {
+              "key": "fmf2--w1-axe",
+              "nameZh": "斧头",
+              "nameEn": "Axe",
+              "note": "威力大、攻速慢，一次挥砍可同时劈中多个敌人。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/"
+              ]
+            },
+            {
+              "key": "fmf2--w1-suspicious-box",
+              "nameZh": "可疑箱子",
+              "nameEn": "Suspicious Box",
+              "note": "近战槽位的四件之一，公开资料未收录具体说明。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/"
+              ]
+            }
+          ]
         },
         {
           "id": "fmf2-doc-02",
           "no": 2,
           "type": "武器",
-          "nameEn": "Axe",
-          "nameZh": "斧头",
-          "chapter": "近战",
+          "nameEn": "Pistol",
+          "nameZh": "手枪",
+          "chapter": "全作",
           "location": "未明确",
-          "summary": "威力大但攻速慢的近战武器，一击可多杀。",
-          "content": "威力大、攻速慢，一次挥砍可同时劈中多个敌人。它把重武器的手感做得很直接，也让近战在本作里第一次有了正经的输出地位。"
+          "summary": "四件手枪：左轮、手枪，以及两件活体武器——血泵与永恒之鱼。",
+          "content": "官方对手枪槽位的描述很直白：别被外形骗了。左轮高伤害、首发精准但连射失准，手枪则射速与装填更快、精度极佳，两者一沉一稳。另外两件走的是活体武器路线，用器官与鱼身代替机械结构。",
+          "models": [
+            {
+              "key": "fmf2--w2-revolver",
+              "nameZh": "左轮手枪",
+              "nameEn": "Revolver",
+              "note": "高伤害、首发精准，代价是连射失准与装填较慢，被官方形容为“老但金”。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/",
+                "https://www.youtube.com/watch?v=mQVHIOkb_74"
+              ],
+              "images": [
+                {
+                  "file": "fmf2-revolver-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf2--w2-pistol",
+              "nameZh": "手枪",
+              "nameEn": "Pistol",
+              "note": "射速快、装填更快、精度极佳，是可靠的基础输出。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/",
+                "https://www.youtube.com/watch?v=mQVHIOkb_74"
+              ],
+              "images": [
+                {
+                  "file": "fmf2-pistol-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf2--w2-blood-pumper",
+              "nameZh": "血泵",
+              "nameEn": "Blood Pumper",
+              "note": "心脏形状的活体武器，靠外露的管子与阀门射出弹丸。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/",
+                "https://store.steampowered.com/app/2272250/Forgive_Me_Father_2/"
+              ],
+              "images": [
+                {
+                  "file": "fmf2-blood-pumper"
+                }
+              ]
+            },
+            {
+              "key": "fmf2--w2-eternal-fish",
+              "nameZh": "永恒之鱼",
+              "nameEn": "Eternal Fish",
+              "note": "一条被念珠链锁住的鱼，本身就是一件活体武器；信仰符号与异形生物被混在同一件器物上。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/",
+                "https://www.youtube.com/watch?v=mQVHIOkb_74"
+              ],
+              "images": [
+                {
+                  "file": "fmf2-eternal-fish-action"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "fmf2-doc-03",
           "no": 3,
           "type": "武器",
-          "nameEn": "Revolver",
-          "nameZh": "左轮手枪",
-          "chapter": "手枪",
+          "nameEn": "Shotgun",
+          "nameZh": "霰弹枪",
+          "chapter": "全作",
           "location": "未明确",
-          "summary": "高伤害、首发精准，但连射易失准且装填较慢。",
-          "content": "高伤害、首发精准，代价是连射失准与装填较慢，被官方形容为老但金。它在续作中沿用前作手感，是六类武器里最讲究射击纪律的一把。"
+          "summary": "四件霰弹枪：泵动、双管、卡拉贝尔与深渊之影。",
+          "content": "泵动后坐力强但命中更疼，双管一枪即可撕碎敌人、装填却极慢——两种节奏把“高风险高回报”做成了霰弹槽位的核心取舍。另两件是海生生物制成的活体武器。",
+          "models": [
+            {
+              "key": "fmf2--w3-pump-shotgun",
+              "nameZh": "泵动霰弹枪",
+              "nameEn": "Pump Shotgun",
+              "note": "后坐力强，但命中时的伤害也更痛，近距离极为有效。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/",
+                "https://www.youtube.com/watch?v=mQVHIOkb_74"
+              ],
+              "images": [
+                {
+                  "file": "fmf2-pump-shotgun-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf2--w3-double-barrel-shotgun",
+              "nameZh": "双管霰弹枪",
+              "nameEn": "Double Barrel Shotgun",
+              "note": "一枪即可撕碎敌人，代价是装填极慢；官方形容其双管等于双倍乐趣。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/",
+                "https://www.youtube.com/watch?v=mQVHIOkb_74"
+              ],
+              "images": [
+                {
+                  "file": "fmf2-double-barrel-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf2--w3-calaber",
+              "nameZh": "卡拉贝尔",
+              "nameEn": "Calaber",
+              "note": "枪托是一只鱿鱼状生物的活体武器，把深海生物的形态直接接在枪身上。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/"
+              ]
+            },
+            {
+              "key": "fmf2--w3-abyssal-shadow",
+              "nameZh": "深渊之影",
+              "nameEn": "Abyssal Shadow",
+              "note": "霰弹槽位的活体武器，公开资料对它的描述有限。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/"
+              ]
+            }
+          ]
         },
         {
           "id": "fmf2-doc-04",
           "no": 4,
           "type": "武器",
-          "nameEn": "Pistol",
-          "nameZh": "手枪",
-          "chapter": "手枪",
+          "nameEn": "Rifle",
+          "nameZh": "步枪",
+          "chapter": "全作",
           "location": "未明确",
-          "summary": "射速快、装填更快，精度极佳的手枪。",
-          "content": "官方特意提醒别被外形骗了：射速快、装填更快、精度极佳。它承担可靠的基础输出，与左轮一稳一沉互补，构成本作手枪类的两个选项。"
+          "summary": "四件步枪：步枪、邪祟攫手、海葵与吞食者枪。",
+          "content": "步枪被官方直接称作杀戮机器：射速极快、伤害可观，是面对硬敌与成群敌人时最顺手、也最容易打空弹药的一把。其余三件同属这一槽位，外观一路从机械枪身滑向海生生物。",
+          "models": [
+            {
+              "key": "fmf2--w4-rifle",
+              "nameZh": "步枪",
+              "nameEn": "Rifle",
+              "note": "射速极快的持续火力，伤害可观；代价是弹药开销不小。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/"
+              ]
+            },
+            {
+              "key": "fmf2--w4-eldritch-grasper",
+              "nameZh": "邪祟攫手",
+              "nameEn": "Eldritch Grasper",
+              "note": "步枪槽位的活体武器，公开资料对它的描述有限。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/",
+                "https://store.steampowered.com/app/2272250/Forgive_Me_Father_2/"
+              ],
+              "images": [
+                {
+                  "file": "fmf2-eldritch-grasper"
+                }
+              ]
+            },
+            {
+              "key": "fmf2--w4-anemone",
+              "nameZh": "海葵",
+              "nameEn": "Anemone",
+              "note": "巨型海葵造型的炮类活体武器，属于海生生物制成的武器一批。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/",
+                "https://www.youtube.com/watch?v=mQVHIOkb_74"
+              ],
+              "images": [
+                {
+                  "file": "fmf2-anemone-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf2--w4-gobbler-gun",
+              "nameZh": "吞食者枪",
+              "nameEn": "Gobbler Gun",
+              "note": "由触手与眼柄构成的活体武器，把“会看人的枪”这个意象直接做了出来。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/"
+              ]
+            }
+          ]
         },
         {
           "id": "fmf2-doc-05",
           "no": 5,
           "type": "武器",
-          "nameEn": "Pump Shotgun",
-          "nameZh": "泵动霰弹枪",
-          "chapter": "霰弹",
+          "nameEn": "Explosive",
+          "nameZh": "爆炸物",
+          "chapter": "全作",
           "location": "未明确",
-          "summary": "后坐力强但更疼，近战极为有效的霰弹枪。",
-          "content": "后坐力强，但命中时的伤害也更痛，近距离极为有效。它延续了前作霰弹枪的一贯定位，是应对成群敌人与狭窄空间的常用选择。"
+          "summary": "四件爆炸物：榴弹发射器、火箭发射器、迫击炮与害虫终结者。",
+          "content": "这一槽位是清群的首选。榴弹发射器据官方说法传闻是从海底打捞上来的，火箭发射器则是“永远饥饿、几乎无法驯服”的活体武器，迫击炮做成了巨型鹦鹉螺壳——把生物形态直接做成兵器，是续作相对前作最鲜明的新意。",
+          "models": [
+            {
+              "key": "fmf2--w5-grenade-launcher",
+              "nameZh": "榴弹发射器",
+              "nameEn": "Grenade Launcher",
+              "note": "对付成群敌人的首选，官方称它传闻是从海底打捞上来的。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/"
+              ]
+            },
+            {
+              "key": "fmf2--w5-rocket-launcher",
+              "nameZh": "火箭发射器",
+              "nameEn": "Rocket Launcher",
+              "note": "极暴力且永远饥饿的活体武器，官方称它几乎无法驯服。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/",
+                "https://www.youtube.com/watch?v=mQVHIOkb_74"
+              ],
+              "images": [
+                {
+                  "file": "fmf2-rocket-launcher-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf2--w5-mortar",
+              "nameZh": "迫击炮",
+              "nameEn": "Mortar",
+              "note": "巨型鹦鹉螺壳造型，官方提醒别被它友善的外表骗了，它能在眨眼间清空成群敌人。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/",
+                "https://www.youtube.com/watch?v=mQVHIOkb_74"
+              ],
+              "images": [
+                {
+                  "file": "fmf2-mortar-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf2--w5-verminator",
+              "nameZh": "害虫终结者",
+              "nameEn": "Verminator",
+              "note": "爆炸物槽位的第四件，公开资料未收录具体说明。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/",
+                "https://www.youtube.com/watch?v=mQVHIOkb_74"
+              ],
+              "images": [
+                {
+                  "file": "fmf2-verminator-action"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "fmf2-doc-06",
           "no": 6,
           "type": "武器",
-          "nameEn": "Double Barrel Shotgun",
-          "nameZh": "双管霰弹枪",
-          "chapter": "霰弹",
+          "nameEn": "Exotic",
+          "nameZh": "异域武器",
+          "chapter": "全作",
           "location": "未明确",
-          "summary": "一枪即可撕碎敌人，但装填极慢。",
-          "content": "一枪即可撕碎敌人，代价是装填极慢，官方形容其双管等于双倍乐趣。这种高风险高回报的节奏，是本作活体武器审美之外的另一种暴力表达。"
+          "summary": "四件异域武器：方尖碑、食尸鬼、绽放虹吸与火焰喷射器。",
+          "content": "最后一个槽位的四件武器各有各的古怪：方尖碑的公开记载有限；食尸鬼 DES Goules 在前作里本是 Rusty Vito 的升级分支，到了续作被单独提拔成一类；火焰喷射器则是这一槽位里最“常规”的一件。",
+          "models": [
+            {
+              "key": "fmf2--w6-obelisk",
+              "nameZh": "方尖碑",
+              "nameEn": "Obelisk",
+              "note": "定位与其他变体不同，公开资料对其记载有限，此处不作推测。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/",
+                "https://www.youtube.com/watch?v=mQVHIOkb_74"
+              ],
+              "images": [
+                {
+                  "file": "fmf2-obelisk-action"
+                }
+              ]
+            },
+            {
+              "key": "fmf2--w6-des-goules",
+              "nameZh": "食尸鬼",
+              "nameEn": "DES Goules",
+              "note": "前作中作为 Rusty Vito 的升级分支出现，续作里被单列为异域武器。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/"
+              ]
+            },
+            {
+              "key": "fmf2--w6-bloom-siphon",
+              "nameZh": "绽放虹吸",
+              "nameEn": "Bloom Siphon",
+              "note": "异域槽位的活体武器，公开资料未收录具体说明。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/"
+              ]
+            },
+            {
+              "key": "fmf2--w6-flamethrower",
+              "nameZh": "火焰喷射器",
+              "nameEn": "Flamethrower",
+              "note": "异域槽位的常规重火力，公开资料未收录具体说明。",
+              "sources": [
+                "https://9to5gaming.com/forgive-me-father-2-guide-all-weapons-and-dark-tome-abilities/"
+              ]
+            }
+          ]
         },
         {
           "id": "fmf2-doc-07",
           "no": 7,
-          "type": "武器",
-          "nameEn": "Rifle",
-          "nameZh": "步枪",
-          "chapter": "步枪",
-          "location": "未明确",
-          "summary": "快速射击的杀戮机器，但弹药不便宜。",
-          "content": "射速极快的持续火力，但弹药开销不小。它被官方直接称作杀戮机器，是面对密集敌人时最容易上瘾、也最容易打空弹药的一把。"
-        },
-        {
-          "id": "fmf2-doc-08",
-          "no": 8,
-          "type": "武器",
-          "nameEn": "Grenade Launcher",
-          "nameZh": "榴弹发射器",
-          "chapter": "爆炸",
-          "location": "未明确",
-          "summary": "对付成群敌人的首选，传闻自海底打捞而来。",
-          "content": "对付成群敌人的首选，官方称它传闻是从海底打捞上来的。这个来历说法把一件重火力武器与克苏鲁式的深海想象连在一起，强化了本作的世界观底色。"
-        },
-        {
-          "id": "fmf2-doc-09",
-          "no": 9,
-          "type": "武器",
-          "nameEn": "Rocket Launcher",
-          "nameZh": "火箭发射器",
-          "chapter": "爆炸",
-          "location": "未明确",
-          "summary": "极暴力且永远饥饿的活体武器，几乎无法驯服。",
-          "content": "极暴力且永远饥饿的杀戮机器，官方称它是几乎无法驯服的活体武器。它最能说明本作多数武器由异星能量驱动、射击时会自行蠕动的视觉特色。"
-        },
-        {
-          "id": "fmf2-doc-10",
-          "no": 10,
-          "type": "武器",
-          "nameEn": "Mortar",
-          "nameZh": "迫击炮",
-          "chapter": "异星",
-          "location": "未明确",
-          "summary": "巨型鹦鹉螺壳造型，外表如食植实体般友善。",
-          "content": "巨型鹦鹉螺壳造型的异星武器，官方提醒别被它友善的外表骗了，它能在眨眼间清空成群敌人。这类把生物形态直接做成兵器的设计，是本作相对前作最鲜明的新意。"
-        },
-        {
-          "id": "fmf2-doc-11",
-          "no": 11,
-          "type": "武器变体",
-          "nameEn": "Blood Pumper",
-          "nameZh": "血泵",
-          "chapter": "活体武器",
-          "location": "枢纽解锁",
-          "summary": "心脏形状的器官，靠外露管子与阀门射出弹丸。",
-          "content": "心脏形状的活体武器，靠外露的管子与阀门射出弹丸。它属于本作的活体武器一家，用器官质感代替机械结构，是这套视觉语言最典型的样本。"
-        },
-        {
-          "id": "fmf2-doc-12",
-          "no": 12,
-          "type": "武器变体",
-          "nameEn": "Eternal Fish",
-          "nameZh": "永恒之鱼",
-          "chapter": "活体武器",
-          "location": "枢纽解锁",
-          "summary": "一条被念珠链锁住的鱼形态活体武器。",
-          "content": "一条被念珠链锁住的鱼，本身就是一件活体武器。念珠与鱼身的并置很能说明本作的态度：信仰符号与异形生物被混在同一件器物上。"
-        },
-        {
-          "id": "fmf2-doc-13",
-          "no": 13,
-          "type": "武器变体",
-          "nameEn": "Calaber",
-          "nameZh": "卡拉贝尔",
-          "chapter": "活体武器",
-          "location": "枢纽解锁",
-          "summary": "枪托是一只鱿鱼状生物的活体武器。",
-          "content": "枪托是一只鱿鱼状生物的活体武器。它把深海生物的形态直接接在枪身上，与榴弹发射器自海底打捞而来的传说相呼应。"
-        },
-        {
-          "id": "fmf2-doc-14",
-          "no": 14,
-          "type": "武器变体",
-          "nameEn": "Anemone",
-          "nameZh": "海葵",
-          "chapter": "活体武器",
-          "location": "枢纽解锁",
-          "summary": "巨型海葵造型的炮类活体武器。",
-          "content": "巨型海葵造型的炮，属于海生生物制成的活体武器一批。这类武器的外形共用一套海洋母题，暗示神父的心智已被克苏鲁式的图像渗透。"
-        },
-        {
-          "id": "fmf2-doc-15",
-          "no": 15,
-          "type": "武器变体",
-          "nameEn": "Cobber Gun",
-          "nameZh": "眼镜蛇枪",
-          "chapter": "活体武器",
-          "location": "枢纽解锁",
-          "summary": "由触手与眼柄构成的活体武器。",
-          "content": "由触手与眼柄构成的活体武器，把会看人的枪这个意象直接做了出来。它属于活体武器一家，外观本身就在提示玩家所持之物并不真正受控。"
-        },
-        {
-          "id": "fmf2-doc-16",
-          "no": 16,
-          "type": "武器变体",
-          "nameEn": "Obelisk",
-          "nameZh": "方尖碑",
-          "chapter": "特殊武器",
-          "location": "枢纽解锁",
-          "summary": "一件特殊武器，公开资料对其记载有限。",
-          "content": "百度百科提及的特殊武器，公开资料对其记载有限，定位也与其他变体不同。此处只能照实说明该条目仍待更多公开来源补充，不作推测。"
-        },
-        {
-          "id": "fmf2-doc-17",
-          "no": 17,
           "type": "能力",
           "nameEn": "The Dark Tome",
           "nameZh": "《暗黑之典》",
@@ -924,8 +1585,8 @@
           "content": "本作唯一的 Limit Break，由战斗伤害充能，可在病院枢纽自定义最多三种增益。取舍在于增益越多、常驻被动越少，它把前作的多能力系统收束成一次自我取舍。"
         },
         {
-          "id": "fmf2-doc-18",
-          "no": 18,
+          "id": "fmf2-doc-08",
+          "no": 8,
           "type": "疯狂技能",
           "nameEn": "Resistance",
           "nameZh": "抗性",
@@ -935,8 +1596,8 @@
           "content": "疯狂技能之一，效果是大幅降低所有来源的伤害，官方形容“疯狂让你的痛楚消失”。它让疯狂在提供力量的同时，也承担起硬扛的职能。"
         },
         {
-          "id": "fmf2-doc-19",
-          "no": 19,
+          "id": "fmf2-doc-09",
+          "no": 9,
           "type": "疯狂技能",
           "nameEn": "Haste",
           "nameZh": "疾速",
@@ -946,8 +1607,8 @@
           "content": "疯狂技能之一，大幅提升射速与装填速度，官方形容它让你成为宇宙中最快的枪手。在弹药与生命跨关继承的设定下，速射往往直接决定续航。"
         },
         {
-          "id": "fmf2-doc-20",
-          "no": 20,
+          "id": "fmf2-doc-10",
+          "no": 10,
           "type": "疯狂技能",
           "nameEn": "Lifesteal",
           "nameZh": "汲血",
@@ -957,8 +1618,8 @@
           "content": "疯狂技能之一，把造成的伤害按比例转化为治疗，官方调侃有了它谁还需要医疗包。它直接回应了本作回血道具稀缺、弹药跨关继承的资源压力。"
         },
         {
-          "id": "fmf2-doc-21",
-          "no": 21,
+          "id": "fmf2-doc-11",
+          "no": 11,
           "type": "疯狂技能",
           "nameEn": "Might",
           "nameZh": "威能",
@@ -968,8 +1629,8 @@
           "content": "疯狂技能之一，官方形容它让你感觉空前强大，疯狂充盈身体与武器并造成额外伤害。它与其余三类技能共用一套越疯越强的取舍逻辑。"
         },
         {
-          "id": "fmf2-doc-22",
-          "no": 22,
+          "id": "fmf2-doc-12",
+          "no": 12,
           "type": "系统",
           "nameEn": "Madness",
           "nameZh": "疯狂",
@@ -979,8 +1640,8 @@
           "content": "本作的核心张力：疯狂既是最大的敌人，也是最好的朋友，它驱动《暗黑之典》的释放。玩家必须在放开与克制之间反复取舍，这套机制比前作的疯狂值更强调主动权衡。"
         },
         {
-          "id": "fmf2-doc-23",
-          "no": 23,
+          "id": "fmf2-doc-13",
+          "no": 13,
           "type": "系统",
           "nameEn": "Hand-Cranked Flashlight",
           "nameZh": "手摇手电筒",
@@ -990,8 +1651,8 @@
           "content": "需不时上发条的手电筒，可与武器同时使用，因此不会像前作的油灯那样独占一个动作槽。它把照明变成一种需要分心的日常操作，服务本作更暗的场景基调。"
         },
         {
-          "id": "fmf2-doc-24",
-          "no": 24,
+          "id": "fmf2-doc-14",
+          "no": 14,
           "type": "系统",
           "nameEn": "Token Collection",
           "nameZh": "特殊代币收集",
@@ -1001,8 +1662,8 @@
           "content": "每关的主要目标是从一处走到另一处，途中常需收集特殊代币作为推进条件。它把经典 FPS 找钥匙开门的结构，换成了收集式的关卡目标。"
         },
         {
-          "id": "fmf2-doc-25",
-          "no": 25,
+          "id": "fmf2-doc-15",
+          "no": 15,
           "type": "秘密",
           "nameEn": "Hidden Stashes",
           "nameZh": "隐藏秘藏",
@@ -1012,8 +1673,8 @@
           "content": "类 Doom 的隐藏房设计，因为弹药与生命跨关卡继承，收益被明显放大。知道去哪里找补给能长期占据优势，这也是本作重玩与探索的主要动力。"
         },
         {
-          "id": "fmf2-doc-26",
-          "no": 26,
+          "id": "fmf2-doc-16",
+          "no": 16,
           "type": "叙事物",
           "nameEn": "Leaflets & Books",
           "nameZh": "传单与书籍",
@@ -1023,8 +1684,8 @@
           "content": "关卡中拾获的传单与被遗忘的书籍，是补充剧情的可选阅读物。与前作带标签的文档不同，本作的叙事更多依赖主角的沙哑独白与场景本身来承担。"
         },
         {
-          "id": "fmf2-doc-27",
-          "no": 27,
+          "id": "fmf2-doc-17",
+          "no": 17,
           "type": "成就",
           "nameEn": "Steam Achievements（32）",
           "nameZh": "Steam成就（32项）",
@@ -1034,8 +1695,8 @@
           "content": "本作的 Steam 成就系统共 32 项。公开来源未收录这 32 项成就的具体名称，此处只确认数量，便于与同类作品的收集体系作对照。"
         },
         {
-          "id": "fmf2-doc-28",
-          "no": 28,
+          "id": "fmf2-doc-18",
+          "no": 18,
           "type": "收藏向",
           "nameEn": "Digital Artbook（50+ pages）",
           "nameZh": "数字美术集（50+页）",
@@ -1045,8 +1706,8 @@
           "content": "Deluxe Edition 收录的数字美术集，共 50 余页，收录了本作黑暗手绘漫画风格与活体武器的设定图。它对理解本作相对前作的美术升级很有价值。"
         },
         {
-          "id": "fmf2-doc-29",
-          "no": 29,
+          "id": "fmf2-doc-19",
+          "no": 19,
           "type": "收藏向",
           "nameEn": "Soundtrack（30 tracks by Tim Fialka）",
           "nameZh": "原声带（30首）",

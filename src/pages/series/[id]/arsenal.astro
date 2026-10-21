@@ -1,6 +1,13 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { seriesList, arsenalOfSeries, coverPath, getEntity } from '../../../lib/data.js';
+import {
+  seriesList,
+  arsenalOfSeries,
+  coverPath,
+  getEntity,
+  arsenalImage,
+  DEFAULT_GALLERY_SOURCE,
+} from '../../../lib/data.js';
 
 // 只为「有武器 / 能力类收集条目」的系列生成该子页
 export function getStaticPaths() {
@@ -11,7 +18,65 @@ export function getStaticPaths() {
 
 const { pack } = Astro.props;
 const item = pack.series;
-const list = arsenalOfSeries(pack.id);
+const rawList = arsenalOfSeries(pack.id);
+
+// 数值字段的展示顺序与中文标签（数据里没有的字段自动跳过）
+const SPEC_LABELS = [
+  ['model', '原型型号'],
+  ['ammo', '弹种'],
+  ['magazine', '弹容'],
+  ['damage', '伤害'],
+  ['fireRate', '射速'],
+  ['reload', '装填'],
+  ['upgrades', '改装分支'],
+  ['exclusive', '专属强化'],
+];
+
+// 逐型号解析：把配图文件名换成真实路径（文件不存在就丢掉这一张），并整理出展示用的字段行
+function resolveModels(doc) {
+  return (doc.models || []).map((m) => ({
+    key: m.key || m.nameZh,
+    nameZh: m.nameZh,
+    nameEn: m.nameEn || '',
+    ver: m.ver || '',
+    specs: SPEC_LABELS.map(([k, label]) => [label, m[k]]).filter(([, v]) => v),
+    note: m.note || '',
+    shots: (m.images || [])
+      .map((im) => ({ ver: im.ver || '', src: arsenalImage(im.file) }))
+      .filter((s) => s.src),
+    sources: (m.sources || []).map((u) => ({ url: u, label: hostLabel(u) })),
+  }));
+}
+
+function hostLabel(url) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return url;
+  }
+}
+
+const list = rawList.map((d) => {
+  const models = resolveModels(d);
+  // 卡片顶部的缩略条：每个型号挑一张（优先重制版，其次原版），最多 8 张
+  const thumbs = [];
+  for (const m of models) {
+    const pick = m.shots.find((s) => s.ver === '重制版') || m.shots[0];
+    if (pick) thumbs.push({ src: pick.src, alt: `${m.nameZh} 配图` });
+    if (thumbs.length >= 8) break;
+  }
+  // 条目自带的配图（敌人 / 首领条目用）
+  const gallery = (d.images || [])
+    .map((im) => ({ src: arsenalImage(im.file), caption: im.caption, source: im.source, sourceUrl: im.sourceUrl }))
+    .filter((im) => im.src);
+  const searchText = [d.nameZh, d.nameEn, d.no, d.summary, ...models.map((m) => `${m.nameZh} ${m.nameEn}`)]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
+  return { ...d, models, thumbs, gallery, searchText };
+});
+
+const modelTotal = list.reduce((n, d) => n + d.models.length, 0);
 
 // 类别顺序：武器 → 武器变体 → 能力 → 技能 → 疯狂技能（缺的类别自动跳过）
 const TYPE_ORDER = ['武器', '武器变体', '能力', '技能', '疯狂技能'];
@@ -29,6 +94,13 @@ const workTitleOf = Object.fromEntries(workOptions.map((w) => [w.id, w.title]));
 const weaponCount = list.filter((d) => d.type === '武器').length;
 const abilityCount = list.filter((d) => d.type !== '武器').length;
 
+// 配图来源按系列标注（页面是通用的，不同系列的素材站不同）
+const GALLERY_SOURCES = {
+  'resident-evil': 'Evil Resource（evilresource.com）的逐武器页',
+  'forgive-me-father': 'Forgive Me Father Wiki（Fandom）的拾取 / 实机截图',
+};
+const gallerySource = GALLERY_SOURCES[pack.id] || DEFAULT_GALLERY_SOURCE;
+
 const description = `${item.nameZh}系列武器与能力图鉴：汇总全系列 ${list.length} 条武器、变体与能力条目，可按作品、类别与关键词筛选。`;
 const shareImage = coverPath('series', item.id);
 ---
@@ -43,6 +115,7 @@ const shareImage = coverPath('series', item.id);
   <div class="meta-row">
     <span class="tag tag--blood">{list.length} 条条目</span>
     <span class="tag">{weaponCount} 件武器</span>
+    {modelTotal > 0 && <span class="tag">{modelTotal} 个具体型号</span>}
     <span class="tag">{abilityCount} 项能力 / 变体</span>
     <span class="tag">{workOptions.length} 部作品有收录</span>
   </div>
@@ -77,7 +150,7 @@ const shareImage = coverPath('series', item.id);
     </label>
     <label class="ar-filter ar-filter--q">
       <span>搜索</span>
-      <input type="search" data-filter="q" placeholder="名称 / 编号 / 关键词" />
+      <input type="search" data-filter="q" placeholder="名称 / 型号 / 编号 / 关键词" />
     </label>
     <button type="button" class="ar-reset" data-reset>重置</button>
     <span class="ar-count" data-count>显示 {list.length} / {list.length} 条</span>
@@ -93,15 +166,92 @@ const shareImage = coverPath('series', item.id);
           id={`ar-${d.id}`}
           data-work={d.workId}
           data-type={d.type}
-          data-name={`${d.nameZh} ${d.nameEn || ''} ${d.no} ${d.summary || ''}`.toLowerCase()}
+          data-name={d.searchText}
         >
           <header class="ar-card__head">
             <span class="ar-card__no">{d.type} {String(d.no).padStart(2, '0')}</span>
             <span class="ar-card__work">{workTitleOf[d.workId]}</span>
           </header>
+
+          {(d.thumbs.length > 0 || d.gallery.length > 0) && (
+            <div class="ar-card__shots">
+              {d.thumbs.map((t) => <img class="ar-shot" src={t.src} alt={t.alt} loading="lazy" width="450" height="360" />)}
+              {d.gallery.map((g) => <img class="ar-shot ar-shot--wide" src={g.src} alt={g.caption || d.nameZh} loading="lazy" width="450" height="360" />)}
+            </div>
+          )}
+
           <h3 class="ar-card__name">{d.nameZh}</h3>
           {d.nameEn && <div class="ar-card__en">{d.nameEn}</div>}
           <p class="ar-card__summary">{d.summary}</p>
+
+          {d.models.length > 0 && (
+            <details class="ar-models">
+              <summary>
+                <span class="ar-models__t">{d.models.length} 个型号</span>
+                <span class="ar-models__h">查看数值 · 配图 · 来源</span>
+              </summary>
+              <ol class="ar-models__list">
+                {d.models.map((m) => (
+                  <li class="ar-model">
+                    <div class="ar-model__head">
+                      <div class="ar-model__title">
+                        <span class="ar-model__name">
+                          {m.nameZh}
+                          {m.ver && <span class="ar-model__ver">{m.ver}</span>}
+                        </span>
+                        {m.nameEn && m.nameEn !== m.nameZh && <span class="ar-model__en">{m.nameEn}</span>}
+                      </div>
+                      {m.shots.length > 0 && (
+                        <div class="ar-model__shots">
+                          {m.shots.map((s) => (
+                            <figure class="ar-model__shot">
+                              <img src={s.src} alt={`${m.nameZh} 配图`} loading="lazy" width="450" height="360" />
+                              {s.ver && <figcaption>{s.ver}</figcaption>}
+                            </figure>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                    <dl class="ar-model__specs">
+                      {m.specs.map(([label, value]) => (
+                        <div class="ar-model__spec">
+                          <dt>{label}</dt>
+                          <dd>{value}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                    {m.note && <p class="ar-model__note">{m.note}</p>}
+                    {m.sources.length > 0 && (
+                      <p class="ar-model__src">
+                        来源：
+                        {m.sources.map((s, i) => (
+                          <>
+                            {i > 0 && ' · '}
+                            <a href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a>
+                          </>
+                        ))}
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </details>
+          )}
+
+          {d.gallery.length > 0 && (
+            <p class="ar-card__src">
+              配图来源：
+              {d.gallery.map((g, i) => (
+                <>
+                  {i > 0 && ' · '}
+                  {g.sourceUrl
+                    ? <a href={g.sourceUrl} target="_blank" rel="noopener noreferrer">{g.source || DEFAULT_GALLERY_SOURCE}</a>
+                    : (g.source || DEFAULT_GALLERY_SOURCE)}
+                </>
+              ))}
+            </p>
+          )}
+
           <footer class="ar-card__foot">
             {d.chapter && <span class="tag">{d.chapter}</span>}
             {d.location && d.location !== '未明确' && <span class="tag">{d.location}</span>}
@@ -120,9 +270,29 @@ const shareImage = coverPath('series', item.id);
     <h2>收录说明</h2>
     <div class="panel prose">
       <ul>
-        <li>本页条目由各作品的「收集资料」派生而来 —— 只收录公开资料能支撑的名称、类别、所属作品与一句话要点。</li>
-        <li><strong>未收录的明确标注：</strong>武器数值（伤害、射速、弹药）、升级分支的具体收益与完整变体清单，公开来源不完整，本页不做估算与补全。</li>
-        <li>同一件武器在不同作品里的变体已知两作存在差异（第 1 作可携带全部武器，第 2 作改为有限携行），具体以游戏本体为准。</li>
+        <li>本页条目由各作品的「收集资料」派生而来，<strong>只收录公开资料能支撑的内容</strong>。</li>
+        <li>
+          <strong>型号与数值：</strong>已深化的作品会把「手枪」这类通用条目细化为<strong>具体型号</strong>，
+          并列出弹种、弹容、伤害、射速、装填与专属强化的面板数值。数值一律标明来源，查不到的直接写「公开来源未收录」，
+          <strong>不做估算与补全</strong>。
+        </li>
+        {pack.id === 'resident-evil' && (
+          <li>
+            <strong>两版数值不可直接横向比较：</strong>以《生化危机4》为例，2005 原版的射速 / 装填以「秒」计（越小越快），
+            2023 重制版则用界面标量（越大越快），方向相反；伤害都是游戏内相对倍率，不是绝对 HP 伤害。
+          </li>
+        )}
+        {pack.id === 'forgive-me-father' && (
+          <li>
+            <strong>本系列没有换弹动作：</strong>第 1 作官方描述即为 non-reloading weapons，武器只消耗弹药储备；
+            第 2 作改为有限携行，两作的手感差异以游戏本体为准。
+          </li>
+        )}
+        <li>
+          <strong>配图：</strong>来自公开游戏资料站（{gallerySource}）与官方宣传片截取的实机画面，
+          <strong>非本站原创、非官方授权</strong>，每张图均在条目内标注来源与原始页面链接。
+          配图按游戏本身的形象收录，怪物与活体武器可能带血迹或残缺表现；并非每个型号都有图。
+        </li>
       </ul>
     </div>
   </section>
@@ -235,6 +405,7 @@ const shareImage = coverPath('series', item.id);
     border-radius: var(--radius);
     padding: 14px 18px 12px;
     transition: border-color 0.15s, background 0.15s;
+    scroll-margin-top: 132px;
   }
   .ar-card:hover { background: var(--panel-2); }
   .ar-card[hidden] { display: none; }
@@ -258,6 +429,139 @@ const shareImage = coverPath('series', item.id);
     border-radius: 999px;
     padding: 1px 9px;
   }
+
+  /* ---------- 配图 ---------- */
+  .ar-card__shots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 10px;
+    padding: 8px 10px;
+    background: radial-gradient(circle at 50% 40%, var(--panel-3), var(--panel-2));
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  /* 道具渲染图是透明底的 450×360，按宽度自适应铺排 */
+  .ar-shot {
+    flex: 0 0 auto;
+    width: 56px;
+    height: 45px;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
+  }
+  .ar-shot--wide {
+    width: 76px;
+    height: 61px;
+  }
+
+  .ar-card__src {
+    margin: 8px 0 10px;
+    font-size: 11.5px;
+    color: var(--dim);
+    line-height: 1.6;
+  }
+  .ar-card__src a { color: var(--blood-bright); text-decoration: none; border-bottom: 1px dotted rgba(var(--accent-rgb), 0.5); }
+  .ar-card__src a:hover { border-bottom-style: solid; }
+
+  /* ---------- 型号明细（原生 details，零 JS） ---------- */
+  .ar-models {
+    margin: 0 0 10px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--panel-2);
+  }
+  .ar-models > summary {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 9px 12px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .ar-models > summary::-webkit-details-marker { display: none; }
+  .ar-models > summary::before {
+    content: '▸';
+    font-size: 10px;
+    color: var(--blood-bright);
+    transition: transform 0.15s;
+  }
+  .ar-models[open] > summary::before { transform: rotate(90deg); }
+  .ar-models__t { font-size: 12.5px; color: var(--text); }
+  .ar-models__h { font-size: 11.5px; color: var(--dim); margin-left: auto; }
+  .ar-models > summary:hover .ar-models__t { color: var(--blood-bright); }
+
+  .ar-models__list {
+    margin: 0;
+    padding: 0 12px 12px;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+  }
+  .ar-model {
+    padding: 10px 12px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 2px solid rgba(var(--accent-rgb), 0.45);
+    border-radius: var(--radius);
+  }
+  .ar-model__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 9px;
+  }
+  .ar-model__title { display: flex; flex-direction: column; gap: 2px; }
+  .ar-model__name { font-family: var(--serif); font-size: 15px; color: var(--text); }
+  .ar-model__ver {
+    margin-left: 6px;
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.04em;
+    color: var(--blood-bright);
+    border: 1px solid rgba(var(--accent-rgb), 0.4);
+    border-radius: 999px;
+    padding: 1px 6px;
+    vertical-align: 2px;
+  }
+  .ar-model__en { font-size: 11px; color: var(--dim); letter-spacing: 0.03em; }
+
+  .ar-model__shots { display: flex; gap: 8px; flex: 0 0 auto; }
+  .ar-model__shot { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .ar-model__shot img {
+    width: 64px;
+    height: 51px;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
+  }
+  .ar-model__shot figcaption { font-size: 10px; color: var(--dim); }
+
+  .ar-model__specs {
+    margin: 0;
+    display: grid;
+    gap: 4px 14px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  }
+  .ar-model__spec { display: flex; gap: 8px; font-size: 12.5px; line-height: 1.65; }
+  .ar-model__spec dt {
+    flex: 0 0 auto;
+    min-width: 62px;
+    color: var(--dim);
+  }
+  .ar-model__spec dd { margin: 0; color: var(--muted); }
+
+  .ar-model__note {
+    margin: 8px 0 0;
+    padding-top: 8px;
+    border-top: 1px dashed var(--line);
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .ar-model__src { margin: 6px 0 0; font-size: 11.5px; color: var(--dim); }
+  .ar-model__src a { color: var(--blood-bright); text-decoration: none; border-bottom: 1px dotted rgba(var(--accent-rgb), 0.5); }
+  .ar-model__src a:hover { border-bottom-style: solid; }
 
   .ar-empty {
     margin: 26px 0 0;
@@ -460,6 +764,19 @@ const shareImage = coverPath('series', item.id);
       });
     }
   }
+
+  // 从站内搜索 / 外部链接带 #ar-xxx 进来时，自动展开该卡片的型号明细，否则用户只看到折叠条
+  function openTargetCard() {
+    const hash = location.hash;
+    if (!hash.startsWith('#ar-')) return;
+    const card = document.getElementById(hash.slice(1));
+    if (!card) return;
+    const box = card.querySelector('details.ar-models');
+    if (box) box.open = true;
+    card.scrollIntoView({ block: 'start', behavior: 'auto' });
+  }
+  openTargetCard();
+  window.addEventListener('hashchange', openTargetCard);
 
   apply();
 </script>

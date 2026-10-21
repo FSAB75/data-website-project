@@ -3,14 +3,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { seriesList, works, entities } from '../lib/data.js';
 
 const nametagCount = seriesList.reduce((n, s) => n + ((s.nametags?.nametags || []).length), 0);
+const modelCount = seriesList.reduce(
+  (n, s) => n + s.works.reduce((m, w) => m + (w.documents || []).reduce((k, d) => k + ((d.models || []).length), 0), 0),
+  0,
+);
 const scaleText = [
   `${seriesList.length} 个系列`,
   `${works.length} 部作品`,
   `${entities.length} 个词条`,
+  modelCount ? `${modelCount} 个武器 / 敌人型号` : null,
   nametagCount ? `${nametagCount} 条名牌` : null,
 ].filter(Boolean).join(' · ');
 
-const description = `站内搜索：可搜《逃生》《尸体派对》等系列的作品名、人物与术语（含别名）、名牌姓名与编号，共 ${scaleText}。`;
+const description = `站内搜索：可搜各系列的作品名、人物与术语（含别名）、武器与敌人型号、名牌姓名与编号，共 ${scaleText}。`;
 ---
 
 <BaseLayout title="站内搜索" description={description}>
@@ -45,9 +50,9 @@ const description = `站内搜索：可搜《逃生》《尸体派对》等系�
 </BaseLayout>
 
 <script>
-  const KIND_ORDER = ['series', 'work', 'entity', 'nametag'];
-  const KIND_TITLE = { series: '系列', work: '作品', entity: '词条', nametag: '名牌' };
-  const KIND_BONUS = { series: 8, work: 6, entity: 4, nametag: 2 };
+  const KIND_ORDER = ['series', 'work', 'entity', 'model', 'nametag'];
+  const KIND_TITLE = { series: '系列', work: '作品', entity: '词条', model: '武器 / 敌人型号', nametag: '名牌' };
+  const KIND_BONUS = { series: 8, work: 6, entity: 4, model: 5, nametag: 2 };
   const GROUP_LIMIT = 12;
 
   const form = document.querySelector('[data-search-form]');

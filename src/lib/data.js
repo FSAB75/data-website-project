@@ -220,6 +220,26 @@ export function scenePath(name) {
   return coverPath('scenes', name);
 }
 
+/**
+ * 取「图鉴配图」路径（public/images/arsenal/<name>.webp）。
+ * 武器 / 敌人条目的渲染图统一放这里，仍然沿用「文件不存在就不渲染」的机制，
+ * 因此某个型号暂时没有图也不会让页面出错。
+ * 图片已用 sharp 统一转成 WebP（体积约为原 PNG 的 1/8），保留透明通道。
+ */
+export function arsenalImage(name) {
+  if (!name) return null;
+  const rel = `/images/arsenal/${name}.webp`;
+  const abs = path.join(PUBLIC_IMAGES, 'arsenal', `${name}.webp`);
+  return fs.existsSync(abs) ? rel : null;
+}
+
+/**
+ * 图鉴配图的来源说明。
+ * 这类素材来自公开游戏资料站（Evil Resource 的逐武器 / 逐敌人页），
+ * 属于第三方整理的官方素材，**非本站原创、非官方授权**，已在页面上标注来源与链接。
+ */
+export const DEFAULT_GALLERY_SOURCE = '公开游戏资料站（非官方授权素材）';
+
 /** 页面内插图的默认来源说明（图由本站生成；若某张图另有来源，可在数据里用 source 字段覆盖） */
 export const DEFAULT_IMAGE_SOURCE = '本站生成的原创氛围图 · 非游戏截图、非官方美术素材';
 

@@ -63,6 +63,27 @@ export const GET: APIRoute = () => {
       });
     }
 
+    // 武器 / 敌人条目的「具体型号」：让「红9」「杀手7」这类型号名也能直接搜到，并深链到图鉴卡片
+    for (const w of pack.works) {
+      for (const d of w.documents || []) {
+        for (const m of d.models || []) {
+          entries.push({
+            kind: 'model',
+            title: m.nameZh,
+            en: m.nameEn || '',
+            badge: '型号',
+            meta: `${seriesName} · ${w.title} · ${d.nameZh}`,
+            desc: '',
+            url: `/series/${pack.id}/arsenal/#ar-${d.id}`,
+            key: [m.nameZh, m.nameEn, m.model, d.nameZh, w.title, seriesName]
+              .filter(Boolean)
+              .join(' ')
+              .toLowerCase(),
+          });
+        }
+      }
+    }
+
     // 名牌（仅尸体派对）：摘要只给学校 / 章节等不含死因的字段，避免搜索结果泄底
     const nametags = (pack.nametags && pack.nametags.nametags) || [];
     for (const n of nametags) {

@@ -1,6 +1,14 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { seriesList, bestiaryOfSeries, entitiesOfSeries, coverPath, getEntity } from '../../../lib/data.js';
+import {
+  seriesList,
+  bestiaryOfSeries,
+  entitiesOfSeries,
+  coverPath,
+  getEntity,
+  arsenalImage,
+  DEFAULT_GALLERY_SOURCE,
+} from '../../../lib/data.js';
 
 // 只为「有敌人 / 首领类收集条目」的系列生成该子页
 export function getStaticPaths() {
@@ -11,7 +19,16 @@ export function getStaticPaths() {
 
 const { pack } = Astro.props;
 const item = pack.series;
-const list = bestiaryOfSeries(pack.id);
+
+// 条目自带的配图：文件名 → 真实路径（文件不存在就丢掉这一张，页面自动不渲染）
+const rawList = bestiaryOfSeries(pack.id).map((d) => ({
+  ...d,
+  gallery: (d.images || [])
+    .map((im) => ({ src: arsenalImage(im.file), caption: im.caption, source: im.source, sourceUrl: im.sourceUrl }))
+    .filter((im) => im.src),
+}));
+const list = rawList;
+const withImage = list.filter((d) => d.gallery.length > 0).length;
 
 // 类别顺序：敌人 → 首领（缺的类别自动跳过）
 const TYPE_ORDER = ['敌人', '首领'];
@@ -35,6 +52,13 @@ for (const e of entitiesOfSeries(pack.id)) {
 const enemyCount = list.filter((d) => d.type === '敌人').length;
 const bossCount = list.filter((d) => d.type === '首领').length;
 
+// 配图来源按系列标注（页面是通用的，不同系列的素材站不同）
+const GALLERY_SOURCES = {
+  'resident-evil': 'Evil Resource（evilresource.com）的逐敌人页',
+  'forgive-me-father': 'Forgive Me Father Wiki（Fandom）',
+};
+const gallerySource = GALLERY_SOURCES[pack.id] || DEFAULT_GALLERY_SOURCE;
+
 const description = `${item.nameZh}系列怪物与首领图鉴：汇总全系列 ${list.length} 条敌人与首领条目，可按作品、类别与关键词筛选。`;
 const shareImage = coverPath('series', item.id);
 ---
@@ -50,6 +74,7 @@ const shareImage = coverPath('series', item.id);
     <span class="tag tag--blood">{list.length} 条条目</span>
     <span class="tag">{enemyCount} 种敌人</span>
     <span class="tag">{bossCount} 位首领</span>
+    {withImage > 0 && <span class="tag">{withImage} 条有配图</span>}
     <span class="tag">{workOptions.length} 部作品有收录</span>
   </div>
 
@@ -105,6 +130,23 @@ const shareImage = coverPath('series', item.id);
             <span class="bs-card__no">{d.type} {String(d.no).padStart(2, '0')}</span>
             <span class="bs-card__work">{workTitleOf[d.workId]}</span>
           </header>
+          {d.gallery.length > 0 && (
+            <div class="bs-card__shots">
+              {d.gallery.map((g) => (
+                <figure class="bs-shot">
+                  <img src={g.src} alt={g.caption || `${d.nameZh} 配图`} loading="lazy" width="450" height="360" />
+                  <figcaption>
+                    {g.caption}
+                    <span class="bs-shot__src">
+                      来源：{g.sourceUrl
+                        ? <a href={g.sourceUrl} target="_blank" rel="noopener noreferrer">{g.source || DEFAULT_GALLERY_SOURCE}</a>
+                        : (g.source || DEFAULT_GALLERY_SOURCE)}
+                    </span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
           <h3 class="bs-card__name">{d.nameZh}</h3>
           {d.nameEn && <div class="bs-card__en">{d.nameEn}</div>}
           <p class="bs-card__summary">{d.summary}</p>
@@ -128,7 +170,27 @@ const shareImage = coverPath('series', item.id);
     <div class="panel prose">
       <ul>
         <li>本页条目由各作品的「收集资料」派生而来 —— 只收录公开资料能支撑的名称、类别、所属作品、出现区域与一句话要点。</li>
-        <li><strong>不收录数值：</strong>生命值、伤害、弱点、掉落与抗性等，公开来源不完整，本页不做估算与补全。</li>
+        {pack.id === 'forgive-me-father' ? (
+          <li>
+            <strong>数值口径：</strong>本系列条目的生命值与伤害取自
+            <strong>Forgive Me Father Wiki（Fandom）</strong>的属性表，属单一来源、未逐版本复核，
+            与游戏本体不一致时以游戏为准；wiki 自身明显异常的数字（如蟹人的远程伤害）照录并标注存疑，
+            <strong>不做修正</strong>。
+          </li>
+        ) : (
+          <li><strong>不收录数值：</strong>生命值、伤害、弱点、掉落与抗性等，公开来源不完整，本页不做估算与补全。</li>
+        )}
+        {withImage > 0 ? (
+          <li>
+            <strong>配图：</strong>来自公开游戏资料站（{gallerySource}）整理的官方素材（渲染图 / 实机截屏），
+            <strong>非本站原创、非官方授权</strong>，每张图下方标注来源与原始页面链接。
+            配图按怪物本身的形象收录，可能含血迹或残缺表现；没有公开图的条目保持无图。
+          </li>
+        ) : (
+          <li>
+            <strong>配图：</strong>本系列暂未找到可公开引用的敌人图，因此全部条目暂无配图。
+          </li>
+        )}
         <li>同一怪物在不同作品里的形态与译名可能存在差异，本页按各作资料原样保留；<strong>缺项一律标注「未明确」</strong>，不做虚构补全。</li>
         <li>卡片上标注「词条」的条目，可以点进去看该怪物 / 首领的独立词条页（含背景、事迹与关联条目）。</li>
       </ul>
@@ -266,6 +328,36 @@ const shareImage = coverPath('series', item.id);
     border-radius: 999px;
     padding: 1px 9px;
   }
+
+  /* ---------- 配图（透明底的 450×360 渲染图，按卡片宽度自适应） ---------- */
+  .bs-card__shots {
+    margin: 0 0 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: radial-gradient(circle at 50% 35%, var(--panel-3), var(--panel-2));
+    overflow: hidden;
+  }
+  .bs-shot { margin: 0; }
+  .bs-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 230px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.6));
+  }
+  .bs-shot figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 7px 10px 8px;
+    font-size: 11px;
+    color: var(--dim);
+    line-height: 1.55;
+    border-top: 1px solid var(--line);
+  }
+  .bs-shot__src a { color: var(--blood-bright); text-decoration: none; border-bottom: 1px dotted rgba(var(--accent-rgb), 0.5); }
+  .bs-shot__src a:hover { border-bottom-style: solid; }
 
   .bs-empty {
     margin: 26px 0 0;
