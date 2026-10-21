@@ -1,0 +1,684 @@
+{
+  "workId": "re4",
+  "note": "《生化危机4》武器数据（2005 原版 / 2023 重制版）。口径：原版 Firepower 为游戏内相对倍率，射速/装填单位为秒（越小越快）；重制版 Power 与装填/射速为界面标量（越大越快），两版数字不可直接横向比较。伤害一律为面板值，非绝对 HP 伤害。数据来源分级：官方攻略 PDF（Capcom 站内 Prima 试读）> 大型 wiki（StrategyWiki、Resident Evil Wiki/Fandom、Evil Resource、IMFDB）> 游戏媒体/中文攻略（Vandal、GameRevolution、游民星空）。已发现分歧均并列保留：红9 中间级火力（2.0/2.4/2.8 对 2.1/2.5/3.0）与初始装填（2.73 秒对 2.37 秒）、红9/黑尾 GameCube 版专属值、打击者与杀手7 的现实原型、地雷枪售价（9,800 对 28,000）、弩枪专属（Vandal 有、Evil Resource 未列）。查不到的字段统一写「公开来源未收录」，不估算、不编造。",
+  "weapons": [
+    {
+      "key": "silver-ghost",
+      "nameZh": "银幽灵（初始手枪）",
+      "nameEn": "Handgun（原版）/ SG-09 R（重制版）",
+      "model": "原版：H&K USP、S&W Sigma、Ruger P85 的混合设计（设计师自述受三者启发）；重制版：H&K USP / USP9，官方描述「保留 MUP 的基本设计」",
+      "category": "手枪",
+      "ammo": "9mm 手枪弹",
+      "magazine": "原版 10 发（满改 25 发）/ 重制版 10 发（满改 18 发）",
+      "damage": "原版 Firepower 1.0 → 2.0（满改，游戏内相对倍率；官方攻略本同一栏目标为 Damage）/ 重制版 Power 1.00 → 2.00（满改）",
+      "fireRate": "原版 0.47 秒/发（满改 0.33 秒，越小越快）/ 重制版 1.00 → 1.52（越大越快）",
+      "reload": "原版 1.73 秒（满改 0.87 秒）/ 重制版 1.00 → 1.40",
+      "upgrades": "原版：火力 6 级、射速 3 级、装填 3 级、弹容 6 级，无配件槽 / 重制版：火力、弹容、装填、射速各 5 级，可装激光瞄准器",
+      "exclusive": "原版：暴击（爆头即死）概率 ×5，57,000₧，第 4-3 章起可改 / 重制版：暴击率 ×5，80,000₧",
+      "note": "里昂初始武器。2005 版游戏内只标 Handgun，「银幽灵」为沿用名；重制版改名 SG-09 R，并明确以 MUP 为基础。",
+      "sources": [
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades",
+        "http://static.capcom.com/residentevil/files/ResidentEvil4_Prev1.pdf",
+        "https://residentevil.fandom.com/wiki/Handgun_(Resident_Evil_4)",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4"
+      ]
+    },
+    {
+      "key": "punisher",
+      "nameZh": "惩罚者",
+      "nameEn": "Punisher",
+      "model": "FN Five-seveN（游戏内改发射 9mm 弹）",
+      "category": "手枪",
+      "ammo": "9mm 手枪弹",
+      "magazine": "原版 10 发（满改 28 发）/ 重制版 12 发（满改 24 发）",
+      "damage": "原版 Firepower 0.9 → 1.9（满改）/ 重制版 Power 0.90 → 1.90（满改）",
+      "fireRate": "原版 0.47 → 0.33 秒/发 / 重制版 1.05 → 1.91",
+      "reload": "原版 1.70 → 0.83 秒 / 重制版 1.10 → 1.50",
+      "upgrades": "原版：火力 6 级、射速 3 级、装填 3 级、弹容 6 级 / 重制版：火力、弹容、装填、射速各 5 级，可装激光瞄准器",
+      "exclusive": "原版：子弹可穿透最多 5 名敌人，40,000₧（第 4-4 章）/ 重制版：穿透 5 名目标，70,000₧",
+      "note": "原版集齐 10 枚蓝徽章免费获得（15 枚全灭附赠 1 级火力）；重制版改为 5 枚尖晶石兑换，第 2 章起可用。",
+      "sources": [
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades",
+        "http://static.capcom.com/residentevil/files/ResidentEvil4_Prev1.pdf",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/punisher",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4"
+      ]
+    },
+    {
+      "key": "red9",
+      "nameZh": "红9",
+      "nameEn": "Red9",
+      "model": "毛瑟 C96「Red 9」（9mm 型，握把刻红「9」防装错弹）",
+      "category": "手枪",
+      "ammo": "9mm 手枪弹",
+      "magazine": "原版 8 发（满改 22 发）/ 重制版 8 发（满改 16 发）",
+      "damage": "原版 Firepower 1.6 → 3.7（满改；中间级两来源分歧：StrategyWiki 记 2.0/2.4/2.8，Evil Resource 记 2.1/2.5/3.0）/ 重制版 Power 1.50 → 2.70（满改）",
+      "fireRate": "原版 0.53 → 0.40 秒/发 / 重制版 0.90 → 1.26",
+      "reload": "原版 2.73 → 1.67 秒（Evil Resource 记 2.37 → 1.67，来源分歧）/ 重制版 0.85 → 1.25",
+      "upgrades": "原版：火力 6 级、射速 3 级、装填 3 级、弹容 6 级 + 枪托（4,000₧）/ 重制版：火力、弹容、装填、射速各 5 级 + Red9 枪托",
+      "exclusive": "原版：火力提升至 6.5（GameCube 版为 5.0），80,000₧ / 重制版：火力 ×1.5，100,000₧",
+      "note": "单发威力最高的手枪，弹容最小、装填最慢；重制版可从湖上废船宝箱取得或向商人购买。",
+      "sources": [
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades",
+        "http://static.capcom.com/residentevil/files/ResidentEvil4_Prev1.pdf",
+        "https://www.evilresource.com/resident-evil-4/weaponry/red9",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/red9"
+      ]
+    },
+    {
+      "key": "blacktail",
+      "nameZh": "黑尾",
+      "nameEn": "Blacktail",
+      "model": "斯普林菲尔德 XD（Springfield Armory XD，9mm）",
+      "category": "手枪",
+      "ammo": "9mm 手枪弹",
+      "magazine": "原版 15 发（满改 35 发）/ 重制版 9 发（满改 13 发）",
+      "damage": "原版 Firepower 1.6 → 3.2（满改）/ 重制版 Power 1.40 → 2.40（满改）",
+      "fireRate": "原版 0.47 → 0.27 秒/发（满改射速最快）/ 重制版 1.19 → 2.20",
+      "reload": "原版 1.70 → 0.83 秒 / 重制版 1.20 → 1.60",
+      "upgrades": "原版：火力 6 级、射速 3 级、装填 3 级、弹容 6 级 / 重制版：火力、弹容、装填、射速各 5 级",
+      "exclusive": "原版：火力提升至 4.5（GameCube 版为 3.4），第 4-4 章 / 重制版：火力 ×1.5，100,000₧",
+      "note": "综合性能均衡；原版艾达常备手枪；重制版仅占 4 格背包，第 7 章起售卖。",
+      "sources": [
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/blacktail",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4"
+      ]
+    },
+    {
+      "key": "matilda",
+      "nameZh": "玛蒂尔达",
+      "nameEn": "Matilda",
+      "model": "H&K VP70M（带固定枪托、三连发）",
+      "category": "手枪",
+      "ammo": "9mm 手枪弹",
+      "magazine": "原版 15 发（满改 30 发，专属 100 发）/ 重制版 18 发（满改 30 发，专属 ×2）",
+      "damage": "原版 Firepower 1.0 → 2.0（满改）/ 重制版 Power 1.30 → 2.00（满改）",
+      "fireRate": "原版 0.47 秒/发（三连发）/ 重制版 0.96 → 1.63",
+      "reload": "原版 1.73 → 0.87 秒 / 重制版 1.00 → 1.40",
+      "upgrades": "原版：火力 6 级、装填 3 级、弹容 6 级（无射速升级），枪托固定不可拆 / 重制版：火力、弹容、装填、射速各 5 级 + 玛蒂尔达枪托",
+      "exclusive": "原版：弹容提升至 100，35,000₧ / 重制版：弹容 ×2，70,000₧",
+      "note": "三连发手枪；原版通关一次后以 70,000₧ 购买，重制版第 8 章起用 10 枚尖晶石兑换。",
+      "sources": [
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/matilda",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4"
+      ]
+    },
+    {
+      "key": "sentinel-nine",
+      "nameZh": "哨兵九号（豪华版 DLC）",
+      "nameEn": "Sentinel Nine",
+      "model": "SIG Sauer P226（GameRevolution 记 P226 E2，另有来源记 P226 Beavertail）",
+      "category": "手枪",
+      "ammo": "手枪弹",
+      "magazine": "重制版 19 发（满改 31 发）",
+      "damage": "重制版 Power 1.10 → 1.90（满改）",
+      "fireRate": "重制版 1.19 → 2.00",
+      "reload": "重制版 0.90 → 1.30",
+      "upgrades": "重制版：火力、弹容、装填、射速各 5 级",
+      "exclusive": "重制版：暴击率 ×5，80,000₧",
+      "note": "重制版豪华版 DLC 手枪，弹容高于初始手枪；原版无此武器。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/sentinel-nine",
+        "https://www.gamerevolution.com/guides/937627-resident-evil-4-remake-all-weapons-list-real-life-based-on"
+      ]
+    },
+    {
+      "key": "shotgun",
+      "nameZh": "霰弹枪",
+      "nameEn": "Shotgun（原版）/ W-870（重制版）",
+      "model": "雷明顿 870（Remington 870，12 号泵动）",
+      "category": "霰弹枪",
+      "ammo": "12 号霰弹",
+      "magazine": "原版 6 发（满改 18 发）/ 重制版 5 发（满改 10 发）",
+      "damage": "原版 Firepower 4.0 → 8.0（满改）/ 重制版 Power 5.60 → 10.1（满改）",
+      "fireRate": "原版 1.53 秒/发（固定）/ 重制版 0.45 → 0.85",
+      "reload": "原版 3.03 → 1.50 秒 / 重制版 1 → 5",
+      "upgrades": "原版：火力 6 级、装填 3 级、弹容 6 级 / 重制版：火力、弹容、装填、射速各 5 级",
+      "exclusive": "原版：任意距离均按满额伤害判定（取消伤害衰减），第 4-4 章 / 重制版：火力 ×2，80,000₧",
+      "note": "两版均可免费取得：原版第 1-1 章小屋墙上，重制版村庄广场东北民居二楼墙上。",
+      "sources": [
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/w-870",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4"
+      ]
+    },
+    {
+      "key": "riot-gun",
+      "nameZh": "防暴枪（亦译镇暴枪）",
+      "nameEn": "Riot Gun",
+      "model": "定制贝奈利 M3 Super 90（混入 M4 折叠托与顶轨）",
+      "category": "霰弹枪",
+      "ammo": "12 号霰弹",
+      "magazine": "原版 7 发（满改 17 发）/ 重制版 7 发（满改 12 发）",
+      "damage": "原版 Firepower 5.0 → 8.0（专属 10.0）/ 重制版 Power 6.40 → 12.8（满改）",
+      "fireRate": "原版 1.53 秒/发 / 重制版 0.75 → 1.10",
+      "reload": "原版 3.03 → 1.50 秒 / 重制版 1 → 6",
+      "upgrades": "原版：火力 6 级、装填 3 级、弹容 6 级 / 重制版：火力、弹容、装填、射速各 5 级",
+      "exclusive": "原版：火力提升至 10.0（第 4-4 章最后商人，价格公开来源未收录）/ 重制版：火力 ×1.5，80,000₧",
+      "note": "伤害衰减平缓、散布集中、抬枪更快；重制版第 6 章起售卖。",
+      "sources": [
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/riot-gun",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4",
+        "http://www.gamersky.com/handbook/202303/1581101.shtml"
+      ]
+    },
+    {
+      "key": "striker",
+      "nameZh": "打击者",
+      "nameEn": "Striker",
+      "model": "Armsel Protecta（IMFDB 原版）；Cobray Street Sweeper / Armsel Striker（GameRevolution 重制版）——两来源对原型有分歧",
+      "category": "霰弹枪",
+      "ammo": "12 号霰弹",
+      "magazine": "原版 12 发（满改 28 发，专属 100 发）/ 重制版 12 发（满改 24 发，专属 ×2）",
+      "damage": "原版 Firepower 6.0 → 12.0（满改）/ 重制版 Power 9.00 → 16.2（满改）",
+      "fireRate": "原版 0.73 秒/发 / 重制版 1.13 → 1.57",
+      "reload": "原版 3.00 → 1.67 秒 / 重制版 1 → 6",
+      "upgrades": "原版：火力 6 级、装填 3 级、弹容 6 级 / 重制版：火力、弹容、装填、射速各 5 级",
+      "exclusive": "原版：弹容提升至 100，60,000₧ / 重制版：弹容 ×2，60,000₧",
+      "note": "半自动转轮霰弹枪，射速与装填最快、扩散最大；重制版第 10 章起售卖。",
+      "sources": [
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/striker",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4",
+        "https://www.gamerevolution.com/guides/937627-resident-evil-4-remake-all-weapons-list-real-life-based-on"
+      ]
+    },
+    {
+      "key": "skull-shaker",
+      "nameZh": "碎颅者（豪华版 DLC）",
+      "nameEn": "Skull Shaker",
+      "model": "温彻斯特 M1887（锯短）",
+      "category": "霰弹枪",
+      "ammo": "12 号霰弹",
+      "magazine": "重制版 2 发（满改 6 发）",
+      "damage": "重制版 Power 5.40 → 9.07（满改）",
+      "fireRate": "重制版 0.49 → 0.96",
+      "reload": "重制版 1 → 6",
+      "upgrades": "重制版：火力、弹容、装填、射速各 5 级",
+      "exclusive": "重制版：火力 ×2，80,000₧",
+      "note": "重制版豪华版 DLC 霰弹枪，背包占用最小、弹容最小；原版无。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/skull-shaker",
+        "https://www.gamerevolution.com/guides/937627-resident-evil-4-remake-all-weapons-list-real-life-based-on",
+        "http://www.gamersky.com/handbook/202303/1581101.shtml"
+      ]
+    },
+    {
+      "key": "rifle",
+      "nameZh": "步枪（栓动式）",
+      "nameEn": "Rifle（原版）/ SR M1903（重制版）",
+      "model": "春田 M1903A4（Springfield M1903A4；游戏内改打 .223 而非真实 .30-06）",
+      "category": "步枪",
+      "ammo": ".223 步枪弹",
+      "magazine": "原版 5 发（满改 18 发）/ 重制版 5 发（满改 13 发）",
+      "damage": "原版 Firepower 4.0 → 12.0（专属 30.0）/ 重制版 Power 2.50 → 5.30（满改）",
+      "fireRate": "原版 2.73 秒/发（栓动，固定）/ 重制版 0.42 → 0.53",
+      "reload": "原版 4.00 → 2.33 秒 / 重制版 1 → 5",
+      "upgrades": "原版：火力 6 级、装填 3 级、弹容 6 级 + 瞄准镜 / 红外镜 / 重制版：火力、弹容、装填、射速各 5 级 + 瞄准镜 / 高倍镜 / 生物传感镜",
+      "exclusive": "原版：火力提升至 30.0，80,000₧ / 重制版：火力 ×2，100,000₧",
+      "note": "栓动、射速极慢、单发威力高；重制版弱点击中 ×3 且具穿透。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/rifle",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/sr-m1903",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4",
+        "https://vandal.elespanol.com/en/resident-evil-4-remake/resident-evil-4-remake-all-weapons-and-how-to-get-them.html"
+      ]
+    },
+    {
+      "key": "semi-auto-rifle",
+      "nameZh": "半自动步枪",
+      "nameEn": "Rifle (Semi-Auto)（原版）/ Stingray（重制版）",
+      "model": "H&K SL8",
+      "category": "步枪",
+      "ammo": ".223 步枪弹",
+      "magazine": "原版 10 发（满改 24 发）/ 重制版 10 发（满改 18 发）",
+      "damage": "原版 Firepower 7.0 → 15.0（满改）/ 重制版 Power 3.30 → 4.90（满改）",
+      "fireRate": "原版 1.83 秒/发（专属提升至 0.80 秒）/ 重制版 0.73 → 0.92",
+      "reload": "原版 2.33 → 1.33 秒 / 重制版 0.84 → 1.18",
+      "upgrades": "原版：火力 6 级、装填 3 级、弹容 6 级 + 瞄准镜 / 红外镜 / 重制版：火力、弹容、装填、射速各 5 级 + 三种瞄准镜",
+      "exclusive": "原版：射速提升至 0.80 秒/发，80,000₧ / 重制版：射速 ×2，60,000₧",
+      "note": "重制版弱点击中 ×3 且具穿透；原版艾达线亦使用该枪。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/rifle-semi-auto",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/stingray",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4",
+        "https://vandal.elespanol.com/en/resident-evil-4-remake/resident-evil-4-remake-all-weapons-and-how-to-get-them.html"
+      ]
+    },
+    {
+      "key": "cqbr",
+      "nameZh": "CQBR 突击步枪",
+      "nameEn": "CQBR Assault Rifle",
+      "model": "柯尔特 M4A1 或变体（CQBR 短枪管型）",
+      "category": "步枪",
+      "ammo": "步枪弹",
+      "magazine": "重制版 20 发（满改 32 发）",
+      "damage": "重制版 Power 2.00 → 3.40（满改）",
+      "fireRate": "重制版 2.50（全自动；Evil Resource 未列该数值，取自 Vandal）",
+      "reload": "重制版 0.85 → 1.25",
+      "upgrades": "重制版：火力、弹容、装填各 5 级",
+      "exclusive": "重制版：火力 ×1.5，100,000₧",
+      "note": "重制版专有全自动步枪，原版无；城堡方锁宝箱 03 取得，第 11 章起售卖。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/cqbr-assault-rifle",
+        "https://vandal.elespanol.com/en/resident-evil-4-remake/resident-evil-4-remake-all-weapons-and-how-to-get-them.html",
+        "https://www.gamerevolution.com/guides/937627-resident-evil-4-remake-all-weapons-list-real-life-based-on"
+      ]
+    },
+    {
+      "key": "broken-butterfly",
+      "nameZh": "折翼蝴蝶",
+      "nameEn": "Broken Butterfly",
+      "model": "S&W Schofield Model 3 与 Colt Single Action Army 的混合体（顶折式左轮）",
+      "category": "马格南",
+      "ammo": ".45 马格南",
+      "magazine": "原版 6 发（满改 12 发）/ 重制版 6 发（满改 10 发）",
+      "damage": "原版 Firepower 13.0 → 28.0（专属 50.0）/ 重制版 Power 15.0 → 27.0（满改）",
+      "fireRate": "原版 0.70 秒/发 / 重制版 0.90 → 1.33",
+      "reload": "原版 3.67 → 2.33 秒 / 重制版 1 → 5",
+      "upgrades": "原版：火力 6 级、装填 3 级、弹容 4 级 + 专属 150,000₧（第 5-3 章）/ 重制版：火力、弹容、装填、射速各 5 级 + 专属 100,000₧",
+      "exclusive": "原版：火力提升至 50.0，150,000₧ / 重制版：火力 ×1.5，100,000₧",
+      "note": "原版可在城堡免费拾取（需艾什莉协助），重制版改为第 7 章起商人出售；单发威力极高、装填慢。",
+      "sources": [
+        "https://residentevil.fandom.com/wiki/Broken_Butterfly",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/broken-butterfly",
+        "https://www.gamerevolution.com/guides/937627-resident-evil-4-remake-all-weapons-list-real-life-based-on",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4"
+      ]
+    },
+    {
+      "key": "killer7",
+      "nameZh": "杀手7",
+      "nameEn": "Killer7",
+      "model": "Colt M1911（.45）配 AMT Hardballer 风格激光；GameRevolution 记 AMT Hardballer Longslide（两者略有出入）",
+      "category": "马格南",
+      "ammo": ".45 马格南",
+      "magazine": "原版 7 发（满改 14 发）/ 重制版 7 发（满改 15 发）",
+      "damage": "原版 Firepower 25.0 → 35.0（满改，无专属）/ 重制版 Power 20.0 → 28.0（满改）",
+      "fireRate": "原版 0.70 秒/发 / 重制版 0.81 → 1.16",
+      "reload": "原版 1.83 → 0.93 秒 / 重制版 1.00 → 1.40",
+      "upgrades": "原版：仅有 3 级火力、2 级装填、2 级弹容，无专属强化 / 重制版：火力、弹容、装填、射速各 5 级 + 专属 77,700₧",
+      "exclusive": "原版：无专属强化（全游戏唯一）/ 重制版：暴击率 ×5，77,700₧",
+      "note": "重制版自带激光指示器、具穿透、射速慢于折翼蝴蝶；原版第 5-1 章、重制版第 13 章起售卖。",
+      "sources": [
+        "https://residentevil.fandom.com/wiki/Killer7",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/killer7",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4",
+        "http://www.gamersky.com/handbook/202303/1581101.shtml"
+      ]
+    },
+    {
+      "key": "handcannon",
+      "nameZh": "手炮",
+      "nameEn": "Handcannon",
+      "model": "S&W Model 500（.500 S&W 马格南）",
+      "category": "马格南",
+      "ammo": ".50 马格南",
+      "magazine": "原版 3 发（满改 10 发）/ 重制版 5 发（满改 9 发）",
+      "damage": "原版 Firepower 30.0 → 60.0（专属 99.9）/ 重制版 Power 12.0 → 36.0（满改）",
+      "fireRate": "原版 1.17 秒/发 / 重制版 0.52 → 0.65",
+      "reload": "原版 3.67 → 1.83 秒 / 重制版 1 → 5",
+      "upgrades": "原版：火力 6 级、装填 3 级、弹容 6 级 + 专属 200,000₧ / 重制版：火力、弹容、装填、射速各 4 级 + 专属 10,000₧",
+      "exclusive": "原版：火力提升至 99.9 且弹药无限，200,000₧ / 重制版：弹药永不耗尽，10,000₧",
+      "note": "原版需佣兵模式全角色全关卡 5 星后方可购买；重制版商人以 50,000₧ 出售，解锁条件公开来源未收录。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/handcannon",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/handcannon",
+        "https://www.gamerevolution.com/guides/937627-resident-evil-4-remake-all-weapons-list-real-life-based-on",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4"
+      ]
+    },
+    {
+      "key": "tmp",
+      "nameZh": "TMP（战术冲锋手枪）",
+      "nameEn": "TMP",
+      "model": "斯泰尔 TMP（Steyr TMP，9×19）",
+      "category": "冲锋枪",
+      "ammo": "TMP 专用 9mm 弹（与手枪弹不通用）",
+      "magazine": "原版 30 发（满改 250 发）/ 重制版 30 发（满改 70 发）",
+      "damage": "原版 Firepower 0.4 → 1.2（专属 1.8）/ 重制版 Power 0.50 → 1.10（满改）",
+      "fireRate": "原版 0.10 秒/发（全自动）/ 重制版 2.50（全自动）",
+      "reload": "原版 2.37 → 1.17 秒 / 重制版 1.00 → 1.40",
+      "upgrades": "原版：火力 6 级、装填 3 级、弹容 6 级 + 枪托 / 重制版：火力、弹容、装填、射速各 5 级 + TMP 枪托",
+      "exclusive": "原版：火力提升至 1.8，100,000₧ / 重制版：火力 ×1.5，100,000₧",
+      "note": "全自动；原版弹容可扩至 250 发；重制版第 3 章起售卖。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/tmp",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/tmp",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4"
+      ]
+    },
+    {
+      "key": "chicago-typewriter",
+      "nameZh": "芝加哥打字机（重制版：芝加哥清扫者）",
+      "nameEn": "Chicago Typewriter / Chicago Sweeper",
+      "model": "M1A1 汤普森（M1A1 Thompson，.45 ACP）",
+      "category": "冲锋枪",
+      "ammo": "原版 .45 ACP / 重制版冲锋枪弹",
+      "magazine": "原版无限 / 重制版 50 发（满改 70 发，专属后无限）",
+      "damage": "原版 Firepower 10.0（固定，不可改装）/ 重制版 Power 0.40 → 2.00（满改）",
+      "fireRate": "原版 0.10 秒/发 / 重制版 2.50（全自动，取自 Vandal）",
+      "reload": "原版 2.83 秒 / 重制版 0.78 → 0.93",
+      "upgrades": "原版：不可改装，自带无限弹药 / 重制版：火力、弹容、装填各 4 级",
+      "exclusive": "原版：无专属强化（本身即无限弹药）/ 重制版：弹药永不耗尽，10,000₧",
+      "note": "原版通关后以 1,000,000₧ 购买并自带无限弹；重制版通关后以 50,000₧ 购买，具体解锁条件公开来源未收录。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/chicago-typewriter",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/chicago-sweeper",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4",
+        "https://vandal.elespanol.com/en/resident-evil-4-remake/resident-evil-4-remake-all-weapons-and-how-to-get-them.html"
+      ]
+    },
+    {
+      "key": "le-5",
+      "nameZh": "LE 5",
+      "nameEn": "LE 5",
+      "model": "H&K MP5",
+      "category": "冲锋枪",
+      "ammo": "冲锋枪弹",
+      "magazine": "重制版 20 发（满改 60 发）",
+      "damage": "重制版 Power 0.80 → 1.20（满改）",
+      "fireRate": "重制版 2.50（全自动，取自 Vandal）",
+      "reload": "重制版 0.65 → 1.05",
+      "upgrades": "重制版：火力、弹容、装填各 5 级，可加瞄准镜",
+      "exclusive": "重制版：子弹可穿透 5 名目标，80,000₧",
+      "note": "重制版专有，海岛设施 2F 冷冻室取得，第 14 章起售卖；原版无。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/le-5",
+        "https://vandal.elespanol.com/en/resident-evil-4-remake/resident-evil-4-remake-all-weapons-and-how-to-get-them.html",
+        "https://www.gamerevolution.com/guides/937627-resident-evil-4-remake-all-weapons-list-real-life-based-on"
+      ]
+    },
+    {
+      "key": "mine-thrower",
+      "nameZh": "地雷枪",
+      "nameEn": "Mine Thrower",
+      "model": "公开来源未收录",
+      "category": "特种",
+      "ammo": "地雷镖（Mine-Darts）",
+      "magazine": "原版 5 发（满改 10 发）",
+      "damage": "面板以爆炸半径表示：2m → 4m → 6m；爆炸伤害等同手榴弹（无独立伤害数值）",
+      "fireRate": "原版 1.33 秒/发",
+      "reload": "原版 3.43 → 2.57 秒",
+      "upgrades": "原版：爆炸半径 2 级、弹容 2 级、装填 1 级，可加瞄准镜",
+      "exclusive": "原版：地雷镖变为自动追踪并扩大爆炸范围，30,000₧",
+      "note": "原版专有，重制版无；购买价两来源冲突（Evil Resource 9,800₧ / StrategyWiki 28,000₧，PAL 版 9,800₧）。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/mine-thrower",
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades"
+      ]
+    },
+    {
+      "key": "bolt-thrower",
+      "nameZh": "弩枪",
+      "nameEn": "Bolt Thrower",
+      "model": "公开来源未收录",
+      "category": "特种",
+      "ammo": "弩箭（Bolts）/ 可附爆炸箭",
+      "magazine": "重制版 3 发（满改 10 发）",
+      "damage": "重制版 Power 1.20 → 2.40（满改）",
+      "fireRate": "重制版 0.70 → 0.85",
+      "reload": "重制版 1 → 5",
+      "upgrades": "重制版：火力、弹容、装填、射速各 4 级",
+      "exclusive": "重制版：弹容 ×2（Vandal 记载；Evil Resource 该页未列专属强化与价格）",
+      "note": "静音、箭矢可回收；重制版替代原版地雷枪，第 2 章起售卖；中文攻略称「弩」。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/bolt-thrower",
+        "https://vandal.elespanol.com/en/resident-evil-4-remake/resident-evil-4-remake-all-weapons-and-how-to-get-them.html",
+        "http://www.gamersky.com/handbook/202303/1581101.shtml"
+      ]
+    },
+    {
+      "key": "blast-crossbow",
+      "nameZh": "爆裂弩（Separate Ways）",
+      "nameEn": "Blast Crossbow",
+      "model": "公开来源未收录",
+      "category": "特种",
+      "ammo": "爆炸弩箭",
+      "magazine": "1 发",
+      "damage": "重制版 Power 13.00 → 22.00（满改）",
+      "fireRate": "公开来源未收录",
+      "reload": "重制版 0.50 → 1.00",
+      "upgrades": "重制版：威力 5 级、装填 4 级",
+      "exclusive": "重制版：爆炸范围 ×1.5，60,000₧",
+      "note": "仅 Separate Ways 艾达线；发射爆炸箭、具溅射，占 15 格背包；原版该线无弩。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4-remake/separate-ways/weaponry/blast-crossbow",
+        "https://gamertagmythras.com/blog/resident-evil-4/resident-evil-4-remake-separate-ways-guide"
+      ]
+    },
+    {
+      "key": "rocket-launcher",
+      "nameZh": "火箭发射器",
+      "nameEn": "Rocket Launcher",
+      "model": "RPG-7",
+      "category": "特种",
+      "ammo": "火箭弹（单发）",
+      "magazine": "1 发（发射后武器消失）",
+      "damage": "一击必杀：直击伤害 + 爆炸伤害两段（无面板数值）",
+      "fireRate": "公开来源未收录",
+      "reload": "不适用（一次性武器）",
+      "upgrades": "不可改装",
+      "exclusive": "无",
+      "note": "原版 30,000₧，城堡展厅亦可拾取；重制版标准难度 80,000₧、硬核 160,000₧。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/rocket-launcher",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/rocket-launcher",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4"
+      ]
+    },
+    {
+      "key": "special-rocket-launcher",
+      "nameZh": "特制火箭发射器",
+      "nameEn": "Special Rocket Launcher",
+      "model": "RPG-7",
+      "category": "特种",
+      "ammo": "火箭弹（单发）",
+      "magazine": "1 发",
+      "damage": "一击必杀（无面板数值）",
+      "fireRate": "公开来源未收录",
+      "reload": "不适用（一次性武器）",
+      "upgrades": "不可改装",
+      "exclusive": "无",
+      "note": "剧情专用道具，用于特定 Boss 战。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/rocket-launcher",
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades",
+        "https://edg.imfdb.org/index.php?oldid=478509&title=Resident_Evil_4"
+      ]
+    },
+    {
+      "key": "infinite-rocket-launcher",
+      "nameZh": "无限火箭筒",
+      "nameEn": "Infinite Rocket Launcher",
+      "model": "RPG-7",
+      "category": "特种",
+      "ammo": "火箭弹（无限）",
+      "magazine": "无限",
+      "damage": "一击必杀（无面板数值）",
+      "fireRate": "公开来源未收录",
+      "reload": "不适用（无需装填）",
+      "upgrades": "不可改装",
+      "exclusive": "无（本身即无限弹药）",
+      "note": "原版通关一次后商人处购买；重制版仅在 New Game Plus 出售。",
+      "sources": [
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/infinite-rocket-launcher",
+        "https://vandal.elespanol.com/en/resident-evil-4-remake/resident-evil-4-remake-all-weapons-and-how-to-get-them.html"
+      ]
+    },
+    {
+      "key": "prl-412",
+      "nameZh": "P.R.L. 412 激光枪",
+      "nameEn": "P.R.L. 412",
+      "model": "架空激光武器（Plaga Removal Laser 412）",
+      "category": "特种",
+      "ammo": "内置能量（无需弹药）",
+      "magazine": "公开来源未收录",
+      "damage": "仅对 Plaga 寄生虫有效、可瞬间清除；无面板数值",
+      "fireRate": "公开来源未收录",
+      "reload": "不适用",
+      "upgrades": "不可改装",
+      "exclusive": "无",
+      "note": "原版专业难度通关一次后解锁；蓄力射击范围窄但威力大，对人类无效。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/prl-412",
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades"
+      ]
+    },
+    {
+      "key": "combat-knife",
+      "nameZh": "战斗刀",
+      "nameEn": "Combat Knife",
+      "model": "公开来源未收录",
+      "category": "近战",
+      "ammo": "无",
+      "magazine": "不适用",
+      "damage": "原版：固定值、不可改装（具体数值公开来源未收录）/ 重制版 0.60 → 1.00（满改）",
+      "fireRate": "重制版攻击速度 1.20（原版公开来源未收录）",
+      "reload": "不适用",
+      "upgrades": "原版：不可改装 / 重制版：威力、耐久各 5 级",
+      "exclusive": "原版：无 / 重制版：攻击速度 ×1.5，60,000₧",
+      "note": "里昂初始近战武器；重制版新增耐久度（满改 2.2），可用于格挡与处决。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/combat-knife",
+        "https://strategywiki.org/wiki/Resident_Evil_4/Weapons_and_upgrades",
+        "https://vandal.elespanol.com/en/resident-evil-4-remake/resident-evil-4-remake-all-weapons-and-how-to-get-them.html"
+      ]
+    },
+    {
+      "key": "fighting-knife",
+      "nameZh": "格斗刀",
+      "nameEn": "Fighting Knife",
+      "model": "公开来源未收录",
+      "category": "近战",
+      "ammo": "无",
+      "magazine": "不适用",
+      "damage": "重制版 1.00 → 1.80（满改）",
+      "fireRate": "重制版攻击速度 1.00",
+      "reload": "不适用",
+      "upgrades": "重制版：威力、耐久各 5 级",
+      "exclusive": "重制版：攻击力 ×2，80,000₧",
+      "note": "第 14 章击败克劳萨后自动获得；耐久 1.8，比初始战斗刀更耐用。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/fighting-knife",
+        "https://vandal.elespanol.com/en/resident-evil-4-remake/resident-evil-4-remake-all-weapons-and-how-to-get-them.html"
+      ]
+    },
+    {
+      "key": "primal-knife",
+      "nameZh": "原始之刀",
+      "nameEn": "Primal Knife",
+      "model": "公开来源未收录",
+      "category": "近战",
+      "ammo": "无",
+      "magazine": "不适用",
+      "damage": "重制版 0.80 → 1.20（满改）",
+      "fireRate": "重制版攻击速度 1.00",
+      "reload": "不适用",
+      "upgrades": "重制版：威力、耐久各 5 级",
+      "exclusive": "重制版：变为不可损坏（indestructible），10,000₧",
+      "note": "重制版可改装刀，满级耐久 2.4；解锁条件公开来源未收录。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/primal-knife",
+        "https://vandal.elespanol.com/en/resident-evil-4-remake/resident-evil-4-remake-all-weapons-and-how-to-get-them.html"
+      ]
+    },
+    {
+      "key": "krausers-bow",
+      "nameZh": "克劳萨之弓",
+      "nameEn": "Krauser's Bow",
+      "model": "战斗弓（combat bow）",
+      "category": "特种",
+      "ammo": "箭矢（Arrows）",
+      "magazine": "公开来源未收录",
+      "damage": "公开来源未收录",
+      "fireRate": "公开来源未收录",
+      "reload": "公开来源未收录",
+      "upgrades": "不可改装",
+      "exclusive": "无",
+      "note": "仅佣兵模式克劳萨可用；拉弓时自动对齐头部高度，便于一箭爆头。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/krausers-bow"
+      ]
+    },
+    {
+      "key": "hand-grenade",
+      "nameZh": "手榴弹",
+      "nameEn": "Hand Grenade",
+      "model": "M67 破片手榴弹（GameRevolution 重制版；原版原型公开来源未收录）",
+      "category": "投掷物",
+      "ammo": "不适用（投掷）",
+      "magazine": "不适用（可叠加携带）",
+      "damage": "无面板数值；原版爆炸半径约 6 米，为投掷物中伤害最高",
+      "fireRate": "不适用（投掷）",
+      "reload": "不适用",
+      "upgrades": "不可改装",
+      "exclusive": "无",
+      "note": "回收价（Sell price，非商店售价）原版 2,000₧、重制版 1,000₧；重制版另有重型手榴弹。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/hand-grenade",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/hand-grenade",
+        "https://www.gamerevolution.com/guides/937627-resident-evil-4-remake-all-weapons-list-real-life-based-on"
+      ]
+    },
+    {
+      "key": "flash-grenade",
+      "nameZh": "闪光弹",
+      "nameEn": "Flash Grenade",
+      "model": "公开来源未收录",
+      "category": "投掷物",
+      "ammo": "不适用（投掷）",
+      "magazine": "不适用（可叠加携带）",
+      "damage": "无直接伤害；原版对暴露的 Plaga 一击必杀",
+      "fireRate": "不适用（投掷）",
+      "reload": "不适用",
+      "upgrades": "不可改装",
+      "exclusive": "无",
+      "note": "可致盲、打断敌人动作；对寄生虫特攻，是处理 Plaga 的高效手段。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/flash-grenade",
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/flash-grenade"
+      ]
+    },
+    {
+      "key": "incendiary-grenade",
+      "nameZh": "燃烧弹",
+      "nameEn": "Incendiary Grenade",
+      "model": "公开来源未收录",
+      "category": "投掷物",
+      "ammo": "不适用（投掷）",
+      "magazine": "不适用（可叠加携带）",
+      "damage": "无面板数值；2.5 米范围燃起火焰，持续约 5 秒",
+      "fireRate": "不适用（投掷）",
+      "reload": "不适用",
+      "upgrades": "不可改装",
+      "exclusive": "无",
+      "note": "原版专有，重制版无此投掷物；用于封锁通路或灼烧敌人。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4/weaponry/incendiary-grenade"
+      ]
+    },
+    {
+      "key": "heavy-grenade",
+      "nameZh": "重型手榴弹",
+      "nameEn": "Heavy Grenade",
+      "model": "公开来源未收录",
+      "category": "投掷物",
+      "ammo": "不适用（投掷）",
+      "magazine": "不适用（可叠加携带）",
+      "damage": "无面板数值；描述为威力大于普通手榴弹",
+      "fireRate": "不适用（投掷）",
+      "reload": "不适用",
+      "upgrades": "不可改装",
+      "exclusive": "无",
+      "note": "重制版专有，数量稀少（如海岛营地）。",
+      "sources": [
+        "https://www.evilresource.com/resident-evil-4-remake/weaponry/heavy-grenade"
+      ]
+    }
+  ]
+}

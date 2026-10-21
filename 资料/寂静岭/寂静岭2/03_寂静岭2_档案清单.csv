@@ -1,0 +1,34 @@
+﻿编号,类型,名称（英）,名称（中）,位置/条件,内容要点,备注
+FILE-01,文件,Memos / Notes / Clippings / Reports,备忘录/笔记/剪报/医疗报告,各处,lore与剧情载体——"真相总是藏在报纸剪贴、日记和医疗报告里",标题清单未完整收录
+ITEM-01,剧情证物,Mary's Letter,玛丽的来信,事件起点,"我在与你有着共同回忆的地方等你……",全作引子
+ITEM-02,剧情证物,Room 312 Videotape,312房录像带,湖景酒店,揭示詹姆士亲手闷死病危的玛莉——全作最大真相,核心证物
+ITEM-03,剧情证物,Newspaper Clipping（Angela）,新闻剪报（安洁拉）,小镇,暗示安洁拉自卫下杀死了父亲,
+ITEM-04,收集品,Laura-related Items,劳拉相关道具,各处,"离开"结局相关收集物,依guhive；【未明确】
+ITEM-05,收集品,UFO Markers,UFO标记,各处,UFO结局收集物（重制版为异形相框；原版为UFO钥匙）,依guhive；【未明确】
+ITEM-06,收集品,Dog Tags,狗牌,各处,狗结局收集物,依guhive；【未明确】
+KEY-01,门禁,Keys,钥匙,各区域,开启小镇、医院、酒店等门禁,
+WPN-01,武器,Steel Pipe,铁管,早期,系列象征性近战武器；威力偏低但距离长、易用,
+WPN-02,武器,Handgun,手枪,早期,常规火器,
+WPN-03,武器,Shotgun,霰弹枪,中期,近距高伤,
+WPN-04,武器,Rifle,步枪,中期,中远程,
+WPN-05,武器,Great Knife / Great Saber,大剑,隐藏武器,
+WPN-06,回复,Spray,喷雾,各处,系列特色回复道具,
+ENM-01,敌人,Pyramid Head,三角头,全作,本作诞生的系列标志性怪物；詹姆士"希望受罚之投射"；终局两只自尽,
+ENM-02,敌人,Nurse,护士,医院,系列标志性敌人；代表詹姆士的医疗相关焦虑,
+ENM-03,敌人,Mannequin,玛妮金,各处,人形模特怪物；与玛莉/玛利亚相关,
+ENM-04,敌人,Lying Figure,lying figure,各处,床上蠕动的人形,
+ENM-05,敌人,Abstract Daddy,Abstract Daddy,各处,与安洁拉创伤相关,
+ENM-06,首领,Mutated Mary / Maria,怪物化的玛丽/玛利亚,酒店天台,最终首领（视玩家决定）,
+END-01,结局,In Water,投湖,常规结局,驾车载着玛丽的遗体投湖,
+END-02,结局,Maria,玛利亚,常规结局,与玛利亚离开；沉溺于幻想（彩蛋暗示悲剧循环）,
+END-03,结局,Leave,离开,常规结局,带劳拉一起离开；最光明的结局,
+END-04,结局,UFO,UFO结局,隐藏恶搞,詹姆士被外星人抓走；寂静岭怪物都是外星人实验品,
+END-05,结局,Dog,狗结局,隐藏恶搞,整个事件都是一只狗操控的,
+LOC-01,场景,Silent Hill Town,寂静岭小镇,探索起点,
+LOC-02,场景,Wood Side / Brookhaven Hospital,溪港医院,玛莉生前认识劳拉之处,
+LOC-03,场景,Toluca Lake,托卢卡湖,撑船横渡,
+LOC-04,场景,Lakeview Hotel,湖景酒店,312房所在；真相与终局之地,
+DLC-01,扩展,Born from a Wish,《自愿而生》,扩展版,追加玛丽亚剧本；补完她作为"詹姆士幻想产物"的本质,
+VER-01,版本,PS2（2001-09）,PS2原版,2001,Team Silent；Metacritic 89（全系列最高）
+VER-02,版本,Restless Dreams / Inner Fears / Director's Cut,扩展版,2001-2003,Xbox北美/欧洲 + PS2/PC；追加玛丽亚剧本与UFO结局
+VER-03,版本,Remake（2024）,重制版,2024,Bloober Team制作；PS5/PC/Xbox Series；Metacritic 86

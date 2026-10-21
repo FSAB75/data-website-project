@@ -1,0 +1,17 @@
+﻿编号,类型,名称（英）,名称（中）,位置/条件,内容要点,备注
+FILE-01,文件,Memos / Notes / Clippings / Reports,备忘录/笔记/剪报/医疗报告,各处,lore载体,系列通用；标题清单未完整收录
+LOC-01,场景,Shepherd's Glen,谢泼德峡谷,核心舞台,寂静岭附近的小镇；由四个家族建立,
+LOC-02,场景,Shepherd Residence,谢泼德家,亚历克斯的归处,
+ITEM-01,剧情证物,Four Families' Pact,四家族契约文献,教团相关区域,四家族与"神"立约——以定期献祭换繁荣,
+ITEM-02,剧情证物,Joshua's Drowning Record,乔舒亚溺亡记录,划船事故,划船事故真相——亚历克斯未能阻止,
+WPN-01,武器,Steel Pipe,铁管,早期,系列象征性近战武器,
+WPN-02,武器,Handgun,手枪,早期,常规火器,
+WPN-03,武器,Shotgun,霰弹枪,中期,近距高伤,
+WPN-04,武器,Rifle,步枪,中期,中远程,
+ENM-01,敌人,Nurse,护士,各处,"归乡的护士与不同角色的创伤相关"——语境就是一切,
+ENM-02,敌人,Otherworld Monsters,各类异世界怪物,各处,系列通识,
+ENM-03,首领,Amnion,羊膜,终局,怪诞的昆虫状生物；体内装着乔舒亚的尸骸,
+END-01,结局,Accept Truth / Deny,接受真相/继续否认,全作,依亚历克斯接受真相还是继续否认产生不同结局；"真正的刺痛是真相的揭示",具体名称【未明确】
+SYS-01,机制,Monsters as Psychological Projection,怪物即心理投射,全作,系列核心母题；本作怪物与亚历克斯的妄想相关,
+SYS-02,机制,Fog / Flashlight / Radio,浓雾/手电筒/收音机,全作,系列标志机制,
+VER-01,版本,PS3 / Xbox 360 / PC（2008）,PS3/Xbox360/PC版,2008,Double Helix Games；Metacritic 70；Steam $39.99 / Xbox商店 $19.99

@@ -1,0 +1,14 @@
+﻿编号,类型,名称（英）,名称（中）,位置/条件,内容要点,备注
+MEC-01,机制,Therapy Sessions,心理治疗环节,章节之间,玩家回答改变环境与哈利性格；本质是对玩家进行心理侧写,本作核心机制
+MEC-02,机制,Environmental Shift,环境变化,依治疗选择,场景随治疗回答改变,
+MEC-03,机制,Multi-Playthrough Variance,多周目差异,全作,每次游玩改变雪柔记忆中的父亲——奉献的父亲/有缺陷的男人/完全缺席的人,
+MEC-04,机制,No Combat,无战斗,全作,主角不能作出任何攻击，只能不断逃避怪物们的追逐；主题"无法对抗的恐怖",本作设计理念
+LOC-01,场景,Snowy Silent Hill,冰雪覆盖的寂静岭,核心舞台,本作全新 icy look,
+LOC-02,场景,Therapy Room,治疗室,章节之间,心理治疗场景,
+FILE-01,文件,Files / Documents,文件/文献,各处,系列通用lore载体,标题清单未完整收录
+ENM-01,敌人,Chase Monsters,追逐型怪物,全作,以"被追逐"为核心设计；具体名录未完整收录,【未明确】
+END-01,结局,The Reframed Ending,颠覆性结局,终局,治疗其实是成年雪柔的；哈利在开场车祸中已死亡多年；一切是雪柔对父亲的重构,Respawning
+END-02,结局,Multiple Ending Names,多个结局名称,多周目,具体名称未完整收录,【未明确】
+SYS-01,定位,Reimagining（Not Canon）,再构（非正史）,系列,1代的再构；不属于主时间轴；但其改动对1代与3代事件有重大影响,
+VER-01,版本,Wii（2009）,Wii版,2009,主平台；Climax Studios；Metacritic 79
+VER-02,版本,PS2 / PSP,PS2/PSP版,后续,移植版

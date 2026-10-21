@@ -1,0 +1,22 @@
+﻿编号,类型,名称（英）,名称（中）,所属电影/位置,内容要点,备注
+HUB-01,关卡,The Cinema Hub,影院枢纽关卡,枢纽,纽约市一家电影院；怪物杀手潜伏在影院下水道中,原计划为《湖边小屋VI：曼哈顿湖大屠杀》，因太小改为枢纽
+MOV-01,电影,Lakeview Cabin III,湖边小屋III,电影1,初代约十年后；Camp Lakeview辅导员vs神秘杀手“婴儿脸（Babyface）”；沙盒Boss战,多主角/自由互动/入夜追杀
+MOV-02,电影,Lakeview Cabin IV: Curse of the Lake,湖边小屋IV：湖之诅咒,电影2,女子乐队巴士没油；湖边庄园；食人族一家+变异鼠群+大量陷阱；随机化动作生存,
+MOV-03,电影,Lakeview Cabin V: Homecoming,湖边小屋V：归乡,电影3,万圣节之夜；郊区社区vs不死邪恶；超自然悬疑,
+MOV-04,电影,Lakeview Cabin VI,湖边小屋VI,电影4,空间站收集初代小屋残骸；清洁工vs可穿越传送系统的倍增外星生物,
+MOV-05,电影,Epilogue（Lakeview Cabin II）,尾声（湖边小屋II）,电影5,前四部完成后解锁；远比前述简单；剧情隐晦——被解读为激发这些电影的真实事件细节,
+MIN-01,小游戏,Lake of the Dead,死亡之湖,小游戏,对应湖边小屋III,完成电影与序幕后解锁
+MIN-02,小游戏,Treasure of the Vampire Rednecks,吸血鬼红脖子的宝藏,小游戏,对应湖边小屋IV,
+MIN-03,小游戏,Super Dad,超级爸爸,小游戏,对应湖边小屋V,
+MIN-04,小游戏,Space Psychos,太空精神病,小游戏,对应湖边小屋VI,
+MIN-05,小游戏,Last Christmas,去年圣诞,小游戏,2017年追加；父亲抵御圣诞主题杀手,与其他作品无关联
+NETA-01,致敬,Friday the 13th,十三号星期五,NETA,夏令营+神秘杀手（对应III）,
+NETA-02,致敬,The Hills Have Eyes,隔山有眼,NETA,食人族（对应IV）,
+NETA-03,致敬,The Texas Chainsaw Massacre,德州电锯杀人狂,NETA,食人族/屠杀（对应IV）,
+NETA-04,致敬,Halloween,万圣节,NETA,万圣节之夜（对应V）,
+NETA-05,致敬,Alien,异形,NETA,空间站+外星生物（对应VI）,
+NETA-06,致敬,The Thing,怪形,NETA,外星生物（对应VI）,
+SYS-01,系统,Multi-Character Control,多角色操控,全作,可操控多个角色并与环境互动,
+SYS-02,系统,Free Interaction,自由互动,全作,游泳、喝水、搬动物件、甚至互相发生性关系,
+SYS-03,系统,Kill Characters Yourself,亲手杀角色,全作,可用多种方法亲手杀死角色（系列特色）,
+SYS-04,系统,Nightfall Hunt,入夜追杀,全作,入夜后角色被追杀并可能被杀,

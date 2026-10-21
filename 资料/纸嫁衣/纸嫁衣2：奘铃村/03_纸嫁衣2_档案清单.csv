@@ -1,0 +1,18 @@
+﻿编号,类型,名称,名称（中）,位置/条件,内容要点,备注
+SYS-01,系统,Brainstorm（5 Layers）,头脑风暴（五层）,右上角入口,线索查看界面；分五层；层数越高越重要,系列通用
+COL-01,线索道具,Old Notes,旧纸条,各场景,记录解谜规则,系列通用
+COL-02,线索道具,Folklore Manual,民俗手册,各场景,五行/八卦/时辰规则,系列通用
+COL-03,线索道具,Item Descriptions,道具详情描述,背包,规则提前给出,系列通用
+PUZ-01,解谜对照,Facial Makeup（Five Elements）,脸谱五行,本作高频,赤(红)=火、黄=土、白=金、黑=水、绿=木；按场景五行顺序摆放,本作代表性解谜
+PUZ-02,解谜对照,Five Elements,五行,道具内,东木、西金、南火、北水、中土,系列通用
+PUZ-03,解谜对照,Zodiac & Earthly Branches,十二生肖/十二地支,道具内,时辰类解谜依据,系列通用
+PUZ-04,解谜对照,Four Offerings,祭品四样,食物类解谜,"早生贵子"=红枣、花生、桂圆、莲子,系列通用
+LOC-01,场景,Zangling Village,奘铃村,全作,系列核心舞台；邪教驻地；活人祭祀传统,
+LOC-02,场景,Six-Burial Spirit Tower,六葬灵塔,本作核心,与六葬信仰直接相关,
+ITEM-01,叙事证物,Zhu Xiaohong's Paper Bride Dress,祝小红的纸嫁衣,前世线,民国纸新娘婚服——"囚禁灵魂的枷锁",
+ITEM-02,叙事证物,Liang Shaoping's Remnant Soul,梁少平的残魂,奘铃村,滞留百年；帮助陶梦嫣解谜,
+ITEM-03,叙事证物,Tu Laosi's Puppet,屠老四的木偶,前世线,斩首梁少平的工具/邪教仪式相关,
+EGG-01,隐藏彩蛋,Non-essential Interactions,非必要互动,场景内,纸人耳朵/供桌糖果/旧风车/红丝带；点3-5次触发成就,每部约3-5个
+SYS-02,系统,Hint System,提示系统,全作,每天3次免费（15秒广告）；只给思路,系列通用
+SYS-03,系统,Cozy Mode,温馨模式,设置内,恐怖感降低80%,系列通用
+VER-01,版本,iOS / Android,iOS/安卓版,2021-07-30,5章；角色几乎全部更换；主题反封建迷信,

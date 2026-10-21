@@ -1,0 +1,21 @@
+﻿编号,类型,名称（英）,名称（中）,位置/条件,内容要点,备注
+FILE-01,文件,Memos / Notes / Clippings / Reports,备忘录/笔记/剪报/医疗报告,各处,lore载体,系列通用；标题清单未完整收录
+LOC-01,场景,Room 302,302室,核心舞台,亨利的公寓；门从内被链条锁住、窗户封死,
+LOC-02,场景,Bathroom Wall Hole,浴室墙洞,302室,唯一出口——通往扭曲版本（异世界投影）的入口,
+LOC-03,场景,Forest World,森林世界,异世界投影,异世界投影之一,【推测】
+LOC-04,场景,School World,学校世界,异世界投影,异世界投影之一,【推测】
+LOC-05,场景,Hospital World,医院世界,异世界投影,异世界投影之一,【推测】
+LOC-06,场景,Prison World,监狱世界,异世界投影,异世界投影之一,【推测】
+LOC-07,场景,Water World,水上世界,异世界投影,异世界投影之一,【推测】
+ITEM-01,剧情证物,Chains & Locks,链条与锁,302室门,"家成为监狱"的具现,
+ITEM-02,剧情证物,21 Sacraments Related,21圣礼相关,沃尔特仪式,"杀死21名受害者就能与'母亲'重聚",
+WPN-01,武器,Steel Pipe,铁管,早期,系列象征性近战武器,
+WPN-02,武器,Handgun,手枪,早期,常规火器,
+WPN-03,武器,Shotgun,霰弹枪,中期,近距高伤,
+WPN-04,武器,Rifle,步枪,中期,中远程,
+END-01,结局,Protect Eileen & Purify Room,保护艾琳与净化房间,全作,依"是否保护艾琳、是否净化房间"分歧；结果为止阻沃尔特或看他完成仪式,具体名称【未明确】
+SYS-01,机制,Otherworld（Apartment Projection）,异世界（公寓投射）,全作,沃尔特的异世界不系于小镇，而是从公寓向外投射,
+SYS-02,机制,Home as Horror,家即地狱,全作,"你应该感到安全的地方变得越来越糟"——幽灵人影、血迹、墙壁低语,
+SYS-03,机制,Fog / Flashlight / Radio,浓雾/手电筒/收音机,全作,系列标志机制,
+VER-01,版本,PS2 / Xbox / PC（2004）,PS2/Xbox/PC原版,2004,Team Silent；Metacritic 76；标志着Team Silent在系列工作的终结
+VER-02,版本,GOG（PC）,GOG版,后续,唯一可合法购买的Team Silent作品（$9.99）

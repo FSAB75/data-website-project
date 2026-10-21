@@ -1,0 +1,27 @@
+﻿编号,类型,名称,名称（中）,位置/条件,内容要点,备注
+SYS-01,系统,Brainstorm（5 Layers）,头脑风暴（五层）,右上角入口,线索查看界面；分五层；层数越高越重要,系列通用
+COL-01,线索道具,Old Notes,旧纸条,各场景,记录解谜规则,系列通用
+COL-02,线索道具,Folklore Manual,民俗手册,各场景,五行/八卦/时辰规则,系列通用
+COL-03,线索道具,Item Descriptions,道具详情描述,背包,规则提前给出,系列通用
+MEC-01,新机制,Paper Spirit Child,纸灵童系统,全作,辅助玩家探索；其行为可能受恶鬼影响发生反转,本作核心新机制
+MEC-02,新机制,Karma Mirror,因果镜,全作,可回看并修正记忆片段的系统,本作核心新机制
+MEC-03,新机制,Voice-Controlled Puzzle,声控解谜,全作,需对环境麦克风念咒语触发的解谜,本作标志性创新
+ITEM-01,剧情证物,Thousand-Child Tree,千子树,终局,古代怨婴集合体——本作核心设定真相,
+ITEM-02,剧情证物,Memory Fragments,记忆片段,因果镜,通过因果镜回看与修正,
+ITEM-03,剧情证物,Incantations,咒语,声控解谜,声控解谜需念诵的内容（本文件不复述）,
+ITEM-04,剧情证物,Dream Clues,梦境线索,故事引子,主人公"常梦到相似面容的人",
+LOC-01,场景,Abandoned Zangling Village,荒废奘铃村,全作,主人公循线索重返之地；系列核心舞台,
+LOC-02,场景,Liangjiankou Town,两间口镇,本作新增,与《纸嫁衣7》的两间口小镇同源,
+PUZ-01,解谜对照,Five Elements,五行,道具内,东木、西金、南火、北水、中土,系列通用
+PUZ-02,解谜对照,Zodiac & Hours,十二生肖/时辰,道具内,时辰类解谜依据,系列通用
+PUZ-03,解谜对照,Four Offerings,祭品四样,食物类解谜,"早生贵子"=红枣、花生、桂圆、莲子,系列通用
+END-01,结局,Dynamic Ending Branches,动态结局分支,全作,玩家的关键选择影响剧情走向,本作特色
+END-02,结局,Main Ending,主线结局,终局,双胞胎姐妹聂莫黎与聂莫琪的对决；含暗示轮回未止的彩蛋,
+CH-00,章节,Prologue: Joyful Makeup,序章：喜妆,序章,
+CH-01,章节,Ch.1 Night Blindness,第一章：夜盲,第一章,
+CH-02,章节,Ch.2 Child's Blessing,第二章：童福,第二章,
+CH-03,章节,Ch.3 Proper Marriage,第三章：正娶,第三章,
+CH-04,章节,Ch.4 Do Not Abandon,第四章：勿弃,第四章,
+CH-05,章节,Ch.5 Never Part,第五章：不离,第五章,
+COL-04,联动,Identity V Skin "Zangling Echo",《第五人格》联动皮肤"奘铃回响",联动,与《第五人格》联动限定皮肤,
+VER-01,版本,iOS / Android,iOS/安卓版,2025-07-04,纸嫁衣工作室开发；成都惊帆科技发行；首发v1.0.0；2026-01-13更新,

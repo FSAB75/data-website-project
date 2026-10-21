@@ -1,0 +1,23 @@
+﻿编号,类型,名称（英）,名称（中）,位置/条件,内容要点,备注
+FILE-01,文件,Memos / Notes,备忘录/笔记,小镇各处,lore主要载体；揭示教团活动与小镇异变,标题清单未完整收录
+FILE-02,文件,Newspaper Clippings,报纸剪贴,小镇各处,揭示小镇历史与失踪事件,lore载体之一
+FILE-03,文件,Medical Reports,医疗报告,医院,揭示阿蕾莎的遭遇与实验,lore载体之一
+FILE-04,文件,Diaries,日记,各处,揭示角色内心,lore载体之一
+KEY-01,门禁,Keys,钥匙,各区域,开启小镇、学校、医院、教堂等门禁,
+WPN-01,武器,Steel Pipe,铁管,早期,系列象征性近战武器；威力偏低但距离长、易用,Wikiwand
+WPN-02,武器,Handgun,手枪,早期,常规火器,
+WPN-03,武器,Shotgun,霰弹枪,中期,近距高伤,
+WPN-04,武器,Rifle,步枪,中期,中远程,
+WPN-05,武器,Grenades / Molotov,手榴弹/燃烧瓶,中期,投掷物,
+ENM-01,敌人,Nurse,丧尸化护士,医院等,系列标志性敌人,
+ENM-02,敌人,Demon Children,恶魔儿童,学校等,象征阿蕾莎的童年创伤,
+ENM-03,敌人,Air Screamer,空中怪兽,小镇,飞窜的翼龙形怪物,
+ENM-04,敌人,Various Mutants,各类变异体,各处,Groaner/Romper/Split Head/Twinfeeler/Puppet Nurse等,
+ENM-05,首领,God,"神",教堂,教团催生的不成熟之神；最终首领,
+END-01,结局,Multiple Endings,多个常规结局,全作,依玩家行为（是否救西比尔、丽莎是否存活）分歧,
+END-02,结局,UFO Ending,UFO结局,隐藏,系列著名恶搞隐藏结局,
+SYS-01,机制,Fog,浓雾,全作,探索受限；由PS硬件限制转化为风格,系列签名
+SYS-02,机制,Flashlight,手电筒,全作,探索必需；光可能引来怪物；可关灯"暗杀",
+SYS-03,机制,Radio Static,收音机杂音,全作,敌人接近的静电预警；山冈晃音效设计的核心,
+SYS-04,机制,Otherworld,异世界,全作,小镇灵力创造的个性化交替现实；将潜意识思维、恐惧与罪恶感具现化,
+VER-01,版本,PlayStation（1999-02-24）,PS1版,1999,Team Silent（KCET）开发；Metacritic 86;2009年登陆PSN下载,
